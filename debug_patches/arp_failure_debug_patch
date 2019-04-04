@@ -1,0 +1,57 @@
+diff -r cb39fe6e040c dev/T4/linux/drv/l2t.c
+--- a/dev/T4/linux/drv/l2t.c	Fri Feb 12 15:17:23 2016 -0800
++++ b/dev/T4/linux/drv/l2t.c	Mon Feb 15 13:55:48 2016 +0530
+@@ -1160,6 +1160,32 @@ static const struct seq_operations l2t_s
+ 	.show = l2t_seq_show
+ };
+ 
++static int set_random_time(void)
++{
++	int ret;
++	get_random_bytes(&ret, 2);
++	printk(KERN_INFO "Random Time %d jiffies == %ld usecs ..Tick Tock\n", ret , jiffies_to_usecs((const unsigned long)ret) );
++	if (ret > 5000)
++		ret %= 5000;
++	if (ret < 400)
++		ret *= 500;
++	printk(KERN_INFO "Finalised Random Time %d jiffies == %ld usecs ..Tick Tock\n", ret , jiffies_to_usecs((const unsigned long)ret) );
++
++	return ret;
++}
++
++struct timer_list timer0;
++
++static void fail_timer_func(unsigned long timer_data)
++{
++	struct adapter *adap = (struct adapter *)timer_data;
++	t4_flush_l2t_arpq(adap->l2t);
++	timer0.expires = jiffies + set_random_time()/*probe_param->count0 * DELAY_TIME */;
++	timer0.function = fail_timer_func;
++	add_timer(&timer0);
++
++}
++
+ static int l2t_seq_open(struct inode *inode, struct file *file)
+ {
+ 	int rc = seq_open(file, &l2t_seq_ops);
+@@ -1169,10 +1195,20 @@ static int l2t_seq_open(struct inode *in
+ 		struct seq_file *seq = file->private_data;
+ 
+ 		seq->private = adap->l2t;
++		printk(KERN_ALERT "Probe Working $$$ HIT $$$\n");
++		printk(KERN_ALERT "Start Time = %ld\n"
++		                  "End Time = %ld\n", jiffies, jiffies + 1 * HZ);
++		init_timer(&timer0);
++		timer0.expires = jiffies + 1*HZ;
++		timer0.data = (unsigned long)adap;
++		timer0.function = fail_timer_func;
++		add_timer(&timer0);
++
+ 	}
+ 	return rc;
+ }
+ 
++
+ const struct file_operations t4_l2t_debugfs_fops = {
+ 	.owner = THIS_MODULE,
+ 	.open = l2t_seq_open,

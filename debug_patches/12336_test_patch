@@ -1,0 +1,196 @@
+diff -r 9aa4711a66c4 dev/T4/linux/drv/l2t.c
+--- a/dev/T4/linux/drv/l2t.c	Mon Nov 16 18:27:01 2015 +0530
++++ b/dev/T4/linux/drv/l2t.c	Thu Nov 19 10:42:31 2015 +0530
+@@ -320,12 +320,13 @@ int cxgb4_l2t_send(struct net_device *de
+ 	struct in6_addr *target = (struct in6_addr *)&e->addr;
+ 	struct net_device *ndev = dev;
+ 
++	printk(KERN_ALERT "############# %s ##########\n", __func__);
+ 	/* Get the vlan interface, later used to build the skb
+ 	 */
+ 	if (e->neigh && is_vlan_dev(e->neigh->dev))
+ 		ndev = e->neigh->dev;
+ #endif
+-
++		
+ again:
+ 	switch (e->state) {
+ 	case L2T_STATE_STALE:     /* entry is stale, kick off revalidation */
+@@ -520,6 +521,7 @@ void cxgb4_l2t_neigh_dev_event(struct ne
+ 		for (e = d->l2tab[i].first; e; e = e->next) {
+ 			switch (event) {
+ 			case NETDEV_UP:
++				goto debug;
+ 				if (dev->ifindex == e->ifindex &&
+ 						t4_l2t_check_state_noarp(e)) {
+ 					n = neigh_lookup(e->tbl, e->addr, dev);
+@@ -541,6 +543,7 @@ void cxgb4_l2t_neigh_dev_event(struct ne
+ 				break;
+ 			case NETDEV_DOWN:
+ 				if (e->neigh != NULL && e->neigh->dev == dev) {
++debug:
+ 					spin_lock(&e->lock);
+ 					e->state = L2T_STATE_NOARP;
+ 					neigh_release(e->neigh);
+@@ -923,10 +926,14 @@ static void handle_failed_resolution(str
+ 		const struct l2t_skb_cb *cb = L2T_SKB_CB(skb);
+ 
+ 		spin_unlock(&e->lock);
+-		if (cb->arp_err_handler)
++		if (cb->arp_err_handler) {
++			printk(KERN_ALERT "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 1 t4_l2t_update $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+ 			cb->arp_err_handler(cb->handle, skb);
+-		else
++		}
++		else {
+ 			t4_ofld_send(adap, skb);
++			printk(KERN_ALERT "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 2 t4_l2t_update $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
++		}
+ 		spin_lock(&e->lock);
+ 	}
+ }
+@@ -976,8 +983,10 @@ void t4_l2t_update(struct adapter *adap,
+ 			write_l2e(adap, e, 0, !L2T_LPBK, !L2T_ARPMISS);
+ 	}
+ 
+-	if (arpq)
++	if (arpq) {
++		printk(KERN_ALERT "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 3 t4_l2t_update $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+ 		handle_failed_resolution(adap, e);
++	}
+ 	spin_unlock_bh(&e->lock);
+ }
+ #endif
+@@ -1088,9 +1097,16 @@ struct l2t_data *t4_init_l2t(unsigned in
+ static void flush_arpq(struct l2t_entry *e)
+ {
+ 	struct sk_buff *skb;
+-
+-	while ((skb = __skb_dequeue(&e->arpq)) != NULL)
+-		kfree_skb(skb);
++	printk(KERN_ALERT "############# %s ##########\n", __func__);
++	while ((skb = __skb_dequeue(&e->arpq)) != NULL) {
++		struct l2t_skb_cb *cb = L2T_SKB_CB(skb);
++		if (cb->arp_err_handler) {
++			printk(KERN_ALERT "############# %s 2 ##########\n", __func__);
++			cb->arp_err_handler(cb->handle, skb);
++		} else {
++			kfree_skb(skb);
++		}
++	}
+ }
+ 
+ /*
+@@ -1103,6 +1119,7 @@ void t4_flush_l2t_arpq(struct l2t_data *
+ 	int i;
+ 
+ 	read_lock_bh(&d->lock);
++	printk(KERN_ALERT "############# %s ##########\n", __func__);
+ 	for (i = 0; i < d->l2t_size; ++i) {
+ 		struct l2t_entry *e;
+ 
+@@ -1202,10 +1219,17 @@ static int l2t_seq_open(struct inode *in
+ 	int rc = seq_open(file, &l2t_seq_ops);
+ 
+ 	if (!rc) {
++		printk(KERN_ALERT "############# %s ##########\n", __func__);
+ 		struct adapter *adap = inode->i_private;
+ 		struct seq_file *seq = file->private_data;
+ 
+ 		seq->private = adap->l2t;
++		struct sk_buff *skb;
++		skb = __skb_dequeue(&adap->l2t->rover->arpq);
++		struct l2t_skb_cb *cb = L2T_SKB_CB(skb);
++		if (cb->arp_err_handler) {
++			cb->arp_err_handler(cb->handle, skb);
++		}
+ 	}
+ 	return rc;
+ }
+diff -r 9aa4711a66c4 dev/T4/linux/drv/l2t.h
+--- a/dev/T4/linux/drv/l2t.h	Mon Nov 16 18:27:01 2015 +0530
++++ b/dev/T4/linux/drv/l2t.h	Thu Nov 19 10:42:31 2015 +0530
+@@ -19,7 +19,7 @@
+ #include <asm/atomic.h>
+ #include "cxgb4_ctl_defs.h"
+ 
+-
++extern int kill_skb_crash;
+ enum { L2T_SIZE = 4096 };     /* # of L2T entries */
+ 
+ enum {
+diff -r 9aa4711a66c4 dev/T4/linux/iw_cxgb4/cm.c
+--- a/dev/T4/linux/iw_cxgb4/cm.c	Mon Nov 16 18:27:01 2015 +0530
++++ b/dev/T4/linux/iw_cxgb4/cm.c	Thu Nov 19 10:42:31 2015 +0530
+@@ -51,6 +51,7 @@
+ #include "iw_cxgb4.h"
+ #include "iw_cxgb4_compat.h"
+ 
++int kill_skb_crash;
+ static char *states[] = {
+ 	"idle",
+ 	"listen",
+@@ -622,6 +623,7 @@ static void queue_arp_failure_cpl(struct
+ 	 */
+ 	*((struct c4iw_ep **)(skb->cb + 2 * sizeof(void *))) = ep;
+ 	sched(ep->com.dev, skb);
++	printk(KERN_ALERT "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 2 failure $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+ }
+ 
+ /*
+@@ -665,8 +667,10 @@ static void abort_arp_failure(void *hand
+ 	PDBG("%s rdev %p\n", __func__, rdev);
+ 	req->cmd = CPL_ABORT_NO_RST;
+ 	ret = c4iw_ofld_send(rdev, skb);
++	printk(KERN_ALERT "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ failure $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+ 	if (ret) {
+ 		__state_set(&ep->com, DEAD);
++		printk(KERN_ALERT "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 1 failure $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+ 		queue_arp_failure_cpl(ep, skb);
+ 	}
+ }
+@@ -758,6 +762,7 @@ static int send_abort(struct c4iw_ep *ep
+ 	PDBG("%s ep %p tid %u\n", __func__, ep, ep->hwtid);
+ 	BUG_ON(!req_skb);
+ 
++	printk(KERN_ALERT "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ send_abort $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+ 	set_wr_txq(req_skb, CPL_PRIORITY_DATA, ep->txq_idx);
+ 	t4_set_arp_err_handler(req_skb, ep, abort_arp_failure);
+ 	req = (struct cpl_abort_req *) skb_put(req_skb, wrlen);
+@@ -4133,6 +4138,11 @@ int c4iw_ep_disconnect(struct c4iw_ep *e
+ 	 */
+ 	c4iw_get_ep(&ep->com);
+ 
++	if (kill_skb_crash == 1) {
++		printk(KERN_ALERT "$$$############## kill====1 ################$$$\n");
++		abrupt = 1;
++		ep->com.state = CONNECTING;
++	}
+ 	rdev = &ep->com.dev->rdev;
+ 	switch (ep->com.state) {
+ 	case MPA_REQ_WAIT:
+diff -r 9aa4711a66c4 dev/T4/linux/iw_cxgb4/device.c
+--- a/dev/T4/linux/iw_cxgb4/device.c	Mon Nov 16 18:27:01 2015 +0530
++++ b/dev/T4/linux/iw_cxgb4/device.c	Thu Nov 19 10:42:31 2015 +0530
+@@ -39,7 +39,7 @@
+ #include "iw_cxgb4.h"
+ 
+ #define DRV_VERSION "0.1"
+-
++int cnt1 = 0;
+ MODULE_AUTHOR("Steve Wise");
+ MODULE_DESCRIPTION("Chelsio T4/T5/T6 RDMA Driver");
+ MODULE_LICENSE("Dual BSD/GPL");
+@@ -814,6 +814,12 @@ static int ep_open(struct inode *inode, 
+ 	struct c4iw_debugfs_data *epd;
+ 	int ret = 0;
+ 	int count = 1;
++	cnt1++;
++	printk(KERN_ALERT "$$$$$$$$$$$$$$$ CAT_WORKING $$$$$$$$$$$$$$\n");
++	if ((cnt1 < 2) && (cnt1 > 0))
++		kill_skb_crash = 1;
++	else 
++		kill_skb_crash = 0;
+ 
+ 	epd = kmalloc(sizeof *epd, GFP_KERNEL);
+ 	if (!epd) {

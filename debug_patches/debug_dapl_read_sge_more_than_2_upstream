@@ -1,0 +1,65 @@
+diff --git a/dapl/openib_common/util.c b/dapl/openib_common/util.c
+index b24b26b33bc7..7e66ad3ed4a6 100644
+--- a/dapl/openib_common/util.c
++++ b/dapl/openib_common/util.c
+@@ -511,8 +511,10 @@ DAT_RETURN dapls_ib_query_hca(IN DAPL_HCA * hca_ptr,
+ #ifdef _OPENIB_MCM_
+ 		if (!MFO_EP(&hca_ptr->ib_trans.addr))
+ #endif
+-		if (hca_ptr->ib_hca_handle->device->transport_type == IBV_TRANSPORT_IWARP)
++		if (hca_ptr->ib_hca_handle->device->transport_type == IBV_TRANSPORT_IWARP) {
++			Transport_Type = IBV_TRANSPORT_IWARP;
+ 			ia_attr->max_iov_segments_per_rdma_read = 1;
++		}
+ 		ia_attr->max_iov_segments_per_rdma_write = dev_attr.max_sge;
+ 		ia_attr->num_transport_attr = 0;
+ 		ia_attr->transport_attr = NULL;
+diff --git a/test/dapltest/include/dapl_proto.h b/test/dapltest/include/dapl_proto.h
+index 0e1038c38c4a..15f171845d0c 100644
+--- a/test/dapltest/include/dapl_proto.h
++++ b/test/dapltest/include/dapl_proto.h
+@@ -69,6 +69,8 @@
+ 
+ #define DAT_ERROR(Type,SubType) ((DAT_RETURN)(DAT_CLASS_ERROR | Type | SubType))
+ 
++DAT_UINT32 Transport_Type;
++
+ /*
+  * Prototypes
+  */
+diff --git a/test/dapltest/test/dapl_client.c b/test/dapltest/test/dapl_client.c
+index 21c6e018fc2e..fc1e1fa33522 100644
+--- a/test/dapltest/test/dapl_client.c
++++ b/test/dapltest/test/dapl_client.c
+@@ -61,7 +61,7 @@ DT_cs_Client(Params_t * params_ptr,
+ 	DAT_IA_ADDRESS_PTR server_netaddr = NULL;
+ 	char *module = "DT_cs_Client";
+ 	unsigned int did_connect = 0;
+-	unsigned int retry_cnt = 0;
++	unsigned int retry_cnt = 0, i = 0;
+ 	DAT_DTO_COOKIE dto_cookie;
+ 
+ 	DAT_DTO_COMPLETION_EVENT_DATA dto_stat;
+@@ -304,6 +304,22 @@ DT_cs_Client(Params_t * params_ptr,
+ 	case TRANSACTION_TEST:
+ 		{
+ 			Transaction_Cmd = &pt_ptr->Params.u.Transaction_Cmd;
++			if (Transport_Type == IBV_TRANSPORT_IWARP) {
++				for (i = 0; i < Transaction_Cmd->num_ops; i++) {
++					if (Transaction_Cmd->op[i].transfer_type == 0) {
++						if (Transaction_Cmd->op[i].num_segs > 1) {
++							printf("\t\t ******** ******* ******* *******\n");
++							printf("\t\t iWARP supports only 1 SGE for RDMA READ Operation\n");
++							printf("\t\t Given SGE argument for RDMA READ =  %d\n", Transaction_Cmd->op[i].num_segs);
++							Transaction_Cmd->op[i].num_segs = 1;
++							printf("\t\t Continuing Test with %d SGE for RDMA READ\n", Transaction_Cmd->op[i].num_segs);
++							printf("\t\t ******** ******* ******* *******\n");
++							sleep(2);
++						}
++					}
++				}
++			}
++
+ 			memcpy((void *)buffp,
+ 			       (const void *)Transaction_Cmd,
+ 			       sizeof(Transaction_Cmd_t));

@@ -1,0 +1,58 @@
+diff --git a/dapl/common/dapl_debug.c b/dapl/common/dapl_debug.c
+index d8a3c73..7557b80 100644
+--- a/dapl/common/dapl_debug.c
++++ b/dapl/common/dapl_debug.c
+@@ -53,7 +53,7 @@ void dapl_internal_dbg_log(DAPL_DBG_TYPE type, const char *fmt, ...)
+ 		last_t = start_t;
+ 	}
+ 
+-	if ((type & g_dapl_dbg_type) || (type & g_dapl_dbg_level)) {
++	if (1) {
+ 		if (DAPL_DBG_DEST_STDOUT & g_dapl_dbg_dest) {
+ 			dapl_os_get_time(&current_t);
+ 			delta_t = current_t - last_t;
+diff --git a/dapl/include/dapl_debug.h b/dapl/include/dapl_debug.h
+index ccc06fc..6391d7a 100644
+--- a/dapl/include/dapl_debug.h
++++ b/dapl/include/dapl_debug.h
+@@ -95,13 +95,15 @@ extern int		g_dapl_dbg_mem;
+ 
+ extern void dapl_internal_dbg_log(DAPL_DBG_TYPE type,  const char *fmt,  ...);
+ 
+-#define dapl_log !g_dapl_dbg_type && !g_dapl_dbg_level ? (void) 1 : dapl_internal_dbg_log
+-
+-#if defined(DAPL_DBG)
+-#define dapl_dbg_log !g_dapl_dbg_type && !g_dapl_dbg_level ? (void) 1 : dapl_internal_dbg_log
+-#else
+-#define dapl_dbg_log(...)
+-#endif
++#define dapl_log dapl_internal_dbg_log
++#define dapl_dbg_log dapl_internal_dbg_log
++//#define dapl_log !g_dapl_dbg_type && !g_dapl_dbg_level ? (void) 1 : dapl_internal_dbg_log
++//
++//#if defined(DAPL_DBG)
++//#define dapl_dbg_log !g_dapl_dbg_type && !g_dapl_dbg_level ? (void) 1 : dapl_internal_dbg_log
++//#else
++//#define dapl_dbg_log(...)
++//#endif
+ 
+ #include <dat2/dat_ib_extensions.h>
+ 
+diff --git a/dapl/openib_common/mem.c b/dapl/openib_common/mem.c
+index 34e4234..0737718 100644
+--- a/dapl/openib_common/mem.c
++++ b/dapl/openib_common/mem.c
+@@ -278,8 +278,12 @@ dapls_ib_mr_register(IN DAPL_IA * ia_ptr,
+ 	/* local read is default on IB */
+ 	lmr->mr_handle = ibv_reg_mr(((DAPL_PZ *)lmr->param.pz_handle)->pd_handle,
+ 				    virt_addr, length, ib_access);
+-	if (!lmr->mr_handle)
++	if (!lmr->mr_handle) {
++		dapl_dbg_log(DAPL_DBG_TYPE_UTIL,
++				"#### ibv_reg_mr error no %d ####\n",
++				lmr->mr_handle);
+ 		return (dapl_convert_errno(ENOMEM, "reg_mr"));
++	}
+ 
+ 	lmr->param.lmr_context = lmr->mr_handle->lkey;
+ 	lmr->param.rmr_context = lmr->mr_handle->rkey;

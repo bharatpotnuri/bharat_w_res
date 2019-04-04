@@ -1,0 +1,94 @@
+diff -r 30fa5fdc0d43 linux_libs/libcxgb4/Makefile.am
+--- a/linux_libs/libcxgb4/Makefile.am	Thu Apr 14 08:27:51 2016 -0700
++++ b/linux_libs/libcxgb4/Makefile.am	Mon Apr 25 12:21:09 2016 +0530
+@@ -1,6 +1,6 @@
+ lib_LTLIBRARIES = src/libcxgb4.la
+ 
+-AM_CFLAGS = -g -Wall -D_GNU_SOURCE -DNDEBUG -DOVERFLOW_DETECTION -fno-strict-aliasing
++AM_CFLAGS = -g -O2  -Wall -D_GNU_SOURCE -DOVERFLOW_DETECTION -fno-strict-aliasing
+ 
+ if HAVE_LD_VERSION_SCRIPT
+     cxgb4_version_script = -Wl,--version-script=$(srcdir)/src/cxgb4.map
+diff -r 30fa5fdc0d43 linux_libs/libcxgb4_sock/Makefile.am
+--- a/linux_libs/libcxgb4_sock/Makefile.am	Thu Apr 14 08:27:51 2016 -0700
++++ b/linux_libs/libcxgb4_sock/Makefile.am	Mon Apr 25 12:21:09 2016 +0530
+@@ -1,6 +1,6 @@
+ lib_LTLIBRARIES = src/libcxgb4_sock.la
+ 
+-AM_CFLAGS = -g -Wall -D_GNU_SOURCE -D__USE_GNU -Dlint -I../libcxgb4_udp/include -DCONFIG_FILE=\"$(sysconfdir)/libcxgb4_sock.conf\"  -fno-strict-aliasing
++AM_CFLAGS = -g -O2 -Wall -D_GNU_SOURCE -D__USE_GNU -Dlint -I../libcxgb4_udp/include -DCONFIG_FILE=\"$(sysconfdir)/libcxgb4_sock.conf\"  -fno-strict-aliasing
+ 
+ src_libcxgb4_sock_la_SOURCES = src/sock.c src/route.c src/scanner.c src/parser.c src/endpoint.c
+ src_libcxgb4_sock_la_LDFLAGS = -version-info 1 -ldl -lc -pthread -lcxgb4_udp -libverbs -lrdmacm
+diff -r 30fa5fdc0d43 linux_libs/libcxgb4_sock/src/sock.c
+--- a/linux_libs/libcxgb4_sock/src/sock.c	Thu Apr 14 08:27:51 2016 -0700
++++ b/linux_libs/libcxgb4_sock/src/sock.c	Mon Apr 25 12:21:09 2016 +0530
+@@ -572,9 +572,11 @@ static int drain_scq(struct cs_context *
+ 	int ret = 0;
+ 
+ 	myspin_lock(&c->lock);
++	printf("drain_scq  cs_context %p, c->scq %p\n", c, c->scq);
+ 	while (c->snd_cnt) {
+ 		ret = udp_poll_cq(c->scq, &wc, NULL, 0);
+ 		if (!ret) {
++			printf("drain_scq  poll ret non zero  Opcode %d \n", wc.opcode);
+ 			assert(wc.opcode == IBV_WC_SEND);
+ 			b = (struct cs_buf *)(uintptr_t)wc.wr_id;
+ 			c->snd_cnt -= b->wc_count;
+@@ -632,6 +634,7 @@ static int poll_one_scqe(struct cs_conte
+ 	int full;
+ 
+ 	full = c->snd_cnt == sq_depth;
++	printf("poll_one_scqe  cs_context %p, c->scq %p\n", c, c->scq);
+ 	ret = udp_poll_cq(c->scq, &wc, NULL, 0);
+ 	if (!ret) {
+ 		struct cs_buf *b;
+@@ -679,6 +682,7 @@ static void *sq_thread_routine(void *arg
+ 		 * Pull at least one cqe from the sq if available.  This will
+ 		 * free up sq_coal slots in the sq when in coalescing mode.
+ 		 */
++		printf("sq_thread_routine  cs_context %p, c->scq %p\n", c, c->scq);
+ 		poll_one_scqe(c);
+ 
+ 
+@@ -726,6 +730,7 @@ static void free_um_udp(int s)
+ 		DBG(DBG_UM, "udp_destroy_qp failed: %s\n", strerror(ret));
+ 	}
+ 	socket_funcs.epoll_ctl(sq_epoll_fd, EPOLL_CTL_DEL, c->sq_chan->fd, NULL);
++	printf("free_um_udp  cs_context %p, c->scq %p\n", c, c->scq);
+ 	ret = ibv_destroy_cq(c->scq);
+ 	if (ret) {
+ 		DBG(DBG_UM, "ibv_destroy_cq scq");
+@@ -858,6 +863,7 @@ static int setup_um_udp(struct cs_contex
+ 		return 1;
+ 	}
+ 	c->scq = ibv_create_cq(c->dev->verbs, sq_depth, c, c->sq_chan, 0);
++	printf("create_raw_qp cs_context %p, c->scq %p\n", c, c->scq);
+ 	if (!c->scq) {
+ 		perror("ibv_create_cq");
+ 		return 1;
+diff -r 30fa5fdc0d43 linux_libs/libcxgb4_udp/Makefile.am
+--- a/linux_libs/libcxgb4_udp/Makefile.am	Thu Apr 14 08:27:51 2016 -0700
++++ b/linux_libs/libcxgb4_udp/Makefile.am	Mon Apr 25 12:21:09 2016 +0530
+@@ -2,7 +2,7 @@ INCLUDES = -I$(srcdir)/include
+ 
+ lib_LTLIBRARIES = src/libcxgb4_udp.la
+ 
+-AM_CFLAGS = -g -Wall -D_GNU_SOURCE -DNDEBUG -fno-strict-aliasing
++AM_CFLAGS = -g -O2 -Wall -D_GNU_SOURCE -fno-strict-aliasing
+ 
+ src_libcxgb4_udp_la_CFLAGS = $(AM_CFLAGS)
+ 
+diff -r 30fa5fdc0d43 linux_libs/libcxgb4_udp/src/udp.c
+--- a/linux_libs/libcxgb4_udp/src/udp.c	Thu Apr 14 08:27:51 2016 -0700
++++ b/linux_libs/libcxgb4_udp/src/udp.c	Mon Apr 25 12:21:09 2016 +0530
+@@ -1692,7 +1692,9 @@ int udp_poll_cq(struct ibv_cq *cq, struc
+ 	int nopeek = !(flags & MSG_PEEK);
+ 	int off;
+ 
++	printf("udp_poll_cq 1 cq %p wc %p\n", cq, wc);
+ 	ret = ibv_poll_cq(cq, nopeek ? 1 : -1, wc);
++	printf("udp_poll_cq 2 cq %p wc %p\n", cq, wc);
+ 	if (ret == 0) {
+ 		return ENODATA;
+ 	}

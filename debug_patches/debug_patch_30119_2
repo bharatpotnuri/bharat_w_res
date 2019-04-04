@@ -1,0 +1,45 @@
+diff -r 30fa5fdc0d43 linux_libs/libcxgb4/Makefile.am
+--- a/linux_libs/libcxgb4/Makefile.am	Thu Apr 14 08:27:51 2016 -0700
++++ b/linux_libs/libcxgb4/Makefile.am	Mon Apr 25 12:19:16 2016 +0530
+@@ -1,6 +1,6 @@
+ lib_LTLIBRARIES = src/libcxgb4.la
+ 
+-AM_CFLAGS = -g -Wall -D_GNU_SOURCE -DNDEBUG -DOVERFLOW_DETECTION -fno-strict-aliasing
++AM_CFLAGS = -g -Wall -D_GNU_SOURCE -O2 -DOVERFLOW_DETECTION -fno-strict-aliasing
+ 
+ if HAVE_LD_VERSION_SCRIPT
+     cxgb4_version_script = -Wl,--version-script=$(srcdir)/src/cxgb4.map
+diff -r 30fa5fdc0d43 linux_libs/libcxgb4_sock/Makefile.am
+--- a/linux_libs/libcxgb4_sock/Makefile.am	Thu Apr 14 08:27:51 2016 -0700
++++ b/linux_libs/libcxgb4_sock/Makefile.am	Mon Apr 25 12:19:16 2016 +0530
+@@ -1,6 +1,6 @@
+ lib_LTLIBRARIES = src/libcxgb4_sock.la
+ 
+-AM_CFLAGS = -g -Wall -D_GNU_SOURCE -D__USE_GNU -Dlint -I../libcxgb4_udp/include -DCONFIG_FILE=\"$(sysconfdir)/libcxgb4_sock.conf\"  -fno-strict-aliasing
++AM_CFLAGS = -g -Wall -O2 -D_GNU_SOURCE -D__USE_GNU -Dlint -I../libcxgb4_udp/include -DCONFIG_FILE=\"$(sysconfdir)/libcxgb4_sock.conf\"  -fno-strict-aliasing
+ 
+ src_libcxgb4_sock_la_SOURCES = src/sock.c src/route.c src/scanner.c src/parser.c src/endpoint.c
+ src_libcxgb4_sock_la_LDFLAGS = -version-info 1 -ldl -lc -pthread -lcxgb4_udp -libverbs -lrdmacm
+diff -r 30fa5fdc0d43 linux_libs/libcxgb4_udp/Makefile.am
+--- a/linux_libs/libcxgb4_udp/Makefile.am	Thu Apr 14 08:27:51 2016 -0700
++++ b/linux_libs/libcxgb4_udp/Makefile.am	Mon Apr 25 12:19:16 2016 +0530
+@@ -2,7 +2,7 @@ INCLUDES = -I$(srcdir)/include
+ 
+ lib_LTLIBRARIES = src/libcxgb4_udp.la
+ 
+-AM_CFLAGS = -g -Wall -D_GNU_SOURCE -DNDEBUG -fno-strict-aliasing
++AM_CFLAGS = -g -Wall -D_GNU_SOURCE -O2 -fno-strict-aliasing
+ 
+ src_libcxgb4_udp_la_CFLAGS = $(AM_CFLAGS)
+ 
+diff -r 30fa5fdc0d43 linux_libs/libcxgb4_udp/src/udp.c
+--- a/linux_libs/libcxgb4_udp/src/udp.c	Thu Apr 14 08:27:51 2016 -0700
++++ b/linux_libs/libcxgb4_udp/src/udp.c	Mon Apr 25 12:19:16 2016 +0530
+@@ -1692,6 +1692,7 @@ int udp_poll_cq(struct ibv_cq *cq, struc
+ 	int nopeek = !(flags & MSG_PEEK);
+ 	int off;
+ 
++	assert(cq != NULL);
+ 	ret = ibv_poll_cq(cq, nopeek ? 1 : -1, wc);
+ 	if (ret == 0) {
+ 		return ENODATA;

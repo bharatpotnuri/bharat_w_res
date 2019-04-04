@@ -1,0 +1,741 @@
+# HG changeset patch
+# User Steve Wise <swise@opengridcomputing.com>
+# Date 1448904622 28800
+# Node ID 721e643068a912c967397a19232f10e0d569b4ea
+# Parent  bb8da420ec6270bb52fb266afd97a9a86ef0b98b
+iw_cxgb4: debug for 28666 V3
+
+diff --git a/dev/T4/linux/drv/cxgb4_main.c b/dev/T4/linux/drv/cxgb4_main.c
+--- a/dev/T4/linux/drv/cxgb4_main.c
++++ b/dev/T4/linux/drv/cxgb4_main.c
+@@ -3246,6 +3246,136 @@ err:
+ }
+ EXPORT_SYMBOL(cxgb4_read_tpte);
+ 
++int cxgb4_read_rqt(struct net_device *dev, u32 addr, int count, __be32 *rqt)
++{
++	adapter_t *adap;
++	u32 memtype, memaddr;
++	u32 edc0_size, edc1_size, mc0_size, mc1_size;
++	u32 edc0_end, edc1_end, mc0_end, mc1_end;
++	int ret;
++
++	adap = netdev2adap(dev);
++
++
++	/*
++	 * Figure out where the addr lands in the crazy Memory Type/Address
++	 * scheme.  This code assumes that the memory is laid out starting at
++	 * addr 0 with no breaks as: EDC0, EDC1, MC0, MC1.  All cards have
++	 * both EDC0 and EDC1.  Some cards will have neither MC0 nor MC1, most
++	 * cards have MC0, and some have both MC0 and MC1.
++	 */
++	edc0_size = G_EDRAM0_SIZE(t4_read_reg(adap, A_MA_EDRAM0_BAR)) << 20;
++	edc1_size = G_EDRAM0_SIZE(t4_read_reg(adap, A_MA_EDRAM1_BAR)) << 20;
++	mc0_size = G_EXT_MEM0_SIZE(t4_read_reg(adap, A_MA_EXT_MEMORY0_BAR)) << 20;
++
++	edc0_end = edc0_size;
++	edc1_end = edc0_end + edc1_size;
++	mc0_end = edc1_end + mc0_size;
++
++	if (addr < edc0_end) {
++		memtype = MEM_EDC0;
++		memaddr = addr;
++	} else if (addr < edc1_end) {
++		memtype = MEM_EDC1;
++		memaddr = addr - edc0_end;
++	} else {
++		if (addr < mc0_end) {
++			memtype = MEM_MC0;
++			memaddr = addr - edc1_end;
++		} else if (is_t4(adap->params.chip)) {
++			/* T4 only has a single memory channel */
++			goto err;
++		} else {
++			mc1_size = G_EXT_MEM0_SIZE(t4_read_reg(adap, A_MA_EXT_MEMORY1_BAR)) << 20;
++			mc1_end = mc0_end + mc1_size;
++
++			if (addr < mc1_end) {
++				memtype = MEM_MC1;
++				memaddr = addr - mc0_end;
++			} else {
++				/* addr beyond the end of any memory */
++				goto err;
++			}
++		}
++	}
++
++	spin_lock(&adap->win0_lock);
++	ret = t4_memory_rw(adap, MEMWIN_NIC, memtype, memaddr, 64 * count, rqt, T4_MEMORY_READ);
++	spin_unlock(&adap->win0_lock);
++	return ret;
++
++ err:
++	dev_err(adap->pdev_dev, "addr %#x out of range\n", addr);
++	return -EINVAL;
++}
++EXPORT_SYMBOL(cxgb4_read_rqt);
++
++int cxgb4_read_tcb(struct net_device *dev, u32 tid, __be32 *tcb)
++{
++	adapter_t *adap;
++	u32 offset, memtype, memaddr;
++	u32 edc0_size, edc1_size, mc0_size, mc1_size;
++	u32 edc0_end, edc1_end, mc0_end, mc1_end;
++	int ret;
++
++	adap = netdev2adap(dev);
++
++	offset = t4_read_reg(adap, A_TP_CMM_TCB_BASE) + tid * TCB_SIZE;
++
++	/*
++	 * Figure out where the offset lands in the crazy Memory Type/Address
++	 * scheme.  This code assumes that the memory is laid out starting at
++	 * offset 0 with no breaks as: EDC0, EDC1, MC0, MC1.  All cards have
++	 * both EDC0 and EDC1.  Some cards will have neither MC0 nor MC1, most
++	 * cards have MC0, and some have both MC0 and MC1.
++	 */
++	edc0_size = G_EDRAM0_SIZE(t4_read_reg(adap, A_MA_EDRAM0_BAR)) << 20;
++	edc1_size = G_EDRAM0_SIZE(t4_read_reg(adap, A_MA_EDRAM1_BAR)) << 20;
++	mc0_size = G_EXT_MEM0_SIZE(t4_read_reg(adap, A_MA_EXT_MEMORY0_BAR)) << 20;
++
++	edc0_end = edc0_size;
++	edc1_end = edc0_end + edc1_size;
++	mc0_end = edc1_end + mc0_size;
++
++	if (offset < edc0_end) {
++		memtype = MEM_EDC0;
++		memaddr = offset;
++	} else if (offset < edc1_end) {
++		memtype = MEM_EDC1;
++		memaddr = offset - edc0_end;
++	} else {
++		if (offset < mc0_end) {
++			memtype = MEM_MC0;
++			memaddr = offset - edc1_end;
++		} else if (is_t4(adap->params.chip)) {
++			/* T4 only has a single memory channel */
++			goto err;
++		} else {
++			mc1_size = G_EXT_MEM0_SIZE(t4_read_reg(adap, A_MA_EXT_MEMORY1_BAR)) << 20;
++			mc1_end = mc0_end + mc1_size;
++
++			if (offset < mc1_end) {
++				memtype = MEM_MC1;
++				memaddr = offset - mc0_end;
++			} else {
++				/* offset beyond the end of any memory */
++				goto err;
++			}
++		}
++	}
++
++	spin_lock(&adap->win0_lock);
++	ret = t4_memory_rw(adap, 0, memtype, memaddr, TCB_SIZE, tcb, T4_MEMORY_READ);
++	spin_unlock(&adap->win0_lock);
++	return ret;
++
++ err:
++	dev_err(adap->pdev_dev, "tid %#x, offset %#x out of range\n",
++		tid, offset);
++	return -EINVAL;
++}
++EXPORT_SYMBOL(cxgb4_read_tcb);
++
+ static struct pci_driver cxgb4_driver;
+ 
+ static void check_neigh_update(struct neighbour *neigh)
+diff --git a/dev/T4/linux/drv/cxgb4_ofld.h b/dev/T4/linux/drv/cxgb4_ofld.h
+--- a/dev/T4/linux/drv/cxgb4_ofld.h
++++ b/dev/T4/linux/drv/cxgb4_ofld.h
+@@ -492,4 +492,7 @@ static inline void cxgb4_free_ppods(unsi
+ 	bitmap_clear(bmap, tag, n);
+ }
+ 
++int cxgb4_read_tcb(struct net_device *dev, u32 tid, __be32 *tcb);
++int cxgb4_read_rqt(struct net_device *dev, u32 addr, int count, __be32 *rqt);
++
+ #endif  /* !__CXGB4_OFLD_H */
+diff --git a/dev/T4/linux/iw_cxgb4/cm.c b/dev/T4/linux/iw_cxgb4/cm.c
+--- a/dev/T4/linux/iw_cxgb4/cm.c
++++ b/dev/T4/linux/iw_cxgb4/cm.c
+@@ -3339,6 +3339,22 @@ static int close_con_rpl(struct c4iw_dev
+ 	return 0;
+ }
+ 
++static void dump_tcb(struct c4iw_dev *dev, u32 tid)
++{
++	__be32 tcb[TCB_SIZE];
++	int ret, i;
++
++	ret = cxgb4_read_tcb(dev->rdev.lldi.ports[0], tid, tcb);
++	if (ret) {
++		printk(KERN_ERR MOD "Cannot read tcb %u ret %d\n", tid, ret);
++		return;
++	}
++	for (i=0; i < (TCB_SIZE/sizeof(__be32)); i+= 4)
++		printk(KERN_ERR "%04u: %08x %08x %08x %08x\n",
++			i, ntohl(tcb[i]), ntohl(tcb[i+1]),
++			ntohl(tcb[i+2]), ntohl(tcb[i+3]));
++}
++
+ static int terminate(struct c4iw_dev *dev, struct sk_buff *skb)
+ {
+ 	struct cpl_rdma_terminate *rpl = cplhdr(skb);
+@@ -3348,8 +3364,19 @@ static int terminate(struct c4iw_dev *de
+ 
+ 	ep = get_ep_from_tid(dev, tid);
+ 	if (ep && ep->com.qp) {
+-		printk(KERN_WARNING MOD "TERM received tid %u qpid %u\n", tid,
+-		       ep->com.qp->wq.sq.qid);
++		struct sockaddr_in *lsin = (struct sockaddr_in *)
++			&ep->com.qp->ep->com.local_addr;
++		struct sockaddr_in *rsin = (struct sockaddr_in *)
++			&ep->com.qp->ep->com.remote_addr;
++
++		printk(KERN_ERR MOD "BUG21439 TERM received device %s qpid %u qp_state %u ep_state %u tid %u %pI4:%u<->%pI4:%u\n",
++			pci_name(dev->rdev.lldi.pdev),
++			ep->com.qp->wq.sq.qid, ep->com.qp->attr.state, ep->com.state, tid,
++			&lsin->sin_addr,
++			ntohs(lsin->sin_port),
++			&rsin->sin_addr,
++			ntohs(rsin->sin_port));
++		dump_tcb(dev, tid);
+ 		attrs.next_state = C4IW_QP_STATE_TERMINATE;
+ 		c4iw_modify_rc_qp(ep->com.qp, C4IW_QP_ATTR_NEXT_STATE, &attrs,
+ 				  1);
+diff --git a/dev/T4/linux/iw_cxgb4/device.c b/dev/T4/linux/iw_cxgb4/device.c
+--- a/dev/T4/linux/iw_cxgb4/device.c
++++ b/dev/T4/linux/iw_cxgb4/device.c
+@@ -882,6 +882,50 @@ static const struct file_operations fids
+ 	.llseek  = seq_lseek,
+ };
+ 
++static int tpte_log_show(struct seq_file *seq, void *v)
++{
++	struct c4iw_dev *dev = seq->private;
++	struct tpte_history *th;
++	int idx, end;
++
++	idx = atomic_read(&dev->rdev.tptes_idx) & TPTE_HISTORY_SIZE_MASK;
++	end = idx;
++	th = &dev->rdev.tptes[idx];
++	do {
++		if (th->op != TPTE_EMPTY)
++			seq_printf(seq, "%u: sec %lu nsec %lu op %s stag_idx 0x%x "
++				" valid %u key 0x%x state %u pdid %u perm 0x%x ps %u len 0x%llx va 0x%llx\n",
++				idx, th->ts.tv_sec, th->ts.tv_nsec,
++				th->op == TPTE_ADD ? "ADD" : "DEL", th->stag_idx,
++				G_FW_RI_TPTE_VALID(ntohl(th->tpte.valid_to_pdid)),
++				G_FW_RI_TPTE_STAGKEY(ntohl(th->tpte.valid_to_pdid)),
++				G_FW_RI_TPTE_STAGSTATE(ntohl(th->tpte.valid_to_pdid)),
++				G_FW_RI_TPTE_PDID(ntohl(th->tpte.valid_to_pdid)),
++				G_FW_RI_TPTE_PERM(ntohl(th->tpte.locread_to_qpid)),
++				G_FW_RI_TPTE_PS(ntohl(th->tpte.locread_to_qpid)),
++				((u64)ntohl(th->tpte.len_hi) << 32) | ntohl(th->tpte.len_lo),
++				((u64)ntohl(th->tpte.va_hi) << 32) | ntohl(th->tpte.va_lo_fbo));
++		idx++;
++		if (idx == TPTE_HISTORY_SIZE)
++			idx = 0;
++		th = &dev->rdev.tptes[idx];
++	} while (idx != end);
++	return 0;
++}
++
++static int tpte_log_open(struct inode *inode, struct file *file)
++{
++	return single_open(file, tpte_log_show, inode->i_private);
++}
++
++static const struct file_operations tpte_log_debugfs_fops = {
++	.owner   = THIS_MODULE,
++	.open    = tpte_log_open,
++	.release = single_release,
++	.read 	 = seq_read,
++	.llseek  = seq_lseek,
++};
++
+ static int setup_debugfs(struct c4iw_dev *devp)
+ {
+ 	struct dentry *de;
+@@ -920,6 +964,8 @@ static int setup_debugfs(struct c4iw_dev
+ 		if (de && de->d_inode)
+ 			de->d_inode->i_size = 4096;
+ 	}
++	debugfs_create_file("tpte_log", S_IWUSR, devp->debugfs_root,
++			    (void *)devp, &tpte_log_debugfs_fops);
+ 
+ 	return 0;
+ }
+@@ -1079,6 +1125,9 @@ static int c4iw_rdev_open(struct c4iw_rd
+ 			       "Logging disabled\n");
+ 		}
+ 	}
++	rdev->tptes = kzalloc(TPTE_HISTORY_SIZE * sizeof *rdev->tptes, GFP_KERNEL);
++	if (!rdev->tptes) 
++		pr_err(MOD "error allocating tpte log. Logging disabled\n");
+ 
+ 	rdev->status_page->db_off = 0;
+ 
+@@ -1097,6 +1146,8 @@ err0:
+ 
+ static void c4iw_rdev_close(struct c4iw_rdev *rdev)
+ {
++	if (rdev->tptes)
++		kfree(rdev->tptes);
+ 	if (rdev->wr_log)
+ 		kfree(rdev->wr_log);
+ 	dma_free_coherent(&rdev->lldi.pdev->dev, PAGE_SIZE, rdev->status_page,
+diff --git a/dev/T4/linux/iw_cxgb4/ev.c b/dev/T4/linux/iw_cxgb4/ev.c
+--- a/dev/T4/linux/iw_cxgb4/ev.c
++++ b/dev/T4/linux/iw_cxgb4/ev.c
+@@ -36,6 +36,39 @@
+ 
+ #include "iw_cxgb4.h"
+ 
++static int dump_stag(int id, void *p, void *data)
++{
++	struct c4iw_dev *devp = data;
++	struct fw_ri_tpte tpte;
++	int ret;
++
++	ret = cxgb4_read_tpte(devp->rdev.lldi.ports[0], (u32)id<<8,
++			      (__be32 *)&tpte);
++	if (ret) {
++		pr_err(MOD "%s cxgb4_read_tpte err %d\n", __func__, ret);
++		return 0;
++	}
++	pr_err("stag: idx 0x%x valid %d key 0x%x state %d pdid %d "
++	      "perm 0x%x ps %d len 0x%llx va 0x%llx\n",
++	      (u32)id<<8,
++	      G_FW_RI_TPTE_VALID(ntohl(tpte.valid_to_pdid)),
++	      G_FW_RI_TPTE_STAGKEY(ntohl(tpte.valid_to_pdid)),
++	      G_FW_RI_TPTE_STAGSTATE(ntohl(tpte.valid_to_pdid)),
++	      G_FW_RI_TPTE_PDID(ntohl(tpte.valid_to_pdid)),
++	      G_FW_RI_TPTE_PERM(ntohl(tpte.locread_to_qpid)),
++	      G_FW_RI_TPTE_PS(ntohl(tpte.locread_to_qpid)),
++	      ((u64)ntohl(tpte.len_hi) << 32) | ntohl(tpte.len_lo),
++	      ((u64)ntohl(tpte.va_hi) << 32) | ntohl(tpte.va_lo_fbo));
++	return 0;
++}
++
++static void dump_all_stags(struct c4iw_dev *devp)
++{
++	spin_lock_irq(&devp->lock);
++	idr_for_each(&devp->mmidr, dump_stag, devp);
++	spin_unlock_irq(&devp->lock);
++}
++
+ static void print_tpte(struct c4iw_dev *dev, u32 stag)
+ {
+ 	int ret;
+@@ -61,10 +94,117 @@ static void print_tpte(struct c4iw_dev *
+ 	       ((u64)ntohl(tpte.va_hi) << 32) | ntohl(tpte.va_lo_fbo));
+ }
+ 
+-static void dump_err_cqe(struct c4iw_dev *dev, struct t4_cqe *err_cqe)
++static void dump_tcb(struct c4iw_dev *dev, u32 tid, u32 *msn, u32 *wr_ptr, u32 *rq_start)
++{
++	__be32 tcb[TCB_SIZE];
++	int ret, i;
++	u64 v1, v2;
++
++	ret = cxgb4_read_tcb(dev->rdev.lldi.ports[0], tid, tcb);
++	if (ret) {
++		printk(KERN_ERR MOD "Cannot read tcb %u ret %d\n", tid, ret);
++		return;
++	}
++	for (i=0; i < (TCB_SIZE/sizeof(__be32)); i+= 4)
++		printk(KERN_ERR "%04u: %08x %08x %08x %08x\n",
++			i, ntohl(tcb[i]), ntohl(tcb[i+1]),
++			ntohl(tcb[i+2]), ntohl(tcb[i+3]));
++	v1 = be64_to_cpu(*(__be64 *)&tcb[28]);
++	v2 = (__be64)be32_to_cpu(tcb[28]);
++	pr_err("rq_msn %llu write_ptr %llu\n",
++	       ((v1) >> S_TCB_RQ_MSN) & M_TCB_RQ_MSN, 
++	       ((v2) >> S_TCB_RQ_WRITE_PTR) & M_TCB_RQ_WRITE_PTR);
++	if (msn)
++		*msn = ((v1) >> S_TCB_RQ_MSN) & M_TCB_RQ_MSN;
++	if (wr_ptr)
++		*wr_ptr = ((v2) >> S_TCB_RQ_WRITE_PTR) & M_TCB_RQ_WRITE_PTR;
++	if (rq_start)
++		*rq_start = ((v1) >> S_TCB_RQ_START) & M_TCB_RQ_START;
++}
++
++struct fw_ri_rqe {
++	__be32 stag;
++	__be32 len;
++	__be32 va_hi;
++	__be32 va_lo;
++};
++
++struct fw_ri_rqte {
++	struct fw_ri_rqe sge[4];
++};
++
++static void dump_rqes(struct c4iw_dev *dev, struct c4iw_qp *qhp)
++{
++	struct fw_ri_rqte *rqte;
++	int ret;
++	int i;
++	u32 msn, wr_ptr, rq_start;
++
++	rqte = kmalloc(qhp->wq.rq.rqt_size * sizeof *rqte, GFP_ATOMIC);
++	if (!rqte) {
++		pr_err("%s cannot allocate rqte memory\n", __func__);
++		return;
++	}
++
++	if (qhp->ep) {
++		struct sockaddr_in *lsin = (struct sockaddr_in *)
++			&qhp->ep->com.local_addr;
++		struct sockaddr_in *rsin = (struct sockaddr_in *)
++			&qhp->ep->com.remote_addr;
++		printk(KERN_ERR MOD "Device %s qp_state %u ep_state %u history 0x%lx flags 0x%lx tid %u %pI4:%u<->%pI4:%u\n",
++			pci_name(dev->rdev.lldi.pdev),
++			qhp->attr.state, qhp->ep->com.state, qhp->ep->com.history, qhp->ep->com.flags, qhp->ep->hwtid,
++			&lsin->sin_addr,
++			ntohs(lsin->sin_port),
++			&rsin->sin_addr,
++			ntohs(rsin->sin_port));
++		dump_tcb(dev, qhp->ep->hwtid, &msn, &wr_ptr, &rq_start);
++	}
++
++	ret = cxgb4_read_rqt(dev->rdev.lldi.ports[0], qhp->wq.rq.rqt_hwaddr, qhp->wq.rq.rqt_size, (__be32 *)rqte);
++	if (ret) {
++		printk(KERN_ERR MOD "%s cxgb4_read_rqt err %d\n", __func__,
++		       ret);
++		return; 
++	}
++
++	pr_err(MOD "rqt_hwaddr 0x%x rqt_size %d, tcb.rq_msn %d, tcb.rq_write_ptr %d tcb.rq_start 0x%x\n", qhp->wq.rq.rqt_hwaddr, qhp->wq.rq.rqt_size,
++		msn, wr_ptr, rq_start);
++	for (i = 0; i < qhp->wq.rq.rqt_size; i++) {
++		int j;
++
++		/* for (j = 0; j < 4; j++) { */
++		for (j = 0; j < 1; j++) {
++			u32 stag = ntohl(rqte[i].sge[j].stag);
++			struct fw_ri_tpte tpte;
++			
++			ret = cxgb4_read_tpte(dev->rdev.lldi.ports[0], stag, (__be32 *)&tpte);
++			if (ret) {
++				printk(KERN_ERR MOD "%s cxgb4_read_tpte err %d\n", __func__, ret);
++				return; 
++			}
++			pr_err(MOD "rqt[%u].%u stag 0x%x valid %d key 0x%x state %d pdid %d "
++			       "perm 0x%x ps %d len 0x%llx va 0x%llx %s\n",
++			       i, j, stag,
++			       G_FW_RI_TPTE_VALID(ntohl(tpte.valid_to_pdid)),
++			       G_FW_RI_TPTE_STAGKEY(ntohl(tpte.valid_to_pdid)),
++			       G_FW_RI_TPTE_STAGSTATE(ntohl(tpte.valid_to_pdid)),
++			       G_FW_RI_TPTE_PDID(ntohl(tpte.valid_to_pdid)),
++			       G_FW_RI_TPTE_PERM(ntohl(tpte.locread_to_qpid)),
++			       G_FW_RI_TPTE_PS(ntohl(tpte.locread_to_qpid)),
++			       ((u64)ntohl(tpte.len_hi) << 32) | ntohl(tpte.len_lo),
++			       ((u64)ntohl(tpte.va_hi) << 32) | ntohl(tpte.va_lo_fbo),
++			       (i == msn && j == 0) ? " <-MSN" : ((i == wr_ptr && j == 0) ? " <-wr_ptr" : ""));
++		}
++	}
++}
++
++static void dump_err_cqe(struct c4iw_dev *dev, struct c4iw_qp *qhp, struct t4_cqe *err_cqe)
+ {
+ 	__be64 *p = (void *)err_cqe;
+ 	
++	dev->rdev.stop_tpte_log = 1;
++
+ 	printk(KERN_ERR MOD "AE qpid %d opcode %d status 0x%x "
+ 	       "type %d len 0x%x wrid.hi 0x%x wrid.lo 0x%x\n",
+ 	       CQE_QPID(err_cqe), CQE_OPCODE(err_cqe),
+@@ -83,6 +223,10 @@ static void dump_err_cqe(struct c4iw_dev
+ 				 CQE_OPCODE(err_cqe) == FW_RI_READ_RESP))
+ 		print_tpte(dev, CQE_WRID_STAG(err_cqe));
+ 
++	if (RQ_TYPE(err_cqe) && CQE_OPCODE(err_cqe) == FW_RI_SEND) {
++		dump_rqes(dev, qhp);
++		dump_all_stags(dev);
++	}
+ }
+ 
+ static void post_qp_event(struct c4iw_dev *dev, struct c4iw_cq *chp,
+@@ -94,7 +238,7 @@ static void post_qp_event(struct c4iw_de
+ 	struct c4iw_qp_attributes attrs;
+ 	unsigned long flag;
+ 
+-	dump_err_cqe(dev, err_cqe);
++	dump_err_cqe(dev, qhp, err_cqe);
+ 
+ 	if (qhp->attr.state == C4IW_QP_STATE_RTS) {
+ 		attrs.next_state = C4IW_QP_STATE_TERMINATE;
+@@ -158,6 +302,24 @@ void c4iw_ev_dispatch(struct c4iw_dev *d
+ 	/* Bad incoming write */
+ 	if (RQ_TYPE(err_cqe) &&
+ 	    (CQE_OPCODE(err_cqe) == FW_RI_RDMA_WRITE)) {
++		if (qhp->ep) {
++			struct sockaddr_in *lsin = (struct sockaddr_in *)
++				&qhp->ep->com.local_addr;
++			struct sockaddr_in *rsin = (struct sockaddr_in *)
++				&qhp->ep->com.remote_addr;
++			printk(KERN_ERR MOD "BUG21439 AE: device %s opcode %u status %u qpid %u qp_state %u ep_state %u tid %u %pI4:%u<->%pI4:%u\n",
++				pci_name(dev->rdev.lldi.pdev), CQE_OPCODE(err_cqe),
++				CQE_STATUS(err_cqe), CQE_QPID(err_cqe),
++				qhp->attr.state, qhp->ep->com.state, qhp->ep->hwtid,
++				&lsin->sin_addr,
++				ntohs(lsin->sin_port),
++				&rsin->sin_addr,
++				ntohs(rsin->sin_port));
++			dump_tcb(dev, qhp->ep->hwtid, NULL, NULL, NULL);
++		} else
++			printk(KERN_ERR MOD "BUG21439 AE: device %s opcode %u status %u qpid %u (no ep)\n",
++				pci_name(dev->rdev.lldi.pdev), CQE_OPCODE(err_cqe),
++				CQE_STATUS(err_cqe), CQE_QPID(err_cqe));
+ 		post_qp_event(dev, chp, qhp, err_cqe, IB_EVENT_QP_REQ_ERR);
+ 		goto done;
+ 	}
+diff --git a/dev/T4/linux/iw_cxgb4/iw_cxgb4.h b/dev/T4/linux/iw_cxgb4/iw_cxgb4.h
+--- a/dev/T4/linux/iw_cxgb4/iw_cxgb4.h
++++ b/dev/T4/linux/iw_cxgb4/iw_cxgb4.h
+@@ -169,6 +169,22 @@ struct wr_log_entry {
+ 	u8 valid;
+ };
+ 
++enum {
++	TPTE_EMPTY = 0,
++	TPTE_ADD = 1,
++	TPTE_DEL = 2,
++	TPTE_HISTORY_SIZE_SHIFT = 14,
++	TPTE_HISTORY_SIZE = 1<<TPTE_HISTORY_SIZE_SHIFT,
++	TPTE_HISTORY_SIZE_MASK =  TPTE_HISTORY_SIZE - 1,
++};
++
++struct tpte_history {
++	int op;
++	u32 stag_idx;
++	struct timespec ts;
++	struct fw_ri_tpte tpte;
++};
++
+ struct c4iw_rdev {
+ 	struct c4iw_resource resource;
+ 	u32 qpmask;
+@@ -196,6 +212,9 @@ struct c4iw_rdev {
+ 	struct mutex blocker_lock;
+ 	struct list_head ep_glist;
+ 	struct mutex ep_glist_lock;
++	struct tpte_history *tptes;
++	atomic_t tptes_idx;
++	int stop_tpte_log;
+ };
+ 
+ static inline int c4iw_onchip_pa(struct c4iw_rdev *rdev, u64 pa)
+@@ -673,6 +692,8 @@ struct c4iw_ucontext {
+ 	u32 key;
+ 	spinlock_t mmap_lock;
+ 	struct list_head mmaps;
++	struct ib_pd *foo_pd;
++	struct ib_mr *foo_mr;
+ };
+ 
+ static inline struct c4iw_ucontext *to_c4iw_ucontext(struct ib_ucontext *c)
+@@ -1264,4 +1285,6 @@ extern int wd_disable_inaddr_any;
+ #define IB_QPT_RAW_ETH 8
+ #endif
+ 
++extern int c4iw_init_rqt_mem(struct c4iw_rdev *rdev, u32 lkey, u32 rqt_hwaddr, u32 rqt_size);
++
+ #endif
+diff --git a/dev/T4/linux/iw_cxgb4/mem.c b/dev/T4/linux/iw_cxgb4/mem.c
+--- a/dev/T4/linux/iw_cxgb4/mem.c
++++ b/dev/T4/linux/iw_cxgb4/mem.c
+@@ -245,6 +245,103 @@ static int write_adapter_mem(struct c4iw
+ 		return _c4iw_write_mem_inline(rdev, addr, len, data, skb);
+ }
+ 
++struct fw_ri_rqe {
++	__be32 stag;
++	__be32 len;
++	__be32 va_hi;
++	__be32 va_lo;
++};
++
++struct fw_ri_rqte {
++	struct fw_ri_rqe sge[4];
++};
++
++int c4iw_init_rqt_mem(struct c4iw_rdev *rdev, u32 lkey, u32 rqt_hwaddr, u32 rqt_size)
++{
++	struct fw_ri_rqte rqe;
++	int err = 0;
++	int i;
++	
++	memset(&rqe, 0, sizeof rqe);
++
++	for (i = 0; i < 4; i ++) {
++		rqe.sge[i].stag = htonl(lkey);
++		rqe.sge[i].len = htonl(65536);
++		rqe.sge[i].va_hi = htonl(i + 1);
++	}
++
++	for (i = 0 ; i < rqt_size ; i++) {
++		err = write_adapter_mem(rdev, rqt_hwaddr >> 5, sizeof rqe, &rqe, NULL);
++		if (err)
++			break;
++		rqt_hwaddr += 64;
++	}
++	if (err)
++		pr_err("%s err %d\n", __func__, err);
++
++	return err;
++}
++
++static void log_tpte(struct c4iw_rdev *rdev, int op, u32 stag_idx, struct fw_ri_tpte *tpte)
++{
++	struct tpte_history *th;
++	struct timespec ts;
++	unsigned idx;
++	
++	if (!rdev->tptes || rdev->stop_tpte_log)
++		return;
++	idx = (atomic_inc_return(&rdev->tptes_idx) - 1) & TPTE_HISTORY_SIZE_MASK;
++	th = &rdev->tptes[idx];
++	getnstimeofday(&ts);
++	th->op = op;
++	th->ts = ts;
++	th->stag_idx = stag_idx;
++	memcpy(&th->tpte, tpte, sizeof *tpte);
++}
++
++#if 0
++static void validate_tpte(struct c4iw_rdev *rdev, u32 stag, struct fw_ri_tpte *tpte)
++{
++	struct fw_ri_tpte read_tpte;
++	int ret;
++	
++	ret = cxgb4_read_tpte(rdev->lldi.ports[0], stag, (__be32 *)&read_tpte);
++	if (ret) {
++		printk(KERN_ERR MOD "%s cxgb4_read_tpte err %d\n", __func__,
++		       ret);
++		return; 
++	}
++	if (memcmp(tpte, &read_tpte, sizeof *tpte)) {
++		pr_err(MOD "tpte miscompare stag 0x%x\n", stag);
++
++		printk(KERN_ERR MOD "inmem: stag idx 0x%x valid %d key 0x%x state %d pdid %d "
++		       "perm 0x%x ps %d len 0x%llx va 0x%llx\n",
++		       stag & 0xffffff00,
++		       G_FW_RI_TPTE_VALID(ntohl(read_tpte.valid_to_pdid)),
++		       G_FW_RI_TPTE_STAGKEY(ntohl(read_tpte.valid_to_pdid)),
++		       G_FW_RI_TPTE_STAGSTATE(ntohl(read_tpte.valid_to_pdid)),
++		       G_FW_RI_TPTE_PDID(ntohl(read_tpte.valid_to_pdid)),
++		       G_FW_RI_TPTE_PERM(ntohl(read_tpte.locread_to_qpid)),
++		       G_FW_RI_TPTE_PS(ntohl(read_tpte.locread_to_qpid)),
++		       ((u64)ntohl(read_tpte.len_hi) << 32) | ntohl(read_tpte.len_lo),
++		       ((u64)ntohl(read_tpte.va_hi) << 32) | ntohl(read_tpte.va_lo_fbo));
++
++		printk(KERN_ERR MOD "local: stag idx 0x%x valid %d key 0x%x state %d pdid %d "
++		       "perm 0x%x ps %d len 0x%llx va 0x%llx\n",
++		       stag & 0xffffff00,
++		       G_FW_RI_TPTE_VALID(ntohl(tpte->valid_to_pdid)),
++		       G_FW_RI_TPTE_STAGKEY(ntohl(tpte->valid_to_pdid)),
++		       G_FW_RI_TPTE_STAGSTATE(ntohl(tpte->valid_to_pdid)),
++		       G_FW_RI_TPTE_PDID(ntohl(tpte->valid_to_pdid)),
++		       G_FW_RI_TPTE_PERM(ntohl(tpte->locread_to_qpid)),
++		       G_FW_RI_TPTE_PS(ntohl(tpte->locread_to_qpid)),
++		       ((u64)ntohl(tpte->len_hi) << 32) | ntohl(tpte->len_lo),
++		       ((u64)ntohl(tpte->va_hi) << 32) | ntohl(tpte->va_lo_fbo));
++		BUG_ON(1);
++	}
++}
++#endif
++
+ /*
+  * Build and write a TPT entry.
+  * IN: stag key, pdid, perm, bind_enabled, zbva, to, len, page_size,
+@@ -308,6 +405,12 @@ static int write_tpt_entry(struct c4iw_r
+ 	err = write_adapter_mem(rdev, stag_idx +
+ 				(rdev->lldi.vr->stag.start >> 5),
+ 				sizeof(tpt), &tpt, skb);
++	if (!err) {
++		log_tpte(rdev, reset_tpt_entry ? TPTE_DEL : TPTE_ADD, stag_idx, &tpt);
++#if 0
++		validate_tpte(rdev, *stag, &tpt);
++#endif
++	}
+ 
+ 	if (reset_tpt_entry) {
+ 		c4iw_put_resource(&rdev->resource.tpt_table, stag_idx);
+@@ -689,7 +792,10 @@ struct ib_mr *c4iw_get_dma_mr(struct ib_
+ 
+ 	mhp->rhp = rhp;
+ 	mhp->attr.pdid = php->pdid;
+-	mhp->attr.perms = c4iw_ib_to_tpt_access(acc);
++	if (acc == -1)
++		mhp->attr.perms = 0;
++	else
++		mhp->attr.perms = c4iw_ib_to_tpt_access(acc);
+ 	mhp->attr.mw_bind_enable = (acc&IB_ACCESS_MW_BIND) == IB_ACCESS_MW_BIND;
+ 	mhp->attr.zbva = 0;
+ 	mhp->attr.va_fbo = 0;
+diff --git a/dev/T4/linux/iw_cxgb4/provider.c b/dev/T4/linux/iw_cxgb4/provider.c
+--- a/dev/T4/linux/iw_cxgb4/provider.c
++++ b/dev/T4/linux/iw_cxgb4/provider.c
+@@ -127,6 +127,8 @@ static int c4iw_process_mad(struct ib_de
+ 	return -ENOSYS;
+ }
+ 
++static int c4iw_deallocate_pd(struct ib_pd *pd);
++
+ static int c4iw_dealloc_ucontext(struct ib_ucontext *context)
+ {
+ 	struct c4iw_dev *rhp = to_c4iw_dev(context->device);
+@@ -134,6 +136,11 @@ static int c4iw_dealloc_ucontext(struct 
+ 	struct c4iw_mm_entry *mm, *tmp;
+ 
+ 	PDBG("%s context %p\n", __func__, context);
++#if 0
++	pr_info(MOD "dealloc context %p foo_pd %d foo_dma_mr lkey 0x%x\n", ucontext, ((struct c4iw_pd *)ucontext->foo_pd)->pdid, ucontext->foo_mr->lkey);
++	c4iw_deallocate_pd(ucontext->foo_pd);
++	c4iw_dereg_mr(ucontext->foo_mr);
++#endif	
+ 	list_for_each_entry_safe(mm, tmp, &ucontext->mmaps, entry)
+ 		kfree(mm);
+ 	c4iw_release_dev_ucontext(&rhp->rdev, &ucontext->uctx);
+@@ -141,6 +148,10 @@ static int c4iw_dealloc_ucontext(struct 
+ 	return 0;
+ }
+ 
++static struct ib_pd *c4iw_allocate_pd(struct ib_device *ibdev,
++				      struct ib_ucontext *context,
++				      struct ib_udata *udata);
++
+ static struct ib_ucontext *c4iw_alloc_ucontext(struct ib_device *ibdev,
+ 					       struct ib_udata *udata)
+ {
+@@ -190,6 +201,11 @@ static struct ib_ucontext *c4iw_alloc_uc
+ 		mm->len = PAGE_SIZE;
+ 		insert_mmap(context, mm);
+ 	}
++#if 0	
++	context->foo_pd = c4iw_allocate_pd(ibdev, NULL, NULL);
++	context->foo_mr = c4iw_get_dma_mr(context->foo_pd, -1);
++	pr_info(MOD "alloc context %p foo_pd %d foo_dma_mr lkey 0x%x\n", context, ((struct c4iw_pd *)context->foo_pd)->pdid, context->foo_mr->lkey);
++#endif
+ 	return &context->ibucontext;
+ err_mm:
+ 	kfree(mm);
+diff --git a/dev/T4/linux/iw_cxgb4/qp.c b/dev/T4/linux/iw_cxgb4/qp.c
+--- a/dev/T4/linux/iw_cxgb4/qp.c
++++ b/dev/T4/linux/iw_cxgb4/qp.c
+@@ -2476,7 +2476,10 @@ static struct ib_qp *create_rc_qp(struct
+ 			      ucontext ? &ucontext->uctx : &rhp->rdev.uctx);
+ 	if (ret)
+ 		goto err1;
+-
++#if 0
++	if (ucontext)
++		c4iw_init_rqt_mem(&rhp->rdev, ucontext->foo_mr->lkey, qhp->wq.rq.rqt_hwaddr, qhp->wq.rq.rqt_size);
++#endif
+ 	attrs->cap.max_recv_wr = rqsize - 1;
+ 	attrs->cap.max_send_wr = sqsize - 1;
+ 	attrs->cap.max_inline_data = T4_MAX_SEND_INLINE;

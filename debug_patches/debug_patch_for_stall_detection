@@ -1,0 +1,105 @@
+diff -r c8a19ca91a74 linux_libs/libcxgb4/Makefile.am
+--- a/linux_libs/libcxgb4/Makefile.am	Thu Apr 21 07:42:56 2016 -0700
++++ b/linux_libs/libcxgb4/Makefile.am	Tue May 10 12:40:13 2016 +0530
+@@ -1,6 +1,6 @@
+ lib_LTLIBRARIES = src/libcxgb4.la
+ 
+-AM_CFLAGS = -g -Wall -D_GNU_SOURCE -DNDEBUG -DOVERFLOW_DETECTION -fno-strict-aliasing
++AM_CFLAGS = -g -Wall -D_GNU_SOURCE -DNDEBUG -DOVERFLOW_DETECTION -DSTALL_DETECTION -fno-strict-aliasing
+ 
+ if HAVE_LD_VERSION_SCRIPT
+     cxgb4_version_script = -Wl,--version-script=$(srcdir)/src/cxgb4.map
+diff -r c8a19ca91a74 linux_libs/libcxgb4/src/dev.c
+--- a/linux_libs/libcxgb4/src/dev.c	Thu Apr 21 07:42:56 2016 -0700
++++ b/linux_libs/libcxgb4/src/dev.c	Tue May 10 12:40:13 2016 +0530
+@@ -104,6 +104,14 @@ static struct ibv_context_ops c4iw_ctx_o
+ 	.req_notify_cq = c4iw_arm_cq,
+ };
+ 
++void signal_handler(int signo)
++{
++	if (signo == SIGUNUSED) {
++		printf("received SIGUNUSED \n");
++		dump_state();
++	}
++}
++
+ static struct ibv_context *c4iw_alloc_context(struct ibv_device *ibdev,
+ 					      int cmd_fd)
+ {
+@@ -404,6 +412,7 @@ static struct ibv_device *cxgb4_driver_i
+ 	unsigned vendor, device, fw_maj, fw_min;
+ 	int i;
+ 
++	signal(SIGUNUSED, signal_handler);
+ 	if (ibv_read_sysfs_file(uverbs_sys_path, "device/vendor",
+ 				value, sizeof value) < 0)
+ 		return NULL;
+@@ -478,12 +487,13 @@ found:
+ 	SLIST_INSERT_HEAD(&devices, dev, list);
+ #ifdef STALL_DETECTION
+ {
+-	char *c = getenv("CXGB4_STALL_TIMEOUT");
+-	if (c) {
+-		stall_to = strtol(c, NULL, 0);
++	//char *c = getenv("CXGB4_STALL_TIMEOUT");
++	//if (c) {
++	//	stall_to = strtol(c, NULL, 0);
++	stall_to = 60;
+ 		if (stall_to < 0)
+ 			stall_to = 0;
+-	}
++	//}
+ }
+ #endif
+ {
+diff -r c8a19ca91a74 linux_libs/libcxgb4/src/qp.c
+--- a/linux_libs/libcxgb4/src/qp.c	Thu Apr 21 07:42:56 2016 -0700
++++ b/linux_libs/libcxgb4/src/qp.c	Tue May 10 12:40:13 2016 +0530
+@@ -312,6 +312,7 @@ static void ring_kernel_db(struct c4iw_q
+ 	int mask;
+ 	int __attribute__((unused)) ret;
+ 
++	fprintf(stderr, "$$$$$$$ Kernel DB $$$$$$$\n");	
+ 	wc_wmb();
+ 	if (qid == qhp->wq.sq.qid) {
+ 		attr.sq_psn = idx;
+@@ -395,6 +396,8 @@ static int post_rc_send(struct ibv_qp *i
+ 		return -EINVAL;
+ 	}
+ 	num_wrs = t4_sq_avail(&qhp->wq);
++	PDBG("%s num_wrs %d wq->sq.size %d wq->sq.in_use %d\n", __func__,
++			num_wrs, qhp->wq.sq.size, qhp->wq.sq.in_use);
+ 	if (num_wrs == 0) {
+ 		pthread_spin_unlock(&qhp->lock);
+ 		return -ENOMEM;
+@@ -457,14 +460,15 @@ static int post_rc_send(struct ibv_qp *i
+ 		swsqe->wr_id = wr->wr_id;
+ 
+ 		init_wr_hdr(wqe, qhp->wq.sq.pidx, fw_opcode, fw_flags, len16);
+-		PDBG("%s cookie 0x%llx pidx 0x%x opcode 0x%x\n",
++		PDBG("%s cookie 0x%llx pidx 0x%x opcode 0x%x sq_id %d sq.wq_pidx %d\n",
+ 		     __func__, (unsigned long long)wr->wr_id, qhp->wq.sq.pidx,
+-		     swsqe->opcode);
++		     swsqe->opcode, qhp->wq.sq.qid, qhp->wq.sq.wq_pidx);
+ 		wr = wr->next;
+ 		num_wrs--;
+ 		copy_wr_to_sq(&qhp->wq, wqe, len16);
+ 		t4_sq_produce(&qhp->wq, len16);
+ 		idx += DIV_ROUND_UP(len16*16, T4_EQ_ENTRY_SIZE);
++		PDBG("%s idx %d\n", __func__);
+ 	}
+ 	if (t4_wq_db_enabled(&qhp->wq)) {
+ 		t4_ring_sq_db(&qhp->wq, idx, dev_is_t4(qhp->rhp),
+diff -r c8a19ca91a74 linux_libs/libcxgb4/src/t4.h
+--- a/linux_libs/libcxgb4/src/t4.h	Thu Apr 21 07:42:56 2016 -0700
++++ b/linux_libs/libcxgb4/src/t4.h	Tue May 10 12:40:13 2016 +0530
+@@ -505,6 +505,8 @@ static inline void t4_sq_produce(struct 
+ 	wq->sq.wq_pidx += DIV_ROUND_UP(len16*16, T4_EQ_ENTRY_SIZE);
+ 	if (wq->sq.wq_pidx >= wq->sq.size * T4_SQ_NUM_SLOTS)
+ 		wq->sq.wq_pidx %= wq->sq.size * T4_SQ_NUM_SLOTS;
++	PDBG("%s: wq->sq.wq_pidx %d  wq->sq.in_use %d \n", __func__,
++			wq->sq.wq_pidx, wq->sq.in_use);
+ 	if (!wq->error)
+ 		wq->sq.queue[wq->sq.size].status.host_pidx = (wq->sq.pidx);
+ }

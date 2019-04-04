@@ -1,0 +1,102 @@
+diff -r 492814d6775e dev/T4/linux/iw_cxgb4/cq.c
+--- a/dev/T4/linux/iw_cxgb4/cq.c	Mon Mar 06 03:28:39 2017 -0800
++++ b/dev/T4/linux/iw_cxgb4/cq.c	Wed Mar 15 19:13:47 2017 +0530
+@@ -948,6 +948,9 @@ int c4iw_poll_cq(struct ib_cq *ibcq, int
+ 			break;
+ 	}
+ 	spin_unlock_irqrestore(&chp->lock, flags);
++	if (debug_print) {
++		printk(KERN_ALERT "%s num_entries %d npolled %d err %d\n", __func__, num_entries, npolled, err);
++	}
+ 	return !err || err == -ENODATA ? npolled : err;
+ }
+ 
+diff -r 492814d6775e dev/T4/linux/iw_cxgb4/iw_cxgb4.h
+--- a/dev/T4/linux/iw_cxgb4/iw_cxgb4.h	Mon Mar 06 03:28:39 2017 -0800
++++ b/dev/T4/linux/iw_cxgb4/iw_cxgb4.h	Wed Mar 15 19:13:47 2017 +0530
+@@ -1240,6 +1240,7 @@ extern int c4iw_wr_log;
+ 
+ extern int use_dsgl;
+ extern int wd_disable_inaddr_any;
++extern int debug_print;
+ void c4iw_dispatch_srq_limit_reached_event(struct c4iw_srq *srq);
+ 
+ #ifndef IB_QPT_RAW_ETH
+diff -r 492814d6775e dev/T4/linux/iw_cxgb4/provider.c
+--- a/dev/T4/linux/iw_cxgb4/provider.c	Mon Mar 06 03:28:39 2017 -0800
++++ b/dev/T4/linux/iw_cxgb4/provider.c	Wed Mar 15 19:13:47 2017 +0530
+@@ -413,6 +413,8 @@ static int c4iw_query_device(struct ib_d
+ 	props->max_fmr = dev->rdev.lldi.tids->ftid_base;
+ 	props->max_map_per_fmr = dev->rdev.nfids;
+ 	props->max_ah = dev->rdev.lldi.tids->nhpftids;
++	printk(KERN_ALERT "$$$$$ max_mr %d max_fmr %d max_map_per_fmr %d max_fast_reg_page_list_len %d max_mr_size %d $$$$\n",
++                           props->max_mr, props->max_fmr, props->max_map_per_fmr, props->max_fast_reg_page_list_len, props->max_mr_size);
+ 
+ 	return 0;
+ }
+diff -r 492814d6775e dev/T4/linux/iw_cxgb4/qp.c
+--- a/dev/T4/linux/iw_cxgb4/qp.c	Mon Mar 06 03:28:39 2017 -0800
++++ b/dev/T4/linux/iw_cxgb4/qp.c	Wed Mar 15 19:13:47 2017 +0530
+@@ -91,6 +91,7 @@ MODULE_PARM_DESC(t5_en_wc, "Use BAR2/WC 
+ #define USE_FL0DATARO(__x) (__x)
+ #endif
+ 
++int debug_print = 0;
+ static int alloc_ird(struct c4iw_dev *dev, u32 ird)
+ {
+ 	int ret;
+@@ -1726,6 +1727,7 @@ static int post_rc_send(struct ib_qp *ib
+ 	enum fw_wr_opcodes fw_opcode = 0;
+ 	enum fw_ri_wr_flags fw_flags;
+ 	struct c4iw_qp *qhp;
++	struct c4iw_cq *scq;
+ 	union t4_wr *wqe = NULL;
+ 	u32 num_wrs;
+ 	struct t4_swsqe *swsqe;
+@@ -1733,6 +1735,7 @@ static int post_rc_send(struct ib_qp *ib
+ 	u16 idx = 0;
+ 
+ 	qhp = to_c4iw_qp(ibqp);
++	scq = to_c4iw_cq(ibqp->send_cq);
+ 	spin_lock_irqsave(&qhp->lock, flag);
+ 	if (t4_wq_in_error(&qhp->wq)) {
+ 		spin_unlock_irqrestore(&qhp->lock, flag);
+@@ -1846,9 +1849,17 @@ static int post_rc_send(struct ib_qp *ib
+ 
+ 		init_wr_hdr(wqe, qhp->wq.sq.pidx, fw_opcode, fw_flags, len16);
+ 
+-		PDBG("%s cookie 0x%llx pidx 0x%x opcode 0x%x read_len %u\n",
+-		     __func__, (unsigned long long)wr->wr_id, qhp->wq.sq.pidx,
+-		     swsqe->opcode, swsqe->read_len);
++                if (qhp->wq.sq.in_use > 522) {
++                        printk(KERN_ALERT "%s cookie 0x%llx opcode 0x%x read_len %u size %u in use %u pidx %u cidx %u wq_pidx %u wq_pidx_inc %u\n"
++                                        "\t\tscq->cq.size %u scq->cq.cidx %u scq->cq.sw_pidx %u scq->cq.sw_cidx %u scq->cq.sw_in_use %u scq->cq.cidx_inc %u\n",
++                                        __func__, (unsigned long long)wr->wr_id, swsqe->opcode, swsqe->read_len, qhp->wq.sq.size, qhp->wq.sq.in_use,
++                                        qhp->wq.sq.pidx, qhp->wq.sq.cidx, qhp->wq.sq.wq_pidx, qhp->wq.sq.wq_pidx_inc, scq->cq.size, scq->cq.cidx,
++                                        scq->cq.sw_pidx, scq->cq.sw_cidx, scq->cq.sw_in_use, scq->cq.cidx_inc);
++                        debug_print = 1;
++                } else {
++                        debug_print =0;
++                }
++
+ 		wr = wr->next;
+ 		num_wrs--;
+ 		t4_sq_produce(&qhp->wq, len16);
+@@ -2933,7 +2944,7 @@ static struct ib_qp *create_rc_qp(struct
+ 	 * Therefore we factor max_send_wr with 3 based on unique SQ size of iSER
+ 	 */
+ 	if (!ucontext && (attrs->cap.max_send_wr == ISER_SQ_SIZE))
+-		sqsize = min_t(int, 3 * attrs->cap.max_send_wr + 1,
++		sqsize = min_t(int, attrs->cap.max_send_wr + 1,
+ 			     rhp->rdev.hw_queue.t4_max_sq_size);
+ 	else
+ 		sqsize = attrs->cap.max_send_wr + 1;
+@@ -3111,7 +3122,7 @@ static struct ib_qp *create_rc_qp(struct
+ 	INIT_LIST_HEAD(&qhp->fcl.db_fc_entry);
+ 	qhp->fcl.type = RC_QP;
+ 
+-	PDBG("%s sq id %u size %u memsize %lu num_entries %u "
++	printk(KERN_ERR "%s sq id %u size %u memsize %lu num_entries %u "
+ 	     "rq id %u size %u memsize %lu num_entries %u\n", __func__,
+ 	     qhp->wq.sq.qid, qhp->wq.sq.size, (unsigned long)qhp->wq.sq.memsize,
+ 	     attrs->cap.max_send_wr, qhp->wq.rq.qid, qhp->wq.rq.size,

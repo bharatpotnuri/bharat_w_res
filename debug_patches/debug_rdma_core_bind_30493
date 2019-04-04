@@ -1,0 +1,104 @@
+diff --git a/Makefile b/Makefile
+index fea3747..6ee789f 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,7 +1,7 @@
+ VERSION = 4
+ PATCHLEVEL = 4
+ SUBLEVEL = 14
+-EXTRAVERSION =
++EXTRAVERSION = _bharat_kernel
+ NAME = Blurry Fish Butt
+ 
+ # *DOCUMENTATION*
+diff --git a/drivers/infiniband/core/cma.c b/drivers/infiniband/core/cma.c
+index a4afc84..50ef2e5 100644
+--- a/drivers/infiniband/core/cma.c
++++ b/drivers/infiniband/core/cma.c
+@@ -1020,15 +1020,19 @@ static int cma_addr_cmp(struct sockaddr *src, struct sockaddr *dst)
+ {
+ 	if (src->sa_family != dst->sa_family)
+ 		return -1;
+-
++	printk(KERN_ERR "\t\t cma_addr_cmp\n");
+ 	switch (src->sa_family) {
+ 	case AF_INET:
++		printk(KERN_ERR "\t\t cma_addr_cmp via cma_check_port \n");
++		printk(KERN_ERR "\t\t src~local %pI4:%d dst~global %pI4:%d\n",&(((struct sockaddr_in *) src)->sin_addr.s_addr), ntohs(((struct sockaddr_in *) src)->sin_port),
++                                                                              &(((struct sockaddr_in *) dst)->sin_addr.s_addr), ntohs(((struct sockaddr_in *) dst)->sin_port));
+ 		return ((struct sockaddr_in *) src)->sin_addr.s_addr !=
+ 		       ((struct sockaddr_in *) dst)->sin_addr.s_addr;
+ 	case AF_INET6:
+ 		return ipv6_addr_cmp(&((struct sockaddr_in6 *) src)->sin6_addr,
+ 				     &((struct sockaddr_in6 *) dst)->sin6_addr);
+ 	default:
++		printk(KERN_ERR "\t\t default: cma_addr_cmp via cma_check_port \n");
+ 		return ib_addr_cmp(&((struct sockaddr_ib *) src)->sib_addr,
+ 				   &((struct sockaddr_ib *) dst)->sib_addr);
+ 	}
+@@ -2932,6 +2936,7 @@ static int cma_check_port(struct rdma_bind_list *bind_list,
+ 	struct rdma_id_private *cur_id;
+ 	struct sockaddr *addr, *cur_addr;
+ 
++	printk(KERN_ERR "\t\t cma_check_port\n");
+ 	addr = cma_src_addr(id_priv);
+ 	hlist_for_each_entry(cur_id, &bind_list->owners, node) {
+ 		if (id_priv == cur_id)
+@@ -2949,8 +2954,18 @@ static int cma_check_port(struct rdma_bind_list *bind_list,
+ 		if (cma_any_addr(addr) || cma_any_addr(cur_addr))
+ 			return -EADDRNOTAVAIL;
+ 
+-		if (!cma_addr_cmp(addr, cur_addr))
++		if (!cma_addr_cmp(addr, cur_addr)) {
++			printk(KERN_ERR "\t\t EADDRINUSE <====== \n");
++			printk(KERN_ERR "\t\t lets passtime till prev print rolls out\n");
++			printk(KERN_ERR "\t\t lets passtime till prev print rolls out\n");
++			printk(KERN_ERR "\t\t lets passtime till prev print rolls out\n");
++			printk(KERN_ERR "\t\t cma_check_port id_priv->owner %d id->ps %d id_priv->state %d id_priv->qp_num %d id->qp_type %d\n", id_priv->owner,
++					id_priv->id.ps, id_priv->state, id_priv->qp_num, id_priv->id.qp_type);
++                       	printk(KERN_ERR "\t\t cma_check_port cur_id_priv->owner %d cur_id->ps %d cur_id_priv->state %d cur_id_priv->qp_num %d cur_id->qp_type %d\n", cur_id->owner,
++					cur_id->id.ps, cur_id->state, cur_id->qp_num, cur_id->id.qp_type);
++                       	BUG_ON(0);
+ 			return -EADDRINUSE;
++		}
+ 	}
+ 	return 0;
+ }
+@@ -3135,14 +3150,17 @@ int rdma_bind_addr(struct rdma_cm_id *id, struct sockaddr *addr)
+ 	    addr->sa_family != AF_IB)
+ 		return -EAFNOSUPPORT;
+ 
++	printk(KERN_ERR "\t\t rdma bind_addr %d\n", __LINE__);
+ 	id_priv = container_of(id, struct rdma_id_private, id);
+ 	if (!cma_comp_exch(id_priv, RDMA_CM_IDLE, RDMA_CM_ADDR_BOUND))
+ 		return -EINVAL;
+ 
++	printk(KERN_ERR "\t\t rdma bind_addr 1\n");
+ 	ret = cma_check_linklocal(&id->route.addr.dev_addr, addr);
+ 	if (ret)
+ 		goto err1;
+ 
++	printk(KERN_ERR "\t\t rdma bind_addr 2\n");
+ 	memcpy(cma_src_addr(id_priv), addr, rdma_addr_size(addr));
+ 	if (!cma_any_addr(addr)) {
+ 		ret = cma_translate_addr(addr, &id->route.addr.dev_addr);
+@@ -3153,7 +3171,8 @@ int rdma_bind_addr(struct rdma_cm_id *id, struct sockaddr *addr)
+ 		if (ret)
+ 			goto err1;
+ 	}
+-
++	
++	printk(KERN_ERR "\t\t rdma bind_addr 3\n");
+ 	if (!(id_priv->options & (1 << CMA_OPTION_AFONLY))) {
+ 		if (addr->sa_family == AF_INET)
+ 			id_priv->afonly = 1;
+@@ -3168,7 +3187,8 @@ int rdma_bind_addr(struct rdma_cm_id *id, struct sockaddr *addr)
+ 	ret = cma_get_port(id_priv);
+ 	if (ret)
+ 		goto err2;
+-
++	
++	printk(KERN_ERR "\t\t rdma bind_addr 4\n");
+ 	return 0;
+ err2:
+ 	if (id_priv->cma_dev)

@@ -1,0 +1,72 @@
+diff -r 95658f2505da dev/T4/linux/drv/l2t.c
+--- a/dev/T4/linux/drv/l2t.c	Wed Jan 20 12:18:40 2016 +0530
++++ b/dev/T4/linux/drv/l2t.c	Wed Jan 20 18:33:14 2016 +0530
+@@ -327,7 +327,9 @@ int cxgb4_l2t_send(struct net_device *de
+ 		ndev = e->neigh->dev;
+ #endif
+ 
++	printk(KERN_ALERT "############# %s e->state %d ##########\n", __func__, e->state);
+ again:
++	e->state = L2T_STATE_NOARP;
+ 	switch (e->state) {
+ 	case L2T_STATE_STALE:     /* entry is stale, kick off revalidation */
+ #if defined(CONFIG_TCPV6_OFFLOAD)
+@@ -355,6 +357,7 @@ again:
+ 		return t4_ofld_send(adap, skb);
+ 	case L2T_STATE_NOARP:
+ 		spin_lock_bh(&e->lock);
++		printk(KERN_ALERT "############# %s ##########\n", __func__);
+ 		arpq_enqueue(e, skb);
+ 		spin_unlock_bh(&e->lock);
+ 		break;
+@@ -1117,8 +1120,14 @@ static void flush_arpq(struct l2t_entry 
+ {
+ 	struct sk_buff *skb;
+ 
+-	while ((skb = __skb_dequeue(&e->arpq)) != NULL)
+-		kfree_skb(skb);
++	while ((skb = __skb_dequeue(&e->arpq)) != NULL) {
++		struct l2t_skb_cb *cb = L2T_SKB_CB(skb);
++		if (cb->arp_err_handler) {
++			printk(KERN_ALERT "############# %s 2 ##########\n", __func__);
++			cb->arp_err_handler(cb->handle, skb);
++		} else
++			kfree_skb(skb);
++	}
+ }
+ 
+ /*
+@@ -1130,14 +1139,17 @@ void t4_flush_l2t_arpq(struct l2t_data *
+ {
+ 	int i;
+ 
++	printk(KERN_ALERT "############# %s ##########\n", __func__);
+ 	read_lock_bh(&d->lock);
+ 	for (i = 0; i < d->l2t_size; ++i) {
+ 		struct l2t_entry *e;
+ 
+ 		e = &d->l2tab[i];
+ 		spin_lock(&e->lock);
+-		if (!skb_queue_empty(&e->arpq))
++		if (!skb_queue_empty(&e->arpq)) {
++			printk(KERN_ALERT "############# %s ##########\n", __func__);
+ 			flush_arpq(e);
++		}
+ 		spin_unlock(&e->lock);
+ 	}
+ 	read_unlock_bh(&d->lock);
+@@ -1228,12 +1240,13 @@ static const struct seq_operations l2t_s
+ static int l2t_seq_open(struct inode *inode, struct file *file)
+ {
+ 	int rc = seq_open(file, &l2t_seq_ops);
+-
+ 	if (!rc) {
+ 		struct adapter *adap = inode->i_private;
+ 		struct seq_file *seq = file->private_data;
+ 
+ 		seq->private = adap->l2t;
++		printk(KERN_ALERT "############# %s ##########\n", __func__);
++		t4_flush_l2t_arpq(adap->l2t);
+ 	}
+ 	return rc;
+ }

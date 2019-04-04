@@ -1,0 +1,429 @@
+diff --git a/ompi/mca/bml/base/base.h b/ompi/mca/bml/base/base.h
+index 1d05e4a..ecbedfc 100644
+--- a/ompi/mca/bml/base/base.h
++++ b/ompi/mca/bml/base/base.h
+@@ -69,6 +69,7 @@ static inline struct mca_bml_base_endpoint_t *mca_bml_base_get_endpoint (struct
+     if (OPAL_UNLIKELY(NULL == proc->proc_endpoints[OMPI_PROC_ENDPOINT_TAG_BML])) {
+         OPAL_THREAD_LOCK(&mca_bml_lock);
+         if (NULL == proc->proc_endpoints[OMPI_PROC_ENDPOINT_TAG_BML]) {
++	    printf("#### mca_bml_base_get_endpoint #### \n");
+             mca_bml.bml_add_proc (proc);
+         }
+         OPAL_THREAD_UNLOCK(&mca_bml_lock);
+diff --git a/ompi/mca/bml/r2/bml_r2.c b/ompi/mca/bml/r2/bml_r2.c
+index b87aa00..a885170 100644
+--- a/ompi/mca/bml/r2/bml_r2.c
++++ b/ompi/mca/bml/r2/bml_r2.c
+@@ -81,6 +81,7 @@ static int mca_bml_r2_add_btls( void )
+     mca_bml_r2.num_btl_progress = 0;
+ 
+     mca_bml_r2.btl_modules = (mca_btl_base_module_t **)malloc(sizeof(mca_btl_base_module_t*) * num_btls);
++    printf("#### mca_bml_r2_add_btls num_btls %d ####\n", num_btls);
+     mca_bml_r2.btl_progress = (mca_btl_base_component_progress_fn_t*)malloc(sizeof(mca_btl_base_component_progress_fn_t) * num_btls);
+ 
+     if (NULL == mca_bml_r2.btl_modules ||
+@@ -168,17 +169,22 @@ static mca_bml_base_endpoint_t *mca_bml_r2_allocate_endpoint (ompi_proc_t *proc)
+ 
+ static void mca_bml_r2_register_progress (mca_btl_base_module_t *btl)
+ {
++    printf("##### mca_bml_r2_register_progress ##### \n");
+     if (NULL != btl->btl_component->btl_progress) {
+         bool found = false;
+-
++	
++	printf("##### mca_bml_r2_register_progress 2 ##### \n");
+         for (size_t p = 0 ; p < mca_bml_r2.num_btl_progress ; ++p) {
++		printf("##### mca_bml_r2_register_progress 3 ##### \n");
+             if(mca_bml_r2.btl_progress[p] == btl->btl_component->btl_progress) {
++		    printf("##### mca_bml_r2_register_progress 4 ##### \n");
+                 found = true;
+                 break;
+             }
+         }
+ 
+         if (found == false) {
++		printf("##### mca_bml_r2_register_progress 5 ##### \n");
+             mca_bml_r2.btl_progress[mca_bml_r2.num_btl_progress++] =
+                 btl->btl_component->btl_progress;
+             opal_progress_register (btl->btl_component->btl_progress);
+@@ -364,6 +370,7 @@ static int mca_bml_r2_add_proc (struct ompi_proc_t *proc)
+     bool btl_in_use = false;
+     int rc;
+ 
++    printf("### mca_bml_r2_add_proc ### \n");
+     if (OPAL_UNLIKELY(NULL == proc)) {
+         return OMPI_ERR_BAD_PARAM;
+     }
+@@ -448,14 +455,17 @@ static int mca_bml_r2_add_procs( size_t nprocs,
+     struct ompi_proc_t** new_procs = NULL;
+     int rc, ret = OMPI_SUCCESS;
+ 
++    printf("### mca_bml_r2_add_procs nprocs %d ### \n", nprocs);
+     if(0 == nprocs) {
+         return OMPI_SUCCESS;
+     }
+ 
++    printf("### mca_bml_r2_add_procs 2 ### \n");
+     if(OMPI_SUCCESS != (rc = mca_bml_r2_add_btls()) ) {
+         return rc;
+     }
+ 
++    printf("### mca_bml_r2_add_procs 3 nprocs %d ### \n", nprocs);
+     /* Select only the procs that don't yet have the BML proc struct. This prevent
+      * us from calling btl->add_procs several times on the same destination proc.
+      */
+@@ -465,21 +475,25 @@ static int mca_bml_r2_add_procs( size_t nprocs,
+         if(NULL !=  proc->proc_endpoints[OMPI_PROC_ENDPOINT_TAG_BML]) {
+             continue;  /* go to the next proc */
+         }
++	printf("### mca_bml_r2_add_procs 4 ### \n");
+         /* Allocate the new_procs on demand */
+         if( NULL == new_procs ) {
+             new_procs = (struct ompi_proc_t **)malloc(nprocs * sizeof(struct ompi_proc_t *));
++	    printf("### mca_bml_r2_add_procs new proc created ### \n");
+             if( NULL == new_procs ) {
+                 return OMPI_ERR_OUT_OF_RESOURCE;
+             }
+         }
+         OBJ_RETAIN(proc);
+         new_procs[n_new_procs++] = proc;
++	printf("### mca_bml_r2_add_procs 5 n_new_procs %d ### \n", n_new_procs);
+     }
+ 
+     if ( 0 == n_new_procs ) {
+         return OMPI_SUCCESS;
+     }
+ 
++    printf("### mca_bml_r2_add_procs 6 ### \n");
+     /* Starting from here we only work on the unregistered procs */
+     procs = new_procs;
+     nprocs = n_new_procs;
+@@ -492,6 +506,7 @@ static int mca_bml_r2_add_procs( size_t nprocs,
+         return OMPI_ERR_OUT_OF_RESOURCE;
+     }
+ 
++    printf("### mca_bml_r2_add_procs 7 ### \n");
+     for (size_t p_index = 0 ; p_index < mca_bml_r2.num_btl_modules ; ++p_index) {
+         mca_btl_base_module_t *btl = mca_bml_r2.btl_modules[p_index];
+         int btl_inuse = 0;
+@@ -511,12 +526,14 @@ static int mca_bml_r2_add_procs( size_t nprocs,
+             continue;
+         }
+ 
++	printf("### mca_bml_r2_add_procs 8 ### \n");
+         /* for each proc that is reachable */
+         for (size_t p = 0 ; p < n_new_procs ; ++p) {
+             if (!opal_bitmap_is_set_bit(reachable, p)) {
+                 continue;
+             }
+ 
++	    printf("### mca_bml_r2_add_procs 9 ### \n");
+             ompi_proc_t *proc = new_procs[p];
+             mca_bml_base_endpoint_t *bml_endpoint =
+                 (mca_bml_base_endpoint_t *) proc->proc_endpoints[OMPI_PROC_ENDPOINT_TAG_BML];
+@@ -530,12 +547,14 @@ static int mca_bml_r2_add_procs( size_t nprocs,
+                 }
+             }
+ 
++	    printf("### mca_bml_r2_add_procs 10 ### \n");
+             rc = mca_bml_r2_endpoint_add_btl (proc, bml_endpoint, btl, btl_endpoints[p]);
+             if (OMPI_SUCCESS != rc) {
+                 btl->btl_del_procs(btl, 1, (opal_proc_t**)&proc, &btl_endpoints[p]);
+                 continue;
+             }
+ 
++	    printf("### mca_bml_r2_add_procs 11 ### \n");
+             /* This BTL is in use, allow the progress registration */
+             btl_inuse++;
+         }
+@@ -551,9 +570,11 @@ static int mca_bml_r2_add_procs( size_t nprocs,
+     for (size_t p = 0; p < n_new_procs ; ++p) {
+         mca_bml_base_endpoint_t *bml_endpoint =
+             (mca_bml_base_endpoint_t *) new_procs[p]->proc_endpoints[OMPI_PROC_ENDPOINT_TAG_BML];
++	printf("### mca_bml_r2_add_procs 12 ### \n");
+ 
+         /* skip over procs w/ no btl's registered */
+         if (NULL != bml_endpoint) {
++		printf("### mca_bml_r2_add_procs no btl registered ### \n");
+             mca_bml_r2_compute_endpoint_metrics (bml_endpoint);
+         }
+     }
+@@ -575,12 +596,14 @@ static int mca_bml_r2_add_procs( size_t nprocs,
+                                btl_names);
+             }
+ 
++	    printf("### mca_bml_r2_add_procs 13 ### \n");
+             break;
+         }
+     }
+ 
+     free(new_procs);
+ 
++    printf("### mca_bml_r2_add_procs ret %d ### \n", ret);
+     return ret;
+ }
+ 
+@@ -653,6 +676,7 @@ static inline int bml_r2_remove_btl_progress(mca_btl_base_module_t* btl)
+ {
+     unsigned int p;
+ 
++    printf("#### bml_r2_remove_btl_progress ####\n");
+     if(NULL == btl->btl_component->btl_progress) {
+         return OMPI_SUCCESS;
+     }
+diff --git a/ompi/mca/osc/rdma/osc_rdma_component.c b/ompi/mca/osc/rdma/osc_rdma_component.c
+index 1f59132..d8a07d2 100644
+--- a/ompi/mca/osc/rdma/osc_rdma_component.c
++++ b/ompi/mca/osc/rdma/osc_rdma_component.c
+@@ -721,6 +721,7 @@ static int ompi_osc_rdma_query_btls (ompi_communicator_t *comm, struct mca_btl_b
+         mca_bml_base_endpoint_t *endpoint;
+         int num_btls, prev_max;
+ 
++	printf("### ompi_osc_rdma_query_btls ####\n");
+         endpoint = mca_bml_base_get_endpoint (proc);
+         if (NULL == endpoint) {
+             /* can't continue if some peer is unreachable */
+diff --git a/ompi/mca/osc/rdma/osc_rdma_peer.c b/ompi/mca/osc/rdma/osc_rdma_peer.c
+index f9207ae..aa90210 100644
+--- a/ompi/mca/osc/rdma/osc_rdma_peer.c
++++ b/ompi/mca/osc/rdma/osc_rdma_peer.c
+@@ -39,6 +39,7 @@ struct mca_btl_base_endpoint_t *ompi_osc_rdma_peer_btl_endpoint (struct ompi_osc
+     mca_bml_base_endpoint_t *bml_endpoint;
+     int num_btls;
+ 
++    printf("### ompi_osc_rdma_peer_btl_endpoint ###\n");
+     /* for not just use the bml to get the btl endpoint */
+     bml_endpoint = mca_bml_base_get_endpoint (proc);
+ 
+diff --git a/ompi/mca/pml/ob1/pml_ob1.c b/ompi/mca/pml/ob1/pml_ob1.c
+index ad320b6..24b3b05 100644
+--- a/ompi/mca/pml/ob1/pml_ob1.c
++++ b/ompi/mca/pml/ob1/pml_ob1.c
+@@ -302,8 +302,10 @@ int mca_pml_ob1_add_procs(ompi_proc_t** procs, size_t nprocs)
+     rc = mca_bml.bml_add_procs( nprocs,
+                                 procs,
+                                 &reachable );
+-    if(OMPI_SUCCESS != rc)
++    if(OMPI_SUCCESS != rc) {
++	printf("### mca_pml_ob1_add_procs 1 ### \n");
+         goto cleanup_and_return;
++    }
+ 
+     /* Check that values supplied by all initialized btls will work
+        for us.  Note that this is the list of all initialized BTLs,
+@@ -560,7 +562,8 @@ int mca_pml_ob1_dump(struct ompi_communicator_t* comm, int verbose)
+             continue;
+         }
+ 
+-        mca_bml_base_endpoint_t* ep = mca_bml_base_get_endpoint(proc->ompi_proc);
++        printf("### mca_pml_ob1_dump  ###\n");
++	mca_bml_base_endpoint_t* ep = mca_bml_base_get_endpoint(proc->ompi_proc);
+         size_t n;
+ 
+         opal_output(0, "[Rank %d] expected_seq %d ompi_proc %p send_seq %d\n",
+diff --git a/ompi/mca/pml/ob1/pml_ob1_isend.c b/ompi/mca/pml/ob1/pml_ob1_isend.c
+index bd5fd76..146782c 100644
+--- a/ompi/mca/pml/ob1/pml_ob1_isend.c
++++ b/ompi/mca/pml/ob1/pml_ob1_isend.c
+@@ -136,6 +136,7 @@ int mca_pml_ob1_isend(const void *buf,
+     mca_pml_ob1_comm_proc_t *ob1_proc = mca_pml_ob1_peer_lookup (comm, dst);
+     mca_pml_ob1_send_request_t *sendreq = NULL;
+     ompi_proc_t *dst_proc = ob1_proc->ompi_proc;
++    printf("### mca_pml_ob1_isend  ####\n");
+     mca_bml_base_endpoint_t* endpoint = mca_bml_base_get_endpoint (dst_proc);
+     int16_t seqn;
+     int rc;
+@@ -188,11 +189,13 @@ int mca_pml_ob1_send(const void *buf,
+ {
+     mca_pml_ob1_comm_proc_t *ob1_proc = mca_pml_ob1_peer_lookup (comm, dst);
+     ompi_proc_t *dst_proc = ob1_proc->ompi_proc;
++    
+     mca_bml_base_endpoint_t* endpoint = mca_bml_base_get_endpoint (dst_proc);
+     mca_pml_ob1_send_request_t *sendreq = NULL;
+     int16_t seqn;
+     int rc;
+ 
++    printf("#### mca_pml_ob1_send $  ####\n");
+     if (OPAL_UNLIKELY(NULL == endpoint)) {
+         return OMPI_ERR_UNREACH;
+     }
+diff --git a/ompi/mca/pml/ob1/pml_ob1_recvreq.c b/ompi/mca/pml/ob1/pml_ob1_recvreq.c
+index fe0703d..a438400 100644
+--- a/ompi/mca/pml/ob1/pml_ob1_recvreq.c
++++ b/ompi/mca/pml/ob1/pml_ob1_recvreq.c
+@@ -264,6 +264,7 @@ static int mca_pml_ob1_recv_request_ack(
+ 
+     bml_endpoint = mca_bml_base_get_endpoint (proc);
+ 
++    printf("### mca_pml_ob1_recv_request_ack  ### \n");
+     /* by default copy everything */
+     recvreq->req_send_offset = bytes_received;
+     if(hdr->hdr_msg_length > bytes_received) {
+@@ -655,6 +656,7 @@ void mca_pml_ob1_recv_request_progress_rget( mca_pml_ob1_recv_request_t* recvreq
+         }
+     }
+ 
++    printf("###  mca_pml_ob1_recv_request_ack $ ### \n");
+     /* lookup bml datastructures */
+     bml_endpoint = mca_bml_base_get_endpoint (recvreq->req_recv.req_base.req_proc);
+     rdma_bml = mca_bml_base_btl_array_find(&bml_endpoint->btl_rdma, btl);
+diff --git a/ompi/mca/pml/ob1/pml_ob1_recvreq.h b/ompi/mca/pml/ob1/pml_ob1_recvreq.h
+index 280e1e7..af2da24 100644
+--- a/ompi/mca/pml/ob1/pml_ob1_recvreq.h
++++ b/ompi/mca/pml/ob1/pml_ob1_recvreq.h
+@@ -433,6 +433,7 @@ static inline int mca_pml_ob1_recv_request_ack_send(ompi_proc_t* proc,
+ {
+     size_t i;
+     mca_bml_base_btl_t* bml_btl;
++    printf("### mca_pml_ob1_recv_request_ack_send $* ####\n");
+     mca_bml_base_endpoint_t* endpoint = mca_bml_base_get_endpoint (proc);
+ 
+     assert (NULL != endpoint);
+diff --git a/ompi/mca/pml/ob1/pml_ob1_sendreq.h b/ompi/mca/pml/ob1/pml_ob1_sendreq.h
+index 2902932..a904e21 100644
+--- a/ompi/mca/pml/ob1/pml_ob1_sendreq.h
++++ b/ompi/mca/pml/ob1/pml_ob1_sendreq.h
+@@ -485,6 +485,7 @@ mca_pml_ob1_send_request_start( mca_pml_ob1_send_request_t* sendreq )
+     mca_pml_ob1_comm_proc_t *ob1_proc = mca_pml_ob1_peer_lookup (comm, sendreq->req_send.req_base.req_peer);
+     int32_t seqn;
+ 
++    printf("### mca_pml_ob1_send_request_start ####\n");
+     if (OPAL_UNLIKELY(NULL == endpoint)) {
+         return OMPI_ERR_UNREACH;
+     }
+diff --git a/opal/mca/btl/openib/btl_openib.c b/opal/mca/btl/openib/btl_openib.c
+index e5c4343..9e586ee 100644
+--- a/opal/mca/btl/openib/btl_openib.c
++++ b/opal/mca/btl/openib/btl_openib.c
+@@ -424,6 +424,7 @@ static int openib_btl_size_queues(struct mca_btl_openib_module_t* openib_btl)
+     int rc = OPAL_SUCCESS, qp;
+     mca_btl_openib_device_t *device = openib_btl->device;
+ 
++    printf("#### openib_btl_size_queues ####\n");
+     opal_mutex_lock(&openib_btl->ib_lock);
+     /* figure out reasonable sizes for completion queues */
+     for(qp = 0; qp < mca_btl_openib_component.num_qps; qp++) {
+@@ -980,6 +981,7 @@ static int get_openib_btl_params(mca_btl_openib_module_t* openib_btl, int *port_
+         }
+     }
+     *port_cnt_ptr = port_cnt;
++    printf("#### get_openib_btl_params rank %d ####\n", rank);
+     return rank;
+ }
+ 
+@@ -1002,6 +1004,7 @@ int mca_btl_openib_add_procs(
+     int btl_rank = 0;
+     volatile mca_btl_base_endpoint_t* endpoint;
+ 
++    printf("### mca_btl_openib_add_procs ###\n");
+     btl_rank = get_openib_btl_params(openib_btl, &lcl_subnet_id_port_cnt);
+     if( 0 > btl_rank ){
+         return OPAL_ERR_NOT_FOUND;
+@@ -1039,17 +1042,17 @@ int mca_btl_openib_add_procs(
+         struct opal_proc_t* proc = procs[i];
+         mca_btl_openib_proc_t* ib_proc;
+ 
+-#if defined(HAVE_STRUCT_IBV_DEVICE_TRANSPORT_TYPE)
+-        /* Most current iWARP adapters (June 2008) cannot handle
+-           talking to other processes on the same host (!) -- so mark
+-           them as unreachable (need to use sm).  So for the moment,
+-           we'll just mark any local peer on an iWARP NIC as
+-           unreachable.  See trac ticket #1352. */
+-        if (IBV_TRANSPORT_IWARP == openib_btl->device->ib_dev->transport_type &&
+-            OPAL_PROC_ON_LOCAL_NODE(proc->proc_flags)) {
+-            continue;
+-        }
+-#endif
++//#if defined(HAVE_STRUCT_IBV_DEVICE_TRANSPORT_TYPE)
++//        /* Most current iWARP adapters (June 2008) cannot handle
++//           talking to other processes on the same host (!) -- so mark
++//           them as unreachable (need to use sm).  So for the moment,
++//           we'll just mark any local peer on an iWARP NIC as
++//           unreachable.  See trac ticket #1352. */
++//        if (IBV_TRANSPORT_IWARP == openib_btl->device->ib_dev->transport_type &&
++//            OPAL_PROC_ON_LOCAL_NODE(proc->proc_flags)) {
++//            continue;
++//        }
++//#endif
+ 
+         if(NULL == (ib_proc = mca_btl_openib_proc_get_locked(proc)) ) {
+             /* if we don't have connection info for this process, it's
+@@ -1112,17 +1115,17 @@ int mca_btl_openib_add_procs(
+ 
+         opal_output(-1, "add procs: adding proc %d", i);
+ 
+-#if defined(HAVE_STRUCT_IBV_DEVICE_TRANSPORT_TYPE)
+-        /* Most current iWARP adapters (June 2008) cannot handle
+-           talking to other processes on the same host (!) -- so mark
+-           them as unreachable (need to use sm).  So for the moment,
+-           we'll just mark any local peer on an iWARP NIC as
+-           unreachable.  See trac ticket #1352. */
+-        if (IBV_TRANSPORT_IWARP == openib_btl->device->ib_dev->transport_type &&
+-            OPAL_PROC_ON_LOCAL_NODE(proc->proc_flags)) {
+-            continue;
+-        }
+-#endif
++//#if defined(HAVE_STRUCT_IBV_DEVICE_TRANSPORT_TYPE)
++//        /* Most current iWARP adapters (June 2008) cannot handle
++//           talking to other processes on the same host (!) -- so mark
++//           them as unreachable (need to use sm).  So for the moment,
++//           we'll just mark any local peer on an iWARP NIC as
++//           unreachable.  See trac ticket #1352. */
++//        if (IBV_TRANSPORT_IWARP == openib_btl->device->ib_dev->transport_type &&
++//            OPAL_PROC_ON_LOCAL_NODE(proc->proc_flags)) {
++//            continue;
++//        }
++//#endif
+ 
+         if(NULL == (ib_proc = mca_btl_openib_proc_get_locked(proc)) ) {
+             /* if we don't have connection info for this process, it's
+diff --git a/opal/mca/btl/openib/btl_openib_component.c b/opal/mca/btl/openib/btl_openib_component.c
+index 42f14e7..7c9f746 100644
+--- a/opal/mca/btl/openib/btl_openib_component.c
++++ b/opal/mca/btl/openib/btl_openib_component.c
+@@ -3735,12 +3735,15 @@ static int btl_openib_component_progress(void)
+     int i;
+     int count = 0;
+ 
++    printf("#### btl_openib_component_progress ##### \n");
+     if(OPAL_UNLIKELY(mca_btl_openib_component.use_async_event_thread &&
+             mca_btl_openib_component.error_counter)) {
+         goto error;
+     }
+ 
++    printf("#### btl_openib_component_progress 2 ##### \n");
+     for(i = 0; i < mca_btl_openib_component.devices_count; i++) {
++	printf("#### btl_openib_component_progress 3 ##### \n");
+         mca_btl_openib_device_t *device =
+             (mca_btl_openib_device_t *) opal_pointer_array_get_item(&mca_btl_openib_component.devices, i);
+         count += progress_one_device(device);
+@@ -3767,6 +3770,7 @@ static int btl_openib_component_progress(void)
+     }
+ #endif /* OPAL_CUDA_SUPPORT */
+ 
++    printf("#### btl_openib_component_progress $ count %d ##### \n", count);
+     return count;
+ 
+ error:
+@@ -3788,6 +3792,7 @@ error:
+ #endif
+         }
+     }
++    printf("#### btl_openib_component_progress count %d ##### \n", count);
+     return count;
+ }
+ 
+diff --git a/orte/mca/rmaps/round_robin/rmaps_rr_mappers.c b/orte/mca/rmaps/round_robin/rmaps_rr_mappers.c
+index e7a996e..1db4a78 100644
+--- a/orte/mca/rmaps/round_robin/rmaps_rr_mappers.c
++++ b/orte/mca/rmaps/round_robin/rmaps_rr_mappers.c
+@@ -529,8 +529,7 @@ int orte_rmaps_rr_byobj(orte_job_t *jdata,
+             }
+             /* compute the number of procs to go on this node */
+             nprocs = (node->slots - node->slots_inuse) / orte_rmaps_base.cpus_per_rank;
+-            opal_output_verbose(2, orte_rmaps_base_framework.framework_output,
+-                                "mca:rmaps:rr: calculated nprocs %d", nprocs);
++            printf("calculated nprocs %d node->slots %d node->slots_inuse %d orte_rmaps_base.cpus_per_rank %d", nprocs, node->slots, node->slots_inuse,orte_rmaps_base.cpus_per_rank);
+             if (nprocs < 1) {
+                 if (second_pass) {
+                     /* already checked for oversubscription permission, so at least put

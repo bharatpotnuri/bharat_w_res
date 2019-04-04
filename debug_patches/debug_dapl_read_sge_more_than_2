@@ -1,0 +1,152 @@
+diff --git a/dapl/ibal/dapl_ibal_util.c b/dapl/ibal/dapl_ibal_util.c
+index 9fb8c4a2d9ad..e2e4fd49b3a6 100644
+--- a/dapl/ibal/dapl_ibal_util.c
++++ b/dapl/ibal/dapl_ibal_util.c
+@@ -1751,7 +1751,8 @@ DAT_RETURN dapls_ib_query_hca (
+         ia_attr->transport_attr           = NULL;
+         ia_attr->num_vendor_attr          = 0;
+         ia_attr->vendor_attr              = NULL;
+-        ia_attr->max_iov_segments_per_rdma_read = p_hca_attr->max_sges;
++        ia_attr->max_iov_segments_per_rdma_read = p_hca_attr->max_rd_sges;
++	printf("$$$$$$$$$ p_hca_attr->max_sges %d  p_hca_attr->max_sges %d $$$$$$$$$\n",p_hca_attr->max_sges, p_hca_attr->max_rd_sges)
+ 
+ #ifdef DAT_EXTENSIONS
+         ia_attr->extension_supported = DAT_EXTENSION_IB;
+diff --git a/dapl/openib_common/util.c b/dapl/openib_common/util.c
+index b24b26b33bc7..c636cf5de523 100644
+--- a/dapl/openib_common/util.c
++++ b/dapl/openib_common/util.c
+@@ -384,6 +384,7 @@ DAT_RETURN dapls_ib_query_hca(IN DAPL_HCA * hca_ptr,
+ 	struct ibv_port_attr port_attr;
+ 	union ibv_gid port_gid;
+ 
++	printf("$$$$$$$  dapls_ib_query_hca  $$$$$$\n");
+ 	/* local IP address of device, set during ia_open */
+ 	if (ip_addr)
+ 		memcpy(ip_addr, &hca_ptr->hca_address, sizeof(DAT_SOCK_ADDR6));
+@@ -442,6 +443,7 @@ DAT_RETURN dapls_ib_query_hca(IN DAPL_HCA * hca_ptr,
+ 						hca_ptr->port_num, &port_attr))
+ 			return (dapl_convert_errno(errno, "ib_query_hca"));
+ 
++	printf("$$$$$$$$$$$$$ dev_attr.max_sge %d   dev_attr.max_sge_rd %d $$$$$$$$$$$\n",dev_attr.max_sge, dev_attr.max_sge_rd);
+ 	dev_attr.max_qp_wr = DAPL_MIN(dev_attr.max_qp_wr,
+ 				      dapl_os_get_env_val("DAPL_WR_MAX", dev_attr.max_qp_wr));
+ 
+@@ -511,6 +513,7 @@ DAT_RETURN dapls_ib_query_hca(IN DAPL_HCA * hca_ptr,
+ #ifdef _OPENIB_MCM_
+ 		if (!MFO_EP(&hca_ptr->ib_trans.addr))
+ #endif
++		/* fix me: replace 1 with dev_attr.max_sge_rd */
+ 		if (hca_ptr->ib_hca_handle->device->transport_type == IBV_TRANSPORT_IWARP)
+ 			ia_attr->max_iov_segments_per_rdma_read = 1;
+ 		ia_attr->max_iov_segments_per_rdma_write = dev_attr.max_sge;
+@@ -662,7 +665,7 @@ skip_ib:
+ 		ep_attr->max_request_iov = dev_attr.max_sge;
+ 		ep_attr->max_rdma_read_in = dev_attr.max_qp_rd_atom;
+ 		ep_attr->max_rdma_read_out = dev_attr.max_qp_init_rd_atom;
+-		ep_attr->max_rdma_read_iov = dev_attr.max_sge;
++		ep_attr->max_rdma_read_iov = dev_attr.max_sge_rd;
+ 		ep_attr->max_rdma_write_iov = dev_attr.max_sge;
+ 		dapl_dbg_log(DAPL_DBG_TYPE_UTIL,
+ 			     " query_hca: MAX msg %llu mtu %d qsz %d iov %d"
+diff --git a/dapl/openib_mcm/mix.c b/dapl/openib_mcm/mix.c
+index e94629292536..99364a6e8b7c 100644
+--- a/dapl/openib_mcm/mix.c
++++ b/dapl/openib_mcm/mix.c
+@@ -613,6 +613,7 @@ int dapli_mix_query_device(ib_hca_transport_t *tp, struct ibv_device_attr *dev_a
+ 	dev_attr->device_cap_flags = msg.device_cap_flags;
+ 	dev_attr->max_sge = msg.max_sge;
+ 	dev_attr->max_sge_rd = msg.max_sge_rd;
++	printf("$$$$$ msg.max_sge  %d, msg.max_sge_rd  %d\n", msg.max_sge, msg.max_sge_rd);
+ 	dev_attr->max_cq = msg.max_cq;
+ 	dev_attr->max_cqe = msg.max_cqe;
+ 	dev_attr->max_mr = msg.max_mr;
+diff --git a/dapl/svc/mix.c b/dapl/svc/mix.c
+index ebb149749ffb..7aefc63edd8a 100644
+--- a/dapl/svc/mix.c
++++ b/dapl/svc/mix.c
+@@ -248,6 +248,7 @@ static int mix_query_device(mcm_scif_dev_t *smd, dat_mix_device_attr_t *pmsg)
+ 	msg.device_cap_flags = dev_attr.device_cap_flags;
+ 	msg.max_sge = dev_attr.max_sge;
+ 	msg.max_sge_rd = dev_attr.max_sge_rd;
++	printf("$$$$$ dev_attr.max_sge  %d, dev_attr.max_sge_rd  %d\n", dev_attr.max_sge, dev_attr.max_sge_rd);
+ 	msg.max_cq = dev_attr.max_cq;
+ 	msg.max_cqe = dev_attr.max_cqe;
+ 	msg.max_mr = dev_attr.max_mr;
+diff --git a/test/dapltest/cmd/dapl_transaction_cmd.c b/test/dapltest/cmd/dapl_transaction_cmd.c
+index 7f1800b5bb7d..b5457435e926 100644
+--- a/test/dapltest/cmd/dapl_transaction_cmd.c
++++ b/test/dapltest/cmd/dapl_transaction_cmd.c
+@@ -128,6 +128,7 @@ static bool DT_Transaction_Cmd_Validate(Transaction_Cmd_t * cmd)
+ 	has_client_send = false;
+ 	reap_count = 0;
+ 
++	printf("$$$$ hunt for path DT_Transaction_Cmd_Validate $$$$\n");
+ 	if (cmd->server_name[0] == '\0') {
+ 		DT_Mdep_printf
+ 		    ("Must specify server_name in command line or scriptfile\n");
+@@ -449,6 +450,7 @@ void DT_Transaction_Cmd_Print(Transaction_Cmd_t * cmd)
+ 			       cmd->op[i].seg_size);
+ 		DT_Mdep_printf("TransCmd.op[%d].num_segs           : %d\n", i,
+ 			       cmd->op[i].num_segs);
++		printf("$$$$$$$$$$$ Transaction_Cmd_Print $$$$$$$$\n");
+ 		DT_Mdep_printf("TransCmd.op[%d].reap_send_on_recv  : %d\n", i,
+ 			       cmd->op[i].reap_send_on_recv);
+ 	}
+diff --git a/test/dapltest/test/dapl_client.c b/test/dapltest/test/dapl_client.c
+index 21c6e018fc2e..21b9af7a4100 100644
+--- a/test/dapltest/test/dapl_client.c
++++ b/test/dapltest/test/dapl_client.c
+@@ -61,7 +61,7 @@ DT_cs_Client(Params_t * params_ptr,
+ 	DAT_IA_ADDRESS_PTR server_netaddr = NULL;
+ 	char *module = "DT_cs_Client";
+ 	unsigned int did_connect = 0;
+-	unsigned int retry_cnt = 0;
++	unsigned int retry_cnt = 0,i = 0;
+ 	DAT_DTO_COOKIE dto_cookie;
+ 
+ 	DAT_DTO_COMPLETION_EVENT_DATA dto_stat;
+@@ -404,6 +404,12 @@ DT_cs_Client(Params_t * params_ptr,
+ 	switch (pt_ptr->Client_Info.test_type) {
+ 	case TRANSACTION_TEST:
+ 		{
++			printf("\t\t\t$$$$ TESTING! $$$$$\n");
++			/*for (i = 0; i < Transaction_Cmd->num_ops; i++) {
++				if (Transaction_Cmd->op[i].transfer_type == 0)
++					Transaction_Cmd->op[i].num_segs = 1;
++				printf("\t\t\t\t Transaction_Cmd->op[i].numsegs %d\n", Transaction_Cmd->op[i].num_segs);
++			}*/
+ 			if (Transaction_Cmd->debug) {
+ 				DT_Transaction_Cmd_PT_Print(phead,
+ 							    Transaction_Cmd);
+diff --git a/test/dapltest/test/dapl_transaction_util.c b/test/dapltest/test/dapl_transaction_util.c
+index 14a14ddf36c8..76147b4f18a0 100644
+--- a/test/dapltest/test/dapl_transaction_util.c
++++ b/test/dapltest/test/dapl_transaction_util.c
+@@ -453,7 +453,7 @@ DT_handle_rdma_op(DT_Tdep_Print_Head * phead,
+ 		DAT_RMR_TRIPLET rmr_triplet;
+ 
+ 		/* Prep the inputs */
+-		for (j = 0; j < op->num_segs; j++) {
++		for (j = 0; j < 1 /*op->num_segs*/; j++) {
+ 			iov[j].virtual_address = (DAT_VADDR) (uintptr_t)
+ 			    DT_Bpool_GetBuffer(op->bp, j);
+ 			iov[j].segment_length = op->seg_size;
+@@ -465,7 +465,7 @@ DT_handle_rdma_op(DT_Tdep_Print_Head * phead,
+ 
+ 		rmr_triplet.virtual_address =
+ 		    (DAT_VADDR) (uintptr_t) op->Rdma_Address;
+-		rmr_triplet.segment_length = op->seg_size * op->num_segs;
++		rmr_triplet.segment_length = op->seg_size * 1;//op->num_segs;
+ 		rmr_triplet.rmr_context = op->Rdma_Context;
+ 
+ 		DT_Tdep_PT_Debug(3, (phead,
+@@ -489,7 +489,7 @@ DT_handle_rdma_op(DT_Tdep_Print_Head * phead,
+ 		} else {	/* opcode == RDMA_READ */
+ 
+ 			ret = dat_ep_post_rdma_read(ep_context[i].ep_handle,
+-						    op->num_segs,
++						    1,//op->num_segs,
+ 						    iov,
+ 						    cookie,
+ 						    &rmr_triplet,

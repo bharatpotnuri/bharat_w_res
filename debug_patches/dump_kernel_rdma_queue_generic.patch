@@ -1,0 +1,402 @@
+diff -r 492814d6775e dev/T4/linux/iw_cxgb4/cm.c
+--- a/dev/T4/linux/iw_cxgb4/cm.c	Mon Mar 06 03:28:39 2017 -0800
++++ b/dev/T4/linux/iw_cxgb4/cm.c	Tue Mar 21 17:44:20 2017 +0530
+@@ -106,6 +106,10 @@ int c4iw_debug;
+ module_param(c4iw_debug, int, 0644);
+ MODULE_PARM_DESC(c4iw_debug, "Enable debug logging (default=0)");
+ 
++int stall_timeout = 60;
++module_param(stall_timeout, int, 0644);
++MODULE_PARM_DESC(stall_timeout, "Time to wait before dumping queues (default=5 secs)");
++
+ static int peer2peer = 1;
+ module_param(peer2peer, int, 0644);
+ MODULE_PARM_DESC(peer2peer, "Support peer2peer ULPs (default=1)");
+diff -r 492814d6775e dev/T4/linux/iw_cxgb4/cq.c
+--- a/dev/T4/linux/iw_cxgb4/cq.c	Mon Mar 06 03:28:39 2017 -0800
++++ b/dev/T4/linux/iw_cxgb4/cq.c	Tue Mar 21 17:44:20 2017 +0530
+@@ -524,6 +524,16 @@ static u64 reap_srq_cqe(struct t4_cqe *h
+ 	return wr_id;
+ }
+ 
++static void dump_cqe(void *arg)
++{
++        u64 *p = arg;
++        printk(KERN_ERR "cxgb4 err cqe %016llx %016llx %016llx %016llx\n",
++               (long long)be64_to_cpu(p[0]),
++               (long long)be64_to_cpu(p[1]),
++               (long long)be64_to_cpu(p[2]),
++               (long long)be64_to_cpu(p[3]));
++}
++
+ /*
+  * poll_cq
+  *
+@@ -647,6 +657,7 @@ static int poll_cq(struct t4_wq *wq, str
+ 
+ 	if (CQE_STATUS(hw_cqe) || t4_wq_in_error(wq)) {
+ 		*cqe_flushed = (CQE_STATUS(hw_cqe) == T4_ERR_SWFLUSH);
++		dump_cqe(hw_cqe);
+ 		t4_set_wq_in_error(wq, 0);
+ 	}
+ 
+@@ -779,9 +790,21 @@ static int c4iw_poll_cq_one(struct c4iw_
+ 
+ 	ret = t4_next_cqe(&chp->cq, &rd_cqe);
+ 
+-	if (ret)
++	if (ret) {
++		if (ret == -ENODATA && stall_timeout && !dumped) {
++                        struct timeval t;
++
++			do_gettimeofday(&t);
++			printk(KERN_ERR "### TIME sec %u usec %ul ####\n", chp->time.tv_sec, chp->time.tv_usec);
++                        if ((t.tv_sec - chp->time.tv_sec) > stall_timeout) {
++                                dump_state(qhp->rhp);
++                                dumped = 1;
++                        }
++                }
+ 		return ret;
+-
++	}
++	do_gettimeofday(&chp->time);
++	printk(KERN_ERR "### TIME sec %u usec %ul ####\n", chp->time.tv_sec, chp->time.tv_usec);
+ 	qhp = get_qhp(chp->rhp, CQE_QPID(rd_cqe));
+ 	if (!qhp)
+ 		wq = NULL;
+@@ -948,6 +971,11 @@ int c4iw_poll_cq(struct ib_cq *ibcq, int
+ 			break;
+ 	}
+ 	spin_unlock_irqrestore(&chp->lock, flags);
++	if (debug_print && !dumped) {
++		printk(KERN_ALERT "%s num_entries %d npolled %d err %d\n", __func__, num_entries, npolled, err);
++		dump_state(chp->rhp);
++		dumped = 1;
++	}
+ 	return !err || err == -ENODATA ? npolled : err;
+ }
+ 
+@@ -1143,6 +1171,8 @@ struct ib_cq *c4iw_create_cq(struct ib_d
+ 	     chp->cq.size + 1, chp->cq.size, chp->ibcq.cqe,
+ 	     (unsigned long)chp->cq.memsize,
+ 	     (unsigned long long) chp->cq.dma_addr);
++	do_gettimeofday(&chp->time);
++	printk(KERN_ERR "### TIME sec %u usec %ul ####\n", chp->time.tv_sec, chp->time.tv_usec);
+ 	return &chp->ibcq;
+ err6:
+ 	kfree(mm2);
+diff -r 492814d6775e dev/T4/linux/iw_cxgb4/device.c
+--- a/dev/T4/linux/iw_cxgb4/device.c	Mon Mar 06 03:28:39 2017 -0800
++++ b/dev/T4/linux/iw_cxgb4/device.c	Tue Mar 21 17:44:20 2017 +0530
+@@ -291,6 +291,159 @@ static void set_ep_sin6_addrs(struct c4i
+ 	}
+ }
+ 
++int dumped;
++
++static void dump_cq(struct c4iw_cq *chp)
++{
++        int i;
++
++        printk(KERN_ERR
++                "CQ: %p id %u queue %p cidx 0x%08x sw_queue %p sw_cidx %d sw_pidx %d sw_in_use %d depth %u error %u gen %d "
++                "cidx_inc %d bits_type_ts %016llx notempty %d\n", chp,
++                chp->cq.cqid, chp->cq.queue, chp->cq.cidx,
++                chp->cq.sw_queue, chp->cq.sw_cidx, chp->cq.sw_pidx, chp->cq.sw_in_use,
++                chp->cq.size, chp->cq.error, chp->cq.gen, chp->cq.cidx_inc, be64_to_cpu(chp->cq.bits_type_ts),
++                t4_cq_notempty(&chp->cq));
++
++        for (i=0; i < chp->cq.size; i++) {
++                u64 *p = (u64 *)(chp->cq.queue + i);
++
++                printk(KERN_ERR "%02x: %016llx %016llx", i, be64_to_cpu(p[0]), be64_to_cpu(p[1]));
++                if (i == chp->cq.cidx)
++                        printk(KERN_ERR " <-- cidx\n");
++                else
++                        printk(KERN_ERR "\n");
++                p+= 2;
++                printk(KERN_ERR "%02x: %016llx %016llx \n", i, be64_to_cpu(p[0]), be64_to_cpu(p[1]));
++                p+= 2;
++                printk(KERN_ERR "%02x: %016llx %016llx \n", i, be64_to_cpu(p[0]), be64_to_cpu(p[1]));
++                p+= 2;
++                printk(KERN_ERR "%02x: %016llx %016llx \n", i, be64_to_cpu(p[0]), be64_to_cpu(p[1]));
++                p+= 2;
++        }
++}
++
++static int dump_send_recv_queues(int id, void *ptr, void *data)
++{
++        struct c4iw_qp *qhp = ptr;
++        struct t4_swsqe *swsqe;
++        struct t4_swrqe *swrqe;
++	struct c4iw_cq *rchp;
++	struct c4iw_cq *schp;
++	int i;
++        int j;
++        u16 cidx, pidx;
++        u64 *p;
++
++        printk(KERN_ERR
++                "QP: %p id %u flushed %d \n"
++                "    SQ: id %u queue %p sw_queue %p cidx %u pidx %u in_use %u wq_pidx %u depth %u flags 0x%x flush_cidx %d\n"
++                "    RQ: id %u queue %p sw_queue %p cidx %u pidx %u in_use %u depth %u\n",
++                qhp,
++                qhp->wq.sq.qid,
++                qhp->wq.flushed,
++                qhp->wq.sq.qid,
++                qhp->wq.sq.queue,
++                qhp->wq.sq.sw_sq,
++                qhp->wq.sq.cidx,
++                qhp->wq.sq.pidx,
++                qhp->wq.sq.in_use,
++                qhp->wq.sq.wq_pidx,
++                qhp->wq.sq.size,
++                qhp->wq.sq.flags,
++                qhp->wq.sq.flush_cidx,
++                qhp->wq.rq.qid,
++                qhp->wq.rq.queue,
++                qhp->wq.rq.sw_rq,
++                qhp->wq.rq.cidx,
++                qhp->wq.rq.pidx,
++                qhp->wq.rq.in_use,
++                qhp->wq.rq.size);
++        cidx = qhp->wq.sq.cidx;
++        pidx = qhp->wq.sq.pidx;
++        if (cidx != pidx)
++                printk(KERN_ERR "SQ: \n");
++        while (cidx != pidx) {
++                swsqe = &qhp->wq.sq.sw_sq[cidx];
++                printk(KERN_ERR "%04u: wr_id %016" "llx"
++                        " sq_wptr %08x read_len %u opcode 0x%x "
++                        "complete %u signaled %u cqe %016llx %016llx\n",
++                        cidx,
++                        swsqe->wr_id,
++                        swsqe->idx,
++                        swsqe->read_len,
++                        swsqe->opcode,
++                        swsqe->complete,
++                        swsqe->signaled,
++                        cpu_to_be64((u64)swsqe->cqe.reserved),
++                        cpu_to_be64(swsqe->cqe.bits_type_ts));
++                if (++cidx == qhp->wq.sq.size)
++                        cidx = 0;
++        }
++
++        printk(KERN_ERR "SQ WQ: \n");
++        p = (u64 *)qhp->wq.sq.queue;
++        for (i=0; i < qhp->wq.sq.size * T4_SQ_NUM_SLOTS; i++) {
++                for (j=0; j < T4_EQ_ENTRY_SIZE / 16; j++) {
++                        printk(KERN_ERR "%04u %016llx %016llx ",
++                                i, be64_to_cpu(p[0]), be64_to_cpu(p[1]));
++                        if (j == 0 && i == qhp->wq.sq.wq_pidx)
++                                printk(KERN_ERR " <-- pidx");
++                        printk(KERN_ERR "\n");
++                        p += 2;
++                }
++        }
++        cidx = qhp->wq.rq.cidx;
++        pidx = qhp->wq.rq.pidx;
++        if (cidx != pidx)
++                printk(KERN_ERR "RQ: \n");
++        while (cidx != pidx) {
++                swrqe = &qhp->wq.rq.sw_rq[cidx];
++                printk(KERN_ERR "%04u: wr_id %016" "llx" "\n",
++                        cidx,
++                        swrqe->wr_id );
++                if (++cidx == qhp->wq.rq.size)
++                        cidx = 0;
++        }
++
++        printk(KERN_ERR "RQ WQ: \n");
++        p = (u64 *)qhp->wq.rq.queue;
++        for (i=0; i < qhp->wq.rq.size * T4_RQ_NUM_SLOTS; i++) {
++                for (j=0; j < T4_EQ_ENTRY_SIZE / 16; j++) {
++                        printk(KERN_ERR "%04u %016llx %016llx ",
++                                i, be64_to_cpu(p[0]), be64_to_cpu(p[1]));
++                        if (j == 0 && i == qhp->wq.rq.pidx)
++                                printk(KERN_ERR " <-- pidx");
++                        if (j == 0 && i == qhp->wq.rq.cidx)
++                                printk(KERN_ERR " <-- cidx");
++                        printk(KERN_ERR "\n");
++                        p+=2;
++                }
++        }
++
++	schp = to_c4iw_cq(qhp->ibqp.send_cq);
++	rchp = to_c4iw_cq(qhp->ibqp.recv_cq);
++	if (schp == rchp)
++		dump_cq(rchp);
++	else
++		dump_cq(schp);
++		dump_cq(rchp);
++	return 0;
++}
++
++void dump_state(struct c4iw_dev *dev)
++{
++        printk(KERN_ERR "STALL DETECTED:\n");
++        printk(KERN_ERR "Device %s\n", dev->ibdev.name);
++
++	spin_lock_irq(&dev->lock);
++	idr_for_each(&dev->qpidr, dump_send_recv_queues, NULL);
++	spin_unlock_irq(&dev->lock);
++
++        printk(KERN_ERR "DUMP COMPLETE:\n");
++}
++
++
+ static int dump_qp(int id, void *p, void *data)
+ {
+ 	struct c4iw_qp *qp = p;
+diff -r 492814d6775e dev/T4/linux/iw_cxgb4/iw_cxgb4.h
+--- a/dev/T4/linux/iw_cxgb4/iw_cxgb4.h	Mon Mar 06 03:28:39 2017 -0800
++++ b/dev/T4/linux/iw_cxgb4/iw_cxgb4.h	Tue Mar 21 17:44:20 2017 +0530
+@@ -526,6 +526,7 @@ struct c4iw_cq {
+ 	spinlock_t comp_handler_lock;
+ 	atomic_t refcnt;
+ 	wait_queue_head_t wait;
++	struct timeval time;
+ };
+ 
+ static inline struct c4iw_cq *to_c4iw_cq(struct ib_cq *ibcq)
+@@ -1238,8 +1239,13 @@ void c4iw_free_srq_idx(struct c4iw_rdev 
+ extern void c4iw_log_wr_stats(struct t4_wq *wq, struct t4_cqe *cqe);
+ extern int c4iw_wr_log;
+ 
++extern int stall_timeout;
++extern int dumped;
++void dump_state(struct c4iw_dev *dev);
++
+ extern int use_dsgl;
+ extern int wd_disable_inaddr_any;
++extern int debug_print;
+ void c4iw_dispatch_srq_limit_reached_event(struct c4iw_srq *srq);
+ 
+ #ifndef IB_QPT_RAW_ETH
+diff -r 492814d6775e dev/T4/linux/iw_cxgb4/provider.c
+--- a/dev/T4/linux/iw_cxgb4/provider.c	Mon Mar 06 03:28:39 2017 -0800
++++ b/dev/T4/linux/iw_cxgb4/provider.c	Tue Mar 21 17:44:20 2017 +0530
+@@ -413,6 +413,8 @@ static int c4iw_query_device(struct ib_d
+ 	props->max_fmr = dev->rdev.lldi.tids->ftid_base;
+ 	props->max_map_per_fmr = dev->rdev.nfids;
+ 	props->max_ah = dev->rdev.lldi.tids->nhpftids;
++	printk(KERN_ALERT "$$$$$ max_mr %d max_fmr %d max_map_per_fmr %d max_fast_reg_page_list_len %d max_mr_size %d $$$$\n",
++                           props->max_mr, props->max_fmr, props->max_map_per_fmr, props->max_fast_reg_page_list_len, props->max_mr_size);
+ 
+ 	return 0;
+ }
+diff -r 492814d6775e dev/T4/linux/iw_cxgb4/qp.c
+--- a/dev/T4/linux/iw_cxgb4/qp.c	Mon Mar 06 03:28:39 2017 -0800
++++ b/dev/T4/linux/iw_cxgb4/qp.c	Tue Mar 21 17:44:20 2017 +0530
+@@ -91,6 +91,7 @@ MODULE_PARM_DESC(t5_en_wc, "Use BAR2/WC 
+ #define USE_FL0DATARO(__x) (__x)
+ #endif
+ 
++int debug_print = 0;
+ static int alloc_ird(struct c4iw_dev *dev, u32 ird)
+ {
+ 	int ret;
+@@ -1281,7 +1282,7 @@ static int build_rdma_send(struct t4_sq 
+ }
+ 
+ static int build_rdma_write(struct t4_sq *sq, union t4_wr *wqe,
+-			    struct ib_send_wr *wr, u8 *len16)
++			    struct ib_send_wr *wr, u8 *len16, int *write_len)
+ {
+ 	u32 plen;
+ 	int size;
+@@ -1320,6 +1321,7 @@ static int build_rdma_write(struct t4_sq
+ 	}
+ 	*len16 = DIV_ROUND_UP(size, 16);
+ 	wqe->write.plen = cpu_to_be32(plen);
++	*write_len = plen;
+ 	return 0;
+ }
+ 
+@@ -1726,6 +1728,7 @@ static int post_rc_send(struct ib_qp *ib
+ 	enum fw_wr_opcodes fw_opcode = 0;
+ 	enum fw_ri_wr_flags fw_flags;
+ 	struct c4iw_qp *qhp;
++	struct c4iw_cq *scq;
+ 	union t4_wr *wqe = NULL;
+ 	u32 num_wrs;
+ 	struct t4_swsqe *swsqe;
+@@ -1733,6 +1736,7 @@ static int post_rc_send(struct ib_qp *ib
+ 	u16 idx = 0;
+ 
+ 	qhp = to_c4iw_qp(ibqp);
++	scq = to_c4iw_cq(ibqp->send_cq);
+ 	spin_lock_irqsave(&qhp->lock, flag);
+ 	if (t4_wq_in_error(&qhp->wq)) {
+ 		spin_unlock_irqrestore(&qhp->lock, flag);
+@@ -1775,7 +1779,7 @@ static int post_rc_send(struct ib_qp *ib
+ 		case IB_WR_RDMA_WRITE:
+ 			fw_opcode = FW_RI_RDMA_WRITE_WR;
+ 			swsqe->opcode = FW_RI_RDMA_WRITE;
+-			err = build_rdma_write(&qhp->wq.sq, wqe, wr, &len16);
++			err = build_rdma_write(&qhp->wq.sq, wqe, wr, &len16, &swsqe->read_len);
+ 			break;
+ 		case IB_WR_RDMA_READ:
+ 		case IB_WR_RDMA_READ_WITH_INV:
+@@ -1813,6 +1817,7 @@ static int post_rc_send(struct ib_qp *ib
+ 					break;
+ 			}
+ 			mhp->attr.state = 1;
++			swsqe->read_len = roundup(mhp->mpl_len * sizeof(u64), 32);
+ 			break;
+ 		}
+ 		case IB_WR_LOCAL_INV:
+@@ -1846,9 +1851,17 @@ static int post_rc_send(struct ib_qp *ib
+ 
+ 		init_wr_hdr(wqe, qhp->wq.sq.pidx, fw_opcode, fw_flags, len16);
+ 
+-		PDBG("%s cookie 0x%llx pidx 0x%x opcode 0x%x read_len %u\n",
+-		     __func__, (unsigned long long)wr->wr_id, qhp->wq.sq.pidx,
+-		     swsqe->opcode, swsqe->read_len);
++                if (qhp->wq.sq.in_use > 69) {
++                        printk(KERN_ERR "%s cookie 0x%llx opcode 0x%x read_len %u size %u in use %u pidx %u cidx %u wq_pidx %u wq_pidx_inc %u\n"
++                                        "\t\tscq->cq.size %u scq->cq.cidx %u scq->cq.sw_pidx %u scq->cq.sw_cidx %u scq->cq.sw_in_use %u scq->cq.cidx_inc %u\n",
++                                        __func__, (unsigned long long)wr->wr_id, swsqe->opcode, swsqe->read_len, qhp->wq.sq.size, qhp->wq.sq.in_use,
++                                        qhp->wq.sq.pidx, qhp->wq.sq.cidx, qhp->wq.sq.wq_pidx, qhp->wq.sq.wq_pidx_inc, scq->cq.size, scq->cq.cidx,
++                                        scq->cq.sw_pidx, scq->cq.sw_cidx, scq->cq.sw_in_use, scq->cq.cidx_inc);
++                        debug_print = 1;
++                } else {
++                        debug_print = 0;
++                }
++
+ 		wr = wr->next;
+ 		num_wrs--;
+ 		t4_sq_produce(&qhp->wq, len16);
+@@ -2933,7 +2946,7 @@ static struct ib_qp *create_rc_qp(struct
+ 	 * Therefore we factor max_send_wr with 3 based on unique SQ size of iSER
+ 	 */
+ 	if (!ucontext && (attrs->cap.max_send_wr == ISER_SQ_SIZE))
+-		sqsize = min_t(int, 3 * attrs->cap.max_send_wr + 1,
++		sqsize = min_t(int, attrs->cap.max_send_wr + 1,
+ 			     rhp->rdev.hw_queue.t4_max_sq_size);
+ 	else
+ 		sqsize = attrs->cap.max_send_wr + 1;
+@@ -3111,7 +3124,7 @@ static struct ib_qp *create_rc_qp(struct
+ 	INIT_LIST_HEAD(&qhp->fcl.db_fc_entry);
+ 	qhp->fcl.type = RC_QP;
+ 
+-	PDBG("%s sq id %u size %u memsize %lu num_entries %u "
++	printk(KERN_ERR "%s sq id %u size %u memsize %lu num_entries %u "
+ 	     "rq id %u size %u memsize %lu num_entries %u\n", __func__,
+ 	     qhp->wq.sq.qid, qhp->wq.sq.size, (unsigned long)qhp->wq.sq.memsize,
+ 	     attrs->cap.max_send_wr, qhp->wq.rq.qid, qhp->wq.rq.size,
+diff -r 492814d6775e dev/T4/linux/iw_cxgb4/t4.h
+--- a/dev/T4/linux/iw_cxgb4/t4.h	Mon Mar 06 03:28:39 2017 -0800
++++ b/dev/T4/linux/iw_cxgb4/t4.h	Tue Mar 21 17:44:20 2017 +0530
+@@ -788,6 +788,11 @@ static inline int t4_valid_cqe(struct t4
+ 	return (CQE_GENBIT(cqe) == cq->gen);
+ }
+ 
++static inline int t4_cq_notempty(struct t4_cq *cq)
++{
++        return cq->sw_in_use || t4_valid_cqe(cq, &cq->queue[cq->cidx]);
++}
++
+ static inline int t4_next_hw_cqe(struct t4_cq *cq, struct t4_cqe **cqe)
+ {
+ 	int ret;

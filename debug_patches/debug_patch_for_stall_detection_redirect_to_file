@@ -1,0 +1,179 @@
+diff -r c8a19ca91a74 linux_libs/libcxgb4/Makefile.am
+--- a/linux_libs/libcxgb4/Makefile.am	Thu Apr 21 07:42:56 2016 -0700
++++ b/linux_libs/libcxgb4/Makefile.am	Mon May 09 17:43:21 2016 +0530
+@@ -1,6 +1,6 @@
+ lib_LTLIBRARIES = src/libcxgb4.la
+ 
+-AM_CFLAGS = -g -Wall -D_GNU_SOURCE -DNDEBUG -DOVERFLOW_DETECTION -fno-strict-aliasing
++AM_CFLAGS = -g -Wall -D_GNU_SOURCE -DNDEBUG -DOVERFLOW_DETECTION -DSTALL_DETECTION -fno-strict-aliasing
+ 
+ if HAVE_LD_VERSION_SCRIPT
+     cxgb4_version_script = -Wl,--version-script=$(srcdir)/src/cxgb4.map
+diff -r c8a19ca91a74 linux_libs/libcxgb4/src/dev.c
+--- a/linux_libs/libcxgb4/src/dev.c	Thu Apr 21 07:42:56 2016 -0700
++++ b/linux_libs/libcxgb4/src/dev.c	Mon May 09 17:43:21 2016 +0530
+@@ -236,8 +236,7 @@ int dumped;
+ static void dump_cq(struct c4iw_cq *chp)
+ {
+ 	int i;
+-
+-	fprintf(stderr,
++	fprintf(dbgfptr,
+  		"CQ: %p id %u queue %p cidx 0x%08x sw_queue %p sw_cidx %d sw_pidx %d sw_in_use %d depth %u error %u gen %d "
+ 		"cidx_inc %d bits_type_ts %016" PRIx64 " notempty %d\n", chp,
+                 chp->cq.cqid, chp->cq.queue, chp->cq.cidx,
+@@ -248,17 +247,17 @@ static void dump_cq(struct c4iw_cq *chp)
+ 	for (i=0; i < chp->cq.size; i++) {
+ 		u64 *p = (u64 *)(chp->cq.queue + i);
+ 
+-		fprintf(stderr, "%02x: %016" PRIx64 " %016" PRIx64, i, be64_to_cpu(p[0]), be64_to_cpu(p[1]));
++		fprintf(dbgfptr, "%02x: %016" PRIx64 " %016" PRIx64, i, be64_to_cpu(p[0]), be64_to_cpu(p[1]));
+ 		if (i == chp->cq.cidx)
+-			fprintf(stderr, " <-- cidx\n");
++			fprintf(dbgfptr, " <-- cidx\n");
+ 		else
+-			fprintf(stderr, "\n");
++			fprintf(dbgfptr, "\n");
+ 		p+= 2;
+-		fprintf(stderr, "%02x: %016" PRIx64 " %016" PRIx64 "\n", i, be64_to_cpu(p[0]), be64_to_cpu(p[1]));
++		fprintf(dbgfptr, "%02x: %016" PRIx64 " %016" PRIx64 "\n", i, be64_to_cpu(p[0]), be64_to_cpu(p[1]));
+ 		p+= 2;
+-		fprintf(stderr, "%02x: %016" PRIx64 " %016" PRIx64 "\n", i, be64_to_cpu(p[0]), be64_to_cpu(p[1]));
++		fprintf(dbgfptr, "%02x: %016" PRIx64 " %016" PRIx64 "\n", i, be64_to_cpu(p[0]), be64_to_cpu(p[1]));
+ 		p+= 2;
+-		fprintf(stderr, "%02x: %016" PRIx64 " %016" PRIx64 "\n", i, be64_to_cpu(p[0]), be64_to_cpu(p[1]));
++		fprintf(dbgfptr, "%02x: %016" PRIx64 " %016" PRIx64 "\n", i, be64_to_cpu(p[0]), be64_to_cpu(p[1]));
+ 		p+= 2;
+ 	}
+ }
+@@ -272,7 +271,7 @@ static void dump_qp(struct c4iw_qp *qhp)
+ 	u16 cidx, pidx;
+ 	u64 *p;
+ 
+-	fprintf(stderr,
++	fprintf(dbgfptr,
+ 		"QP: %p id %u error %d flushed %d qid_mask 0x%x\n"
+ 		"    SQ: id %u queue %p sw_queue %p cidx %u pidx %u in_use %u wq_pidx %u depth %u flags 0x%x flush_cidx %d\n"
+ 		"    RQ: id %u queue %p sw_queue %p cidx %u pidx %u in_use %u depth %u\n",
+@@ -301,10 +300,10 @@ static void dump_qp(struct c4iw_qp *qhp)
+ 	cidx = qhp->wq.sq.cidx;
+ 	pidx = qhp->wq.sq.pidx;
+ 	if (cidx != pidx)
+-		fprintf(stderr, "SQ: \n");
++		fprintf(dbgfptr, "SQ: \n");
+ 	while (cidx != pidx) {
+ 		swsqe = &qhp->wq.sq.sw_sq[cidx];
+-		fprintf(stderr, "%04u: wr_id %016" PRIx64
++		fprintf(dbgfptr, "%04u: wr_id %016" PRIx64
+ 			" sq_wptr %08x read_len %u opcode 0x%x "
+ 			"complete %u signaled %u cqe %016" PRIx64 " %016" PRIx64 " %016" PRIx64 " %016" PRIx64 "\n",
+ 			cidx,
+@@ -322,42 +321,42 @@ static void dump_qp(struct c4iw_qp *qhp)
+ 			cidx = 0;
+ 	}
+ 
+-	fprintf(stderr, "SQ WQ: \n");
++	fprintf(dbgfptr, "SQ WQ: \n");
+ 	p = (u64 *)qhp->wq.sq.queue;
+ 	for (i=0; i < qhp->wq.sq.size * T4_SQ_NUM_SLOTS; i++) {
+ 		for (j=0; j < T4_EQ_ENTRY_SIZE / 16; j++) {
+-			fprintf(stderr, "%04u %016" PRIx64 " %016" PRIx64 " ",
++			fprintf(dbgfptr, "%04u %016" PRIx64 " %016" PRIx64 " ",
+ 				i, ntohll(p[0]), ntohll(p[1]));
+ 			if (j == 0 && i == qhp->wq.sq.wq_pidx)
+-				fprintf(stderr, " <-- pidx");
+-			fprintf(stderr, "\n");
++				fprintf(dbgfptr, " <-- pidx");
++			fprintf(dbgfptr, "\n");
+ 			p += 2;
+ 		}
+ 	}
+ 	cidx = qhp->wq.rq.cidx;
+ 	pidx = qhp->wq.rq.pidx;
+ 	if (cidx != pidx)
+-		fprintf(stderr, "RQ: \n");
++		fprintf(dbgfptr, "RQ: \n");
+ 	while (cidx != pidx) {
+ 		swrqe = &qhp->wq.rq.sw_rq[cidx];
+-		fprintf(stderr, "%04u: wr_id %016" PRIx64 "\n",
++		fprintf(dbgfptr, "%04u: wr_id %016" PRIx64 "\n",
+ 			cidx,
+ 			swrqe->wr_id );
+ 		if (++cidx == qhp->wq.rq.size)
+ 			cidx = 0;
+ 	}
+ 
+-	fprintf(stderr, "RQ WQ: \n");
++	fprintf(dbgfptr, "RQ WQ: \n");
+ 	p = (u64 *)qhp->wq.rq.queue;
+ 	for (i=0; i < qhp->wq.rq.size * T4_RQ_NUM_SLOTS; i++) {
+ 		for (j=0; j < T4_EQ_ENTRY_SIZE / 8; j++) {
+-			fprintf(stderr, "%04u %016" PRIx64 " %016" PRIx64 " ",
++			fprintf(dbgfptr, "%04u %016" PRIx64 " %016" PRIx64 " ",
+ 				i, ntohll(p[0]), ntohll(p[1]));
+ 			if (j == 0 && i == qhp->wq.rq.pidx)
+-				fprintf(stderr, " <-- pidx");
++				fprintf(dbgfptr, " <-- pidx");
+ 			if (j == 0 && i == qhp->wq.rq.cidx)
+-			fprintf(stderr, " <-- cidx");
+-			fprintf(stderr, "\n");
++			fprintf(dbgfptr, " <-- cidx");
++			fprintf(dbgfptr, "\n");
+ 			p+=2;
+ 		}
+ 	}
+@@ -368,10 +367,10 @@ void dump_state()
+ 	struct c4iw_dev *dev;
+ 	int i;
+ 
+-	fprintf(stderr, "STALL DETECTED:\n");
++	fprintf(dbgfptr, "STALL DETECTED:\n");
+ 	SLIST_FOREACH(dev, &devices, list) {
+ 		//pthread_spin_lock(&dev->lock);
+-		fprintf(stderr, "Device %s\n", dev->ibv_dev.name);
++		fprintf(dbgfptr, "Device %s\n", dev->ibv_dev.name);
+ 		for (i=0; i < dev->max_cq; i++) {
+ 			if (dev->cqid2ptr[i]) {
+ 				struct c4iw_cq *chp = dev->cqid2ptr[i];
+@@ -391,6 +390,7 @@ void dump_state()
+ 		//pthread_spin_unlock(&dev->lock);
+ 	}
+ 	fprintf(stderr, "DUMP COMPLETE:\n");
++	fclose(dbgfptr);
+ 	fflush(stderr);
+ }
+ 
+@@ -478,12 +478,17 @@ found:
+ 	SLIST_INSERT_HEAD(&devices, dev, list);
+ #ifdef STALL_DETECTION
+ {
+-	char *c = getenv("CXGB4_STALL_TIMEOUT");
+-	if (c) {
+-		stall_to = strtol(c, NULL, 0);
++	//char *c = getenv("CXGB4_STALL_TIMEOUT");
++	//if (c) {
++	//	stall_to = strtol(c, NULL, 0);
++	//FILE *dbgfptr;
++	dbgfptr = fopen("stall_qdump.txt","a+");
++	if (dbgfptr == NULL)
++		fprintf(stderr, "$$$$ Failed file open $$$$");
++	stall_to = 60;
+ 		if (stall_to < 0)
+ 			stall_to = 0;
+-	}
++	//}
+ }
+ #endif
+ {
+diff -r c8a19ca91a74 linux_libs/libcxgb4/src/libcxgb4.h
+--- a/linux_libs/libcxgb4/src/libcxgb4.h	Thu Apr 21 07:42:56 2016 -0700
++++ b/linux_libs/libcxgb4/src/libcxgb4.h	Mon May 09 17:43:21 2016 +0530
+@@ -44,6 +44,8 @@
+ #include "queue.h"
+ #include "t4.h"
+ 
++FILE *dbgfptr;
++
+ extern unsigned long c4iw_page_size;
+ extern unsigned long c4iw_page_mask;
+ extern unsigned long c4iw_page_shift;

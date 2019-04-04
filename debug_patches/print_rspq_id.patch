@@ -1,0 +1,25 @@
+diff -r 19f3f9f8f6b0 dev/T4/linux/drv/cxgb4_main.c
+--- a/dev/T4/linux/drv/cxgb4_main.c	Wed Apr 04 17:40:43 2018 +0530
++++ b/dev/T4/linux/drv/cxgb4_main.c	Thu Apr 05 11:57:53 2018 +0530
+@@ -1003,6 +1003,9 @@ static int uldrx_handler(struct sge_rspq
+ 	else
+ 		ret = cxgb4_ulds[q->uld].rx_handler(q->adap->uld_handle[q->uld],
+ 					      rsp, gl);
++	printk(KERN_ERR "Rsp Q %d/%d\n",
++			q->cntxt_id,
++			q->abs_id);
+ 
+ 	if (ret) {
+ 		rxq->stats.nomem++;
+@@ -1794,6 +1797,11 @@ static int setup_sge_queues(struct adapt
+ 						adap->port[i],
+ 						s->fw_evtq.cntxt_id,
+ 						s->rdmarxq[i].rspq.cntxt_id);
++		printk(KERN_ERR "ctrl Q %d fw_ev Q %d/%d, rdma_rsp Q %d/%d\n",
++			s->ctrlq[NCHAN + i].q.cntxt_id,
++			s->fw_evtq.cntxt_id,
++			s->fw_evtq.abs_id, s->rdmarxq[i].rspq.cntxt_id,
++			s->rdmarxq[i].rspq.abs_id);
+ 		    if (err)
+ 			goto freeout;
+ 		}

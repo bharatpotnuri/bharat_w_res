@@ -1,0 +1,46 @@
+diff -r 30fa5fdc0d43 buildall.sh
+--- a/buildall.sh	Thu Apr 14 08:27:51 2016 -0700
++++ b/buildall.sh	Fri Apr 29 12:09:42 2016 +0530
+@@ -47,7 +47,7 @@ fi
+ 
+ echo "### Building libs  ###"
+ for i in libcxgb4 libcxgb4_udp libcxgb4_sock $libwdtoe; do 
+-	(cd linux_libs/$i; make distclean; ./autogen.sh && ./configure \
++	(cd linux_libs/$i; make distclean; ./autogen.sh && ./configure CFLAGS="-g -O0" \
+ 	 --prefix=/usr --sysconfdir=/etc --libdir=/usr/$libdir; \
+ 	 make && make install); 
+ 	if [[ $? -ne 0 ]] ; then
+diff -r 30fa5fdc0d43 linux_libs/libcxgb4/Makefile.am
+--- a/linux_libs/libcxgb4/Makefile.am	Thu Apr 14 08:27:51 2016 -0700
++++ b/linux_libs/libcxgb4/Makefile.am	Fri Apr 29 12:09:42 2016 +0530
+@@ -1,6 +1,6 @@
+ lib_LTLIBRARIES = src/libcxgb4.la
+ 
+-AM_CFLAGS = -g -Wall -D_GNU_SOURCE -DNDEBUG -DOVERFLOW_DETECTION -fno-strict-aliasing
++AM_CFLAGS = -g -Wall -O0 -D_GNU_SOURCE -DOVERFLOW_DETECTION -fno-strict-aliasing
+ 
+ if HAVE_LD_VERSION_SCRIPT
+     cxgb4_version_script = -Wl,--version-script=$(srcdir)/src/cxgb4.map
+diff -r 30fa5fdc0d43 linux_libs/libcxgb4_sock/Makefile.am
+--- a/linux_libs/libcxgb4_sock/Makefile.am	Thu Apr 14 08:27:51 2016 -0700
++++ b/linux_libs/libcxgb4_sock/Makefile.am	Fri Apr 29 12:09:42 2016 +0530
+@@ -1,6 +1,6 @@
+ lib_LTLIBRARIES = src/libcxgb4_sock.la
+ 
+-AM_CFLAGS = -g -Wall -D_GNU_SOURCE -D__USE_GNU -Dlint -I../libcxgb4_udp/include -DCONFIG_FILE=\"$(sysconfdir)/libcxgb4_sock.conf\"  -fno-strict-aliasing
++AM_CFLAGS = -g -Wall -O0 -D_GNU_SOURCE -D__USE_GNU -Dlint -I../libcxgb4_udp/include -DCONFIG_FILE=\"$(sysconfdir)/libcxgb4_sock.conf\"  -fno-strict-aliasing
+ 
+ src_libcxgb4_sock_la_SOURCES = src/sock.c src/route.c src/scanner.c src/parser.c src/endpoint.c
+ src_libcxgb4_sock_la_LDFLAGS = -version-info 1 -ldl -lc -pthread -lcxgb4_udp -libverbs -lrdmacm
+diff -r 30fa5fdc0d43 linux_libs/libcxgb4_udp/Makefile.am
+--- a/linux_libs/libcxgb4_udp/Makefile.am	Thu Apr 14 08:27:51 2016 -0700
++++ b/linux_libs/libcxgb4_udp/Makefile.am	Fri Apr 29 12:09:42 2016 +0530
+@@ -2,7 +2,7 @@ INCLUDES = -I$(srcdir)/include
+ 
+ lib_LTLIBRARIES = src/libcxgb4_udp.la
+ 
+-AM_CFLAGS = -g -Wall -D_GNU_SOURCE -DNDEBUG -fno-strict-aliasing
++AM_CFLAGS = -g -Wall -O0 -D_GNU_SOURCE -fno-strict-aliasing
+ 
+ src_libcxgb4_udp_la_CFLAGS = $(AM_CFLAGS)
+ 

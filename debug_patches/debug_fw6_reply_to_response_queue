@@ -1,0 +1,158 @@
+Index: linux-3.10.0-514.el7.x86_64/drivers/infiniband/hw/cxgb4/device.c
+===================================================================
+--- linux-3.10.0-514.el7.x86_64.orig/drivers/infiniband/hw/cxgb4/device.c
++++ linux-3.10.0-514.el7.x86_64/drivers/infiniband/hw/cxgb4/device.c
+@@ -1140,9 +1140,11 @@ static int c4iw_uld_rx_handler(void *han
+ 		const struct rsp_ctrl *rc = (void *)rsp;
+ 
+ 		u32 qid = be32_to_cpu(rc->pldbuflen_qid);
++		FOO_DBG("AN qid %d\n", qid);
+ 		c4iw_ev_handler(dev, qid);
+ 		return 0;
+ 	} else if (unlikely(*(u8 *)rsp != *(u8 *)gl->va)) {
++		FOO_DBG("RX_PKT!!!\n");
+ 		if (recv_rx_pkt(dev, gl, rsp))
+ 			return 0;
+ 
+@@ -1162,6 +1164,7 @@ static int c4iw_uld_rx_handler(void *han
+ 	}
+ 
+ 	opcode = *(u8 *)rsp;
++	FOO_DBG("opcode 0x%x\n", opcode);
+ 	if (c4iw_handlers[opcode]) {
+ 		c4iw_handlers[opcode](dev, skb);
+ 	} else {
+@@ -1172,6 +1175,7 @@ static int c4iw_uld_rx_handler(void *han
+ 
+ 	return 0;
+ nomem:
++	FOO_DBG("Nomem!\n");
+ 	return -1;
+ }
+ 
+Index: linux-3.10.0-514.el7.x86_64/drivers/infiniband/hw/cxgb4/iw_cxgb4.h
+===================================================================
+--- linux-3.10.0-514.el7.x86_64.orig/drivers/infiniband/hw/cxgb4/iw_cxgb4.h
++++ linux-3.10.0-514.el7.x86_64/drivers/infiniband/hw/cxgb4/iw_cxgb4.h
+@@ -229,6 +229,8 @@ static inline int c4iw_wait_for_reply(st
+ 		goto out;
+ 	}
+ 
++	FOO_DBG("wr_waitp %p\n", wr_waitp);
++
+ 	ret = wait_for_completion_timeout(&wr_waitp->completion, C4IW_WR_TO);
+ 	if (!ret) {
+ 		PDBG("%s - Device %s not responding (disabling device) - tid %u qpid %u\n",
+Index: linux-3.10.0-514.el7.x86_64/drivers/infiniband/hw/cxgb4/qp.c
+===================================================================
+--- linux-3.10.0-514.el7.x86_64.orig/drivers/infiniband/hw/cxgb4/qp.c
++++ linux-3.10.0-514.el7.x86_64/drivers/infiniband/hw/cxgb4/qp.c
+@@ -1358,12 +1358,14 @@ static int rdma_fini(struct c4iw_dev *rh
+ 	wqe->cookie = (uintptr_t)&ep->com.wr_wait;
+ 
+ 	wqe->u.fini.type = FW_RI_TYPE_FINI;
++	cxgb4_foo_debug = 1;
+ 	ret = c4iw_ofld_send(&rhp->rdev, skb);
+ 	if (ret)
+ 		goto out;
+ 
+ 	ret = c4iw_wait_for_reply(&rhp->rdev, &ep->com.wr_wait, qhp->ep->hwtid,
+ 			     qhp->wq.sq.qid, __func__);
++	cxgb4_foo_debug = 0;
+ out:
+ 	PDBG("%s ret %d\n", __func__, ret);
+ 	return ret;
+Index: linux-3.10.0-514.el7.x86_64/drivers/net/ethernet/chelsio/cxgb4/cxgb4_main.c
+===================================================================
+--- linux-3.10.0-514.el7.x86_64.orig/drivers/net/ethernet/chelsio/cxgb4/cxgb4_main.c
++++ linux-3.10.0-514.el7.x86_64/drivers/net/ethernet/chelsio/cxgb4/cxgb4_main.c
+@@ -153,6 +153,9 @@ MODULE_FIRMWARE(FW4_FNAME);
+ MODULE_FIRMWARE(FW5_FNAME);
+ MODULE_FIRMWARE(FW6_FNAME);
+ 
++int cxgb4_foo_debug;
++EXPORT_SYMBOL(cxgb4_foo_debug);
++
+ /*
+  * Normally we're willing to become the firmware's Master PF but will be happy
+  * if another PF has already become the Master and initialized the adapter.
+@@ -693,6 +696,8 @@ static int uldrx_handler(struct sge_rspq
+ 	struct sge_ofld_rxq *rxq = container_of(q, struct sge_ofld_rxq, rspq);
+ 	int ret;
+ 
++	FOO_DBG("q %p abs_id %d rsp %p gl %p\n", q, q->abs_id, rsp, gl);
++
+ 	/* FW can send CPLs encapsulated in a CPL_FW4_MSG.
+ 	 */
+ 	if (((const struct rss_header *)rsp)->opcode == CPL_FW4_MSG &&
+Index: linux-3.10.0-514.el7.x86_64/drivers/net/ethernet/chelsio/cxgb4/cxgb4_uld.h
+===================================================================
+--- linux-3.10.0-514.el7.x86_64.orig/drivers/net/ethernet/chelsio/cxgb4/cxgb4_uld.h
++++ linux-3.10.0-514.el7.x86_64/drivers/net/ethernet/chelsio/cxgb4/cxgb4_uld.h
+@@ -331,4 +331,12 @@ int cxgb4_bar2_sge_qregs(struct net_devi
+ 			 u64 *pbar2_qoffset,
+ 			 unsigned int *pbar2_qid);
+ 
++extern int cxgb4_foo_debug;
++
++#define FOO_DBG(fmt, args...) \
++do { \
++        if (cxgb4_foo_debug) \
++                pr_err("%s: " fmt, __func__, ## args); \
++} while (0)
++
+ #endif  /* !__CXGB4_OFLD_H */
+Index: linux-3.10.0-514.el7.x86_64/drivers/net/ethernet/chelsio/cxgb4/sge.c
+===================================================================
+--- linux-3.10.0-514.el7.x86_64.orig/drivers/net/ethernet/chelsio/cxgb4/sge.c
++++ linux-3.10.0-514.el7.x86_64/drivers/net/ethernet/chelsio/cxgb4/sge.c
+@@ -1721,13 +1721,16 @@ static inline unsigned int is_ctrl_pkt(c
+ static inline int ofld_send(struct adapter *adap, struct sk_buff *skb)
+ {
+ 	unsigned int idx = skb_txq(skb);
++        u8 opcode = *(u8 *)skb->data;
+ 
+ 	if (unlikely(is_ctrl_pkt(skb))) {
+ 		/* Single ctrl queue is a requirement for LE workaround path */
+ 		if (adap->tids.nsftids)
+ 			idx = 0;
++		FOO_DBG("opcode 0x%x ctxlq[%d]\n", opcode, idx);
+ 		return ctrl_xmit(&adap->sge.ctrlq[idx], skb);
+ 	}
++	FOO_DBG("opcode 0x%x ofldtxq[%d]\n", opcode, idx);
+ 	return ofld_xmit(&adap->sge.ofldtxq[idx], skb);
+ }
+ 
+@@ -2092,16 +2095,23 @@ static int process_responses(struct sge_
+ 	struct adapter *adapter = q->adap;
+ 	struct sge *s = &adapter->sge;
+ 
++	FOO_DBG("q %p abs_id %d budget %d\n", q, q->abs_id, budget);
++
+ 	while (likely(budget_left)) {
+ 		rc = (void *)q->cur_desc + (q->iqe_len - sizeof(*rc));
++
+ 		if (!is_new_response(rc, q)) {
+ 			if (q->flush_handler)
+ 				q->flush_handler(q);
++			FOO_DBG("empty q %p abs_id %d budget %d rc %p\n", q, q->abs_id, budget, rc);
+ 			break;
+ 		}
+ 
+ 		dma_rmb();
+ 		rsp_type = RSPD_TYPE_G(rc->type_gen);
++
++		FOO_DBG("q %p abs_id %d budget %d rc %p rsp_type %d\n", q, q->abs_id, budget, rc, rsp_type);
++
+ 		if (likely(rsp_type == RSPD_TYPE_FLBUF_X)) {
+ 			struct page_frag *fp;
+ 			struct pkt_gl si;
+@@ -2168,6 +2178,9 @@ static int process_responses(struct sge_
+ 
+ 	if (q->offset >= 0 && fl_cap(&rxq->fl) - rxq->fl.avail >= 16)
+ 		__refill_fl(q->adap, &rxq->fl);
++
++	FOO_DBG("exit q %p abs_id %d budget %d budget_left %d ret %d\n", q, q->abs_id, budget, budget_left, budget-budget_left);
++
+ 	return budget - budget_left;
+ }

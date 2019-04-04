@@ -1,0 +1,120 @@
+diff --git a/drivers/scsi/bnx2i/bnx2i_hwi.c b/drivers/scsi/bnx2i/bnx2i_hwi.c
+index af01649..f235314 100644
+--- a/drivers/scsi/bnx2i/bnx2i_hwi.c
++++ b/drivers/scsi/bnx2i/bnx2i_hwi.c
+@@ -1674,7 +1674,7 @@ static void bnx2i_process_nopin_local_cmpl(struct iscsi_session *session,
+ 	task = iscsi_itt_to_task(conn,
+ 				 nop_in->itt & ISCSI_NOP_IN_MSG_INDEX);
+ 	if (task)
+-		__iscsi_put_task(task);
++		__iscsi_put_task(task, 0);
+ 	spin_unlock(&session->back_lock);
+ }
+ 
+diff --git a/drivers/scsi/libiscsi.c b/drivers/scsi/libiscsi.c
+index 6bffd91..6a77868 100644
+--- a/drivers/scsi/libiscsi.c
++++ b/drivers/scsi/libiscsi.c
+@@ -481,7 +481,7 @@ static int iscsi_prep_scsi_cmd_pdu(struct iscsi_task *task)
+  * This function returns the scsi command to scsi-ml or cleans
+  * up mgmt tasks then returns the task to the pool.
+  */
+-static void iscsi_free_task(struct iscsi_task *task)
++static void iscsi_free_task(struct iscsi_task *task, bool flag)
+ {
+ 	struct iscsi_conn *conn = task->conn;
+ 	struct iscsi_session *session = conn->session;
+@@ -494,6 +494,9 @@ static void iscsi_free_task(struct iscsi_task *task)
+ 	session->tt->cleanup_task(task);
+ 	task->state = ISCSI_TASK_FREE;
+ 	task->sc = NULL;
++
++	WARN_ON_ONCE((task->hdr->opcode == (ISCSI_OP_NOOP_OUT | ISCSI_OP_IMMEDIATE)) && !flag);
++
+ 	/*
+ 	 * login task is preallocated so do not free
+ 	 */
+@@ -520,10 +523,10 @@ void __iscsi_get_task(struct iscsi_task *task)
+ }
+ EXPORT_SYMBOL_GPL(__iscsi_get_task);
+ 
+-void __iscsi_put_task(struct iscsi_task *task)
++void __iscsi_put_task(struct iscsi_task *task, bool tflag)
+ {
+ 	if (atomic_dec_and_test(&task->refcount))
+-		iscsi_free_task(task);
++		iscsi_free_task(task, tflag);
+ }
+ EXPORT_SYMBOL_GPL(__iscsi_put_task);
+ 
+@@ -533,7 +536,7 @@ void iscsi_put_task(struct iscsi_task *task)
+ 
+ 	/* regular RX path uses back_lock */
+ 	spin_lock_bh(&session->back_lock);
+-	__iscsi_put_task(task);
++	__iscsi_put_task(task, 0);
+ 	spin_unlock_bh(&session->back_lock);
+ }
+ EXPORT_SYMBOL_GPL(iscsi_put_task);
+@@ -557,6 +560,12 @@ static void iscsi_complete_task(struct iscsi_task *task, int state)
+ 	    task->state == ISCSI_TASK_ABRT_SESS_RECOV ||
+ 	    task->state == ISCSI_TASK_REQUEUE_SCSIQ)
+ 		return;
++
++	if (task->state == ISCSI_TASK_FREE)
++		printk(KERN_ALERT "%s: #### ISCSI_TASK_FREE task %p, conn->ping_task %p"
++		       "conn %p conn->task %p ####\n",
++		       __func__, task, conn->ping_task, conn, conn->task);
++
+ 	WARN_ON_ONCE(task->state == ISCSI_TASK_FREE);
+ 	task->state = state;
+ 
+@@ -570,7 +579,7 @@ static void iscsi_complete_task(struct iscsi_task *task, int state)
+ 		conn->ping_task = NULL;
+ 
+ 	/* release get from queueing */
+-	__iscsi_put_task(task);
++	__iscsi_put_task(task, 1);
+ }
+ 
+ /**
+@@ -792,7 +801,7 @@ __iscsi_conn_send_pdu(struct iscsi_conn *conn, struct iscsi_hdr *hdr,
+ free_task:
+ 	/* regular RX path uses back_lock */
+ 	spin_lock_bh(&session->back_lock);
+-	__iscsi_put_task(task);
++	__iscsi_put_task(task, 0);
+ 	spin_unlock_bh(&session->back_lock);
+ 	return NULL;
+ }
+@@ -1453,7 +1462,7 @@ static int iscsi_xmit_task(struct iscsi_conn *conn)
+ 	}
+ 	/* regular RX path uses back_lock */
+ 	spin_lock(&conn->session->back_lock);
+-	__iscsi_put_task(task);
++	__iscsi_put_task(task, 0);
+ 	spin_unlock(&conn->session->back_lock);
+ 	return rc;
+ }
+@@ -1520,7 +1529,7 @@ check_mgmt:
+ 		if (iscsi_prep_mgmt_task(conn, conn->task)) {
+ 			/* regular RX path uses back_lock */
+ 			spin_lock_bh(&conn->session->back_lock);
+-			__iscsi_put_task(conn->task);
++			__iscsi_put_task(conn->task, 0);
+ 			spin_unlock_bh(&conn->session->back_lock);
+ 			conn->task = NULL;
+ 			continue;
+diff --git a/include/scsi/libiscsi.h b/include/scsi/libiscsi.h
+index 4d1c46a..a0eed41 100644
+--- a/include/scsi/libiscsi.h
++++ b/include/scsi/libiscsi.h
+@@ -462,7 +462,7 @@ extern struct iscsi_task *iscsi_itt_to_ctask(struct iscsi_conn *, itt_t);
+ extern struct iscsi_task *iscsi_itt_to_task(struct iscsi_conn *, itt_t);
+ extern void iscsi_requeue_task(struct iscsi_task *task);
+ extern void iscsi_put_task(struct iscsi_task *task);
+-extern void __iscsi_put_task(struct iscsi_task *task);
++extern void __iscsi_put_task(struct iscsi_task *task, bool tflag);
+ extern void __iscsi_get_task(struct iscsi_task *task);
+ extern void iscsi_complete_scsi_task(struct iscsi_task *task,
+ 				     uint32_t exp_cmdsn, uint32_t max_cmdsn);
