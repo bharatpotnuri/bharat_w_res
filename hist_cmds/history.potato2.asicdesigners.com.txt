@@ -1,0 +1,1000 @@
+    2  cd werner/linux-next/Documentation/
+    3  grep sg_nent *
+    4  grep -r sg_nent *
+    5  cd ../include/
+    6  grep -r sg_nent *
+    7  less linux/scatterlist.h 
+    8  cd ../lib
+    9  grep -r sg_nent *
+   10  less scatterlist.c
+   11  cd ..
+   12  cd
+   13  cd werner/sw/dev/T4/linux/drv
+   14  less sge.c
+   15  bc
+   16  less sge.c
+   17  bc
+   18  cd ..
+   19  cd ../
+   20  cd common/
+   21  less ulptx *
+   22  grep ulptx *
+   23  less t4_msg.h
+   24  cd
+   25  cd werner/sw/dev/T4/linux/drv
+   26  ls
+   27  less sge.c
+   28  cd werner/linux-next/
+   29  ls
+   30  cd Documentation/
+   31  ls
+   32  grep dma_map_sg *
+   33  ls DMA*
+   34  less DMA-API.txt
+   35  less DMA-API-HOWTO.txt 
+   36  cd werner/linux-next/Documentation/
+   37  grep -r get_user_pages_longterm *
+   38  cd ../lib
+   39  grep -r get_user_pages_longterm *
+   40  cd ..
+   41  grep -r get_user_pages_longterm *
+   42  cd mm
+   43  less gup.c
+   44  cd
+   45  cd werner/sw
+   46  hg pull --update
+   47  cd dev/T4/linux/t4_tom/
+   48  grep -r kref_get *
+   49  less cpl_io.c
+   50  less t4_tls.c
+   51  grep -r kref_init *
+   52  grep kref *
+   53  les t4_tls.h
+   54  less t4_tls.h
+   55  grep tls_ofld_info *
+   56  less t4_tls.c
+   57  less cpl_io_state.h
+   58  grep kref_put *
+   59  grep t4_tls_release_context *
+   60  less cpl_sock.c
+   61  grep k_ctx *
+   62  less t4_tls.c
+   63  cd werner/
+   64  cd sw
+   65  ls
+   66  cd linux_libs
+   67  ls
+   68  cd libwdtoe
+   69  ls
+   70  cd src
+   71  ls
+   72  less libwdtoe.c
+   73  grep fast_send *
+   74  less libwdtoe.c
+   75  less mmap.c
+   76  less libwdtoe.c
+   77  ls
+   78  grep wdtoe_mmap *
+   79  less chardev.c
+   80  grep wdtoe_mm *
+   81  less mmap.c
+   82  man mmap
+   83  ls
+   84  rm toecore_compat.patch 
+   85  rm t4_tom_compat.patch 
+   86  cd werner
+   87  ls
+   88  cd sw
+   89  hg diff
+   90  hg pull --update
+   91  ls -al
+   92  cd dev/T4/linux/t4_tom/
+   93  ls
+   94  cd
+   95  cd werner/sw/linux_libs
+   96  ls
+   97  cd libcxgb4_udp
+   98  ls
+   99  cd src
+  100  ls
+  101  less udp.c
+  102  grep UDP_PACKED_MODE *
+  103  cd ..
+  104  grep -r UDP_PACKED_MODE *
+  105  less include/chelsio/cxgb4_udp.h
+  106  cd werner/sw
+  107  hg diff
+  108  hg pull --update
+  109  cd dev/T4/linux/t4_tom/
+  110  grep synq *
+  111  grep t4_reset_synq *
+  112  less cpl_io.c
+  113  grep install_stand *
+  114  less cpl_sock.c
+  115  less cpl_io.c
+  116  less cpl_sock.c
+  117  less cpl_io.c
+  118  grep sk_ofld_proto_get_tomhandlers *
+  119  cd ..
+  120  cd linux/toecore
+  121  grep sk_ofld_proto_get_tomhandlers *
+  122  less offload.h
+  123  cd ..
+  124  cd T4/linux/t4_tom/
+  125  grep SOCK_OFFLOAD *
+  126  less cpl_io.c
+  127  less cpl_io_state.h
+  128  grep cplios_oproto_put *
+  129  less cpl_io.c
+  130  less cpl_sock.c
+  131  vi cpl_io.c
+  132  grep cleanup_syn_rcv_conn *
+  133  vi cpl_io.c
+  134  cd
+  135  ls
+  136  cd /opt
+  137  ls
+  138  cd
+  139  cd werner
+  140  ls
+  141  cd linux-next
+  142  ls
+  143  cd include
+  144  ls
+  145  cd net
+  146  grep skb_dequeue *
+  147  cd ../linux/
+  148  grep skb_dequeue *
+  149  less skbuff.h
+  150  cd
+  151  cd werner/
+  152  cd sw
+  153  cd dev/T4/linux/t4_tom/
+  154  cat >> reset_synq.patch
+  155  patch -p5 < reset_synq.patch 
+  156  vi reset_synq.patch 
+  157  vi cpl_io.c
+  158  vi reset_synq.patch 
+  159  patch -p5 < reset_synq.patch 
+  160  vi reset_synq.patch 
+  161  patch -p5 < reset_synq.patch 
+  162  vi reset_synq.patch 
+  163  vi cpl_io.c
+  164  hg diff
+  165  pwd
+  166  cd
+  167  cd werner/sw/linux_t4_build/
+  168  history|grep make
+  169  make disable_bonding=1 disable_iw_cxgb4=1 disable_storage=1 disable_crypto=1 install
+  170  uname -a
+  171  ls /opt
+  172  cd /lib/modules
+  173  ls
+  174  cd 4.20.0-next-20190103/
+  175  ls -al
+  176  cd
+  177  cd werner/sw
+  178  hg revert -a
+  179  ls
+  180  cd /boot/grub
+  181  cd /boot/grub2/
+  182  ls
+  183  cd /boot
+  184  ls
+  185  cd efi
+  186  ls
+  187  cd EFI
+  188  ls
+  189  cd redhat/
+  190  ls
+  191  vi grub.cfg
+  192  less grub.cfg
+  193  history|grep grub
+  194  grubby --set-default-index=10
+  195  reboot
+  196  uname -a
+  197  cat /proc/cmdline
+  198  dmesg
+  199  ls
+  200  cd werner
+  201  ls
+  202  git clone https://github.com/FDio/vpp.git
+  203  cd vpp
+  204  git checkout v18.01.1
+  205  yum remove openssl-devel
+  206  vi src/plugins/dpdk/device/init.c
+  207  cd
+  208  ls /etc/yum.repos.d
+  209  rpm -q -a 
+  210  rpm -q -a | grep epel
+  211  cd werner
+  212  ls
+  213  cd vpp/
+  214  ls
+  215  make install-dep
+  216  make bootstrap
+  217  yum install glibc-static
+  218  cd
+  219  ls
+  220  cd /opt
+  221  ls
+  222  cd
+  223  ls
+  224  scp -r stevo1:/etc/yum.repos.d/ /etc/yum.repos.d/
+  225  yum upgrade
+  226  cat /etc/redhat-release 
+  227  cd /etc/yum.repos.d/
+  228  ls
+  229  cd yum.repos.d/
+  230  ls
+  231  cp *.repo ..
+  232  y
+  233  ls
+  234  cd ..
+  235  ls
+  236  rm rhel74.repo
+  237  rm -rf ./yum.repos.d/
+  238  ls
+  239  rm rhel75.repo
+  240  cd
+  241  yum upgrade
+  242  less /boot/efi/EFI/redhat/grub.cfg
+  243  history|grep grub
+  244  grubby --set-default-index=0
+  245  reboot
+  246  uname -a
+  247  cat /proc/cmdline
+  248  rpm -q -a | grep openssl
+  249  rpm -q -a | grep gcc
+  250  yum install gcc-static
+  251  cd werner/vpp
+  252  make install-dep
+  253  yum install glibc-static
+  254  rpm -q -a | grep glibc
+  255  subscription-manager repos --enable=rhel-7-server-optional-rpms
+  256  subscription-manager repos --list
+  257  cd werner/vpp
+  258  history
+  259  yum install glibc-static
+  260  yum install glibc-devel
+  261  make install-dep
+  262  yum install glibc-devel
+  263  yum install glibc-static
+  264  wget http://mirror.centos.org/centos/7/os/x86_64/Packages/glibc-static-2.17-260.el7.x86_64.rpm
+  265  ls
+  266  rpm -ivh ./glibc-static-2.17-260.el7.x86_64.rpm 
+  267  cd werner/vpp
+  268  make install-dep
+  269  rpm -q -a | grep openssl
+  270  make bootstrap
+  271  cd build-root
+  272  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  273  rpm -q -a | grep glibc
+  274  rpm -q -a | grep java
+  275  ls
+  276  grep japi *
+  277  cd ..
+  278  ls
+  279  grep japi *
+  280  ls -al build-root/install-vpp_debug-native/
+  281  ls -al build-root/install-vpp_debug-native/vpp
+  282  ls
+  283  cd src
+  284  ls
+  285  cd vnet
+  286  ls
+  287  cd tcp
+  288  ls
+  289  grep hash *
+  290  ls
+  291  less tcp.api
+  292  less tcp.api.c
+  293  less tcp_api.c
+  294  ls
+  295  less tcp_input.c 
+  296  cd ..
+  297  ls
+  298  grep -r listen *
+  299  cd tcp
+  300  less tcp.c
+  301  grep sendmsg *
+  302  grep send *
+  303  ls
+  304  cd ..
+  305  ls
+  306  cd session
+  307  ls
+  308  cd ../plugin
+  309  ls
+  310  less plugin.h 
+  311  cd ..
+  312  grep sendmsg *
+  313  grep listen *
+  314  cd ..
+  315  ls
+  316  cd vlibsocket
+  317  ls
+  318  grep listen *
+  319  less api.h
+  320  grep  vl_socket_process_msg  *
+  321  cd ..
+  322  ls
+  323  grep -r vl_socket_process_msg  *
+  324  cd vpp-api
+  325  ls
+  326  cd vapi
+  327  ls
+  328  grep -r vl_socket_process_msg  *
+  329  less vapi.hpp
+  330  cd ..
+  331  ls
+  332  cd vom
+  333  ls
+  334  cd ..
+  335  ls
+  336  cd ..
+  337  ls
+  338  cd svm
+  339  ls
+  340  less svmtool.c
+  341  cd ..
+  342  ls
+  343  cd examples
+  344  ls
+  345  cd sample-plugin/
+  346  ls
+  347  cd sample
+  348  ls
+  349  less sample
+  350  less sample.c
+  351  cd ..
+  352  ls
+  353  cd ..
+  354  ls
+  355  cd ..
+  356  ls
+  357  cd vpp
+  358  ls
+  359  cd vnet
+  360  ls
+  361  less main.c
+  362  cd ..
+  363  ls
+  364  cd ..
+  365  ls
+  366  cd vlibapi
+  367  ls
+  368  less api_shared.c
+  369  cd ..
+  370  ls
+  371  cd ..
+  372  ls
+  373  cd ..
+  374  ls
+  375  rm -rf ./vpp
+  376  git clone https://github.com/FDio/vpp.git 
+  377  cd vpp
+  378  git checkout v18.01.1
+  379  cd src/plugins/
+  380  ls
+  381  cd ixge
+  382  ls
+  383  less ixge.c
+  384  ls
+  385  cd ..
+  386  ls
+  387  cd dpdk/device/
+  388  ls
+  389  vi init.c
+  390  cd
+  391  cd werner/vpp
+  392  make install-dep
+  393  make bootstrap
+  394  cd build-root
+  395  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  396  vi ../src/plugins/dpdk/device/init.c
+  397  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  398  rpm -q -a | grep java
+  399  whereis jni.h
+  400  set
+  401  ls /usr
+  402  ls /usr/include
+  403  find /usr -name jni.h -print
+  404  ls
+  405  less Makefile 
+  406  cd pack
+  407  cd packages/
+  408  ls
+  409  grep japi *
+  410  ls
+  411  cd ..
+  412  ls
+  413  cd tools
+  414  ls
+  415  cd ..
+  416  cd scripts/
+  417  ls
+  418  grep japi *
+  419  cd ..
+  420  ls
+  421  less build-config.mk.README 
+  422  history
+  423  ./vagrant/buil.sh
+  424  ./vagrant/build.sh
+  425  cd ..
+  426  rm -rf ./vpp
+  427  git clone https://github.com/FDio/vpp.git 
+  428  cd vpp
+  429  git checkout v18.01.1
+  430  cd src/plugins/
+  431  ls
+  432  cd dpdk/device/
+  433  ls
+  434  vi init.c
+  435  cd
+  436  cd werner/vpp
+  437  ./build-root/vagrant/build.sh
+  438  yum install ccache
+  439  ./build-root/vagrant/build.sh
+  440  make clean
+  441  ls
+  442  less Makefile 
+  443  makw wipe-debug
+  444  make wipe-debug
+  445  less Makefile 
+  446  makw wipe
+  447  make wipe
+  448  make wipe-release
+  449  ./build-root/vagrant/build.sh
+  450  make install-dep
+  451  make bootstrap
+  452  make build
+  453  cd build-root
+  454  ./configure --disable-japi
+  455  ls
+  456  cd ..
+  457  ls
+  458  cd werner/
+  459  ls
+  460  cd vpp/
+  461  ls
+  462  make install-dep
+  463  make bootstrap
+  464  cd build-root/
+  465  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  466  git status
+  467  uname -r
+  468  gcc --version
+  469  yum remove java
+  470  ls
+  471  cd ..
+  472  make install-dep
+  473  cd build-root/
+  474  make distclean
+  475  make wipe-all
+  476  git diff
+  477  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  478  cat /etc/redhat-release 
+  479  yum remove java
+  480  yum remove java-1.8.0-openjdk-devel
+  481  yum remove java-1.8.0-openjdk
+  482  cd ..
+  483  make install-dep
+  484  cd -
+  485  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  486  git diff
+  487  vim ../src/plugins/dpdk/device/init.c 
+  488  git diff
+  489  cd ..
+  490  make install-dep
+  491  vim /etc/yum.repos.d/rhel76.repo 
+  492  vim /etc/yum.repos.d/centos.repo
+  493  yum remove java-1.8.0-openjdk-devel
+  494  vim /etc/yum.repos.d/centos.repo
+  495  yum remove java-1.8.0-openjdk-devel
+  496  make install-dep
+  497  yum install java
+  498  yum install java-devel
+  499  yum install java-devel --enablerepo=centos
+  500  make install-dep
+  501  make bootstarp
+  502  make bootstrap
+  503  cd build-root/
+  504  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  505  make distclean
+  506  make wipe-all
+  507  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  508  locate jni.h
+  509  ls /usr/lib/java-1.8.0/
+  510  yum remove java
+  511  cd ..
+  512  make install-dep
+  513  ls /usr/lib/java-1.8.0/
+  514  yum install --enablerepo=centos java 
+  515  yum install --enablerepo=epel java 
+  516  cd build--ro
+  517  cd build-root/
+  518  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  519  find /usr/lib/ -name jni.h
+  520  make PLATFORM=vpp TAG=vpp_debug vpp-install EXTRA_CFLAGS="-I/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-7.b13.el7.x86_64/"
+  521  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  522  git log
+  523  git tag
+  524  git status
+  525  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  526  yum search all java | less
+  527  yum --enablerepo=centos update java
+  528  yum update --enablerepo=centos  java
+  529  yum install java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64
+  530  yum install java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64-devel
+  531  yum install java-1.8.0-openjdk*
+  532  ls
+  533  ls install-vpp_debug-native/vpp/
+  534  ls
+  535  vim path_setup 
+  536  sh path_setup 
+  537  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  538  make PLATFORM=vpp TAG=vpp_debug vpp-install | less
+  539  echo $JAVA_HOME
+  540  find /usr/lib/ -name jni.h
+  541  export JAVA_HOME=$JAVA_HOME:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-7.b13.el7.x86_64/
+  542  make PLATFORM=vpp TAG=vpp_debug vpp-install | 
+  543  make PLATFORM=vpp TAG=vpp_debug vpp-install 
+  544  export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-7.b13.el7.x86_64/
+  545  make PLATFORM=vpp TAG=vpp_debug vpp-install 
+  546  which java
+  547  cd ..
+  548  make install-dep
+  549  grep -nrI "181" *
+  550  grep -nrI "181" * | less
+  551  yum remove java
+  552  yum install java
+  553  make install-dep
+  554  yum search all java-1.8.0-openjdk-devel
+  555  yum search all java-1.8.0-openjdk-devel.x86_64
+  556  yum install java-1.8.0-openjdk-devel.x86_64
+  557  cd -
+  558  make PLATFORM=vpp TAG=vpp_debug vpp-install 
+  559  yum install locate
+  560  locate jvpp
+  561  yum search all locate
+  562  yum search all locate | less
+  563  yum install mlocate
+  564  locate jni.h
+  565  yum remove mlocate
+  566  cd ..
+  567    wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+  568    rpm -ivh epel-release-latest-7.noarch.rpm
+  569  rm epel-release-latest-7.noarch.rpm 
+  570  make install-dep
+  571  echo $JAVA_HOME
+  572  yum remove mlocate
+  573  yum install mlocate
+  574  updatedb 
+  575  locate jni.h
+  576  make 
+  577  make build
+  578  which java
+  579  which jvm
+  580  yum install glibc-static
+  581  make install-dep
+  582  yum repolist all
+  583  yum --enablerepo=epel install java
+  584  yum --enablerepo=centos install java
+  585  yum search openjdk
+  586  yum update
+  587  yum install java
+  588  yum update java
+  589  vim /etc/yum.repos.d/centos.repo
+  590  yum update java
+  591  vim /etc/yum.repos.d/centos.repo
+  592  yum update java
+  593  vim /etc/yum.repos.d/centos.repo
+  594  yum update java
+  595  cd build-root/
+  596  make install-dep
+  597  make PLATFORM=vpp TAG=vpp_debug vpp-install 
+  598  cd -
+  599  make install-dep
+  600  make bootstrap
+  601  cd -
+  602  make install-dep
+  603  make PLATFORM=vpp TAG=vpp_debug vpp-install 
+  604  make distclean
+  605  make wipe-all
+  606  make PLATFORM=vpp TAG=vpp_debug vpp-install 
+  607  echo JAVA_HOME=/usr
+  608  export JAVA_HOME=/usr
+  609  make PLATFORM=vpp TAG=vpp_debug vpp-install 
+  610  git status
+  611  yum update java-devel
+  612  pwd
+  613  cd ..
+  614  ls
+  615  make wipe-all
+  616  make help
+  617  make wipe
+  618  make clean
+  619  make distclean
+  620  make wipe-release
+  621  make wipe
+  622  make install-dep
+  623  make bootstrap
+  624  cd ..
+  625   git clone https://github.com/FDio/vpp.git vpp_git
+  626  cd vpp_git/
+  627  git checkout v18.01.1
+  628  git status
+  629  git log
+  630  vim ../src/plugins/dpdk/device/init.c 
+  631  cd build-root/
+  632  vim ../src/plugins/dpdk/device/init.c 
+  633  cd ..
+  634  make bootstrap
+  635  make install-dep
+  636  cd build-root/
+  637  make PLATFORM=vpp TAG=vpp_debug vpp-install 
+  638  git checkout master
+  639  cd ..
+  640  git diff > mine.diff
+  641  git reset --hard HEAD
+  642  git checkout master
+  643  make install-dep
+  644  cd build-root/
+  645  make PLATFORM=vpp TAG=vpp_debug vpp-install 
+  646  cd ..
+  647  yum install cmake3
+  648  cd -
+  649  make PLATFORM=vpp TAG=vpp_debug vpp-install 
+  650  yum install ninja
+  651  python install ninja
+  652  pip install ninja
+  653  yum install pip
+  654  yum install python-pip
+  655  pip install ninja
+  656  make PLATFORM=vpp TAG=vpp_debug vpp-install 
+  657  yum install ply
+  658  pip install ply
+  659  make PLATFORM=vpp TAG=vpp_debug vpp-install 
+  660  make PLATFORM=vpp TAG=vpp_debug vpp-install EXTRA_CFLAGS="-Wno-error"
+  661  vim ../src/vnet/ethernet/node.c 
+  662  make PLATFORM=vpp TAG=vpp_debug vpp-install EXTRA_CFLAGS="-Wno-error"
+  663  pip install ply.lex
+  664  pip install lex
+  665  yum install python-ply
+  666  make PLATFORM=vpp TAG=vpp_debug vpp-install EXTRA_CFLAGS="-Wno-error"
+  667  yum install python-lex
+  668  make distclean
+  669  make wipe-all
+  670  make PLATFORM=vpp TAG=vpp_debug vpp-install EXTRA_CFLAGS="-Wno-error"
+  671  pip install ply
+  672  pip install --upgrade pip
+  673  pip install ply
+  674  pip install lex
+  675  pip remove ply
+  676  pip uninstall ply
+  677  yum install python-lex
+  678  yum install python-ply
+  679  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  680  cd ..
+  681  make install-dep
+  682  yum install python34-ply
+  683  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  684  cd -
+  685  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  686  yum provides stdatomic.h
+  687  yum provides stdatomic
+  688  yum search all stdatomic.h
+  689  cd ..
+  690  ls
+  691  make distclean
+  692  make wipe
+  693  yum install ninja-build
+  694  yum install selinux-policy-devel
+  695  make install-dep
+  696  cd build-root/
+  697  make distclean
+  698  make wipe-all
+  699  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  700  cd ..
+  701  git checkout v18.01.1
+  702  git diff
+  703  git reset --hard HEAD
+  704  git checkout v18.01.1
+  705  make distclean
+  706  make wipe
+  707  make bootstrap
+  708  make install-dep
+  709  cd build-root/
+  710  make distclean
+  711  make wipe-all
+  712  cd ..
+  713  make bootstarp
+  714  make bootstrap
+  715  cd build-root/
+  716  ./bootstrap.sh 
+  717  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  718  vim ../src/vpp-api/java/jvpp-registry/jvpp_registry.c
+  719  fg
+  720  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  721  make PLATFORM=vpp TAG=vpp_debug vpp-install 2&1 > mine
+  722  fg
+  723  vim mine 
+  724  vim 2
+  725  make PLATFORM=vpp TAG=vpp_debug vpp-install &>mine
+  726  vim mine 
+  727  vim /usr/include/sys/mman.h 
+  728  vim mine 
+  729  vim ../src/vppinfra/mem.h
+  730  make PLATFORM=vpp TAG=vpp_debug vpp-install &>mine
+  731  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  732  vim mine 
+  733  vim ../src/vppinfra/mem.h
+  734  git diff
+  735  git checkout ../src/vpp-api/java/
+  736  git diff
+  737  vim ../src/vpp-api/java/jvpp-registry/jvpp_registry.c 
+  738  grep -nrI "java" *
+  739  grep -nrI "java" * | less
+  740  vim build-tool-native/tools/Makefile
+  741  grep -nrI "java" * | less
+  742  vim build-tool-native/tools/Makefile
+  743  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  744  gcc --version
+  745  rm /etc/yum.repos.d/centos.repo 
+  746  yum repolist
+  747  yum install cuda*
+  748  yum install cuda-nsight
+  749  yum install cuda-nsight-9-2
+  750  cat /etc/redhat-release 
+  751  exit
+  752  gcc --version
+  753  cd werner/vpp_git/
+  754  ls
+  755  git diff
+  756  vim src/vpp-api/java/Makefile.am 
+  757  vim build-root/build-tool-native/tools/Makefile 
+  758  vim src/Makefile.in 
+  759  cd build-root/
+  760  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  761  git diff
+  762  cd ..
+  763  git diff
+  764  vim src/Makefile.in 
+  765  git status
+  766  git diff
+  767  vim .gitignore
+  768  git diff src/Makefile.
+  769  git diff src/Makefile.in 
+  770  git diff
+  771  fg
+  772  vim .gitignore
+  773  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  774  git diff
+  775  git status
+  776  git checkout -- .gitingore
+  777  git checkout -- .gitignore
+  778  git status
+  779  git diff
+  780  vim src/Makefile.in 
+  781  cp src/vpp/conf/startup.conf ../startup.conf
+  782  pwd
+  783  diff -Napur ../Makefile.in src/Makefile.
+  784  :q
+  785  diff -Napur ../Makefile.in src/Makefile.in
+  786  diff -Napur ../Makefile.in src/Makefile.in > ../disable_java
+  787  vim ../startup.conf 
+  788  vpp -c ../startup.conf 
+  789  export PATH="$PATH:/root/werner/vpp_git/build-root/install-vpp_debug-native/vpp/bin"
+  790  pwd
+  791  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/werner/vpp_git/build-root/install-vpp_debug-native/vpp/lib"
+  792  vpp -c ../startup.conf 
+  793  useradd vpp
+  794  vpp -c ../startup.conf 
+  795  lspci | grep -i Chel
+  796  lsmod | grep vfio
+  797  cat /proc/cmdline 
+  798  modporbe uio
+  799  modprobe uio
+  800  modprobe uio_pci_generic
+  801  vim ../startup.conf 
+  802  /root/werner/vpp_git/build-root/install-vpp_debug-native/dpdk/sbin/dpdk-devbind --bind uio_pci_generic 02:00.4
+  803  vpp -c ../startup.conf 
+  804  git diff
+  805  patch -p1 < mine.diff 
+  806  cd build-root/
+  807  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  808  vpp -c ../startup.conf 
+  809  cd ..
+  810  vpp -c /root/werner/startup.conf 
+  811  ls
+  812  pwd
+  813  cd ..
+  814  ls
+  815  pwd
+  816  vpp -c ../startup.conf 
+  817  source /root/.bashrc 
+  818  vpp -c ../startup.conf 
+  819  ls /root/werner/
+  820  mv /root/werner/disable_java .
+  821  ls
+  822  mv disable_java disable_java.patch
+  823  ldconfig -v -n /root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/lib
+  824  ldconfig -v -n /root/spdk_vpp/spdk/build/lib/
+  825  vpp -c startup.conf 
+  826  vim /root/.bashrc 
+  827  source ~/.bashrc
+  828  vpp -c startup.conf 
+  829  vim /root/.bashrc 
+  830  ls /root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/
+  831  ls /root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/bin/
+  832  vim /root/.bashrc 
+  833  ls /root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/bin/
+  834  source ~/.bashrc
+  835  vpp -c /root/spdk_vpp/startup.conf 
+  836  vim /root/.bashrc 
+  837  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/lib"
+  838  export PATH="$PATH:/root/werner/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/bin"
+  839  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/lib:/root/spdk_vpp/spdk/build/lib"
+  840  vpp -c /root/spdk_vpp/startup.conf 
+  841  exit
+  842  export PATH="$PATH:/root/werner/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/bin"
+  843  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/lib:/root/spdk_vpp/spdk/build/lib"
+  844  vpp -c /root/spdk_vpp/startup.conf 
+  845  exit
+  846  export PATH="$PATH:/root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/bin"
+  847  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/lib:/root/spdk_vpp/spdk/build/lib"
+  848  vpp -c /root/spdk_vpp/startup.conf 
+  849  ls /root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/lib
+  850  vim /root/spdk_vpp/startup.conf 
+  851  vpp -c /root/spdk_vpp/startup.conf 
+  852  vim /root/spdk_vpp/startup.conf 
+  853  exit
+  854  vppctl sh int
+  855  export PATH="$PATH:/root/werner/vpp_git/build-root/install-vpp_debug-native/vpp/bin"
+  856  vppctl sh int
+  857  vppctl set int ip address HundredGigabitEthernet2/0/4/0 10.0.2.2/24
+  858  vppctl set int state TenGigabitEthernet3/0/4/0 up
+  859  vppctl set int state HundredGigabitEthernet2/0/4/0 up
+  860  cp /root/werner/startup.conf /root/spdk_vpp/
+  861  vim /root/spdk_vpp/iscsi.conf
+  862  ps -ef | grep iscs
+  863  exit
+  864  ls
+  865  cd werner/
+  866  ls
+  867  ls vpp
+  868  cd ..
+  869  vim werner/disable_java 
+  870  mkdir spdk_vpp
+  871  mv werner/vpp_git/ spdk_vpp/
+  872  cd spdk_vpp/
+  873  ls
+  874  git clone https://github.com/spdk/spdk.git
+  875  cd spdk/
+  876  ls
+  877   ./configure --with-vpp=/root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/ --with-dpdk="/root/spdk_vpp/vpp_git/build-root/build-vpp_debug-native/dpdk/dpdk-17.11/x86_64-native-linuxapp-gcc/"
+  878  yum install nasm
+  879   ./configure --with-vpp=/root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/ --with-dpdk="/root/spdk_vpp/vpp_git/build-root/build-vpp_debug-native/dpdk/dpdk-17.11/x86_64-native-linuxapp-gcc/"
+  880  make
+  881  export PATH="$PATH:/root/werner/vpp_git/build-root/install-vpp_debug-native/vpp/bin"
+  882   export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/lib:/root/spdk_vpp/spdk/build/lib"
+  883  export PATH="$PATH:/root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/bin"
+  884  ./app/iscsi_tgt/iscsi_tgt -m 0x1 -c /root/spdk_vpp/iscsi.conf 
+  885  HUGEMEM=2048 scripts/setup.sh
+  886  ./app/iscsi_tgt/iscsi_tgt -m 0x1 -c /root/spdk_vpp/iscsi.conf 
+  887  vim /root/.bashrc 
+  888  exit
+  889  ls
+  890  echo $PATH
+  891  #export PATH="$PATH:/root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/bin"
+  892  cat /root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/bin
+  893  ls /root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/bin
+  894  export PATH="$PATH:/root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/bin"
+  895  vpp -c /root/spdk_vpp/startup.conf 
+  896  echo $LD_LIBRARY_PATH
+  897   #export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/lib:/root/spdk_vpp/spdk/build/lib"
+  898  ls /root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/lib
+  899  ls /root/spdk_vpp/spdk/build/lib
+  900  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/lib:/root/spdk_vpp/spdk/build/lib"
+  901  ldconfig -v -n /root/spdk_vpp/spdk/build/lib/
+  902  ls /root/spdk_vpp/spdk/build/lib/
+  903  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/lib64:/root/spdk_vpp/spdk/build/lib"
+  904  vpp -c /root/spdk_vpp/startup.conf 
+  905  yum repolist
+  906  vim .bashrc 
+  907  exit
+  908  vpp -c /root/spdk_vpp/startup.conf 
+  909  vim /root/.bashrc 
+  910  ls /root/spdk_vpp/vpp_git/build-root/install-vpp_debug-native/vpp/bin
+  911  vim /root/.bashrc 
+  912  exit
+  913  vpp -c /root/spdk_vpp/startup.conf 
+  914  vim /root/.bashrc 
+  915  echo $PATH
+  916  ls /opt/vpp_git/build-root/install-vpp_debug-native/vpp/bin
+  917  vim /root/.bashrc 
+  918  exit
+  919  vppctl set int state HundredGigabitEthernet2/0/4/0 up
+  920  vppctl set int ip address HundredGigabitEthernet2/0/4/0 10.0.2.2/24
+  921  exit
+  922  vpp -c /root/spdk_vpp/startup.conf 
+  923  ./app/iscsi_tgt/iscsi_tgt -m 0x1 -c /root/spdk_vpp/iscsi.conf 
+  924  cd /root/spdk_vpp/spdk/
+  925  vpp -c /root/spdk_vpp/startup.conf 
+  926  exit
+  927  cd /root/spdk_vpp/
+  928  cd spdk/
+  929  ./app/iscsi_tgt/iscsi_tgt -m 0x1 -c /root/spdk_vpp/iscsi.conf 
+  930  exit
+  931  vppctl set int state HundredGigabitEthernet2/0/4/0 up
+  932  vpp -c /root/spdk_vpp/startup.conf 
+  933  vppctl set int ip address HundredGigabitEthernet2/0/4/0 10.0.2.2/24
+  934  cd /root/spdk_vpp/spdk/
+  935  HUGEMEM=2048 scripts/setup.sh
+  936  ./app/iscsi_tgt/iscsi_tgt -m 0x1 -c /root/spdk_vpp/iscsi.conf 
+  937  cd ../vpp_git/
+  938  cd build-root/o
+  939  cd /root/spdk_vpp/spdk
+  940  exit
+  941  vpp -c /root/spdk_vpp/startup.conf 
+  942  exit
+  943  cd /root/spdk_vpp/
+  944  ls
+  945  cat disable_java.patch 
+  946  cd /opt
+  947  ls
+  948  cd werner
+  949  ls
+  950  less nvme_tcp.patch 
+  951  cd
+  952  ls
+  953  cd stevo
+  954  ls
+  955  cd
+  956  ls
+  957  cd repos
+  958  ls
+  959  cd
+  960  ls
+  961  history
+  962  ls
+  963  mkdir bharat
+  964  
+  965  cd werner/
+  966  ls
+  967  vpp -c /root/spdk_vpp/startup.conf 
+  968  cd
+  969  cd bharat/
+  970  ls
+  971  scp -r 10.193.185.169:/home/spdk_nvme-cli/ ./
+  972  vi /root/.ssh/known_hosts +14
+  973  scp -r 10.193.185.169:/home/spdk_nvme-cli/ ./
+  974  
+  975  cd bharat/
+  976  ls
+  977  cd spdk_nvme-cli/
+  978  dmesg
+  979  dmesg | grep -i mmu
+  980  ifconfig
+  981  ls
+  982  cd spdk
+  983  ls
+  984  cd ../vpp/
+  985  ls
+  986  cd build-root/
+  987  ls
+  988  
+  989  cd bharat/
+  990  ls
+  991  scp -r 10.193.185.169:/home/spdk_nvme-cli/ ./
+  992  cd bharat/
+  993  scp -r 10.193.185.169:/home/spdk_nvme-cli/ ./
+  994  cd bharat/
+  995  scp -r 10.193.185.169:/home/spdk_nvme-cli/ ./
+  996  cd spdk_nvme-cli/
+  997  ls
+  998  cd vpp/
+  999  make install-dep
+ 1000  y
+ 1001  history > history.`hostname`

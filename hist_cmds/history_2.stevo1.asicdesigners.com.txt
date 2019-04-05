@@ -1,0 +1,1000 @@
+    3  hg qrefresh -e
+    4  hg qpop
+    5  hg qrefresh -e
+    6  hg qpop
+    7  hg qrefresh -e
+    8  hg qpush --all
+    9  hg glo
+   10  hg log
+   11  hg qrefresh -e
+   12  hg qpop
+   13  hg qrefresh -e
+   14  hg qpop
+   15  hg qrefresh -e
+   16  hg qpush --all
+   17  hg qseries
+   18  hg log
+   19  hg qfinish -a
+   20  hg push
+   21  cd ../stevo_ut
+   22  hg diff
+   23  hg qnew sr-dv-write_imm
+   24  hg qrefresh -e
+   25  hg export -g
+   26  vi sr-dv.c
+   27  make
+   28  hg qrefresh
+   29  hg export -q
+   30  vi sr-dv.c
+   31  make
+   32  vi sr-dv.c
+   33  make
+   34  vi sr-dv.c
+   35  make
+   36  vi /usr/include/infiniband/verbs.h 
+   37  vi sr-dv.c
+   38  make
+   39  vi sr-dv.c
+   40  make
+   41  hg qrefresh
+   42  hg export -g
+   43  make
+   44  ./sr-dv 
+   45  ./sr-dv  -?
+   46  ./sr-dv -W -s 100 -v -d 4 
+   47  vi sr-dv.c
+   48  dmesg
+   49  vi sr-dv.c
+   50  make
+   51  ./sr-dv -W -s 100 -v -d 4 
+   52  vi sr-dv.c
+   53  make
+   54  ./sr-dv -W -s 100 -v -d 4 
+   55  make clean
+   56  make
+   57  vi sr-dv.c
+   58  make
+   59  ./sr-dv -W -s 100 -v -d 4 
+   60  hg diff
+   61  hg qrefresh
+   62  hg export -g
+   63  vi sr-dv.c
+   64  ./sr-dv -s 100 -v -d 4 
+   65  vi sr-dv.c
+   66  make
+   67  vi sr-dv.c
+   68  make
+   69  ./sr-dv -s 100 -v -d 4 
+   70  ./sr-dv -W -s 100 -v -d 4 
+   71  vi sr-dv.c
+   72  make
+   73  vi sr-dv.c
+   74  make
+   75  vi sr-dv.c
+   76  make
+   77  ./sr-dv -W -s 100 -v -d 4 
+   78  vi sr-dv.c
+   79  vi sr-dv.
+   80  vi sr-dv.c
+   81  hg dif
+   82  hg qrefresh
+   83  hg export -g
+   84  vi sr-dv.c
+   85  make
+   86  ./sr-dv -W -s 100 -v -d 4 
+   87  vi sr-dv.c
+   88  make
+   89  ./sr-dv -W -s 100 -v -d 4 
+   90  hg qrefresh
+   91  /usr/local/src/tcpdump-iwarp/tcpdump-3.7.2/tcpdump -I -i enp6s0f4 -n tcp
+   92  hg diff
+   93  cd 
+   94  clear
+   95  /usr/local/src/tcpdump-iwarp/tcpdump-3.7.2/tcpdump -I -s 1500 -i enp6s0f4 -n tcp
+   96  /usr/local/src/tcpdump-iwarp/tcpdump-3.7.2/tcpdump -I -i enp6s0f4 -n tcp
+   97  dmesg
+   98  cat /sys/kernel/debug/iw_cxgb4/0000\:06\:00.4/eps 
+   99  cat /sys/kernel/debug/iw_cxgb4/0000\:06\:00.4/qps
+  100  cat /sys/kernel/debug/iw_cxgb4/0000\:06\:00.4/stats
+  101  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/tids 
+  102  dmesg
+  103  cd /usr/local/src/stevo_ut
+  104  hg diff
+  105  hg qseries
+  106  hg qrefresh
+  107  hg qrefresh -e
+  108  ./sr-dv -?
+  109  hg qfinish -a
+  110  hg push
+  111  sh /root/doit-stevo.sh 
+  112  /usr/local/src/stevo_ut/sr-dv -W -s 10000  -d 500 -c 1 -h -T 4 -t 30 
+  113  /usr/local/src/stevo_ut/sr-dv -W -s 10000  -d 500 -c 1 -T 4 -t 30  -C 100
+  114  /usr/local/src/stevo_ut/sr-dv -W -s 10000  -d 500 -c 1 -T 1 -t 30  -C 100
+  115  ethtool -i enp6s0f4
+  116  cd manoj
+  117  ls
+  118  mkdir plexistsor
+  119  cd plexistsor/
+  120  ls
+  121  history | tee histroy.txt
+  122  l
+  123  ls
+  124  mv histroy.txt  history.txt
+  125  ifconfig
+  126  ifconfig | more
+  127  ls
+  128  cd ..
+  129  mv plexistsor/ plexistor/
+  130  ls
+  131  cd plexistor/
+  132  ls
+  133  cp t6fw-1.16.47.25.bin  /lib/firmware/cxgb4/
+  134  ethtool -f enp6s0f4 cxgb4/t6fw-1.16.47.25.bin
+  135  rmmod iw_cxgb4
+  136  rmmod cxgb4
+  137  sh /root/doit-stevo
+  138  sh /root/doit-stevo.sh 
+  139  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power cycle
+  140  /usr/local/src/stevo_ut/sr-dv -W -s 10000  -d 500 -c 1 -T 1 -t 30  -C 100
+  141  cd manoj
+  142  cd plexistor/
+  143  dmesg 
+  144  ls -ltr
+  145  cp t6fw-1.16.48.1.bin  /lib/firmware/cxgb4/
+  146  ethtool -f enp6s0f4 cxgb4/t6fw-1.16.48.1.bin
+  147  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power cycle
+  148  reboot
+  149  sh /root/doit-stevo.sh 
+  150  /usr/local/src/stevo_ut/sr-dv -W -s 10000  -d 500 -c 1 -T 1 -t 30  -C 100
+  151  dmesg 
+  152  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/devlog
+  153  ethtool -i enp6s0f4
+  154  ethtool -f enp6s0f4 cxgb4/t6fw-1.16.48.1.bin
+  155  rmmod iw_cxgb4 cxgb4
+  156  rmmod iw_cxgb4
+  157  reboot
+  158  sh /root/doit-stevo.sh 
+  159  /usr/local/src/stevo_ut/sr-dv -W -s 10000  -d 500 -c 1 -T 1 -t 30  -C 100
+  160  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/cim_la 
+  161  cd manoj
+  162  cd plexistor/
+  163  ls
+  164  cd lo
+  165  ls
+  166  mkdir logs
+  167  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/ibq_tp0 | tee ibq_tp0_1
+  168  vi ibq_tp0_1 
+  169  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/devlog
+  170  dmesg -c
+  171  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/devlog
+  172  cd manoj
+  173  ls
+  174  cdpl
+  175  ls
+  176  cd plexistor/
+  177  ls
+  178  cd logs/
+  179  ls
+  180  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/devlog  | tee devlog_1
+  181  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/ibq_tp0 .
+  182  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/ibq_tp0 | tee ibq_tp0
+  183  ls
+  184  mkdir log
+  185  mv log/ 1
+  186  mv * 1
+  187  ls
+  188  cd 1/
+  189  ls
+  190  cd ..
+  191  pwd
+  192  ls
+  193  ls -ltr
+  194  cp t6fw-1.16.48.2.bin  /lib/firmware/cxgb4/
+  195  ethtool -f enp6s0f4 cxgb4/t6fw-1.16.48.2.bin
+  196  rmmod iw_cxgb4
+  197  reboot
+  198  sh /root/doit-stevo.sh 
+  199  /usr/local/src/stevo_ut/sr-dv -W -s 10000  -d 500 -c 1 -T 1 -t 30  -C 100
+  200  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/cim_la 
+  201  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/devlog  
+  202  cd manoj
+  203  cd plexistor/
+  204  ls
+  205  mv ibq_tp0_1  logs/
+  206  ls
+  207  ls
+  208  ls -ltr
+  209  vi -o
+  210  cp t6fw-1.16.48.2.bin  /lib/firmware/cxgb4/
+  211  ethtool -f enp6s0f4 cxgb4/t6fw-1.16.48.2.bin
+  212  rmmod iw_cxgb4
+  213  reboot
+  214  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/devlog  
+  215  cd manoj
+  216  cd plexistor/
+  217  ls
+  218  cd logs/
+  219  ls
+  220  mv ibq_tp0_1  1
+  221  ls 1
+  222  ls -ltr
+  223  ls 1
+  224  ls
+  225  clear
+  226  ls
+  227  mkdir 2
+  228  c 2/
+  229  cd 2
+  230  ls
+  231  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/devlog  
+  232  cd ..
+  233  ls -ltr
+  234  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/devlog  
+  235  ethtool -i enp6s0f4
+  236  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/devlog  
+  237  dmesg 
+  238  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/devlog  
+  239  cp t6fw-1.16.48.3.bin  /lib/firmware/cxgb4/
+  240  ethtool -f enp6s0f4 cxgb4/t6fw-1.16.48.3.bin
+  241  rmmod iw_cxgb4
+  242  rmmod cxgb4
+  243  dmesg -c
+  244  cd logs/
+  245  ls
+  246  cd 2/
+  247  ls
+  248  dmesg 
+  249  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/devlog  
+  250  ls
+  251  cd ..
+  252  ls
+  253  cp t6fw-1.16.48.4.bin  /lib/firmware/cxgb4/
+  254  ethtool -f enp6s0f4 cxgb4/t6fw-1.16.48.4.bin
+  255  rmmod iw_cxgb4 cxgb4
+  256  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/devlog  
+  257  sh /root/doit-stevo.sh 
+  258  /usr/local/src/stevo_ut/sr-dv -W -s 10000  -d 500 -c 1 -T 1 -t 30  -C 100
+  259  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power cycle
+  260  /usr/local/src/stevo_ut/sr-dv -W -s 10000  -d 500 -c 1 -T 1 -t 30  -C 100
+  261  /usr/local/src/stevo_ut/write_w_im]m -i 0xcafebabe -l 1000 -n 1000
+  262  /usr/local/src/stevo_ut/write_w_imm -i 0xcafebabe -l 1000 -n 1000
+  263  /usr/local/src/stevo_ut/sr-dv -W -s 10000  -d 500 -c 1 -T 1 -t 30  -C 100
+  264  dmesg 
+  265  sh /root/doit-stevo.sh 
+  266  /usr/local/src/stevo_ut/sr-dv -W -s 10000  -d 500 -c 1 -T 1 -t 30  -C 100
+  267  sh /root/doit-stevo.sh 
+  268  /usr/local/src/stevo_ut/sr-dv -W -s 10000  -d 500 -c 1 -T 1 -t 30  -C 100
+  269  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power status
+  270  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power on
+  271  uname -r
+  272  ethtool -i enp6s0f4
+  273  ls /lib/firmware/cxgb4
+  274  sh /root/doit-stevo.sh 
+  275  modprobe nvme-rdma
+  276  cd /etc/nvmet/
+  277  ls
+  278  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power cycle
+  279  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power off
+  280  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power on
+  281  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power cycle
+  282  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power off
+  283  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power on
+  284  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power status
+  285  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power on
+  286  /usr/local/src/stevo_ut/sr-dv -?
+  287  sh /root/doit-stevo.sh 
+  288  ethtool -i enp6s0f4
+  289  modprobe nvme-rdma
+  290  nvme connect-all -t rdma -a 10.0.5.13
+  291  nvme list
+  292  fio --time_based=1 --runtime=$((30*1)) --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1:/dev/nvme1n1 --group_reporting=1
+  293  for s in 4K 16K 64K 256K 1M ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1:/dev/nvme1n1 --group_reporting=1|grep read: ; done
+  294  clear
+  295  for s in 4K 16K 64K 256K 1M ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1:/dev/nvme1n1 --group_reporting=1|grep read: ; done
+  296  nvme disconnect -d nvme0n1
+  297  nvme disconnect -d nvme1n1
+  298  nvme connect-all -t rdma -a 10.0.5.13
+  299  nvme list
+  300  for s in 4K 16K 64K 256K 1M ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1:/dev/nvme1n1 --group_reporting=1|grep read: ; done
+  301  nvme disconnect -d nvme0n1
+  302  nvme disconnect -d nvme1n1
+  303  nvme connect-all -t rdma -a 10.0.5.13
+  304  nvme disconnect -d nvme1n1
+  305  nvme disconnect -d nvme0n1
+  306  nvme connect-all -t rdma -a 10.0.5.13
+  307  nvme list
+  308  for s in 4k 16k 64k ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=1 --name=TEST --direct=1 --iodepth=1 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1 --group_reporting=1|grep " lat (usec): " ; done
+  309  nvme disconnect -d nvme0n1
+  310  nvme disconnect -d nvme1n1
+  311  nvme connect-all -t rdma -a 10.0.5.13
+  312  nvme list
+  313  for s in 4k 16k 64k ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=1 --name=TEST --direct=1 --iodepth=1 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1 --group_reporting=1|grep " lat (usec): " ; done
+  314  nvme list
+  315  ##fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --bsrange=4k-64k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1 
+  316  screen
+  317  screen ls
+  318  screen -r
+  319  screen -ls
+  320  top
+  321  cd /usr/local/src/stevo_ut
+  322  ls
+  323  ./sr-dv -?
+  324  ./sr-dv s 200 t 1 v S
+  325  ./sr-dv -s 200 -t 1 -v -S
+  326  yum reinstall -y libcxgb4
+  327  yum install -y libcxgb4
+  328  ./sr-dv -s 200 -t 1 -v -S
+  329  pgrep iwpmd
+  330  ./sr-dv -s 200 -t 1 -v -S
+  331  dmesg
+  332  rping -s
+  333  cd ..
+  334  wget http://www.openfabrics.org/downloads/cxgb4/libcxgb4-1.4.0.tar.gz
+  335  tar xzf libcxgb4-1.4.0.tar.gz 
+  336  cd libcxgb4-1.4.0/
+  337  ./configure --prefix=/usr --libdir=/usr/lib64 --sysconfdir=/etc 
+  338  make clean all install
+  339  rping -s
+  340  cd ../stevo_ut
+  341  ./sr-dv -s 200 -t 1 -v -S
+  342  ./sr-dv -s 200 -t 1 -v
+  343  ./sr-dv 
+  344  ./sr-dv  -s 200
+  345  ./sr-dv  -s 200 
+  346  #for s in 4K 16K 64K 256K 1M ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1:/dev/nvme1n1 --group_reporting=1|grep read: ; done
+  347  ip6
+  348  ip -6 addr add 50::14/64 dev enp6s0f4
+  349  ./sr-dv  -s 200  -6
+  350  dmesg
+  351  netstat -r
+  352  netstat -rn
+  353  cd ../sw/linux_libs/libcxgb4
+  354  vi src/cq.c
+  355  vi src/verbs.c
+  356  hg diff .
+  357  make
+  358  vi src/verbs.c
+  359  grep swiq_queue src/*.c
+  360  hg diff
+  361  cd ..
+  362  screen -r
+  363  screen -ls
+  364  cd /usr/local/src/sw
+  365  hg diff
+  366  hg qnew swiq_queue leak
+  367  hg qnew swiq_queue_leak
+  368  hg qrefresh -e
+  369  hg qpop
+  370  hg pull -u
+  371  hg qpush
+  372  cd linux_t4_build/
+  373  cd ../linux_libs/libcxgb4
+  374  ma
+  375  make
+  376  hg qseries
+  377  hg export -g qtip
+  378  hg qfinish -a
+  379  hg push
+  380  man rdma_connect
+  381  man rdma_get_cm_event
+  382  cd /usr/local/src/linux-2.6
+  383  cd drivers/infiniband/hw/cxgb4
+  384  vi cm.c
+  385  ##fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --bsrange=4k-64k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  386  #fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --bsrange=4k-64k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  387  ls -l /tmp/?
+  388  nvme list
+  389  fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --bsrange=4k-64k --numjobs=4 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  390  echo $?
+  391  screen -ls
+  392  screen -r
+  393  nvme list
+  394  cat /sys/kernel/debug/iw_cxgb4/0000\:06\:00.4/qps 
+  395  cat /sys/kernel/debug/iw_cxgb4/0000\:06\:00.4/qps |wc -l
+  396  nvme disconnect -d nvme1n1
+  397  nvme disconnect -d nvme0n1
+  398  ifconfig en6s0f4 mtu 9000
+  399  ifconfig enp6s0f4 mtu 9000
+  400  nvme connect-all -t rdma -a 10.0.5.13
+  401  nvme list
+  402  for s in 4K 16K 64K 256K 1M ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1:/dev/nvme1n1 --group_reporting=1|grep read: ; done
+  403  nvme disconnect -d nvme0n1
+  404  nvme disconnect -d nvme1n1
+  405  ifconfig enp6s0f4 mtu 1500
+  406  nvme connect-all -t rdma -a 10.0.5.13
+  407  nvme list
+  408  for s in 4K 16K 64K 256K 1M ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1:/dev/nvme1n1 --group_reporting=1|grep read: ; done
+  409  cat /sys/kernel/debug/iw_cxgb4/0000\:06\:00.4/eps 
+  410  nvme disconnect -d nvme1n1
+  411  nvme disconnect -d nvme0n1
+  412  nvme connect-all -t rdma -a 10.0.5.13
+  413  nvme list
+  414  for s in 256K ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1|grep read: ; done
+  415  nvme disconnect -d nvme0n1
+  416  nvme disconnect -d nvme1n1
+  417  ifconfig enp6s0f4 mtu 9000
+  418  nvme connect-all -t rdma -a 10.0.5.13
+  419  nvme list
+  420  for s in 256K ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1|grep read: ; done
+  421  nvme disconnect -d nvme0n1
+  422  nvme disconnect -d nvme1n1
+  423  ifconfig enp6s0f4 mtu 1500
+  424  cd /usr/local/src/sw
+  425  cd linux_t4_build/
+  426  vi iw_cxgb4/t4.h
+  427  nvme list
+  428  clear
+  429  ls
+  430  tput clear
+  431  man perf
+  432  man perf-top
+  433  man perf-stat
+  434  cd /usr/local/src/linux-2.6
+  435  uname -r
+  436  uname -r
+  437  nvme list
+  438  nvme connect-all -t rdma -a 10.0.5.13
+  439  nvme disconnect -d nvme1n1
+  440  nvme disconnect -d nvme0n1
+  441  nvme connect-all -t rdma -a 10.0.5.13 -h
+  442  nvme connect -t rdma -a 10.0.5.13 -h
+  443  nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=1 -n testnqn1,testnqn2
+  444  nvme discover -t rdma -a 10.0.5.13 -h
+  445  nvme discover -t rdma -a 10.0.5.13 
+  446  nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=1 -n testnqn1 testnqn2
+  447  nvme list
+  448  nvme disconnect -d nvme0n1
+  449  nvme disconnect -d nvme1n1
+  450  nvme disconnect -d nvme2n1
+  451  nvme list
+  452  nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=1 -n testnqn1 testnqn2
+  453  nvme list
+  454  nvme disconnect -d nvme0n1
+  455  nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=1 -n testnqn1,testnqn2
+  456  nvme list
+  457  nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=1 -n testnqn1 -n testnqn2
+  458  nvme list
+  459  nvme disconnect -d nvme0n1
+  460  nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=1 -n testnqn1:testnqn2
+  461  nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=1 -n testnqn1, testnqn2
+  462  nvme list
+  463  nvme disconnect -d nvme0n1
+  464  nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=1 -n testnqn1,testnqn2
+  465  nvme list
+  466  nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=1 -n testnqn1
+  467  nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=1 -n testnqn2
+  468  nvme list
+  469  cat /sys/kernel/debug/iw_cxgb4/0000\:06\:00.4/qps |wc -l
+  470  for s in 256K ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1|grep read: ; done
+  471  nvme disconnect -d nvme0n1
+  472  nvme disconnect -d nvme1n1
+  473  nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=2 -n testnqn1
+  474  nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=2 -n testnqn2
+  475  for s in 256K ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1|grep read: ; done
+  476  for i in 1 2 ; do nvme disconnect -d nvme${i}n1 ; done
+  477  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  478  for i in 1 2 ; do nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=4 -n testnqn${i}; done
+  479  nvme list
+  480  cat /sys/kernel/debug/iw_cxgb4/0000\:06\:00.4/qps |wc -l
+  481  for s in 256K ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1|grep read: ; done
+  482  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  483  for i in 1 2 ; do nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=8 -n testnqn${i}; done
+  484  nvme list
+  485  cat /sys/kernel/debug/iw_cxgb4/0000\:06\:00.4/qps |wc -l
+  486  for s in 256K ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1|grep read: ; done
+  487  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  488  for i in 1 2 ; do nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=16 -n testnqn${i}; done
+  489  cat /sys/kernel/debug/iw_cxgb4/0000\:06\:00.4/qps |wc -l
+  490  for s in 256K ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1|grep read: ; done
+  491  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  492  for i in 1 2 ; do nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=32 -n testnqn${i}; done
+  493  cat /sys/kernel/debug/iw_cxgb4/0000\:06\:00.4/qps |wc -l
+  494  for s in 256K ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1|grep read: ; done
+  495  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  496  for i in 1 2 ; do nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=64 -n testnqn${i}; done
+  497  cat /sys/kernel/debug/iw_cxgb4/0000\:06\:00.4/qps |wc -l
+  498  dmesg
+  499  nvme list
+  500  dmesg -c
+  501  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  502  nvme list
+  503  for i in 1 2 ; do nvme connect -t rdma -a 10.0.5.13 -nr-io-queues=64 -n testnqn${i}; done
+  504  dmesg
+  505  nvme list
+  506  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  507  nvme list
+  508  sync
+  509  dmesg
+  510  ping 10.0.5134
+  511  ping 10.0.5.134
+  512  ping 10.0.5.13
+  513  nvme connect-all -t rdma -a 10.0.5.13 
+  514  nvme list
+  515  for s in 4K 16K 64K 256K 1M ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1:/dev/nvme1n1 --group_reporting=1|grep read: ; done
+  516  MB2Gb 1196
+  517  MB2Gb 3001
+  518  MB2Gb 2941
+  519  MB2Gb 2823
+  520  MB2Gb 2940
+  521  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  522  nvme connect-all -t rdma -a 10.0.5.13 
+  523  for s in 4K 16K 64K 256K 1M ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1|grep read: ; done
+  524  sync
+  525  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  526  ping 10.0.5.13
+  527  nvme connect-all -t rdma -a 10.0.5.13 
+  528  nvme list
+  529  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  530  nvme connect-all -t rdma -a 10.0.5.13 
+  531  nvme list
+  532  for s in 4K 16K 64K 256K 1M ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1|grep read: ; done
+  533  MB2Gb 1194
+  534  MB2Gb 2902
+  535  MB2Gb 2694
+  536  MB2Gb 2689
+  537  MB2Gb 2735
+  538  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  539  man split
+  540  echo "1M    read: IOPS=2608, BW=2609MiB/s (2735MB/s)(76.5GiB/30016msec)"|tr '(/' '  '
+  541  echo "1M    read: IOPS=2608, BW=2609MiB/s (2735MB/s)(76.5GiB/30016msec)"|tr '(/MB' '  '
+  542  echo "1M    read: IOPS=2608, BW=2609MiB/s (2735MB/s)(76.5GiB/30016msec)"|awk '{print $5}' | tr '(/MB' '  '
+  543  echo "1M    read: IOPS=2608, BW=2609MiB/s (2735MB/s)(76.5GiB/30016msec)"|awk '{print $5}' | tr '(/MB' '  '| awk '{print $0}'
+  544  echo "1M    read: IOPS=2608, BW=2609MiB/s (2735MB/s)(76.5GiB/30016msec)"|awk '{print $5}' | tr '(/MB' '  '| awk '{print $1}'
+  545  echo "1M    read: IOPS=2608, BW=2609MiB/s (2735MB/s)(76.5GiB/30016msec)"|awk '{print $5}' | tr '(/MB' '  '| awk '{print MB2Gb $1}'
+  546  MB2Gb $(echo "1M    read: IOPS=2608, BW=2609MiB/s (2735MB/s)(76.5GiB/30016msec)"|awk '{print $5}' | tr '(/MB' '  '| awk '{print $1}' )
+  547  nvme connect-all -t rdma -a 10.0.5.13 
+  548  nvme list
+  549  for s in 4K 16K 64K 256K 1M ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1|grep read: ; done
+  550  for i in 1150 3195 2961 2842 2924 ; do MB2Gb $i; done
+  551  for s in  256K ; do echo -n "$s "; fio --time_based=1 --runtime=$((3000*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1 ; done
+  552  cd /etc/target/
+  553  ls
+  554  cd ../nvmet/
+  555  ls
+  556  ping stevo1
+  557  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power status
+  558  dmesg
+  559  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  560  dmesg
+  561  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  562  nvme connect-all -t rdma -a 10.0.5.13 
+  563  nvme list
+  564  for s in  256K ; do echo -n "$s "; fio --time_based=1 --runtime=$((3000*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1 ; done
+  565  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  566  nvme connect-all -t rdma -a 10.0.5.13 
+  567  for s in  256K ; do echo -n "$s "; fio --time_based=1 --runtime=$((3000*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1 ; done
+  568  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  569  nvme connect-all -t rdma -a 10.0.5.13 
+  570  nvme list
+  571  for s in  256K ; do echo -n "$s "; fio --time_based=1 --runtime=$((3000*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1 ; done
+  572  ssh stevo1 cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/obq_ulp0
+  573  cat /sys/kernel/debug/cxgb4/0000\:06\:00.4/obq_ulp0
+  574  ssh stevo1 cat /sys/kernel/debug/cxgb4/0000\:06\:0a.4/obq_ulp0
+  575  ssh stevo1 cat /sys/kernel/debug/cxgb4/0000\:0a\:00.4/obq_ulp0
+  576  dd if=/dev/nvme0n1p1 of=/dev/null bs=256K iflag=direct count=5
+  577  ssh stevo1 cat /sys/kernel/debug/cxgb4/0000\:0a\:00.4/obq_ulp0 > /tmp/1 ; dd if=/dev/nvme0n1p1 of=/dev/null bs=256K iflag=direct count=5; ssh stevo1 cat /sys/kernel/debug/cxgb4/0000\:0a\:00.4/obq_ulp0 > /tmp/2
+  578  diff /tmp/1 /tmp/p2
+  579  diff /tmp/1 /tmp/2
+  580  less /tmp/p1
+  581  less /tmp/1
+  582  file /tmp/1
+  583  ssh stevo1 cat /sys/kernel/debug/cxgb4/0000\:0a\:00.4/obq_ulp0 > /tmp/obq-1.txt ; dd if=/dev/nvme0n1p1 of=/dev/null bs=256K iflag=direct count=5; ssh stevo1 cat /sys/kernel/debug/cxgb4/0000\:0a\:00.4/obq_ulp0 > /tmp/obq-2.txt
+  584  nvme list
+  585  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  586  nvme connect-all -t rdma -a 10.0.5.13 
+  587  nvme list
+  588  ls /dev/nvme*
+  589  ssh stevo1 cat /sys/kernel/debug/cxgb4/0000\:0a\:00.4/obq_ulp0 > /tmp/obq-1.txt ; dd if=/dev/nvme0n1p1 of=/dev/null bs=256K iflag=direct count=5; ssh stevo1 cat /sys/kernel/debug/cxgb4/0000\:0a\:00.4/obq_ulp0 > /tmp/obq-2.txt
+  590  diff /tmp/obq-1.txt /tmp/obq-2.txt 
+  591  diff /tmp/obq-1.txt /tmp/obq-2.txt |less
+  592  less /tmp/obq-2.txt 
+  593  nvme list
+  594  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  595  nvme connect-all -t rdma -a 10.0.5.13 
+  596  nvme list
+  597  screen
+  598  top
+  599  iotop
+  600  bw.py -i snp6s0f4
+  601  bw.py -i enp6s0f4
+  602  man iotop
+  603  iotop -d 5
+  604  dmesg
+  605  iotop -d 5
+  606  clear
+  607  dmesg|tail
+  608  iotop -d 5
+  609  pkill -9 fio
+  610  iotop -d 5
+  611  ssh stevo1
+  612  fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=4k-1M --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/1 --group_reporting=1
+  613  fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=32k-256k --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/1 --group_reporting=1
+  614  umount /mnt/*
+  615  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  616  nvme connect-all -t rdma -a 10.0.5.13 
+  617  mount /dev/nvme0n1p1 /mnt/0
+  618  mount /dev/nvme1n1p1 /mnt/1
+  619  fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=32k-256k --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/1 --group_reporting=1
+  620  echo $?
+  621  #fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=32k-256k --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/1 --group_reporting=1
+  622  mount
+  623  ##fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=32k-256k --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/1 --group_reporting=1
+  624  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  625  nvme connect-all -t rdma -a 10.0.5.13 
+  626  fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=32k-256k --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/1 --group_reporting=1 --output=fio2-out.txt
+  627  cat fio2-out.txt 
+  628  less fio2-out.txt 
+  629  less fio1-out.txt 
+  630  clear
+  631  less fio2-out.txt 
+  632  #fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --bsrange=4k-64k --numjobs=4 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  633  mkfs.ext4 /dev/nvme0n1p1
+  634  mkfs.ext4 /dev/nvme1n1p1
+  635  mount /dev/nvme0n1p1 /mnt/0
+  636  mount /dev/nvme1n1p1 /mnt/1
+  637  #fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=4k-1M --numjobs=16 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  638  mount
+  639  fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=4k-1M --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/0 --group_reporting=1
+  640  fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=4k-16k --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/0 --group_reporting=1
+  641  echo $?
+  642  #fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=4k-16k --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/0 --group_reporting=1
+  643  man fio
+  644  fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=4k-16k --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/0 --group_reporting=1 --output=fio1-out.txt
+  645  kill -9 %%
+  646  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  647  rm -f /mnt/*/*
+  648  nvme connect-all -t rdma -a 10.0.5.13 
+  649  mount /dev/nvme0n1p1 /mnt/0
+  650  mount /dev/nvme1n1p1 /mnt/1
+  651  rm -f /mnt/[01]/TEST*
+  652  df -h /mnt/[01]
+  653  fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=4k-16k --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/0 --group_reporting=1 --output=fio1-out.txt
+  654  ssh stevo1
+  655  ls -lh /mnt/0/*
+  656  ls -lh /mnt/???
+  657  ls -lh /mnt/?/T*
+  658  cat /sys/kernel/debug/iw_cxgb4/0000\:06\:00.4/qps |wc -l
+  659  grep enp6s0f4 /proc/interrupts 
+  660  grep iw_cxgb4 /proc/interrupts 
+  661  grep enp6s0f4-iw_cxgb4 /proc/interrupts 
+  662  watch -n1 grep enp6s0f4-iw_cxgb4 /proc/interrupts 
+  663  ls *tune*
+  664  cat tuneit-yoichi-2.sh 
+  665  ssh potato1 ls stevo
+  666  ssh potato2 ls stevo
+  667  grep enp6s0f4-iw_cxgb4 /proc/interrupts 
+  668  scp potato1:stevo/tuneit .
+  669  scp potato1:stevo/tune .
+  670  vi tune
+  671  grep enp6s0f4-iw_cxgb4 /proc/interrupts 
+  672  cp tune tune-irqs-ciqs
+  673  vi tune-irqs-ciqs 
+  674  grep enp6s0f4-iw_cxgb4 /proc/interrupts | awk -F ":" '{print $1}' | c=$((0)); while read _IRQ ; do echo $c > /proc/irq/${_IRQ}/smp_affinity ; echo -n "cxgb4/${_IRQ}: "; cat /proc/irq/${_IRQ}/smp_affinity ; c=$(($c+1)); if [[ $c -eq 16 ]] ; then c=$((0)); fi ; done
+  675  grep enp6s0f4-iw_cxgb4 /proc/interrupts | awk -F ":" '{print $1}' 
+  676  c=$((0)); grep enp6s0f4-iw_cxgb4 /proc/interrupts | awk -F ":" '{print $1}' | while read _IRQ ; do echo $c > /proc/irq/${_IRQ}/smp_affinity ; echo -n "cxgb4/${_IRQ}: "; cat /proc/irq/${_IRQ}/smp_affinity ; c=$(($c+1)); if [[ $c -eq 16 ]] ; then c=$((0)); fi ; done
+  677  c=$((1)); grep enp6s0f4-iw_cxgb4 /proc/interrupts | awk -F ":" '{print $1}' | while read _IRQ ; do echo $c > /proc/irq/${_IRQ}/smp_affinity ; echo -n "cxgb4/${_IRQ}: "; cat /proc/irq/${_IRQ}/smp_affinity ; c=$(($c+1)); if [[ $c -eq 17 ]] ; then c=$((0)); fi ; done
+  678  watch -n1 grep enp6s0f4-iw_cxgb4 /proc/interrupts 
+  679  c=$((1)); for _IRQ in $(seq 111 126) ; do  | echo $c > /proc/irq/${_IRQ}/smp_affinity ; echo -n "cxgb4/${_IRQ}: "; cat /proc/irq/${_IRQ}/smp_affinity ; c=$(($c+1)); if [[ $c -eq 17 ]] ; then c=$((0)); fi ; done
+  680  c=$((1)); for _IRQ in $(seq 111 126) ; do  echo $c > /proc/irq/${_IRQ}/smp_affinity ; echo -n "cxgb4/${_IRQ}: "; cat /proc/irq/${_IRQ}/smp_affinity ; c=$(($c+1)); if [[ $c -eq 17 ]] ; then c=$((0)); fi ; done
+  681  watch -n1 grep enp6s0f4-iw_cxgb4 /proc/interrupts 
+  682  c=$((1)); for _IRQ in $(seq 111 126) ; do  echo $c > /proc/irq/${_IRQ}/smp_affinity ; echo -n "cxgb4/${_IRQ}: "; cat /proc/irq/${_IRQ}/smp_affinity ; c=$(($c+1)); if [[ $c -eq 17 ]] ; then c=$((0)); fi ; done
+  683  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  684  nvme connect-all -t rdma -a 10.0.5.13 
+  685  watch -n1 grep enp6s0f4-iw_cxgb4 /proc/interrupts 
+  686  c=$((1)); for _IRQ in $(seq 111 126) ; do  printf "0x%x\n" $c > /proc/irq/${_IRQ}/smp_affinity ; echo -n "cxgb4/${_IRQ}: "; cat /proc/irq/${_IRQ}/smp_affinity ; c=$(($c+1)); if [[ $c -eq 17 ]] ; then c=$((0)); fi ; done
+  687  c=$((1)); for _IRQ in $(seq 111 126) ; do  printf "%x\n" $c > /proc/irq/${_IRQ}/smp_affinity ; echo -n "cxgb4/${_IRQ}: "; cat /proc/irq/${_IRQ}/smp_affinity ; c=$(($c+1)); if [[ $c -eq 17 ]] ; then c=$((0)); fi ; done
+  688  watch -n1 grep enp6s0f4-iw_cxgb4 /proc/interrupts 
+  689  c=$((1)); for _IRQ in $(seq 111 126) ; do  printf "%x\n" $c > /proc/irq/${_IRQ}/smp_affinity ; echo -n "cxgb4/${_IRQ}: "; cat /proc/irq/${_IRQ}/smp_affinity ; c=$(($c+1)); if [[ $c -eq 17 ]] ; then c=$((0)); fi ; done
+  690  c=$((0)); for _IRQ in $(seq 111 126) ; do  printf "%x\n" $(( 1<< $c)) > /proc/irq/${_IRQ}/smp_affinity ; echo -n "cxgb4/${_IRQ}: "; cat /proc/irq/${_IRQ}/smp_affinity ; c=$(($c+1)); if [[ $c -eq 16 ]] ; then c=$((0)); fi ; done
+  691  watch -n1 grep enp6s0f4-iw_cxgb4 /proc/interrupts 
+  692  #c=$((0)); for _IRQ in $(seq 111 126) ; do  printf "%x\n" $(( 1<< $c)) > /proc/irq/${_IRQ}/smp_affinity ; echo -n "cxgb4/${_IRQ}: "; cat /proc/irq/${_IRQ}/smp_affinity ; c=$(($c+1)); if [[ $c -eq 16 ]] ; then c=$((0)); fi ; done
+  693  vi tune-irqs-ciqs 
+  694  grep enp6s0f4 /proc/interrupts 
+  695  clear
+  696  grep enp6s0f4 /proc/interrupts 
+  697  vi tune-irqs-ciqs 
+  698  sh tune-irqs-ciqs 
+  699  watch -n1 grep enp6s0f4-iw_cxgb4 /proc/interrupts 
+  700  vi tune-irqs-ciqs 
+  701  grep enp6s0f4 /proc/interrupts 
+  702  grep enp6s0f4 /proc/interrupts |less
+  703  grep enp6s0f4 /proc/interrupts |more
+  704  grep enp6s0f4 /proc/interrupts |head
+  705  sh tune-irqs-ciqs 
+  706  vi tune-irqs-ciqs 
+  707  sh tune-irqs-ciqs 
+  708  watch -n1 grep enp6s0f4 /proc/interrupts 
+  709  clear
+  710  watch -n1 grep enp6s0f4-iw_cxgb4 /proc/interrupts 
+  711  top
+  712  watch -n1 grep enp6s0f4-iw_cxgb4 /proc/interrupts 
+  713  otop
+  714  iotop
+  715  iotop -d 5
+  716  MB2Gb 500
+  717  echo $((16*5))
+  718  lsof|grep TEST
+  719  mount
+  720  man fio
+  721  screen -ls
+  722  screen -r
+  723  clear
+  724  ls
+  725  cat fio2-out.txt 
+  726  ls /mnt/[01]/TEST*
+  727  ls -lh /mnt/[01]/TEST*
+  728  screen -r
+  729  dmesg|tail
+  730  fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=32k-256k --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/1 --group_reporting=1
+  731  fio --verify_fatal=1 --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=32k-256k --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/1 --group_reporting=1
+  732  umount /mnt/[01]
+  733  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  734  #fio --verify_fatal=1 --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=32k-256k --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/1 --group_reporting=1
+  735  fio --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=4k-16k --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/0 --group_reporting=1
+  736  man fio
+  737  fio --verify_fatal=1 --verify=crc32 --time_based=1 --runtime=$((60*60*12)) --size=1G --bsrange=4k-16k --numjobs=8 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --directory=/mnt/0 --group_reporting=1
+  738  fio --version
+  739  vi /root/doit-stevo.sh 
+  740  #nvme connect-all -t rdma -a 10.0.5.13 
+  741  #for s in  256K ; do echo -n "$s "; fio --time_based=1 --runtime=$((3000*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1 ; done
+  742  nvme list
+  743  git clone git://git.openfabrics.org/~swise/scm/libcxgb4.
+  744  git clone git://git.openfabrics.org/~swise/scm/libcxgb4
+  745  git clone git://git.openfabrics.org/~swise/scm/libcxgb4.git
+  746  git clone git://git.openfabrics.org/~swise/libcxgb4.git
+  747  git clone git://git.openfabrics.org/~halr/opensm.git
+  748  nvme list
+  749  history | tee history_1.txt 
+  750  reboot
+  751  sh /root/doit-stevo.sh 
+  752  ifconfig | more
+  753  clear
+  754  ping 10.0.5.13
+  755  sh /root/doit-stevo.sh 
+  756  ping 10.0.5.13
+  757  ifconfig
+  758  ping 10.0.5.13
+  759  ifconfig
+  760  dmesg | grep enp6s0f4
+  761  dmesg 
+  762  ping 10.0.5.13
+  763  nvme connect-all -t rdma -a 10.0.5.13
+  764  lsscsi
+  765  ls /dev/nvme*
+  766  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  767  nvme list
+  768  sh /root/doit-stevo.sh 
+  769  ping 10.0.5.13
+  770  nvme list
+  771  nvme connect-all -t rdma -a 10.0.5.13
+  772  nvme list
+  773  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  774  nvme
+  775  #nvme disconnect-all -t rdma -a 10.0.5.13
+  776  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  777  nvme disconnect-all -t rdma -a 10.0.5.13
+  778  nvme disconnect-all -t rdma -a
+  779  nvme disconnect-all 
+  780  nvme disconnect-all -t rdma
+  781  nvme disconnect -t rdma -a
+  782  nvme disconnect -t rdma 
+  783  nvme disconnect
+  784  nvme list
+  785  nvme disconnect -t rdma 
+  786  nvme disconnect -d /dev/nvme0n1
+  787  nvme disconnect -d /dev/nvme1n1
+  788  nvme list
+  789  nvme disconnect -d /dev/nvme1n1
+  790  reboot
+  791  sh /root/doit-stevo.sh 
+  792  ping 10.0.5.13
+  793  nvme list
+  794  nvme connect-all -t rdma -a 10.0.5.13
+  795  nvme list
+  796  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  797  nvme disconnect -d /dev/nvme1n1
+  798  nvme disconnect -d /dev/nvme0n1
+  799  reboot
+  800  sh /root/doit-stevo.sh 
+  801  ping 10.0.5.13
+  802  nvme connect-all -t rdma -a 10.0.5.13
+  803  nvme list
+  804  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  805  sh /root/doit-stevo.sh 
+  806  ifconfig
+  807  ethtool enp6s0f4d1
+  808  dmesg|grep enp6s0
+  809  ping 10.0.6.13
+  810  nvme discover -t rdma -a 10.0.5.13 
+  811  nvme discover -t rdma -a 10.0.6.13 
+  812  nvme connect -t rdma -a 10.0.5.13 -n testnqn1
+  813  nvme connect -t rdma -a 10.0.6.13 -n testnqn2
+  814  nvme list
+  815  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  816  sh /root/doit-stevo.sh 
+  817  ping 10.0.5.13
+  818  ping 10.0.6.13
+  819  nvme connect -t rdma -a 10.0.5.13 -n testnqn1
+  820  nvme connect -t rdma -a 10.0.6.13 -n testnqn2
+  821  nvme list
+  822  dd if=/dev/nvme0n1p1 of=/dev/null bs=256K iflag=direct count=50
+  823  dd if=/dev/nvme1n1p1 of=/dev/null bs=256K iflag=direct count=50
+  824  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  825  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  826  nvme list
+  827  sync
+  828  dmesg|tail
+  829  ping 10.0.513
+  830  ping 10.0.5.13
+  831  ping 10.0.6.13
+  832  nvme connect -t rdma -a 10.0.5.13 -n testnqn1
+  833  nvme connect -t rdma -a 10.0.6.13 -n testnqn2
+  834  nvme list
+  835  dmesg
+  836  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  837  MB2Gb 2134
+  838  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  839  nvme connect-all -t rdma -a 10.0.5.13
+  840  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  841  MB2Gb 2704
+  842  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  843  nvme connect-all -t rdma -a 10.0.6.13
+  844  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  845  MB2Gb 2274
+  846  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  847  MB2Gb 2276
+  848  MB2Gb 2274
+  849  MB2Gb 2275
+  850  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  851  nvme connect-all -t rdma -a 10.0.5.13
+  852  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  853  MB2Gb 2691
+  854  nvme disconnect-all -t rdma
+  855  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  856  ping 10.0.5.13
+  857  ping 10.0.6.13
+  858  nvme connect-all -t rdma -a 10.0.5.13
+  859  nvme list
+  860  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  861  MB2Gb 2839
+  862  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  863  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  864  nvme connect-all -t rdma -a 10.0.6.13
+  865  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  866  MB2Gb 1988
+  867  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  868  MB2Gb 2000
+  869  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  870  nvme connect -t rdma -a 10.0.5.13 -n testnqn1
+  871  nvme connect -t rdma -a 10.0.6.13 -n testnqn2
+  872  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  873  MB2Gb 2132
+  874  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  875  MB2Gb 2132
+  876  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  877  nvme connect -t rdma -a 10.0.5.13 -n testnqn1
+  878  nvme connect -t rdma -a 10.0.6.13 -n testnqn2
+  879  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  880  MB2Gb 7115
+  881  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  882  nvme connect-all -t rdma -a 10.0.5.13
+  883  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  884  MB2Gb 7115
+  885  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  886  nvme connect-all -t rdma -a 10.0.6.13
+  887  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  888  MB2Gb 7115
+  889  nvme list
+  890  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  891  sleep 150
+  892  nvme connect-all -t rdma -a 10.0.5.13
+  893  nvme list
+  894  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  895  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  896  nvme connect -t rdma -a 10.0.5.13 -n testnqn1
+  897  nvme connect -t rdma -a 10.0.6.13 -n testnqn2
+  898  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  899  MB2Gb 2119
+  900  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  901  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  902  nvme connect -t rdma -a 10.0.5.13 -n testnqn1
+  903  nvme connect -t rdma -a 10.0.6.13 -n testnqn2
+  904  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=1
+  905  MB2Gb 2131
+  906  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=0
+  907  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=0|grep read:
+  908  MB2Gb 1065
+  909  MB2Gb 1060
+  910  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  911  nvme connect-all -t rdma -a 10.0.6.13
+  912  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=0|grep read:
+  913  MB2Gb 1144
+  914  MB2Gb 1136
+  915  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  916  nvme connect-all -t rdma -a 10.0.5.13
+  917  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=0|grep read:
+  918  MB2Gb 1352
+  919  MB2Gb 1342
+  920  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  921  #fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/dev/nvme$\jobnum/n1p1 --group_reporting=0
+  922  man fio
+  923  nvme connect -t rdma -a 10.0.5.13 -n testnqn1
+  924  nvme connect -t rdma -a 10.0.6.13 -n testnqn2
+  925  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/dev/nvme$\jobnum/n1p1 --group_reporting=0
+  926  ls -l /mnt/?
+  927  ls /nvme
+  928  mkdir /nvme
+  929  ln -s /dev/nvme0n1p1 /nvme/0
+  930  ln -s /dev/nvme1n1p1 /nvme/1
+  931  sl -l /nvme
+  932  ls -l /nvme
+  933  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/nvme/\$jobnum --group_reporting=0
+  934  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1p1:/dev/nvme1n1p1 --group_reporting=0|grep read:
+  935  #fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/nvme/\$jobnum --group_reporting=0
+  936  nvme list
+  937  cat /sys/kernel/debug/iw_cxgb4/0000\:06\:00.4/eps 
+  938  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/nvme/\$jobnum --group_reporting=0|grep read:
+  939  MB2Gb 2026
+  940  MB2Gb 1026
+  941  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  942  nvme connect-all -t rdma -a 10.0.5.13
+  943  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/nvme/\$jobnum --group_reporting=0|grep read:
+  944  MB2Gb 1480
+  945  MB2Gb 1485
+  946  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  947  nvme connect-all -t rdma -a 10.0.6.13
+  948  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  949  nvme connect-all -t rdma -a 10.0.6.13
+  950  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/nvme/\$jobnum --group_reporting=0|grep read:
+  951  MB2Gb 1001
+  952  MB2Gb 1003
+  953  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  954  nvme connect -t rdma -a 10.0.5.13 -n testnqn1
+  955  nvme connect -t rdma -a 10.0.6.13 -n testnqn2
+  956  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/nvme/\$jobnum --group_reporting=0|grep read:
+  957  MB2Gb 1029
+  958  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  959  nvme connect-all -t rdma -a 10.0.5.13
+  960  sync
+  961  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/nvme/\$jobnum --group_reporting=0|grep read:
+  962  MB2Gb 1302
+  963  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  964  nvme connect-all -t rdma -a 10.0.6.13
+  965  fio --time_based=1 --runtime=30 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/nvme/\$jobnum --group_reporting=0|grep read:
+  966  MB2Gb 1064
+  967  MB2Gb 1061
+  968  lsof|grep fio|grep nvme
+  969  nvme list
+  970  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  971  cd /usr/local/src/sw/dev/T4/windows/Src/
+  972  ls
+  973  cd kernel/
+  974  cd iwarp/
+  975  ls
+  976  grep SILENT *.c
+  977  grep SILENT *.h
+  978  cd ..
+  979  ls
+  980  cscope -kR
+  981  nvme list
+  982  fio --time_based=1 --runtime=10 --bs=256k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/nvme/\$jobnum --group_reporting=0|grep read:
+  983  vi doit
+  984  #dd if=/dev/nvme1n1p1 of=/dev/null bs=256K iflag=direct count=50
+  985  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  986  nvme connect-all -t rdma -a 10.0.5.13
+  987  dd if=/dev/nvme0n1p1 of=/dev/null bs=64K iflag=direct count=1
+  988  /usr/local/src/stevo_ut/mbw -s 65536 
+  989  sh /root/doit-stevo
+  990  sh /root/doit-stevo.sh 
+  991  rping -C10 -Vvca 10.0.5.13
+  992  rping -s 65535 -C10 -ca 10.0.5.13 
+  993  rping -s 65535 -C2 -ca 10.0.5.13 -p 9999
+  994  rping -S 65535 -C2 -ca 10.0.5.13 -p 9999
+  995  nvme connect -t rdma -a 10.0.5.13 -n testnqn1
+  996  dd if=/dev/nvme0n1p1 of=/dev/null bs=64K iflag=direct count=1
+  997  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+  998  nvme connect -t rdma -a 10.0.5.13 -n testnqn1
+  999  dd if=/dev/nvme0n1p1 of=/dev/null bs=64K iflag=direct count=1
+ 1000  for i in 0 1 ; do nvme disconnect -d nvme${i}n1 ; done
+ 1001  sh /root/doit-stevo.sh 
+ 1002  history | tee history_2 

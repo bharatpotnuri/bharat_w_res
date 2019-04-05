@@ -1,0 +1,32 @@
+iWARP Connection Setup Flow
+
+On the Client(Active) Side:
+
+->    App calls rdma_resolve_addr() which uses the host routing table to identify the egress device. This causes the cm_id to be bound to a particular rdma provider.
+->    App calls rdma_resolve_route() which is a no-op for iWARP. It does something for IB.
+->    App calls rdma_connect() which initiates the RDMA connection. All of these calls are async and the application must wait for the RDMA event indicating the connection is established. The application can provide "private data" which is sent across on the MPA_START negotiation to the peer.
+->    The IWCM calls ib_device->iwcm.connect() which is c4iw_connect() in iw_cxgb4. c4iw_connect builds a ACT_OPEN_REQ CPL and sends it.
+	ep state -> CONNECTING.
+->    Local HW sends TCP SYN to peer, peer sends TCP/SYN/ACK to local, HW sends SYNC/ACK and posts a ACT_ESTABLISH CPL to the local host.
+->    act_establish() gets scheduled to process the ACT_ESTABLISH CPL. send_flowc() is called to send FW_FLOWC_WR WR to FW to configure this offload FLOW. Then send_mpa_req() is called to send a FW_OFLD_TX_DATA_WR work request to firmware to send out the MPA_START REQUEST message. This message includes the app's private data, if any, and if the MPA version is 2, the requested ORD/IRD. The ep timer is started and ep state -> MPA_SENT.
+->    Peer sends a MPA_START RESPONSE which is passed to the host in an RX_DATA CPL.
+->    rx_data() gets scheduled to process the RX_DATA CPL. rx_data() calls process_mpa_reply() for eps in MPA_SENT state.
+->    process_mpa_reply(): if the MPA_START RESPONSE is good, then the ep timer is stopped, ep state -> FPDU_MODE, the QP is moved to RTS by calling c4iw_modify_rc_qp(), which sends a RI_WR/INIT work request to FW to move the TCB into RDMA mode. process_mpa_reply() then calls connect_reply_upcall() which posts a CONNECT_REPLY IWCM event to the IWCM.
+->    App's event handler gets called with the RDMA_CM_EVENT_ESTABLISHED event and the connection is ready to go.
+
+On the Server(Passive) Side:
+
+->    App calls rdma_bind() to bind the cm_id to an ip address/port number. App calls rdma_listen() to enable incoming connection requests.
+->    IWCM calls ib_device->iwcm.create_listen() which is c4iw_create_listen(). c4iw_create_listen sets up a cxgb4_server to enable incoming TCP connect requests to be passed up to the host for this ip address/port. This is done by sending a PASS_OPEN_REQ CPL to hw and getting a PASS_OPEN_REPLY back. Done in cxgb4. T4 has an ugly workaround in this area of the code having to do with filters/etc.
+->    Peer sends TCP/SYN connection request. HW posts a PASS_ACCEPT_REQ.
+->    pass_accept_req() gets scheduled to process the CPL. It allocates the ep, sets state -> CONNECTING, and calls accept_cr().
+->    accept_cr() sends a CPL_PASS_ACCEPT_RPL CPL to hw to tell it to accept the TCP connection. HW sends TCP/SYN/ACK. Peer HW sends SYN/ACK. HW posts a PASS_ESTABLISH CPL to host.
+->    pass_establish() gets scheduled to process the PASS_ESTABLISH CPL. send_flowc() is called to setup the flow. ep state -> MPA_REQ_WAIT. ep timer is started.
+->    Peer sends MPA_START REQUEST, hw posts this to host as RX_DATA CPL.
+->    rx_data() gets scheduled to process the RX_DATA CPL. it calls process_mpa_request() on eps in MPA_REQ_WAIT state.
+->    process_mpa_request() validates the MPA request. If it looks good, it calls connect_request_upcall() to post a CONNECT_REQEUST IWCM event to the IWCM. ep timer is stopped. ep state -> MPA_REQ_RCVD.
+->    IWCM calls RDMACM which calls the Apps event handler with a RDMA_CM_CONNECT_REQUEST event.
+->    The private data from the peer is available in the RDMA_CM_CONNECT_REQUEST event, and the app reply with its own private data passed down when the app calls rdma_accept() to accept the data.
+->    IWCM calls ib_device->iwcm.accept() which is c4iw_accept_cr(). c4iw_accept_cr() moves the QP to RTS via c4iw_modify_rc_qp() which sends a RI_WR/INIT work request to firmware to move the TCB into RDMA mode (after the last streaming message is posted by the host).
+->    c4iw_accept_cr() then calls send_mpa_reply() which posts a FW_OFLD_TX_DATA_WR work request to firmware to send out the MPA_START RESPONSE message as streaming data before moving the TCB to RDMA MODE. The ep state->FPDU_MODE, and established_upcall() is called to post a IW_CM_EVENT_ESTABLISHED event to the IWCM.
+->    The app's event handler gets called with an RDMA_CM_ESTABLISHED event and the connection is ready to go.

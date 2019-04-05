@@ -1,0 +1,1000 @@
+    2  ibv_devices
+    3  rping -C10 -Vvca 172.16.3.2
+    4  sync
+    5  rmmod cxgb4
+    6  dmesg
+    7  cd stevo/linux
+    8  stg series
+    9  stg show rdma_rxe-use-netlink-messages
+   10  cd drivers/infiniband/sw/rxe
+   11  grep query_port *.c
+   12  vi rxe_verbs.c
+   13  grep 19 /usr/include/*/*errno*
+   14  lsmod|grep rxe
+   15  lsmod|grep cxgb4
+   16  ibv_devices
+   17  dmesg|grep rxe
+   18  vi rxe_net.c
+   19  stg push
+   20  ls
+   21  vi rxe.c rxe_sysfs.c
+   22  stg show
+   23  vi rxe_sysfs.c
+   24  grep dealloc_driver *.c
+   25  grep rxe_dealloc *.c
+   26  vi rxe.c
+   27  rmmod iw_cxgb4
+   28  lsmod|grep cxgb
+   29  modprobe cxgb4
+   30  cd -
+   31  stg series
+   32  make -j 16 && make -j 16 modules_install install && grubby --set-default-index=0 && grubby --default-kernel
+   33  sync
+   34  reboot
+   35  cd stevo/linux
+   36  cd drivers/infiniband/sw/rxe
+   37  ls
+   38  vi ../../core/nldev.c
+   39  stg diff
+   40  cd -
+   41  make -j 16 && make -j 16 modules_install install && grubby --set-default-index=0 && grubby --default-kernel
+   42  sync
+   43  reboot
+   44  stg series
+   45  cd stev/linux
+   46  cd stevo/linux
+   47  stg series
+   48  ls
+   49  ls newlink-v7/0000-cover-letter.patch 
+   50  vi newlink-v7/0000-cover-letter.patch 
+   51  /format-patch
+   52  git format-patch -o /newlink-v8 --to=dledford@redhat.com,jgg@mellanox.com --cc=linux-rdma@vger.kernel.org,bmt@zurich.ibm.com HEAD^^.. --subject-prefix "PATCH v8 rdma-next"
+   53  mv /newlink-v8 .
+   54  ./scripts/checkpatch.pl newlink-v8/0001-RDMA-core-add-RDMA_NLDEV_CMD_NEWLINK-DELLINK-support.patch 
+   55  ./scripts/checkpatch.pl newlink-v8/0002-RDMA-core-add-RDMA_NLDEV_CMD_NEWLINK-DELLINK-support.patch 
+   56  ./scripts/checkpatch.pl newlink-v8/0002
+   57  ./scripts/checkpatch.pl newlink-v8/0002-rdma_rxe-use-netlink-messages-to-add-delete-links.patch 
+   58  vi newlink-v8/*patch
+   59  cd newlink-v8/
+   60  cp ../newlink-v7/0000-cover-letter.patch cover.txt
+   61  ls
+   62  cd ..
+   63  git format-patch -o /newlink-v8 --cover --threaded=shallow --to=dledford@redhat.com,jgg@mellanox.com --cc=linux-rdma@vger.kernel.org,bmt@zurich.ibm.com HEAD^^.. --subject-prefix "PATCH v8 rdma-next"
+   64  git format-patch -o /newlink-v8 --cover --thread=shallow --to=dledford@redhat.com,jgg@mellanox.com --cc=linux-rdma@vger.kernel.org,bmt@zurich.ibm.com HEAD^^.. --subject-prefix "PATCH v8 rdma-next"
+   65  cd -
+   66  ls
+   67  cd ..
+   68  git format-patch -o /newlink-v8 --cover --thread=shallow --to=dledford@redhat.com,jgg@mellanox.com --cc=linux-rdma@vger.kernel.org,bmt@zurich.ibm.com HEAD^^.. --subject-prefix "PATCH v8 rdma-next"
+   69  git format-patch -o newlink-v8 --cover --thread=shallow --to=dledford@redhat.com,jgg@mellanox.com --cc=linux-rdma@vger.kernel.org,bmt@zurich.ibm.com HEAD^^.. --subject-prefix "PATCH v8 rdma-next"
+   70  cd -
+   71  vi cover.txt 0000-cover-letter.patch 
+   72  git dlog
+   73  ls
+   74  vi 0000-cover-letter.patch 
+   75  cd ..
+   76  ./scripts/checkpatch.pl newlink-v8/0001-RDMA-core-add-RDMA_NLDEV_CMD_NEWLINK-DELLINK-support.patch 
+   77  ./scripts/checkpatch.pl newlink-v8/0002-rdma_rxe-use-netlink-messages-to-add-delete-links.patch 
+   78  touch drivers/infiniband/core/*.[ch]
+   79  touch drivers/infiniband/sw/rxe/*.[ch]
+   80  make -j 4 drivers/infiniband/core/
+   81  make -j 4 drivers/infiniband/sw/rxe/
+   82  stg series
+   83  vi newlink-v8/*patch\
+   84  vi newlink-v8/*patch
+   85  stg pop --all
+   86  stg push
+   87  stg refresh --h
+   88  stg refresh --authdate="$(date)"
+   89  stg push
+   90  stg refresh --authdate="$(date)"
+   91  stg push
+   92  stg refresh --authdate="$(date)"
+   93  #git format-patch -o newlink-v8 --cover --thread=shallow --to=dledford@redhat.com,jgg@mellanox.com --cc=linux-rdma@vger.kernel.org,bmt@zurich.ibm.com HEAD^^.. --subject-prefix "PATCH v8 rdma-next"
+   94  mv newlink-v8/0000-cover-letter.patch newlink-v8/cover.txt 
+   95  git format-patch -o newlink-v8 --cover --thread=shallow --to=dledford@redhat.com,jgg@mellanox.com --cc=linux-rdma@vger.kernel.org,bmt@zurich.ibm.com HEAD^^.. --subject-prefix "PATCH v8 rdma-next"
+   96  vi newlink-v8/cover.txt newlink-v8/0000-cover-letter.patch 
+   97  git dlog
+   98  vi newlink-v8/*patch
+   99  sh /root/doit-stevo.sh ; rmmod iw_cxgb4
+  100  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4
+  101  ibv_devices
+  102  rping -C10 -Vvca 172.16.3.2
+  103  dmesg
+  104  rmmod cxgb4
+  105  dmesg
+  106  cd stevo/linux
+  107  stg series
+  108  stg refresh
+  109  sh /root/doit-stevo.sh ; rmmod iw_cxgb4
+  110  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4
+  111  rping -C10 -Vvca 172.16.3.2
+  112  /root/stevo/iproute2/rdma/rdma link del rxe_enp8s0f4
+  113  ibv_devices
+  114  rmmod cxgb4
+  115  #git push stevo jgg-device-locking-cleanup:stevo/wip/newlink-2019-02-14
+  116  git branch
+  117  git push --force stevo jgg-device-locking-cleanup:stevo/wip/newlink-2019-02-14
+  118  cd stevo/iproute2
+  119  stg series
+  120  stg show rd_sendrecv_msg
+  121  stg series
+  122  stg goto rdma_netlink.h
+  123  cp -f ../linux/include/uapi/rdma/rdma_netlink.h rdma/include/uapi/rdma/rdma_netlink.h 
+  124  git diff
+  125  vi rdma/include/uapi/rdma/rdma_netlink.h 
+  126  git diff
+  127  stg refresh -e
+  128  stg pull
+  129  stg show
+  130  stg push
+  131  ls
+  132  stg series
+  133  stg push
+  134  make
+  135  ibv_devices
+  136  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4
+  137  sh /root/doit-stevo.sh ; rmmod iw_cxgb4
+  138  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4
+  139  rping -C10 -Vvca 172.16.3.2
+  140  rmmod rdma_rxe
+  141  ibv_devices
+  142  rmmod cxgb4
+  143  dmesg
+  144  ls
+  145  tput clear
+  146  clear
+  147  ls
+  148  cd stevo
+  149  cd iproute2
+  150  stg series
+  151  stg pull
+  152  stg show rdma_netlink.h
+  153  cd ../linux
+  154  git branch
+  155  uname -r
+  156  stg series
+  157  git remote update
+  158  git branch
+  159  git branch -r|grep bern
+  160  cd stevo/sw/linux_t4_build/
+  161  vi cxgb4/cxgb4_filter.c
+  162  cd stevo/iproute2
+  163  stg pull
+  164  git myhlog
+  165  git mylog
+  166  git dlog
+  167  stg pop --all
+  168  stg push; stg refresh --authdate="$(date)"
+  169  stg series
+  170  stg show rd_sendrecv_msg
+  171  stg series
+  172  cd ../linux
+  173  git branch
+  174  stg series
+  175  stg branch rdma-for-next
+  176  git checkout -b rdma-for-next rdma/for-next
+  177  stg init
+  178  stg pull
+  179  git dlog
+  180  cd ../iproute2
+  181  ls
+  182  stg serie
+  183  sstg pop
+  184  stg pop
+  185  stg show
+  186  diff ../linux/include/uapi/rdma/rdma_netlink.h rdma/include/uapi/rdma/rdma_netlink.h 
+  187  cp ../linux/include/uapi/rdma/rdma_netlink.h rdma/include/uapi/rdma/rdma_netlink.h 
+  188  vi rdma/include/uapi/rdma/rdma_netlink.h 
+  189  diff ../linux/include/uapi/rdma/rdma_netlink.h rdma/include/uapi/rdma/rdma_netlink.h 
+  190  stg refresh
+  191  stg show
+  192  stg push
+  193  stg shoew
+  194  stg show
+  195  stg edit
+  196  stg show
+  197  stg push
+  198  stg show
+  199  man ./man/man8/rdma-link.8 
+  200  man ./man/man8/rdma.8 
+  201  stg series
+  202  make
+  203  uname -r
+  204  ibv_devices
+  205  #/root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4
+  206  rmmod iw_cxgb4
+  207  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4
+  208  ip addr
+  209  sh /root/doit-stevo.sh ; rmmod iw_cxgb4
+  210  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4
+  211  ip addr
+  212  uname -r
+  213  ip link
+  214  lsmod|grep rxe
+  215  modprobe rdma_rxe
+  216  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4
+  217  dmesg
+  218  stg series
+  219  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4
+  220  cd ../linux
+  221  git branch
+  222  make menuconfig
+  223  #make -j 16 && make -j 16 modules_install install && grubby --set-default-index=0 && grubby --default-kernel
+  224  git mylog
+  225  make -j 16 && make -j 16 modules_install install && grubby --set-default-index=0 && grubby --default-kernel
+  226  uname -r
+  227  sync
+  228  reboot
+  229  sh /root/doit-stevo.sh ; rmmod iw_cxgb4
+  230  echo -n 'module ib_core +fp' > /sys/kernel/debug/dynamic_debug/control 
+  231  ibv_devices
+  232  ip link
+  233  ip addr
+  234  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4
+  235  dmesg
+  236  ibv_devices
+  237  ping 172.16.3.2
+  238  rping -C10 -Vvca 172.16.3.2
+  239  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4
+  240  /root/stevo/iproute2/rdma/rdma link delete rxe_enp8s0f4
+  241  dmesg
+  242  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4aksdjadlasdj klsdj kls djlas
+  243  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4aksdjadlasdj
+  244  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type foo netdev enp8s0f4
+  245  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4
+  246  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4d1
+  247  dmesg
+  248  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4d1
+  249  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4_1 type rxe netdev enp8s0f4
+  250  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4 type rxe netdev enp8s0f4d1
+  251  /root/stevo/iproute2/rdma/rdma link add rxe_enp8s0f4d1 type rxe netdev enp8s0f4d1
+  252  ibv_devices
+  253  rping -C10 -Vvca 172.16.4.2
+  254  ibv_devices
+  255  /root/stevo/iproute2/rdma/rdma link delete rxe_enp8s0f4
+  256  /root/stevo/iproute2/rdma/rdma link delete rxe_enp8s0f4d1
+  257  cd stevo/linux-rdma
+  258  cd stevo/iproute2
+  259  stg series
+  260  ls
+  261  ls newlink-v1/
+  262  less newlink-v1/0000-cover-letter.patch 
+  263  less newlink-rfc/0000-cover-letter.patch 
+  264  vi newlink-v1/cover.txt 
+  265  rm -f newlink-v1/*patch
+  266  #git format-patch -o iproute2-newlink-v1 --cover --thread=shallow --to=dledford@redhat.com,jgg@mellanox.com --cc=linux-rdma@vger.kernel.org,bmt@zurich.ibm.com HEAD^^.. --subject-prefix "PATCH v8 rdma-next"
+  267  ls provider-restrack-v*/git*
+  268  ls provider-restrack-*/git*
+  269  less provider-restrack-rfc/git.txt
+  270  #git format-patch -o provider-restrack-rfc --cover --thread=shallow --subject-prefix="PATCH RFC iproute2-next" --to=dsahern@gmail.com,leon@kernel.org --cc=stephen@networkplumber.org,netdev@vger.kernel.org,linux-rdma@vger.kernel.org 
+  271  git format-patch -o newlink-v1 --cover --thread=shallow --subject-prefix="PATCH v1 iproute2-next" --to=dsahern@gmail.com,leon@kernel.org --cc=stephen@networkplumber.org,netdev@vger.kernel.org,linux-rdma@vger.kernel.org  HEAD^^^..
+  272  git format-patch -o newlink-v1 --cover --thread=shallow --subject-prefix="PATCH v1 iproute2-next" --to=dsahern@gmail.com,leon@kernel.org --cc=stephen@networkplumber.org,netdev@vger.kernel.org,linux-rdma@vger.kernel.org  HEAD^^^^..
+  273  cd newlink-v1
+  274  vi 0001-
+  275  cd ..
+  276  rm -f newlink-v1/*patch
+  277  git format-patch -o newlink-v1 --cover --thread=shallow --subject-prefix="PATCH v1 iproute2-next" --to=dsahern@gmail.com,leon@kernel.org --cc=stephen@networkplumber.org,netdev@vger.kernel.org,linux-rdma@vger.kernel.org  HEAD^^^^..
+  278  vi newlink-v1/0001-rdma-add-helper-rd_sendrecv_msg.patch 
+  279  ls
+  280  cd newlink-v1
+  281  ls
+  282  vi cover.txt 
+  283  vi 0000-cover-letter.patch cover.txt 
+  284  ls
+  285  vi *patch
+  286  cd ..
+  287  make clean
+  288  make
+  289  ls
+  290  ../linux/scripts/checkpatch.pl newlink-v1/0001-rdma-add-helper-rd_sendrecv_msg.patch 
+  291  ../linux/scripts/checkpatch.pl newlink-v1/0002-Sync-up-rdma_netlink.h.patch 
+  292  ../linux/scripts/checkpatch.pl newlink-v1/0003-rdma-add-link-add-delete-commands.patch 
+  293  ../linux/scripts/checkpatch.pl newlink-v1/0004-rdma-man-page-update-for-link-add-delete.patch 
+  294  vi man/mna8/rdma-link.8
+  295  vi man/man8/rdma-link.8
+  296  stg series
+  297  stg refresh
+  298  cd -
+  299  cp 0000-cover-letter.patch cover.txt 
+  300  cd ..
+  301  echo 'git format-patch -o newlink-v1 --cover --thread=shallow --subject-prefix="PATCH v1 iproute2-next" --to=dsahern@gmail.com,leon@kernel.org --cc=stephen@networkplumber.org,netdev@vger.kernel.org,linux-rdma@vger.kernel.org  HEAD^^^^..' > newlink-v1/git.txt
+  302  stg pop
+  303  stg edit
+  304  stg show
+  305  stg edit
+  306  stg pop
+  307  ../linux/scripts/checkpatch.pl newlink-v1/0001-rdma-add-helper-rd_sendrecv_msg.patch 
+  308  vi rdma/utils.c
+  309  stg refresh
+  310  stg push
+  311  git format-patch -o newlink-v1 --cover --thread=shallow --subject-prefix="PATCH v1 iproute2-next" --to=dsahern@gmail.com,leon@kernel.org --cc=stephen@networkplumber.org,netdev@vger.kernel.org,linux-rdma@vger.kernel.org  HEAD^^^^..
+  312  ../linux/scripts/checkpatch.pl newlink-v1/0001-rdma-add-helper-rd_sendrecv_msg.patch 
+  313  ../linux/scripts/checkpatch.pl newlink-v1/0002-Sync-up-rdma_netlink.h.patch 
+  314  ../linux/scripts/checkpatch.pl newlink-v1/0003-rdma-add-link-add-delete-commands.patch 
+  315  ../linux/scripts/checkpatch.pl newlink-v1/0004-rdma-man-page-update-for-link-add-delete.patch 
+  316  make
+  317  cd -
+  318  vi cover.txt 0000-cover-letter.patch 
+  319  vi *patch
+  320  ls
+  321  /root/stevo/iproute2/rdma/rdma 
+  322  ip
+  323  ip netconf help
+  324  ip netconf show
+  325  cd stevo/linux
+  326  vi drivers/infiniband/hw/cxgb4/qp.c
+  327  vi drivers/infiniband/hw/cxgb4/ev.c
+  328  vi drivers/infiniband/hw/cxgb4/iw_cxgb4.h
+  329  vi drivers/infiniband/hw/cxgb4/qp.c
+  330  lspci|grep Mell
+  331  mst status
+  332  lspci|grep Mellanox
+  333  cd stevo/iproute2
+  334  stg series
+  335  stg pull
+  336  vi rdma/include/uapi/rdma/rdma_netlink.h
+  337  stg resolved rdma/include/uapi/rdma/rdma_netlink.h
+  338  stg refresh
+  339  stg show
+  340  stg series
+  341  stg spop
+  342  stg pop
+  343  vi rdma/include/uapi/rdma/rdma_netlink.h
+  344  git mylog rdma/include/uapi/rdma/rdma_netlink.h
+  345  git show a985cc06bd38
+  346  stg push
+  347  stg show
+  348  stg edit
+  349  stg show
+  350  vi rdma/include/uapi/rdma/rdma_netlink.h
+  351  stg refresh
+  352  stg show
+  353  cscope -R
+  354  cd stevo/iproute2/
+  355  cscope -R
+  356  ls
+  357  ls common
+  358  ls misc
+  359  ls lib
+  360  cscope -kR
+  361  vi ../linux/include/uapi/rdma/cxgb4-abi.h 
+  362  grep udelay ../linux/drivers/net/ethernet/chelsio/cxgb4/*.c
+  363  vi ../linux/drivers/net/ethernet/chelsio/cxgb4/t4_hw.c
+  364  grep ib_is_udata_cleared ../linux/drivers/infiniband/hw/*/*.c
+  365  vi ../linux/drivers/infiniband/hw/mlx4/main.c
+  366  cd ../linux
+  367  vi drivers/infiniband/core/device.c
+  368  cd stevo/linux
+  369  grep GID include/rdma/*.h
+  370  grep GID drivers/infiniband/core/*.h
+  371  grep _SIZE drivers/infiniband/core/*.h
+  372  grep _SIZE include/rdma/*.h
+  373  vi include/rdma/rdma_cm.h 
+  374  git mylog drivers/infiniband/core/iwcm.c 
+  375  ls
+  376  ethtool -S enp8s0f4
+  377  ethtool -S enp8s0f4|grep ppp
+  378  clear
+  379  pgrep cscope
+  380  pkill cscope
+  381  pgrep cscope
+  382  cd stevo/iproute2
+  383  stg diff
+  384  stg series
+  385  stg show
+  386  stg pop
+  387  stg show
+  388  uname -r
+  389  stg series
+  390  stg pop
+  391  stg show rd_sendrecv_msg
+  392  cscope -R
+  393  stg show
+  394  stg show rd_sendrecv_msg
+  395  vi rdma/utils.c
+  396  stg show rd_sendrecv_msg
+  397  vi rdma/dev.c
+  398  stg show rd_sendrecv_msg
+  399  ls
+  400  ls misc
+  401  ls lib
+  402  vi lib/utils.c
+  403  cscope -R
+  404  ls
+  405  ls devlink/devlink -h
+  406  devlink/devlink -h
+  407  man devlink
+  408  devlink dev help
+  409  devlink dev show
+  410  devlink port show
+  411  devlink port help
+  412  lspci|grep 82:00
+  413  stg show rd_sendrecv_msg
+  414  stg push
+  415  git checkout -f
+  416  st gpush
+  417  stg push
+  418  vi rdma/utils.c
+  419  stg show
+  420  vi rdma/utils.c
+  421  stg show
+  422  vi rdma/dev.c
+  423  stg show
+  424  vi rdma/dev.c
+  425  make
+  426  vi rdma/dev.c
+  427  make
+  428  stg diff
+  429  stg series
+  430  stg diff
+  431  git checkout rdma/dev.c
+  432  git checkout rdma/rdma.h
+  433  vi rdma/utils.c
+  434  stg show rd_sendrecv_msg
+  435  vi rdma/utils.c
+  436  make
+  437  vi rdma/utils.c
+  438  make
+  439  ./rdma/rdma link add foo type bar netdev none
+  440  stg refresh -e
+  441  make
+  442  stg series
+  443  vi rdma/dev.c
+  444  vi rdma/utils.c
+  445  stg push
+  446  make
+  447  ./rdma/rdma link add foo type bar netdev none
+  448  dmesg
+  449  ./rdma/rdma link add foo type bar netdev none
+  450  echo $?
+  451  vi rdma/utils.c
+  452  make
+  453  ./rdma/rdma link add foo type bar netdev none
+  454  echo $?
+  455  vi rdma/utils.c
+  456  make
+  457  ./rdma/rdma link add foo type bar netdev none
+  458  git checkout -f
+  459  stg pop
+  460  vi rdma/utils.c
+  461  make
+  462  stg refresh
+  463  stg push
+  464  make
+  465  ./rdma/rdma link add foo type bar netdev none
+  466  ./rdma/rdma link add rxe_foo0 type rxe netdev none
+  467  #./rdma/rdma link add rxe_foo0 type rxe netdev enp8s0f4#
+  468  rmmod iw_cxgb4
+  469  ./rdma/rdma link add rxe_foo0 type rxe netdev enp8s0f4#
+  470  ./rdma/rdma link add rxe_foo0 type rxe netdev enp8s0f4
+  471  ibv_devices
+  472  ./rdma/rdma link add rxe_foo0 type rxe netdev enp8s0f4
+  473  ./rdma/rdma link delete rxe_foo0 
+  474  ./rdma/rdma link add rxe_foo0 type foo netdev enp8s0f4
+  475  stg series
+  476  vi rdma/dev.c
+  477  stg series
+  478  git diff
+  479  git diff > /tmp/p
+  480  git checkout -f
+  481  stg pop
+  482  patch -p 1 < /tmp/p
+  483  make
+  484  stg diff
+  485  stg refresh
+  486  ls
+  487  mkdir newlink-v2
+  488  cp newlink-v1/cover.txt newlink-v2/
+  489  vi newlink-v2/cover.txt 
+  490  cscope -kR
+  491  cscope -R
+  492  vi rdma/res.c rdma/link.c
+  493  git diff
+  494  git checkout -f
+  495  vi rdma/link.c
+  496  cscope -R
+  497  vi rdma/link.c
+  498  vi rdma/utils.c
+  499  vi rdma/link.c
+  500  make
+  501  vi rdma/link.c
+  502  make
+  503  vi rdma/link.c
+  504  cd stevo/linux
+  505  cd ../iproute2
+  506  make clean
+  507  ls
+  508  rpm -qa|grep mnl
+  509  ./configure
+  510  cd ../linux
+  511  git mylog
+  512  stg series
+  513  git branch
+  514  git mylog bernard-siw-for-rdma-next-nvme-5.0
+  515  git show 78e56e989efd
+  516  cd ../iproute2
+  517  ls
+  518  stg series
+  519  git mylog
+  520  cat newlink-v1/git.txt 
+  521  git format-patch -o newlink-v2 --cover --thread=shallow --subject-prefix="PATCH v2 iproute2-next" --to=dsahern@gmail.com,leon@kernel.org --cc=stephen@networkplumber.org,netdev@vger.kernel.org,linux-rdma@vger.kernel.org  HEAD^^^^..
+  522  vi newlink-v2/0001-rdma-add-helper-rd_sendrecv_msg.patch 
+  523  stg pop --all
+  524  stg push; stg refresh --authdate="$(date)"
+  525  git format-patch -o newlink-v2 --cover --thread=shallow --subject-prefix="PATCH v2 iproute2-next" --to=dsahern@gmail.com,leon@kernel.org --cc=stephen@networkplumber.org,netdev@vger.kernel.org,linux-rdma@vger.kernel.org  HEAD^^^^..
+  526  vi newlink-v2/*patch
+  527  ibv_devices
+  528  make
+  529  ./rdma/rdma link add rxe_foo0 type foo netdev enp8s0f4
+  530  ./rdma/rdma link add rxe_foo0 type swise netdev enp8s0f4
+  531  ./rdma/rdma link add rxe_foo0 type rxe netdev enp8s0f4
+  532  ibv_devices
+  533  ./rdma/rdma link del rxe_foo0 bar
+  534  stg pop
+  535  vi rdma/link.c
+  536  ../linux/scripts/checkpatch.pl ./newlink-v2/0001-rdma-add-helper-rd_sendrecv_msg.patch 
+  537  ../linux/scripts/checkpatch.pl ./newlink-v2/0002-Sync-up-rdma_netlink.h.patch 
+  538  ../linux/scripts/checkpatch.pl ./newlink-v2/0003-rdma-add-link-add-delete-commands.patch 
+  539  stg series
+  540  cp newlink-v2/0000-cover-letter.patch newlink-v2/cover.txt 
+  541  stg pop
+  542  stg push
+  543  vi rdma/link.c
+  544  stg diff
+  545  stg refresh
+  546  stg push
+  547  git format-patch -o newlink-v2 --cover --thread=shallow --subject-prefix="PATCH v2 iproute2-next" --to=dsahern@gmail.com,leon@kernel.org --cc=stephen@networkplumber.org,netdev@vger.kernel.org,linux-rdma@vger.kernel.org  HEAD^^^^..
+  548  ../linux/scripts/checkpatch.pl ./newlink-v2/0003-rdma-add-link-add-delete-commands.patch 
+  549  ../linux/scripts/checkpatch.pl ./newlink-v2/0004-rdma-man-page-update-for-link-add-delete.patch 
+  550  cd newlink-v2/
+  551  vi cover.txt 0000-cover-letter.patch 
+  552  ibv_devices
+  553  ./rdma/rdma res show foo
+  554  cd ..
+  555  ./rdma/rdma res show foo
+  556  ./rdma/rdma res show qp
+  557  ./rdma/rdma res show qp goo
+  558  ./rdma/rdma res show qp -h
+  559  ./rdma/rdma res show qp lqpn 176
+  560  ./rdma/rdma res show qp lqpn=176
+  561  ./rdma/rdma res show qp type UD
+  562  ./rdma/rdma res show lqpn 2224
+  563  ./rdma/rdma res show lqpn >= 2224
+  564  ./rdma/rdma res show qp lqpn >= 2224
+  565  ./rdma/rdma res show qp lqpn 2224
+  566  stg diff
+  567  stg pop --al
+  568  make
+  569  ./rdma/rdma res show qp lqpn 2224
+  570  stg push --all
+  571  make
+  572  ./rdma/rdma res show qp lqpn 2224
+  573  ./rdma/rdma res show qp 
+  574  ./rdma/rdma res show qp  lqpn 2224
+  575  stg series
+  576  git diff rdma-link-add
+  577  stg show rdma-link-add
+  578  stg series
+  579  stg shwo rd_sendrecv_msg
+  580  stg show rd_sendrecv_msg
+  581  cd rdma
+  582  ls
+  583  vi recvmsg *.c
+  584  grep recvmsg *.c
+  585  cscope -R
+  586  cd ..
+  587  cscope -R
+  588  cd stevo/iproute2
+  589  vi rdma/rdma.h
+  590  cd stevo/linux
+  591  cd ../iproute2
+  592  ls
+  593  rm -f \=
+  594  ls
+  595  vi rdma/res-qp.c
+  596  ./rdma/rdma res show qp
+  597  ./rdma/rdma res show qp lqpn 176
+  598  ./rdma/rdma res show qp link rxe_foo0/1 
+  599  ./rdma/rdma res show qp link rxe_foo0/1 lqpn 2
+  600  ./rdma/rdma res show qp link rxe_foo0/1 lqpn 1
+  601  ./rdma/rdma res show qp lqpn 1
+  602  ./rdma/rdma res show qp lqpn 2
+  603  vi rdma/utils.c
+  604  make
+  605  ./rdma/rdma res show qp lqpn 2
+  606  ./rdma/rdma res show qp lqpn 157
+  607  ./rdma/rdma res show qp lqpn ! 1
+  608  ./rdma/rdma res show qp lqpn != 1
+  609  ./rdma/rdma res show qp lqpn > 1
+  610  ./rdma/rdma res show qp 
+  611  ./rdma/rdma res show qp lqpn 176
+  612  /vi
+  613  vi rdma/res-qp.c
+  614  vi Makefile
+  615  make clean
+  616  make -j 16
+  617  make
+  618  gdb ./rdma/rdma
+  619  ../nltrace/nltrace ./rdma/rdma res show qp lqpn 176 2>&1|less
+  620  gdb ./rdma/rdma
+  621  #../nltrace/nltrace ./rdma/rdma res show qp lqpn 176 2>&1|less
+  622  gdb ./rdma/rdma
+  623  cd stevo/sw/linux_t4_build/
+  624  vi iw_cxgb4/mem.c
+  625  cd /root/stevo/libvma
+  626  git remote
+  627  git remote -vv
+  628  cd -
+  629  ls
+  630  cd /root/stevo/iproute2
+  631  ../nltrace/nltrace ./rdma/rdma res show qp lqpn 176 2>&1|less
+  632  vi rdma/include/uapi/rdma/rdma_netlink.h 
+  633  cd ../linux
+  634  vi drivers/infiniband/core/nldev.c
+  635  ./rdma/rdma link del rxe_foo0 bar
+  636  ./rdma/rdma link del rxe_foo0
+  637  /root/stevo/iproute2/rdma/rdma link del rxe_foo0
+  638  /root/stevo/iproute2/rdma/rdma res show qp lqpn 176 
+  639  /root/stevo/iproute2/rdma/rdma res show qp 
+  640  ./rdma/rdma link add rxe_foo0 type rxe netdev enp8s0f4
+  641  /root/stevo/iproute2./rdma/rdma link add rxe_foo0 type rxe netdev enp8s0f4
+  642  /root/stevo/iproute2/rdma/rdma link add rxe_foo0 type rxe netdev enp8s0f4
+  643  /root/stevo/iproute2/rdma/rdma res show qp 
+  644  /root/stevo/iproute2/rdma/rdma res show qp  lqpn 176
+  645  cd ../iproute2
+  646  vi rdma/res.c
+  647  ../nltrace/nltrace ./rdma/rdma res show qp lqpn 176 2>&1|less
+  648  printf "%x\n" 176
+  649  ../nltrace/nltrace ./rdma/rdma res show qp lqpn 176 2>&1|less
+  650  vi rdma/res-qp.c
+  651  vi rdma/utils.c
+  652  vi rdma/res.c
+  653  cscope -R
+  654  make
+  655  make clean
+  656  git diff
+  657  make
+  658  vi rdma/res.h
+  659  make
+  660  vi rdma/res.h
+  661  make
+  662  ./rdma/rdma res show qp lqpn 176 2>&1
+  663  stg series
+  664  vi rdma/res.h
+  665  make
+  666  ./rdma/rdma res show qp lqpn 176 2>&1
+  667  touch rdma/*[cj]
+  668  touch rdma/*.[ch]
+  669  make
+  670  ./rdma/rdma res show qp lqpn 176 2>&1
+  671  vi rdma/res.h
+  672  cscope -R
+  673  vi rdam/res-qp.c
+  674  vi rdma/res-qp.c
+  675  cscope -R
+  676  cd ../linux
+  677  vi drivers/infiniband/core/nldev.c
+  678  ./rdma/rdma res show qp 
+  679  vi drivers/infiniband/core/nldev.c
+  680  cd -
+  681  ./rdma/rdma res show qp 
+  682  ./rdma/rdma res show qp  lpqn 176
+  683  ./rdma/rdma res show qp  lqpn 176
+  684  ../nltrace/nltrace ./rdma/rdma res show qp lqpn 176 2>&1|less
+  685  vi ../linux/drivers/infiniband/core/nldev.c
+  686  vi rdma/res.c
+  687  cd stevo/linux
+  688  vi drivers/infiniband/hw/cxgb4/qp.c
+  689  cd stevo/iproute2
+  690  ../nltrace/nltrace ./rdma/rdma res show qp lqpn 176 2>&1|less
+  691  git diff
+  692  stg show
+  693  stg series
+  694  stg show rd_sendrecv_msg
+  695  #../nltrace/nltrace ./rdma/rdma res show qp lqpn 176 2>&1|less
+  696  ../nltrace/nltrace ./rdma/rdma res show qp lqpn 176 2>&1|less
+  697  ./rdma/rdma res show qp lqpn 176 2>&1|less
+  698  ./rdma/rdma res show qp lqpn 176 
+  699  grep CMD_RES rdma/include/uapi/rdma/rdma_netlink.h 
+  700  vi rdma/res.c
+  701  git diff
+  702  git checkout
+  703  git diff
+  704  git checkout -f
+  705  git diff
+  706  stg pop
+  707  vi rdma/utils.c
+  708  vi rdam/rdma.h
+  709  vi rdma/rdma.h
+  710  vi rdma/dev.c
+  711  git diff
+  712  git checkout if
+  713  git checkout -f
+  714  vi rdma/utils.c
+  715  stg refresh -e
+  716  stg refresh
+  717  stg push
+  718  git remote -v
+  719  git branch|grep stevo
+  720  git branch -r|grep stevo
+  721  git branch
+  722  git push stevo iproute2-next-master:wip/newlink-current
+  723  cd ../linux
+  724  grep chelsio MAINTAINERS 
+  725  vi MAINTAINERS 
+  726  ls ../sw/dev/T4/firmware/t6-config-ll.txt 
+  727  grep nfilter ../sw/dev/T4/firmware/t6-config-ll.txt 
+  728  grep nfilter ../sw/dev/T4/firmware/t6-config-hcll.txt 
+  729  grep nfilter ../sw/dev/T4/firmware/t6-config-ofld-hashfilter.txt
+  730  grep nfilter ../sw/dev/T4/firmware/t6-config*.txt
+  731  cd ../sw/linux_libs/libcxgb4_udp/
+  732  vi src/udp.c
+  733  cscope -R
+  734  vi ../..
+  735  cd ..
+  736  ls
+  737  cd ..
+  738  ls
+  739  cd linux_libs/libcxgb4_udp/src
+  740  ls -l
+  741  vi cxgbtool.h
+  742  pwd
+  743  cd ../../..
+  744  cd linux_t4_build/
+  745  vi cxgb4/cxgb4_filter.c
+  746  cd cxgb4
+  747  cd ../../..
+  748  cd sw/dev/T4
+  749  cscope -kR
+  750  cd ../..
+  751  cscope -R
+  752  cd ..
+  753  ls
+  754  cd linux
+  755  vi drivers/net/ethernet/chelsio/cxgb4/cxgb4_filter.c
+  756  vi ../sw/linux_libs/libcxgb4_udp/src/udp.c
+  757  cd stevo/sw
+  758  grep RDDP dev/T4/common/*h
+  759  grep ULP_MODE dev/T4/common/*h
+  760  grep nfilter dev/T4/firmware/t6-config*txt
+  761  grep ULP_MODE dev/T4/common/*h
+  762  grep ulp_mode dev/T4/common/*h
+  763  grep ulp_mode dev/T4/firmware/*h
+  764  grep ulpmode dev/T4/firmware/*h
+  765  grep ulp dev/T4/firmware/*h
+  766  vi dev/T4/firmware/t4fw_interface.h
+  767  grep tcb dev/T4/common/t4.h
+  768  grep tcb dev/T4/common/*.h
+  769  dumptcb6.py -i enp8s0f4 -t 1234
+  770  grep ulp_type dev/T4/common/*h
+  771  grep ULP_MODE dev/T4/common/*h
+  772  cd stevo/sw/linux_t4_build/
+  773  vi iw_cxgb4/qp.c
+  774  vi cxgb4/cxgb4_filter.c
+  775  grep cxgb4_set_filter cxgb4/*.c
+  776  vi cxgb4/cxgb4_cxgbtool.c
+  777  grep cxgb4_del_filter cxgb4/*.c
+  778  vi cxgb4/cxgb4_filter.c
+  779  man ibv_create_flow
+  780  cd stevo/sw
+  781  cd linux_t4_build/
+  782  vi firmware/t4fw_interface.h 
+  783  vi iw_cxgb4/mem.c
+  784  ls /root/stevo_t5tools/tptdump-t5.sh 
+  785  cd 
+  786  cd stevo/sw/linux_t4_build/
+  787  cd ..
+  788  ls
+  789  cd ..
+  790  cd linux
+  791  cd drivers/infiniband/hw/cxgb4
+  792  ls
+  793  pwd
+  794  cd ..
+  795  cd ../../..
+  796  cd ../sw/linux_t4_build/
+  797  vi cxgb4/t4fw_interface.h 
+  798  cd stevo/libvma/
+  799  cscope -R
+  800  cd stevo/linu
+  801  cd stevo/linux
+  802  vi drivers/infiniband/hw/cxgb4/qp.c
+  803  cd drivers/infiniband/hw/mlx5
+  804  ls
+  805  vi qp.c
+  806  vi ../i40iw
+  807  cd ../i40iw
+  808  ls
+  809  grep RAW *.[ch]
+  810  grep QPT_ *.[ch]
+  811  vi i404iw_verbs.c
+  812  vi i40iw_verbs.c
+  813  man ibv_create_flow
+  814  cd ../..
+  815  cd ..
+  816  cd infiniband/core/
+  817  cd ../../..
+  818  vi include/rdma/ib_verbs.h 
+  819  vi drivers/net/ethernet/chelsio/cxgb4/cxgb4_filter.c
+  820  vi drivers/net/ethernet/chelsio/cxgb4/cxgb4_ethtool.c
+  821  vi drivers/net/ethernet/chelsio/cxgb4/cxgb4_filter.c
+  822  cscope -kR
+  823  fg
+  824  kill -9 %%
+  825  cscope -kR
+  826  pgrep rping
+  827  ip addr
+  828  ping 172.16.1.1
+  829  rping -s&
+  830  rping -C10 -Vvca 172.16.1.1
+  831  ibv_devices
+  832  cd stevo
+  833  cd linux
+  834  cd drivers/infiniband/hw/cxgb4
+  835  vi cq.c
+  836  pwd
+  837  cd -
+  838  cd ../rdma-core
+  839  cd providers/cxgb
+  840  cd providers/cxgb4
+  841  vi t4.h
+  842  cd stevo/rdma-core/providers/cxgb4
+  843  pwd
+  844  vi cq.c
+  845  pwd
+  846  cd /root/stevo/linux/drivers/infiniband/hw/cxgb4/
+  847  mem.c
+  848  vi mem.c
+  849  cd /root/stevo/
+  850  cd linux
+  851  vi /usr/include/infiniband/verbs
+  852  vi /usr/include/infiniband/verbs.h
+  853  cd stevo/linux
+  854  cd drivers/infiniband/hw/cxgb4
+  855  vi t4.h
+  856  grep CIDXINC_M *.[ch]
+  857  vi t4.h
+  858  grep cidx_inc *.[ch]
+  859  vi t4.h
+  860  grep CQ_ARMED *.[ch]
+  861  cd stevo/linux
+  862  stg series
+  863  git branch
+  864  pwd
+  865  vi drivers/infiniband/hw/cxgb4/cm.c
+  866  vi drivers/infiniband/hw/cxgb4/qp.c
+  867  vi drivers/infiniband/hw/cxgb4/cm.c
+  868  vi drivers/infiniband/hw/cxgb4/qp.c
+  869  git diff
+  870  git diff > /tmp/bug81.patch
+  871  cd stevo
+  872  cd stevocd
+  873  cd
+  874  cd bharat/
+  875  ls
+  876  cd ibm_bug_82/
+  877  ls
+  878  cd bug82/
+  879  ls
+  880  vi core.kerneldump.78FAAA0.190312.110941
+  881  gzip 
+  882  gzip -h
+  883  gzip  -d core.kerneldump.78FAAA0.190312.110941.gz 
+  884  ls
+  885  gzip  -d core.kernelmessages.78FAAA0.190312.110941.gz 
+  886  ls
+  887  ls
+  888  w
+  889  cd bharat/
+  890  ls
+  891  mkdir ibm_bug_82
+  892  cd ibm_bug_82/
+  893  scp -r scuti:/local/qadump2/BUG_37630 ./
+  894  scp -r bharat@scuti:/local/qadump2/BUG_37630 ./
+  895  mount
+  896  mount scuti:/local/qadump2/BUG_37630/ /mnt/ 
+  897  cp -r /mnt/* ./
+  898  cd /mnt/
+  899  ls
+  900  cp -v ./* /root/bharat/ibm_bug_82/
+  901  cd -
+  902  ls
+  903  cp -r /mnt/* ./
+  904  y
+  905  exit
+  906  exit
+  907  history
+  908  cd bharat/ibm_bug_82/
+  909  ls
+  910  cd bug82/
+  911  ls
+  912  vi core.kernelmessages.78FAAA0.190312.110941 
+  913  ls
+  914  mount scuti:/local/qadump2/BUG_37562/ /mnt/ 
+  915  umount /mnt/
+  916  mount scuti:/local/qadump2/BUG_37562/ /mnt/ 
+  917  mkdir bharat/ibm_bug_81/
+  918  cp -r /mnt/* bharat/ibm_bug_81/
+  919  cd bharat/ibm_bug_8
+  920  cd bharat/ibm_bug_81/
+  921  ls
+  922  cd bharat/ibm_bug_81/
+  923  ls
+  924  cd 78HCCN0.190226.120956/
+  925  ls
+  926  vi 11592 
+  927  cd tcbs/
+  928  ls\
+  929  ls
+  930  vi 10016.txt 
+  931  ll -rt
+  932  qls | wc -l
+  933  ls | wc -l
+  934  grep -nir " ESTABLISHED  (4 )" ./*
+  935  grep -nir " ESTABLISHED  (4 )" ./* | wc -l
+  936  ls
+  937  cd ../
+  938  ls
+  939  cd out-82.00/
+  940  ls
+  941  cd dbu
+  942  cd debug_1/
+  943  ls
+  944  cd bharat/ibm_bug_82/bug82/
+  945  ls
+  946  cd dumps/
+  947  ls
+  948  cd iser/
+  949  ls
+  950  cd chelsio_cudbg_1b\:00.6/debug_1/
+  951  ls
+  952  pwd
+  953  ll -rt
+  954  vi all_regs 
+  955  check6.py 
+  956  check6.py --help
+  957  pwd
+  958  cd ../../
+  959  check6.py --cudbg_dir=./chelsio_cudbg_1b\:00.6
+  960  check6.py --cudbg_dir="./chelsio_cudbg_1b\:00.6" -w
+  961  which check6.py
+  962  vi /root/t5tools/check6.py 
+  963  vim /root/t5tools/check6.py 
+  964  vi /root/t5tools/check6.py 
+  965  check6.py --help
+  966  check6.py --regdumpfile=./chelsio_cudbg_1b\:00.6/debug_1/all_regs 
+  967  check6.py --regdumpfile=./chelsio_cudbg_1b\:00.6/debug_1/all_regs  -w
+  968  check6.py --regdumpfile=./chelsio_cudbg_1b\:00.6/debug_1/all_regs 
+  969  check6.py --regdumpfile=./chelsio_cudbg_20\:00.6/debug_1/all_regs 
+  970  cd ./chelsio_cudbg_1b\:00.6/debug_1/
+  971  ls
+  972  vi ibq_sge0 
+  973  vi ibq_sge1
+  974  vi ibq_tp0 
+  975  vi obq_sge
+  976  cd bharat/ibm_bug_81/
+  977  ls
+  978  cd 78HCCN0.190226.120956/
+  979  ls
+  980  cd out-82.00/debug_1/
+  981  ls
+  982  vi all_regs 
+  983  vi cim_qcfg 
+  984  cd ../../
+  985  ls
+  986  cd chelsio_cmnds_78HCCN0.190226.120957.log 
+  987  vi chelsio_iw_cxgb4_dfs_04\:00.4_eps.log 
+  988  vi chelsio_iw_cxgb4_dfs_82\:00.4_eps.log 
+  989  cd out-82.00/
+  990  ls
+  991  cd debug_1/
+  992  ls
+  993  vi cim_qcfg 
+  994  vi ibq_sge0 
+  995  vi cim_qcfg 
+  996  vi ibq_sge0 
+  997  vi cim_qcfg 
+  998  vi ibq_sge0 
+  999  vi cim_qcfg 
+ 1000  vi ibq_sge0 
+ 1001  history > history.`hostname`

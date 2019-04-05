@@ -1,0 +1,1000 @@
+    6  vi iscsi_target_configfs.c 
+    7  git diff
+    8  git checkout iscsi_target_configfs.c 
+    9  vi iscsi_target_configfs.c 
+   10  stg show
+   11  stg edit
+   12  stg show > /tmp/iser.patch
+   13  cd stevo/linux
+   14  git diff
+   15  cd drivers/target/iscsi
+   16  vi iscsi_target_configfs.c 
+   17  cd -
+   18  make drivers/target/iscsi/iscsi_target_configfs.o
+   19  vi iscsi_target_configfs.c 
+   20  vi ~-/iscsi_target_configfs.c 
+   21  make drivers/target/iscsi/iscsi_target_configfs.o
+   22  vi ~-/iscsi_target_configfs.c 
+   23  make drivers/target/iscsi/iscsi_target_configfs.o
+   24  vi ~-/iscsi_target_configfs.c 
+   25  make drivers/target/iscsi/iscsi_target_configfs.o
+   26  git diff
+   27  stg refresh
+   28  stg new iser2
+   29  vi ~-/iscsi_target_configfs.c 
+   30  make drivers/target/iscsi/iscsi_target_configfs.o
+   31  vi ~-/iscsi_target_configfs.c 
+   32  make drivers/target/iscsi/iscsi_target_configfs.o
+   33  vi ~-/iscsi_target_configfs.c 
+   34  make drivers/target/iscsi/iscsi_target_configfs.o
+   35  stg show
+   36  stg refresh
+   37  stg show
+   38  vi ~-/iscsi_target_configfs.c 
+   39  stg refresh
+   40  stg show
+   41  stg rename iser2 addr_name_to_sockaddr
+   42  stg show iser
+   43  stg pop
+   44  cp ~-/iscsi_target_configfs.c /tmp
+   45  stg push
+   46  vi /tmp/iscsi_target_configfs.c ~-/iscsi_target_configfs.c 
+   47  stg pop
+   48  cp ~-/iscsi_target_configfs.c /tmp
+   49  vi /tmp/iscsi_target_configfs.c ~-/iscsi_target_configfs.c 
+   50  stg push
+   51  vi /tmp/iscsi_target_configfs.c ~-/iscsi_target_configfs.c 
+   52  stg refresh
+   53  stg show
+   54  stg seires
+   55  stg series
+   56  stg edit
+   57  stg show
+   58  stg rename iser tpg_np_sockaddr
+   59  stg series
+   60  stg push
+   61  stg new iser_addr
+   62  stg series
+   63  vi /tmp/iscsi_target_configfs.c ~-/iscsi_target_configfs.c 
+   64  vi ~-/iscsi_target_configfs.c 
+   65  stg pop
+   66  vi ~-/iscsi_target_configfs.c 
+   67  make drivers/target/iscsi/iscsi_target_configfs.o
+   68  stg refresh
+   69  stg push
+   70  make drivers/target/iscsi/iscsi_target_configfs.o
+   71  vi ~-/iscsi_target_configfs.c 
+   72  make drivers/target/iscsi/iscsi_target_configfs.o
+   73  stg refresh
+   74  stg push
+   75  vi ~-/iscsi_target_configfs.c 
+   76  make drivers/target/iscsi/iscsi_target_configfs.o
+   77  vi ~-/iscsi_target_configfs.c 
+   78  make drivers/target/iscsi/iscsi_target_configfs.o
+   79  vi ~-/iscsi_target_configfs.c 
+   80  make drivers/target/iscsi/iscsi_target_configfs.o
+   81  cd -
+   82  ls
+   83  grep iscsit_tpt_new_child_np
+   84  grep iscsit_tpt_new_child_np *.c
+   85  grep iscsit_tpt_new_ *.c
+   86  vi iscsi_target_configfs.c 
+   87  grep iscsit_tpg_add_network_portal *.c
+   88  vi iscsi_target_tpg.c
+   89  git diff
+   90  stg series
+   91  stg refresh
+   92  vi iscsi_target_tpg.c
+   93  stg seroes
+   94  stg diff
+   95  stg refresh
+   96  cd -
+   97  make drivers/target/iscsi/iscsi_target_configfs.o
+   98  vi ~-/iscsi_target_tpg.c
+   99  vi ~-/iscsi_target_configfs.c
+  100  stg pop
+  101  vi ~-/iscsi_target_configfs.c
+  102  stg push
+  103  stg show
+  104  stg pop
+  105  stg show
+  106  stg pop
+  107  stg show
+  108  stg series
+  109  stg push
+  110  make drivers/target/iscsi/iscsi_target_configfs.o
+  111  stg push
+  112  cd -
+  113  ls
+  114  vi iscsi_target_tpg.c
+  115  grep iscsit_tpg_add_network_portal *.h
+  116  vi iscsi_target_tpg.h
+  117  vi iscsi_target_tpg.c
+  118  vi iscsi_target_configfs.c 
+  119  stg refresh
+  120  stg pop
+  121  vi iscsi_target_tpg.c
+  122  stg push
+  123  vi iscsi_target_tpg.c
+  124  make drivers/target/iscsi/iscsi_target_tpg.o
+  125  cd -
+  126  make drivers/target/iscsi/iscsi_target_tpg.o
+  127  vi drivers/target/iscsi/iscsi_target_tpg.h
+  128  vi drivers/target/iscsi/iscsi_target_tpg.c
+  129  make drivers/target/iscsi/iscsi_target_tpg.o
+  130  vi drivers/target/iscsi/iscsi_target_tpg.c
+  131  make drivers/target/iscsi/iscsi_target_tpg.o
+  132  stg refresh
+  133  make drivers/target/iscsi/iscsi_target_configfs.o
+  134  vi drivers/target/iscsi/iscsi_target_configfs.c
+  135  vi drivers/target/iscsi/iscsi_target_tpg.c
+  136  vi drivers/target/iscsi/iscsi_target_configfs.c 
+  137  make drivers/target/iscsi/iscsi_target_configfs.o
+  138  vi drivers/target/iscsi/iscsi_target_configfs.c 
+  139  make drivers/target/iscsi/iscsi_target_configfs.o
+  140  vi ~-/iscsi_target_tpg.h
+  141  vi ~-/iscsi_target_tpg.c
+  142  vi ~-/iscsi_target_configfs.c
+  143  make drivers/target/iscsi/iscsi_target_configfs.o
+  144  vi ~-/iscsi_target_tpg.c
+  145  vi ~-/iscsi_target_configfs.c
+  146  make drivers/target/iscsi/iscsi_target_configfs.o
+  147  stg refresh
+  148  stg show
+  149  vi ~-/iscsi_target_configfs.c
+  150  make drivers/target/iscsi/iscsi_target_configfs.o
+  151  vi ~-/iscsi_target_configfs.c
+  152  make drivers/target/iscsi/iscsi_target_configfs.o
+  153  stg refresh
+  154  make drivers/target/iscsi/
+  155  #make -j 16 && make -j 16 modules_install install && grubby --set-default-index=0
+  156  stg show
+  157  #make -j 16 && make -j 16 modules_install install && grubby --set-default-index=0
+  158  make -j 16 && make -j 16 modules_install install && grubby --set-default-index=0
+  159  sync
+  160  rmmod siw
+  161  sync
+  162  reboot
+  163  sh /root/doit-stevo.sh ; rmmod iw_cxgb4
+  164  modprobe siw
+  165  /root/stevo/iproute2/rdma/rdma link add siw_enp2s0f4 type siw netdev enp2s0f4
+  166  dmesg
+  167  ibv_devices
+  168  top
+  169  dmesg|tail
+  170  top
+  171  ibv_devices
+  172  lsmod|grep siw
+  173  rmmod siw
+  174  ip addr
+  175  modprobe siw
+  176  /root/stevo/iproute2/rdma/rdma link add siw_enp7s0f4 type siw netdev enp7s0f4
+  177  ibv_devices
+  178  /root/stevo/iproute2/rdma/rdma link add siw_enp7s0f4d1 type siw netdev enp7s0f4d1
+  179  ibv_devices
+  180  pgrep iwpmd
+  181  vi /etc/target/2ram-siw
+  182  vi /etc/target/2rams-siw.json 
+  183  targetctl start /etc/target/2rams-siw.json 
+  184  targetctl restore /etc/target/2rams-siw.json 
+  185  ss -an|grep 3260
+  186  ls /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np
+  187  ls /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser_addr
+  188  cat /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser_addr
+  189  echo "172.16.3.2:3261" >  /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser_addr
+  190  cat /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser_addr
+  191  dmesg
+  192  echo "172.16.3.2:3261" >  /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser_addr
+  193  vi /etc/target/2rams-siw.json 
+  194  targetctl ls
+  195  targetcli ls
+  196  lsmod|grep target
+  197  echo "module iscsi_target_mod +fp" > /sys/kernel/debug/dynamic_debug/control 
+  198  echo "172.16.3.2:3261" >  /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser_addr
+  199  dmesg
+  200  cat /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser_addr
+  201  echo 1 >  /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser
+  202  dmesg
+  203  ss -an|grep 3261
+  204  ss -an|grep 3260
+  205  cd stevo/linux
+  206  vi drivers/target/iscsi/iscsi_target_configfs.c
+  207  make -j 16 && make -j 16 modules_install install && grubby --set-default-index=0
+  208  sync
+  209  targetctl clear
+  210  rmmod siw
+  211  lsmod|grep target
+  212  rmmod ib_isert iscsi_target_mod
+  213  rmmod ib_isert 
+  214  ibv_devices
+  215  targetctl clear
+  216  rmmod iscsi_target_mod
+  217  sh /root/stevo/doit-rmmod.sh 
+  218  lsmod|grep target
+  219  modprobe -r target_core user
+  220  modprobe -r target_core_user
+  221  lsmod|grep target
+  222  modprobe -r iscsi_target_mod
+  223  sync
+  224  reboot
+  225  sh /root/doit-stevo.sh 
+  226  rmmod iw_cxgb4
+  227  modprobe siw
+  228  /root/stevo/iproute2/rdma/rdma link add siw_enp7s0f4 type siw netdev enp7s0f4
+  229  /root/stevo/iproute2/rdma/rdma link add siw_enp7s0f4d1 type siw netdev enp7s0f4d1
+  230  ibv_devices
+  231  pgrep iwpmd
+  232  lsmod|grep target
+  233  echo -n 'module iscsi_target_mod +fp' > /sys/kernel/debug/dynamic_debug/control 
+  234  targetctl restore /etc/target/2rams-siw.json 
+  235  ls /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser_addr
+  236  cat /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser_addr
+  237  dmesg|tail
+  238  echo "172.16.3.2:3261" >  /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser_addr
+  239  cat /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser_addr
+  240  dmesg
+  241  echo 1 >  /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser
+  242  dmesg
+  243  ss -an|grep 326
+  244  ss -an|grep 3261
+  245  ss -an|grep 3260
+  246  dmesg|tail
+  247  cat /sys/kernel/debug/siw/siw_enp7s0f4/cep 
+  248  cat /sys/kernel/debug/siw/siw_enp7s0f4/stats 
+  249  cd stevo/linux
+  250  stg diff
+  251  stg refresh -e
+  252  vi drivers/target/iscsi/iscsi_target_configfs.c
+  253  make drivers/target/iscsi/iscsi_target_configfs.o
+  254  make -j 16 && make -j 8 modules_install install && grubby --set-default-index=0
+  255  sync
+  256  ibv_devices
+  257  sync
+  258  reboot
+  259  top
+  260  cd stevo/linux
+  261  git diff
+  262  stg show
+  263  cd drivers/target/iscsi
+  264  vi iscsi_target_configfs.c 
+  265  stg series
+  266  stg show iser_addr
+  267  vi iscsi_target_configfs.c 
+  268  cscope -kR
+  269  cd ../../..
+  270  cscope -kR
+  271  cd -
+  272  vi iscsi_target_configfs.c 
+  273  cd -
+  274  make iscsi_target_configfs.o
+  275  make ~-/iscsi_target_configfs.o
+  276  vi iscsi_target_configfs.c 
+  277  vi ~-/iscsi_target_configfs.c 
+  278  make ~-/iscsi_target_configfs.o
+  279  stg refresh
+  280  stg series
+  281  stg show
+  282  stg edit
+  283  make -j 16 && make -j 8 modules_install install && grubby --set-default-index=0
+  284  syn
+  285  sync
+  286  targetctl clear
+  287  sync
+  288  reboot
+  289  top
+  290  journaltl -aek
+  291  journalctl -aek
+  292  journalctl -ae
+  293  tail /var/log/messages
+  294  mail
+  295  ls /var/crash/
+  296  rm -fr /var/crash/*
+  297  ls /var/spool/
+  298  ls /var/spool//abrt
+  299  sh /root/doit-stevo.sh 
+  300  rmmod iw_cxgb4
+  301  modprobe siw
+  302  /root/stevo/iproute2/rdma/rdma link add siw_enp7s0f4 type siw netdev enp7s0f4
+  303  /root/stevo/iproute2/rdma/rdma link add siw_enp7s0f4d1 type siw netdev enp7s0f4d1
+  304  vi /etc/target/2rams-siw.json 
+  305  targetctl restore /etc/target/2rams-siw.json 
+  306  echo -n 'module iscsi_target_mod +fp' > /sys/kernel/debug/dynamic_debug/control 
+  307  echo "172.16.3.2:3261" >  /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser_addr
+  308  dmesg|tail
+  309  cat /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser_addr
+  310  cat /sys/kernel/debug/siw/siw_enp7s0f4/cep 
+  311  ss -an|grep 3261
+  312  echo "172.16.4.2:3261" >  /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test2/tpgt_1/np/172.16.4.2\:3260/iser_addr
+  313  echo "172.16.4.2:3261" >  /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test2/tpgt_2/np/172.16.4.2\:3260/iser_addr
+  314  cat  /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test2/tpgt_2/np/172.16.4.2\:3260/iser_addr
+  315  dmesg|tail
+  316  cat /sys/kernel/debug/siw/siw_enp7s0f4/cep 
+  317  cat /sys/kernel/debug/siw/siw_enp7s0f4d1/cep 
+  318  cat /sys/kernel/debug/siw/siw_enp7s0f4d1/stats
+  319  cat /sys/kernel/debug/siw/siw_enp7s0f4/stats
+  320  cd stevo/linux
+  321  git diff
+  322  stg show
+  323  targetctl clear
+  324  vi /etc/target/2rams-siw.json 
+  325  targetctl restore /etc/target/2rams-siw.json 
+  326  ss -an|grep 3261
+  327  dmesg|tail
+  328  cat /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_1/np/172.16.3.2\:3260/iser_addr
+  329  cat /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test1/tpgt_2/np/172.16.4.2\:3260/iser_addr
+  330  cat /sys/kernel/config/target/iscsi/iqn.2003-01.org.stevo2.lun.test2/tpgt_2/np/172.16.4.2\:3260/iser_addr
+  331  vi `which targetctl
+  332  `
+  333  vi `which targetctl`
+  334  targetctl clear
+  335  rpm -ql rtslib
+  336  rpm -ql python-rtslib
+  337  vi /etc/target/2rams-siw.json 
+  338  cd /usr/lib/python2.7/site-packages/rtslib_fb
+  339  grep iser *
+  340  vi target.py
+  341  targetctl -h
+  342  vi `which targetcli`
+  343   targetcli
+  344  yum search ALUATargetPortGroup
+  345  yum search pyparsing
+  346  yum install -y pyparsing
+  347  yum upgrade targetcli
+  348  yum update targetcli
+  349  yum reinstall targetcli
+  350  which targetcli
+  351  targetcli
+  352  rpm -ql targetcli
+  353  which targetcli
+  354  yum search target
+  355  yum erase targetcli -h
+  356  man yum
+  357  yum erase targetcli clean_requirements_on_remove
+  358  yum erase python-rtslib clean_requirements_on_remove
+  359  targetctl
+  360  targetcli
+  361  man yum
+  362  yum provides ALUATargetPortGroup
+  363  yum install targetcli
+  364  targetcli ls
+  365  cd -
+  366  targetcli ls
+  367  grep -r ALUATargetPortGroup  /usr/lib/python* 
+  368  vi /usr/lib/python2.7/site-packages/rtslib_fb/alua.py
+  369  targetcli
+  370  vi ~/.bashrc 
+  371  python -v
+  372  python -V
+  373  which python
+  374  vi ~/.bashrc 
+  375  cd
+  376  mv .bashrc .bashrc-save
+  377  abrt-cli list --since 1548615136
+  378  ls /var/crash/
+  379  ls /var/crash/127.0.0.1-2019-01-27-11\:36\:34/vmcore-dmesg.txt 
+  380  cp .bashrc-save .bashrc
+  381  cd stevo/linux
+  382  stg series
+  383  stg show
+  384  git remote update bernard
+  385  git checkout bernard/siw-for-rdma-next-nvme-5.0
+  386  git checkout b bernard-siw-for-rdma-next-nvme-5.0
+  387  git checkout -bb bernard-siw-for-rdma-next-nvme-5.0
+  388  git checkout -b bernard-siw-for-rdma-next-nvme-5.0
+  389  git mylog
+  390  make menuconfig
+  391  grubby --info=ALL|grep ^kern
+  392  grubby --remove-kernel=/boot/vmlinuz-5.0.0-rc1-bernard-siw-for-rdma-next+
+  393  cd /lib/modules
+  394  ls
+  395  rm -fr 5.0.0-rc1-bernard-siw-for-rdma-next+
+  396  rm -f /boot/*5.0.0-rc1-bernard-siw-for-rdma-next+*
+  397  cd -
+  398  make -j 16 && make -j 8 modules_install install && grubby --set-default-index=0
+  399  sync
+  400  reboot
+  401  cd stevo/iproute2
+  402  git branch
+  403  git mylog
+  404  git show eb8b9f706386
+  405  git branch
+  406  git remote -v
+  407  git branch -r
+  408  stg series
+  409  git pull
+  410  less /var/crash/127.0.0.1-2019-01-28-11\:46\:39/vmcore-dmesg.txt 
+  411  cd stevo/rdma-core
+  412  ls
+  413  git brnach
+  414  git branch
+  415  git mylog
+  416  git branch
+  417  git checkout wip-no-port-map
+  418  stg series
+  419  git mylog
+  420  uname -r
+  421  git branch -r
+  422  git remote update steov
+  423  git remote update stevo
+  424  git branch -r|grep stevo
+  425  git granch
+  426  git branch
+  427  git status
+  428  git checkout
+  429  git diff
+  430  stg series
+  431  git mylog
+  432  stg uncommit
+  433  stg init
+  434  stg uncommit
+  435  stg series
+  436  stg pop
+  437  stg files
+  438  stg show
+  439  stg series
+  440  stg show refresh-rdma_netlink-h
+  441  stg series
+  442  ls
+  443  stg series
+  444  git format-patch --thread=shallow --cover -o iwpm-v1 --to=dledford@redhat.com,jgg@mellanox.com --cc=linux-rdma@vger.kernel.org,BMT@zurich.ibm.com,shiraz.saleem@intel.com HEAD^^..  --subject-prefix "PATCH rdma-core"
+  445  echo 'git format-patch --thread=shallow --cover -o iwpm-v1 --to=dledford@redhat.com,jgg@mellanox.com --cc=linux-rdma@vger.kernel.org,BMT@zurich.ibm.com,shiraz.saleem@intel.com HEAD^^..  --subject-prefix "PATCH rdma-core"' > iwpm-v1/git.txt
+  446  ls
+  447  cd iwpm-v1/
+  448  ls
+  449  vi 0000-cover-letter.patch 
+  450  git branch
+  451  git push stevo wip-no-port-map:topic/no-port-map-v1
+  452  vi 0000-cover-letter.patch 
+  453  ls
+  454  vi 0001-Refresh-rdma_netlink.h.patch 
+  455  vi 0002-iwpmd-add-NO_PORT_MAP-support.patch 
+  456  ls
+  457  vi *patch
+  458  ls
+  459  cd ..
+  460  ls
+  461  cd build
+  462  mkdir build
+  463  cd build
+  464  ../build.sh
+  465  cd ..
+  466  ls
+  467  ../linux/scripts/checkpatch.pl iwpm-v1/0001-Refresh-rdma_netlink.h.patch 
+  468  ../linux/scripts/checkpatch.pl iwpm-v1/0002-iwpmd-add-NO_PORT_MAP-support.patch 
+  469  vi iwpmd/iwarp_pm_server.c 
+  470  stty size
+  471  vi iwpmd/iwarp_pm_server.c 
+  472  ls
+  473  cd iwpm-v1
+  474  ls
+  475  vi *patch
+  476  pwd
+  477  cd stevo/rdma-core
+  478  ls
+  479  stg series
+  480  stg pop
+  481  stg push; stg refresh --authdate="$(date)"; sleep 2
+  482  #git format-patch --thread=shallow --cover -o iwpm-v1 --to=dledford@redhat.com,jgg@mellanox.com --cc=linux-rdma@vger.kernel.org,BMT@zurich.ibm.com,shiraz.saleem@intel.com HEAD^^..  --subject-prefix "PATCH rdma-core"
+  483  mv iwpm-v1/0000-cover-letter.patch iwpm-v1/covert.txt
+  484  git format-patch --thread=shallow --cover -o iwpm-v1 --to=dledford@redhat.com,jgg@mellanox.com --cc=linux-rdma@vger.kernel.org,BMT@zurich.ibm.com,shiraz.saleem@intel.com HEAD^^..  --subject-prefix "PATCH rdma-core"
+  485  cd iwpm-v1
+  486  vi *patch
+  487  ls
+  488  mv covert.txt cover.txt
+  489  vi cover.txt 0000-cover-letter.patch 
+  490  vi *patch
+  491  pwd
+  492  cd ..
+  493  cd iwpm-v1
+  494  grep Date *patch
+  495  uname -r
+  496  nvmetcli clear
+  497  ls
+  498  nvme list
+  499  rmmod siw
+  500  uname -r
+  501  cd stevo/rdma-core
+  502  uname -r
+  503  rpm -q iwpmd
+  504  pgrep iwpmd
+  505  sh /root/doit-stevo.sh 
+  506  pgrep iwpmd
+  507  systemctl stop iwpmd
+  508  pgrep iwpmd
+  509  stg series
+  510  stg pop
+  511  stg push
+  512  yum erase rdma-core rdma-core-devel
+  513  yum install rdma-core libibverbs iwpmd librdmacm
+  514  yum install libibverbs-util librdmacm-util
+  515  yum install libibverbs-utils librdmacm-utils
+  516  which iwpmd
+  517  ls -l /sbin/iwpmd
+  518  dmesg -c
+  519  sh /root/doit-stevo.sh 
+  520  dmesg
+  521  pgrep iwpmd
+  522  rping -s &
+  523  dmesg
+  524  dmesg|less
+  525  sync
+  526  reboot
+  527  dmesg|grep register
+  528  pgrep iwpmd
+  529  sh /root/doit-stevo.sh 
+  530  pgrep iwpmd
+  531  dmesg|grep register
+  532  rping -s &
+  533  cat /sys/kernel/debug/iw_cxgb4/0000\:82\:00.4/eps 
+  534  dmesg|grep register
+  535  uname -r
+  536  cd stevo/linux
+  537  vi drivers/infiniband/core/iwpm_msg.c
+  538  dmesg|grep iwpm_register_pid_cb
+  539  grep iwpm_register_pid_cb /var/log/messages
+  540  rpm -q iwpmd
+  541  git mylog
+  542  rping -C10 -Vvca 172.16.1.10
+  543  dmesg
+  544  ip addr
+  545  rping -C10 -Vvca 172.16.1.2
+  546  dmesg
+  547  tail /var/log/messages
+  548  tail -40 /var/log/messages
+  549  less /var/log/messages
+  550  vi drivers/infiniband/core/iwpm_msg.c 
+  551  uname -r
+  552  reboot
+  553  cd stevo/rdma-core
+  554  ls
+  555  git branch
+  556  git branch -r
+  557  git diff stevo/topic-no-port-map-v1 stevo/wip/no-port-map
+  558  git diff stevo stevo/topic-no-port-map-v1:stevo/wip/no-port-map
+  559  git log stevo/topic-no-port-map-v1:stevo/wip/no-port-map
+  560  git log stevo/topic-no-port-map-v1..stevo/wip/no-port-map
+  561  git mylog stevo/topic-no-port-map-v1..stevo/wip/no-port-map
+  562  git mylog stevo topic-no-port-map-v1..wip/no-port-map
+  563  git mylog stevo -- topic-no-port-map-v1..wip/no-port-map
+  564  git mylog topic-no-port-map-v1..wip/no-port-map
+  565  git mylog topic-no-port-map-v1:wip/no-port-map
+  566  git help log
+  567  git checkout -b topic/no-port-map-pr stevo/topic/no-port-map-v1
+  568  git branch
+  569  git mylog
+  570  stg uncommit
+  571  stg series
+  572  stg inig
+  573  stg init
+  574  stg uncommit
+  575  stg pull
+  576  stg series
+  577  stg uncommit
+  578  stg pull origin/master
+  579  git remote -v
+  580  stg help rebase
+  581  stg rebase origin/master
+  582  stg series
+  583  stg pull
+  584  stg push
+  585  stg delete
+  586  stg clean
+  587  stg push
+  588  stg clean
+  589  stg push
+  590  stg series
+  591  git mylog
+  592  git branch
+  593  git remote update origin
+  594  stg series
+  595  stg uncommit
+  596  stg rebase origin/master
+  597  stg series
+  598  git mylog
+  599  git mylog origin/master
+  600  git statue
+  601  git status
+  602  stg series
+  603  stg pop
+  604  stg series
+  605  git mylog
+  606  git branch
+  607  git push stevo topic/no-port-map-pr:master
+  608  stg push
+  609  git mylog
+  610  cd build
+  611  ../build.sh
+  612  stg show
+  613  cd ..
+  614  git push stevo topic/no-port-map-pr:topic/no-port-map-pr
+  615  ls
+  616  ls iwpm-v1
+  617  less iwpm-v1/0000-cover-letter.patch 
+  618  ssh root@stevo2
+  619  less /var/crash/127.0.0.1-2019-02-05-13\:21\:08/vmcore-dmesg.txt 
+  620  sh /root/doit-stevo.sh 
+  621  sh /root/stevo/create_nvmet_2ram-2port.sh 
+  622  pgrep iwpmd
+  623  cd stevo/rdma-core
+  624  git branch
+  625  stg series
+  626  cd ../linux
+  627  git granch
+  628  git branch
+  629  git checkout rdma-for-next
+  630  stg series
+  631  stg pull
+  632  stg clean
+  633  git mylog include/uapi/rdma/rdma_netlink.h
+  634  cd ../rdma-core
+  635  stg series
+  636  stg pop --all
+  637  ./kernel-headers/update -h
+  638  stg push
+  639  cd -
+  640  git mylog include/uapi/rdma/rdma_netlink.h
+  641  git show
+  642  git showb0bad9ad514f
+  643  git show b0bad9ad514f
+  644  cd -
+  645  ./kernel-headers/update --amend ../linux b0bad9ad514f
+  646  stg diff
+  647  stg show
+  648  stg pop
+  649  #./kernel-headers/update ../linux b0bad9ad514f
+  650  cd -
+  651  git mylog include/uapi/rdma/rdma_netlink.h|head -4
+  652  cd -
+  653  ./kernel-headers/update ../linux f76903d574b2
+  654  stg pull
+  655  git mylog
+  656  git reset --hard d9641b67a82f
+  657  stg series
+  658  stg push
+  659  stg refresh --authdate="$(date)"; sleep 2
+  660  stg push
+  661  stg refresh --authdate="$(date)"; sleep 2
+  662  git mylog
+  663  git remote -v
+  664  git branch
+  665  git pull origin/master
+  666  git pull origin
+  667  git branch
+  668  git pull origin topic/no-port-map-pr
+  669  git pull origin 
+  670  git checkout master
+  671  stg series
+  672  git pull
+  673  ./kernel-headers/update ../linux f76903d574b2
+  674  ./kernel-headers/update ../linux 
+  675  #./kernel-headers/update ../linux f76903d574b2
+  676  cd -
+  677  git mylog
+  678  git branch
+  679  git pul
+  680  git pull
+  681  git remote update rdma
+  682  git pull
+  683  cd -
+  684  ./kernel-headers/update /root/stevo/linux f76903d574b2
+  685  cd -
+  686  git log
+  687  git log include/uapi/rdma/rdma_netlink.h
+  688  git show a78e8723a50530d15faa25cc0b6f009bcd251c20
+  689  cd -
+  690  git log kernel-headers/rdma/rdma_netlink.h
+  691  /update
+  692  ./kernel-headers/update /root/stevo/linux a78e8723a50530d15faa25cc0b6f009bcd251c20
+  693  cd -
+  694  git mylog
+  695  python -V
+  696  cat /etc/redhat-release 
+  697  yum search python
+  698  yum install python36
+  699  python --version
+  700  python3.6 --version
+  701  env|grep -i python
+  702  ls -l `which python`
+  703  ls -l `which python3`
+  704  cd -
+  705  PYTHON=python3 ./kernel-headers/update /root/stevo/linux f76903d574b2
+  706  python3 ./kernel-headers/update /root/stevo/linux f76903d574b2
+  707  python3 --version
+  708  vi kernel-headers/update 
+  709  git mylog
+  710  python3 ./kernel-headers/update /root/stevo/linux f76903d574b2
+  711  /vi
+  712  vi kernel-headers/update 
+  713  yum update python3
+  714  yum upgrade python36
+  715  yum search python
+  716  python --version
+  717  python3 --version
+  718  python36 --version
+  719  python36 ./kernel-headers/update /root/stevo/linux f76903d574b2
+  720  yum upgrade git
+  721  yum search git
+  722  rpm -qa|grep git
+  723  yum search git-
+  724  yum search git-1.8.3.1-19
+  725  rpm -e git
+  726  rpm -e git perl-git
+  727  rpm -e git perl-Git
+  728  rpm -e git perl-Git gettext-devel
+  729  rpm -e git perl-Git gettext-devel intltool
+  730  yum install git
+  731  python36 ./kernel-headers/update /root/stevo/linux f76903d574b2
+  732  git mylog
+  733  git branch
+  734  cd ../linux
+  735  git mylog include/uapi/rdma/rdma_netlink.h
+  736  python36 ./kernel-headers/update /root/stevo/linux a78e8723a505
+  737  cd -
+  738  python36 ./kernel-headers/update /root/stevo/linux a78e8723a505
+  739  rpm -e git perl-Git gettext-devel intltool
+  740  cd ..
+  741  ls
+  742  wget https://github.com/git/git/archive/v2.20.1.tar.gz
+  743  tar xzf v2.20.1.tar.gz 
+  744  cd git-2.20.1/
+  745  ls
+  746  ./configure
+  747  make -j 16
+  748  yum install libcurl-devel
+  749  make -j 16
+  750  yum search expat.h
+  751  an yum
+  752  man yum
+  753  yum provides expat.h
+  754  ls
+  755  less README.md 
+  756  less INSTALL 
+  757  make configure
+  758  ./configure
+  759  make all -j 16
+  760  make install
+  761  git --version
+  762  which git
+  763  rm -f /usr/local/bin/git
+  764  git --version
+  765  w
+  766  cd stevo/
+  767  cd git-2.20.1/
+  768  make
+  769  make install
+  770  git --version
+  771  cd ../rdma-core
+  772  python36 ./kernel-headers/update /root/stevo/linux f76903d574b2
+  773  git show
+  774  git mylog
+  775  git reset --hard
+  776  git reset --hard b4d8c5a81023
+  777  git pull
+  778  vi kernel-headers/rdma/rdma_netlink.h 
+  779  git branch
+  780  git mylog
+  781  python36 ./kernel-headers/update /root/stevo/linux a78e8723a505
+  782  git show
+  783  git reset --hard b4d8c5a81023
+  784  git pull
+  785  git annotate kernel-headers/rdma/rdma_netlink.h
+  786  git show 23ce83e8542cc
+  787  stg series
+  788  git brancch
+  789  git branch
+  790  git checkout topic/no-port-map-pr
+  791  git rebase master
+  792  git mylog
+  793  stg repair
+  794  stg series
+  795  stg push
+  796  st gshow
+  797  stg show
+  798  cd ../linux
+  799  git mylog include/uapi/rdma/rdma_netlink.h
+  800  cd -
+  801  python36 ./kernel-headers/update --amend /root/stevo/linux b0bad9ad514f
+  802  stg series
+  803  stg pop
+  804  python36 ./kernel-headers/update /root/stevo/linux b0bad9ad514f
+  805  stg show
+  806  cd ../linux
+  807  stg series
+  808  git pull
+  809  git branch
+  810  git remote update
+  811  git pull
+  812  git mylog include/uapi/rdma/rdma_netlink.h
+  813  cd -
+  814  git diff
+  815  git pull
+  816  git brranch
+  817  git branch
+  818  git mylog
+  819  stg series
+  820  git reset --hard b4d8c5a81023
+  821  git mylog
+  822  git pull
+  823  git reset --hard b4d8c5a81023
+  824  git checkout -f master
+  825  git pull
+  826  python36 ./kernel-headers/update /root/stevo/linux a78e8723a505
+  827  git show
+  828  git reset --hard b4d8c5a81023
+  829  git mylog
+  830  git pull
+  831  git remote update
+  832  git branch -r
+  833  stg series -b stevo/topic/no-port-map-pr
+  834  stg series -b topic/no-port-map-pr
+  835  stg pick -B topic/no-port-map-pr iwpmd-add-no_port_map-support
+  836  stg init
+  837  stg pick -B topic/no-port-map-pr iwpmd-add-no_port_map-support
+  838  stg show
+  839  mkdir build
+  840  rm -fr build
+  841  mkdir build
+  842  cd bild
+  843  cd build
+  844  ../build.sh 
+  845  git mylog
+  846  vi kernel-headers/rdma/rdma_netlink.h 
+  847  cd ..
+  848  vi kernel-headers/rdma/rdma_netlink.h 
+  849  diff ../linux/include/uapi/rdma/rdma_netlink.h kernel-headers/rdma/rdma_netlink.h 
+  850  git mylog
+  851  git branch
+  852  stg series
+  853  vi iwpmd/iwarp_pm.h
+  854  cd iwpmd
+  855  cscope -R
+  856  vi iwpmd/iwarp_pm.h
+  857  vi iwarp_pm.h
+  858  vi iwarp_pm_helper.c 
+  859  vvi iwarp_pm_server.c 
+  860  vi iwarp_pm_server.c 
+  861  git diff
+  862  vi iwarp_pm_server.c 
+  863  ls ../buildlib/travis-checkpatch 
+  864   ../buildlib/travis-checkpatch 
+  865   ../buildlib/travis-checkpatch  -?
+  866  git diff
+  867  git checkout -f
+  868  git show > /tmp/p
+  869   ../buildlib/travis-checkpatch  /tmp/p
+  870  ../buildlib/travis-checkpatch  /tmp/p
+  871  vi ../buildlib/travis-checkpatch 
+  872  git mylog
+  873  cd ..
+  874  vi buildlib/travis-checkpatch  2fcbe8b61837
+  875  buildlib/travis-checkpatch  2fcbe8b61837
+  876  sh buildlib/travis-checkpatch  2fcbe8b61837
+  877  sh -x buildlib/travis-checkpatch  2fcbe8b61837
+  878  vi buildlib/travis-checkpatch 
+  879  ../linux/scripts/checkpatch.pl /tmp/p
+  880  ../linux/scripts/checkpatch.pl /tmp/p > /tmp/cp
+  881  vi /tmp/cp
+  882  stty size
+  883  vi iwpmd/iwarp_pm.h
+  884  vi iwpmd/iwarp_pm_helper.c
+  885  vi iwpmd/iwarp_pm_server.c 
+  886  git diff
+  887  :1
+  888  git diff
+  889  yum search clang
+  890  git checkout -f
+  891  git diff
+  892  stg series
+  893  git mylog
+  894  git dlog
+  895  git branch
+  896  git push --force steov master:topic/no-port-map-pr
+  897  git push --force stevo master:topic/no-port-map-pr
+  898  cd build
+  899  ../build.sh
+  900  ../build.sh clean
+  901  ../build.sh 
+  902  cd ..
+  903  rm -fr build
+  904  mkdir build
+  905  cd build
+  906  ../build.sh
+  907  git show
+  908  vi /tmp/cp
+  909  uname -r
+  910  rmmod iw_cxgb4
+  911  /root/stevo/iproute2/rdma/rdma link add rxe_enp7s0f4 type rxe netdev enp7s0f4
+  912  ibv_device
+  913  ibv_devices
+  914  ifconfig enp7s0f4
+  915  ip addr
+  916  cat /root/doit-stevo.sh 
+  917  ifconfig enp7s0f4 172.16.3.2/24 up
+  918  ifconfig enp7s0f4d1 172.16.4.2/24 up
+  919  # T62100-LP
+  920  ip link set enp130s0f4 up mtu 9000
+  921  ip addr add 172.16.1.2/24 dev enp130s0f4
+  922  ip link set enp130s0f4d1 up mtu 9000
+  923  ip addr add 172.16.2.2/24 dev enp130s0f4d1
+  924  ping 172.16.3.1
+  925  rping s-
+  926  rping -s
+  927  cd stevo
+  928  l
+  929  ls
+  930  git clone https://github.com/Mellanox/libvma.git
+  931  cd libvma/
+  932  cscope -R
+  933  man ibv_create_flow
+  934  cscope -R
+  935  rpm -q rdma-core
+  936  yum install rdma-core-devel libibverbs-devel
+  937  cscope -R
+  938  ls /usr/include/infiniband/verbs.h 
+  939  vi /usr/include/infiniband/verbs.h 
+  940  man ibv_create_flow
+  941  man ibv_create_qp
+  942  man ibv_modify_qp
+  943  cscope -kR
+  944  man ibv_create_flow
+  945  cscope -kR
+  946  rping -s
+  947  cd stevo/sw/linux_t4_build/cxgb4
+  948  ls
+  949  vi cxgb4_main.c
+  950  vi ../iw_cxgb4/qp.c
+  951  vi cxgb4_main.c
+  952  grep cxgb4_del_filter *.c
+  953  vi cxgb4_filter.c
+  954  grep t4_mk_filtdelwr *.c
+  955  vi t4_hw.c
+  956  grep FW_FILTER_WR *.c
+  957  vi t4_hw.c
+  958  vi cxgb4_filter.c
+  959  grep ULP_MODE *.h
+  960  vi t4_msg.h
+  961  vi cxgb4_filter.c
+  962  grep FW_FILTER2_WR *.c
+  963  grep FW_FILTER2_WR *.h
+  964  vi t4fw_interface.h
+  965  vi cxgb4_filter.c
+  966  grep cxgb4_set_filter *.c
+  967  vi cxgb4_cxgbtool.c
+  968  grep SET_FILT /root/stevo/sw/linux_libs/libcxgb4_udp/src/*.c
+  969  vi /root/stevo/sw/linux_libs/libcxgb4_udp/src/udp.c
+  970  rping -s
+  971  rping -sP
+  972  cd stevo/rdma-core
+  973  ls
+  974  cat make-rpms.sh 
+  975  sh /root/doit-stevo.sh 
+  976  ibv_devices
+  977  cd stevo/perftest/
+  978  ls
+  979  ./ib_write_lat -h
+  980  ./ib_write_lat -H -R -d cxgb4_0 -i 1 -D 10 -s 16 &
+  981  ./ib_write_lat -H -R -d cxgb4_0 -i 1 -D 10 -s 16 172.16.1.2
+  982  #./ib_write_lat -H -R -d cxgb4_0 -i 1 -n 10000 -s 16 172.16.1.2
+  983  ./ib_write_lat -H -R -d cxgb4_0 -i 1 -n 10000 -s 16 &
+  984  ./ib_write_lat -H -R -d cxgb4_0 -i 1 -n 10000 -s 16 172.16.1.2
+  985  ./ib_write_lat -H -R -d cxgb4_0 -i 1 -n 10000 -s 16  > /dev/null 2>&1 &
+  986  ./ib_write_lat -H -R -d cxgb4_0 -i 1 -n 10000 -s 16 172.16.1.2
+  987  ./ib_write_lat -H -R -d cxgb4_0 -i 1 -n 10000 -s 16  > /dev/null 2>&1 &
+  988  ./ib_write_lat -H -R -d cxgb4_0 -i 1 -n 10000 -s 16 172.16.1.2
+  989  ./ib_write_lat -H -R -d cxgb4_0 -i 1 -n 10000 -s 16  > /dev/null 2>&1 &
+  990  ./ib_write_lat -H -R -d cxgb4_0 -i 1 -n 10000 -s 16 172.16.1.2 > out.txt
+  991  less out.txt
+  992  ./ib_write_lat -H -R -d cxgb4_0 -i 1 -n 100 -s 16  > /dev/null 2>&1 &
+  993  ./ib_write_lat -H -R -d cxgb4_0 -i 1 -n 100 -s 16 172.16.1.2 > out.txt
+  994  less out.txt 
+  995  vi /root/stevo/linux/include/rdma/ib_verbs.h
+  996  cd ../stevo_ut
+  997  vi mbw.c
+  998  nvme list
+  999  exit
+ 1000  history
+ 1001  hostname
+ 1002  history > history.`hostname`
+ 1003  ls
+ 1004  ll -rt
+ 1005  history > history.`hostname`

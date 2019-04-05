@@ -1,0 +1,1000 @@
+    2  /root/stevo/iproute2/rdma/rdma -d -p resource  show cm_id
+    3  vi rdma/res.c
+    4  make
+    5  /root/stevo/iproute2/rdma/rdma -d -p resource  show cm_id
+    6  stg refresh
+    7  stg edit
+    8  /root/stevo/iproute2/rdma/rdma  resource  show cm_id
+    9  stg edit
+   10  stg refresh
+   11  cd ../linux/
+   12  stg diff
+   13  stg show
+   14  rping -s -p 9999 -a 172.16.4.3&
+   15  /root/stevo/iproute2/rdma/rdma -d -p resource  show cm_id
+   16  /root/stevo/iproute2/rdma/rdma -d -p resource  show cm_id src-addr=172.16.4.3
+   17  /root/stevo/iproute2/rdma/rdma -d -p resource  show qp
+   18  /root/stevo/iproute2/rdma/rdma -d -p resource  show qp -h
+   19  /root/stevo/iproute2/rdma/rdma -d -p resource  -h
+   20  /root/stevo/iproute2/rdma/rdma -d -p resource help
+   21  /root/stevo/iproute2/rdma/rdma -d -p resource  show qp lqpn 1032
+   22  /root/stevo/iproute2/rdma/rdma -d -p resource  show cm_id lqpn 1032
+   23  /root/stevo/iproute2/rdma/rdma -d -p resource  show cm_id src-addr 172.16.4.3
+   24  cd ../iproute2/
+   25  ls
+   26  ls rdma
+   27  vi rdma/utils.c 
+   28  vi rdma/res.c 
+   29  make
+   30  vi rdma/res.c 
+   31  make
+   32  /root/stevo/iproute2/rdma/rdma -d -p resource  show cm_id src-addr 172.16.4.3
+   33  /root/stevo/iproute2/rdma/rdma -d -p resource  show cm_id state LISTEN
+   34  /root/stevo/iproute2/rdma/rdma -d -p resource  show cm_id state 1
+   35  /root/stevo/iproute2/rdma/rdma -d -p resource  show cm_id state 2
+   36  /root/stevo/iproute2/rdma/rdma -d -p resource  show cm_id state 3
+   37  /root/stevo/iproute2/rdma/rdma -d -p resource  show cm_id lqpn 0
+   38  /root/stevo/iproute2/rdma/rdma -d -p resource  show cm_id src-addr 0
+   39  vi rdma/res.c
+   40  /root/stevo/iproute2/rdma/rdma -d -p resource  show qp type UC
+   41  /root/stevo/iproute2/rdma/rdma -d -p resource  show qp 
+   42  /root/stevo/iproute2/rdma/rdma -d -p resource  show  state IDLE
+   43  /root/stevo/iproute2/rdma/rdma -d -p resource  show  qp state IDLE
+   44  /root/stevo/iproute2/rdma/rdma -d -p resource  show  qp type UC
+   45  /root/stevo/iproute2/rdma/rdma -d -p resource  show  qp pid 4080
+   46  /root/stevo/iproute2/rdma/rdma -d -p resource  show  qp pid rq-psn 1
+   47  vi rdma/res.c
+   48  cscope -r
+   49  cscope -R
+   50  make
+   51  /root/stevo/iproute2/rdma/rdma -d -p resource  show  cm_id src-port 0
+   52  /root/stevo/iproute2/rdma/rdma -d -p resource  show  cm_id src-addr 0.0.0.0
+   53  /root/stevo/iproute2/rdma/rdma -d -p resource  show  cm_id src-addr = 0.0.0.0
+   54  /root/stevo/iproute2/rdma/rdma -d -p resource  show  cm_id src-addr 172.16.3.3
+   55  /root/stevo/iproute2/rdma/rdma -d -p resource  show  cm_id src-addr 172.16.4.3
+   56  /root/stevo/iproute2/rdma/rdma -d -p resource  show  cm_id type RC
+   57  /root/stevo/iproute2/rdma/rdma -d -p resource  show  cm_id state LISTEN
+   58  cscope -R
+   59  gdb ./rdma/rdma
+   60  make
+   61  /root/stevo/iproute2/rdma/rdma -d resource show cm_id dst-addr 172.16.3.3
+   62  vi rdma/res.c
+   63  /root/stevo/iproute2/rdma/rdma resource show cm_id dst-addr 172.16.3.3
+   64  /root/stevo/iproute2/rdma/rdma -d resource show cm_id dst-addr 172.16.3.3
+   65  /root/stevo/iproute2/rdma/rdma -j -d resource show cm_id dst-addr 172.16.3.3
+   66  vi rdma/res.c
+   67  make
+   68  vi rdma/res.c
+   69  make
+   70  vi rdma/res.c
+   71  make
+   72  /root/stevo/iproute2/rdma/rdma -j -d resource show cm_id dst-addr 172.16.3.3
+   73  vi rdma/res.c
+   74  make
+   75  /root/stevo/iproute2/rdma/rdma -j -d resource show cm_id dst-addr 172.16.3.3
+   76  vi rdma/res.c
+   77  make
+   78  /root/stevo/iproute2/rdma/rdma -j -d resource show cm_id dst-addr 172.16.3.3
+   79  /root/stevo/iproute2/rdma/rdma -p -d resource show cm_id dst-addr 172.16.3.3
+   80  stg refresh
+   81  vi rdma/res.c
+   82  gdb rdma/rdma
+   83  vi rdma/utils.c
+   84  vi rdma/res.c
+   85  make
+   86  /root/stevo/iproute2/rdma/rdma -p -d resource show cm_id dst-addr 172.16.3.3
+   87  /root/stevo/iproute2/rdma/rdma -p -d resource show cm_id dst_addr 172.16.3.3
+   88  /root/stevo/iproute2/rdma/rdma -p -d resource show cm_id dst_port 0
+   89  vi src/utils.c
+   90  vi rdma/utils.c
+   91  vi src/res.c
+   92  vi rdma/res.c
+   93  stg refresh
+   94  stg edit
+   95  #ip -6 addr add 2000::3/64 dev 
+   96  ip dev
+   97  ip link
+   98  ip -6 addr add 2000::3/64 dev enp4s0f4
+   99  ip -6 addr add 2001::4/64 dev enp4s0f4d1
+  100  ip addr
+  101  rping -s -a 2000::3 -p 8888&
+  102  rping -c -a 2000::3 -p 8888&
+  103  /root/stevo/iproute2/rdma/rdma -p -d resource show cm_id 
+  104  vi rdma/res.c
+  105  man getaddrinfo
+  106  man inet_ntop
+  107  vi rdma/res.c
+  108  man inet_ntop
+  109  vi rdma/res.c
+  110  make
+  111  vi rdma/res.c
+  112  make
+  113  clear
+  114  make
+  115  vi rdma/res.c
+  116  clear
+  117  make
+  118  vi rdma/res.c
+  119  make
+  120  vi rdma/res.c
+  121  make
+  122  /root/stevo/iproute2/rdma/rdma -p -d resource show cm_id 
+  123  grep lib Makefile
+  124  vi rdma/util.c
+  125  vi rdma/utils.c
+  126  make
+  127  stg refresh
+  128  stg edit
+  129  /root/stevo/iproute2/rdma/rdma -p -d resource show cm_id 
+  130  stg edit
+  131  stg show
+  132  vi rdma/res.c
+  133  make
+  134  /root/stevo/iproute2/rdma/rdma -p -d resource show cm_id 
+  135  vi rdma/res.c
+  136  make
+  137  /root/stevo/iproute2/rdma/rdma -p -d resource show cm_id 
+  138  /root/stevo/iproute2/rdma/rdma resource show cm_id 
+  139  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  140  stg refresh
+  141  stg edit
+  142  stg refresh
+  143  cd -
+  144  git mylog
+  145  stg series
+  146  git log
+  147  stg show
+  148  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  149  stg show
+  150  stg show HEAD^
+  151  git format-patch --to=leon@kernel.org,swise@opengridcomputing.com -o /tmp HEAD^^..
+  152  vi /tmp/*patch
+  153  ls
+  154  rm -f /tmp/*patch
+  155  git format-patch --to=leon@kernel.org,swise@opengridcomputing.com -o /tmp/kernel-restrack_cm_id HEAD^^..
+  156  cd -
+  157  git mylog
+  158  git format-patch --to=leon@kernel.org,swise@opengridcomputing.com -o /tmp/user-restrack_cm_id HEAD^..
+  159  vi /tmp/user-restrack_cm_id/0001-rdma-Add-CM_ID-resource-tracking-information.patch 
+  160  cd stevo/linux/
+  161  git format-patch --subject-prefix="PATCH rdma-for-next" --to=leon@kernel.org,swise@opengridcomputing.com -o /tmp/kernel-restrack_cm_id HEAD^^..
+  162  cd ../iproute2/
+  163  git format-patch --subject-prefix="PATCH iproute2-for-next" --to=leon@kernel.org,swise@opengridcomputing.com -o /tmp/user-restrack_cm_id HEAD^..
+  164  vi /tmp/kernel-restrack_cm_id/*
+  165  uname -e
+  166  uname -r
+  167  cd stevo
+  168  cd linux/
+  169  cscope -kR
+  170  cd ../iproute2/
+  171  vi ../linux/include/uapi/rdma/rdma_netlink.h include/rdma/rdma_netlink.h 
+  172  cscope -R
+  173  make
+  174  vi rdma/res.c
+  175  make
+  176  vi rdma/res.c
+  177  maake
+  178  make
+  179  grep -r ARPHRD_ETHER /usr/include/net/*
+  180  vi rdma/res.c
+  181  make
+  182  stg refresh
+  183  /root/stevo/iproute2/rdma/rdma resource show cm_id 
+  184  clear
+  185  ls
+  186  cd linux
+  187  cd stevo
+  188  cd linux
+  189  vi drivers/infiniband/core/cma.c
+  190  vi drivers/infiniband/core/netlink.c 
+  191  vi include/uapi/rdma/rdma_netlink.h
+  192  ls
+  193  grep nla_put drivers/infiniband/core/*.c
+  194  vi drivers/infiniband/core/cma.c
+  195  cscope -kR
+  196  vi drivers/infiniband/core/nldev.c
+  197  vi drivers/infiniband/core/cma.c
+  198  vi drivers/infiniband/core/nldev.c
+  199  vi drivers/infiniband/core/cma.c
+  200  vi include/rdma/rdma_cm.h
+  201  cscope -kR
+  202  vi drivers/infiniband/core/nldev.c
+  203  vi include/rdma/restrack.h 
+  204  vi include/rdma/restrack.c 
+  205  vi drivers/infiniband/core/restrack.c 
+  206  vi include/uapi/rdma/rdma_netlink.h 
+  207  make drivers/infiniband/core/
+  208  vi drivers/infiniband/core/nldev.c
+  209  make drivers/infiniband/core/
+  210  vi drivers/infiniband/core/nldev.c
+  211  make drivers/infiniband/core/
+  212  make -j 8 && make modules_install install
+  213  sync
+  214  stg diff
+  215  vi include/uapi/rdma/rdma_netlink.h 
+  216  stg diff
+  217  vi drivers/infiniband/core/nldev.c
+  218  stty size
+  219  vi drivers/infiniband/core/nldev.c
+  220  stg refresh
+  221  make -j 8 && make modules_install install
+  222  cscope -kR
+  223  sync
+  224  git diff
+  225  reboot
+  226  cd stevo/linux
+  227  cscope -kR
+  228  vi drivers/infiniband/core/nldev.c
+  229  stg refresh
+  230  stg pop
+  231  stg new network_type
+  232  vi drivers/infiniband/core/cma.c
+  233  vi drivers/infiniband/core/addr.c
+  234  cd stevo/linux
+  235  find MAINTAINERS Documentation/
+  236  find -name MAINTAINERS Documentation/
+  237  find Documentation/ -name MAINTAINERS 
+  238  find Documentation/ -name Maintainers
+  239  grep -i author drivers/infiniband/hw/mlx5/main.c
+  240  grep -r Cohen Documentation/*
+  241  grep -r Mellanox Documentation/*
+  242  vi MAINTAINERS 
+  243  sh /root/doit-stevo.sh 
+  244  uptime
+  245  /rdma 
+  246  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  247  sync
+  248  history
+  249  make -j 8 && make modules_install install && sync && reboot
+  250  reboot
+  251  sh /root/doit-stevo.sh 
+  252  rping -s&
+  253  rping -c -a 172.16.3.3&
+  254  /root/stevo/iproute2/rdma/rdma resource show cm_id 
+  255  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  256  cd stevo/iproute2/
+  257  vi rdma/res.c
+  258  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  259  vi rdma/res.c
+  260  make
+  261  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  262  vi rdma/res.c
+  263  make
+  264  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  265  vi rdma/res.c
+  266  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  267  make
+  268  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  269  vi rdma/res.c
+  270  make
+  271  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  272  vi rdma/res.c
+  273  make
+  274  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  275  vi rdma/res.c
+  276  make
+  277  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  278  make
+  279  vi rdma/res.c
+  280  make
+  281  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  282  vi rdma/res.c
+  283  make
+  284  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  285  vi rdma/res.c
+  286  make
+  287  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  288  vi rdma/res.c
+  289  make
+  290  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  291  vi rdma/res.c
+  292  make
+  293  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  294  vi rdma/res.c
+  295  make
+  296  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  297  cd ../linux/
+  298  cscope -kR
+  299  cd ../iproute2/
+  300  stg diff
+  301  stg refresh
+  302  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  303  vi rdma/res.c
+  304  make
+  305  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  306  vi rdma/res.c
+  307  make
+  308  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  309  cd stevo/linux
+  310  vi drivers/infiniband/core/addr.c
+  311  #rm drivers/infiniband/core/.addr.c.swp
+  312  pgrep vi
+  313  pkill vi
+  314  pgrep vi
+  315  rm drivers/infiniband/core/.addr.c.swp
+  316  vi drivers/infiniband/core/addr.c
+  317  vi drivers/infiniband/core/cma.c
+  318  vi drivers/infiniband/core/addr.c
+  319  stg refresh -e
+  320  stg show
+  321  make drivers/infiniband/core/
+  322  stg push
+  323  make -j 8 && make modules_install install
+  324  sync
+  325  sh /root/doit-stevo.sh 
+  326  rping -s&
+  327  rping -c -a 172.16.3.3&
+  328  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  329  cd stevo/linux/
+  330  stg series
+  331  stg pop
+  332  stg series
+  333  stg show
+  334  vi drivers/infiniband/core/addr.c
+  335  make  drivers/infiniband/core/ib_core.ko
+  336  modprobe -r ib_core
+  337  systemctl stop rdma
+  338  make modules_install install
+  339  git diff
+  340  stg refresh
+  341  stg push
+  342  make -j 8 && make modules_install install
+  343  make 
+  344  make -j
+  345  make clean && make -j 8 && make modules_install install
+  346  sync
+  347  reboot
+  348  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  349  cd stevo/iproute2/
+  350  vi rdma/res.c
+  351  make
+  352  stg refresh
+  353  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  354  make
+  355  vi rdma/res.c
+  356  make
+  357  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  358  sh /root/doit-stevo.sh 
+  359  rping -s&
+  360  rping -c -a 172.16.3.3&
+  361  dmesg
+  362  cd stevo/linux/
+  363  cscope -R
+  364  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  365  stg series
+  366  git diff
+  367  stg pop
+  368  cscope -kR
+  369  git diff
+  370  stg push
+  371  vi drivers/infiniband/core/cma.c
+  372  stg series
+  373  stg pop
+  374  stg show
+  375  stg pop
+  376  stg delete network_type
+  377  stg push
+  378  /nldev
+  379  /ndev
+  380  n
+  381  vi drivers/infiniband/core/nldev.c
+  382  make drivers/infiniband/core/
+  383  stg refresh
+  384  stg show
+  385  cd ../iproute2/
+  386  vi rdma/res.c
+  387  make
+  388  vi rdma/res.c
+  389  make
+  390  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  391  printf "%u\n" -1U
+  392  printf "%u\n" $((-1U))
+  393  printf "%u\n" $((-1))
+  394  printf "%d\n" $((-1))
+  395  printf "%u\n" $((-1))
+  396  printf "%u\n" $(((unsigned int)-1))
+  397  gdb
+  398  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  399  asd
+  400  {
+  401  stg diff
+  402  stg refresh
+  403  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  404  grep ARPHRD /usr/include/net/if_arp.h
+  405  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  406  vi rdma/res.c
+  407  make
+  408  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  409  vi rdma/res.c
+  410  make
+  411  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  412  vi rdma/res.c
+  413  make
+  414  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  415  vi rdma/res.c
+  416  make
+  417  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  418  stg refresh
+  419  /root/stevo/iproute2/rdma/rdma -p resource show cm_id 
+  420  vi rdma/res.c
+  421  make
+  422  stg refresh
+  423  vi rdma/res.c
+  424  /root/stevo/iproute2/rdma/rdma -p resource show cm_id 
+  425  /root/stevo/iproute2/rdma/rdma -p resource show qp
+  426  vi rdma/res.c
+  427  make
+  428  /root/stevo/iproute2/rdma/rdma -p resource show cm_id 
+  429  vi rdma/res.c
+  430  /root/stevo/iproute2/rdma/rdma -p resource show cm_id 
+  431  vi rdma/res.c
+  432  make
+  433  /root/stevo/iproute2/rdma/rdma -p resource show cm_id 
+  434  vi rdma/res.c
+  435  make
+  436  /root/stevo/iproute2/rdma/rdma -p resource show cm_id 
+  437  stg refresh
+  438  cd stevo/linux/
+  439  cscope -kR
+  440  stg series
+  441  cscope
+  442  cscope -kR
+  443  vi include/uapi/rdma/rdma_netlink.h 
+  444  cscope -kR
+  445  make  drivers/infiniband/core/ib_core.ko
+  446  stg refresh
+  447  make -j 8 && make modules_install install
+  448  pgrep rping
+  449  ifconfig
+  450  sync
+  451  reboot
+  452  sh /root/doit-stevo.sh 
+  453  rping -s&
+  454  rping -c -a 172.16.3.3&
+  455  /root/stevo/iproute2/rdma/rdma -p resource show cm_id 
+  456  /root/stevo/iproute2/rdma/rdma -d -p resource show cm_id 
+  457  pgrep rping
+  458  ps auxwww|grep 372
+  459  cd stevo/linux/
+  460  git mylog
+  461  vi drivers/infiniband/core/cma.c
+  462  vi drivers/infiniband/core/addr.c
+  463  grep pid drivers/infiniband/core/*.c
+  464  grep get_task_pid drivers/infiniband/core/*.c
+  465  vi drivers/infiniband/core/core.c
+  466  vi drivers/infiniband/core/cma.c
+  467  vi drivers/infiniband/core/nldev.c
+  468  make  drivers/infiniband/core/ib_core.ko
+  469  vi drivers/infiniband/core/nldev.c
+  470  make  drivers/infiniband/core/ib_core.ko
+  471  vi drivers/infiniband/core/nldev.c
+  472  make  drivers/infiniband/core/
+  473  stg refresh
+  474  make -j 8 && make modules_install install && sync && reboot
+  475  sh /root/doit-stevo.sh 
+  476  /ip -6
+  477  ip -6 addr add 2001::3/64 dev enp4s0f4d1
+  478  rping -s&
+  479  rping -C10 -Vvca 2001::3
+  480  kill %%
+  481  rping -h
+  482  rping -s -P -a ::0 &
+  483  rping -ca 2001::3 &
+  484  rping -ca 172.16.3.3 &
+  485  rping -s -P -p 9999 &
+  486  rping -p 9999 -ca 172.16.3.3 &
+  487  ssh stevo2 date
+  488  ssh r9 date
+  489  cd stevo
+  490  cd iproute2/
+  491  git branch
+  492  git remote add -f stevo https://github.com/larrystevenwise/iproute2
+  493  git remote add -f stevo git://github.com/larrystevenwise/iproute2
+  494  git remote rm stevo
+  495  git remote add -f stevo git://github.com/larrystevenwise/iproute2
+  496  git push stevo topic/restrack:topic/restrack
+  497  git remote rm stevo
+  498  git remote add -f stevo https://github.com/larrystevenwise/iproute2.git
+  499  yum install -y curl-devel
+  500  cd ../git-2.9.5/
+  501  ./configure
+  502  make clean
+  503  make -j 4 && make install
+  504  cd -
+  505  git remote rm stevo
+  506  git remote add -f stevo https://github.com/larrystevenwise/iproute2.git
+  507  git push stevo topic/restrack:topic/restrack
+  508  ipmitool -H stevo2-ipmi -U ADMIN -P ADMIN power status
+  509  ipmitool -H stevo2-ipmi -U ADMIN -P ADMIN power cycle
+  510  stg series
+  511  git push stevo topic/restrack:topic/restrack
+  512  git push --force stevo topic/restrack:topic/restrack
+  513  /root/stevo/iproute2/rdma/rdma -d -p resource show cm_id 
+  514  /root/stevo/iproute2/rdma/rdma resource show cm_id 
+  515  ip addr
+  516  /root/stevo/iproute2/rdma/rdma resource show qp
+  517  /root/stevo/iproute2/rdma/rdma -d resource show qp
+  518  /root/stevo/iproute2/rdma/rdma -d resource help
+  519  /root/stevo/iproute2/rdma/rdma -d help
+  520  /root/stevo/iproute2/rdma/rdma -d help dev
+  521  /root/stevo/iproute2/rdma/rdma -d dev
+  522  /root/stevo/iproute2/rdma/rdma -d link
+  523  /root/stevo/iproute2/rdma/rdma -d dev
+  524  /root/stevo/iproute2/rdma/rdma dev
+  525  /root/stevo/iproute2/rdma/rdma link
+  526  /root/stevo/iproute2/rdma/rdma resource
+  527  /root/stevo/iproute2/rdma/rdma resource show cm_id 
+  528  /root/stevo/iproute2/rdma/rdma -d resource show cm_id 
+  529  /root/stevo/iproute2/rdma/rdma -d resource show cm_id display dev,src_addr
+  530  cd stevo/iproute2/k
+  531  vi rdma/res.c
+  532  /root/stevo/iproute2/rdma/rdma -d resource show cm_id display dev,src_addr,pid
+  533  vi rdma/res.c
+  534  make
+  535  /root/stevo/iproute2/rdma/rdma -d resource show cm_id display dev,src_addr
+  536  /root/stevo/iproute2/rdma/rdma -d resource show cm_id display dev,src_addr,src_port
+  537  vi rdma/res.c
+  538  make
+  539  /root/stevo/iproute2/rdma/rdma -d resource show cm_id display dev,src_addr,src_port
+  540  /root/stevo/iproute2/rdma/rdma -d resource show cm_id
+  541  /root/stevo/iproute2/rdma/rdma -d resource show cm_id display dev,src_addr,src_port
+  542  /root/stevo/iproute2/rdma/rdma -d resource show cm_id display dev,src_addr,dst_addr
+  543  /root/stevo/iproute2/rdma/rdma -d resource show cm_id display transport,src_addr,dst_addr
+  544  /root/stevo/iproute2/rdma/rdma -d resource show cm_id display transport,src_addr=0.0.0.0
+  545  /root/stevo/iproute2/rdma/rdma -d resource show cm_id display transport,src_addr 0.0.0.0
+  546  /root/stevo/iproute2/rdma/rdma -d resource show cm_id display transport,src_addr "0.0.0.0"
+  547  /root/stevo/iproute2/rdma/rdma -d resource show cm_id display transport,src_addr="0.0.0.0"
+  548  /root/stevo/iproute2/rdma/rdma -d resource show cm_id display dev,src_addr,dst_addr
+  549  stg refresh
+  550  rpm -i iproute2
+  551  rpm -q -i iproute2
+  552  rpm -q -i iproute
+  553  stg series
+  554  stg pop --all
+  555  stg push cm_id
+  556  make clean
+  557  ./configure
+  558  make
+  559  grep IPPROTO_UDP /usr/include/*/*
+  560  vi /usr/include/netinet/in.h
+  561  /make
+  562  make
+  563  grep IPPROTO_MH /usr/include/netinet/in.h
+  564  ssh stevo4 grep IPPROTO_MH /usr/include/netinet/in.h
+  565  ssh potato1 grep IPPROTO_MH /usr/include/netinet/in.h
+  566  ssh r9 grep IPPROTO_MH /usr/include/netinet/in.h
+  567  cd /usr/include/netinet
+  568  cp in.h in.h.save
+  569  scp r9:$(pwd)/in.h .
+  570  cd -
+  571  make
+  572  cd ../linux/
+  573  git branch
+  574  git remote -v
+  575  git remote add -f stevo https://github.com/larrystevenwise/linux
+  576  git mylog master
+  577  git push stevo master:master
+  578  git branch
+  579  git push stevo rdma-next-2018-01-02 topic/restrack
+  580  git push stevo rdma-next-2018-01-02:topic/restrack
+  581  git push stevo topic/restrack
+  582  git help push
+  583  git push -h
+  584  git show HEAD
+  585  git push stevo HEAD:topic/restrack
+  586  uname -r
+  587  ipmitool -H stevo2-ipmi -U ADMIN -P ADMIN power cycle
+  588  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power cycle
+  589  rpm -ql|grep elf
+  590  rpm -q|grep elf
+  591  rpm -q
+  592  rpm -ql
+  593  rpm -qi
+  594  which rpm
+  595  rpm --help
+  596  rpm -q -l
+  597  man rpm
+  598  rpm -qa|grep elf
+  599  rpm -qa|grep efi
+  600  cd stevo/kexec-tools/
+  601  git remote -v
+  602  sh /root/doit-stevo.sh 
+  603  cd stevo
+  604  ls
+  605  cd lin
+  606  cd linux/
+  607  git remote -v
+  608  sh /root/doit-stevo.sh 
+  609  ifconfig
+  610  git remote -v
+  611  uname -r
+  612  grubby --info=ALL
+  613  cat /etc/redhat-release 
+  614  yum upgrade
+  615  cd stevo
+  616  git clone git://github.com/larrystevenwise/ofed-compat
+  617  git clone git://github.com/larrystevenwise/ofed-compat-rdma
+  618  git clone git://git.openfabrics.com/compat-rdma/linux-4.8
+  619  git clone git://git.openfabrics.com/compat-rdma/linux-4.8.git
+  620  git clone git://git.openfabrics.org/compat-rdma/linux-4.8.git
+  621  ls
+  622  cd compat-rd
+  623  cd ofed-compat-rdma/
+  624  export GIT_COMPAT_TREE=../ofed-compat
+  625  ./scripts/admin_rdma.sh -n -p
+  626  export GIT_TREE=../linux-4.8
+  627  ./scripts/admin_rdma.sh -n -p
+  628  uname -r
+  629  grubby --info=ALL
+  630  grubby --set-default-index=3
+  631  sync
+  632  reboot
+  633  cd stevo
+  634  ls
+  635  uname -r
+  636  cd ofed-compat-rdma
+  637  ls
+  638  git branch
+  639  #./configure --with-core-mod --with-cxgb4-mod --with-user_access-mod --with-addr_trans-mod 2>&1 | tee /tmp/configure.txt
+  640  ./configure --with-core-mod --with-cxgb4-mod --with-user_access-mod --with-addr_trans-mod 2>&1 | tee /tmp/configure.txt
+  641  make
+  642  make install
+  643  vi /etc/selinux/config 
+  644  rm -fr /lib/modules/3.10.0-327.el7.x86_64/updates/drivers*
+  645  rm -fr /lib/modules/3.10.0-327.el7.x86_64/extra/*
+  646  depmod
+  647  make install
+  648  reboot
+  649  sh /root/doit-stevo.sh 
+  650  ping 172.16.3.4
+  651  ifconfig
+  652  ip addr
+  653  ping 172.16.3.4
+  654  ifconfig enp4s0f4 mtu 10000
+  655  ifconfig enp4s0f4 mtu 9000
+  656  ifconfig enp4s0f4 mtu 64
+  657  ifconfig enp4s0f4 mtu 81
+  658  ifconfig enp4s0f4 mtu 1500
+  659  ping 172.16.3.4
+  660  cd stevo
+  661  cd ofed-compat
+  662  git shortlog HEAD
+  663  git shortlog HEAD..
+  664  git shortlog HEAD^..
+  665  cd ../ofed-compat-rdma/
+  666  git shortlog HEAD^..
+  667  git show https://github.com/larrystevenwise/ofed-compat-rdma/commit/8fd1ae2cd97cb348ff269378526fa1ee2aa040b4
+  668  last -19
+  669  exit
+  670  man gettimeofday_us
+  671  man gettimeofday
+  672  man clock_gettime
+  673  cd /usr/local/src
+  674  ls
+  675  cd sw/linux_libs/libcxgb4_udp/
+  676  ls
+  677  grep PROF src/*.c
+  678  grep PROF src/*.h
+  679  cd ../libcxgb4_sock
+  680  grep PROF src/*.c
+  681  cd -
+  682  ls examples/
+  683  grep PROF examples/*.c
+  684  grep -i PROF examples/*.c
+  685  cd ../libcxgb4
+  686  ls
+  687  grep -i prof src/*.c
+  688  cd 
+  689  man snprintf
+  690  man printf
+  691  man 3 printf
+  692  cd stevo/linux
+  693  git remote add -f bernard https://github.com/zrlio/softiwarp-for-linux-rdma
+  694  git branch
+  695  git checkout -b bernard-master bernard/master
+  696  git mylog
+  697  cd drivers/infiniband/sw/siw
+  698  ls
+  699  grep get_buffer *.c
+  700  vi siw_qp_rx.c
+  701  grep TODO *.c
+  702  vi siw_qp.c
+  703  cd stevo
+  704  l
+  705  ls
+  706  git clone git://git.openfabrics.org/compat-rdma/docs
+  707  cd docs
+  708  ls
+  709  cd release_notes/
+  710  ls
+  711  vi cxgb4_release_notes.txt 
+  712  git branch
+  713  git branch -r
+  714  git checkout origin/master
+  715  vi cxgb4_release_notes.txt 
+  716  git diff
+  717  git log
+  718  git commit -a
+  719  git show
+  720  git format-patch --to=vlad@mellanox.com --cc=ewg@openfabrics.org HEAD^..
+  721  vi 0001-Update-cxgb4-release-notes.patch 
+  722  mv 0001-Update-cxgb4-release-notes.patch  /tmp
+  723  cd stevo
+  724  ls
+  725  cd ofed-compat-rdma
+  726  git remote -v
+  727  ls ..
+  728  git remote add ofed git://git.openfabrics.org/compat-rdma/compat-rdma
+  729  git remote update ofed
+  730  git checkout -b ofed-master ofed/master
+  731  git mylog
+  732  gti log
+  733  git log
+  734  git branch
+  735  git tag -l|less
+  736  git branch
+  737  git branch -r
+  738  ls linux-firmware/
+  739  ls linux-firmware/qed/qed_init_values_zipped-8.15.3.0.bin 
+  740  ls
+  741  ls linux-next-pending/
+  742  ls linux-next-cherry-picks/
+  743  ls linux-next-cherry-picks/*cxgb*
+  744  ls */*cxgb*
+  745  less linux-next-cherry-picks/0006-cxgb4-bundle-firmware-with-driver.patch
+  746  grep ^diff linux-next-cherry-picks/0006-cxgb4-bundle-firmware-with-driver.patch
+  747  cd ../linux-4.8/
+  748  git branch
+  749  git mylog
+  750  git am ../ofed-compat-rdma/patches/*patch
+  751  git am --skip
+  752  git mylog
+  753  git reset --hard e65a4b69c2d2
+  754  git am -h
+  755  git am --ignore-whitespace ../ofed-compat-rdma/patches/*patch
+  756  git am --abort
+  757  git mylog
+  758  git am --ignore-space-change --ignore-whitespace ../ofed-compat-rdma/patches/*patch
+  759  git am --abort
+  760  stg help
+  761  stg import -h
+  762  git am ../ofed-compat-rdma/patches/*cxgb*patch
+  763  git am ../ofed-compat-rdma/linux-next-cherry-picks/*cxgb*patch
+  764  git am --abort
+  765  git mylog
+  766  git am ../ofed-compat-rdma/linux-next-cherry-picks/"*cxgb*patch"
+  767  ls ../ofed-compat-rdma/linux-next-cherry-picks/"*cxgb*patch"
+  768  ls ../ofed-compat-rdma/linux-next-cherry-picks/*cxgb*patch
+  769  vi ../ofed-compat-rdma/linux-next-cherry-picks/0052-iw_cxgb4-Guard-against-null-cm_id-in-dump_ep.patch
+  770  vi ../ofed-compat-rdma/linux-next-cherry-picks/0006-cxgb4-bundle-firmware-with-driver.patch
+  771  vi ../ofed-compat-rdma/linux-next-cherry-picks/0052-iw_cxgb4-Guard-against-null-cm_id-in-dump_ep.patch
+  772  git mylog
+  773  git am ../ofed-compat-rdma/linux-next-cherry-picks/"*cxgb*patch"
+  774  git am ../ofed-compat-rdma/linux-next-cherry-picks/*cxgb*patch
+  775  cd drivers/infiniband/hw/cxgb4
+  776  ls *txt
+  777  cd ../..
+  778  cd ../net/ethernet/chelsio/cxgb4
+  779  ls
+  780  ls *txt
+  781  less t6fw.txt 
+  782  vi t4_firmware.h 
+  783  ls /lib/firmware/cxgb4/
+  784  ls /usr/local/src/RHEL7.X/dev/T4/firwmare
+  785  ls /usr/local/src/RHEL7.X/dev/T4/firmware
+  786  ls /usr/local/src/RHEL7.X/dev/T4/firmware/*1.17*
+  787  cd /usr/local/src/RHEL7.X
+  788  hg qseries
+  789  hg pull -u
+  790  cat /etc/redhat-release 
+  791  ls /usr/local/src/RHEL7.X/dev/T4/firmware/*1.17*
+  792  cd -
+  793  ls
+  794  vi t4_firmware.h 
+  795  #/usr/local/src/RHEL7.X/dev/T4/firmware/t6fw-1.17.14.0.bin
+  796  grep hexdump t4_firmware.h 
+  797   hexdump -v -e '"\t" 16/1 "0x%02x, " "\n"' /usr/local/src/RHEL7.X/dev/T4/firmware/t6fw-1.17.14.0.bin|less
+  798   hexdump -v -e '"\t" 16/1 "0x%02x, " "\n"' /usr/local/src/RHEL7.X/dev/T4/firmware/t6fw-1.17.14.0.bin > t6fw.txt 
+  799   hexdump -v -e '"\t" 16/1 "0x%02x, " "\n"' /usr/local/src/RHEL7.X/dev/T4/firmware/t5fw-1.17.14.0.bin > t5fw.txt 
+  800   hexdump -v -e '"\t" 16/1 "0x%02x, " "\n"' /usr/local/src/RHEL7.X/dev/T4/firmware/t4fw-1.17.14.0.bin > t4fw.txt 
+  801  git diff
+  802  git diff|grep ^diff
+  803  stg new fw-update
+  804  stg init
+  805  stg new fw-update
+  806  stg refresh
+  807  stg show
+  808  git format-patch -o /tmp HEAD^..
+  809  cd /root/stevo/ofed-compat-rdma/
+  810  ls linux-next-cherry-picks/
+  811  cp /tmp/0001-Update-cxgb4-release-notes.patch  linux-next-cherry-picks/0203-cxgb4-Update-firmware-for-OFED-4.8-2.patch  0001-Update-cxgb4-release-notes.patch
+  812  cp /tmp/0001-Update-cxgb4-release-notes.patch  linux-next-cherry-picks/0203-cxgb4-Update-firmware-for-OFED-4.8-2.patch
+  813  stg init
+  814  less linux-next-cherry-picks/0203-cxgb4-Update-firmware-for-OFED-4.8-2.patch 
+  815  stg new fw-update
+  816  stg series
+  817  less linux-next-cherry-picks/0203-cxgb4-Update-firmware-for-OFED-4.8-2.patch 
+  818  git branch
+  819  ls /tmp
+  820  cp 0001-cxgb4-Update-firmware-for-OFED-4.8-2.patch  linux-next-cherry-picks/0203-cxgb4-Update-firmware-for-OFED-4.8-2.patch
+  821  cp /tmp/0001-cxgb4-Update-firmware-for-OFED-4.8-2.patch  linux-next-cherry-picks/0203-cxgb4-Update-firmware-for-OFED-4.8-2.patch
+  822  stg refresh
+  823  less linux-next-cherry-picks/0203-cxgb4-Update-firmware-for-OFED-4.8-2.patch 
+  824  stg edit
+  825  stg show
+  826  qstg files
+  827  stg files
+  828  stg pop
+  829  git branch
+  830  git checkout -f
+  831  git diff
+  832  cp patches/quiltrc /tmp
+  833  stg push
+  834  cp /tmp/quiltrc patches/
+  835  stg refresh
+  836  stg show
+  837  stg files
+  838  cp /tmp/0001-cxgb4-Update-firmware-for-OFED-4.8-2.patch  linux-next-cherry-picks/0203-cxgb4-Update-firmware-for-OFED-4.8-2.patch
+  839  stg refresh
+  840  stg show
+  841      
+  842  vi linux-next-cherry-picks/0203-cxgb4-Update-firmware-for-OFED-4.8-2.patch
+  843  stg files
+  844  stg show
+  845  stg pop
+  846  cp linux-next-cherry-picks/0052-iw_cxgb4-Guard-against-null-cm_id-in-dump_ep.patch /tmp
+  847  stg push
+  848  cp /tmp/0052-iw_cxgb4-Guard-against-null-cm_id-in-dump_ep.patch linux-next-cherry-picks/
+  849  stg refresh
+  850  stg files
+  851  stg add linux-next-cherry-picks/0203-cxgb4-Update-firmware-for-OFED-4.8-2.patch 
+  852  stg refresh
+  853  stg files
+  854  stg show
+  855  vi linux-next-cherry-picks/0203-cxgb4-Update-firmware-for-OFED-4.8-2.patch 
+  856  git branch
+  857  export GIT_TREE=../linux-4.8
+  858  export GIT_COMPAT_TREE=../ofed-compat
+  859  ./scripts/admin_rdma.sh -n -p
+  860  git branch
+  861  git checkout -f ofed-master
+  862  git diff
+  863  cd ../linux-4.8
+  864  git reset --hard e65a4b69c2d2
+  865  cd -
+  866  ./scripts/admin_rdma.sh -n -p
+  867  ip link
+  868  ethtool -i enp4s0f4
+  869  ./configure --with-core-mod --with-cxgb4-mod --with-user_access-mod --with-addr_trans-mod 
+  870  cd stevo/ofed-compat-rdma/
+  871  make -j 16
+  872  make install
+  873  ./configure --with-core-mod --with-cxgb4-mod --with-user_access-mod --with-addr_trans-mod --with-ipoib-mod --with-iser-mod --with-isert-mod --with-nfsrdma-mod
+  874  make -j 16
+  875  make clean
+  876  make
+  877  ./configure --with-core-mod --with-cxgb4-mod --with-user_access-mod --with-addr_trans-mod
+  878  make
+  879  make clean
+  880  make -j 8
+  881  make install
+  882  modprobe -r iw_cxgb4
+  883  sh /root/doit-stevo.sh 
+  884  dmesg|grep cxgb
+  885  ethtool -i enp6s0f4
+  886  ip link
+  887  ethtool -i enp4s0f4
+  888  dmesg|grep firmware
+  889  stg series
+  890  git remote -v
+  891  stg po
+  892  git branch
+  893  git push origin ofed-master:master
+  894  cat ~/.ssh/id_rsa.pub 
+  895  git remote -v
+  896  git remote add -f github git@github.com:larrystevenwise/ofed-compat-rdma.git
+  897  git push github ofed-master:master
+  898  stg push
+  899  git push github ofed-master:for-vlad
+  900  git log
+  901  cd ..
+  902  ls
+  903  ethtool -i enp4s0f4
+  904  ping stevo4
+  905  cd ofed-compat
+  906  cd ..
+  907  cd ofed-compat-rdma/
+  908  git remote -v
+  909  #./configure --with-core-mod --with-cxgb4-mod --with-user_access-mod --with-addr_trans-mod
+  910  lspci | grep -i mel
+  911  ssh steve4
+  912  lspci | grep -i mel
+  913  logout
+  914  ipmitool -H stevo3-ipmi -U ADMIN -P PASSWORD power status
+  915  ipmitool -H stevo4-ipmi -U amin -P PASSWORD power status
+  916  ping stevo4-ipmi
+  917  ipmitool -H stevo4-ipmi -U ADMIN -P ADMIN power status
+  918  ipmitool -H stevo4-ipmi -U ADMIN -P ADMIN power cycle
+  919  cat /etc/redhat-release 
+  920  exit
+  921  cat /etc/redhat-release 
+  922  uname -r
+  923  lsmod | grep nvme
+  924  exit
+  925  ssh r9
+  926  ssh stevo4
+  927  exit
+  928  ipmitool -I lanplus -H epyc-ipmi -U ADMIN -P ADMIN power status
+  929  ipmitool -I lanplus -H epyc-ipmi -U ADMIN -P ADMIN power on
+  930  ssh epyc
+  931  nslookup griffin
+  932  ipmitool -I lanplus -H griffin-ipmi -U ADMIN -P ADMIN power status
+  933  nslookup griffin-ipmi
+  934  ping griffin-ipmi
+  935  exit
+  936  ip link
+  937  sh /root/doit-stevo.sh 
+  938  ip addr
+  939  lspci|grep Chel
+  940  ping 172.16.3.4
+  941  cat /etc/redhat-release 
+  942  uname -r
+  943  cat /etc/redhat-release 
+  944  cd /etc/yum.repos.d/
+  945  ls
+  946  scp stevo1:$(pwd)/rhel7* .
+  947  yum upgrade
+  948  yum erase libnl3 valgrind
+  949  cat /etc/redhat-release 
+  950  yum upgrade
+  951  sync
+  952  reboot
+  953  uname -r
+  954  cat /etc/redhat-release 
+  955  uname -r
+  956  cd stevo
+  957  ls
+  958  cd docs
+  959  git remote -v
+  960  git diff
+  961  git mylog
+  962  stg series
+  963  git pull
+  964  git remote -v
+  965  git remote -h
+  966  cd ..
+  967  mv docs docs.old
+  968  git clone https://git.openfabrics.org/compat-rdma/docs.git
+  969  git clone http://git.openfabrics.org/compat-rdma/docs.git
+  970  ping git.openfabrics.org
+  971  git clone git://git.openfabrics.org/compat-rdma/docs.git
+  972  ls
+  973  rm -fr ofed-compat-rdma/
+  974  git clone https://git.openfabrics.org/compat-rdma/compat-rdma.git
+  975  git clone http://git.openfabrics.org/compat-rdma/compat-rdma.git
+  976  git clone git://git.openfabrics.org/compat-rdma/compat-rdma.git
+  977  ipmitool
+  978  ipmitool -H stevo2-ipmi -U ADMIN -P ADMIN power status
+  979  ipmitool -H stevo2-ipmi -U ADMIN -P ADMIN power reset
+  980  cd stevo
+  981  ls
+  982  cd ofed
+  983  ls
+  984  git clone http://git.openfabrics.org/compat-rdma/docs.git
+  985  git clone git://git.openfabrics.org/compat-rdma/docs.git
+  986  cd stevo
+  987  ls
+  988  cd ofed-compat/
+  989  ls
+  990  cd ..
+  991  ls
+  992  cd /usr/local/src
+  993  ls
+  994  cd cd -
+  995  cd -
+  996  ls
+  997  ls linux
+  998  cd ofed-compat/
+  999  git remote -v
+ 1000  cd ..
+ 1001  history > history.`hostname`

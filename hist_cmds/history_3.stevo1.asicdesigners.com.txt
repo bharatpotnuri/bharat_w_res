@@ -1,0 +1,999 @@
+    1  nvme list
+    2  fio --time_based=1 --runtime=$((60*5)) --bs=4k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1:/dev/nvme1n1 --group_reporting=1
+    3  fio --time_based=1 --runtime=$((60*5)) --bs=4k --numjobs=1 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename=/dev/nvme0n1:/dev/nvme1n1 --group_reporting=1
+    4  man fio
+    5  ln -sf /dev/nvme0n1 /tmp/1
+    6  ls -l /tmp/p1
+    7  ls -l /tmp/1
+    8  rm /tmp/1
+    9  ln -sf /dev/nvme0n1 /tmp/0
+   10  ln -sf /dev/nvme1n1 /tmp/1
+   11  fio --time_based=1 --runtime=$((60*5)) --bs=4k --numjobs=1 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+   12  fio --time_based=1 --runtime=$((60*5)) --bs=4k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+   13  fio --time_based=1 --runtime=$((60*5)) --bs=512k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+   14  nvme list
+   15  nvme disconnect -d nvme0n1
+   16  nvme disconnect -d nvme1n1
+   17  nvme connect -t rdma -a 10.0.5.13 -n testnqn1
+   18  nvme connect -t rdma -a 10.0.5.13 -n testnqn2
+   19  #fio --time_based=1 --runtime=$((60*5)) --bs=512k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+   20  ls -l /tmp/*
+   21  fio --time_based=1 --runtime=$((60*1)) --bs=512k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+   22  nvme disconnect -d nvme1n1
+   23  nvme disconnect -d nvme0n1
+   24  cd
+   25  scp stevo1:.bashrc .
+   26  . ./.bashrc
+   27  top
+   28  iotop
+   29  top
+   30  top -h
+   31  top -H
+   32  top
+   33  ps -elF
+   34  fio -h
+   35  fio --version
+   36  ps -elF
+   37  pstree -eLF
+   38  pstree -aup
+   39  pstree -aupG
+   40  top
+   41  ps -elF
+   42  man lsof
+   43  lsof -p6849,6850
+   44  man iotop
+   45  iotop -p6849,6850
+   46  iotop -p 6849,6850
+   47  iotop -p 6849, 6850
+   48  iotop -p 6849:6850
+   49  man iotop
+   50  iotop -p 6849 -p 6850
+   51  man iotop
+   52  iotop -p 6849 -p 6850
+   53  iostat
+   54  iostat 10 1
+   55  iostat 1 10
+   56  iostat 1 1000
+   57  lsof |grep fio
+   58  lsof |grep fio|grep nvme
+   59  MB2Gb 2642
+   60  vi .bashrc
+   61  . .bashrc
+   62  MiB2Gib 2520
+   63  MB2Gb 2642
+   64  vi .bashrc
+   65  . .bashrc
+   66  vi .bashrc
+   67  . .bashrc
+   68  vi .bashrc
+   69  . .bashrc
+   70  vi .bashrc
+   71  . .bashrc
+   72  vi .bashrc
+   73  scp stevo1:.bashrc .
+   74  vi .bashrc
+   75  . .bashrc
+   76  MB2Gb 2642
+   77  vi .bashrc
+   78  MB2Gb 2642
+   79  . .bash
+   80  . .bashrc 
+   81  MB2Gb 2642
+   82  vi .bashrc
+   83  . .bashrc 
+   84  MB2Gb 2642
+   85  vi .bashrc
+   86  . .bashrc 
+   87  MB2Gb 2642
+   88  vi .bashrc
+   89  . .bashrc 
+   90  MB2Gb 2642
+   91  vi .bashrc
+   92  . .bashrc 
+   93  clear
+   94  cd /usr/local/src/krping/
+   95  git diff
+   96  stg series
+   97  vi krping.c
+   98  nvme list
+   99  sync
+  100  reboot
+  101  MB2Gb 2642
+  102  cat /proc/cmdline 
+  103  vi /etc/default/grub
+  104  sh /root/doit-stevo.sh 
+  105  modprobe rdma_krping debug=1
+  106  echo "client,addr=10.0.5.13,port=9999,size=16384,count=1,validate" > /proc/krping
+  107  dmesg
+  108  echo "client,addr=10.0.5.13,port=9999,size=16384,count=1,validate" > /proc/krping
+  109  nvme discover -t rdma -a 10.0.5.13
+  110  dmesg
+  111  nvme list
+  112  dmesg
+  113  nvme list
+  114  rmmod nvme-rdma
+  115  nvme list
+  116  dmesg|tail
+  117  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power cycle
+  118  ping 10.0.5.13
+  119  nvme discover -t rdma -a 10.0.5.13
+  120  dmesg
+  121  modprobe nvme-rdma
+  122  nvme discover -t rdma -a 10.0.5.13
+  123  rmmod nvme-rdma
+  124  modprobe nvme-rdma
+  125  nvme discover -t rdma -a 10.0.5.13
+  126  sh /root/doit-sto
+  127  sh /root/doit-stevo.sh 
+  128  modprobe nvme-rdma
+  129  nvme discover -t rdma -a 10.0.5.13
+  130  nvme connect-all -t rdma -a 10.0.5.13
+  131  nvme list
+  132  ls -l /tmp
+  133  ln -sf /dev/nvme0n1 /tmp/2
+  134  ln -sf /dev/nvme1n1 /tmp/3
+  135  fio --time_based=1 --runtime=$((60*1)) --bs=512k --numjobs=4 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  136  fio --time_based=1 --runtime=$((60*10)) --bs=512k --numjobs=4 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  137  nvme disconnect -d nvme0n1
+  138  nvme disconnect -d nvme1n1
+  139  nvme connect-all -t rdma -a 10.0.5.13
+  140  nvme list
+  141  fio --time_based=1 --runtime=$((60*10)) --bs=512k --numjobs=4 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  142  nvme disconnect -d nvme1n1
+  143  nvme disconnect -d nvme0n1
+  144  nvme list
+  145  nvme connect-all -t rdma -a 10.0.5.13
+  146  fio --time_based=1 --runtime=$((60*10)) --bs=512k --numjobs=4 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  147  #fio --time_based=1 --runtime=$((60*10)) --bs=512k --numjobs=4 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  148  ls -l /tmp/?
+  149  fio --time_based=1 --runtime=$((60*10)) --bs=512k --numjobs=4 --name=TEST --direct=1 --iodepth=32 -rw=randrw --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  150  fio --time_based=1 --runtime=$((60*10)) --bs=4k --numjobs=4 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  151  fio --time_based=1 --runtime=$((60*10)) --bs=64k --numjobs=4 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  152  fio --time_based=1 --runtime=$((60*10)) --bs=4k --numjobs=4 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  153  nvme disconnect -d nvme0n1
+  154  nvme disconnect -d nvme1n1
+  155  modprobe rdma_krping debug=1
+  156  echo "client,addr=10.0.5.13,port=9999,size=16384,count=10,verbose,validate" > /proc/krping
+  157  dmesg
+  158  echo "client,addr=10.0.5.13,port=9999,size=16384,count=10,verbose,validate" > /proc/krping
+  159  ping stevo1
+  160  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power cycle
+  161  
+  162  clear
+  163  vi .gitconfig 
+  164  cd /usr/local/src/linux-2.6
+  165  vi nvme/target/rdma.c
+  166  vi drivers/nvme/target/rdma.c
+  167  man rdma_cma
+  168  man rdmacm
+  169  man rdma_cm
+  170  man rdma_listen
+  171  man rdma_get_cm_event
+  172  vi drivers/infiniband/core/iwcm.c
+  173  vi drivers/infiniband/core/cma.c
+  174  cd /usr/local/src/linux-2.6
+  175  vi include/rdma/ib_verbs.h 
+  176  vi drivers/infiniband/hw/cxgb4/cm.c
+  177  cd /usr/local/src/cr
+  178  cd /usr/local/src/rdma-core
+  179  git remote -v
+  180  cd /usr/local/src/linux-2.6
+  181  vi drivers/infiniband/hw/cxgb4/device.c
+  182  vi drivers/infiniband/hw/cxgb4/cm.c
+  183  bi drivers/infiniband/core/iwcm.c
+  184  vi drivers/infiniband/core/iwcm.c
+  185  grep ifname drivers/infiniband/hw/cxgb4/*.c
+  186  cd -
+  187  dmesg -c
+  188  dmesg 
+  189  echo "client,addr=10.0.5.13,port=9999,size=16384,count=10,verbose,validate" > /proc/krping
+  190  ping 10.0.5.13
+  191  clear
+  192  echo "client,addr=10.0.5.13,port=9999,size=8192,count=1" > /proc/krping
+  193  dmesg 
+  194  dmesg -c
+  195  echo "client,addr=10.0.5.13,port=9999,size=8192,count=1" > /proc/krping
+  196  echo "client,addr=10.0.5.13,port=9999,size=16384,count=10,verbose,validate" > /proc/krping
+  197  cat /sys/module/iw_cxgb4/parameters/asgl_align
+  198  echo "client,addr=10.0.5.13,port=9999,size=16384,count=10,verbose,validate" > /proc/krping
+  199  dmesg -c
+  200  clear
+  201  dmesg 
+  202  ipmitool -H potato1-ipmi -U ADMIN -P ADMIN power status
+  203  ipmitool -H potato1-ipmi -U admin -P admin power status
+  204  ipmitool -H potato1-ipmi -U admin -P admin power cycle
+  205  lear
+  206  clear
+  207  dmesg -c
+  208  clear
+  209  dmesg -c
+  210  dmesg 
+  211  clear
+  212  bc
+  213  dmesg -c
+  214  clear
+  215  dmesg 
+  216  dmesg -c
+  217  clear
+  218  dmesg 
+  219  echo "client,addr=10.0.5.13,port=9999,size=16384,count=10,verbose,validate" > /proc/krping
+  220  echo "client,addr=10.0.5.13,port=9999,size=16384,count=1,verbose,validate" > /proc/krping
+  221  dmesg -c
+  222  clear
+  223  dmesg 
+  224  dmesg -c
+  225  dmesg 
+  226  dmesg -c
+  227  clear
+  228  dmesg 
+  229  dmesg -c
+  230  clear
+  231  dmesg 
+  232  dmesg -c
+  233  clear
+  234  dmesg -c
+  235  clear
+  236  dmesg 
+  237  echo "client,addr=10.0.5.13,port=9999,size=16384,count=1,verbose,validate" > /proc/krping
+  238  echo "client,addr=10.0.5.13,port=9999,size=16384,count=10,verbose,validate" > /proc/krping
+  239  echo "client,addr=10.0.5.13,port=9999,size=16384,count=16,verbose,validate" > /proc/krping
+  240  echo "client,addr=10.0.5.13,port=9999,size=16384,count=1,verbose,validate" > /proc/krping
+  241  lear
+  242  clear
+  243  echo "client,addr=10.0.5.13,port=9999,size=16384,count=1,verbose,validate" > /proc/krping
+  244  dmesg -c
+  245  clear
+  246  dmesg -c
+  247  dmesg 
+  248  ipmitool -H stevo1-ipmi -U admin -P admin power cycle
+  249  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power cycle
+  250  dmesg -c
+  251  dmesg 
+  252  dmesg -c
+  253  dmesg 
+  254  dmesg -c
+  255  dmesg 
+  256  dmesg -c
+  257  dmesg 
+  258  dmesg  | grep mis
+  259  dmesg -
+  260  dmesg -c
+  261  dmesg 
+  262  clear
+  263  dmesg 
+  264  dmesg -c
+  265  dmesg 
+  266  dmesg -c
+  267  dmesg 
+  268  dmesg  | grep misma
+  269  dmesg -c
+  270  clear
+  271  dmesg 
+  272  dmesg -c
+  273  dmesg 
+  274  dmesg -c
+  275  clear
+  276  dmesg 
+  277  dmesg -c | grep -i mis
+  278  clear
+  279  dmesg 
+  280  dmesg  | grep -i mis
+  281  dmesg 
+  282  dmesg -c
+  283  clear
+  284  dmesg 
+  285  dmesg -c | grep -i mis
+  286  clear
+  287  dmesg 
+  288  dmesg -c | grep mis
+  289  dmesg -c
+  290  clear
+  291  dmesg 
+  292  d,es-c
+  293  dmesg -c
+  294  dmesg 
+  295  dmesg -c
+  296  dmesg
+  297  dmesg -c
+  298  clear
+  299  dmesg 
+  300  dmesg -c
+  301  dmesg 
+  302  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power cycle
+  303  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power on
+  304  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power off
+  305  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power 
+  306  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power  on
+  307  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power  cycle
+  308  echo "client,addr=10.0.5.13,port=9999,size=16384,count=4,verbose,validate" > /proc/krping
+  309  echo "client,addr=10.0.5.13,port=9999,size=16384,count=2,verbose,validate" > /proc/krping
+  310  echo "client,addr=10.0.5.13,port=9999,size=16384,count=4,verbose,validate" > /proc/krping
+  311  echo "client,addr=10.0.5.13,port=9999,size=16384,count=1,verbose,validate" > /proc/krping
+  312  echo "client,addr=10.0.5.13,port=9999,size=16384,count=2,verbose,validate" > /proc/krping
+  313  ping 10.0.5.13
+  314  ping stevo1
+  315  lspci -d 1425:*
+  316  free -g
+  317  swapon -s
+  318  df -h
+  319  lspci -s 06:00.4
+  320  lspci -s 06:00.4 -vvvvv | more
+  321  uptime
+  322  lspci -s 82:00.4
+  323  lspci -s 82:00.4 -vvvvv | more
+  324  ifconfig
+  325  ethtool enp6s4f0
+  326  ethtool enp6s0f4
+  327  ethtool -i enp6s0f4
+  328  ethtool -i enp130s0f4
+  329  ethtool -i enp130s0f4d1
+  330  ifconfig enp130s0f4
+  331  ifconfig enp130s0f4d1
+  332  ethtool enp130s0f4
+  333  ethtool enp130s0f4d1
+  334  ethtool enp6s0f4d1
+  335  ethtool enp6s0f4
+  336  exit
+  337  telnd
+  338  ifconfig
+  339  dmidecode -t bios
+  340  dmidecode -t baseborad
+  341  dmidecode -t baseboard
+  342  telnet cm32-ra09 7001
+  343  exit
+  344  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power  cycle
+  345  uname -
+  346  uname -a
+  347  clear
+  348  dmesg -c
+  349  dmesg 
+  350  clear
+  351  dmesg 
+  352  cd manoj
+  353  ls
+  354  dmesg | tee dmesg_working
+  355  mv dmesg_working dmesg_working_1
+  356  dmesg -c
+  357  dmesg 
+  358  dmesg -c | grep mism
+  359  dmesg 
+  360  dmesg -c
+  361  dmesg  -c
+  362  dmesg   | grep -i mis
+  363  dmke-c
+  364  dmesg -c
+  365  clear
+  366  dmesg 
+  367  dmesg  | grep mi
+  368  dmesg -c
+  369  clear
+  370  dmesg 
+  371  dmesg  | grep mis
+  372  dmesg | grep -i mis
+  373  dmesg 
+  374  dmes-c
+  375  dmesg -c
+  376  dmesg 
+  377  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power  cycle
+  378  dmesg -c
+  379  dmesg 
+  380  dmesg  | grep mis
+  381  dmesg 
+  382  dmesg  | grep mis
+  383  dmesg 
+  384  dmesg -c
+  385  clear
+  386  dmesg 
+  387  dmesg -c
+  388  clear
+  389  dmesg 
+  390  dmesg -c
+  391  echo "client,addr=10.0.5.13,port=9999,size=16384,count=1,verbose,validate" > /proc/krping
+  392  clear
+  393  echo "client,addr=10.0.5.13,port=9999,size=16384,count=1,verbose,validate" > /proc/krping
+  394  echo "client,addr=10.0.5.13,port=9999,size=29,count=1,verbose,validate" > /proc/krping
+  395  ping stevo1
+  396  echo "client,addr=10.0.5.13,port=9999,size=29,count=1,verbose,validate" > /proc/krping
+  397  echo "client,addr=10.0.5.13,port=9999,size=29,count=10,verbose,validate" > /proc/krping
+  398  echo "client,addr=10.0.5.13,port=9999,size=32768,count=2,verbose,validate" > /proc/krping
+  399  echo "client,addr=10.0.5.13,port=9999,size=32768,count=16,verbose,validate" > /proc/krping
+  400  echo "client,addr=10.0.5.13,port=9999,size=16384,count=1,verbose,validate" > /proc/krping
+  401  echo "client,addr=10.0.5.13,port=9999,size=16384,count=16,verbose,validate" > /proc/krping
+  402  echo "client,addr=10.0.5.13,port=9999,size=16384,count=1,verbose,validate" > /proc/krping
+  403  echo "client,addr=10.0.5.13,port=9999,size=16384,count=16,verbose,validate" > /proc/krping
+  404  echo "client,addr=10.0.5.13,port=9999,size=16384,count=1,verbose,validate" > /proc/krping
+  405  echo "client,addr=10.0.5.13,port=9999,size=16384,count=16,verbose,validate" > /proc/krping
+  406  echo "client,addr=10.0.5.13,port=9999,size=32768,count=16,verbose,validate" > /proc/krping
+  407  clear
+  408  dmesg 
+  409  dmes-c
+  410  dmesg -c
+  411  cleanr
+  412  clear
+  413  dmesg 
+  414  dmesg -c 
+  415  dmesg 
+  416  clear
+  417  dmesg 
+  418  dmesg -c
+  419  dmesg 
+  420  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power  cycle
+  421  dmesg -c
+  422  clear
+  423  dmesg dmes
+  424  dmesg 
+  425  dmesg | grep mis
+  426  dmesg -c
+  427  clear
+  428  dmesg 
+  429  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power  cycle
+  430  dmesg 
+  431  dmesg -c
+  432  clear
+  433  dmesg 
+  434  dmesg -c
+  435  clear
+  436  dmesg 
+  437  clear
+  438  dmesg 
+  439  dmesg -c
+  440  clear
+  441  dmesg -c
+  442  dmesg dmes
+  443  dmesg | grep -i mis
+  444  dmesg -c
+  445  clear
+  446  dmesg 
+  447  dmesg dmes
+  448  dmesg dmes | grep mism
+  449  dmesg -=c
+  450  dmesg -c
+  451  clear
+  452  dmesg 
+  453  dmesg -c
+  454  clear
+  455  dmesg 
+  456  dmesg -c
+  457  clear
+  458  dmesg 
+  459  dmesg -c
+  460  clear
+  461  dmesg 
+  462  dmesg -c
+  463  dmesg 
+  464  clear
+  465  dmesg 
+  466  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power  cycle
+  467  dmes-c
+  468  dmesg  -c
+  469  dmesg -c
+  470  dmesg 
+  471  dmesg -c | grep mism
+  472  dmesg 
+  473  dmesg  | grep mis
+  474  clear
+  475  dmesg 
+  476  dmesg | grep mis
+  477  clear
+  478  dmesg 
+  479  dmesg  -c | grep mis
+  480  dmesg 
+  481  dmesg  -c | grep mis
+  482  dmesg 
+  483  dmesg  | grep -i mis
+  484  dmesg 
+  485  dmesg  | grep -i mis
+  486  dmesg -c
+  487  dmesg  | grep -i mis
+  488  dmesg
+  489  dmesg 
+  490  dmesg  | grep mis
+  491  dmesg -c
+  492  dmesg 
+  493  dmesg -c
+  494  dmesg 
+  495  dmesg  -c
+  496  dmesg -c
+  497  dmesg 
+  498  dmesg -c
+  499  clear
+  500  dmesg -c
+  501  dmesg 
+  502  dmesg -c
+  503  dmesg 
+  504  dmesg -c
+  505  dmesg 
+  506  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power  cycle
+  507  dmesg -c
+  508  clear
+  509  dmesg -c
+  510  clear
+  511  dmesg 
+  512  dmesg -c
+  513  dmesg 
+  514  dmesg -c
+  515  clear
+  516  dmesg -c
+  517  clear
+  518  dmesg 
+  519  dmesg -c
+  520  clear
+  521  dmesg 
+  522  dmesg -c
+  523  clear
+  524  dmesg 
+  525  dmesg | grep mis
+  526  clear
+  527  dmesg =-c
+  528  dmesg -c
+  529  clear
+  530  dmesg 
+  531  dmesg  | grep mis
+  532  dmesg -c
+  533  clear
+  534  dmesg 
+  535  dmesg  | grep mis
+  536  dmesg -c
+  537  clear
+  538  dmesg 
+  539  dmesg  | grep mis
+  540  dmesg -c
+  541  dmesg 
+  542  dmesg  -c
+  543  clear
+  544  dmesg 
+  545  dmesg dmes
+  546  dmesg | grep mis
+  547  dmesg -c
+  548  clear
+  549  dmesg 
+  550  dmesg  | grep mis
+  551  dmesg 
+  552  dmesg -c
+  553  dmesg 
+  554  dmesg  | grep mis
+  555  dmesg 
+  556  dmesg  | grep mis
+  557  dmesg -c
+  558  dmesg 
+  559  dmesg -c
+  560  dmesg 
+  561  dmesg  | grep mis
+  562  dmesg 
+  563  dmesg  | grep mis
+  564  clear
+  565  dmesg 
+  566  dmesg  | grep -i mis
+  567  dmesg -c
+  568  clear
+  569  dmesg 
+  570  dmesg -c
+  571  echo "client,addr=10.0.5.13,port=9999,size=16384,count=4,verbose,validate" > /proc/krping
+  572  echo "client,addr=10.0.5.13,port=9999,size=16384,count=16,verbose,validate" > /proc/krping
+  573  echo "client,addr=10.0.5.13,port=9999,size=4096,count=16,verbose,validate" > /proc/krping
+  574  echo "client,addr=10.0.5.13,port=9999,size=16384,count=16,verbose,validate" > /proc/krping
+  575  dmesg -c
+  576  dmesg 
+  577  dmesg  | grep mis
+  578  dmesg -c
+  579  clear
+  580  dmesg 
+  581  dmesg  | grep mis
+  582  dmesg  
+  583  dmesg 
+  584  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power  cycle
+  585  dmesg 
+  586  dmesg -c
+  587  dmesg 
+  588  dmesg  | grep -i mis
+  589  dmesg 
+  590  dmesg  | grep mis
+  591  dmesg  
+  592  echo "client,addr=10.0.5.13,port=9999,size=16384,count=32,verbose,validate" > /proc/krping
+  593  echo "client,addr=10.0.5.13,port=9999,size=32768,count=32,verbose,validate" > /proc/krping
+  594  echo "client,addr=10.0.5.13,port=9999,size=65536,count=32,verbose,validate" > /proc/krping
+  595  
+  596  echo "client,addr=10.0.5.13,port=9999,size=65536,count=32,verbose,validate" > /proc/krping
+  597  echo "client,addr=10.0.5.13,port=9999,size=32768,count=32,verbose,validate" > /proc/krping
+  598  echo "client,addr=10.0.5.13,port=9999,size=65536,count=32,verbose,validate" > /proc/krping
+  599  echo "client,addr=10.0.5.13,port=9999,size=32768,count=32,verbose,validate" > /proc/krping
+  600  dmesg -c
+  601  dmesg 
+  602  dmesg  | grep mism
+  603  dmesg  | grep mis
+  604  dmesg 
+  605  dmesg -c
+  606  clear
+  607  dmesg 
+  608  dmesg | grep mism
+  609  nvme list
+  610  ifconfig
+  611  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power status
+  612  ipmitool -H stevo1-ipmi -U ADMIN -P ADMIN power cycle
+  613  #nvme connect-all -t rdma -a 10.0.5.13
+  614  ping 10.0.5.13
+  615  nvme connect-all -t rdma -a 10.0.5.13
+  616  nvme list
+  617  #fio --time_based=1 --runtime=$((60*1)) --bs=4k --numjobs=4 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  618  ls /tmp/
+  619  ls -l /tmp/?
+  620  fio --time_based=1 --runtime=$((60*1)) --bs=4k --numjobs=4 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  621  nvme list
+  622  fio --time_based=1 --runtime=$((60*1)) --bs=$((32*10-1)) --numjobs=4 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  623  mount
+  624  ls /mnt/0
+  625  ls /mnt/1
+  626  ls -l /tmp/?
+  627  nvme list
+  628  fdisk -l /dev/nvme0n1
+  629  mkfs.ext4 /dev/nvme0n1
+  630  mkfs.ext4 /dev/nvme1n1
+  631  mkdir /mnt/0
+  632  mkdir /mnt/1
+  633  mount /dev/nvme0n1 /mnt/0
+  634  mount /dev/nvme1n1 /mnt/1
+  635  fio --time_based=1 --runtime=$((60*1)) --bs=$((32*10-1)) --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/mnt/\$jobnum/foo.\$jobnum --group_reporting=1
+  636  fio --time_based=1 --runtime=$((60*1)) --size=100m --bs=$((32*10-1)) --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/mnt/\$jobnum/foo.\$jobnum --group_reporting=1
+  637  dmesg
+  638  fio --time_based=1 --runtime=$((60*1)) --size=100m --bs=$((32*10-1)) --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/mnt/\$jobnum/foo.\$jobnum --group_reporting=1
+  639  fio --time_based=1 --runtime=$((60*1)) --size=100m --bs=$((32*10)) --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/mnt/\$jobnum/foo.\$jobnum --group_reporting=1
+  640  fio --time_based=1 --runtime=$((60*1)) --size=100m --bs=512 --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/mnt/\$jobnum/foo.\$jobnum --group_reporting=1
+  641  dmesg
+  642  fio --time_based=1 --runtime=$((60*1)) --size=100m --bs=511 --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/mnt/\$jobnum/foo.\$jobnum --group_reporting=1
+  643  rm -f /mnt/?/foo*
+  644  fio --time_based=1 --runtime=$((60*1)) --size=10m --bs=511 --numjobs=1 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/foo.\$jobnum --group_reporting=1
+  645  echo $((16*80))
+  646  echo $((1280/32))
+  647  echo $((32*40
+  648  echo $((32*40))
+  649  echo $((16*81))
+  650  echo $((1296/32))
+  651  echo $((32*40))
+  652  fio --time_based=1 --runtime=$((60*1)) --size=10m --bs=1296 --numjobs=1 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/foo.\$jobnum --group_reporting=1
+  653  fio --debug=io --time_based=1 --runtime=$((60*1)) --size=10m --bs=1296 --numjobs=1 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/foo.\$jobnum --group_reporting=1
+  654  fio --debug=io --time_based=1 --runtime=$((60*1)) --size=10m --bs=1296 --numjobs=1 --name=TEST --direct=1 --iodepth=1 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/foo.\$jobnum --group_reporting=1
+  655  man fio
+  656  fio --debug=io --time_based=1 --runtime=$((60*1)) --size=10m --bs=1296 --numjobs=1 --name=TEST --direct=1 --iodepth=1 -rw=randread --randrepeat=0 --ioengine=sync --filename_format=/tmp/foo.\$jobnum --group_reporting=1
+  657  man fio
+  658  fio --bsrance=1k-4k --blocksize_unaligned--debug=io --time_based=1 --runtime=$((60*1)) --size=10M --numjobs=1 --name=TEST --direct=1 --iodepth=1 -rw=randread --randrepeat=0 --ioengine=sync --filename_format=/tmp/foo.\$jobnum --group_reporting=1
+  659  fio --bsrange=1k-4k --blocksize_unaligned--debug=io --time_based=1 --runtime=$((60*1)) --size=10M --numjobs=1 --name=TEST --direct=1 --iodepth=1 -rw=randread --randrepeat=0 --ioengine=sync --filename_format=/tmp/foo.\$jobnum --group_reporting=1
+  660  fio --bsrange=1k-4k --blocksize_unaligned --debug=io --time_based=1 --runtime=$((60*1)) --size=10M --numjobs=1 --name=TEST --direct=1 --iodepth=1 -rw=randread --randrepeat=0 --ioengine=sync --filename_format=/tmp/foo.\$jobnum --group_reporting=1
+  661  fio --bsrange=1k-64k --blocksize_unaligned --time_based=1 --runtime=$((60*1)) --size=100m --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/mnt/\$jobnum/foo.\$jobnum --group_reporting=1
+  662  fio --bsrange=1k-4k --blocksize_unaligned --time_based=1 --runtime=$((60*1)) --size=100m --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/mnt/\$jobnum/foo.\$jobnum --group_reporting=1
+  663  fio --bsrange=1k-64k --blocksize_unaligned --time_based=1 --runtime=$((60*1)) --size=100m --numjobs=2 --name=TEST --direct=0 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/mnt/\$jobnum/foo.\$jobnum --group_reporting=1
+  664  nvme disconnect -d nvme1n1
+  665  nvme disconnect -d nvme0n1
+  666  umount /mnt/*
+  667  nvme list
+  668  nvme connect-all -t rdma -a 10.0.5.13
+  669  nvme list
+  670  #fio --bsrange=1k-64k --blocksize_unaligned --time_based=1 --runtime=$((1)) --size=100m --numjobs=2 --name=TEST --direct=0 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/mnt/\$jobnum/foo.\$jobnum --group_reporting=1
+  671  mount /dev/nvme0n1 /mnt/0
+  672  mount /dev/nvme1n1 /mnt/1
+  673  fio --bsrange=1k-64k --blocksize_unaligned --time_based=1 --runtime=$((1)) --size=100m --numjobs=2 --name=TEST --direct=0 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/mnt/\$jobnum/foo.\$jobnum --group_reporting=1
+  674  fio --bsrange=1k-64k --blocksize_unaligned --time_based=1 --runtime=$((10)) --size=100m --numjobs=2 --name=TEST --direct=0 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/mnt/\$jobnum/foo.\$jobnum --group_reporting=1
+  675  fio --bsrange=1k-64k --blocksize_unaligned --time_based=1 --runtime=$((10)) --size=100m --numjobs=2 --name=TEST --direct=0 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=sync --filename_format=/mnt/\$jobnum/foo.\$jobnum --group_reporting=1
+  676  fio --bsrange=64B-64k --blocksize_unaligned --time_based=1 --runtime=$((10)) --size=100m --numjobs=2 --name=TEST --direct=0 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=sync --filename_format=/mnt/\$jobnum/foo.\$jobnum --group_reporting=1
+  677  man fio
+  678  cd /usr/local/src/krping/
+  679  git diff
+  680  stg series
+  681  git diff
+  682  git checkout -f
+  683  git remote -v
+  684  git branch
+  685  git remote update
+  686  git checkout p2pmem
+  687  stg init
+  688  vi krping.c
+  689  make
+  690  stg show
+  691  git diff
+  692  git diff > /tmp/p
+  693  stg series
+  694  git checkout -ff
+  695  git checkout -f
+  696  git checkout master
+  697  git pull
+  698  stg series
+  699  stg init
+  700  patch -p1 < /tmp/p
+  701  vi krping.c.rej krping.c
+  702  make
+  703  vi krping.c.rej krping.c
+  704  git checkout -f
+  705  stg series
+  706  git mylog
+  707  git mylog origin/p2pmem
+  708  git cherry-pick 91bb331
+  709  git diff
+  710  git checkout -f
+  711  git log
+  712  git status
+  713  git commit
+  714  make clean
+  715  ls
+  716  git status
+  717  rm .*cmd
+  718  y
+  719  rm (orig *rej *order
+  720  rm *rig *rej *order
+  721  git status
+  722  ls
+  723  git branch
+  724  git checkout p2pmem
+  725  make
+  726  vi krping.c
+  727  make
+  728  stg init
+  729  stg new p2pmem_ifdev
+  730  stg refresh
+  731  stg rename p2pmem_ifdev p2pmem_cond_compile
+  732  stg series
+  733  patch -p1 < /tmp/p
+  734  vi krping.c.rej krping.c
+  735  make
+  736  vi krping.c
+  737  make
+  738  stg new random
+  739  make
+  740  make install
+  741  rmmod rdma_Krping
+  742  rmmod rdma_krping
+  743  modprobe rdma_krping debug=1
+  744  echo "client,addr=10.0.5.13,port=9999,size=32768,count=10,random,verbose,validate" > /proc/krping
+  745  dmesg
+  746  vi krping.c
+  747  make
+  748  make install
+  749  rmmod rdma_krping
+  750  modprobe rdma_krping debug=1
+  751  echo "client,addr=10.0.5.13,port=9999,size=32768,count=10,random,verbose,validate" > /proc/krping
+  752  dmesg
+  753  vi krping.c
+  754  make
+  755  vi krping.c
+  756  make
+  757  stg refresh
+  758  make install
+  759  rmmod rdma_krping
+  760  modprobe rdma_krping debug=1
+  761  echo "client,addr=10.0.5.13,port=9999,size=32768,count=10,random,verbose,validate" > /proc/krping
+  762  dmesg
+  763  vi krping.c
+  764  make
+  765  make install
+  766  rmmod rdma_krping
+  767  modprobe rdma_krping debug=1
+  768  echo "client,addr=10.0.5.13,port=9999,size=32768,count=100,random,verbose,validate" > /proc/krping
+  769  dmesg
+  770  echo "client,addr=10.0.5.13,port=9999,size=32768,count=100,random,validate" > /proc/krping
+  771  dmesg
+  772  vi krping.c
+  773  make
+  774  make install
+  775  rmmod rdma_krping
+  776  modprobe rdma_krping debug=1
+  777  dmesg -c
+  778  echo "client,addr=10.0.5.13,port=9999,size=32768,count=100,random,validate" > /proc/krping
+  779  dmesg
+  780  rmmod rdma_krping
+  781  modprobe rdma_krping debug=0
+  782  echo "client,addr=10.0.5.13,port=9999,size=32768,count=100,random,validate" > /proc/krping
+  783  dmesg
+  784  dmesg -c
+  785  rmmod rdma_krping
+  786  make
+  787  make install
+  788  modprobe rdma_krping debug=0
+  789  echo "client,addr=10.0.5.13,port=9999,size=32768,count=100,random,validate" > /proc/krping
+  790  dmesg
+  791  echo "client,addr=10.0.5.13,port=9999,size=32768,count=100,random,validate,verbose" > /proc/krping
+  792  dmesg
+  793  vi krping.c
+  794  make
+  795  make install
+  796  rmmod rdma_krping
+  797  modprobe rdma_krping debug=0
+  798  dmesg -c
+  799  echo "client,addr=10.0.5.13,port=9999,size=32768,count=100,random,validate,verbose" > /proc/krping
+  800  dmesg
+  801  grep ifname drivers/infiniband/hw/cxgb4/*.c
+  802  vi krping.c
+  803  make
+  804  make install
+  805  rmmod rdma_krping
+  806  modprobe rdma_krping debug=0
+  807  echo "client,addr=10.0.5.13,port=9999,size=32768,count=100,random,validate,verbose" > /proc/krping
+  808  dmesg
+  809  vi krping.c
+  810  make
+  811  make install
+  812  rmmod rdma_krping
+  813  modprobe rdma_krping debug=0
+  814  echo "client,addr=10.0.5.13,port=9999,size=32768,count=100,random,validate,verbose" > /proc/krping
+  815  dmesg
+  816  stg refresh
+  817  stg series
+  818  git mylog
+  819  git branch
+  820  git push origin p2pmem:p2pmem
+  821  stg pull
+  822  vi krping.c
+  823  stg series
+  824  git checkout -f
+  825  stg resolved krping.c
+  826  stg refresh
+  827  stg po
+  828  stg pop
+  829  stg series
+  830  stg delete p2pmem_cond_compile
+  831  stg delete random
+  832  make clena
+  833  make clean
+  834  make
+  835  echo "client,addr=10.0.5.13,port=9999,size=131072,random,validate" > /proc/krping
+  836  dmesg
+  837  dmesg -c
+  838  echo "client,addr=10.0.5.13,port=9999,size=131072,random,validate" > /proc/krping
+  839  dmesg
+  840  echo "client,addr=10.0.5.13,port=9999,size=131072,random,validate" > /proc/krping
+  841  echo "client,addr=10.0.5.13,port=9999,size=65000,random,validate" > /proc/krping
+  842  watch -n1 cat /proc/krping 
+  843  echo "client,addr=10.0.5.13,port=9999,size=65000,random,validate" >
+  844  /proc/krping
+  845  echo "client,addr=10.0.5.13,port=9999,size=65000,random,validate" > /proc/krping 
+  846  reboot
+  847  dmesg -c
+  848  clar
+  849  dmesg 
+  850  dmesg -c
+  851  dmesg 
+  852  dmesg -c
+  853  dmesg 
+  854  clear
+  855  ping 10.0.5.13
+  856  clear
+  857  dmesg 
+  858  watch -n1 cat /proc/krping 
+  859  dmesg 
+  860  dmesg | grep mis
+  861  dmesg 
+  862  rmmod nvme
+  863  lsmod | grep nvme
+  864  rmmod nvme_rdma
+  865  dmesg 
+  866  dms-c
+  867  dmesg -c
+  868  dmesg 
+  869  clear
+  870  dmesg 
+  871  dmesg -c
+  872  clear
+  873  dmesg 
+  874  dmesg -c
+  875  clea
+  876  clear
+  877  dmesg 
+  878  dmesg -c
+  879  dmesg 
+  880  dmesg -c
+  881  clear
+  882  dmesg 
+  883  clear
+  884  dmesg 
+  885  dmesg -c
+  886  clear
+  887  dmesg 
+  888  dmesg -c
+  889  clear
+  890  dmesg 
+  891  dmesg -c
+  892  clear
+  893  dmesg 
+  894  dmesg -c
+  895  clear
+  896  dmesg 
+  897  dmesg -c
+  898  clear
+  899  dmesg 
+  900  dmesg -c
+  901  dmesg 
+  902  sh /root/doit-stevo.sh 
+  903  dmesg 
+  904  dmesg -c
+  905  clear
+  906  echo "client,addr=10.0.5.13,port=9999,size=65000,random,validate" > /proc/krping 
+  907  modprobe rdma_krping debug=0
+  908  echo "client,addr=10.0.5.13,port=9999,size=65000,random,validate" > /proc/krping 
+  909  time echo "client,addr=10.0.5.13,port=9999,size=65000,random,validate" > /proc/krping 
+  910  nvme connect-all -t rdma -a 10.0.5.13
+  911  ifconfig
+  912  modprobe nvme-rdma
+  913  sync
+  914  reboot
+  915  sh /root/doit-stevo.sh 
+  916  modprobe nvme-rdma
+  917  cat .bashrc
+  918  MB2Gb 7029
+  919  vi .bashrc
+  920  . .bashrc
+  921  MB2Gb 7029
+  922  MiB2Gb 6704
+  923  dmesg|tail
+  924  dmesg
+  925  dmesg|less
+  926  cd /usr/local/src/krping/
+  927  vi krping.c
+  928  make
+  929  make install
+  930  rmmod nvme_rdma
+  931  rmmod rdma_krping
+  932  modprobe rdma_krping
+  933  nvme list
+  934  sh /root/doit-stevo.sh 
+  935  cd /usr/local/src/krping/
+  936  git diff
+  937  stg series
+  938  git branch
+  939  git pull
+  940  make clean
+  941  make
+  942  make install
+  943  rmmod rdma_krping
+  944  modprobe rdma_krping
+  945  echo "client,addr=10.0.5.13,port=9999,size=65000,random,validate" > /proc/krping 
+  946  echo "client,addr=10.0.5.13,port=9999,size=100,random,validate" > /proc/krping 
+  947  dmesg
+  948  echo "client,addr=10.0.5.13,port=9999,size=100,random,validate" > /proc/krping 
+  949  dmesg
+  950  rmmod rdma_krping
+  951  modprobe rdma_krping debug=1
+  952  echo "verbose,client,addr=10.0.5.13,port=9999,size=100,random,validate" > /proc/krping 
+  953  echo "client,addr=10.0.5.13,port=9999,size=100,random,validate" > /proc/krping 
+  954  git diff
+  955  git log
+  956  stg new rand-zero
+  957  stg refresh
+  958  stg show
+  959  git push origin p2pmem:p2pmem
+  960  stg pull
+  961  stg clean
+  962  make && make install
+  963  rmmod rdma_krping
+  964  modprobe rdma_krping
+  965  echo "client,addr=10.0.5.13,port=9999,size=100,random,validate" > /proc/krping 
+  966  echo "client,addr=10.0.5.13,port=9999,size=100000,random,validate" > /proc/krping 
+  967  rmmod rdma_krping
+  968  modprobe nvme-rdma
+  969  nvme connect-all -t rdma -a 10.0.5.13
+  970  ls /tmp/?
+  971  ls -l /tmp/?
+  972  nvme list
+  973  #
+  974  fio --time_based=1 --runtime=$((30*1)) --bs=512k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  975  MB2Gb 2651
+  976  MiB2Gb 2529
+  977  nvme disconnect -d nvme0n1
+  978  nvme disconnect -d nvme1n1
+  979  nvme connect-all -t rdma -a 10.0.5.13
+  980  nvme list
+  981  fio --time_based=1 --runtime=$((30*1)) --bs=512k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  982  MB2Gb 7111
+  983  fio --time_based=1 --runtime=$((30*1)) --bs=512k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  984  nvme disconnect -d nvme1n1
+  985  nvme disconnect -d nvme0n1
+  986  nvme connect-all -t rdma -a 10.0.5.13
+  987  fio --time_based=1 --runtime=$((30*1)) --bs=512k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  988  for s in 4K 16K 64K 256K 1M ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1|grep read: ; done
+  989  nvme disconnect -d nvme0n1
+  990  nvme disconnect -d nvme1n1
+  991  nvme connect-all -t rdma -a 10.0.5.13
+  992  for s in 4K 16K 64K 256K 1M ; do echo -n "$s "; fio --time_based=1 --runtime=$((30*1)) --bs=${s} --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1|grep read: ; done
+  993  nvme disconnect -d nvme1n1
+  994  nvme disconnect -d nvme0n1
+  995  modprobe nvme-rdma
+  996  nvme connect-all -t rdma -a 10.0.5.13
+  997  fio --time_based=1 --runtime=$((60*10)) --bs=512k --numjobs=2 --name=TEST --direct=1 --iodepth=32 -rw=randread --randrepeat=0 --ioengine=libaio --filename_format=/tmp/\$jobnum --group_reporting=1
+  998  MB2Gb 2650
+  999  history | tee history.txt

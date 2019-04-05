@@ -1,0 +1,1000 @@
+    2  vi dev/linux/toecore/toe_compat_2_6.h
+    3  vi dev/T4/linux/t4_tom/cpl_io.c
+    4  cd linux_t4_build/
+    5  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1 
+    6  vi ../dev/T4/linux/t4_tom/cpl_io.c
+    7  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1 
+    8  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1 enable_wdtoe=1
+    9  cd ..
+   10  hg diff
+   11  vi dev/linux/toecore/toedev.h
+   12  vi dev/linux/toecore/toedev.c
+   13  vi dev/linux/toecore/toe_compat_2_6.h
+   14  vi dev/T4/linux/t4_tom/cpl_io.c
+   15  cd linux_t4_build/
+   16  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1 enable_wdtoe=1
+   17  vi ../dev/linux/toecore/toe_compat_2_6.h
+   18  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1 enable_wdtoe=1
+   19  vi ../dev/linux/toecore/toedev.h
+   20  vi ../dev/linux/toecore/toedev.c
+   21  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1 enable_wdtoe=1
+   22  vi ../dev/linux/toecore/toedev.c
+   23  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1 enable_wdtoe=1
+   24  hg diff
+   25  vi ../dev/linux/toecore/toedev.c
+   26  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1 enable_wdtoe=1
+   27  hg diff
+   28  vi ../dev/linux/toecore/toe_compat_2_6.h
+   29  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1 enable_wdtoe=1
+   30  ls /opt
+   31  ls /root/werner
+   32  cd ..
+   33  hg diff -p > ../sysctl_tcp.patch
+   34  cd ../nvme
+   35  ./scripts/checkpatch.pl --no-signoff ../sysctl_tcp.patch 
+   36  cd ../sw
+   37  vi dev/linux/toecore/toe_compat_2_6.h
+   38  hg diff -p > ../sysctl_tcp.patch
+   39  /root/werner/nvme/scripts/checkpatch.pl --no-signoff ../sysctl_tcp.patch 
+   40  vi dev/T4/linux/t4_tom/cpl_io.c
+   41  hg diff -p > ../sysctl_tcp.patch
+   42  /root/werner/nvme/scripts/checkpatch.pl --no-signoff ../sysctl_tcp.patch 
+   43  vi dev/linux/toecore/toe_compat_2_6.h
+   44  hg diff -p > ../sysctl_tcp.patch
+   45  /root/werner/nvme/scripts/checkpatch.pl --no-signoff ../sysctl_tcp.patch 
+   46  cd ..
+   47  scp ./sysctl_tcp.patch root@odyssey3:/opt/
+   48  cd sw
+   49  vi dev/T4/linux/t4_tom/t4tom_ma_failover.c 
+   50  hg diff -p > ../sysctl_tcp.patch
+   51  /root/werner/nvme/scripts/checkpatch.pl --no-signoff ../sysctl_tcp.patch 
+   52  cd ..
+   53  scp ./sysctl_tcp.patch root@odyssey3:/opt/
+   54  cd sw
+   55  vi dev/T4/linux/t4_tom/t4tom_ma_failover.c 
+   56  hg diff -p > ../sysctl_tcp.patch
+   57  /root/werner/nvme/scripts/checkpatch.pl --no-signoff ../sysctl_tcp.patch 
+   58  cd ..
+   59  scp ./sysctl_tcp.patch root@odyssey3:/opt/
+   60  cd sw
+   61  vi dev/T4/linux/t4_tom/t4tom_ma_failover.c 
+   62  hg diff
+   63  hg diff -p > ../sysctl_tcp.patch
+   64  /root/werner/nvme/scripts/checkpatch.pl --no-signoff ../sysctl_tcp.patch 
+   65  cd ..
+   66  scp ./sysctl_tcp.patch root@odyssey3:/opt/
+   67  cd werner
+   68  ls
+   69  cd nvme
+   70  git fetch
+   71  less Makefile
+   72  cd ..
+   73  rm -rf ./nvme
+   74  history|grep nvme
+   75  git clone git://git.infradead.org/nvme.git
+   76  cd nvme
+   77  git checkout nvme-tcp
+   78  make mrproper
+   79  ls
+   80  cp ../config-nvmf .config
+   81  make oldconfig
+   82  make -j8 bzImage
+   83  make -j8 modules
+   84  make modules_install
+   85  make install
+   86  reboot
+   87  ifconfig
+   88  ping 172.16.2.239
+   89  history|grep discover
+   90  ./nvme discover -t tcp -a 172.16.2.239 -s 4420
+   91  cd /opt/nvme-cli
+   92  ./nvme discover -t tcp -a 172.16.2.239 -s 4420
+   93  modprobe t4_tom
+   94  ./nvme discover -t tcp -a 172.16.2.239 -s 4420
+   95  dmesg
+   96  ls -al
+   97  git fetch
+   98  git pull
+   99  less README.md 
+  100  ./nvme list
+  101  cat /sys/kernel/debug/cxgb4/0000\:02\:00.4/tids
+  102  sysctl -a|grep toe
+  103  sysctl -w toe.toe0_tom.ddp=0
+  104  ./nvme discover -t tcp -a 172.16.2.239 -s 4420
+  105  dmesg
+  106  sysctl -a|grep toe
+  107  sysctl -w toe.toe0_tom.activated=0
+  108  ./nvme discover -t tcp -a 172.16.2.239 -s 4420
+  109  sysctl -w toe.toe0_tom.activated=1
+  110  sysctl -w toe.toe0_tom.lro=0
+  111  ./nvme discover -t tcp -a 172.16.2.239 -s 4420
+  112  cd werner
+  113  ls
+  114  cd fio
+  115  git fetch
+  116  git checkout
+  117  git pull
+  118  ./configure
+  119  make
+  120  cd ..
+  121  ls
+  122  rm -rf ./spdk
+  123  history
+  124  git clone https://review.gerrithub.io/spdk/spdk
+  125  cd spdk
+  126  git fetch https://review.gerrithub.io/spdk/spdk refs/changes/77/436477/1 && git checkout FETCH_HEAD
+  127  git submodule update --init
+  128  vi CONFIG
+  129   ./configure --with-fio=/root/werner/fio
+  130  make
+  131  ls
+  132  cd ..
+  133  sync
+  134  dmesg
+  135  cd sw
+  136  hg diff
+  137  hg revert -a
+  138  hg pull --update
+  139  cd linux_t4_build/
+  140  history
+  141  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  142  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1 install
+  143  rmmod cxgb4
+  144  modprobe cxgb4
+  145  dmesg
+  146  history|grep ip
+  147  ip link set ens4f4d1 up mtu 9000
+  148  ip addr add 172.16.2.238/24 dev ens4f4d1
+  149  modprobe nvme-tcp
+  150  history
+  151  cd werner/nvme/drivers/nvme
+  152  ls
+  153  cd host
+  154  grep nvme_tcp_data_ready *
+  155  lesstcp.c
+  156  less tcp.c
+  157  grep nvme_tcp_recv_skb *
+  158  less tcp.c
+  159  grep tcp_read_sock *
+  160  ls
+  161  cd
+  162  ssh root@potato2
+  163  cd werner/sw
+  164  cd dev/linux/toecore
+  165  ls
+  166  cd module_support/
+  167  ls
+  168  less module_support-toe-4.14.0.c
+  169  cd
+  170  cd /opt/werner
+  171  cd
+  172  cd werner/nvme/drivers/nvme/host
+  173  ls
+  174  less tcp.c
+  175  pwd
+  176  cd
+  177  cd werner/sw/dev/linux/toecore
+  178  ls
+  179  cd module_support/
+  180  ls
+  181  vi ./module_support-toe-4.14.0.c
+  182  cd
+  183  cd werner
+  184  ls
+  185  cd sw/linux_t4_build/
+  186  history
+  187  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  188  vi ../dev/linux/toecore/module_support/module_support-toe-4.14.0.c
+  189  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  190  vi ../dev/linux/toecore/module_support/module_support-toe-4.14.0.c
+  191  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  192  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1 install
+  193  reboot
+  194  ls
+  195  history
+  196  modprobe cxgb4
+  197  ip link set ens4f4d1 up mtu 9000
+  198  ip addr add 172.16.2.238/24 dev ens4f4d1
+  199  modprobe nvme-tcp
+  200  modprobe toecore
+  201  modprobe t4_tom
+  202  dmesg
+  203  cd /opt/nvme-cli
+  204  history
+  205  history|grep discover
+  206  ./nvme discover -t tcp -a 172.16.2.239 -s 4420
+  207  dmesg
+  208  cat /sys/kernel/debug/cxgb4/0000\:02\:00.4/tids
+  209  ./nvme discover -t tcp -a 172.16.2.239 -s 4420
+  210  cat /sys/kernel/debug/cxgb4/0000\:02\:00.4/tids
+  211  cd werner/nvme/drivers/nvme/host
+  212  less tcp.c
+  213  cd
+  214  cd werner
+  215  cd sw/dev/linux/toecore/module_support/
+  216  hg revert -a
+  217  vi module_support-toe-4.14.0.c
+  218  cd werner/sw
+  219  hg diff
+  220  cd dev/linux/toecore
+  221  ls
+  222  cd module_support/
+  223  ls
+  224  cd
+  225  cd werner/nvme/drivers/nvme/host
+  226  ls
+  227  git log tcp.c
+  228  ls
+  229  less tcp.c
+  230  grep nvme_tcp_try_recv *
+  231  less tcp.c
+  232  cd werner/sw/dev/linux/toecore
+  233  cd module_support/
+  234  ls
+  235  vi module_support-toe-4.14.0.c
+  236  cd 
+  237  cd werner/sw/linux_t4_build/
+  238  history
+  239  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1 install
+  240  reboot
+  241  history
+  242  history|grep discover
+  243  modprobe cxgb4
+  244  ip link set ens4f4d1 up mtu 9000
+  245  ip addr add 172.16.2.238/24 dev ens4f4d1
+  246  modprobe nvme-tcp
+  247  modprobe toecore
+  248  modprobe t4_tom
+  249  cd /opt/nvme-cli
+  250  ./nvme discover -t tcp -a 172.16.2.239 -s 4420
+  251  history|grep connect
+  252  ./nvme connect -t tcp -a 172.16.2.239 -s 4420 -n nqn.2016-06.io.spdk:cnode1
+  253  ./nvme list
+  254  history|grep fio
+  255  fio --bs=64k --numjobs=8 --iodepth=16 --loops=1 --ioengine=libaio --direct=1 --invalidate=1 --fsync_on_close=1 --randrepeat=1 --norandommap --time_based --runtime=10 --filename=/dev/nvme0n1  --name=write-phase --rw=randwrite
+  256  pwd
+  257  cd
+  258  cd werner/sw
+  259  hg diff
+  260  hg revert -a
+  261  cd ..
+  262  scp root@odyssey3:repos/nvme_tcp_queue_4.20.patch .
+  263  ls
+  264  less nvme_tcp_queue_4.20.patch 
+  265  cd sw
+  266  patch -p1 < ../nvme_tcp_queue_4.20.patch 
+  267  cd linux_t4_build/
+  268  history
+  269  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1 install
+  270  uname -a
+  271  reboot
+  272  history
+  273  modprobe cxgb4
+  274  ip link set ens4f4d1 up mtu 9000
+  275  ip addr add 172.16.2.238/24 dev ens4f4d1
+  276  modprobe nvme-tcp
+  277  modprobe toecore
+  278  modprobe t4_tom
+  279  cd /opt/nvme-cli
+  280  ./nvme connect -t tcp -a 172.16.2.239 -s 4420 -n nqn.2016-06.io.spdk:cnode1
+  281  fio --bs=64k --numjobs=8 --iodepth=16 --loops=1 --ioengine=libaio --direct=1 --invalidate=1 --fsync_on_close=1 --randrepeat=1 --norandommap --time_based --runtime=10 --filename=/dev/nvme0n1  --name=write-phase --rw=randwrite
+  282  dmesg
+  283  ./nvme list
+  284  fio --bs=64k --numjobs=8 --iodepth=16 --loops=1 --ioengine=libaio --direct=1 --invalidate=1 --fsync_on_close=1 --randrepeat=1 --norandommap --time_based --runtime=10 --filename=/dev/nvme0n1  --name=write-phase --rw=randwrite
+  285  dmesg
+  286  ./nvme list
+  287  ./nvme disconnect -d nvme0n1
+  288  ./nvme list
+  289  ./nvme connect -t tcp -a 172.16.2.239 -s 4420 -n nqn.2016-06.io.spdk:cnode1
+  290  ./nvme list
+  291  fio --bs=64k --numjobs=8 --iodepth=16 --loops=1 --ioengine=libaio --direct=1 --invalidate=1 --fsync_on_close=1 --randrepeat=1 --norandommap --time_based --runtime=10 --filename=/dev/nvme0n1  --name=write-phase --rw=randwrite
+  292  ls
+  293  cd werner/sw/
+  294  hg diff
+  295  hg revert -a
+  296  hg pull --update
+  297  hg tip
+  298  ls
+  299  cd dev/linux/toecore
+  300  ls
+  301  cd module_support/
+  302  ls
+  303  less module_support-toe-4.14
+  304  less module_support-toe-4.14.0.c
+  305  vi ./module_support-toe-4.14.0.c
+  306  hg revert -a
+  307  vi ./module_support-toe-4.14.0.c
+  308  cd 
+  309  cd werner/sw/linux_t4_build/
+  310  history
+  311  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  312  vi ../dev/linux/toecore/module_support/module_support-toe-4.14.0.c
+  313  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  314  vi ../dev/linux/toecore/module_support/module_support-toe-4.14.0.c
+  315  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  316  vi ../dev/linux/toecore/module_support/module_support-toe-4.14.0.c
+  317  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  318  vi ../dev/linux/toecore/module_support/module_support-toe-4.14.0.c
+  319  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  320  vi ../dev/linux/toecore/module_support/module_support-toe-4.14.0.c
+  321  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  322  vi ../dev/linux/toecore/module_support/module_support-toe-4.14.0.c
+  323  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  324  vi ../dev/linux/toecore/module_support/module_support-toe-4.14.0.c
+  325  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  326  vi ../dev/linux/toecore/module_support/module_support-toe-4.14.0.c
+  327  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  328  vi ../dev/linux/toecore/module_support/module_support-toe-4.14.0.c
+  329  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  330  vi ../dev/linux/toecore/module_support/module_support-toe-4.14.0.c
+  331  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  332  vi ../dev/linux/toecore/module_support/module_support-toe-4.14.0.c
+  333  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  334  cd 
+  335  ls
+  336  cd werner
+  337  ls
+  338  cd nvme
+  339  cd drivers/nvme/host
+  340  ls
+  341  less tcp.c
+  342  grep nvme_tcp_wq *
+  343  grep nvme_tcp_io_work *
+  344  less tcp.c
+  345  cd werner/nvme
+  346  git fetch
+  347  git branches
+  348  git pull
+  349  less Makefile
+  350  cd ..
+  351  rm -rf ./nvme
+  352  history|grep git
+  353  git clone git://git.infradead.org/nvme.git
+  354  cd nvme
+  355  ls
+  356  cd drivers/nvme/host
+  357  ls
+  358  cd ../..
+  359  cd ..
+  360  git checkout nvme-tcp
+  361  cd drivers/nvme/host
+  362  ls
+  363  less tcp.c
+  364  cd ../..
+  365  cd ..
+  366  make mrproper
+  367  cp ../config-nvmf .config
+  368  make oldconfig
+  369  make -j8 bzImage
+  370   
+  371  make -j8 modules
+  372  make modules_install
+  373  make install
+  374  reboot
+  375  uname -a
+  376  cd werner/sw
+  377  hg diff
+  378  hg pull --update
+  379  cd dev/linux/toecore
+  380  cd module_support/
+  381  less module_support-toe-4.14.0.c
+  382  hg revert -a
+  383  vi module_support-toe-4.14.0.c
+  384  cd
+  385  cd werner/sw/linux_t4_build/
+  386  history|grep make
+  387  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1
+  388  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1 install
+  389  cd ..
+  390  cd nvme/drivers/nvme/host
+  391  less tcp.c
+  392  cd
+  393  cd werner/nvme/drivers/
+  394  ls
+  395  cd net
+  396  ls
+  397  cd ../../net
+  398  ls
+  399  cd sunrpc
+  400  ls
+  401  grep data_ready *.c
+  402  less xprtsock.c
+  403  grep recv_worker *
+  404  grep xs_stream_data_receive_workfn *
+  405  less xprtsock.c
+  406  grep xs_tcp_data_recv
+  407  grep xs_tcp_data_recv *
+  408  cd ..
+  409  grep -r xs_tcp_data_recv *
+  410  cd
+  411  cd /opt
+  412  ls
+  413  cd
+  414  cd werner
+  415  ls
+  416  cd nvme
+  417  cd net/
+  418  ls
+  419  cd sunrpc
+  420  ls
+  421  less xprtsock.c
+  422  cd werner/sw/dev/linux/toecore/module_support/
+  423  ls
+  424  vi ./module_support-toe-4.14.0.c
+  425  ls
+  426  vi ./module_support-toe-4.14.0.c
+  427  cd werner/nvme/drivers/nvme/host
+  428  less tcp.c
+  429  cd ..
+  430  cd ../Documentation/
+  431  grep -r queue_work_on *
+  432  cd ..
+  433  cd lib
+  434  grep -r queue_work_on *
+  435  cd ../
+  436  ls
+  437  cd kernel
+  438  grep -r queue_work_on *
+  439  less workqueue.c
+  440  cd ..
+  441  cd drivers/nvme/host
+  442  grep queue_work_on *
+  443  grep queue_work *
+  444  less tcp.c
+  445  cd werner/sw/dev/linux/toecore
+  446  cd module_support/
+  447  ls
+  448  vi ./module_support-toe-4.14.0.c
+  449  cd ..
+  450  grep read_sock_work *
+  451  less offload.h
+  452  cd module_support/
+  453  vi ./module_support-toe-4.14.0.c
+  454  grep sk_read_actor_t *
+  455  cd ..
+  456  grep sk_read_actor_t *
+  457  pw
+  458  cd module_support/
+  459  pwd
+  460  ls
+  461  vi ./module_support-toe-4.14.0.c
+  462  uname -a
+  463  cd
+  464  cd werner/sw/linux_t4_build/
+  465  history
+  466  make disable_bonding=1 disable_iw_cxgb4=1 disable_crypto=1 disable_storage=1 install
+  467  lsmod|less
+  468  rmmod cxgb4
+  469  modprobe cxgb4
+  470  history
+  471  ip link set ens4f4d1 up mtu 9000
+  472  ip addr add 172.16.2.238/24 dev ens4f4d1
+  473  history
+  474  modprobe nvme-tcp
+  475  modprobe toecore
+  476  modprobe t4_tom
+  477  dmesg
+  478  history
+  479  cd /opt/nvme-cli
+  480  ./nvme discover -t tcp -a 172.16.2.239 -s 4420
+  481  dmesg
+  482  cd
+  483  ls
+  484  vi policy_nvme_t4_tom
+  485  cop -o ./policy_nvme.out ./policy_nvme_t4_tom 
+  486  history|grep policy
+  487   cxgbtool ens4f4d1 policy ./policy_nvme.out
+  488  dmesg
+  489  cd /opt/nvme-cli
+  490  cat /sys/kernel/debug/cxgb4/0000\:02\:00.4/tids
+  491  ./nvme discover -t tcp -a 172.16.2.239 -s 4420
+  492  history
+  493  ./nvme connect -t tcp -a 172.16.2.239 -s 4420 -n nqn.2016-06.io.spdk:cnode1
+  494  ./nvme list
+  495  cat /sys/kernel/debug/cxgb4/0000\:02\:00.4/tids
+  496  fio --bs=64k --numjobs=8 --iodepth=16 --loops=1 --ioengine=libaio --direct=1 --invalidate=1 --fsync_on_close=1 --randrepeat=1 --norandommap --time_based --runtime=10 --filename=/dev/nvme0n1  --name=write-phase --rw=randwrite
+  497  cd
+  498  dmesg
+  499  top
+  500  cd werner/sw
+  501  hg diff
+  502  cd dev/linux/toecore/module_support/
+  503  vi module_support-toe-4.14.0.c
+  504  hg diff -p
+  505  cd ..
+  506  vi dev/linux/toecore/module_support/module_support-toe-4.14.0.c
+  507  hg diff -p
+  508  ls /opt
+  509  ls /root
+  510  ls /root/repos
+  511  ls /root/werner
+  512  hg diff -p
+  513  hg diff -p > ../nvme_disable_4.20.patch
+  514  cd ..
+  515  scp ./nvme_disable_4.20.patch root@odyssey3:/opt/
+  516  history
+  517  cd /opt/nvme-cli
+  518  ./nvme list
+  519  cat /sys/kernel/debug/cxgb4/0000\:02\:00.4/tids
+  520  dmesg
+  521  history|grep disconnect
+  522  ./nvme disconnect -d nvme0n1
+  523  ./nvme list
+  524  ls
+  525  cat  policy_nvme_t4_tom
+  526  ls
+  527  history
+  528  cat /sys/kernel/debug/cxgb4/0000\:02\:00.4/tids
+  529  cd /opt/nvme-cli
+  530  ./nvme list
+  531  lsmod|less
+  532  dmesg
+  533  sysctl -a|grep toe
+  534  sysctl -w toe.toe0_tom.activated=0
+  535  history
+  536  ./nvme connect -t tcp -a 172.16.2.239 -s 4420 -n nqn.2016-06.io.spdk:cnode1
+  537  fio --bs=64k --numjobs=8 --iodepth=16 --loops=1 --ioengine=libaio --direct=1 --invalidate=1 --fsync_on_close=1 --randrepeat=1 --norandommap --time_based --runtime=10 --filename=/dev/nvme0n1  --name=write-phase --rw=randwrite
+  538  sysctl -w toe.toe0_tom.activated=0
+  539  cd /opt/nvme-cli
+  540  ./nvme list
+  541  ./nvme connect -t tcp -a 172.16.2.239 -s 4420 -n nqn.2016-06.io.spdk:cnode1
+  542  reboot
+  543  modprobe cxgb4
+  544  history
+  545  ip link set ens4f4d1 up mtu 1500
+  546  ip addr add 172.16.2.238/24 dev ens4f4d1
+  547  cd werner
+  548  git clone https://github.com/HewlettPackard/netperf.git
+  549  cd netperf/
+  550  ./autogen.sh 
+  551  ./configure
+  552  make
+  553  cd src
+  554  history
+  555  ./netperf -H 172.16.2.239
+  556  ./netperf -H 172.16.2.239 -- -s128K -S128K
+  557  ip link set ens4f4d1 up mtu 9000
+  558  ./netperf -H 172.16.2.239 -- -s128K -S128K
+  559  history
+  560  cd /opt/nvme-cli
+  561  ./nvme help
+  562  ./nvme help connect
+  563  ./nvme list
+  564  reboot
+  565  modprobe cxgb4
+  566  history
+  567  ip link set ens4f4d1 up mtu 1500
+  568  ip addr add 172.16.2.238/24 dev ens4f4d1
+  569  modprobe nvme-tcp
+  570  cd /opt/nvme-cli
+  571  ./nvme connect -t tcp -i 1 -a 172.16.2.239 -s 4420 -n nqn.2016-06.io.spdk:cnode1
+  572  dmesg
+  573  ps axu
+  574  history
+  575  cd /opt/nvme-cli
+  576  ./nvme list
+  577  ./nvme connect -t tcp -i 1 -a 172.16.2.239 -s 4420 -n nqn.2016-06.io.spdk:cnode1
+  578  ./nvme connect -t tcp -i 4 -a 172.16.2.239 -s 4420 -n nqn.2016-06.io.spdk:cnode1
+  579  cd werner
+  580  ls
+  581  git clone https://github.com/esnet/iperf.git
+  582  cd iperf/
+  583  ./configure
+  584  make
+  585  cd src
+  586  ./iperf3 -c 172.16.2.239
+  587  ./iperf3 -c 172.16.2.239 -P 2
+  588  ./iperf3 -c 172.16.2.239 -P 10
+  589  ./iperf3 -c 172.16.2.239 -P 1
+  590  ./iperf3 -c 172.16.2.239 -P 4
+  591  ./iperf3 -c 172.16.2.239 -P 8
+  592  ./iperf3 -c 172.16.2.239 -P 12
+  593  ./iperf3 -c 172.16.2.239 -P 16
+  594  ./iperf3 -c 172.16.2.239 -P 8
+  595  ./iperf3 -c 172.16.2.239 -h
+  596  cd werner/iperf/src
+  597  ./iperf3 -c 172.16.2.239 -P 8
+  598  ./iperf3 -c 172.16.2.239 -P 16
+  599  ./iperf3 -c 172.16.2.239 -P 32
+  600  cdwerner
+  601  cd werner/iperf/src
+  602  ifconfig
+  603  history | grep ip
+  604  ip link set ens4f4d1 up mtu 9000
+  605  ./iperf3 -c 172.16.2.239
+  606  ip link set ens4f4d1 up mtu 1500
+  607  ./iperf3 -c 172.16.2.239
+  608  cd werner/iperf/src
+  609  ./iperf3 -c 172.16.2.239
+  610  ip link set ens4f4d1 up mtu 9000
+  611  ./iperf3 -c 172.16.2.239
+  612  dmesg
+  613  ./iperf3 -c 172.16.2.239
+  614  ip link set ens4f4d1 up mtu 1500
+  615  ./iperf3 -c 172.16.2.239
+  616  ip link set ens4f4d1 up mtu 9000
+  617  cd werner/iperf/src
+  618  ./iperf3 -c 172.16.2.239
+  619  ip link set ens4f4d1 up mtu 8000
+  620  ./iperf3 -c 172.16.2.239
+  621  cd werner/netperf/
+  622  history
+  623  ip link set ens4f4d1 up mtu 4000
+  624  cd werner/iperf/src
+  625  cd src
+  626  ./iperf3 -c 172.16.2.239
+  627  ./netperf -H 172.16.2.239
+  628  ./netperf -H 172.16.2.239 -4
+  629  ./netperf -H 172.16.2.239 
+  630  ./netperf -H 172.16.2.239 -- -s128k -S128k
+  631  ip link set ens4f4d1 up mtu 8000
+  632  ./netperf -H 172.16.2.239 -- -s128k -S128k
+  633  ip link set ens4f4d1 up mtu 8000
+  634  ./netperf -H 172.16.2.239 -- -s128k -S128k
+  635  dmesg
+  636  ip link set ens4f4d1 up mtu 4000
+  637  ./netperf -H 172.16.2.239 -- -s128k -S128k
+  638  ./netperf -H 172.16.2.239 -t 1 -- -s128k -S128k
+  639  ./netperf -H 172.16.2.239  -- -s128k -S128k
+  640  ip link set ens4f4d1 up mtu 8000
+  641  ./netperf -H 172.16.2.239  -- -s128k -S128k
+  642  pwd
+  643  ls
+  644  history
+  645  ip link set ens4f4d1 up mtu 1500
+  646  cd werner/iperf/src
+  647  ./iperf3 -c 172.16.2.239 -P 8
+  648  ip link set ens4f4d1 up mtu 9000
+  649  ./iperf3 -c 172.16.2.239 -P 8
+  650  ip link set ens4f4d1 up mtu 1500
+  651  ./iperf3 -c 172.16.2.239 -P 8
+  652  ip link set ens4f4d1 up mtu 9000
+  653  ./iperf3 -c 172.16.2.239 -P 8
+  654  cd repos/sw
+  655  cd
+  656  ls
+  657  cd werner
+  658  ls
+  659  cd sw
+  660  hg diff
+  661  hg revert -a
+  662  hg pull --update
+  663  uname -a
+  664  cd linux_t4_build/
+  665  history
+  666  make
+  667  cd ..
+  668  ls
+  669  cd linux_t4_build/
+  670  make disable_bonding=1
+  671  pwd
+  672  cd
+  673  cd werner
+  674  ls
+  675  cd sw
+  676  patch -p1 < ~/t4_tom.patch
+  677  cd linux_t4_build/
+  678  make disable_bonding=1
+  679  make disable_bonding=1 disable_iw_cxgb4=1
+  680  make disable_bonding=1 disable_iw_cxgb4=1 disable_storage=1
+  681  make disable_bonding=1 disable_iw_cxgb4=1 disable_storage=1 disable_crypto=1
+  682  make disable_bonding=1 disable_iw_cxgb4=1 disable_storage=1 disable_crypto=1 install
+  683  reboot
+  684  cat /sys/kernel/debug/cxgb4/0000\:02\:00.4/tids
+  685  uname -a
+  686  modprobe cxgb4
+  687  dmesg
+  688  history
+  689  ip addr add 172.16.2.238/24 dev ens4f4d1
+  690  modprobe t4_tom
+  691  dmesg
+  692  lsmod|less
+  693  history
+  694  cd werner/iperf/src
+  695  ./iperf3 -c 172.16.2.239 -P 8
+  696  history
+  697  ip link set ens4f4d1 up mtu 9000
+  698  ./iperf3 -c 172.16.2.239 -P 8
+  699  pwd
+  700  cd
+  701  cd werner
+  702  ls
+  703  cd sw
+  704  hg diff
+  705  hg revert -a
+  706  hg pull --update
+  707  patch -p1 < ../t4_tom_compat.patch 
+  708  cd linux_t4_build/
+  709  make disable_bonding=1 disable_iw_cxgb4=1 disable_storage=1 disable_crypto=1 install
+  710  reboot
+  711  modprobe t4_tom
+  712  lsmod|less
+  713  history
+  714  ip addr add 172.16.2.238/24 dev ens4f4d1
+  715  ip link set ens4f4d1 up mtu 9000
+  716  cd werner/iperf/src
+  717  ./iperf3 -c 172.16.2.239 -P 8
+  718  ping 172.16.2.239
+  719  ./iperf3 -c 172.16.2.239 -P 8
+  720  cd werner/sw
+  721  hg diff
+  722  hg revert -a
+  723  hg pull --update
+  724  cd linux_t4_build/
+  725  history
+  726  make disable_bonding=1 disable_iw_cxgb4=1 disable_storage=1 disable_crypto=1 install
+  727  cd ..
+  728  cd dev/T4/linux/drv
+  729  ls
+  730  vi sge.c
+  731  cd
+  732  cd werner/sw/linux_t4_build/
+  733  make disable_bonding=1 disable_iw_cxgb4=1 disable_storage=1 disable_crypto=1 install
+  734  lsmod|less
+  735  reboot
+  736  modprobe cxgb4
+  737  dmesg
+  738  history
+  739  ip addr add 172.16.2.238/24 dev ens4f4d1
+  740  dmesg
+  741  ls
+  742  ifconfig
+  743  history
+  744  dmesg
+  745  history
+  746  cd werner/iperf/src
+  747  ./iperf3 -h
+  748  ./iperf3 -t 1 -c 172.16.2.239
+  749  dmesg
+  750  lsmod|grep toe
+  751  modprobe toecore
+  752  modprobe t4_tom
+  753  dmesg
+  754  ./iperf3 -t 1 -c 172.16.2.239
+  755  dmesg
+  756  ip link set ens4f4d1 up mtu 9000
+  757  ./iperf3 -t 1 -c 172.16.2.239
+  758  dmesg
+  759  bc
+  760  cd
+  761  cd werner/sw
+  762  hg diff
+  763  vi dev/T4/linux/drv/sge.c
+  764  cd linux_t4_build/
+  765  history
+  766  make disable_bonding=1 disable_iw_cxgb4=1 disable_storage=1 disable_crypto=1 install
+  767  reboot
+  768  cd werner/sw/dev/T4/linux/drv
+  769  ls
+  770  less sge.c
+  771  pwd
+  772  modprobe cxgb4
+  773  modprobe t4_tom
+  774  ip link set ens4f4d1 up mtu 9000
+  775  ip addr add 172.16.2.238/24 dev ens4f4d1
+  776  history
+  777  cd werner/iperf/src
+  778  ./iperf3 -t 1 -c 172.16.2.239
+  779  dmesg
+  780  pwd
+  781  cd
+  782  cd werner/sw/dev/T4/linux/t4_tom/
+  783  ls
+  784  less cpl_io.c
+  785  ls
+  786  cd
+  787  cd werner/sw/linux_t4_build/t4_tom/
+  788  gdb ./t4_tom.ko
+  789  less cpl_sock.c
+  790  dmesg
+  791  cd ..
+  792  cd
+  793  cd werner/sw/dev/T4/linux/drv
+  794  vi sge.c
+  795  cd
+  796   cd
+  797  cd /opt
+  798  ls
+  799  cd
+  800  cd werner
+  801  ls
+  802  cd nvme
+  803  ls
+  804  cd Documentation/
+  805  grep dma_map_sg *
+  806  less DMA-API-HOWTO.txt 
+  807  cd
+  808  cd werner
+  809  ls
+  810  hg clone http://willow/hg/sw dsgl
+  811  cd dsgl
+  812  ls
+  813  cd dev/T4/linux/drv
+  814  vi sge.c
+  815  cd werner/
+  816  cd sw
+  817  hg diff -p
+  818  cd ../dsgl
+  819  hg diff -p
+  820  hg diff -p > ../dsgl.patch
+  821  ls
+  822  cd werner/
+  823  ls
+  824  cd spdk/
+  825  ls
+  826  cd ..
+  827  ls
+  828  cd ..
+  829  ls
+  830  ls /opt/
+  831  ls
+  832  find . -name "vpp"
+  833  exit
+  834  uname -r
+  835  cat /etc/redhat-release 
+  836  cd werner/
+  837  ls
+  838  git cd ..
+  839  cd
+  840  cd spdk_vpp
+  841  mkdir spdk_vpp
+  842  cd spdk_vpp/
+  843  git clone https://github.com/FDio/vpp.git vpp_git
+  844  cd vpp_git/
+  845  git checkout v18.01.1
+  846  make bootstrap
+  847  make install-dep
+  848  ls
+  849  cd build-root/o
+  850  cd build-root/
+  851  cd -
+  852  make bootstrap
+  853  yum install glibc-static
+  854  vim /etc/yum.repos.d/centos.repo
+  855  yum install glibc-static
+  856  make bootstrap
+  857  cd build--ro
+  858  cd build-root/
+  859  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  860   cd ..
+  861  make install-dep
+  862  yum remove openssl
+  863  make install-dep
+  864  cd -
+  865  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  866  gcc --version
+  867  yum remove gcc
+  868  cd ..
+  869  make install-dep
+  870  make bootstrap
+  871  gcc --version
+  872  make wipe
+  873  make install-dep
+  874  cd build-root/
+  875  make PLATFORM=vpp TAG=vpp_debug vpp-install
+  876  yum install gcc
+  877  vim /etc/yum.repos.d/centos.repo 
+  878  yum install gcc
+  879  yum update
+  880  yum clean
+  881  yum install gcc
+  882  yum install gcc-4.8.5-28
+  883  yum install ccache
+  884  yum install gcc
+  885  yum clean packages
+  886  yum install gcc
+  887  yum clean all
+  888  yum install gcc
+  889  yum remove glibc-static
+  890  yum remove glibc
+  891  yum install gcc
+  892  yum downgrade glibc
+  893  yum downgrade glibc-common
+  894  yum downgrade glibc*
+  895  yum install gcc
+  896  yum downgrade cpp
+  897  yum install gcc
+  898  yum install cpp
+  899  yum update cpp
+  900  vim /etc/yum.repos.d/centos.repo 
+  901  yum update cpp
+  902  yum install gcc
+  903  pwd
+  904  cd ..
+  905  scp src/Makefile.in potato2:/root/werner/
+  906  exit
+  907  ifconfig
+  908  ifconfig ens4f4 10.0.2.1/24 up
+  909  ping 10.0.2.2
+  910  rm -rf spdk_vpp/
+  911  sync
+  912  yum install initator-utils
+  913  yum install initiator
+  914  yum install iscis-initator-utils
+  915  yum install iscsi-initator-utils
+  916  yum search all iscsiadm
+  917  yum provides iscsiadm
+  918  yum install iscsi-initiator-utils-6.2.0.874-7.el7.x86_64
+  919  rm /etc/yum.repos.d/centos.repo 
+  920  iscsiadm
+  921  yum provides lsscsi
+  922  yum install lscsi
+  923  yum install lsscsi
+  924  y
+  925  iscsiadm -m discovery -t st -p 10.0.2.2:3260
+  926  iscsiadm -m discovery -t st -p 10.0.2.2:3260 -l
+  927  lsscsi 
+  928  mkfs.ext4 /dev/sdc
+  929  mkfs.ext4 /dev/sdc 
+  930  mount /dev/sdc /mnt/
+  931  cd /mnt/
+  932  ls
+  933  yum install iozone
+  934  yum provides iozone
+  935  umount /mnt/
+  936  cd ..
+  937  umount /mnt/
+  938   iscsiadm -m node -U all
+  939  iscsiadm -m discovery -t st -p 10.0.2.2:3260 -l
+  940  lsscsi 
+  941  mkfs.ext4 /dev/sdc 
+  942  umount /mnt/
+  943  mount /dev/sdc /mnt/
+  944  umount /mnt/
+  945   iscsiadm -m node -U all
+  946  exit
+  947  iscsiadm -m discovery -t st -p 10.0.2.2:3260 
+  948  iscsiadm -m discovery -t st -p 10.0.2.2:3260 -l
+  949   iscsiadm -m node -U all
+  950  exit
+  951  ls
+  952  cd repos
+  953  ls
+  954  cd ../werner
+  955  ls
+  956  cd 
+  957  cd /opt
+  958  ls
+  959  mkdir bharat
+  960  
+  961  cd werner/
+  962  ls
+  963  cd
+  964  cd bharat/
+  965  ls
+  966  scp -r 10.193.185.169:/home/spdk_nvme-cli/ ./
+  967  vi /root/.ssh/known_hosts +14
+  968  scp -r 10.193.185.169:/home/spdk_nvme-cli/ ./
+  969  yes
+  970  scp -r 10.193.185.169:/home/spdk_nvme-cli/ ./
+  971  vi /root/.ssh/known_hosts +15
+  972  scp -r 10.193.185.169:/home/spdk_nvme-cli/ ./
+  973  
+  974  cd bharat/
+  975  ls
+  976  cd spdk_nvme-cli/
+  977  dmesg
+  978  dmesg | grep -i mmu
+  979  ifconfig
+  980  ls
+  981  cd spdk
+  982  ls
+  983  cd ../vpp/
+  984  ls
+  985  cd build-root/
+  986  ls
+  987  R
+  988  
+  989  cd bharat/
+  990  ls
+  991  scp -r 10.193.185.169:/home/spdk_nvme-cli/ ./
+  992  cd bharat/
+  993  scp -r 10.193.185.169:/home/spdk_nvme-cli/ ./
+  994  exit
+  995  cd bharat/
+  996  scp -r 10.193.185.169:/home/spdk_nvme-cli/ ./
+  997  cd spdk_nvme-cli/
+  998  ls
+  999  cd vpp/
+ 1000  make install-dep
+ 1001  history > history.`hostname`

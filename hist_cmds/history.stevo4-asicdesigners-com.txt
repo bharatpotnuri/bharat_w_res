@@ -1,0 +1,868 @@
+    1  2018-01-15 11:53:42 cat /etc/os-release 
+    2  2018-01-15 11:54:45 lsscsi
+    3  2018-01-15 11:55:00 efibootmgr
+    4  2018-01-15 11:55:05 efibootmgr -t 9
+    5  2018-01-15 11:55:14 efibootmgr -v
+    6  2018-01-15 11:56:11 efibootmgr -v
+    7  2018-01-15 11:57:26 efibootmgr -h
+    8  2018-01-15 11:57:53 df -h
+    9  2018-01-15 11:59:52 efibootmgr -v -c -b 0005 -d /dev/sdb -l "\EFI\sles\grubx64.efi" -L SLE12SP3 
+   10  2018-01-15 12:00:54 gdisk /dev/sda
+   11  2018-01-15 12:01:05 gdisk /dev/sdb
+   12  2018-01-15 12:01:15 ls
+   13  2018-01-15 12:01:26 efibootmgr -v
+   14  2018-01-15 12:02:02 reboot
+   15  2018-01-15 12:07:08 cat /etc/os-release 
+   16  2018-01-15 12:07:20 efibootmgr -v
+   17  2018-01-15 12:07:37 ls
+   18  2018-01-15 12:07:41 cd /boot
+   19  2018-01-15 12:07:42 ls
+   20  2018-01-15 12:07:52 cd grub2
+   21  2018-01-15 12:07:52 l
+   22  2018-01-15 12:07:56 view grub.cfg 
+   23  2018-01-15 12:08:22 exit
+   24  2018-01-15 12:09:01 ls
+   25  2018-01-15 12:09:09 cd /share
+   26  2018-01-15 12:09:10 ls
+   27  2018-01-15 12:12:53 wget http://bar/iso/SLES12SP3/SLE-12-SP3-Server-DVD-x86_64-GM-DVD1.iso
+   28  2018-01-15 12:13:13 wget http://vnc61.asicdesigners.com/iso/SLES12SP3/SLE-12-SP3-Server-DVD-x86_64-GM-DVD1.iso
+   29  2018-01-15 12:13:30 route
+   30  2018-01-15 12:13:38 nslookup vnc61
+   31  2018-01-15 12:28:02 ping tealeaf
+   32  2018-01-15 12:28:05 route
+   33  2018-01-15 12:28:11 ifconfig -a
+   34  2018-01-15 12:29:44 nslookup vnc61
+   35  2018-01-15 12:29:51 wget http://vnc61.asicdesigners.com/iso/SLES12SP3/SLE-12-SP3-Server-DVD-x86_64-GM-DVD1.iso
+   36  2018-01-15 12:30:54 ls
+   37  2018-01-15 12:31:06 wget http://vnc61.asicdesigners.com/iso/SLES12SP3/SLE-12-SP3-Server-DVD-x86_64-GM-DVD2.iso
+   38  2018-01-15 12:32:45 ls
+   39  2018-01-15 12:32:53 mv SLE-12-SP3-Server-DVD-x86_64-GM-DVD1.iso
+   40  2018-01-15 12:33:55 ls
+   41  2018-01-15 12:33:58 rm *.iso
+   42  2018-01-15 12:34:13 cd 
+   43  2018-01-15 12:34:17 wget http://vnc61.asicdesigners.com/iso/SLES12SP3/SLE-12-SP3-Server-DVD-x86_64-GM-DVD2.iso
+   44  2018-01-15 12:37:28 pwd
+   45  2018-01-15 12:37:30 ls -al
+   46  2018-01-15 12:38:14 ls
+   47  2018-01-15 12:38:49 mount -t iso9660 -o loop ./SLE-12-SP3-Server-DVD-x86_64-GM-DVD1.iso /media
+   48  2018-01-15 12:38:54 mkdir /media
+   49  2018-01-15 12:38:55 mount -t iso9660 -o loop ./SLE-12-SP3-Server-DVD-x86_64-GM-DVD1.iso /media
+   50  2018-01-15 12:39:21 cp -a /media /root/sle12sp3dvd1.repo
+   51  2018-01-15 12:40:38 umount /media
+   52  2018-01-15 12:40:44 mount -t iso9660 -o loop ./SLE-12-SP3-Server-DVD-x86_64-GM-DVD2.iso /media
+   53  2018-01-15 12:40:51 cp -a /media /root/sle12sp3dvd2.repo
+   54  2018-01-15 12:27:26 ifconfig
+   55  2018-01-15 13:34:47 reboot
+   56  2018-01-15 13:44:37 efibootmgr -v
+   57  2018-01-15 13:45:34 df -h
+   58  2018-01-15 13:45:42 efibootmgr -v -c -b 0002 -d /dev/sdb -l "\EFI\sles\grubx64.efi" -L SLE12SP3 
+   59  2018-01-15 13:45:55 exit
+   60  2018-01-15 13:48:31 df -h
+   61  2018-01-15 13:48:34 efibootmgr
+   62  2018-01-15 13:48:43 efibootmgr -v
+   63  2018-01-15 13:48:45 df -h
+   64  2018-01-15 13:49:02 lspci -d 1425:*
+   65  2018-01-15 13:49:10 lspci -s 04:00.4 -vvv | more
+   66  2018-01-15 13:49:37 lspci | grep net
+   67  2018-01-15 13:53:36 nslookup orca
+   68  2018-01-15 13:53:37 exit
+   69  2018-01-19 07:58:32 uname -r
+   70  2018-01-19 07:58:36 cat /etc/issue
+   71  2018-01-19 07:59:38 cd stevo
+   72  2018-01-19 07:59:40 cd /usr/local/src
+   73  2018-01-19 07:59:41 ls
+   74  2018-01-19 07:59:42 mount
+   75  2018-01-19 07:59:47 lsscsi
+   76  2018-01-19 08:00:01 zypper install git
+   77  2018-01-19 08:00:11 rping
+   78  2018-01-19 08:00:16 zypper search rping
+   79  2018-01-19 08:00:20 zypper search rdma
+   80  2018-01-19 08:00:34 rpm -ql rdma-core
+   81  2018-01-19 08:00:50 rpm search cxgb4
+   82  2018-01-19 08:00:56 zypper search cxgb4
+   83  2018-01-19 08:01:56 set -o vi
+   84  2018-01-19 08:02:08 zypper search rdma
+   85  2018-01-19 08:02:14 zypper install librdmacm-utils
+   86  2018-01-19 08:02:19 rping
+   87  2018-01-19 08:02:28 rpm -qa|grep cxgb4
+   88  2018-01-19 08:02:34 yum search cxgb4
+   89  2018-01-19 08:02:37 zypper search cxgb4
+   90  2018-01-19 08:02:51 ls /usr/lib64/libibverbs/
+   91  2018-01-19 08:03:05 ip dev
+   92  2018-01-19 08:03:07 ip addr
+   93  2018-01-19 08:03:16 cd
+   94  2018-01-19 08:03:21 scp stevo3:doit-stevo.sh .
+   95  2018-01-19 08:03:26 vi doit-stevo.sh 
+   96  2018-01-19 08:03:48 sh doit-stevo.sh 
+   97  2018-01-19 08:03:56 ping 172.16.1.3
+   98  2018-01-19 08:04:31 ethtool eth4
+   99  2018-01-19 08:04:33 ethtool eth5
+  100  2018-01-19 08:04:42 ethtool -i eth5
+  101  2018-01-19 08:04:46 ethtool -i eth4
+  102  2018-01-19 08:05:56 cd stevo
+  103  2018-01-19 08:05:57 mkdir stevo
+  104  2018-01-19 08:05:58 cd stevo
+  105  2018-01-19 08:06:00 wget https://www.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz
+  106  2018-01-19 08:06:05 tar xBf git-2.9.5.tar.xz 
+  107  2018-01-19 08:06:07 cd git-2.9.5/
+  108  2018-01-19 08:06:07 ls
+  109  2018-01-19 08:06:10 ./configure 
+  110  2018-01-19 08:06:15 make -j 4
+  111  2018-01-19 08:06:38 make install
+  112  2018-01-19 08:06:41 cd ..
+  113  2018-01-19 08:07:43 git clone git://git.openfabrics.org/projects/compat-rdma/compat-rdma.git
+  114  2018-01-19 08:07:49 git clone git://git.openfabrics.org/compat-rdma/compat-rdma.git
+  115  2018-01-19 08:08:03 git clone git://git.openfabrics.org/compat-rdma/compat.git
+  116  2018-01-19 08:08:14 git clone git://git.openfabrics.org/compat-rdma/linux-4.8.git
+  117  2018-01-19 08:08:21 ls
+  118  2018-01-19 08:08:28 cd compat-rdma/
+  119  2018-01-19 08:08:29 ls
+  120  2018-01-19 08:08:37 ls scripts/
+  121  2018-01-19 08:08:42 ./scripts/admin_rdma.sh -?
+  122  2018-01-19 08:09:05 export GIT_LINUX=/root/stevo/linux-4.8
+  123  2018-01-19 08:09:12 export GIT_COMPAT=/root/stevo/compat
+  124  2018-01-19 08:09:18 export GIT_COMPAT_RDMA=/root/stevo/compat-rdma/
+  125  2018-01-19 08:09:37 ./scripts/admin_rdma.sh -n -p
+  126  2018-01-19 08:09:45 export GIT_TREE=/root/stevo/linux-4.8
+  127  2018-01-19 08:09:47 ./scripts/admin_rdma.sh -n -p
+  128  2018-01-19 08:09:58 export GIT_COMPAT_TREE=/root/stevo/compat
+  129  2018-01-19 08:10:00 ./scripts/admin_rdma.sh -n -p
+  130  2018-01-19 08:10:07 ./configure --help
+  131  2018-01-19 08:10:48 ./configure
+  132  2018-01-19 08:14:49 make
+  133  2018-01-19 08:15:02 ./configure --help
+  134  2018-01-19 08:15:10 ./configure --help|grep -with-
+  135  2018-01-19 08:15:15 ./configure --help|grep -- --with-
+  136  2018-01-19 08:16:05 ./configure --with-core-mode --with-cxgb4-mod --with-user_access-mod --wtih-addr_trans-mod
+  137  2018-01-19 08:28:06 make
+  138  2018-01-19 08:29:35 make install
+  139  2018-01-19 08:30:12 #./configure --with-core-mod --with-cxgb4-mod --with-user_access-mod --wtih-addr_trans-mod
+  140  2018-01-19 08:30:19 ./configure --help
+  141  2018-01-19 08:30:22 ./configure --help|less
+  142  2018-01-19 08:30:49 #./configure --with-core-mod --with-cxgb4-mod --with-user_access-mod --with-addr_trans-mod
+  143  2018-01-19 08:30:50 ./configure --with-core-mod --with-cxgb4-mod --with-user_access-mod --with-addr_trans-mod
+  144  2018-01-19 08:47:56 make install
+  145  2018-01-19 08:47:59 modinfo ib_core
+  146  2018-01-19 08:48:32 make
+  147  2018-01-19 08:49:19 make install
+  148  2018-01-19 08:49:24 modinfo ib_core
+  149  2018-01-19 08:49:36 modinfo iw_cxgb4
+  150  2018-01-19 08:49:43 lsmod|grep ib_core
+  151  2018-01-19 08:49:47 sync
+  152  2018-01-19 08:49:50 reboot
+  153  2018-01-19 08:20:01 cd 
+  154  2018-01-19 08:20:02 pwd
+  155  2018-01-19 08:20:03 ls
+  156  2018-01-19 08:20:18 cd sle12sp3dvd2.repo/
+  157  2018-01-19 08:20:18 ls
+  158  2018-01-19 08:20:27 cd media.2/
+  159  2018-01-19 08:20:27 ls
+  160  2018-01-19 08:20:40 ls -l
+  161  2018-01-19 08:20:43 cd ..
+  162  2018-01-19 08:20:43 ls
+  163  2018-01-19 08:20:51 cd suse
+  164  2018-01-19 08:20:52 ls
+  165  2018-01-19 08:20:55 cd src
+  166  2018-01-19 08:20:56 ls
+  167  2018-01-19 08:24:10 cd ..
+  168  2018-01-19 08:24:12 ls
+  169  2018-01-19 08:24:14 cd ..
+  170  2018-01-19 08:24:14 ls
+  171  2018-01-19 08:24:16 ls -al
+  172  2018-01-19 08:35:35 cd sle12sp3dvd2.repo/
+  173  2018-01-19 08:35:35 ls
+  174  2018-01-19 08:35:57 ln -s 
+  175  2018-01-19 08:36:03 ln --help
+  176  2018-01-19 08:36:29 ln -s media.1 media.2/
+  177  2018-01-19 08:36:31 ls -l
+  178  2018-01-19 08:37:00 ls -al
+  179  2018-01-19 08:37:07 ln -h
+  180  2018-01-19 08:37:11 ln --help
+  181  2018-01-19 08:37:52 ln -s media.2/ media.1
+  182  2018-01-19 08:37:54 ls -l
+  183  2018-01-19 08:41:27 ls
+  184  2018-01-19 08:41:36 cd suse
+  185  2018-01-19 08:41:36 ls
+  186  2018-01-19 08:41:40 cd src
+  187  2018-01-19 08:41:40 ls
+  188  2018-01-19 08:06:47 uname -a
+  189  2018-01-19 08:07:25 vncserver -geometry 1800x1000
+  190  2018-01-19 08:56:20 zypper
+  191  2018-01-19 08:56:33 zypper lr
+  192  2018-01-19 08:57:06 zypper si
+  193  2018-01-19 09:05:02 exit
+  194  2018-01-19 09:27:39 zypper lr
+  195  2018-01-19 09:38:20 zypper lr -p
+  196  2018-01-19 09:41:49 exit
+  197  2018-01-19 09:15:46 ls
+  198  2018-01-19 09:15:48 ls -al
+  199  2018-01-19 09:16:13 mount -t iso9660 -o loop ./SLE-12-SP3-SDK-DVD-x86_64-GM-DVD1.iso /media
+  200  2018-01-19 09:16:19 ls -l /media
+  201  2018-01-19 09:16:53 cp -a /media /root/sle12sp3sdkdvd1.repo
+  202  2018-01-19 09:17:10 umount /media
+  203  2018-01-19 09:17:12 ls -l
+  204  2018-01-19 09:17:15 pwd
+  205  2018-01-19 09:17:26 ls -l sle12sp3sdkdvd1.repo/
+  206  2018-01-19 09:17:38 vncserver -geometry 1800x1000
+  207  2018-01-19 09:23:36 zypper lr
+  208  2018-01-19 09:31:43 zypper lr -p
+  209  2018-01-19 09:32:31 ls
+  210  2018-01-19 09:32:38 df -h
+  211  2018-01-19 09:33:28 mount -t iso9660 -o loop ./SLE-12-SP3-SDK-DVD-x86_64-GM-DVD2.iso /media
+  212  2018-01-19 09:33:35 ls -l /media
+  213  2018-01-19 09:33:52 cp -a /media /root/sle12sp3sdkdvd2.repo
+  214  2018-01-19 09:36:19 cd 
+  215  2018-01-19 09:36:26 cd sle12sp3sdkdvd2.repo/
+  216  2018-01-19 09:36:26 ls
+  217  2018-01-19 09:36:40 ln -s media.2/ media.1
+  218  2018-01-19 09:36:42 ls -l
+  219  2018-01-19 09:38:37 umount /media
+  220  2018-01-19 09:38:44 zypper lr -p
+  221  2018-01-19 09:42:04 cd
+  222  2018-01-19 09:42:09 vncserver -kill :1
+  223  2018-01-19 09:42:11 exit
+  224  2018-01-19 10:40:56 ls
+  225  2018-01-19 10:41:14 scp SLE*.iso root@orca:/root/
+  226  2018-01-19 10:44:30 exit
+  227  2018-01-19 09:35:13 dmesg
+  228  2018-01-19 09:35:15 top
+  229  2018-01-19 09:35:18 who
+  230  2018-01-19 08:55:11 ip 
+  231  2018-01-19 08:55:13 set -o vi
+  232  2018-01-19 08:55:19 sh /root/doit-stevo.sh 
+  233  2018-01-19 08:55:25 dmesg
+  234  2018-01-19 08:55:46 ping 172.16.1.3
+  235  2018-01-19 08:55:52 ping 172.16.2.3
+  236  2018-01-19 08:56:08 ping 172.16.3.3
+  237  2018-01-19 08:56:10 ping 172.16.4.3
+  238  2018-01-19 08:56:14 dmesg
+  239  2018-01-19 08:56:19 ethtool -S eth4|less
+  240  2018-01-19 08:56:32 ifconfig eth4 mtu 9000
+  241  2018-01-19 08:56:34 dmesg
+  242  2018-01-19 08:56:43 cd stevo
+  243  2018-01-19 08:56:43 ls
+  244  2018-01-19 08:57:05 git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
+  245  2018-01-19 09:01:40 cd linux
+  246  2018-01-19 09:01:47 scp stevo3:/root/.git* /root
+  247  2018-01-19 09:01:53 git mylog
+  248  2018-01-19 09:02:04 git show d894be5 
+  249  2018-01-19 09:02:16 git show d894be5  > /tmp/p
+  250  2018-01-19 09:02:32 cd ../compat-rdma/
+  251  2018-01-19 09:02:38 ls linux-next-
+  252  2018-01-19 09:02:42 ls linux-next-pending/
+  253  2018-01-19 09:02:48 ls linux-next-cherry-picks/
+  254  2018-01-19 09:03:07 patch -p1 --dry-run < /tmp/p
+  255  2018-01-19 09:03:12 vi /tmp/p
+  256  2018-01-19 09:04:01 ls drivers/infiniband/hw
+  257  2018-01-19 09:04:08 vi /tmp/p
+  258  2018-01-19 09:05:01 patch -p1 --dry-run < /tmp/p
+  259  2018-01-19 09:05:12 ls drivers/net/ethernet/chelsio/
+  260  2018-01-19 09:05:32 vi /tmp/p
+  261  2018-01-19 09:05:43 patch -p1 --dry-run < /tmp/p
+  262  2018-01-19 09:07:10 cd ../linux
+  263  2018-01-19 09:07:11 ls
+  264  2018-01-19 09:07:13 git mylog
+  265  2018-01-19 09:07:17 cd ../linux-4.8
+  266  2018-01-19 09:07:18 git mylog
+  267  2018-01-19 09:07:35 ls ../compat-rdma/linux-*
+  268  2018-01-19 09:08:19 git am ../compat-rdma/linux-next-cherry-picks/
+  269  2018-01-19 09:08:22 git mylogk
+  270  2018-01-19 09:08:29 git am ../compat-rdma/linux-next-cherry-picks/*.patch
+  271  2018-01-19 09:08:42 git am --reset
+  272  2018-01-19 09:08:46 git am --abort
+  273  2018-01-19 09:08:48 git mylog
+  274  2018-01-19 09:09:29 git am ../compat-rdma/linux-next-cherry-picks/*.patch
+  275  2018-01-19 09:09:43 ls ../compat-rdma/linux-next-cherry-picks/*.patch
+  276  2018-01-19 09:10:13 git am --abort
+  277  2018-01-19 09:10:56 git am ../compat-rdma/linux-next-cherry-picks/*cxgb*.patch
+  278  2018-01-19 09:11:06 ls ../compat-rdma/linux-next-cherry-picks/*cxgb*.patch
+  279  2018-01-19 09:11:17 vi ../compat-rdma/linux-next-cherry-picks/0052-iw_cxgb4-Guard-against-null-cm_id-in-dump_ep.patch
+  280  2018-01-19 09:11:31 vi ../compat-rdma/linux-next-cherry-picks/0006-cxgb4-bundle-firmware-with-driver.patch ../compat-rdma/linux-next-cherry-picks/0052-iw_cxgb4-Guard-against-null-cm_id-in-dump_ep.patch
+  281  2018-01-19 09:12:26 git am --abort
+  282  2018-01-19 09:12:30 git am ../compat-rdma/linux-next-cherry-picks/*cxgb*.patch
+  283  2018-01-19 09:12:43 ls ../compat-rdma/linux*/*cxgb*
+  284  2018-01-19 09:12:58 vi /tmp/p
+  285  2018-01-19 09:13:07 git am  /tmp/p
+  286  2018-01-19 09:13:10 vi /tmp/p
+  287  2018-01-19 09:13:34 git am  /tmp/p
+  288  2018-01-19 09:13:43 ls
+  289  2018-01-19 09:13:52 git am --abort
+  290  2018-01-19 09:13:55 git mylog
+  291  2018-01-19 09:14:08 vi ../compat-rdma/linux-next-cherry-picks/0006-cxgb4-bundle-firmware-with-driver.patch /tmp/p
+  292  2018-01-19 09:14:40 git am  /tmp/p
+  293  2018-01-19 09:14:43 git mylog
+  294  2018-01-19 09:14:59 git am --abort
+  295  2018-01-19 09:15:02 git mylog
+  296  2018-01-19 09:15:08 git reset --hard 4f7d2238282a
+  297  2018-01-19 09:15:10 git mylog
+  298  2018-01-19 09:15:12 vi /tmp/p
+  299  2018-01-19 09:15:34 vi ../compat-rdma/linux-next-cherry-picks/0006-cxgb4-bundle-firmware-with-driver.patch /tmp/p
+  300  2018-01-19 09:16:18 git am  /tmp/p
+  301  2018-01-19 09:16:29 g
+  302  2018-01-19 09:16:50 git format-patch HEAD^.. -o /tmp
+  303  2018-01-19 09:17:04 ls ../compat-rdma/linux-next-cherry-picks/
+  304  2018-01-19 09:17:15 git format-patch -h
+  305  2018-01-19 09:17:47 git format-patch --start-number 201 HEAD^.. -o /tmp
+  306  2018-01-19 09:18:09 cp /tmp/0201-ethernet-use-net-core-MTU-range-checking-in-more-dri.patch ../compat-rdma/linux-next-cherry-picks/
+  307  2018-01-19 09:18:12 cd ../compat-trma
+  308  2018-01-19 09:18:15 cd ../compat-rdma
+  309  2018-01-19 09:18:22 ls linux-next-cherry-picks
+  310  2018-01-19 09:18:32 git add linux-next-cherry-picks/0201-ethernet-use-net-core-MTU-range-checking-in-more-dri.patch 
+  311  2018-01-19 09:18:40 git commit
+  312  2018-01-19 09:19:31 git mylog
+  313  2018-01-19 09:19:41 git show 251a82851799
+  314  2018-01-19 09:19:52 git commit
+  315  2018-01-19 09:21:23 git show
+  316  2018-01-19 09:21:38 git bracnh
+  317  2018-01-19 09:21:41 cd ../linux-4.8/
+  318  2018-01-19 09:21:43 git mylog
+  319  2018-01-19 09:21:51 git reset --hard e65a4b69c2d2
+  320  2018-01-19 09:21:52 git pull
+  321  2018-01-19 09:21:57 cd ../compat-rdma
+  322  2018-01-19 09:21:58 git branch
+  323  2018-01-19 09:22:07 git mylog
+  324  2018-01-19 09:22:16 git checkout -f master
+  325  2018-01-19 09:22:22 git cherry-pick db0bdca8556b
+  326  2018-01-19 09:22:24 git show
+  327  2018-01-19 09:22:28 git mylog
+  328  2018-01-19 09:22:37 git show
+  329  2018-01-19 09:22:46 git branch -D backport-backports
+  330  2018-01-19 09:22:52 git pull
+  331  2018-01-19 09:22:55 git checkout -f
+  332  2018-01-19 09:22:58 ls
+  333  2018-01-19 09:23:01 rm -fr *
+  334  2018-01-19 09:23:03 git checkout -f
+  335  2018-01-19 09:23:04 ls
+  336  2018-01-19 09:23:15 ls .backports_applied
+  337  2018-01-19 09:23:20 git status .backports_applied 
+  338  2018-01-19 09:23:33 rm -f .backports_applied 
+  339  2018-01-19 09:23:33 ls
+  340  2018-01-19 09:23:38 git am --abort
+  341  2018-01-19 09:23:42 ./scripts/admin_rdma.sh -n -p
+  342  2018-01-19 09:23:46 export GIT_COMPAT_TREE=/root/stevo/compat
+  343  2018-01-19 09:23:49 export GIT_TREE=/root/stevo/linux-4.8
+  344  2018-01-19 09:23:50 ./scripts/admin_rdma.sh -n -p
+  345  2018-01-19 09:24:24 set -o vi
+  346  2018-01-19 09:24:26 ./configure --with-core-mod --with-cxgb4-mod --with-user_access-mod --with-addr_trans-mod
+  347  2018-01-19 09:29:05 make install
+  348  2018-01-19 09:29:11 modprobe -r iw_cxgb4
+  349  2018-01-19 09:29:14 lsmod|grep cxgb
+  350  2018-01-19 09:29:20 sh /root/doit-stevo.sh 
+  351  2018-01-19 09:29:26 ping 172.16.3.3
+  352  2018-01-19 09:29:31 ifconfig eth4 mtu 9000
+  353  2018-01-19 09:29:36 dmesg
+  354  2018-01-19 09:29:59 vi drivers/net/ethernet/chelsio/cxgb4/cxgb4_main.c
+  355  2018-01-19 09:30:27 less linux-next-cherry-picks/0201-ethernet-use-net-core-MTU-range-checking-in-more-dri.patch 
+  356  2018-01-19 09:31:15 cd drivers/net/ethernet/chelsio/cxgb4
+  357  2018-01-19 09:31:18 grep MAX_MTU *.[ch]
+  358  2018-01-19 09:31:24 vi cxgb4_main.c
+  359  2018-01-19 09:31:50 git show d894be5
+  360  2018-01-19 09:31:56 cd /root/stevo/linux
+  361  2018-01-19 09:31:58 git show d894be5
+  362  2018-01-19 09:33:14 modinfo cxgb4
+  363  2018-01-19 09:33:22 modinfo cxgb4|grep file
+  364  2018-01-19 09:33:27 sum /lib/modules/4.4.73-5-default/updates/drivers/net/ethernet/chelsio/cxgb4/cxgb4.ko
+  365  2018-01-19 09:33:34 sum ../compat-rdma/drivers/net/ethernet/chelsio/cxgb4/cxgb4.ko
+  366  2018-01-19 09:33:56 cd ../compat-rdma/
+  367  2018-01-19 09:33:56 ls
+  368  2018-01-19 09:34:00 find . -name\*.ko
+  369  2018-01-19 09:34:05 find . -name \*.ko
+  370  2018-01-19 09:34:17 make
+  371  2018-01-19 09:41:14 make install
+  372  2018-01-19 09:41:19 modprobe -r iw_cxgb4
+  373  2018-01-19 09:41:22 sh /root/doit-stevo.sh 
+  374  2018-01-19 09:41:28 sum ../compat-rdma/drivers/net/ethernet/chelsio/cxgb4/cxgb4.ko
+  375  2018-01-19 09:41:31 sum /lib/modules/4.4.73-5-default/updates/drivers/net/ethernet/chelsio/cxgb4/cxgb4.ko
+  376  2018-01-19 09:41:35 ifconfig eth4 mtu 9000
+  377  2018-01-19 09:41:38 ifconfig eth4
+  378  2018-01-19 09:41:41 ifconfig eth4 mtu 1500
+  379  2018-01-19 09:41:43 ping 172.16.3.3
+  380  2018-01-19 09:41:50 git mylog
+  381  2018-01-19 09:41:54 git remote -v
+  382  2018-01-19 09:42:34 ssh swise@flattop.openfabrics.org
+  383  2018-01-19 09:43:25 ssh swise@flatbed.openfabrics.org
+  384  2018-01-19 09:43:56 ssh swise@flatbed.openfabrics.org
+  385  2018-01-19 12:44:57 make ibv_alloc_pd
+  386  2018-01-19 11:43:11 cd stevo/compat-rdma/
+  387  2018-01-19 11:43:13 git remote -v
+  388  2018-01-19 11:43:43 git remote add -f stevo-github ttps://github.com/larrystevenwise/ofed-compat-rdma.git
+  389  2018-01-19 11:43:50 set -o vi
+  390  2018-01-19 11:43:54 git remote rm stevo-github
+  391  2018-01-19 11:43:58 git remote add -f stevo-github https://github.com/larrystevenwise/ofed-compat-rdma.git
+  392  2018-01-19 11:44:13 git remote rm stevo-github
+  393  2018-01-19 11:44:30 git remote add -f stevo-github git@github.com:larrystevenwise/ofed-compat-rdma.git
+  394  2018-01-19 11:44:39 cd
+  395  2018-01-19 11:44:46 scp -rp stevo2:.ssh /root
+  396  2018-01-19 11:44:53 ssh stevo2 date
+  397  2018-01-19 11:44:56 cd -
+  398  2018-01-19 11:44:59 git remote rm stevo-github
+  399  2018-01-19 11:45:03 git remote add -f stevo-github git@github.com:larrystevenwise/ofed-compat-rdma.git
+  400  2018-01-19 11:45:08 git branch
+  401  2018-01-19 11:45:19 git push stevo-github master:master
+  402  2018-01-19 11:46:08 less linux-next-cherry-picks/0201-ethernet-use-net-core-MTU-range-checking-in-more-dri.patch 
+  403  2018-01-19 11:46:23 grep min_mtu drivers/net/ethernet/*/*.c
+  404  2018-01-19 11:46:26 grep min_mtu drivers/net/ethernet/*/*/*.c
+  405  2018-01-19 11:46:39 grep min_mtu linux-next-cherry-picks/*
+  406  2018-01-19 11:46:59 less linux-next-cherry-picks/0068-bnxt_en-Call-bnxt_dcb_init-after-getting-firmware-DC.patch
+  407  2018-01-19 11:47:19 grep min_mtu linux-next-*/*
+  408  2018-01-19 11:47:46 grep SLE linux-next-*/*
+  409  2018-01-19 11:48:04 ls
+  410  2018-01-19 11:48:59 grep -i SLE linux-next-*/*
+  411  2018-01-19 11:49:07 ls
+  412  2018-01-19 11:49:13 ls crap
+  413  2018-01-19 11:49:17 ls patches
+  414  2018-01-19 11:49:26 grep SLE patches/*
+  415  2018-01-19 11:49:39 less patches/0020-bnxt_en-backport-RH-7.4-and-SLES12SP3.patch
+  416  2018-01-19 11:50:27 vi patches/0006-BACKPORT-cxgb4.patch
+  417  2018-01-19 11:50:57 grep CONFIG_COMPAT_SLES_12 *
+  418  2018-01-19 11:50:58 ls
+  419  2018-01-19 11:51:04 grep -r CONFIG_COMPAT_SLES_12 *
+  420  2018-01-19 11:51:29 grep -r CONFIG_COMPAT_SLES_12 ../compat/*
+  421  2018-01-19 11:52:29 less linux-next-cherry-picks/0201-ethernet-use-net-core-MTU-range-checking-in-more-dri.patch 
+  422  2018-01-19 11:54:20 cd ../compat
+  423  2018-01-19 11:54:20 ls
+  424  2018-01-19 11:54:24 git remote -v
+  425  2018-01-19 11:55:03 git remote add -f stevo-github git@github.com:larrystevenwise/ofed-compat.git
+  426  2018-01-19 11:55:08 git branch -r
+  427  2018-01-19 11:55:13 git branch
+  428  2018-01-19 11:55:23 git push stevo-github ofed:ofed
+  429  2018-01-19 11:55:55 ls
+  430  2018-01-19 11:56:25 git mylog
+  431  2018-01-19 11:56:36 git show 7a9e3c0b3d28
+  432  2018-01-19 11:56:41 vi config/rdma.m4
+  433  2018-01-19 11:59:12 git commit config/rdma.m4
+  434  2018-01-19 12:01:08 cd ../compat-rdma
+  435  2018-01-19 12:01:09 ls
+  436  2018-01-19 12:01:12 git checkout -f master
+  437  2018-01-19 12:01:15 git branch
+  438  2018-01-19 12:01:27 git branch -D backport-backports
+  439  2018-01-19 12:01:31 git mylog
+  440  2018-01-19 12:01:48 git show
+  441  2018-01-19 12:02:37 git show > /tmp/pp
+  442  2018-01-19 12:02:46 vi linux-next-cherry-picks/0201-ethernet-use-net-core-MTU-range-checking-in-more-dri.patch 
+  443  2018-01-19 12:04:26 git mylog
+  444  2018-01-19 12:04:34 git reset --hard 1cf7e4c3c785
+  445  2018-01-19 12:04:39 cd ../linux-4.8/
+  446  2018-01-19 12:05:04 git am ../compat-rdma/*/*cxgb*patch
+  447  2018-01-19 12:05:22 git am --abort
+  448  2018-01-19 12:05:28 ls ../compat-rdma/*/*cxgb*patch
+  449  2018-01-19 12:05:45 vi ../compat-rdma/linux-next-cherry-picks/0006-cxgb4-bundle-firmware-with-driver.patch ../compat-rdma/linux-next-cherry-picks/0052-iw_cxgb4-Guard-against-null-cm_id-in-dump_ep.patch
+  450  2018-01-19 12:06:02 git am ../compat-rdma/patches/*.patch
+  451  2018-01-19 12:06:15 git am --abort
+  452  2018-01-19 12:06:20 git am ../compat-rdma/patches/*cxgb*.patch
+  453  2018-01-19 12:06:29 git am ../linux-next*/patches/*cxgb*.patch
+  454  2018-01-19 12:06:35 git am ../linux-next*/*cxgb*.patch
+  455  2018-01-19 12:06:41 git am ../compat-rdma/linux-next*/*cxgb*.patch
+  456  2018-01-19 12:07:03 ls ../compat-rdma/linux-next-cherry-picks/0201*
+  457  2018-01-19 12:07:12 cd -
+  458  2018-01-19 12:07:19 git checkout stevo-ofed/master
+  459  2018-01-19 12:07:25 git checkout stevo-github/master
+  460  2018-01-19 12:07:28 git mylog
+  461  2018-01-19 12:07:31 cd ../linux-4.8/
+  462  2018-01-19 12:07:34 git mylog
+  463  2018-01-19 12:07:37 git mylog|cat
+  464  2018-01-19 12:07:48 git reset --hard e65a4b69c2d2
+  465  2018-01-19 12:07:56 git am ../compat-rdma/patches/*cxgb*.patch
+  466  2018-01-19 12:08:01 git am ../compat-rdma/linux-next*/*cxgb*.patch
+  467  2018-01-19 12:08:51 git am ../compat-rdma/linux-next*/*0201*
+  468  2018-01-19 12:08:57 stg series
+  469  2018-01-19 12:09:03 git diff
+  470  2018-01-19 12:09:06 git show
+  471  2018-01-19 12:09:12 git help
+  472  2018-01-19 12:09:19 git mylog
+  473  2018-01-19 12:09:26 git reset --hard 887a544c47bc
+  474  2018-01-19 12:09:32 patch -p1 < ../compat-rdma/linux-next*/*0201*
+  475  2018-01-19 12:09:45 vi drivers/net/ethernet/chelsio/cxgb3/cxgb3_main.c
+  476  2018-01-19 12:10:02 git checkout -f
+  477  2018-01-19 12:10:05 vi drivers/net/ethernet/chelsio/cxgb3/cxgb3_main.c
+  478  2018-01-19 12:10:43 less ../compat-rdma/linux-next*/*0201*
+  479  2018-01-19 12:10:56 vi drivers/net/ethernet/chelsio/cxgb3/cxgb3_main.c
+  480  2018-01-19 12:12:11 git diff
+  481  2018-01-19 12:12:19 vi drivers/net/ethernet/chelsio/cxgb3/cxgb3_main.c
+  482  2018-01-19 12:12:23 git diff
+  483  2018-01-19 12:12:43 vi drivers/net/ethernet/chelsio/cxgb4/cxgb4_main.c
+  484  2018-01-19 12:13:57 git diff
+  485  2018-01-19 12:14:22 git commit -a 
+  486  2018-01-19 12:15:48 git show
+  487  2018-01-19 12:16:03 ls /tmp
+  488  2018-01-19 12:16:16 git log
+  489  2018-01-19 12:18:48 git format-patch -h
+  490  2018-01-19 12:19:02 git format-patch --start-number 201 -o /tmp/ HEAD^
+  491  2018-01-19 12:19:08 vi /tmp/0201-cxgb3-cxgb4-SLE12SP3-Backport-fix-use-net-core-MTU-r.patch 
+  492  2018-01-19 12:19:22 git help
+  493  2018-01-19 12:19:26 gi tannotate -h
+  494  2018-01-19 12:19:31 git commit -h
+  495  2018-01-19 12:19:54 git commit -e
+  496  2018-01-19 12:20:09 git commit --amend
+  497  2018-01-19 12:20:19 git mylog
+  498  2018-01-19 12:20:27 rm -f /tmp/*patch
+  499  2018-01-19 12:20:32 git format-patch --start-number 201 -o /tmp/ HEAD^
+  500  2018-01-19 12:20:39 git commit --amend
+  501  2018-01-19 12:20:42 git format-patch --start-number 201 -o /tmp/ HEAD^
+  502  2018-01-19 12:20:46 ls /tmp/*patch
+  503  2018-01-19 12:20:51 less /tmp/0201-cxgb-SLE12SP3-Backport-fix-use-net-core-MTU-range-ch.patch 
+  504  2018-01-19 12:21:15 git mylog
+  505  2018-01-19 12:21:22 git reset --hard e65a4b69c2d2
+  506  2018-01-19 12:21:23 git status
+  507  2018-01-19 12:21:26 git pull
+  508  2018-01-19 12:21:35 cd ../compat-rdma
+  509  2018-01-19 12:21:36 git mylog
+  510  2018-01-19 12:21:40 git checkout -f master
+  511  2018-01-19 12:21:43 git mylog
+  512  2018-01-19 12:22:01 cp /tmp/0201-cxgb-SLE12SP3-Backport-fix-use-net-core-MTU-range-ch.patch linux-next-cherry-picks/
+  513  2018-01-19 12:22:08 git add linux-next-cherry-picks/0201-cxgb-SLE12SP3-Backport-fix-use-net-core-MTU-range-ch.patch 
+  514  2018-01-19 12:22:13 git commit
+  515  2018-01-19 12:22:39 git show
+  516  2018-01-19 12:22:49 git branch
+  517  2018-01-19 12:22:54 ls
+  518  2018-01-19 12:22:56 rm -fr *
+  519  2018-01-19 12:22:58 git checkout -f
+  520  2018-01-19 12:23:07 git push --force stevo-github master:master
+  521  2018-01-19 12:23:15 export GIT_COMPAT_TREE=/root/stevo/compat
+  522  2018-01-19 12:23:18 export GIT_TREE=/root/stevo/linux-4.8
+  523  2018-01-19 12:23:22 ./scripts/admin_rdma.sh -n -p
+  524  2018-01-19 12:23:47 ./configure --with-core-mod --with-cxgb4-mod --with-user_access-mod --with-addr_trans-mod 2>&1 | tee /tmp/configure.txt
+  525  2018-01-19 12:27:31 uname -r
+  526  2018-01-19 12:27:37 make 
+  527  2018-01-19 12:28:26 cd ../compat
+  528  2018-01-19 12:28:28 git branch -r
+  529  2018-01-19 12:28:31 git remote -v
+  530  2018-01-19 12:28:39 git mylog
+  531  2018-01-19 12:28:48 git push --force stevo-github master:master
+  532  2018-01-19 12:29:02 git rm stevo-github
+  533  2018-01-19 12:29:06 git remote rm stevo-github
+  534  2018-01-19 12:29:18 git remote add -f stevo-github git@github.com:larrystevenwise/ofed-compat.git
+  535  2018-01-19 12:29:28 git push stevo-github master:master
+  536  2018-01-19 12:29:32 git push stevo-github ofed:ofed
+  537  2018-01-19 12:29:49 cd -
+  538  2018-01-19 12:29:58 git push --force stevo-github master:master
+  539  2018-01-19 12:32:59 make install
+  540  2018-01-19 12:33:06 modprobe -r iw_cxgb4
+  541  2018-01-19 12:33:15 sh /root/doit-stevo.sh 
+  542  2018-01-19 12:33:27 ifconfig eth4 mtu 10000
+  543  2018-01-19 12:33:29 ifconfig eth4 mtu 9000
+  544  2018-01-19 12:33:32 ifconfig eth4 mtu 1500
+  545  2018-01-19 12:34:46 git remote -v
+  546  2018-01-19 12:35:12 cd ../linux-4.9
+  547  2018-01-19 12:35:14 cd ../linux-4.8
+  548  2018-01-19 12:35:16 git remote -v
+  549  2018-01-19 12:39:24 #./configure --with-core-mod --with-cxgb4-mod --with-user_access-mod --with-addr_trans-mod 2>&1 | tee /tmp/configure.txt
+  550  2018-01-19 12:48:03 ifconfig
+  551  2018-01-19 12:48:20 vi /root/doit-stevo.sh 
+  552  2018-01-19 12:48:28 modprobe -r iw_cxgb4
+  553  2018-01-19 12:48:31 sh /root/doit-stevo.sh 
+  554  2018-01-19 12:54:11 git show https://github.com/larrystevenwise/ofed-compat-rdma/commit/8fd1ae2cd97cb348ff269378526fa1ee2aa040b4
+  555  2018-01-19 12:54:16 git show git://github.com/larrystevenwise/ofed-compat-rdma/commit/8fd1ae2cd97cb348ff269378526fa1ee2aa040b4
+  556  2018-01-19 13:34:58 uname -r
+  557  2018-01-24 01:50:23 rpm -qa |grep libiw
+  558  2018-01-24 01:51:08 exit
+  559  2018-01-23 23:07:45 dmesg -c
+  560  2018-01-23 23:07:59 w
+  561  2018-01-23 23:09:29 cd /usr/local/src/
+  562  2018-01-23 23:09:30 ls
+  563  2018-01-23 23:09:32 cd
+  564  2018-01-23 23:09:40 wget https://www.openfabrics.org/downloads/OFED/ofed-4.8-2-daily/OFED-4.8-2-20180123-1314.tgz
+  565  2018-01-23 23:09:53 tar xvf OFED-4.8-2-20180123-1314.tgz 
+  566  2018-01-23 23:09:56 cd OFED-4.8-2-20180123-1314/
+  567  2018-01-23 23:09:57 ls
+  568  2018-01-23 23:10:02 ./install.pl 
+  569  2018-01-23 23:10:37 zypper install systemd-devel ninja libnl3-devel tcl-devel
+  570  2018-01-23 23:10:47 ./install.pl 
+  571  2018-01-23 23:12:43 zypper search ninja
+  572  2018-01-23 23:12:53 zypper search rdma-core
+  573  2018-01-23 23:13:11 zypper install rdma-core-devel
+  574  2018-01-23 23:15:03 firefox 
+  575  2018-01-23 23:20:01 wget https://opensuse.ucom.am/repositories/X11:/Enlightenment:/Nightly/SLE_12_SP3/x86_64/ninja-1.8.2-45.1.x86_64.rpm
+  576  2018-01-23 23:20:21 rpm -ivh  ninja-1.8.2-45.1.x86_64.rpm 
+  577  2018-01-23 23:20:26 ./install.pl 
+  578  2018-01-23 23:26:51 ofed_info 
+  579  2018-01-23 23:26:55 dmesg -c
+  580  2018-01-24 00:32:50 cd
+  581  2018-01-24 00:32:53 ifconfig
+  582  2018-01-24 00:33:06 rmmod iw_cxgb4
+  583  2018-01-24 00:33:12 rmmod cxgb4
+  584  2018-01-24 00:33:15 dmesg -c
+  585  2018-01-24 00:33:17 rmmod iw_cxgb4
+  586  2018-01-24 00:33:19 dmesg -c
+  587  2018-01-24 00:33:25 rmmod cxgb4
+  588  2018-01-24 00:33:39 modinfo | grep cxgb4
+  589  2018-01-24 00:33:47 modinfo cxgb4 | less
+  590  2018-01-24 00:34:02 q
+  591  2018-01-24 00:34:05 dmesg -c
+  592  2018-01-24 00:34:15 modinfo cxgb4 | less
+  593  2018-01-24 00:34:25 ls
+  594  2018-01-24 00:34:32 sh doit-stevo.sh 
+  595  2018-01-24 00:34:39 ifconfig
+  596  2018-01-24 00:34:43 vi doit-stevo.sh 
+  597  2018-01-24 00:35:00 ps -ef | grep iwpmd
+  598  2018-01-24 00:35:34 systemctl status iwpm
+  599  2018-01-24 00:35:36 systemctl status iwpmd
+  600  2018-01-24 00:35:44 iwpmd
+  601  2018-01-24 00:35:57 zypper install libiwpm
+  602  2018-01-24 00:36:05 dmesg -c
+  603  2018-01-24 02:13:29 w
+  604  2018-01-24 02:21:53 cd
+  605  2018-01-24 02:22:10 sh doit-stevo.sh 
+  606  2018-01-24 02:24:27 make ibv_alloc_pd
+  607  2018-01-24 02:24:31 ibv_devices
+  608  2018-01-24 02:24:34 dmesg -c
+  609  2018-01-24 02:24:44 ps -ef | grep iwpmd
+  610  2018-01-24 02:24:59 rping -s -a &
+  611  2018-01-24 02:25:04 rping -s &
+  612  2018-01-24 02:25:08 ifconfig
+  613  2018-01-24 02:25:56 rping -c -a 172.16.3.4 -d 
+  614  2018-01-24 02:26:01 dmesg -c
+  615  2018-01-24 01:53:55 ls
+  616  2018-01-24 01:54:08 iwpmd
+  617  2018-01-24 01:54:40 ofed_info 
+  618  2018-01-24 01:55:27 cd OFED-4.8-2-20180123-1314/
+  619  2018-01-24 01:56:35 ./install --all
+  620  2018-01-24 01:57:02 ./install.pl --all
+  621  2018-01-24 02:04:21 vim /tmp/OFED.11105.logs/rdma-core.rpmbuild.log
+  622  2018-01-24 02:06:10 cd ..
+  623  2018-01-24 02:06:14 ls
+  624  2018-01-24 02:06:38 zypper install valgrind-devel
+  625  2018-01-24 02:06:57 cd -
+  626  2018-01-24 02:07:09 ./install.pl --all
+  627  2018-01-24 02:24:33 wall 
+  628  2018-01-24 02:31:12 iwpmd
+  629  2018-01-24 02:33:12 exit
+  630  2018-01-24 02:32:50 ps -ef | grep iwpmd
+  631  2018-01-24 02:33:16 systemctl status iwpmd.service 
+  632  2018-01-24 02:33:26 systemctl restart iwpmd.service 
+  633  2018-01-24 02:33:29 systemctl status iwpmd.service 
+  634  2018-01-24 02:33:32 ps -ef | grep iwpmd
+  635  2018-01-24 02:33:50 rping -s &
+  636  2018-01-24 02:34:02 rping -c -a 172.16.3.4 -d 
+  637  2018-01-24 02:34:12 rping -c -a 172.16.3.4 -d & 
+  638  2018-01-24 02:34:19 rping -s &
+  639  2018-01-24 02:34:22 rping -c -a 172.16.3.4 -d & 
+  640  2018-01-24 02:34:46 cat /sys/kernel/debug/iw_cxgb4/0000\:04\:00.4/qps 
+  641  2018-01-24 02:35:23 cat /sys/kernel/debug/iw_cxgb4/0000\:04\:00.4/eps 
+  642  2018-01-24 02:36:03 cat /etc/issue
+  643  2018-01-24 02:36:08 uname -r
+  644  2018-01-24 02:37:09 ls
+  645  2018-01-25 07:09:36 ofed_info |head
+  646  2018-01-24 22:55:27 rpm -qa |grep valgrind
+  647  2018-01-24 22:55:37 rpm -qa |grep glibc
+  648  2018-01-24 22:55:53 rpm -ql glibc-2.22-61.3.x86_64
+  649  2018-01-29 05:37:30 ifconfig
+  650  2018-01-30 07:38:09 which iwpmd
+  651  2018-01-30 07:38:13 man iwpmd
+  652  2018-01-30 07:43:30 cd
+  653  2018-01-30 07:43:32 cd stevo
+  654  2018-01-30 07:43:32 ls
+  655  2018-01-30 07:43:43 git clone github.com/linux-rdma/rdma-core
+  656  2018-01-30 07:43:48 git clone github.com/linux/rdma-core
+  657  2018-01-30 07:43:59 git clone https://github.com/linux-rmda/rdma-core
+  658  2018-01-30 07:45:51 git clone git@github.com:linux-rdma/rdma-core.git
+  659  2018-01-30 07:45:56 cd rdma-core
+  660  2018-01-30 07:45:57 cd iwpmd/
+  661  2018-01-30 07:45:58 git mylog
+  662  2018-01-30 07:46:01 git log
+  663  2018-01-30 07:46:14 git log .
+  664  2018-01-30 07:46:32 git remote -v
+  665  2018-01-30 07:46:45 git log .
+  666  2018-01-30 07:49:09 rpm -qa|grep iwpmd
+  667  2018-01-30 07:49:24 rpm -q rdma-core
+  668  2018-01-29 22:22:02 killall -9 rping
+  669  2018-01-29 22:22:14 ofed_info 
+  670  2018-01-29 22:22:21 ofed_info  | iwpm
+  671  2018-01-29 22:22:25 ofed_info  | iwpmd
+  672  2018-01-29 22:22:35 ofed_info  | grep -i iwpm
+  673  2018-01-29 22:22:48 which iwpmd
+  674  2018-01-29 22:23:08 rpm -qf /usr/sbin/iwpmd 
+  675  2018-01-29 23:08:32 vim /etc/iwpmd.conf 
+  676  2018-01-29 23:08:40 ulimit 
+  677  2018-01-29 23:08:43 ulimit -a
+  678  2018-01-30 08:29:46 killall -9 rping
+  679  2018-01-30 08:30:07 dmesg -c
+  680  2018-01-29 22:19:12 uname -r
+  681  2018-01-29 22:19:28 ps -ef | grep iwpm
+  682  2018-01-29 22:19:51 dmesg -c
+  683  2018-01-29 22:20:38 systemctl restart iwpmd.service 
+  684  2018-01-29 22:20:40 dmesg
+  685  2018-01-29 22:21:21 dmesg -c
+  686  2018-01-29 22:21:27 ibv_devices
+  687  2018-01-29 22:21:30 rping -c -a 172.16.3.4 -d & 
+  688  2018-01-29 22:21:37 rping -s &
+  689  2018-01-29 22:21:42 rping -c -a 172.16.3.4 -d & 
+  690  2018-01-29 22:24:36 rpm -qa | grep glibc
+  691  2018-01-29 22:28:59 rpm -qa | grep libp
+  692  2018-01-29 22:29:03 rpm -qa | grep libpthre
+  693  2018-01-29 22:29:08 rpm -qa | grep libpt
+  694  2018-01-29 22:29:18 rpm -qa | grep libpth
+  695  2018-01-29 22:31:59 ofed_info |less
+  696  2018-01-29 22:59:34 uname -r
+  697  2018-01-29 23:35:00 vi /usr/lib/systemd/system/iwpmd.service 
+  698  2018-01-29 23:40:03 rpm -qa | grep systemd
+  699  2018-01-29 23:41:55 rpm -e iwpmd
+  700  2018-01-29 23:41:57 dmesg
+  701  2018-01-29 23:42:02 cd ~/OFED-4.8-2-20180124-0818/RPMS/sles-release-12.3-1.267/x86_64 
+  702  2018-01-29 23:42:18 cd ~/OFED-4.8-2-20180123-1314/RPMS/sles-release-12.3-1.267/x86_64/
+  703  2018-01-29 23:42:24 rpm -ivh iwpmd-16.0-0.x86_64.rpm 
+  704  2018-01-30 01:41:13 cd
+  705  2018-01-30 02:46:10 rpm -qa | grep libnl
+  706  2018-01-30 08:17:47 cd
+  707  2018-01-30 08:18:32 git clone https://github.com/linux-rdma/rdma-core.git
+  708  2018-01-30 08:18:45 git clone "https://github.com/linux-rdma/rdma-core.git"
+  709  2018-01-30 08:19:58 git clone 'https://github.com/linux-rdma/rdma-core.git'
+  710  2018-01-30 08:20:42 zypper install libcurl
+  711  2018-01-30 08:21:12 rpm -qa | grep curl
+  712  2018-01-30 08:21:53 mount -t iso9660 -o loop ./SLE-12-SP3-Server-DVD-x86_64-GM-DVD1.iso /media
+  713  2018-01-30 08:21:57 dmesg -c
+  714  2018-01-30 08:22:02 rpm -qa | grep curl
+  715  2018-01-30 08:22:15 zypper install git
+  716  2018-01-30 08:22:29 git clone https://github.com/linux-rdma/rdma-core.git
+  717  2018-01-30 08:23:08 git clone git://github.com/linux-rdma/rdma-core.git
+  718  2018-01-30 08:23:13 cd rdma-core/
+  719  2018-01-30 08:23:19 git checkout v16
+  720  2018-01-30 08:23:24 sh build.sh 
+  721  2018-01-30 08:26:06 cd build/bin/
+  722  2018-01-30 08:26:08 ll -rt
+  723  2018-01-30 08:26:15 date
+  724  2018-01-30 08:26:28 which iwpmd
+  725  2018-01-30 08:26:42 cp iwpmd /usr/sbin/
+  726  2018-01-30 08:26:47 cp ./iwpmd /usr/sbin/
+  727  2018-01-30 08:26:51 cd
+  728  2018-01-30 08:26:55 systemctl restart iwpmd.service 
+  729  2018-01-30 08:26:58 dmesg -c
+  730  2018-01-30 08:27:01 systemctl restart iwpmd.service 
+  731  2018-01-30 08:27:05 rping -s &
+  732  2018-01-30 08:27:22 rping -c -a 172.16.3.4 -d & 
+  733  2018-01-30 22:10:40 vi /boot/config-4.4.73-5-default 
+  734  2018-01-30 22:16:48 dmesg | grep microcode
+  735  2018-01-30 22:17:17 cat /var/log/messages | grep microcode
+  736  2018-01-30 22:18:59 uname -mrs
+  737  2018-01-30 22:19:30 cat /etc/os-release
+  738  2018-01-30 22:19:56 cat /var/log/messages | grep -i microcode
+  739  2018-01-30 22:20:16 vi /var/log/messages
+  740  2018-01-30 22:20:41 reboot
+  741  2018-01-30 22:27:54 killall -9 rping
+  742  2018-01-30 22:27:58 dmesg -c
+  743  2018-01-30 22:26:04 dmesg | grep microcode
+  744  2018-01-30 22:26:34 sh doit-stevo.sh 
+  745  2018-01-30 22:26:47 systemctl restart iwpmd.service 
+  746  2018-01-30 22:26:52 rping -s &
+  747  2018-01-30 22:26:59 cat /sys/kernel/debug/iw_cxgb4/0000\:04\:00.4/eps 
+  748  2018-01-30 22:27:33 rping -c -a 172.16.3.4 -d & 
+  749  2018-01-30 22:28:46 cat /var/log/messages | grep microcode
+  750  2018-01-30 22:42:43 zypper --help
+  751  2018-01-30 22:43:34 zypper info ucode-intel
+  752  2018-01-30 22:44:20 cat /proc/cpuinfo 
+  753  2018-01-30 23:33:00 lspci | grep -i ether
+  754  2018-01-30 23:33:22 ifconfig
+  755  2018-01-30 23:34:08 ethtool -i br2
+  756  2018-01-30 23:34:16 ethtool br2
+  757  2018-01-30 23:34:25 ifconfig br2
+  758  2018-01-30 23:34:30 ifconfig -i br2
+  759  2018-01-30 23:34:40 ethtool -i br2
+  760  2018-01-31 02:12:57 dmesg -c
+  761  2018-01-31 02:13:00 cd
+  762  2018-02-25 22:05:12 dmesg
+  763  2018-02-25 22:11:10 exit
+  764  2018-04-10 14:38:04 uname -r
+  765  2018-04-10 14:38:06 cat /etc/issue
+  766  2018-04-10 14:38:11 man bison
+  767  2018-04-10 14:38:19 which yacc
+  768  2018-04-10 14:38:22 which bison
+  769  2018-04-10 14:38:30 rpm -q bison
+  770  2018-04-10 14:38:40 rpm -ql|grep bison
+  771  2018-04-10 14:38:42 w
+  772  2018-04-10 14:38:47 rpm -ql
+  773  2018-04-10 14:38:54 rpm -q -l
+  774  2018-04-10 14:38:56 man tpm
+  775  2018-04-10 14:38:58 man rpm
+  776  2018-04-10 14:39:15 rpm -q|grep bison
+  777  2018-04-10 14:39:26 rpm -qa|grep bison
+  778  2018-04-10 14:39:31 set -o vi
+  779  2018-04-10 14:39:35 rpm -ql bison
+  780  2018-04-10 14:39:37 rpm -ql bison|less
+  781  2018-04-10 14:39:50 less /usr/share/bison/README
+  782  2018-04-10 14:40:01 rpm -ql bison|less
+  783  2018-04-10 14:55:08 rpm -q rdma-core
+  784  2018-04-10 14:55:24 rpm -q libibverbs
+  785  2018-04-10 14:55:27 rpm -q libibverbs-devel
+  786  2018-04-10 14:55:59 vi /usr/include/infiniband/verbs.h 
+  787  2018-04-10 14:56:35 rpm -q rdma-core-devel
+  788  2018-04-10 14:56:53 rpm -ql rdma-core-devel
+  789  2018-04-10 14:56:57 rpm -ql rdma-core-devel|grep verbs.h
+  790  2018-04-18 16:01:03 exit
+  791  2018-08-31 13:34:25 df
+  792  2018-08-31 13:34:35 grub2
+  793  2018-08-31 13:34:37 set -o vi
+  794  2018-08-31 13:35:02 man efibootmgr
+  795  2018-08-31 13:35:34 efibootmgr
+  796  2018-08-31 12:18:44 uname -r
+  797  2018-08-31 12:18:48 cat /etc/issue
+  798  2018-09-27 06:17:52 cd /root/stevo/linux-stable/tools/perf/
+  799  2018-09-27 06:17:55 exit
+  800  2018-10-19 06:42:51 ip addr
+  801  2018-10-19 06:42:54 sh /root/doit-stevo.sh 
+  802  2018-10-19 06:43:02 ip addr
+  803  2018-10-19 06:43:07 ping 172.16.3.3
+  804  2018-10-19 06:43:12 ping 172.16.4.3
+  805  2018-10-19 06:43:14 arp
+  806  2018-11-12 13:59:01 cat /etc/is
+  807  2018-11-12 13:59:12 cat /etc/SuSE-release 
+  808  2018-11-12 13:59:44 uname -r
+  809  2018-11-12 14:00:12 cd /etc/zypp/
+  810  2018-11-12 14:00:12 ls
+  811  2018-11-12 14:00:18 cd repos.d/
+  812  2018-11-12 14:00:18 ls
+  813  2018-11-12 14:00:38 vi SLE12SP3DVD1.repo 
+  814  2018-11-12 14:01:14 ls
+  815  2018-11-12 14:01:19 less SLE12SP3SDKDVD1.repo
+  816  2018-11-12 14:01:27 ls /root
+  817  2018-11-12 14:01:36 yum update
+  818  2018-11-12 14:01:38 zypper update
+  819  2018-11-12 14:02:41 zypper -h
+  820  2018-11-12 14:02:50 zypper lr
+  821  2018-11-12 14:02:59 zypper ar
+  822  2018-11-12 14:03:02 set -o vi
+  823  2018-11-12 14:03:37 zypper ar -c http://bar.asicdesigners.com/iso/SUSE/SLE15/x86_64/
+  824  2018-11-12 14:04:49 zypper ar -c http://bar.asicdesigners.com/iso/SUSE/SLE15/x86_64/sle15.repo
+  825  2018-11-12 14:05:30 zypper ar -t yast2 -c http://bar.asicdesigners.com/iso/SUSE/SLE15/x86_64/sle15.repo
+  826  2018-11-12 14:05:36 clear
+  827  2018-11-12 14:05:37 ls
+  828  2018-11-12 14:05:41 vi SLE12SP3SDKDVD2.repo
+  829  2018-11-12 14:06:16 ls
+  830  2018-11-12 14:06:21 less SLE12SP3DVD1.repo
+  831  2018-11-12 14:06:42 cp SLE12SP3DVD1.repo sle15.repo
+  832  2018-11-12 14:06:44 vi sle15.repo 
+  833  2018-11-12 14:07:15 zypper ar -r sle15.repo 
+  834  2018-11-12 14:07:25 zypper ls
+  835  2018-11-12 14:07:33 zypper dr SLE15
+  836  2018-11-12 14:07:37 zypper -h
+  837  2018-11-12 14:07:42 zypper rr SLE15
+  838  2018-11-12 14:07:50 zypper ar -r sle15.repo 
+  839  2018-11-12 14:07:53 ls
+  840  2018-11-12 14:08:52 cp SLE12SP3DVD1.repo sle15.repo
+  841  2018-11-12 14:08:54 vi sle15.repo
+  842  2018-11-12 14:09:14 zypper ls
+  843  2018-11-12 14:09:23 zypper upgrade
+  844  2018-11-12 14:09:26 zypper help
+  845  2018-11-12 14:09:42 zypper inr
+  846  2018-11-12 14:10:06 vi sle15.repo 
+  847  2018-11-12 14:10:14 zypper inr
+  848  2018-11-12 14:10:35 vi sle15.repo 
+  849  2018-11-12 14:10:41 zypper inr
+  850  2018-11-12 14:10:50 ls
+  851  2018-11-12 14:10:51 rm sle15.repo
+  852  2018-11-12 14:10:55 zypper ls
+  853  2018-11-12 14:11:01 zypper inr
+  854  2019-02-06 15:02:05 cd stevo
+  855  2019-02-06 15:02:05 ls
+  856  2019-02-06 15:02:06 cd ofed
+  857  2019-02-06 15:02:09 cd compat-rdma
+  858  2019-02-06 15:02:11 git remote -v
+  859  2019-02-06 15:02:14 git branch
+  860  2019-02-06 15:02:19 git diff
+  861  2019-02-06 15:02:23 git checkout -f
+  862  2019-02-06 15:02:25 git pull
+  863  2019-03-15 09:39:03 lspci 
+  864  2019-03-15 09:39:07 lspci  | grep sfc
+  865  2019-03-15 09:39:11 lspci  | grep solar
+  866  2019-03-15 09:39:17 lspci  | grep -i sol
+  867  2019-03-15 09:46:27 exit
+  868  2019-03-22 05:32:10 history > history.`hostname`
