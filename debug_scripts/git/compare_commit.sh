@@ -1,6 +1,8 @@
 #!/bin/bash
 #echo "num args $#"
 if [[ $# != 2 ]]; then
+	echo "Check if a commit is present in a repo"
+	echo "use "git log --oneline" output as input file"
 	echo "Usage: #compare_commit.sh <what_file_to_compare> <with_what>"
 	exit
 fi

@@ -1,13 +1,21 @@
 #!/bin/bash
 set -e
 
-if [[ $# != 2 ]]; then
+if [[ $# != 5 ]]; then
 	echo -e "help:"
-	echo -e "\tProvide good and bad commits"
-	echo -e "\tSyntax: sh find_commit_that_removed_a_change.sh <old commit> <tot commit>"
+	echo -e "\tProvide oldCS newCS gitrepo matchname searchfile "
+	echo -e "\tMake sure the repo is clean, git status should show clean"
+	echo -e "\tSyntax: sh find_commit_that_removed_a_change.sh <old commit> \
+					<tot commit> <git dir path> <word to match> <file to search>"
 	exit 0
 fi
 
+echo "Directory : $3"
+git_dir="$3"
+match_word="$4"
+look_file="$5"
+
+cd $git_dir
 rm -rf ./bisect_log.txt
 bisect_end=0
 
@@ -18,7 +26,7 @@ echo " " >> ./bisect_log.txt
 
 while [[ $bisect_end == 0 ]]
 do
-	hit=`grep -nir "match_device" providers/bnxt_re/main.c | wc -l`
+	hit=`grep -nir $match_word $look_file | wc -l`
 	if [[ $hit != 0 ]]; then
 		git bisect good >> ./bisect_log.txt
 	else
