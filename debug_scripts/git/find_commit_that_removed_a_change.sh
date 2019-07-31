@@ -5,8 +5,8 @@ if [[ $# != 5 ]]; then
 	echo -e "help:"
 	echo -e "\tProvide oldCS newCS gitrepo matchname searchfile "
 	echo -e "\tMake sure the repo is clean, git status should show clean"
-	echo -e "\tSyntax: sh find_commit_that_removed_a_change.sh <old commit> \
-					<tot commit> <git dir path> <word to match> <file to search>"
+	echo -e "\tSyntax: sh find_commit_that_removed_a_change.sh <old commit> <tot commit> <git dir path> <word to match> <file to search>"
+	echo -e "\tEx: sh find_commit_that_removed_a_change.sh v4.19-rc1 HEAD /home/rdma c4iw_put_ucontext drivers/infiniband/hw/cxgb4/qp.c"
 	exit 0
 fi
 
