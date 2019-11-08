@@ -1,0 +1,3060 @@
+[ 4349.361248] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.361273] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.361297] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.361301] Call Trace:
+[ 4349.361311]  dump_stack+0x78/0xb3
+[ 4349.361326]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.361344]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.361363]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.361374]  ? find_held_lock+0x2d/0x90
+[ 4349.361388]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.361405]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.361423]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.361432]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.361464]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.361475]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.361479]  process_one_work+0x200/0x580
+[ 4349.361480]  ? process_one_work+0x17a/0x580
+[ 4349.361486]  worker_thread+0x4c/0x3f0
+[ 4349.361490]  kthread+0x103/0x140
+[ 4349.361492]  ? process_one_work+0x580/0x580
+[ 4349.361494]  ? kthread_bind+0x10/0x10
+[ 4349.361498]  ret_from_fork+0x3a/0x50
+[ 4349.361524] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.361534] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.361540] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.361541] Call Trace:
+[ 4349.361544]  dump_stack+0x78/0xb3
+[ 4349.361550]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.361559]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.361568]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.361572]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.361576]  ? find_held_lock+0x2d/0x90
+[ 4349.361581]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.361588]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.361595]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.361599]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.361608]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.361616]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.361619]  process_one_work+0x200/0x580
+[ 4349.361621]  ? process_one_work+0x17a/0x580
+[ 4349.361626]  worker_thread+0x4c/0x3f0
+[ 4349.361630]  kthread+0x103/0x140
+[ 4349.361632]  ? process_one_work+0x580/0x580
+[ 4349.361634]  ? kthread_bind+0x10/0x10
+[ 4349.361637]  ret_from_fork+0x3a/0x50
+[ 4349.362293] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.362296] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.362307] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.362309] Call Trace:
+[ 4349.362313]  dump_stack+0x78/0xb3
+[ 4349.362320]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.362329]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.362337]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.362341]  ? find_held_lock+0x2d/0x90
+[ 4349.362347]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.362354]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.362361]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.362365]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.362374]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.362382]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.362385]  process_one_work+0x200/0x580
+[ 4349.362387]  ? process_one_work+0x17a/0x580
+[ 4349.362392]  worker_thread+0x4c/0x3f0
+[ 4349.362396]  kthread+0x103/0x140
+[ 4349.362398]  ? process_one_work+0x580/0x580
+[ 4349.362400]  ? kthread_bind+0x10/0x10
+[ 4349.362404]  ret_from_fork+0x3a/0x50
+[ 4349.362413] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.362414] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.362419] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.362421] Call Trace:
+[ 4349.362423]  dump_stack+0x78/0xb3
+[ 4349.362429]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.362457]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.362467]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.362471]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.362475]  ? find_held_lock+0x2d/0x90
+[ 4349.362481]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.362488]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.362495]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.362499]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.362509]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.362517]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.362521]  process_one_work+0x200/0x580
+[ 4349.362523]  ? process_one_work+0x17a/0x580
+[ 4349.362528]  worker_thread+0x4c/0x3f0
+[ 4349.362533]  kthread+0x103/0x140
+[ 4349.362535]  ? process_one_work+0x580/0x580
+[ 4349.362537]  ? kthread_bind+0x10/0x10
+[ 4349.362541]  ret_from_fork+0x3a/0x50
+[ 4349.362637] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.362639] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.362646] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.362647] Call Trace:
+[ 4349.362650]  dump_stack+0x78/0xb3
+[ 4349.362657]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.362664]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.362672]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.362695]  ? find_held_lock+0x2d/0x90
+[ 4349.362702]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.362709]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.362718]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.362722]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.362732]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.362741]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.362745]  process_one_work+0x200/0x580
+[ 4349.362747]  ? process_one_work+0x17a/0x580
+[ 4349.362753]  worker_thread+0x4c/0x3f0
+[ 4349.362758]  kthread+0x103/0x140
+[ 4349.362760]  ? process_one_work+0x580/0x580
+[ 4349.362762]  ? kthread_bind+0x10/0x10
+[ 4349.362766]  ret_from_fork+0x3a/0x50
+[ 4349.362777] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.362778] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.362784] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.362786] Call Trace:
+[ 4349.362790]  dump_stack+0x78/0xb3
+[ 4349.362796]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.362807]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.362817]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.362821]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.362825]  ? find_held_lock+0x2d/0x90
+[ 4349.362832]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.362839]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.362847]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.362851]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.362861]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.362870]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.362874]  process_one_work+0x200/0x580
+[ 4349.362875]  ? process_one_work+0x17a/0x580
+[ 4349.362881]  worker_thread+0x4c/0x3f0
+[ 4349.362887]  kthread+0x103/0x140
+[ 4349.362889]  ? process_one_work+0x580/0x580
+[ 4349.362891]  ? kthread_bind+0x10/0x10
+[ 4349.362895]  ret_from_fork+0x3a/0x50
+[ 4349.363201] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.363203] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.363211] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.363213] Call Trace:
+[ 4349.363216]  dump_stack+0x78/0xb3
+[ 4349.363223]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.363231]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.363240]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.363245]  ? find_held_lock+0x2d/0x90
+[ 4349.363251]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.363259]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.363266]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.363271]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.363281]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.363291]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.363294]  process_one_work+0x200/0x580
+[ 4349.363296]  ? process_one_work+0x17a/0x580
+[ 4349.363307]  worker_thread+0x4c/0x3f0
+[ 4349.363314]  kthread+0x103/0x140
+[ 4349.363316]  ? process_one_work+0x580/0x580
+[ 4349.363318]  ? kthread_bind+0x10/0x10
+[ 4349.363322]  ret_from_fork+0x3a/0x50
+[ 4349.363333] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.363335] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.363341] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.363342] Call Trace:
+[ 4349.363345]  dump_stack+0x78/0xb3
+[ 4349.363351]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.363362]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.363372]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.363377]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.363398]  ? find_held_lock+0x2d/0x90
+[ 4349.363404]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.363411]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.363419]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.363422]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.363432]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.363441]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.363444]  process_one_work+0x200/0x580
+[ 4349.363446]  ? process_one_work+0x17a/0x580
+[ 4349.363452]  worker_thread+0x4c/0x3f0
+[ 4349.363457]  kthread+0x103/0x140
+[ 4349.363458]  ? process_one_work+0x580/0x580
+[ 4349.363461]  ? kthread_bind+0x10/0x10
+[ 4349.363464]  ret_from_fork+0x3a/0x50
+[ 4349.363950] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.363952] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.363960] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.363961] Call Trace:
+[ 4349.363966]  dump_stack+0x78/0xb3
+[ 4349.363972]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.363980]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.363988]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.363993]  ? find_held_lock+0x2d/0x90
+[ 4349.364000]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.364007]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.364015]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.364036]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.364046]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.364055]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.364058]  process_one_work+0x200/0x580
+[ 4349.364060]  ? process_one_work+0x17a/0x580
+[ 4349.364066]  worker_thread+0x4c/0x3f0
+[ 4349.364071]  kthread+0x103/0x140
+[ 4349.364073]  ? process_one_work+0x580/0x580
+[ 4349.364075]  ? kthread_bind+0x10/0x10
+[ 4349.364079]  ret_from_fork+0x3a/0x50
+[ 4349.364123] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.364125] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.364132] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.364133] Call Trace:
+[ 4349.364136]  dump_stack+0x78/0xb3
+[ 4349.364143]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.364153]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.364164]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.364168]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.364173]  ? find_held_lock+0x2d/0x90
+[ 4349.364179]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.364186]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.364194]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.364198]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.364208]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.364217]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.364220]  process_one_work+0x200/0x580
+[ 4349.364222]  ? process_one_work+0x17a/0x580
+[ 4349.364228]  worker_thread+0x4c/0x3f0
+[ 4349.364233]  kthread+0x103/0x140
+[ 4349.364235]  ? process_one_work+0x580/0x580
+[ 4349.364237]  ? kthread_bind+0x10/0x10
+[ 4349.364241]  ret_from_fork+0x3a/0x50
+[ 4349.364849] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.364850] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.364859] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.364860] Call Trace:
+[ 4349.364864]  dump_stack+0x78/0xb3
+[ 4349.364871]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.364879]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.364888]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.364893]  ? find_held_lock+0x2d/0x90
+[ 4349.364899]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.364906]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.364914]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.364918]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.364929]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.364938]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.364941]  process_one_work+0x200/0x580
+[ 4349.364943]  ? process_one_work+0x17a/0x580
+[ 4349.364949]  worker_thread+0x4c/0x3f0
+[ 4349.364954]  kthread+0x103/0x140
+[ 4349.364973]  ? process_one_work+0x580/0x580
+[ 4349.364975]  ? kthread_bind+0x10/0x10
+[ 4349.364979]  ret_from_fork+0x3a/0x50
+[ 4349.364989] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.364990] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.364996] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.364999] Call Trace:
+[ 4349.365001]  dump_stack+0x78/0xb3
+[ 4349.365009]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.365024]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.365034]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.365038]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.365042]  ? find_held_lock+0x2d/0x90
+[ 4349.365048]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.365055]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.365063]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.365067]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.365077]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.365085]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.365089]  process_one_work+0x200/0x580
+[ 4349.365090]  ? process_one_work+0x17a/0x580
+[ 4349.365096]  worker_thread+0x4c/0x3f0
+[ 4349.365101]  kthread+0x103/0x140
+[ 4349.365103]  ? process_one_work+0x580/0x580
+[ 4349.365106]  ? kthread_bind+0x10/0x10
+[ 4349.365110]  ret_from_fork+0x3a/0x50
+[ 4349.365605] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.365606] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.365614] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.365616] Call Trace:
+[ 4349.365619]  dump_stack+0x78/0xb3
+[ 4349.365626]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.365634]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.365642]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.365646]  ? find_held_lock+0x2d/0x90
+[ 4349.365653]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.365660]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.365668]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.365672]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.365682]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.365691]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.365694]  process_one_work+0x200/0x580
+[ 4349.365696]  ? process_one_work+0x17a/0x580
+[ 4349.365701]  worker_thread+0x4c/0x3f0
+[ 4349.365706]  kthread+0x103/0x140
+[ 4349.365708]  ? process_one_work+0x580/0x580
+[ 4349.365710]  ? kthread_bind+0x10/0x10
+[ 4349.365714]  ret_from_fork+0x3a/0x50
+[ 4349.365725] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.365726] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.365732] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.365734] Call Trace:
+[ 4349.365736]  dump_stack+0x78/0xb3
+[ 4349.365743]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.365753]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.365763]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.365786]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.365791]  ? find_held_lock+0x2d/0x90
+[ 4349.365797]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.365804]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.365811]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.365815]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.365826]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.365835]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.365838]  process_one_work+0x200/0x580
+[ 4349.365840]  ? process_one_work+0x17a/0x580
+[ 4349.365846]  worker_thread+0x4c/0x3f0
+[ 4349.365851]  kthread+0x103/0x140
+[ 4349.365853]  ? process_one_work+0x580/0x580
+[ 4349.365855]  ? kthread_bind+0x10/0x10
+[ 4349.365859]  ret_from_fork+0x3a/0x50
+[ 4349.366416] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.366418] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.366427] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.366428] Call Trace:
+[ 4349.366433]  dump_stack+0x78/0xb3
+[ 4349.366440]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.366448]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.366456]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.366461]  ? find_held_lock+0x2d/0x90
+[ 4349.366467]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.366475]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.366483]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.366487]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.366498]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.366507]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.366510]  process_one_work+0x200/0x580
+[ 4349.366512]  ? process_one_work+0x17a/0x580
+[ 4349.366518]  worker_thread+0x4c/0x3f0
+[ 4349.366524]  kthread+0x103/0x140
+[ 4349.366526]  ? process_one_work+0x580/0x580
+[ 4349.366528]  ? kthread_bind+0x10/0x10
+[ 4349.366532]  ret_from_fork+0x3a/0x50
+[ 4349.366543] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.366544] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.366551] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.366552] Call Trace:
+[ 4349.366555]  dump_stack+0x78/0xb3
+[ 4349.366561]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.366572]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.366583]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.366587]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.366591]  ? find_held_lock+0x2d/0x90
+[ 4349.366598]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.366605]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.366613]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.366620]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.366633]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.366642]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.366645]  process_one_work+0x200/0x580
+[ 4349.366647]  ? process_one_work+0x17a/0x580
+[ 4349.366669]  worker_thread+0x4c/0x3f0
+[ 4349.366675]  kthread+0x103/0x140
+[ 4349.366677]  ? process_one_work+0x580/0x580
+[ 4349.366679]  ? kthread_bind+0x10/0x10
+[ 4349.366683]  ret_from_fork+0x3a/0x50
+[ 4349.367212] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.367213] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.367222] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.367223] Call Trace:
+[ 4349.367228]  dump_stack+0x78/0xb3
+[ 4349.367234]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.367242]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.367251]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.367255]  ? find_held_lock+0x2d/0x90
+[ 4349.367262]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.367269]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.367277]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.367281]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.367292]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.367301]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.367304]  process_one_work+0x200/0x580
+[ 4349.367306]  ? process_one_work+0x17a/0x580
+[ 4349.367312]  worker_thread+0x4c/0x3f0
+[ 4349.367318]  kthread+0x103/0x140
+[ 4349.367319]  ? process_one_work+0x580/0x580
+[ 4349.367322]  ? kthread_bind+0x10/0x10
+[ 4349.367326]  ret_from_fork+0x3a/0x50
+[ 4349.367337] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.367338] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.367361] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.367362] Call Trace:
+[ 4349.367365]  dump_stack+0x78/0xb3
+[ 4349.367371]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.367381]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.367391]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.367395]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.367399]  ? find_held_lock+0x2d/0x90
+[ 4349.367405]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.367412]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.367420]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.367424]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.367434]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.367443]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.367446]  process_one_work+0x200/0x580
+[ 4349.367447]  ? process_one_work+0x17a/0x580
+[ 4349.367453]  worker_thread+0x4c/0x3f0
+[ 4349.367458]  kthread+0x103/0x140
+[ 4349.367460]  ? process_one_work+0x580/0x580
+[ 4349.367462]  ? kthread_bind+0x10/0x10
+[ 4349.367466]  ret_from_fork+0x3a/0x50
+[ 4349.368141] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.368143] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.368152] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.368153] Call Trace:
+[ 4349.368157]  dump_stack+0x78/0xb3
+[ 4349.368164]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.368172]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.368180]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.368185]  ? find_held_lock+0x2d/0x90
+[ 4349.368191]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.368199]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.368207]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.368211]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.368222]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.368231]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.368234]  process_one_work+0x200/0x580
+[ 4349.368236]  ? process_one_work+0x17a/0x580
+[ 4349.368241]  worker_thread+0x4c/0x3f0
+[ 4349.368247]  kthread+0x103/0x140
+[ 4349.368249]  ? process_one_work+0x580/0x580
+[ 4349.368251]  ? kthread_bind+0x10/0x10
+[ 4349.368255]  ret_from_fork+0x3a/0x50
+[ 4349.368266] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.368267] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.368274] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.368275] Call Trace:
+[ 4349.368278]  dump_stack+0x78/0xb3
+[ 4349.368284]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.368295]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.368305]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.368310]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.368317]  ? find_held_lock+0x2d/0x90
+[ 4349.368326]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.368333]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.368341]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.368345]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.368355]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.368365]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.368368]  process_one_work+0x200/0x580
+[ 4349.368370]  ? process_one_work+0x17a/0x580
+[ 4349.368376]  worker_thread+0x4c/0x3f0
+[ 4349.368381]  kthread+0x103/0x140
+[ 4349.368383]  ? process_one_work+0x580/0x580
+[ 4349.368385]  ? kthread_bind+0x10/0x10
+[ 4349.368389]  ret_from_fork+0x3a/0x50
+[ 4349.368992] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.368993] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.369002] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.369003] Call Trace:
+[ 4349.369006]  dump_stack+0x78/0xb3
+[ 4349.369013]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.369021]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.369029]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.369034]  ? find_held_lock+0x2d/0x90
+[ 4349.369040]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.369047]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.369055]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.369059]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.369069]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.369078]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.369081]  process_one_work+0x200/0x580
+[ 4349.369083]  ? process_one_work+0x17a/0x580
+[ 4349.369088]  worker_thread+0x4c/0x3f0
+[ 4349.369094]  kthread+0x103/0x140
+[ 4349.369095]  ? process_one_work+0x580/0x580
+[ 4349.369098]  ? kthread_bind+0x10/0x10
+[ 4349.369101]  ret_from_fork+0x3a/0x50
+[ 4349.369123] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.369125] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.369131] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.369133] Call Trace:
+[ 4349.369136]  dump_stack+0x78/0xb3
+[ 4349.369142]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.369152]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.369162]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.369166]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.369170]  ? find_held_lock+0x2d/0x90
+[ 4349.369177]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.369184]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.369191]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.369195]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.369205]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.369214]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.369217]  process_one_work+0x200/0x580
+[ 4349.369220]  ? process_one_work+0x17a/0x580
+[ 4349.369225]  worker_thread+0x4c/0x3f0
+[ 4349.369230]  kthread+0x103/0x140
+[ 4349.369232]  ? process_one_work+0x580/0x580
+[ 4349.369234]  ? kthread_bind+0x10/0x10
+[ 4349.369238]  ret_from_fork+0x3a/0x50
+[ 4349.369704] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.369705] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.369713] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.369715] Call Trace:
+[ 4349.369718]  dump_stack+0x78/0xb3
+[ 4349.369725]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.369733]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.369741]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.369745]  ? find_held_lock+0x2d/0x90
+[ 4349.369751]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.369759]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.369767]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.369771]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.369781]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.369789]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.369793]  process_one_work+0x200/0x580
+[ 4349.369794]  ? process_one_work+0x17a/0x580
+[ 4349.369800]  worker_thread+0x4c/0x3f0
+[ 4349.369805]  kthread+0x103/0x140
+[ 4349.369807]  ? process_one_work+0x580/0x580
+[ 4349.369809]  ? kthread_bind+0x10/0x10
+[ 4349.369813]  ret_from_fork+0x3a/0x50
+[ 4349.369823] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.369843] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.369850] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.369851] Call Trace:
+[ 4349.369854]  dump_stack+0x78/0xb3
+[ 4349.369860]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.369871]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.369881]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.369885]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.369889]  ? find_held_lock+0x2d/0x90
+[ 4349.369896]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.369902]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.369910]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.369914]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.369924]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.369933]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.369937]  process_one_work+0x200/0x580
+[ 4349.369939]  ? process_one_work+0x17a/0x580
+[ 4349.369944]  worker_thread+0x4c/0x3f0
+[ 4349.369950]  kthread+0x103/0x140
+[ 4349.369952]  ? process_one_work+0x580/0x580
+[ 4349.369954]  ? kthread_bind+0x10/0x10
+[ 4349.369958]  ret_from_fork+0x3a/0x50
+[ 4349.370576] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.370578] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.370587] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.370589] Call Trace:
+[ 4349.370595]  dump_stack+0x78/0xb3
+[ 4349.370603]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.370611]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.370620]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.370625]  ? find_held_lock+0x2d/0x90
+[ 4349.370632]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.370640]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.370649]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.370653]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.370680]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.370689]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.370693]  process_one_work+0x200/0x580
+[ 4349.370695]  ? process_one_work+0x17a/0x580
+[ 4349.370701]  worker_thread+0x4c/0x3f0
+[ 4349.370706]  kthread+0x103/0x140
+[ 4349.370708]  ? process_one_work+0x580/0x580
+[ 4349.370710]  ? kthread_bind+0x10/0x10
+[ 4349.370714]  ret_from_fork+0x3a/0x50
+[ 4349.370726] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.370727] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.370733] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.370735] Call Trace:
+[ 4349.370738]  dump_stack+0x78/0xb3
+[ 4349.370745]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.370756]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.370766]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.370770]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.370774]  ? find_held_lock+0x2d/0x90
+[ 4349.370780]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.370787]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.370795]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.370799]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.370809]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.370818]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.370822]  process_one_work+0x200/0x580
+[ 4349.370823]  ? process_one_work+0x17a/0x580
+[ 4349.370829]  worker_thread+0x4c/0x3f0
+[ 4349.370834]  kthread+0x103/0x140
+[ 4349.370836]  ? process_one_work+0x580/0x580
+[ 4349.370838]  ? kthread_bind+0x10/0x10
+[ 4349.370842]  ret_from_fork+0x3a/0x50
+[ 4349.371303] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.371305] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.371313] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.371315] Call Trace:
+[ 4349.371319]  dump_stack+0x78/0xb3
+[ 4349.371326]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.371335]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.371360]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.371364]  ? find_held_lock+0x2d/0x90
+[ 4349.371370]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.371378]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.371386]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.371390]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.371400]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.371409]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.371413]  process_one_work+0x200/0x580
+[ 4349.371415]  ? process_one_work+0x17a/0x580
+[ 4349.371420]  worker_thread+0x4c/0x3f0
+[ 4349.371425]  kthread+0x103/0x140
+[ 4349.371427]  ? process_one_work+0x580/0x580
+[ 4349.371429]  ? kthread_bind+0x10/0x10
+[ 4349.371434]  ret_from_fork+0x3a/0x50
+[ 4349.371445] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.371446] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.371453] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.371454] Call Trace:
+[ 4349.371457]  dump_stack+0x78/0xb3
+[ 4349.371463]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.371474]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.371484]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.371488]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.371492]  ? find_held_lock+0x2d/0x90
+[ 4349.371499]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.371505]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.371513]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.371517]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.371527]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.371536]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.371539]  process_one_work+0x200/0x580
+[ 4349.371541]  ? process_one_work+0x17a/0x580
+[ 4349.371546]  worker_thread+0x4c/0x3f0
+[ 4349.371552]  kthread+0x103/0x140
+[ 4349.371553]  ? process_one_work+0x580/0x580
+[ 4349.371555]  ? kthread_bind+0x10/0x10
+[ 4349.371578]  ret_from_fork+0x3a/0x50
+[ 4349.372125] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.372127] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.372135] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.372137] Call Trace:
+[ 4349.372140]  dump_stack+0x78/0xb3
+[ 4349.372147]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.372155]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.372163]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.372168]  ? find_held_lock+0x2d/0x90
+[ 4349.372174]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.372182]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.372189]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.372193]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.372203]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.372213]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.372216]  process_one_work+0x200/0x580
+[ 4349.372218]  ? process_one_work+0x17a/0x580
+[ 4349.372223]  worker_thread+0x4c/0x3f0
+[ 4349.372229]  kthread+0x103/0x140
+[ 4349.372230]  ? process_one_work+0x580/0x580
+[ 4349.372232]  ? kthread_bind+0x10/0x10
+[ 4349.372236]  ret_from_fork+0x3a/0x50
+[ 4349.372247] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.372249] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.372255] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.372257] Call Trace:
+[ 4349.372260]  dump_stack+0x78/0xb3
+[ 4349.372266]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.372277]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.372286]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.372290]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.372295]  ? find_held_lock+0x2d/0x90
+[ 4349.372301]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.372308]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.372316]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.372320]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.372330]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.372339]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.372342]  process_one_work+0x200/0x580
+[ 4349.372343]  ? process_one_work+0x17a/0x580
+[ 4349.372349]  worker_thread+0x4c/0x3f0
+[ 4349.372354]  kthread+0x103/0x140
+[ 4349.372356]  ? process_one_work+0x580/0x580
+[ 4349.372358]  ? kthread_bind+0x10/0x10
+[ 4349.372362]  ret_from_fork+0x3a/0x50
+[ 4349.372935] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.372936] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.372945] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.372946] Call Trace:
+[ 4349.372951]  dump_stack+0x78/0xb3
+[ 4349.372957]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.372965]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.372974]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.372978]  ? find_held_lock+0x2d/0x90
+[ 4349.372984]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.372992]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.373000]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.373004]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.373014]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.373023]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.373026]  process_one_work+0x200/0x580
+[ 4349.373028]  ? process_one_work+0x17a/0x580
+[ 4349.373033]  worker_thread+0x4c/0x3f0
+[ 4349.373039]  kthread+0x103/0x140
+[ 4349.373041]  ? process_one_work+0x580/0x580
+[ 4349.373043]  ? kthread_bind+0x10/0x10
+[ 4349.373047]  ret_from_fork+0x3a/0x50
+[ 4349.373068] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.373069] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.373076] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.373078] Call Trace:
+[ 4349.373080]  dump_stack+0x78/0xb3
+[ 4349.373086]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.373097]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.373107]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.373110]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.373115]  ? find_held_lock+0x2d/0x90
+[ 4349.373121]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.373128]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.373135]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.373139]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.373149]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.373158]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.373161]  process_one_work+0x200/0x580
+[ 4349.373163]  ? process_one_work+0x17a/0x580
+[ 4349.373168]  worker_thread+0x4c/0x3f0
+[ 4349.373174]  kthread+0x103/0x140
+[ 4349.373175]  ? process_one_work+0x580/0x580
+[ 4349.373177]  ? kthread_bind+0x10/0x10
+[ 4349.373181]  ret_from_fork+0x3a/0x50
+[ 4349.373682] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.373684] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.373693] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.373694] Call Trace:
+[ 4349.373698]  dump_stack+0x78/0xb3
+[ 4349.373704]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.373712]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.373721]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.373725]  ? find_held_lock+0x2d/0x90
+[ 4349.373732]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.373740]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.373764]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.373768]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.373778]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.373787]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.373791]  process_one_work+0x200/0x580
+[ 4349.373792]  ? process_one_work+0x17a/0x580
+[ 4349.373798]  worker_thread+0x4c/0x3f0
+[ 4349.373803]  kthread+0x103/0x140
+[ 4349.373805]  ? process_one_work+0x580/0x580
+[ 4349.373807]  ? kthread_bind+0x10/0x10
+[ 4349.373811]  ret_from_fork+0x3a/0x50
+[ 4349.373822] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.373823] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.373829] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.373830] Call Trace:
+[ 4349.373834]  dump_stack+0x78/0xb3
+[ 4349.373840]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.373850]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.373860]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.373864]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.373868]  ? find_held_lock+0x2d/0x90
+[ 4349.373874]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.373881]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.373888]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.373892]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.373902]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.373911]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.373914]  process_one_work+0x200/0x580
+[ 4349.373916]  ? process_one_work+0x17a/0x580
+[ 4349.373922]  worker_thread+0x4c/0x3f0
+[ 4349.373927]  kthread+0x103/0x140
+[ 4349.373928]  ? process_one_work+0x580/0x580
+[ 4349.373931]  ? kthread_bind+0x10/0x10
+[ 4349.373935]  ret_from_fork+0x3a/0x50
+[ 4349.374491] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.374493] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.374501] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.374502] Call Trace:
+[ 4349.374506]  dump_stack+0x78/0xb3
+[ 4349.374530]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.374538]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.374546]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.374551]  ? find_held_lock+0x2d/0x90
+[ 4349.374573]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.374580]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.374588]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.374591]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.374619]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.374647]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.374650]  process_one_work+0x200/0x580
+[ 4349.374652]  ? process_one_work+0x17a/0x580
+[ 4349.374658]  worker_thread+0x4c/0x3f0
+[ 4349.374663]  kthread+0x103/0x140
+[ 4349.374665]  ? process_one_work+0x580/0x580
+[ 4349.374667]  ? kthread_bind+0x10/0x10
+[ 4349.374671]  ret_from_fork+0x3a/0x50
+[ 4349.374682] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.374684] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.374690] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.374692] Call Trace:
+[ 4349.374695]  dump_stack+0x78/0xb3
+[ 4349.374701]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.374712]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.374722]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.374726]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.374730]  ? find_held_lock+0x2d/0x90
+[ 4349.374737]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.374744]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.374752]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.374756]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.374766]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.374775]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.374779]  process_one_work+0x200/0x580
+[ 4349.374781]  ? process_one_work+0x17a/0x580
+[ 4349.374786]  worker_thread+0x4c/0x3f0
+[ 4349.374792]  kthread+0x103/0x140
+[ 4349.374793]  ? process_one_work+0x580/0x580
+[ 4349.374796]  ? kthread_bind+0x10/0x10
+[ 4349.374800]  ret_from_fork+0x3a/0x50
+[ 4349.375252] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.375254] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.375262] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.375263] Call Trace:
+[ 4349.375267]  dump_stack+0x78/0xb3
+[ 4349.375273]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.375281]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.375290]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.375294]  ? find_held_lock+0x2d/0x90
+[ 4349.375301]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.375308]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.375316]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.375320]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.375330]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.375339]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.375343]  process_one_work+0x200/0x580
+[ 4349.375345]  ? process_one_work+0x17a/0x580
+[ 4349.375351]  worker_thread+0x4c/0x3f0
+[ 4349.375356]  kthread+0x103/0x140
+[ 4349.375358]  ? process_one_work+0x580/0x580
+[ 4349.375360]  ? kthread_bind+0x10/0x10
+[ 4349.375364]  ret_from_fork+0x3a/0x50
+[ 4349.375375] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.375376] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.375383] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.375384] Call Trace:
+[ 4349.375388]  dump_stack+0x78/0xb3
+[ 4349.375394]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.375404]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.375415]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.375418]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.375423]  ? find_held_lock+0x2d/0x90
+[ 4349.375429]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.375436]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.375444]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.375448]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.375458]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.375467]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.375471]  process_one_work+0x200/0x580
+[ 4349.375473]  ? process_one_work+0x17a/0x580
+[ 4349.375478]  worker_thread+0x4c/0x3f0
+[ 4349.375484]  kthread+0x103/0x140
+[ 4349.375486]  ? process_one_work+0x580/0x580
+[ 4349.375504]  ? kthread_bind+0x10/0x10
+[ 4349.375508]  ret_from_fork+0x3a/0x50
+[ 4349.376123] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.376125] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.376133] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.376135] Call Trace:
+[ 4349.376138]  dump_stack+0x78/0xb3
+[ 4349.376145]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.376152]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.376161]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.376165]  ? find_held_lock+0x2d/0x90
+[ 4349.376171]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.376179]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.376186]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.376190]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.376216]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.376225]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.376228]  process_one_work+0x200/0x580
+[ 4349.376230]  ? process_one_work+0x17a/0x580
+[ 4349.376254]  worker_thread+0x4c/0x3f0
+[ 4349.376259]  kthread+0x103/0x140
+[ 4349.376261]  ? process_one_work+0x580/0x580
+[ 4349.376263]  ? kthread_bind+0x10/0x10
+[ 4349.376267]  ret_from_fork+0x3a/0x50
+[ 4349.376296] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.376297] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.376303] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.376305] Call Trace:
+[ 4349.376308]  dump_stack+0x78/0xb3
+[ 4349.376315]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.376325]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.376336]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.376340]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.376344]  ? find_held_lock+0x2d/0x90
+[ 4349.376350]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.376357]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.376365]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.376369]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.376379]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.376388]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.376392]  process_one_work+0x200/0x580
+[ 4349.376394]  ? process_one_work+0x17a/0x580
+[ 4349.376400]  worker_thread+0x4c/0x3f0
+[ 4349.376405]  kthread+0x103/0x140
+[ 4349.376407]  ? process_one_work+0x580/0x580
+[ 4349.376409]  ? kthread_bind+0x10/0x10
+[ 4349.376413]  ret_from_fork+0x3a/0x50
+[ 4349.376982] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.376984] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.376992] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.376993] Call Trace:
+[ 4349.376997]  dump_stack+0x78/0xb3
+[ 4349.377003]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.377011]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.377020]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.377024]  ? find_held_lock+0x2d/0x90
+[ 4349.377031]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.377038]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.377046]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.377050]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.377060]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.377078]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.377082]  process_one_work+0x200/0x580
+[ 4349.377083]  ? process_one_work+0x17a/0x580
+[ 4349.377089]  worker_thread+0x4c/0x3f0
+[ 4349.377095]  kthread+0x103/0x140
+[ 4349.377096]  ? process_one_work+0x580/0x580
+[ 4349.377099]  ? kthread_bind+0x10/0x10
+[ 4349.377103]  ret_from_fork+0x3a/0x50
+[ 4349.377126] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.377127] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.377134] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.377135] Call Trace:
+[ 4349.377138]  dump_stack+0x78/0xb3
+[ 4349.377144]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.377155]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.377165]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.377169]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.377174]  ? find_held_lock+0x2d/0x90
+[ 4349.377180]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.377187]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.377194]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.377199]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.377209]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.377218]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.377221]  process_one_work+0x200/0x580
+[ 4349.377223]  ? process_one_work+0x17a/0x580
+[ 4349.377229]  worker_thread+0x4c/0x3f0
+[ 4349.377234]  kthread+0x103/0x140
+[ 4349.377236]  ? process_one_work+0x580/0x580
+[ 4349.377238]  ? kthread_bind+0x10/0x10
+[ 4349.377243]  ret_from_fork+0x3a/0x50
+[ 4349.377704] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.377706] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.377713] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.377715] Call Trace:
+[ 4349.377718]  dump_stack+0x78/0xb3
+[ 4349.377725]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.377732]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.377740]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.377745]  ? find_held_lock+0x2d/0x90
+[ 4349.377751]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.377758]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.377765]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.377770]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.377780]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.377788]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.377791]  process_one_work+0x200/0x580
+[ 4349.377793]  ? process_one_work+0x17a/0x580
+[ 4349.377799]  worker_thread+0x4c/0x3f0
+[ 4349.377804]  kthread+0x103/0x140
+[ 4349.377806]  ? process_one_work+0x580/0x580
+[ 4349.377808]  ? kthread_bind+0x10/0x10
+[ 4349.377812]  ret_from_fork+0x3a/0x50
+[ 4349.377839] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.377840] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.377846] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.377865] Call Trace:
+[ 4349.377867]  dump_stack+0x78/0xb3
+[ 4349.377874]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.377903]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.377913]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.377917]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.377921]  ? find_held_lock+0x2d/0x90
+[ 4349.377928]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.377934]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.377942]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.377946]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.377956]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.377965]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.377968]  process_one_work+0x200/0x580
+[ 4349.377970]  ? process_one_work+0x17a/0x580
+[ 4349.377976]  worker_thread+0x4c/0x3f0
+[ 4349.377981]  kthread+0x103/0x140
+[ 4349.377983]  ? process_one_work+0x580/0x580
+[ 4349.377985]  ? kthread_bind+0x10/0x10
+[ 4349.377989]  ret_from_fork+0x3a/0x50
+[ 4349.378504] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.378505] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.378513] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.378515] Call Trace:
+[ 4349.378518]  dump_stack+0x78/0xb3
+[ 4349.378525]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.378533]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.378541]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.378546]  ? find_held_lock+0x2d/0x90
+[ 4349.378553]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.378560]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.378568]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.378572]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.378583]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.378592]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.378595]  process_one_work+0x200/0x580
+[ 4349.378597]  ? process_one_work+0x17a/0x580
+[ 4349.378603]  worker_thread+0x4c/0x3f0
+[ 4349.378608]  kthread+0x103/0x140
+[ 4349.378610]  ? process_one_work+0x580/0x580
+[ 4349.378612]  ? kthread_bind+0x10/0x10
+[ 4349.378616]  ret_from_fork+0x3a/0x50
+[ 4349.378627] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.378629] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.378635] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.378636] Call Trace:
+[ 4349.378640]  dump_stack+0x78/0xb3
+[ 4349.378646]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.378657]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.378667]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.378671]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.378675]  ? find_held_lock+0x2d/0x90
+[ 4349.378682]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.378689]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.378696]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.378700]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.378711]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.378720]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.378724]  process_one_work+0x200/0x580
+[ 4349.378726]  ? process_one_work+0x17a/0x580
+[ 4349.378731]  worker_thread+0x4c/0x3f0
+[ 4349.378753]  kthread+0x103/0x140
+[ 4349.378755]  ? process_one_work+0x580/0x580
+[ 4349.378757]  ? kthread_bind+0x10/0x10
+[ 4349.378761]  ret_from_fork+0x3a/0x50
+[ 4349.379321] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.379323] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.379331] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.379333] Call Trace:
+[ 4349.379336]  dump_stack+0x78/0xb3
+[ 4349.379358]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.379366]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.379374]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.379379]  ? find_held_lock+0x2d/0x90
+[ 4349.379385]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.379392]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.379400]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.379404]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.379414]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.379422]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.379426]  process_one_work+0x200/0x580
+[ 4349.379428]  ? process_one_work+0x17a/0x580
+[ 4349.379433]  worker_thread+0x4c/0x3f0
+[ 4349.379438]  kthread+0x103/0x140
+[ 4349.379440]  ? process_one_work+0x580/0x580
+[ 4349.379442]  ? kthread_bind+0x10/0x10
+[ 4349.379446]  ret_from_fork+0x3a/0x50
+[ 4349.379473] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.379474] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.379498] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.379501] Call Trace:
+[ 4349.379503]  dump_stack+0x78/0xb3
+[ 4349.379510]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.379538]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.379548]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.379552]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.379556]  ? find_held_lock+0x2d/0x90
+[ 4349.379563]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.379571]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.379579]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.379583]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.379593]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.379602]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.379605]  process_one_work+0x200/0x580
+[ 4349.379607]  ? process_one_work+0x17a/0x580
+[ 4349.379613]  worker_thread+0x4c/0x3f0
+[ 4349.379618]  kthread+0x103/0x140
+[ 4349.379620]  ? process_one_work+0x580/0x580
+[ 4349.379622]  ? kthread_bind+0x10/0x10
+[ 4349.379626]  ret_from_fork+0x3a/0x50
+[ 4349.380493] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.380495] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.380503] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.380505] Call Trace:
+[ 4349.380510]  dump_stack+0x78/0xb3
+[ 4349.380518]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.380544]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.380553]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.380557]  ? find_held_lock+0x2d/0x90
+[ 4349.380582]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.380590]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.380599]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.380603]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.380614]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.380623]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.380627]  process_one_work+0x200/0x580
+[ 4349.380630]  ? process_one_work+0x17a/0x580
+[ 4349.380635]  worker_thread+0x4c/0x3f0
+[ 4349.380641]  kthread+0x103/0x140
+[ 4349.380643]  ? process_one_work+0x580/0x580
+[ 4349.380645]  ? kthread_bind+0x10/0x10
+[ 4349.380649]  ret_from_fork+0x3a/0x50
+[ 4349.380662] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.380664] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.380670] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.380671] Call Trace:
+[ 4349.380674]  dump_stack+0x78/0xb3
+[ 4349.380682]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.380693]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.380704]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.380708]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.380712]  ? find_held_lock+0x2d/0x90
+[ 4349.380718]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.380726]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.380734]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.380738]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.380749]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.380758]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.380761]  process_one_work+0x200/0x580
+[ 4349.380763]  ? process_one_work+0x17a/0x580
+[ 4349.380770]  worker_thread+0x4c/0x3f0
+[ 4349.380775]  kthread+0x103/0x140
+[ 4349.380777]  ? process_one_work+0x580/0x580
+[ 4349.380779]  ? kthread_bind+0x10/0x10
+[ 4349.380784]  ret_from_fork+0x3a/0x50
+[ 4349.381457] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.381459] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.381467] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.381468] Call Trace:
+[ 4349.381472]  dump_stack+0x78/0xb3
+[ 4349.381479]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.381486]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.381495]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.381500]  ? find_held_lock+0x2d/0x90
+[ 4349.381506]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.381513]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.381521]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.381525]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.381535]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.381544]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.381547]  process_one_work+0x200/0x580
+[ 4349.381549]  ? process_one_work+0x17a/0x580
+[ 4349.381555]  worker_thread+0x4c/0x3f0
+[ 4349.381560]  kthread+0x103/0x140
+[ 4349.381562]  ? process_one_work+0x580/0x580
+[ 4349.381564]  ? kthread_bind+0x10/0x10
+[ 4349.381568]  ret_from_fork+0x3a/0x50
+[ 4349.381580] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.381581] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.381587] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.381589] Call Trace:
+[ 4349.381591]  dump_stack+0x78/0xb3
+[ 4349.381616]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.381627]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.381637]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.381641]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.381646]  ? find_held_lock+0x2d/0x90
+[ 4349.381652]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.381659]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.381671]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.381676]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.381687]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.381696]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.381700]  process_one_work+0x200/0x580
+[ 4349.381701]  ? process_one_work+0x17a/0x580
+[ 4349.381707]  worker_thread+0x4c/0x3f0
+[ 4349.381713]  kthread+0x103/0x140
+[ 4349.381715]  ? process_one_work+0x580/0x580
+[ 4349.381717]  ? kthread_bind+0x10/0x10
+[ 4349.381721]  ret_from_fork+0x3a/0x50
+[ 4349.382486] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.382488] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.382496] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.382497] Call Trace:
+[ 4349.382501]  dump_stack+0x78/0xb3
+[ 4349.382507]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.382515]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.382523]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.382528]  ? find_held_lock+0x2d/0x90
+[ 4349.382534]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.382541]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.382549]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.382553]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.382563]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.382572]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.382575]  process_one_work+0x200/0x580
+[ 4349.382577]  ? process_one_work+0x17a/0x580
+[ 4349.382582]  worker_thread+0x4c/0x3f0
+[ 4349.382588]  kthread+0x103/0x140
+[ 4349.382589]  ? process_one_work+0x580/0x580
+[ 4349.382592]  ? kthread_bind+0x10/0x10
+[ 4349.382596]  ret_from_fork+0x3a/0x50
+[ 4349.382607] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.382609] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.382615] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.382616] Call Trace:
+[ 4349.382619]  dump_stack+0x78/0xb3
+[ 4349.382625]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.382635]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.382664]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.382668]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.382673]  ? find_held_lock+0x2d/0x90
+[ 4349.382679]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.382686]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.382694]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.382698]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.382708]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.382717]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.382721]  process_one_work+0x200/0x580
+[ 4349.382722]  ? process_one_work+0x17a/0x580
+[ 4349.382728]  worker_thread+0x4c/0x3f0
+[ 4349.382734]  kthread+0x103/0x140
+[ 4349.382735]  ? process_one_work+0x580/0x580
+[ 4349.382738]  ? kthread_bind+0x10/0x10
+[ 4349.382742]  ret_from_fork+0x3a/0x50
+[ 4349.383490] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.383491] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.383499] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.383501] Call Trace:
+[ 4349.383505]  dump_stack+0x78/0xb3
+[ 4349.383511]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.383519]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.383527]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.383531]  ? find_held_lock+0x2d/0x90
+[ 4349.383537]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.383545]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.383552]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.383556]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.383566]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.383575]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.383578]  process_one_work+0x200/0x580
+[ 4349.383580]  ? process_one_work+0x17a/0x580
+[ 4349.383585]  worker_thread+0x4c/0x3f0
+[ 4349.383591]  kthread+0x103/0x140
+[ 4349.383593]  ? process_one_work+0x580/0x580
+[ 4349.383595]  ? kthread_bind+0x10/0x10
+[ 4349.383599]  ret_from_fork+0x3a/0x50
+[ 4349.383611] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.383612] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.383618] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.383619] Call Trace:
+[ 4349.383622]  dump_stack+0x78/0xb3
+[ 4349.383628]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.383639]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.383649]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.383652]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.383657]  ? find_held_lock+0x2d/0x90
+[ 4349.383679]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.383704]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.383712]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.383716]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.383744]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.383753]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.383756]  process_one_work+0x200/0x580
+[ 4349.383758]  ? process_one_work+0x17a/0x580
+[ 4349.383764]  worker_thread+0x4c/0x3f0
+[ 4349.383770]  kthread+0x103/0x140
+[ 4349.383771]  ? process_one_work+0x580/0x580
+[ 4349.383774]  ? kthread_bind+0x10/0x10
+[ 4349.383778]  ret_from_fork+0x3a/0x50
+[ 4349.384479] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.384481] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.384488] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.384490] Call Trace:
+[ 4349.384494]  dump_stack+0x78/0xb3
+[ 4349.384500]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.384509]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.384517]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.384522]  ? find_held_lock+0x2d/0x90
+[ 4349.384544]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.384552]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.384559]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.384563]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.384573]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.384582]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.384585]  process_one_work+0x200/0x580
+[ 4349.384587]  ? process_one_work+0x17a/0x580
+[ 4349.384593]  worker_thread+0x4c/0x3f0
+[ 4349.384598]  kthread+0x103/0x140
+[ 4349.384600]  ? process_one_work+0x580/0x580
+[ 4349.384602]  ? kthread_bind+0x10/0x10
+[ 4349.384607]  ret_from_fork+0x3a/0x50
+[ 4349.384619] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.384620] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.384626] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.384627] Call Trace:
+[ 4349.384647]  dump_stack+0x78/0xb3
+[ 4349.384653]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.384663]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.384674]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.384677]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.384681]  ? find_held_lock+0x2d/0x90
+[ 4349.384688]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.384711]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.384718]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.384740]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.384750]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.384777]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.384780]  process_one_work+0x200/0x580
+[ 4349.384782]  ? process_one_work+0x17a/0x580
+[ 4349.384788]  worker_thread+0x4c/0x3f0
+[ 4349.384793]  kthread+0x103/0x140
+[ 4349.384795]  ? process_one_work+0x580/0x580
+[ 4349.384797]  ? kthread_bind+0x10/0x10
+[ 4349.384801]  ret_from_fork+0x3a/0x50
+[ 4349.385453] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.385455] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.385463] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.385464] Call Trace:
+[ 4349.385468]  dump_stack+0x78/0xb3
+[ 4349.385475]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.385482]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.385490]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.385495]  ? find_held_lock+0x2d/0x90
+[ 4349.385501]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.385508]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.385516]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.385520]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.385529]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.385538]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.385541]  process_one_work+0x200/0x580
+[ 4349.385543]  ? process_one_work+0x17a/0x580
+[ 4349.385548]  worker_thread+0x4c/0x3f0
+[ 4349.385554]  kthread+0x103/0x140
+[ 4349.385556]  ? process_one_work+0x580/0x580
+[ 4349.385558]  ? kthread_bind+0x10/0x10
+[ 4349.385562]  ret_from_fork+0x3a/0x50
+[ 4349.385574] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.385575] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.385581] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.385582] Call Trace:
+[ 4349.385585]  dump_stack+0x78/0xb3
+[ 4349.385591]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.385601]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.385611]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.385615]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.385619]  ? find_held_lock+0x2d/0x90
+[ 4349.385625]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.385632]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.385639]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.385643]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.385653]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.385661]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.385664]  process_one_work+0x200/0x580
+[ 4349.385666]  ? process_one_work+0x17a/0x580
+[ 4349.385672]  worker_thread+0x4c/0x3f0
+[ 4349.385677]  kthread+0x103/0x140
+[ 4349.385679]  ? process_one_work+0x580/0x580
+[ 4349.385681]  ? kthread_bind+0x10/0x10
+[ 4349.385685]  ret_from_fork+0x3a/0x50
+[ 4349.386522] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.386524] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.386532] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.386534] Call Trace:
+[ 4349.386539]  dump_stack+0x78/0xb3
+[ 4349.386546]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.386555]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.386564]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.386568]  ? find_held_lock+0x2d/0x90
+[ 4349.386575]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.386582]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.386590]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.386594]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.386605]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.386614]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.386617]  process_one_work+0x200/0x580
+[ 4349.386619]  ? process_one_work+0x17a/0x580
+[ 4349.386625]  worker_thread+0x4c/0x3f0
+[ 4349.386630]  kthread+0x103/0x140
+[ 4349.386632]  ? process_one_work+0x580/0x580
+[ 4349.386634]  ? kthread_bind+0x10/0x10
+[ 4349.386638]  ret_from_fork+0x3a/0x50
+[ 4349.386651] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.386652] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.386658] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.386660] Call Trace:
+[ 4349.386662]  dump_stack+0x78/0xb3
+[ 4349.386669]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.386680]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.386690]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.386694]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.386698]  ? find_held_lock+0x2d/0x90
+[ 4349.386704]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.386711]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.386719]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.386723]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.386733]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.386759]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.386763]  process_one_work+0x200/0x580
+[ 4349.386765]  ? process_one_work+0x17a/0x580
+[ 4349.386770]  worker_thread+0x4c/0x3f0
+[ 4349.386776]  kthread+0x103/0x140
+[ 4349.386778]  ? process_one_work+0x580/0x580
+[ 4349.386780]  ? kthread_bind+0x10/0x10
+[ 4349.386784]  ret_from_fork+0x3a/0x50
+[ 4349.387484] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.387486] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.387494] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.387496] Call Trace:
+[ 4349.387499]  dump_stack+0x78/0xb3
+[ 4349.387506]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.387515]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.387523]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.387528]  ? find_held_lock+0x2d/0x90
+[ 4349.387534]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.387542]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.387566]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.387570]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.387580]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.387589]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.387593]  process_one_work+0x200/0x580
+[ 4349.387594]  ? process_one_work+0x17a/0x580
+[ 4349.387600]  worker_thread+0x4c/0x3f0
+[ 4349.387605]  kthread+0x103/0x140
+[ 4349.387607]  ? process_one_work+0x580/0x580
+[ 4349.387609]  ? kthread_bind+0x10/0x10
+[ 4349.387614]  ret_from_fork+0x3a/0x50
+[ 4349.387626] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.387627] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.387633] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.387634] Call Trace:
+[ 4349.387637]  dump_stack+0x78/0xb3
+[ 4349.387643]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.387654]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.387664]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.387668]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.387672]  ? find_held_lock+0x2d/0x90
+[ 4349.387678]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.387685]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.387693]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.387697]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.387707]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.387715]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.387719]  process_one_work+0x200/0x580
+[ 4349.387720]  ? process_one_work+0x17a/0x580
+[ 4349.387726]  worker_thread+0x4c/0x3f0
+[ 4349.387731]  kthread+0x103/0x140
+[ 4349.387733]  ? process_one_work+0x580/0x580
+[ 4349.387735]  ? kthread_bind+0x10/0x10
+[ 4349.387740]  ret_from_fork+0x3a/0x50
+[ 4349.388548] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.388550] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.388558] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.388560] Call Trace:
+[ 4349.388565]  dump_stack+0x78/0xb3
+[ 4349.388591]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.388599]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.388608]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.388613]  ? find_held_lock+0x2d/0x90
+[ 4349.388619]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.388627]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.388636]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.388640]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.388651]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.388661]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.388664]  process_one_work+0x200/0x580
+[ 4349.388667]  ? process_one_work+0x17a/0x580
+[ 4349.388672]  worker_thread+0x4c/0x3f0
+[ 4349.388678]  kthread+0x103/0x140
+[ 4349.388680]  ? process_one_work+0x580/0x580
+[ 4349.388682]  ? kthread_bind+0x10/0x10
+[ 4349.388686]  ret_from_fork+0x3a/0x50
+[ 4349.388699] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.388700] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.388707] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.388708] Call Trace:
+[ 4349.388712]  dump_stack+0x78/0xb3
+[ 4349.388719]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.388730]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.388740]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.388744]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.388749]  ? find_held_lock+0x2d/0x90
+[ 4349.388755]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.388763]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.388771]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.388775]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.388785]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.388794]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.388798]  process_one_work+0x200/0x580
+[ 4349.388800]  ? process_one_work+0x17a/0x580
+[ 4349.388806]  worker_thread+0x4c/0x3f0
+[ 4349.388811]  kthread+0x103/0x140
+[ 4349.388813]  ? process_one_work+0x580/0x580
+[ 4349.388815]  ? kthread_bind+0x10/0x10
+[ 4349.388819]  ret_from_fork+0x3a/0x50
+[ 4349.389475] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.389477] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.389485] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.389486] Call Trace:
+[ 4349.389491]  dump_stack+0x78/0xb3
+[ 4349.389497]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.389505]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.389513]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.389518]  ? find_held_lock+0x2d/0x90
+[ 4349.389524]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.389531]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.389539]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.389544]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.389553]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.389562]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.389566]  process_one_work+0x200/0x580
+[ 4349.389567]  ? process_one_work+0x17a/0x580
+[ 4349.389573]  worker_thread+0x4c/0x3f0
+[ 4349.389578]  kthread+0x103/0x140
+[ 4349.389580]  ? process_one_work+0x580/0x580
+[ 4349.389582]  ? kthread_bind+0x10/0x10
+[ 4349.389586]  ret_from_fork+0x3a/0x50
+[ 4349.389598] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.389599] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.389605] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.389607] Call Trace:
+[ 4349.389609]  dump_stack+0x78/0xb3
+[ 4349.389616]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.389627]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.389637]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.389641]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.389645]  ? find_held_lock+0x2d/0x90
+[ 4349.389669]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.389676]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.389684]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.389688]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.389698]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.389707]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.389711]  process_one_work+0x200/0x580
+[ 4349.389712]  ? process_one_work+0x17a/0x580
+[ 4349.389718]  worker_thread+0x4c/0x3f0
+[ 4349.389724]  kthread+0x103/0x140
+[ 4349.389726]  ? process_one_work+0x580/0x580
+[ 4349.389728]  ? kthread_bind+0x10/0x10
+[ 4349.389732]  ret_from_fork+0x3a/0x50
+[ 4349.390486] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.390487] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.390495] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.390497] Call Trace:
+[ 4349.390500]  dump_stack+0x78/0xb3
+[ 4349.390507]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.390515]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.390523]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.390528]  ? find_held_lock+0x2d/0x90
+[ 4349.390534]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.390541]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.390548]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.390553]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.390563]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.390572]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.390575]  process_one_work+0x200/0x580
+[ 4349.390577]  ? process_one_work+0x17a/0x580
+[ 4349.390582]  worker_thread+0x4c/0x3f0
+[ 4349.390588]  kthread+0x103/0x140
+[ 4349.390589]  ? process_one_work+0x580/0x580
+[ 4349.390592]  ? kthread_bind+0x10/0x10
+[ 4349.390596]  ret_from_fork+0x3a/0x50
+[ 4349.390608] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.390609] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.390615] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.390617] Call Trace:
+[ 4349.390619]  dump_stack+0x78/0xb3
+[ 4349.390625]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.390636]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.390646]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.390650]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.390654]  ? find_held_lock+0x2d/0x90
+[ 4349.390660]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.390667]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.390674]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.390696]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.390707]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.390716]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.390720]  process_one_work+0x200/0x580
+[ 4349.390721]  ? process_one_work+0x17a/0x580
+[ 4349.390727]  worker_thread+0x4c/0x3f0
+[ 4349.390733]  kthread+0x103/0x140
+[ 4349.390734]  ? process_one_work+0x580/0x580
+[ 4349.390737]  ? kthread_bind+0x10/0x10
+[ 4349.390741]  ret_from_fork+0x3a/0x50
+[ 4349.391537] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.391539] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.391547] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.391549] Call Trace:
+[ 4349.391553]  dump_stack+0x78/0xb3
+[ 4349.391561]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.391569]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.391578]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.391583]  ? find_held_lock+0x2d/0x90
+[ 4349.391589]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.391612]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.391620]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.391624]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.391634]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.391661]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.391665]  process_one_work+0x200/0x580
+[ 4349.391667]  ? process_one_work+0x17a/0x580
+[ 4349.391673]  worker_thread+0x4c/0x3f0
+[ 4349.391678]  kthread+0x103/0x140
+[ 4349.391680]  ? process_one_work+0x580/0x580
+[ 4349.391682]  ? kthread_bind+0x10/0x10
+[ 4349.391686]  ret_from_fork+0x3a/0x50
+[ 4349.391699] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.391700] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.391706] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.391708] Call Trace:
+[ 4349.391711]  dump_stack+0x78/0xb3
+[ 4349.391718]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.391728]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.391738]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.391742]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.391746]  ? find_held_lock+0x2d/0x90
+[ 4349.391753]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.391760]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.391768]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.391772]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.391782]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.391790]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.391794]  process_one_work+0x200/0x580
+[ 4349.391795]  ? process_one_work+0x17a/0x580
+[ 4349.391801]  worker_thread+0x4c/0x3f0
+[ 4349.391806]  kthread+0x103/0x140
+[ 4349.391808]  ? process_one_work+0x580/0x580
+[ 4349.391810]  ? kthread_bind+0x10/0x10
+[ 4349.391814]  ret_from_fork+0x3a/0x50
+[ 4349.392464] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.392465] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.392473] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.392475] Call Trace:
+[ 4349.392479]  dump_stack+0x78/0xb3
+[ 4349.392485]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.392493]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.392501]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.392505]  ? find_held_lock+0x2d/0x90
+[ 4349.392511]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.392518]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.392526]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.392530]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.392540]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.392548]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.392552]  process_one_work+0x200/0x580
+[ 4349.392553]  ? process_one_work+0x17a/0x580
+[ 4349.392559]  worker_thread+0x4c/0x3f0
+[ 4349.392564]  kthread+0x103/0x140
+[ 4349.392566]  ? process_one_work+0x580/0x580
+[ 4349.392568]  ? kthread_bind+0x10/0x10
+[ 4349.392572]  ret_from_fork+0x3a/0x50
+[ 4349.392583] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.392584] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.392590] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.392591] Call Trace:
+[ 4349.392594]  dump_stack+0x78/0xb3
+[ 4349.392601]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.392611]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.392621]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.392624]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.392629]  ? find_held_lock+0x2d/0x90
+[ 4349.392634]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.392641]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.392648]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.392652]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.392662]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.392670]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.392673]  process_one_work+0x200/0x580
+[ 4349.392675]  ? process_one_work+0x17a/0x580
+[ 4349.392680]  worker_thread+0x4c/0x3f0
+[ 4349.392686]  kthread+0x103/0x140
+[ 4349.392688]  ? process_one_work+0x580/0x580
+[ 4349.392690]  ? kthread_bind+0x10/0x10
+[ 4349.392694]  ret_from_fork+0x3a/0x50
+[ 4349.393592] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.393594] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.393603] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.393605] Call Trace:
+[ 4349.393609]  dump_stack+0x78/0xb3
+[ 4349.393617]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.393626]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.393634]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.393639]  ? find_held_lock+0x2d/0x90
+[ 4349.393646]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.393653]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.393661]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.393666]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.393677]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.393686]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.393690]  process_one_work+0x200/0x580
+[ 4349.393692]  ? process_one_work+0x17a/0x580
+[ 4349.393698]  worker_thread+0x4c/0x3f0
+[ 4349.393703]  kthread+0x103/0x140
+[ 4349.393705]  ? process_one_work+0x580/0x580
+[ 4349.393708]  ? kthread_bind+0x10/0x10
+[ 4349.393713]  ret_from_fork+0x3a/0x50
+[ 4349.393725] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.393727] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.393733] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.393735] Call Trace:
+[ 4349.393737]  dump_stack+0x78/0xb3
+[ 4349.393744]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.393755]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.393766]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.393770]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.393774]  ? find_held_lock+0x2d/0x90
+[ 4349.393781]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.393788]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.393796]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.393800]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.393811]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.393836]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.393839]  process_one_work+0x200/0x580
+[ 4349.393841]  ? process_one_work+0x17a/0x580
+[ 4349.393847]  worker_thread+0x4c/0x3f0
+[ 4349.393852]  kthread+0x103/0x140
+[ 4349.393855]  ? process_one_work+0x580/0x580
+[ 4349.393857]  ? kthread_bind+0x10/0x10
+[ 4349.393861]  ret_from_fork+0x3a/0x50
+[ 4349.394490] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.394492] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.394500] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.394502] Call Trace:
+[ 4349.394505]  dump_stack+0x78/0xb3
+[ 4349.394528]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.394536]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.394563]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.394567]  ? find_held_lock+0x2d/0x90
+[ 4349.394591]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.394599]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.394607]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.394611]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.394621]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.394630]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.394634]  process_one_work+0x200/0x580
+[ 4349.394636]  ? process_one_work+0x17a/0x580
+[ 4349.394641]  worker_thread+0x4c/0x3f0
+[ 4349.394647]  kthread+0x103/0x140
+[ 4349.394649]  ? process_one_work+0x580/0x580
+[ 4349.394651]  ? kthread_bind+0x10/0x10
+[ 4349.394655]  ret_from_fork+0x3a/0x50
+[ 4349.394668] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.394669] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.394675] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.394677] Call Trace:
+[ 4349.394679]  dump_stack+0x78/0xb3
+[ 4349.394686]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.394697]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.394707]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.394711]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.394715]  ? find_held_lock+0x2d/0x90
+[ 4349.394722]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.394729]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.394737]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.394741]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.394752]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.394761]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.394764]  process_one_work+0x200/0x580
+[ 4349.394766]  ? process_one_work+0x17a/0x580
+[ 4349.394772]  worker_thread+0x4c/0x3f0
+[ 4349.394777]  kthread+0x103/0x140
+[ 4349.394779]  ? process_one_work+0x580/0x580
+[ 4349.394781]  ? kthread_bind+0x10/0x10
+[ 4349.394786]  ret_from_fork+0x3a/0x50
+[ 4349.395580] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.395582] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.395590] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.395592] Call Trace:
+[ 4349.395597]  dump_stack+0x78/0xb3
+[ 4349.395604]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.395613]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.395621]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.395626]  ? find_held_lock+0x2d/0x90
+[ 4349.395632]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.395639]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.395666]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.395670]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.395681]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.395690]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.395694]  process_one_work+0x200/0x580
+[ 4349.395696]  ? process_one_work+0x17a/0x580
+[ 4349.395702]  worker_thread+0x4c/0x3f0
+[ 4349.395708]  kthread+0x103/0x140
+[ 4349.395710]  ? process_one_work+0x580/0x580
+[ 4349.395712]  ? kthread_bind+0x10/0x10
+[ 4349.395716]  ret_from_fork+0x3a/0x50
+[ 4349.395729] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.395730] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.395737] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.395738] Call Trace:
+[ 4349.395741]  dump_stack+0x78/0xb3
+[ 4349.395748]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.395759]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.395770]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.395774]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.395778]  ? find_held_lock+0x2d/0x90
+[ 4349.395785]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.395792]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.395800]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.395804]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.395814]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.395824]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.395827]  process_one_work+0x200/0x580
+[ 4349.395829]  ? process_one_work+0x17a/0x580
+[ 4349.395835]  worker_thread+0x4c/0x3f0
+[ 4349.395840]  kthread+0x103/0x140
+[ 4349.395842]  ? process_one_work+0x580/0x580
+[ 4349.395844]  ? kthread_bind+0x10/0x10
+[ 4349.395848]  ret_from_fork+0x3a/0x50
+[ 4349.396522] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.396523] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.396531] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.396533] Call Trace:
+[ 4349.396536]  dump_stack+0x78/0xb3
+[ 4349.396543]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.396550]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.396559]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.396563]  ? find_held_lock+0x2d/0x90
+[ 4349.396569]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.396576]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.396584]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.396588]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.396599]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.396608]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.396611]  process_one_work+0x200/0x580
+[ 4349.396613]  ? process_one_work+0x17a/0x580
+[ 4349.396618]  worker_thread+0x4c/0x3f0
+[ 4349.396624]  kthread+0x103/0x140
+[ 4349.396625]  ? process_one_work+0x580/0x580
+[ 4349.396627]  ? kthread_bind+0x10/0x10
+[ 4349.396631]  ret_from_fork+0x3a/0x50
+[ 4349.396643] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.396645] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.396651] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.396652] Call Trace:
+[ 4349.396654]  dump_stack+0x78/0xb3
+[ 4349.396661]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.396689]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.396700]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.396704]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.396708]  ? find_held_lock+0x2d/0x90
+[ 4349.396715]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.396722]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.396730]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.396734]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.396744]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.396753]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.396757]  process_one_work+0x200/0x580
+[ 4349.396758]  ? process_one_work+0x17a/0x580
+[ 4349.396764]  worker_thread+0x4c/0x3f0
+[ 4349.396770]  kthread+0x103/0x140
+[ 4349.396771]  ? process_one_work+0x580/0x580
+[ 4349.396774]  ? kthread_bind+0x10/0x10
+[ 4349.396778]  ret_from_fork+0x3a/0x50
+[ 4349.397346] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.397347] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.397355] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.397357] Call Trace:
+[ 4349.397360]  dump_stack+0x78/0xb3
+[ 4349.397366]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.397374]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.397383]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.397388]  ? find_held_lock+0x2d/0x90
+[ 4349.397394]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.397401]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.397409]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.397413]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.397424]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.397433]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.397436]  process_one_work+0x200/0x580
+[ 4349.397438]  ? process_one_work+0x17a/0x580
+[ 4349.397444]  worker_thread+0x4c/0x3f0
+[ 4349.397449]  kthread+0x103/0x140
+[ 4349.397451]  ? process_one_work+0x580/0x580
+[ 4349.397453]  ? kthread_bind+0x10/0x10
+[ 4349.397457]  ret_from_fork+0x3a/0x50
+[ 4349.397468] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.397469] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.397475] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.397476] Call Trace:
+[ 4349.397479]  dump_stack+0x78/0xb3
+[ 4349.397485]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.397496]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.397523]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.397527]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.397531]  ? find_held_lock+0x2d/0x90
+[ 4349.397537]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.397544]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.397551]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.397555]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.397565]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.397574]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.397577]  process_one_work+0x200/0x580
+[ 4349.397578]  ? process_one_work+0x17a/0x580
+[ 4349.397584]  worker_thread+0x4c/0x3f0
+[ 4349.397589]  kthread+0x103/0x140
+[ 4349.397591]  ? process_one_work+0x580/0x580
+[ 4349.397593]  ? kthread_bind+0x10/0x10
+[ 4349.397597]  ret_from_fork+0x3a/0x50
+[ 4349.397908] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.397910] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.397917] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.397919] Call Trace:
+[ 4349.397922]  dump_stack+0x78/0xb3
+[ 4349.397928]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.397936]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.397945]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.397949]  ? find_held_lock+0x2d/0x90
+[ 4349.397956]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.397963]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.397971]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.397975]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.397985]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.397995]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.397998]  process_one_work+0x200/0x580
+[ 4349.398000]  ? process_one_work+0x17a/0x580
+[ 4349.398006]  worker_thread+0x4c/0x3f0
+[ 4349.398011]  kthread+0x103/0x140
+[ 4349.398013]  ? process_one_work+0x580/0x580
+[ 4349.398015]  ? kthread_bind+0x10/0x10
+[ 4349.398019]  ret_from_fork+0x3a/0x50
+[ 4349.398030] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.398031] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.398037] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.398039] Call Trace:
+[ 4349.398042]  dump_stack+0x78/0xb3
+[ 4349.398051]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.398070]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.398080]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.398084]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.398088]  ? find_held_lock+0x2d/0x90
+[ 4349.398095]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.398102]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.398110]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.398114]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.398124]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.398133]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.398137]  process_one_work+0x200/0x580
+[ 4349.398139]  ? process_one_work+0x17a/0x580
+[ 4349.398145]  worker_thread+0x4c/0x3f0
+[ 4349.398150]  kthread+0x103/0x140
+[ 4349.398152]  ? process_one_work+0x580/0x580
+[ 4349.398154]  ? kthread_bind+0x10/0x10
+[ 4349.398158]  ret_from_fork+0x3a/0x50
+[ 4349.398766] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.398768] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.398775] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.398777] Call Trace:
+[ 4349.398780]  dump_stack+0x78/0xb3
+[ 4349.398787]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.398795]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.398804]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.398808]  ? find_held_lock+0x2d/0x90
+[ 4349.398815]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.398822]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.398829]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.398833]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.398844]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.398853]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.398856]  process_one_work+0x200/0x580
+[ 4349.398858]  ? process_one_work+0x17a/0x580
+[ 4349.398864]  worker_thread+0x4c/0x3f0
+[ 4349.398869]  kthread+0x103/0x140
+[ 4349.398871]  ? process_one_work+0x580/0x580
+[ 4349.398873]  ? kthread_bind+0x10/0x10
+[ 4349.398878]  ret_from_fork+0x3a/0x50
+[ 4349.398889] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.398890] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.398897] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.398899] Call Trace:
+[ 4349.398903]  dump_stack+0x78/0xb3
+[ 4349.398911]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.398923]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.398933]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.398937]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.398941]  ? find_held_lock+0x2d/0x90
+[ 4349.398947]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.398954]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.398962]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.398966]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.398976]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.398985]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.399005]  process_one_work+0x200/0x580
+[ 4349.399006]  ? process_one_work+0x17a/0x580
+[ 4349.399012]  worker_thread+0x4c/0x3f0
+[ 4349.399017]  kthread+0x103/0x140
+[ 4349.399019]  ? process_one_work+0x580/0x580
+[ 4349.399021]  ? kthread_bind+0x10/0x10
+[ 4349.399025]  ret_from_fork+0x3a/0x50
+[ 4349.399554] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.399556] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.399563] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.399565] Call Trace:
+[ 4349.399568]  dump_stack+0x78/0xb3
+[ 4349.399574]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.399581]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.399589]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.399594]  ? find_held_lock+0x2d/0x90
+[ 4349.399600]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.399607]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.399614]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.399618]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.399628]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.399637]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.399640]  process_one_work+0x200/0x580
+[ 4349.399642]  ? process_one_work+0x17a/0x580
+[ 4349.399648]  worker_thread+0x4c/0x3f0
+[ 4349.399653]  kthread+0x103/0x140
+[ 4349.399655]  ? process_one_work+0x580/0x580
+[ 4349.399657]  ? kthread_bind+0x10/0x10
+[ 4349.399661]  ret_from_fork+0x3a/0x50
+[ 4349.399671] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.399673] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.399679] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.399680] Call Trace:
+[ 4349.399683]  dump_stack+0x78/0xb3
+[ 4349.399689]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.399699]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.399709]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.399712]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.399734]  ? find_held_lock+0x2d/0x90
+[ 4349.399742]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.399748]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.399756]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.399760]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.399770]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.399779]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.399783]  process_one_work+0x200/0x580
+[ 4349.399785]  ? process_one_work+0x17a/0x580
+[ 4349.399790]  worker_thread+0x4c/0x3f0
+[ 4349.399796]  kthread+0x103/0x140
+[ 4349.399798]  ? process_one_work+0x580/0x580
+[ 4349.399800]  ? kthread_bind+0x10/0x10
+[ 4349.399804]  ret_from_fork+0x3a/0x50
+[ 4349.400410] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.400411] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.400419] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.400420] Call Trace:
+[ 4349.400424]  dump_stack+0x78/0xb3
+[ 4349.400431]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.400439]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.400447]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.400452]  ? find_held_lock+0x2d/0x90
+[ 4349.400458]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.400465]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.400473]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.400477]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.400488]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.400497]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.400500]  process_one_work+0x200/0x580
+[ 4349.400502]  ? process_one_work+0x17a/0x580
+[ 4349.400508]  worker_thread+0x4c/0x3f0
+[ 4349.400514]  kthread+0x103/0x140
+[ 4349.400515]  ? process_one_work+0x580/0x580
+[ 4349.400518]  ? kthread_bind+0x10/0x10
+[ 4349.400522]  ret_from_fork+0x3a/0x50
+[ 4349.400532] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.400534] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.400556] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.400557] Call Trace:
+[ 4349.400560]  dump_stack+0x78/0xb3
+[ 4349.400566]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.400576]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.400586]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.400590]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.400594]  ? find_held_lock+0x2d/0x90
+[ 4349.400600]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.400607]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.400614]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.400618]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.400628]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.400636]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.400640]  process_one_work+0x200/0x580
+[ 4349.400641]  ? process_one_work+0x17a/0x580
+[ 4349.400647]  worker_thread+0x4c/0x3f0
+[ 4349.400652]  kthread+0x103/0x140
+[ 4349.400654]  ? process_one_work+0x580/0x580
+[ 4349.400656]  ? kthread_bind+0x10/0x10
+[ 4349.400660]  ret_from_fork+0x3a/0x50
+[ 4349.401138] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.401140] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.401147] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.401149] Call Trace:
+[ 4349.401152]  dump_stack+0x78/0xb3
+[ 4349.401158]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.401166]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.401174]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.401178]  ? find_held_lock+0x2d/0x90
+[ 4349.401184]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.401207]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.401233]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.401237]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.401247]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.401274]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.401277]  process_one_work+0x200/0x580
+[ 4349.401279]  ? process_one_work+0x17a/0x580
+[ 4349.401285]  worker_thread+0x4c/0x3f0
+[ 4349.401291]  kthread+0x103/0x140
+[ 4349.401292]  ? process_one_work+0x580/0x580
+[ 4349.401294]  ? kthread_bind+0x10/0x10
+[ 4349.401299]  ret_from_fork+0x3a/0x50
+[ 4349.401309] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.401311] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.401317] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.401318] Call Trace:
+[ 4349.401321]  dump_stack+0x78/0xb3
+[ 4349.401327]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.401338]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.401348]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.401352]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.401356]  ? find_held_lock+0x2d/0x90
+[ 4349.401363]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.401370]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.401377]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.401381]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.401391]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.401401]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.401404]  process_one_work+0x200/0x580
+[ 4349.401405]  ? process_one_work+0x17a/0x580
+[ 4349.401411]  worker_thread+0x4c/0x3f0
+[ 4349.401417]  kthread+0x103/0x140
+[ 4349.401418]  ? process_one_work+0x580/0x580
+[ 4349.401421]  ? kthread_bind+0x10/0x10
+[ 4349.401425]  ret_from_fork+0x3a/0x50
+[ 4349.401992] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.401994] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.402001] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.402003] Call Trace:
+[ 4349.402007]  dump_stack+0x78/0xb3
+[ 4349.402013]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.402021]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.402030]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.402034]  ? find_held_lock+0x2d/0x90
+[ 4349.402041]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.402051]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.402063]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.402070]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.402084]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.402093]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.402097]  process_one_work+0x200/0x580
+[ 4349.402098]  ? process_one_work+0x17a/0x580
+[ 4349.402104]  worker_thread+0x4c/0x3f0
+[ 4349.402110]  kthread+0x103/0x140
+[ 4349.402112]  ? process_one_work+0x580/0x580
+[ 4349.402114]  ? kthread_bind+0x10/0x10
+[ 4349.402119]  ret_from_fork+0x3a/0x50
+[ 4349.402140] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.402141] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.402148] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.402149] Call Trace:
+[ 4349.402152]  dump_stack+0x78/0xb3
+[ 4349.402159]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.402170]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.402180]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.402184]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.402188]  ? find_held_lock+0x2d/0x90
+[ 4349.402194]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.402202]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.402209]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.402213]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.402224]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.402233]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.402236]  process_one_work+0x200/0x580
+[ 4349.402238]  ? process_one_work+0x17a/0x580
+[ 4349.402243]  worker_thread+0x4c/0x3f0
+[ 4349.402249]  kthread+0x103/0x140
+[ 4349.402251]  ? process_one_work+0x580/0x580
+[ 4349.402253]  ? kthread_bind+0x10/0x10
+[ 4349.402257]  ret_from_fork+0x3a/0x50
+[ 4349.402712] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.402713] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.402720] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.402722] Call Trace:
+[ 4349.402725]  dump_stack+0x78/0xb3
+[ 4349.402732]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.402740]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.402748]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.402753]  ? find_held_lock+0x2d/0x90
+[ 4349.402760]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.402767]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.402774]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.402778]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.402789]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.402798]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.402801]  process_one_work+0x200/0x580
+[ 4349.402803]  ? process_one_work+0x17a/0x580
+[ 4349.402808]  worker_thread+0x4c/0x3f0
+[ 4349.402814]  kthread+0x103/0x140
+[ 4349.402816]  ? process_one_work+0x580/0x580
+[ 4349.402818]  ? kthread_bind+0x10/0x10
+[ 4349.402822]  ret_from_fork+0x3a/0x50
+[ 4349.402833] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.402834] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.402840] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.402841] Call Trace:
+[ 4349.402844]  dump_stack+0x78/0xb3
+[ 4349.402850]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.402861]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.402871]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.402875]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.402879]  ? find_held_lock+0x2d/0x90
+[ 4349.402886]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.402893]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.402900]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.402904]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.402914]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.402924]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.402927]  process_one_work+0x200/0x580
+[ 4349.402928]  ? process_one_work+0x17a/0x580
+[ 4349.402934]  worker_thread+0x4c/0x3f0
+[ 4349.402940]  kthread+0x103/0x140
+[ 4349.402941]  ? process_one_work+0x580/0x580
+[ 4349.402943]  ? kthread_bind+0x10/0x10
+[ 4349.402947]  ret_from_fork+0x3a/0x50
+[ 4349.403562] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.403564] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.403571] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.403573] Call Trace:
+[ 4349.403576]  dump_stack+0x78/0xb3
+[ 4349.403583]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.403591]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.403599]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.403620]  ? find_held_lock+0x2d/0x90
+[ 4349.403626]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.403633]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.403640]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.403644]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.403654]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.403663]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.403667]  process_one_work+0x200/0x580
+[ 4349.403668]  ? process_one_work+0x17a/0x580
+[ 4349.403674]  worker_thread+0x4c/0x3f0
+[ 4349.403679]  kthread+0x103/0x140
+[ 4349.403681]  ? process_one_work+0x580/0x580
+[ 4349.403683]  ? kthread_bind+0x10/0x10
+[ 4349.403688]  ret_from_fork+0x3a/0x50
+[ 4349.403698] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.403699] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.403705] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.403707] Call Trace:
+[ 4349.403709]  dump_stack+0x78/0xb3
+[ 4349.403715]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.403742]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.403770]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.403773]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.403777]  ? find_held_lock+0x2d/0x90
+[ 4349.403802]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.403808]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.403816]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.403820]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.403831]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.403840]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.403843]  process_one_work+0x200/0x580
+[ 4349.403844]  ? process_one_work+0x17a/0x580
+[ 4349.403850]  worker_thread+0x4c/0x3f0
+[ 4349.403856]  kthread+0x103/0x140
+[ 4349.403857]  ? process_one_work+0x580/0x580
+[ 4349.403859]  ? kthread_bind+0x10/0x10
+[ 4349.403864]  ret_from_fork+0x3a/0x50
+[ 4349.404351] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.404353] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.404360] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.404362] Call Trace:
+[ 4349.404365]  dump_stack+0x78/0xb3
+[ 4349.404372]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.404380]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.404388]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.404392]  ? find_held_lock+0x2d/0x90
+[ 4349.404399]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.404406]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.404414]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.404418]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.404428]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.404437]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.404440]  process_one_work+0x200/0x580
+[ 4349.404442]  ? process_one_work+0x17a/0x580
+[ 4349.404448]  worker_thread+0x4c/0x3f0
+[ 4349.404455]  kthread+0x103/0x140
+[ 4349.404456]  ? process_one_work+0x580/0x580
+[ 4349.404458]  ? kthread_bind+0x10/0x10
+[ 4349.404463]  ret_from_fork+0x3a/0x50
+[ 4349.404473] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.404475] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.404481] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.404482] Call Trace:
+[ 4349.404485]  dump_stack+0x78/0xb3
+[ 4349.404491]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.404502]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.404512]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.404516]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.404520]  ? find_held_lock+0x2d/0x90
+[ 4349.404526]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.404534]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.404541]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.404545]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.404555]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.404565]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.404568]  process_one_work+0x200/0x580
+[ 4349.404570]  ? process_one_work+0x17a/0x580
+[ 4349.404575]  worker_thread+0x4c/0x3f0
+[ 4349.404581]  kthread+0x103/0x140
+[ 4349.404583]  ? process_one_work+0x580/0x580
+[ 4349.404585]  ? kthread_bind+0x10/0x10
+[ 4349.404589]  ret_from_fork+0x3a/0x50
+[ 4349.405097] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.405099] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.405106] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.405108] Call Trace:
+[ 4349.405112]  dump_stack+0x78/0xb3
+[ 4349.405118]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.405126]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.405134]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.405139]  ? find_held_lock+0x2d/0x90
+[ 4349.405161]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.405168]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.405175]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.405179]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.405189]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.405198]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.405201]  process_one_work+0x200/0x580
+[ 4349.405203]  ? process_one_work+0x17a/0x580
+[ 4349.405208]  worker_thread+0x4c/0x3f0
+[ 4349.405213]  kthread+0x103/0x140
+[ 4349.405215]  ? process_one_work+0x580/0x580
+[ 4349.405218]  ? kthread_bind+0x10/0x10
+[ 4349.405222]  ret_from_fork+0x3a/0x50
+[ 4349.405232] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.405233] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.405239] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.405240] Call Trace:
+[ 4349.405243]  dump_stack+0x78/0xb3
+[ 4349.405249]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.405259]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.405269]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.405273]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.405277]  ? find_held_lock+0x2d/0x90
+[ 4349.405283]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.405289]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.405297]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.405301]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.405311]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.405320]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.405323]  process_one_work+0x200/0x580
+[ 4349.405324]  ? process_one_work+0x17a/0x580
+[ 4349.405330]  worker_thread+0x4c/0x3f0
+[ 4349.405335]  kthread+0x103/0x140
+[ 4349.405337]  ? process_one_work+0x580/0x580
+[ 4349.405339]  ? kthread_bind+0x10/0x10
+[ 4349.405343]  ret_from_fork+0x3a/0x50
+[ 4349.405992] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.405994] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.406001] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.406002] Call Trace:
+[ 4349.406006]  dump_stack+0x78/0xb3
+[ 4349.406013]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.406020]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.406029]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.406033]  ? find_held_lock+0x2d/0x90
+[ 4349.406040]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.406049]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.406062]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.406069]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.406080]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.406089]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.406093]  process_one_work+0x200/0x580
+[ 4349.406095]  ? process_one_work+0x17a/0x580
+[ 4349.406100]  worker_thread+0x4c/0x3f0
+[ 4349.406106]  kthread+0x103/0x140
+[ 4349.406108]  ? process_one_work+0x580/0x580
+[ 4349.406111]  ? kthread_bind+0x10/0x10
+[ 4349.406115]  ret_from_fork+0x3a/0x50
+[ 4349.406134] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.406135] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.406142] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.406143] Call Trace:
+[ 4349.406146]  dump_stack+0x78/0xb3
+[ 4349.406152]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.406163]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.406173]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.406176]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.406181]  ? find_held_lock+0x2d/0x90
+[ 4349.406187]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.406194]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.406202]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.406206]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.406216]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.406225]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.406228]  process_one_work+0x200/0x580
+[ 4349.406230]  ? process_one_work+0x17a/0x580
+[ 4349.406236]  worker_thread+0x4c/0x3f0
+[ 4349.406241]  kthread+0x103/0x140
+[ 4349.406243]  ? process_one_work+0x580/0x580
+[ 4349.406245]  ? kthread_bind+0x10/0x10
+[ 4349.406249]  ret_from_fork+0x3a/0x50
+[ 4349.406726] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.406727] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.406751] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.406752] Call Trace:
+[ 4349.406755]  dump_stack+0x78/0xb3
+[ 4349.406761]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.406768]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.406776]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.406780]  ? find_held_lock+0x2d/0x90
+[ 4349.406786]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.406793]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.406800]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.406803]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.406813]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.406822]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.406824]  process_one_work+0x200/0x580
+[ 4349.406826]  ? process_one_work+0x17a/0x580
+[ 4349.406831]  worker_thread+0x4c/0x3f0
+[ 4349.406836]  kthread+0x103/0x140
+[ 4349.406838]  ? process_one_work+0x580/0x580
+[ 4349.406840]  ? kthread_bind+0x10/0x10
+[ 4349.406844]  ret_from_fork+0x3a/0x50
+[ 4349.406854] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.406856] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.406861] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.406863] Call Trace:
+[ 4349.406865]  dump_stack+0x78/0xb3
+[ 4349.406871]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.406880]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.406890]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.406893]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.406898]  ? find_held_lock+0x2d/0x90
+[ 4349.406904]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.406910]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.406917]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.406921]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.406930]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.406939]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.406942]  process_one_work+0x200/0x580
+[ 4349.406944]  ? process_one_work+0x17a/0x580
+[ 4349.406949]  worker_thread+0x4c/0x3f0
+[ 4349.406954]  kthread+0x103/0x140
+[ 4349.406956]  ? process_one_work+0x580/0x580
+[ 4349.406958]  ? kthread_bind+0x10/0x10
+[ 4349.406962]  ret_from_fork+0x3a/0x50
+[ 4349.407620] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.407622] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.407629] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.407630] Call Trace:
+[ 4349.407633]  dump_stack+0x78/0xb3
+[ 4349.407639]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.407647]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.407655]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.407659]  ? find_held_lock+0x2d/0x90
+[ 4349.407666]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.407672]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.407679]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.407683]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.407711]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.407721]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.407724]  process_one_work+0x200/0x580
+[ 4349.407726]  ? process_one_work+0x17a/0x580
+[ 4349.407731]  worker_thread+0x4c/0x3f0
+[ 4349.407737]  kthread+0x103/0x140
+[ 4349.407739]  ? process_one_work+0x580/0x580
+[ 4349.407741]  ? kthread_bind+0x10/0x10
+[ 4349.407746]  ret_from_fork+0x3a/0x50
+[ 4349.407756] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.407758] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.407764] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.407765] Call Trace:
+[ 4349.407768]  dump_stack+0x78/0xb3
+[ 4349.407774]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.407784]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.407795]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.407798]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.407803]  ? find_held_lock+0x2d/0x90
+[ 4349.407809]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.407816]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.407823]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.407827]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.407838]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.407847]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.407850]  process_one_work+0x200/0x580
+[ 4349.407852]  ? process_one_work+0x17a/0x580
+[ 4349.407857]  worker_thread+0x4c/0x3f0
+[ 4349.407863]  kthread+0x103/0x140
+[ 4349.407865]  ? process_one_work+0x580/0x580
+[ 4349.407867]  ? kthread_bind+0x10/0x10
+[ 4349.407871]  ret_from_fork+0x3a/0x50
+[ 4349.408342] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.408343] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.408350] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.408352] Call Trace:
+[ 4349.408355]  dump_stack+0x78/0xb3
+[ 4349.408361]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.408369]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.408377]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.408382]  ? find_held_lock+0x2d/0x90
+[ 4349.408389]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.408396]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.408403]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.408407]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.408417]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.408427]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.408430]  process_one_work+0x200/0x580
+[ 4349.408432]  ? process_one_work+0x17a/0x580
+[ 4349.408437]  worker_thread+0x4c/0x3f0
+[ 4349.408443]  kthread+0x103/0x140
+[ 4349.408445]  ? process_one_work+0x580/0x580
+[ 4349.408447]  ? kthread_bind+0x10/0x10
+[ 4349.408451]  ret_from_fork+0x3a/0x50
+[ 4349.408462] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.408463] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.408469] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.408470] Call Trace:
+[ 4349.408473]  dump_stack+0x78/0xb3
+[ 4349.408479]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.408489]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.408500]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.408504]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.408508]  ? find_held_lock+0x2d/0x90
+[ 4349.408514]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.408521]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.408529]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.408533]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.408543]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.408568]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.408571]  process_one_work+0x200/0x580
+[ 4349.408573]  ? process_one_work+0x17a/0x580
+[ 4349.408578]  worker_thread+0x4c/0x3f0
+[ 4349.408584]  kthread+0x103/0x140
+[ 4349.408585]  ? process_one_work+0x580/0x580
+[ 4349.408587]  ? kthread_bind+0x10/0x10
+[ 4349.408591]  ret_from_fork+0x3a/0x50
+[ 4349.409217] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.409218] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.409226] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.409227] Call Trace:
+[ 4349.409230]  dump_stack+0x78/0xb3
+[ 4349.409236]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.409244]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.409252]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.409257]  ? find_held_lock+0x2d/0x90
+[ 4349.409263]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.409271]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.409278]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.409282]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.409292]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.409302]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.409305]  process_one_work+0x200/0x580
+[ 4349.409307]  ? process_one_work+0x17a/0x580
+[ 4349.409312]  worker_thread+0x4c/0x3f0
+[ 4349.409318]  kthread+0x103/0x140
+[ 4349.409320]  ? process_one_work+0x580/0x580
+[ 4349.409322]  ? kthread_bind+0x10/0x10
+[ 4349.409326]  ret_from_fork+0x3a/0x50
+[ 4349.409337] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.409338] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.409344] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.409346] Call Trace:
+[ 4349.409348]  dump_stack+0x78/0xb3
+[ 4349.409354]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.409365]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.409375]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.409379]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.409383]  ? find_held_lock+0x2d/0x90
+[ 4349.409390]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.409397]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.409404]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.409408]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.409418]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.409427]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.409431]  process_one_work+0x200/0x580
+[ 4349.409432]  ? process_one_work+0x17a/0x580
+[ 4349.409438]  worker_thread+0x4c/0x3f0
+[ 4349.409444]  kthread+0x103/0x140
+[ 4349.409445]  ? process_one_work+0x580/0x580
+[ 4349.409448]  ? kthread_bind+0x10/0x10
+[ 4349.409452]  ret_from_fork+0x3a/0x50
+[ 4349.409974] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.409975] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.409982] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.409983] Call Trace:
+[ 4349.409986]  dump_stack+0x78/0xb3
+[ 4349.409993]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.410000]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.410008]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.410013]  ? find_held_lock+0x2d/0x90
+[ 4349.410019]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.410026]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.410033]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.410037]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.410067]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.410083]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.410088]  process_one_work+0x200/0x580
+[ 4349.410091]  ? process_one_work+0x17a/0x580
+[ 4349.410098]  worker_thread+0x4c/0x3f0
+[ 4349.410104]  kthread+0x103/0x140
+[ 4349.410106]  ? process_one_work+0x580/0x580
+[ 4349.410108]  ? kthread_bind+0x10/0x10
+[ 4349.410112]  ret_from_fork+0x3a/0x50
+[ 4349.410132] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.410133] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.410140] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.410142] Call Trace:
+[ 4349.410144]  dump_stack+0x78/0xb3
+[ 4349.410150]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.410161]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.410171]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.410175]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.410180]  ? find_held_lock+0x2d/0x90
+[ 4349.410186]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.410193]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.410200]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.410204]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.410214]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.410224]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.410227]  process_one_work+0x200/0x580
+[ 4349.410229]  ? process_one_work+0x17a/0x580
+[ 4349.410234]  worker_thread+0x4c/0x3f0
+[ 4349.410240]  kthread+0x103/0x140
+[ 4349.410242]  ? process_one_work+0x580/0x580
+[ 4349.410244]  ? kthread_bind+0x10/0x10
+[ 4349.410248]  ret_from_fork+0x3a/0x50
+[ 4349.410731] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.410733] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.410740] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.410742] Call Trace:
+[ 4349.410745]  dump_stack+0x78/0xb3
+[ 4349.410751]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.410759]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.410767]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.410772]  ? find_held_lock+0x2d/0x90
+[ 4349.410778]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.410785]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.410793]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.410797]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.410807]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.410816]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.410819]  process_one_work+0x200/0x580
+[ 4349.410821]  ? process_one_work+0x17a/0x580
+[ 4349.410827]  worker_thread+0x4c/0x3f0
+[ 4349.410832]  kthread+0x103/0x140
+[ 4349.410834]  ? process_one_work+0x580/0x580
+[ 4349.410836]  ? kthread_bind+0x10/0x10
+[ 4349.410840]  ret_from_fork+0x3a/0x50
+[ 4349.410851] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.410852] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.410858] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.410860] Call Trace:
+[ 4349.410862]  dump_stack+0x78/0xb3
+[ 4349.410868]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.410879]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.410889]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.410893]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.410914]  ? find_held_lock+0x2d/0x90
+[ 4349.410920]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.410926]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.410933]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.410937]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.410947]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.410956]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.410959]  process_one_work+0x200/0x580
+[ 4349.410960]  ? process_one_work+0x17a/0x580
+[ 4349.410966]  worker_thread+0x4c/0x3f0
+[ 4349.410971]  kthread+0x103/0x140
+[ 4349.410973]  ? process_one_work+0x580/0x580
+[ 4349.410975]  ? kthread_bind+0x10/0x10
+[ 4349.410979]  ret_from_fork+0x3a/0x50
+[ 4349.411550] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.411551] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.411559] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.411561] Call Trace:
+[ 4349.411564]  dump_stack+0x78/0xb3
+[ 4349.411570]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.411577]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.411585]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.411590]  ? find_held_lock+0x2d/0x90
+[ 4349.411596]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.411603]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.411610]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.411614]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.411624]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.411633]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.411636]  process_one_work+0x200/0x580
+[ 4349.411638]  ? process_one_work+0x17a/0x580
+[ 4349.411661]  worker_thread+0x4c/0x3f0
+[ 4349.411667]  kthread+0x103/0x140
+[ 4349.411669]  ? process_one_work+0x580/0x580
+[ 4349.411671]  ? kthread_bind+0x10/0x10
+[ 4349.411675]  ret_from_fork+0x3a/0x50
+[ 4349.411686] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.411687] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.411693] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.411695] Call Trace:
+[ 4349.411697]  dump_stack+0x78/0xb3
+[ 4349.411703]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.411714]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.411725]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.411728]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.411733]  ? find_held_lock+0x2d/0x90
+[ 4349.411739]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.411746]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.411754]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.411758]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.411768]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.411777]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.411780]  process_one_work+0x200/0x580
+[ 4349.411782]  ? process_one_work+0x17a/0x580
+[ 4349.411788]  worker_thread+0x4c/0x3f0
+[ 4349.411793]  kthread+0x103/0x140
+[ 4349.411795]  ? process_one_work+0x580/0x580
+[ 4349.411797]  ? kthread_bind+0x10/0x10
+[ 4349.411801]  ret_from_fork+0x3a/0x50
+[ 4349.412340] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.412342] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.412349] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.412351] Call Trace:
+[ 4349.412355]  dump_stack+0x78/0xb3
+[ 4349.412361]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.412369]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.412377]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.412381]  ? find_held_lock+0x2d/0x90
+[ 4349.412388]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.412395]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.412402]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.412407]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.412417]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.412442]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.412445]  process_one_work+0x200/0x580
+[ 4349.412446]  ? process_one_work+0x17a/0x580
+[ 4349.412452]  worker_thread+0x4c/0x3f0
+[ 4349.412457]  kthread+0x103/0x140
+[ 4349.412459]  ? process_one_work+0x580/0x580
+[ 4349.412461]  ? kthread_bind+0x10/0x10
+[ 4349.412465]  ret_from_fork+0x3a/0x50
+[ 4349.412475] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.412477] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.412482] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.412484] Call Trace:
+[ 4349.412486]  dump_stack+0x78/0xb3
+[ 4349.412492]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.412503]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.412512]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.412516]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.412520]  ? find_held_lock+0x2d/0x90
+[ 4349.412526]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.412533]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.412540]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.412544]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.412554]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.412563]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.412565]  process_one_work+0x200/0x580
+[ 4349.412567]  ? process_one_work+0x17a/0x580
+[ 4349.412573]  worker_thread+0x4c/0x3f0
+[ 4349.412578]  kthread+0x103/0x140
+[ 4349.412580]  ? process_one_work+0x580/0x580
+[ 4349.412582]  ? kthread_bind+0x10/0x10
+[ 4349.412586]  ret_from_fork+0x3a/0x50
+[ 4349.413144] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.413146] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.413153] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.413154] Call Trace:
+[ 4349.413158]  dump_stack+0x78/0xb3
+[ 4349.413164]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.413172]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.413180]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.413185]  ? find_held_lock+0x2d/0x90
+[ 4349.413191]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.413198]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.413206]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.413210]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.413220]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.413229]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.413232]  process_one_work+0x200/0x580
+[ 4349.413234]  ? process_one_work+0x17a/0x580
+[ 4349.413240]  worker_thread+0x4c/0x3f0
+[ 4349.413245]  kthread+0x103/0x140
+[ 4349.413247]  ? process_one_work+0x580/0x580
+[ 4349.413249]  ? kthread_bind+0x10/0x10
+[ 4349.413253]  ret_from_fork+0x3a/0x50
+[ 4349.413264] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.413265] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.413272] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.413273] Call Trace:
+[ 4349.413275]  dump_stack+0x78/0xb3
+[ 4349.413282]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.413292]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.413302]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.413307]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.413311]  ? find_held_lock+0x2d/0x90
+[ 4349.413317]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.413324]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.413331]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.413336]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.413345]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.413355]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.413358]  process_one_work+0x200/0x580
+[ 4349.413360]  ? process_one_work+0x17a/0x580
+[ 4349.413365]  worker_thread+0x4c/0x3f0
+[ 4349.413371]  kthread+0x103/0x140
+[ 4349.413372]  ? process_one_work+0x580/0x580
+[ 4349.413375]  ? kthread_bind+0x10/0x10
+[ 4349.413379]  ret_from_fork+0x3a/0x50
+[ 4349.414008] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.414010] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.414018] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.414019] Call Trace:
+[ 4349.414022]  dump_stack+0x78/0xb3
+[ 4349.414028]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.414036]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.414048]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.414055]  ? find_held_lock+0x2d/0x90
+[ 4349.414066]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.414074]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.414082]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.414086]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.414096]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.414105]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.414109]  process_one_work+0x200/0x580
+[ 4349.414111]  ? process_one_work+0x17a/0x580
+[ 4349.414117]  worker_thread+0x4c/0x3f0
+[ 4349.414122]  kthread+0x103/0x140
+[ 4349.414124]  ? process_one_work+0x580/0x580
+[ 4349.414126]  ? kthread_bind+0x10/0x10
+[ 4349.414130]  ret_from_fork+0x3a/0x50
+[ 4349.414149] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.414151] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.414158] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.414159] Call Trace:
+[ 4349.414162]  dump_stack+0x78/0xb3
+[ 4349.414168]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.414178]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.414188]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.414192]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.414197]  ? find_held_lock+0x2d/0x90
+[ 4349.414204]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.414210]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.414218]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.414222]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.414232]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.414241]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.414245]  process_one_work+0x200/0x580
+[ 4349.414247]  ? process_one_work+0x17a/0x580
+[ 4349.414252]  worker_thread+0x4c/0x3f0
+[ 4349.414258]  kthread+0x103/0x140
+[ 4349.414260]  ? process_one_work+0x580/0x580
+[ 4349.414262]  ? kthread_bind+0x10/0x10
+[ 4349.414266]  ret_from_fork+0x3a/0x50
+[ 4349.414744] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.414745] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.414752] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.414754] Call Trace:
+[ 4349.414757]  dump_stack+0x78/0xb3
+[ 4349.414763]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.414771]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.414778]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.414783]  ? find_held_lock+0x2d/0x90
+[ 4349.414789]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.414796]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.414803]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.414807]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.414817]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.414825]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.414828]  process_one_work+0x200/0x580
+[ 4349.414830]  ? process_one_work+0x17a/0x580
+[ 4349.414836]  worker_thread+0x4c/0x3f0
+[ 4349.414841]  kthread+0x103/0x140
+[ 4349.414843]  ? process_one_work+0x580/0x580
+[ 4349.414845]  ? kthread_bind+0x10/0x10
+[ 4349.414849]  ret_from_fork+0x3a/0x50
+[ 4349.414859] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.414860] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.414866] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.414867] Call Trace:
+[ 4349.414870]  dump_stack+0x78/0xb3
+[ 4349.414875]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.414886]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.414895]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.414899]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.414903]  ? find_held_lock+0x2d/0x90
+[ 4349.414909]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.414916]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.414923]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.414927]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.414936]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.414945]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.414948]  process_one_work+0x200/0x580
+[ 4349.414950]  ? process_one_work+0x17a/0x580
+[ 4349.414955]  worker_thread+0x4c/0x3f0
+[ 4349.414960]  kthread+0x103/0x140
+[ 4349.414962]  ? process_one_work+0x580/0x580
+[ 4349.414965]  ? kthread_bind+0x10/0x10
+[ 4349.414969]  ret_from_fork+0x3a/0x50
+[ 4349.415678] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.415679] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.415686] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.415687] Call Trace:
+[ 4349.415690]  dump_stack+0x78/0xb3
+[ 4349.415697]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.415704]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.415712]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.415716]  ? find_held_lock+0x2d/0x90
+[ 4349.415722]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.415746]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.415753]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.415757]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.415767]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.415775]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.415778]  process_one_work+0x200/0x580
+[ 4349.415780]  ? process_one_work+0x17a/0x580
+[ 4349.415786]  worker_thread+0x4c/0x3f0
+[ 4349.415791]  kthread+0x103/0x140
+[ 4349.415793]  ? process_one_work+0x580/0x580
+[ 4349.415795]  ? kthread_bind+0x10/0x10
+[ 4349.415799]  ret_from_fork+0x3a/0x50
+[ 4349.415809] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.415811] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.415816] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.415818] Call Trace:
+[ 4349.415820]  dump_stack+0x78/0xb3
+[ 4349.415826]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.415836]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.415846]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.415849]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.415853]  ? find_held_lock+0x2d/0x90
+[ 4349.415860]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.415866]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.415873]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.415877]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.415887]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.415896]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.415899]  process_one_work+0x200/0x580
+[ 4349.415900]  ? process_one_work+0x17a/0x580
+[ 4349.415906]  worker_thread+0x4c/0x3f0
+[ 4349.415911]  kthread+0x103/0x140
+[ 4349.415913]  ? process_one_work+0x580/0x580
+[ 4349.415915]  ? kthread_bind+0x10/0x10
+[ 4349.415919]  ret_from_fork+0x3a/0x50
+[ 4349.416406] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.416408] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.416415] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.416416] Call Trace:
+[ 4349.416419]  dump_stack+0x78/0xb3
+[ 4349.416425]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.416433]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.416441]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.416445]  ? find_held_lock+0x2d/0x90
+[ 4349.416451]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.416458]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.416465]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.416469]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.416479]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.416488]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.416491]  process_one_work+0x200/0x580
+[ 4349.416493]  ? process_one_work+0x17a/0x580
+[ 4349.416498]  worker_thread+0x4c/0x3f0
+[ 4349.416504]  kthread+0x103/0x140
+[ 4349.416505]  ? process_one_work+0x580/0x580
+[ 4349.416507]  ? kthread_bind+0x10/0x10
+[ 4349.416511]  ret_from_fork+0x3a/0x50
+[ 4349.416521] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.416523] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.416528] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.416530] Call Trace:
+[ 4349.416532]  dump_stack+0x78/0xb3
+[ 4349.416538]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.416548]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.416558]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.416562]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.416566]  ? find_held_lock+0x2d/0x90
+[ 4349.416572]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.416579]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.416586]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.416590]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.416602]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.416614]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.416617]  process_one_work+0x200/0x580
+[ 4349.416618]  ? process_one_work+0x17a/0x580
+[ 4349.416624]  worker_thread+0x4c/0x3f0
+[ 4349.416629]  kthread+0x103/0x140
+[ 4349.416631]  ? process_one_work+0x580/0x580
+[ 4349.416633]  ? kthread_bind+0x10/0x10
+[ 4349.416637]  ret_from_fork+0x3a/0x50
+[ 4349.417200] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.417202] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.417210] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.417211] Call Trace:
+[ 4349.417214]  dump_stack+0x78/0xb3
+[ 4349.417221]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.417228]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.417237]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.417241]  ? find_held_lock+0x2d/0x90
+[ 4349.417248]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.417254]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.417262]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.417266]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.417276]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.417285]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.417289]  process_one_work+0x200/0x580
+[ 4349.417290]  ? process_one_work+0x17a/0x580
+[ 4349.417296]  worker_thread+0x4c/0x3f0
+[ 4349.417302]  kthread+0x103/0x140
+[ 4349.417303]  ? process_one_work+0x580/0x580
+[ 4349.417306]  ? kthread_bind+0x10/0x10
+[ 4349.417310]  ret_from_fork+0x3a/0x50
+[ 4349.417320] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.417321] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.417327] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.417329] Call Trace:
+[ 4349.417332]  dump_stack+0x78/0xb3
+[ 4349.417338]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.417349]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.417374]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.417378]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.417382]  ? find_held_lock+0x2d/0x90
+[ 4349.417388]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.417395]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.417402]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.417406]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.417415]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.417424]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.417427]  process_one_work+0x200/0x580
+[ 4349.417429]  ? process_one_work+0x17a/0x580
+[ 4349.417434]  worker_thread+0x4c/0x3f0
+[ 4349.417440]  kthread+0x103/0x140
+[ 4349.417441]  ? process_one_work+0x580/0x580
+[ 4349.417443]  ? kthread_bind+0x10/0x10
+[ 4349.417447]  ret_from_fork+0x3a/0x50
+[ 4349.417644] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.417646] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.417654] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.417656] Call Trace:
+[ 4349.417659]  dump_stack+0x78/0xb3
+[ 4349.417665]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 4349.417672]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[ 4349.417680]  isert_rdma_rw_ctx_post+0xb1/0x420 [ib_isert]
+[ 4349.417685]  ? find_held_lock+0x2d/0x90
+[ 4349.417691]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.417698]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.417705]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.417709]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.417719]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.417728]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.417731]  process_one_work+0x200/0x580
+[ 4349.417733]  ? process_one_work+0x17a/0x580
+[ 4349.417738]  worker_thread+0x4c/0x3f0
+[ 4349.417743]  kthread+0x103/0x140
+[ 4349.417745]  ? process_one_work+0x580/0x580
+[ 4349.417747]  ? kthread_bind+0x10/0x10
+[ 4349.417751]  ret_from_fork+0x3a/0x50
+[ 4349.417760] CPU: 8 PID: 743 Comm: kworker/8:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[ 4349.417762] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 4349.417768] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[ 4349.417769] Call Trace:
+[ 4349.417772]  dump_stack+0x78/0xb3
+[ 4349.417777]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 4349.417787]  ? rdma_rw_ctx_init+0x71a/0x900 [ib_core]
+[ 4349.417797]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[ 4349.417801]  isert_rdma_rw_ctx_post+0xda/0x420 [ib_isert]
+[ 4349.417805]  ? find_held_lock+0x2d/0x90
+[ 4349.417811]  isert_get_dataout+0x43/0xa0 [ib_isert]
+[ 4349.417818]  iscsit_execute_cmd+0x194/0x270 [iscsi_target_mod]
+[ 4349.417825]  iscsit_sequence_cmd+0xdd/0x190 [iscsi_target_mod]
+[ 4349.417829]  isert_recv_done+0x7b3/0xa90 [ib_isert]
+[ 4349.417839]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[ 4349.417847]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[ 4349.417851]  process_one_work+0x200/0x580
+[ 4349.417853]  ? process_one_work+0x17a/0x580
+[ 4349.417858]  worker_thread+0x4c/0x3f0
+[ 4349.417863]  kthread+0x103/0x140
+[ 4349.417865]  ? process_one_work+0x580/0x580
+[ 4349.417867]  ? kthread_bind+0x10/0x10
+[ 4349.417871]  ret_from_fork+0x3a/0x50
