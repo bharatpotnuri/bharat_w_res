@@ -1,0 +1,2034 @@
+[190958.167789] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.167802] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.167811] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.167817] Call Trace:
+[190958.167830]  dump_stack+0x78/0xb3
+[190958.167846]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.167866]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.167876]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.167885]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.167892]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.167899]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.167908]  process_one_work+0x200/0x580
+[190958.167914]  ? process_one_work+0x17a/0x580
+[190958.167941]  worker_thread+0x4c/0x3f0
+[190958.167952]  kthread+0x103/0x140
+[190958.167958]  ? process_one_work+0x580/0x580
+[190958.167963]  ? kthread_bind+0x10/0x10
+[190958.167971]  ret_from_fork+0x3a/0x50
+[190958.168029] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.168034] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.168040] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.168044] Call Trace:
+[190958.168049]  dump_stack+0x78/0xb3
+[190958.168058]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.168069]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.168076]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.168081]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.168086]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.168091]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.168096]  process_one_work+0x200/0x580
+[190958.168100]  ? process_one_work+0x17a/0x580
+[190958.168107]  worker_thread+0x4c/0x3f0
+[190958.168113]  kthread+0x103/0x140
+[190958.168117]  ? process_one_work+0x580/0x580
+[190958.168121]  ? kthread_bind+0x10/0x10
+[190958.168127]  ret_from_fork+0x3a/0x50
+[190958.168147] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.168150] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.168154] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.168157] Call Trace:
+[190958.168162]  dump_stack+0x78/0xb3
+[190958.168170]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.168181]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.168187]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.168193]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.168198]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.168203]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.168208]  process_one_work+0x200/0x580
+[190958.168212]  ? process_one_work+0x17a/0x580
+[190958.168219]  worker_thread+0x4c/0x3f0
+[190958.168225]  kthread+0x103/0x140
+[190958.168229]  ? process_one_work+0x580/0x580
+[190958.168233]  ? kthread_bind+0x10/0x10
+[190958.168237]  ret_from_fork+0x3a/0x50
+[190958.168257] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.168260] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.168265] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.168268] Call Trace:
+[190958.168273]  dump_stack+0x78/0xb3
+[190958.168281]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.168290]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.168296]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.168301]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.168307]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.168312]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.168317]  process_one_work+0x200/0x580
+[190958.168321]  ? process_one_work+0x17a/0x580
+[190958.168328]  worker_thread+0x4c/0x3f0
+[190958.168333]  kthread+0x103/0x140
+[190958.168337]  ? process_one_work+0x580/0x580
+[190958.168341]  ? kthread_bind+0x10/0x10
+[190958.168345]  ret_from_fork+0x3a/0x50
+[190958.168364] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.168368] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.168372] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.168375] Call Trace:
+[190958.168380]  dump_stack+0x78/0xb3
+[190958.168387]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.168397]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.168403]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.168409]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.168414]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.168419]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.168424]  process_one_work+0x200/0x580
+[190958.168428]  ? process_one_work+0x17a/0x580
+[190958.168434]  worker_thread+0x4c/0x3f0
+[190958.168440]  kthread+0x103/0x140
+[190958.168443]  ? process_one_work+0x580/0x580
+[190958.168447]  ? kthread_bind+0x10/0x10
+[190958.168451]  ret_from_fork+0x3a/0x50
+[190958.168471] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.168474] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.168479] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.168482] Call Trace:
+[190958.168486]  dump_stack+0x78/0xb3
+[190958.168494]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.168504]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.168510]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.168516]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.168520]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.168526]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.168531]  process_one_work+0x200/0x580
+[190958.168535]  ? process_one_work+0x17a/0x580
+[190958.168541]  worker_thread+0x4c/0x3f0
+[190958.168547]  kthread+0x103/0x140
+[190958.168551]  ? process_one_work+0x580/0x580
+[190958.168555]  ? kthread_bind+0x10/0x10
+[190958.168560]  ret_from_fork+0x3a/0x50
+[190958.168594] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.168597] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.168601] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.168604] Call Trace:
+[190958.168608]  dump_stack+0x78/0xb3
+[190958.168634]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.168643]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.168648]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.168653]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.168658]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.168662]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.168666]  process_one_work+0x200/0x580
+[190958.168670]  ? process_one_work+0x17a/0x580
+[190958.168675]  worker_thread+0x4c/0x3f0
+[190958.168681]  kthread+0x103/0x140
+[190958.168685]  ? process_one_work+0x580/0x580
+[190958.168688]  ? kthread_bind+0x10/0x10
+[190958.168692]  ret_from_fork+0x3a/0x50
+[190958.168709] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.168712] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.168717] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.168719] Call Trace:
+[190958.168723]  dump_stack+0x78/0xb3
+[190958.168730]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.168738]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.168744]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.168749]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.168754]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.168758]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.168762]  process_one_work+0x200/0x580
+[190958.168766]  ? process_one_work+0x17a/0x580
+[190958.168771]  worker_thread+0x4c/0x3f0
+[190958.168776]  kthread+0x103/0x140
+[190958.168780]  ? process_one_work+0x580/0x580
+[190958.168784]  ? kthread_bind+0x10/0x10
+[190958.168788]  ret_from_fork+0x3a/0x50
+[190958.168805] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.168808] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.168812] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.168815] Call Trace:
+[190958.168819]  dump_stack+0x78/0xb3
+[190958.168826]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.168834]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.168839]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.168844]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.168849]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.168854]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.168858]  process_one_work+0x200/0x580
+[190958.168862]  ? process_one_work+0x17a/0x580
+[190958.168867]  worker_thread+0x4c/0x3f0
+[190958.168872]  kthread+0x103/0x140
+[190958.168876]  ? process_one_work+0x580/0x580
+[190958.168881]  ? kthread_bind+0x10/0x10
+[190958.168884]  ret_from_fork+0x3a/0x50
+[190958.168901] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.168904] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.168908] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.168910] Call Trace:
+[190958.168916]  dump_stack+0x78/0xb3
+[190958.168942]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.168952]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.168958]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.168963]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.168968]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.168973]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.168978]  process_one_work+0x200/0x580
+[190958.168983]  ? process_one_work+0x17a/0x580
+[190958.168989]  worker_thread+0x4c/0x3f0
+[190958.168995]  kthread+0x103/0x140
+[190958.168999]  ? process_one_work+0x580/0x580
+[190958.169002]  ? kthread_bind+0x10/0x10
+[190958.169007]  ret_from_fork+0x3a/0x50
+[190958.169033] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.169036] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.169041] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.169044] Call Trace:
+[190958.169049]  dump_stack+0x78/0xb3
+[190958.169057]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.169066]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.169072]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.169077]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.169082]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.169087]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.169092]  process_one_work+0x200/0x580
+[190958.169097]  ? process_one_work+0x17a/0x580
+[190958.169103]  worker_thread+0x4c/0x3f0
+[190958.169109]  kthread+0x103/0x140
+[190958.169113]  ? process_one_work+0x580/0x580
+[190958.169116]  ? kthread_bind+0x10/0x10
+[190958.169120]  ret_from_fork+0x3a/0x50
+[190958.169139] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.169142] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.169146] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.169149] Call Trace:
+[190958.169153]  dump_stack+0x78/0xb3
+[190958.169161]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.169171]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.169177]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.169182]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.169203]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.169208]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.169212]  process_one_work+0x200/0x580
+[190958.169216]  ? process_one_work+0x17a/0x580
+[190958.169242]  worker_thread+0x4c/0x3f0
+[190958.169248]  kthread+0x103/0x140
+[190958.169268]  ? process_one_work+0x580/0x580
+[190958.169271]  ? kthread_bind+0x10/0x10
+[190958.169275]  ret_from_fork+0x3a/0x50
+[190958.169291] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.169294] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.169297] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.169300] Call Trace:
+[190958.169304]  dump_stack+0x78/0xb3
+[190958.169310]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.169318]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.169323]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.169328]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.169332]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.169336]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.169341]  process_one_work+0x200/0x580
+[190958.169345]  ? process_one_work+0x17a/0x580
+[190958.169350]  worker_thread+0x4c/0x3f0
+[190958.169355]  kthread+0x103/0x140
+[190958.169358]  ? process_one_work+0x580/0x580
+[190958.169361]  ? kthread_bind+0x10/0x10
+[190958.169365]  ret_from_fork+0x3a/0x50
+[190958.169381] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.169383] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.169387] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.169389] Call Trace:
+[190958.169393]  dump_stack+0x78/0xb3
+[190958.169399]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.169408]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.169413]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.169417]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.169421]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.169425]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.169429]  process_one_work+0x200/0x580
+[190958.169434]  ? process_one_work+0x17a/0x580
+[190958.169440]  worker_thread+0x4c/0x3f0
+[190958.169445]  kthread+0x103/0x140
+[190958.169448]  ? process_one_work+0x580/0x580
+[190958.169451]  ? kthread_bind+0x10/0x10
+[190958.169454]  ret_from_fork+0x3a/0x50
+[190958.169470] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.169473] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.169476] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.169479] Call Trace:
+[190958.169482]  dump_stack+0x78/0xb3
+[190958.169489]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.169498]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.169503]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.169508]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.169512]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.169516]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.169521]  process_one_work+0x200/0x580
+[190958.169524]  ? process_one_work+0x17a/0x580
+[190958.169530]  worker_thread+0x4c/0x3f0
+[190958.169535]  kthread+0x103/0x140
+[190958.169539]  ? process_one_work+0x580/0x580
+[190958.169541]  ? kthread_bind+0x10/0x10
+[190958.169545]  ret_from_fork+0x3a/0x50
+[190958.169561] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.169563] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.169567] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.169569] Call Trace:
+[190958.169573]  dump_stack+0x78/0xb3
+[190958.169579]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.169588]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.169593]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.169598]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.169602]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.169606]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.169610]  process_one_work+0x200/0x580
+[190958.169614]  ? process_one_work+0x17a/0x580
+[190958.169619]  worker_thread+0x4c/0x3f0
+[190958.169624]  kthread+0x103/0x140
+[190958.169627]  ? process_one_work+0x580/0x580
+[190958.169630]  ? kthread_bind+0x10/0x10
+[190958.169634]  ret_from_fork+0x3a/0x50
+[190958.169650] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.169654] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.169657] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.169660] Call Trace:
+[190958.169663]  dump_stack+0x78/0xb3
+[190958.169670]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.169678]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.169683]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.169689]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.169693]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.169697]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.169701]  process_one_work+0x200/0x580
+[190958.169705]  ? process_one_work+0x17a/0x580
+[190958.169710]  worker_thread+0x4c/0x3f0
+[190958.169715]  kthread+0x103/0x140
+[190958.169718]  ? process_one_work+0x580/0x580
+[190958.169722]  ? kthread_bind+0x10/0x10
+[190958.169726]  ret_from_fork+0x3a/0x50
+[190958.169742] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.169745] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.169749] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.169752] Call Trace:
+[190958.169756]  dump_stack+0x78/0xb3
+[190958.169762]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.169771]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.169776]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.169781]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.169785]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.169790]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.169794]  process_one_work+0x200/0x580
+[190958.169798]  ? process_one_work+0x17a/0x580
+[190958.169803]  worker_thread+0x4c/0x3f0
+[190958.169808]  kthread+0x103/0x140
+[190958.169811]  ? process_one_work+0x580/0x580
+[190958.169814]  ? kthread_bind+0x10/0x10
+[190958.169818]  ret_from_fork+0x3a/0x50
+[190958.169834] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.169837] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.169841] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.169844] Call Trace:
+[190958.169847]  dump_stack+0x78/0xb3
+[190958.169854]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.169862]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.169867]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.169871]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.169876]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.169880]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.169885]  process_one_work+0x200/0x580
+[190958.169888]  ? process_one_work+0x17a/0x580
+[190958.169893]  worker_thread+0x4c/0x3f0
+[190958.169898]  kthread+0x103/0x140
+[190958.169902]  ? process_one_work+0x580/0x580
+[190958.169904]  ? kthread_bind+0x10/0x10
+[190958.169908]  ret_from_fork+0x3a/0x50
+[190958.169951] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.169955] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.169959] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.169962] Call Trace:
+[190958.169967]  dump_stack+0x78/0xb3
+[190958.169975]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.169985]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.169990]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.169996]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.170000]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.170006]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.170011]  process_one_work+0x200/0x580
+[190958.170015]  ? process_one_work+0x17a/0x580
+[190958.170021]  worker_thread+0x4c/0x3f0
+[190958.170027]  kthread+0x103/0x140
+[190958.170031]  ? process_one_work+0x580/0x580
+[190958.170035]  ? kthread_bind+0x10/0x10
+[190958.170039]  ret_from_fork+0x3a/0x50
+[190958.170058] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.170061] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.170065] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.170068] Call Trace:
+[190958.170072]  dump_stack+0x78/0xb3
+[190958.170080]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.170090]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.170095]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.170101]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.170106]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.170111]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.170116]  process_one_work+0x200/0x580
+[190958.170120]  ? process_one_work+0x17a/0x580
+[190958.170127]  worker_thread+0x4c/0x3f0
+[190958.170133]  kthread+0x103/0x140
+[190958.170136]  ? process_one_work+0x580/0x580
+[190958.170140]  ? kthread_bind+0x10/0x10
+[190958.170145]  ret_from_fork+0x3a/0x50
+[190958.170162] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.170165] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.170169] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.170172] Call Trace:
+[190958.170176]  dump_stack+0x78/0xb3
+[190958.170185]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.170194]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.170200]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.170205]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.170210]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.170215]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.170236]  process_one_work+0x200/0x580
+[190958.170240]  ? process_one_work+0x17a/0x580
+[190958.170265]  worker_thread+0x4c/0x3f0
+[190958.170270]  kthread+0x103/0x140
+[190958.170274]  ? process_one_work+0x580/0x580
+[190958.170277]  ? kthread_bind+0x10/0x10
+[190958.170281]  ret_from_fork+0x3a/0x50
+[190958.170297] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.170299] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.170303] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.170307] Call Trace:
+[190958.170310]  dump_stack+0x78/0xb3
+[190958.170316]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.170325]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.170330]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.170334]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.170338]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.170343]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.170348]  process_one_work+0x200/0x580
+[190958.170351]  ? process_one_work+0x17a/0x580
+[190958.170357]  worker_thread+0x4c/0x3f0
+[190958.170362]  kthread+0x103/0x140
+[190958.170365]  ? process_one_work+0x580/0x580
+[190958.170368]  ? kthread_bind+0x10/0x10
+[190958.170372]  ret_from_fork+0x3a/0x50
+[190958.170388] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.170391] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.170395] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.170397] Call Trace:
+[190958.170401]  dump_stack+0x78/0xb3
+[190958.170408]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.170416]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.170421]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.170425]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.170430]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.170434]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.170438]  process_one_work+0x200/0x580
+[190958.170443]  ? process_one_work+0x17a/0x580
+[190958.170448]  worker_thread+0x4c/0x3f0
+[190958.170453]  kthread+0x103/0x140
+[190958.170456]  ? process_one_work+0x580/0x580
+[190958.170459]  ? kthread_bind+0x10/0x10
+[190958.170463]  ret_from_fork+0x3a/0x50
+[190958.170480] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.170483] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.170486] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.170489] Call Trace:
+[190958.170493]  dump_stack+0x78/0xb3
+[190958.170499]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.170508]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.170512]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.170517]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.170521]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.170526]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.170530]  process_one_work+0x200/0x580
+[190958.170533]  ? process_one_work+0x17a/0x580
+[190958.170540]  worker_thread+0x4c/0x3f0
+[190958.170544]  kthread+0x103/0x140
+[190958.170548]  ? process_one_work+0x580/0x580
+[190958.170551]  ? kthread_bind+0x10/0x10
+[190958.170555]  ret_from_fork+0x3a/0x50
+[190958.170571] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.170574] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.170578] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.170580] Call Trace:
+[190958.170584]  dump_stack+0x78/0xb3
+[190958.170590]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.170598]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.170603]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.170608]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.170612]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.170617]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.170621]  process_one_work+0x200/0x580
+[190958.170624]  ? process_one_work+0x17a/0x580
+[190958.170630]  worker_thread+0x4c/0x3f0
+[190958.170636]  kthread+0x103/0x140
+[190958.170639]  ? process_one_work+0x580/0x580
+[190958.170642]  ? kthread_bind+0x10/0x10
+[190958.170646]  ret_from_fork+0x3a/0x50
+[190958.170662] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.170665] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.170669] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.170671] Call Trace:
+[190958.170675]  dump_stack+0x78/0xb3
+[190958.170682]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.170691]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.170695]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.170700]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.170705]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.170710]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.170714]  process_one_work+0x200/0x580
+[190958.170718]  ? process_one_work+0x17a/0x580
+[190958.170723]  worker_thread+0x4c/0x3f0
+[190958.170728]  kthread+0x103/0x140
+[190958.170732]  ? process_one_work+0x580/0x580
+[190958.170735]  ? kthread_bind+0x10/0x10
+[190958.170739]  ret_from_fork+0x3a/0x50
+[190958.170755] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.170758] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.170761] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.170764] Call Trace:
+[190958.170769]  dump_stack+0x78/0xb3
+[190958.170775]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.170783]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.170787]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.170792]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.170797]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.170801]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.170806]  process_one_work+0x200/0x580
+[190958.170809]  ? process_one_work+0x17a/0x580
+[190958.170815]  worker_thread+0x4c/0x3f0
+[190958.170820]  kthread+0x103/0x140
+[190958.170824]  ? process_one_work+0x580/0x580
+[190958.170827]  ? kthread_bind+0x10/0x10
+[190958.170831]  ret_from_fork+0x3a/0x50
+[190958.170847] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.170850] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.170853] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.170856] Call Trace:
+[190958.170860]  dump_stack+0x78/0xb3
+[190958.170866]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.170875]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.170880]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.170884]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.170888]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.170892]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.170897]  process_one_work+0x200/0x580
+[190958.170900]  ? process_one_work+0x17a/0x580
+[190958.170905]  worker_thread+0x4c/0x3f0
+[190958.170911]  kthread+0x103/0x140
+[190958.170915]  ? process_one_work+0x580/0x580
+[190958.170920]  ? kthread_bind+0x10/0x10
+[190958.170943]  ret_from_fork+0x3a/0x50
+[190958.170974] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.170978] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.170982] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.170985] Call Trace:
+[190958.170990]  dump_stack+0x78/0xb3
+[190958.170997]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.171008]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.171014]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.171019]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.171024]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.171029]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.171034]  process_one_work+0x200/0x580
+[190958.171039]  ? process_one_work+0x17a/0x580
+[190958.171046]  worker_thread+0x4c/0x3f0
+[190958.171051]  kthread+0x103/0x140
+[190958.171056]  ? process_one_work+0x580/0x580
+[190958.171059]  ? kthread_bind+0x10/0x10
+[190958.171063]  ret_from_fork+0x3a/0x50
+[190958.171081] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.171084] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.171088] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.171091] Call Trace:
+[190958.171095]  dump_stack+0x78/0xb3
+[190958.171102]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.171112]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.171118]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.171123]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.171128]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.171133]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.171138]  process_one_work+0x200/0x580
+[190958.171142]  ? process_one_work+0x17a/0x580
+[190958.171148]  worker_thread+0x4c/0x3f0
+[190958.171154]  kthread+0x103/0x140
+[190958.171159]  ? process_one_work+0x580/0x580
+[190958.171162]  ? kthread_bind+0x10/0x10
+[190958.171167]  ret_from_fork+0x3a/0x50
+[190958.171185] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.171188] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.171193] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.171196] Call Trace:
+[190958.171200]  dump_stack+0x78/0xb3
+[190958.171207]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.171217]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.171242]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.171263]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.171268]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.171273]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.171277]  process_one_work+0x200/0x580
+[190958.171280]  ? process_one_work+0x17a/0x580
+[190958.171286]  worker_thread+0x4c/0x3f0
+[190958.171291]  kthread+0x103/0x140
+[190958.171295]  ? process_one_work+0x580/0x580
+[190958.171299]  ? kthread_bind+0x10/0x10
+[190958.171302]  ret_from_fork+0x3a/0x50
+[190958.171318] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.171321] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.171325] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.171328] Call Trace:
+[190958.171331]  dump_stack+0x78/0xb3
+[190958.171337]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.171345]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.171351]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.171355]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.171360]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.171364]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.171368]  process_one_work+0x200/0x580
+[190958.171371]  ? process_one_work+0x17a/0x580
+[190958.171377]  worker_thread+0x4c/0x3f0
+[190958.171382]  kthread+0x103/0x140
+[190958.171385]  ? process_one_work+0x580/0x580
+[190958.171388]  ? kthread_bind+0x10/0x10
+[190958.171391]  ret_from_fork+0x3a/0x50
+[190958.171407] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.171410] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.171414] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.171417] Call Trace:
+[190958.171420]  dump_stack+0x78/0xb3
+[190958.171426]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.171435]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.171440]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.171444]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.171449]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.171453]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.171458]  process_one_work+0x200/0x580
+[190958.171461]  ? process_one_work+0x17a/0x580
+[190958.171467]  worker_thread+0x4c/0x3f0
+[190958.171472]  kthread+0x103/0x140
+[190958.171475]  ? process_one_work+0x580/0x580
+[190958.171478]  ? kthread_bind+0x10/0x10
+[190958.171482]  ret_from_fork+0x3a/0x50
+[190958.171498] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.171501] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.171504] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.171507] Call Trace:
+[190958.171511]  dump_stack+0x78/0xb3
+[190958.171517]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.171526]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.171531]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.171535]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.171539]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.171544]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.171549]  process_one_work+0x200/0x580
+[190958.171552]  ? process_one_work+0x17a/0x580
+[190958.171558]  worker_thread+0x4c/0x3f0
+[190958.171563]  kthread+0x103/0x140
+[190958.171566]  ? process_one_work+0x580/0x580
+[190958.171569]  ? kthread_bind+0x10/0x10
+[190958.171573]  ret_from_fork+0x3a/0x50
+[190958.171589] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.171592] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.171595] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.171598] Call Trace:
+[190958.171602]  dump_stack+0x78/0xb3
+[190958.171608]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.171617]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.171622]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.171627]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.171631]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.171635]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.171639]  process_one_work+0x200/0x580
+[190958.171643]  ? process_one_work+0x17a/0x580
+[190958.171650]  worker_thread+0x4c/0x3f0
+[190958.171655]  kthread+0x103/0x140
+[190958.171658]  ? process_one_work+0x580/0x580
+[190958.171661]  ? kthread_bind+0x10/0x10
+[190958.171664]  ret_from_fork+0x3a/0x50
+[190958.171681] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.171683] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.171687] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.171689] Call Trace:
+[190958.171693]  dump_stack+0x78/0xb3
+[190958.171700]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.171708]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.171713]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.171718]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.171722]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.171726]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.171730]  process_one_work+0x200/0x580
+[190958.171733]  ? process_one_work+0x17a/0x580
+[190958.171739]  worker_thread+0x4c/0x3f0
+[190958.171744]  kthread+0x103/0x140
+[190958.171748]  ? process_one_work+0x580/0x580
+[190958.171751]  ? kthread_bind+0x10/0x10
+[190958.171754]  ret_from_fork+0x3a/0x50
+[190958.171771] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.171774] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.171778] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.171780] Call Trace:
+[190958.171785]  dump_stack+0x78/0xb3
+[190958.171791]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.171799]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.171804]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.171809]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.171813]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.171817]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.171821]  process_one_work+0x200/0x580
+[190958.171825]  ? process_one_work+0x17a/0x580
+[190958.171831]  worker_thread+0x4c/0x3f0
+[190958.171835]  kthread+0x103/0x140
+[190958.171839]  ? process_one_work+0x580/0x580
+[190958.171842]  ? kthread_bind+0x10/0x10
+[190958.171845]  ret_from_fork+0x3a/0x50
+[190958.171862] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.171865] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.171868] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.171871] Call Trace:
+[190958.171875]  dump_stack+0x78/0xb3
+[190958.171881]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.171890]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.171896]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.171900]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.171905]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.171909]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.171913]  process_one_work+0x200/0x580
+[190958.171918]  ? process_one_work+0x17a/0x580
+[190958.171943]  worker_thread+0x4c/0x3f0
+[190958.171951]  kthread+0x103/0x140
+[190958.171955]  ? process_one_work+0x580/0x580
+[190958.171958]  ? kthread_bind+0x10/0x10
+[190958.171963]  ret_from_fork+0x3a/0x50
+[190958.171991] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.171995] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.171999] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.172002] Call Trace:
+[190958.172007]  dump_stack+0x78/0xb3
+[190958.172014]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.172024]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.172029]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.172035]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.172040]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.172045]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.172050]  process_one_work+0x200/0x580
+[190958.172054]  ? process_one_work+0x17a/0x580
+[190958.172061]  worker_thread+0x4c/0x3f0
+[190958.172066]  kthread+0x103/0x140
+[190958.172070]  ? process_one_work+0x580/0x580
+[190958.172074]  ? kthread_bind+0x10/0x10
+[190958.172079]  ret_from_fork+0x3a/0x50
+[190958.172098] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.172102] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.172106] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.172110] Call Trace:
+[190958.172114]  dump_stack+0x78/0xb3
+[190958.172121]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.172131]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.172137]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.172142]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.172147]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.172151]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.172157]  process_one_work+0x200/0x580
+[190958.172161]  ? process_one_work+0x17a/0x580
+[190958.172167]  worker_thread+0x4c/0x3f0
+[190958.172173]  kthread+0x103/0x140
+[190958.172177]  ? process_one_work+0x580/0x580
+[190958.172180]  ? kthread_bind+0x10/0x10
+[190958.172185]  ret_from_fork+0x3a/0x50
+[190958.172203] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.172206] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.172210] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.172213] Call Trace:
+[190958.172240]  dump_stack+0x78/0xb3
+[190958.172247]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.172272]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.172277]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.172282]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.172286]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.172290]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.172295]  process_one_work+0x200/0x580
+[190958.172298]  ? process_one_work+0x17a/0x580
+[190958.172305]  worker_thread+0x4c/0x3f0
+[190958.172310]  kthread+0x103/0x140
+[190958.172313]  ? process_one_work+0x580/0x580
+[190958.172316]  ? kthread_bind+0x10/0x10
+[190958.172320]  ret_from_fork+0x3a/0x50
+[190958.172336] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.172338] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.172342] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.172345] Call Trace:
+[190958.172348]  dump_stack+0x78/0xb3
+[190958.172354]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.172363]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.172368]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.172372]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.172377]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.172381]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.172386]  process_one_work+0x200/0x580
+[190958.172389]  ? process_one_work+0x17a/0x580
+[190958.172395]  worker_thread+0x4c/0x3f0
+[190958.172400]  kthread+0x103/0x140
+[190958.172403]  ? process_one_work+0x580/0x580
+[190958.172406]  ? kthread_bind+0x10/0x10
+[190958.172410]  ret_from_fork+0x3a/0x50
+[190958.172426] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.172429] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.172433] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.172435] Call Trace:
+[190958.172440]  dump_stack+0x78/0xb3
+[190958.172446]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.172454]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.172460]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.172464]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.172468]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.172473]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.172478]  process_one_work+0x200/0x580
+[190958.172481]  ? process_one_work+0x17a/0x580
+[190958.172486]  worker_thread+0x4c/0x3f0
+[190958.172492]  kthread+0x103/0x140
+[190958.172495]  ? process_one_work+0x580/0x580
+[190958.172498]  ? kthread_bind+0x10/0x10
+[190958.172502]  ret_from_fork+0x3a/0x50
+[190958.172518] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.172522] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.172525] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.172528] Call Trace:
+[190958.172532]  dump_stack+0x78/0xb3
+[190958.172538]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.172547]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.172552]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.172556]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.172561]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.172565]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.172569]  process_one_work+0x200/0x580
+[190958.172573]  ? process_one_work+0x17a/0x580
+[190958.172579]  worker_thread+0x4c/0x3f0
+[190958.172584]  kthread+0x103/0x140
+[190958.172587]  ? process_one_work+0x580/0x580
+[190958.172590]  ? kthread_bind+0x10/0x10
+[190958.172594]  ret_from_fork+0x3a/0x50
+[190958.172611] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.172614] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.172617] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.172620] Call Trace:
+[190958.172624]  dump_stack+0x78/0xb3
+[190958.172630]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.172639]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.172643]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.172648]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.172652]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.172656]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.172661]  process_one_work+0x200/0x580
+[190958.172665]  ? process_one_work+0x17a/0x580
+[190958.172670]  worker_thread+0x4c/0x3f0
+[190958.172675]  kthread+0x103/0x140
+[190958.172679]  ? process_one_work+0x580/0x580
+[190958.172682]  ? kthread_bind+0x10/0x10
+[190958.172685]  ret_from_fork+0x3a/0x50
+[190958.172702] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.172704] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.172708] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.172710] Call Trace:
+[190958.172714]  dump_stack+0x78/0xb3
+[190958.172720]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.172729]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.172735]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.172739]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.172743]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.172748]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.172752]  process_one_work+0x200/0x580
+[190958.172755]  ? process_one_work+0x17a/0x580
+[190958.172761]  worker_thread+0x4c/0x3f0
+[190958.172766]  kthread+0x103/0x140
+[190958.172770]  ? process_one_work+0x580/0x580
+[190958.172773]  ? kthread_bind+0x10/0x10
+[190958.172776]  ret_from_fork+0x3a/0x50
+[190958.172792] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.172795] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.172798] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.172801] Call Trace:
+[190958.172804]  dump_stack+0x78/0xb3
+[190958.172810]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.172819]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.172825]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.172829]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.172833]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.172837]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.172841]  process_one_work+0x200/0x580
+[190958.172845]  ? process_one_work+0x17a/0x580
+[190958.172850]  worker_thread+0x4c/0x3f0
+[190958.172855]  kthread+0x103/0x140
+[190958.172859]  ? process_one_work+0x580/0x580
+[190958.172862]  ? kthread_bind+0x10/0x10
+[190958.172865]  ret_from_fork+0x3a/0x50
+[190958.172882] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.172884] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.172889] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.172891] Call Trace:
+[190958.172895]  dump_stack+0x78/0xb3
+[190958.172901]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.172910]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.172915]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.172922]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.172945]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.172950]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.172955]  process_one_work+0x200/0x580
+[190958.172959]  ? process_one_work+0x17a/0x580
+[190958.172965]  worker_thread+0x4c/0x3f0
+[190958.172972]  kthread+0x103/0x140
+[190958.172977]  ? process_one_work+0x580/0x580
+[190958.172980]  ? kthread_bind+0x10/0x10
+[190958.172985]  ret_from_fork+0x3a/0x50
+[190958.173012] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.173015] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.173019] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.173022] Call Trace:
+[190958.173027]  dump_stack+0x78/0xb3
+[190958.173034]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.173044]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.173050]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.173055]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.173060]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.173065]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.173070]  process_one_work+0x200/0x580
+[190958.173075]  ? process_one_work+0x17a/0x580
+[190958.173081]  worker_thread+0x4c/0x3f0
+[190958.173087]  kthread+0x103/0x140
+[190958.173091]  ? process_one_work+0x580/0x580
+[190958.173094]  ? kthread_bind+0x10/0x10
+[190958.173098]  ret_from_fork+0x3a/0x50
+[190958.173117] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.173120] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.173124] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.173127] Call Trace:
+[190958.173131]  dump_stack+0x78/0xb3
+[190958.173138]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.173148]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.173153]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.173158]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.173164]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.173169]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.173174]  process_one_work+0x200/0x580
+[190958.173179]  ? process_one_work+0x17a/0x580
+[190958.173185]  worker_thread+0x4c/0x3f0
+[190958.173191]  kthread+0x103/0x140
+[190958.173195]  ? process_one_work+0x580/0x580
+[190958.173198]  ? kthread_bind+0x10/0x10
+[190958.173202]  ret_from_fork+0x3a/0x50
+[190958.173221] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.173240] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.173244] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.173266] Call Trace:
+[190958.173270]  dump_stack+0x78/0xb3
+[190958.173277]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.173286]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.173291]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.173295]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.173299]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.173304]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.173308]  process_one_work+0x200/0x580
+[190958.173312]  ? process_one_work+0x17a/0x580
+[190958.173317]  worker_thread+0x4c/0x3f0
+[190958.173323]  kthread+0x103/0x140
+[190958.173326]  ? process_one_work+0x580/0x580
+[190958.173329]  ? kthread_bind+0x10/0x10
+[190958.173333]  ret_from_fork+0x3a/0x50
+[190958.173350] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.173353] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.173356] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.173359] Call Trace:
+[190958.173363]  dump_stack+0x78/0xb3
+[190958.173369]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.173377]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.173382]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.173387]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.173391]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.173395]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.173399]  process_one_work+0x200/0x580
+[190958.173403]  ? process_one_work+0x17a/0x580
+[190958.173409]  worker_thread+0x4c/0x3f0
+[190958.173414]  kthread+0x103/0x140
+[190958.173417]  ? process_one_work+0x580/0x580
+[190958.173420]  ? kthread_bind+0x10/0x10
+[190958.173423]  ret_from_fork+0x3a/0x50
+[190958.173440] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.173442] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.173446] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.173449] Call Trace:
+[190958.173452]  dump_stack+0x78/0xb3
+[190958.173459]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.173468]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.173473]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.173477]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.173481]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.173485]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.173490]  process_one_work+0x200/0x580
+[190958.173493]  ? process_one_work+0x17a/0x580
+[190958.173499]  worker_thread+0x4c/0x3f0
+[190958.173504]  kthread+0x103/0x140
+[190958.173507]  ? process_one_work+0x580/0x580
+[190958.173511]  ? kthread_bind+0x10/0x10
+[190958.173514]  ret_from_fork+0x3a/0x50
+[190958.173531] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.173534] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.173538] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.173540] Call Trace:
+[190958.173545]  dump_stack+0x78/0xb3
+[190958.173551]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.173559]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.173564]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.173569]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.173573]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.173578]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.173582]  process_one_work+0x200/0x580
+[190958.173586]  ? process_one_work+0x17a/0x580
+[190958.173591]  worker_thread+0x4c/0x3f0
+[190958.173596]  kthread+0x103/0x140
+[190958.173599]  ? process_one_work+0x580/0x580
+[190958.173603]  ? kthread_bind+0x10/0x10
+[190958.173606]  ret_from_fork+0x3a/0x50
+[190958.173623] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.173626] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.173629] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.173632] Call Trace:
+[190958.173636]  dump_stack+0x78/0xb3
+[190958.173642]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.173650]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.173656]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.173660]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.173664]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.173669]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.173673]  process_one_work+0x200/0x580
+[190958.173676]  ? process_one_work+0x17a/0x580
+[190958.173682]  worker_thread+0x4c/0x3f0
+[190958.173686]  kthread+0x103/0x140
+[190958.173690]  ? process_one_work+0x580/0x580
+[190958.173693]  ? kthread_bind+0x10/0x10
+[190958.173696]  ret_from_fork+0x3a/0x50
+[190958.173713] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.173715] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.173719] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.173722] Call Trace:
+[190958.173725]  dump_stack+0x78/0xb3
+[190958.173731]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.173740]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.173745]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.173750]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.173754]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.173759]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.173763]  process_one_work+0x200/0x580
+[190958.173767]  ? process_one_work+0x17a/0x580
+[190958.173773]  worker_thread+0x4c/0x3f0
+[190958.173777]  kthread+0x103/0x140
+[190958.173781]  ? process_one_work+0x580/0x580
+[190958.173784]  ? kthread_bind+0x10/0x10
+[190958.173787]  ret_from_fork+0x3a/0x50
+[190958.173804] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.173807] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.173810] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.173813] Call Trace:
+[190958.173817]  dump_stack+0x78/0xb3
+[190958.173823]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.173832]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.173837]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.173841]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.173846]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.173850]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.173855]  process_one_work+0x200/0x580
+[190958.173859]  ? process_one_work+0x17a/0x580
+[190958.173864]  worker_thread+0x4c/0x3f0
+[190958.173869]  kthread+0x103/0x140
+[190958.173872]  ? process_one_work+0x580/0x580
+[190958.173875]  ? kthread_bind+0x10/0x10
+[190958.173879]  ret_from_fork+0x3a/0x50
+[190958.173896] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.173899] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.173903] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.173905] Call Trace:
+[190958.173909]  dump_stack+0x78/0xb3
+[190958.173917]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.173945]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.173950]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.173956]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.173961]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.173966]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.173970]  process_one_work+0x200/0x580
+[190958.173975]  ? process_one_work+0x17a/0x580
+[190958.173982]  worker_thread+0x4c/0x3f0
+[190958.173987]  kthread+0x103/0x140
+[190958.173991]  ? process_one_work+0x580/0x580
+[190958.173995]  ? kthread_bind+0x10/0x10
+[190958.174000]  ret_from_fork+0x3a/0x50
+[190958.174027] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.174030] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.174035] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.174038] Call Trace:
+[190958.174042]  dump_stack+0x78/0xb3
+[190958.174050]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.174060]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.174066]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.174071]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.174076]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.174080]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.174085]  process_one_work+0x200/0x580
+[190958.174089]  ? process_one_work+0x17a/0x580
+[190958.174096]  worker_thread+0x4c/0x3f0
+[190958.174101]  kthread+0x103/0x140
+[190958.174106]  ? process_one_work+0x580/0x580
+[190958.174110]  ? kthread_bind+0x10/0x10
+[190958.174114]  ret_from_fork+0x3a/0x50
+[190958.174136] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.174139] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.174144] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.174147] Call Trace:
+[190958.174152]  dump_stack+0x78/0xb3
+[190958.174159]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.174168]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.174174]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.174180]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.174185]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.174189]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.174194]  process_one_work+0x200/0x580
+[190958.174198]  ? process_one_work+0x17a/0x580
+[190958.174205]  worker_thread+0x4c/0x3f0
+[190958.174211]  kthread+0x103/0x140
+[190958.174215]  ? process_one_work+0x580/0x580
+[190958.174218]  ? kthread_bind+0x10/0x10
+[190958.174222]  ret_from_fork+0x3a/0x50
+[190958.174275] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.174278] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.174282] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.174284] Call Trace:
+[190958.174288]  dump_stack+0x78/0xb3
+[190958.174295]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.174303]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.174308]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.174313]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.174317]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.174321]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.174326]  process_one_work+0x200/0x580
+[190958.174329]  ? process_one_work+0x17a/0x580
+[190958.174334]  worker_thread+0x4c/0x3f0
+[190958.174340]  kthread+0x103/0x140
+[190958.174343]  ? process_one_work+0x580/0x580
+[190958.174346]  ? kthread_bind+0x10/0x10
+[190958.174350]  ret_from_fork+0x3a/0x50
+[190958.174366] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.174369] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.174372] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.174375] Call Trace:
+[190958.174378]  dump_stack+0x78/0xb3
+[190958.174384]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.174393]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.174398]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.174403]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.174407]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.174411]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.174416]  process_one_work+0x200/0x580
+[190958.174419]  ? process_one_work+0x17a/0x580
+[190958.174425]  worker_thread+0x4c/0x3f0
+[190958.174429]  kthread+0x103/0x140
+[190958.174433]  ? process_one_work+0x580/0x580
+[190958.174436]  ? kthread_bind+0x10/0x10
+[190958.174440]  ret_from_fork+0x3a/0x50
+[190958.174456] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.174459] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.174463] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.174465] Call Trace:
+[190958.174469]  dump_stack+0x78/0xb3
+[190958.174475]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.174483]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.174489]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.174493]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.174497]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.174502]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.174506]  process_one_work+0x200/0x580
+[190958.174509]  ? process_one_work+0x17a/0x580
+[190958.174515]  worker_thread+0x4c/0x3f0
+[190958.174520]  kthread+0x103/0x140
+[190958.174523]  ? process_one_work+0x580/0x580
+[190958.174526]  ? kthread_bind+0x10/0x10
+[190958.174530]  ret_from_fork+0x3a/0x50
+[190958.174546] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.174549] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.174552] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.174555] Call Trace:
+[190958.174558]  dump_stack+0x78/0xb3
+[190958.174564]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.174573]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.174578]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.174583]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.174588]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.174592]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.174596]  process_one_work+0x200/0x580
+[190958.174600]  ? process_one_work+0x17a/0x580
+[190958.174605]  worker_thread+0x4c/0x3f0
+[190958.174610]  kthread+0x103/0x140
+[190958.174614]  ? process_one_work+0x580/0x580
+[190958.174617]  ? kthread_bind+0x10/0x10
+[190958.174620]  ret_from_fork+0x3a/0x50
+[190958.174637] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.174640] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.174644] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.174646] Call Trace:
+[190958.174650]  dump_stack+0x78/0xb3
+[190958.174656]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.174664]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.174669]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.174673]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.174677]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.174682]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.174686]  process_one_work+0x200/0x580
+[190958.174690]  ? process_one_work+0x17a/0x580
+[190958.174695]  worker_thread+0x4c/0x3f0
+[190958.174701]  kthread+0x103/0x140
+[190958.174704]  ? process_one_work+0x580/0x580
+[190958.174707]  ? kthread_bind+0x10/0x10
+[190958.174710]  ret_from_fork+0x3a/0x50
+[190958.174727] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.174730] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.174734] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.174736] Call Trace:
+[190958.174740]  dump_stack+0x78/0xb3
+[190958.174746]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.174755]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.174760]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.174764]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.174768]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.174772]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.174776]  process_one_work+0x200/0x580
+[190958.174780]  ? process_one_work+0x17a/0x580
+[190958.174786]  worker_thread+0x4c/0x3f0
+[190958.174791]  kthread+0x103/0x140
+[190958.174794]  ? process_one_work+0x580/0x580
+[190958.174798]  ? kthread_bind+0x10/0x10
+[190958.174801]  ret_from_fork+0x3a/0x50
+[190958.174818] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.174820] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.174824] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.174827] Call Trace:
+[190958.174831]  dump_stack+0x78/0xb3
+[190958.174838]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.174846]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.174851]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.174856]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.174860]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.174864]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.174869]  process_one_work+0x200/0x580
+[190958.174872]  ? process_one_work+0x17a/0x580
+[190958.174878]  worker_thread+0x4c/0x3f0
+[190958.174883]  kthread+0x103/0x140
+[190958.174887]  ? process_one_work+0x580/0x580
+[190958.174890]  ? kthread_bind+0x10/0x10
+[190958.174895]  ret_from_fork+0x3a/0x50
+[190958.174912] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.174915] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.174920] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.174941] Call Trace:
+[190958.174947]  dump_stack+0x78/0xb3
+[190958.174954]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.174965]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.174970]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.174976]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.174981]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.174986]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.174990]  process_one_work+0x200/0x580
+[190958.174995]  ? process_one_work+0x17a/0x580
+[190958.175002]  worker_thread+0x4c/0x3f0
+[190958.175007]  kthread+0x103/0x140
+[190958.175011]  ? process_one_work+0x580/0x580
+[190958.175015]  ? kthread_bind+0x10/0x10
+[190958.175019]  ret_from_fork+0x3a/0x50
+[190958.175048] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.175051] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.175055] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.175058] Call Trace:
+[190958.175063]  dump_stack+0x78/0xb3
+[190958.175070]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.175081]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.175086]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.175091]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.175096]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.175101]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.175106]  process_one_work+0x200/0x580
+[190958.175110]  ? process_one_work+0x17a/0x580
+[190958.175117]  worker_thread+0x4c/0x3f0
+[190958.175123]  kthread+0x103/0x140
+[190958.175127]  ? process_one_work+0x580/0x580
+[190958.175130]  ? kthread_bind+0x10/0x10
+[190958.175135]  ret_from_fork+0x3a/0x50
+[190958.175153] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.175156] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.175161] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.175164] Call Trace:
+[190958.175168]  dump_stack+0x78/0xb3
+[190958.175176]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.175185]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.175191]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.175196]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.175201]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.175206]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.175211]  process_one_work+0x200/0x580
+[190958.175215]  ? process_one_work+0x17a/0x580
+[190958.175237]  worker_thread+0x4c/0x3f0
+[190958.175263]  kthread+0x103/0x140
+[190958.175266]  ? process_one_work+0x580/0x580
+[190958.175270]  ? kthread_bind+0x10/0x10
+[190958.175274]  ret_from_fork+0x3a/0x50
+[190958.175290] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.175293] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.175296] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.175299] Call Trace:
+[190958.175302]  dump_stack+0x78/0xb3
+[190958.175309]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.175317]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.175322]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.175326]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.175331]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.175336]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.175340]  process_one_work+0x200/0x580
+[190958.175343]  ? process_one_work+0x17a/0x580
+[190958.175349]  worker_thread+0x4c/0x3f0
+[190958.175353]  kthread+0x103/0x140
+[190958.175357]  ? process_one_work+0x580/0x580
+[190958.175360]  ? kthread_bind+0x10/0x10
+[190958.175364]  ret_from_fork+0x3a/0x50
+[190958.175380] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.175383] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.175387] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.175389] Call Trace:
+[190958.175393]  dump_stack+0x78/0xb3
+[190958.175400]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.175409]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.175414]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.175418]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.175423]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.175427]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.175432]  process_one_work+0x200/0x580
+[190958.175435]  ? process_one_work+0x17a/0x580
+[190958.175441]  worker_thread+0x4c/0x3f0
+[190958.175446]  kthread+0x103/0x140
+[190958.175449]  ? process_one_work+0x580/0x580
+[190958.175452]  ? kthread_bind+0x10/0x10
+[190958.175456]  ret_from_fork+0x3a/0x50
+[190958.175473] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.175476] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.175480] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.175483] Call Trace:
+[190958.175487]  dump_stack+0x78/0xb3
+[190958.175493]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.175501]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.175506]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.175511]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.175516]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.175520]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.175524]  process_one_work+0x200/0x580
+[190958.175527]  ? process_one_work+0x17a/0x580
+[190958.175533]  worker_thread+0x4c/0x3f0
+[190958.175537]  kthread+0x103/0x140
+[190958.175542]  ? process_one_work+0x580/0x580
+[190958.175545]  ? kthread_bind+0x10/0x10
+[190958.175548]  ret_from_fork+0x3a/0x50
+[190958.175564] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.175567] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.175571] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.175574] Call Trace:
+[190958.175578]  dump_stack+0x78/0xb3
+[190958.175584]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.175592]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.175597]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.175601]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.175606]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.175610]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.175615]  process_one_work+0x200/0x580
+[190958.175619]  ? process_one_work+0x17a/0x580
+[190958.175624]  worker_thread+0x4c/0x3f0
+[190958.175629]  kthread+0x103/0x140
+[190958.175633]  ? process_one_work+0x580/0x580
+[190958.175636]  ? kthread_bind+0x10/0x10
+[190958.175639]  ret_from_fork+0x3a/0x50
+[190958.175656] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.175659] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.175663] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.175666] Call Trace:
+[190958.175670]  dump_stack+0x78/0xb3
+[190958.175676]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.175685]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.175690]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.175695]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.175699]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.175703]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.175707]  process_one_work+0x200/0x580
+[190958.175711]  ? process_one_work+0x17a/0x580
+[190958.175717]  worker_thread+0x4c/0x3f0
+[190958.175722]  kthread+0x103/0x140
+[190958.175725]  ? process_one_work+0x580/0x580
+[190958.175728]  ? kthread_bind+0x10/0x10
+[190958.175732]  ret_from_fork+0x3a/0x50
+[190958.175748] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.175751] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.175755] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.175757] Call Trace:
+[190958.175761]  dump_stack+0x78/0xb3
+[190958.175767]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.175776]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.175781]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.175786]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.175790]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.175794]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.175798]  process_one_work+0x200/0x580
+[190958.175802]  ? process_one_work+0x17a/0x580
+[190958.175807]  worker_thread+0x4c/0x3f0
+[190958.175813]  kthread+0x103/0x140
+[190958.175817]  ? process_one_work+0x580/0x580
+[190958.175820]  ? kthread_bind+0x10/0x10
+[190958.175824]  ret_from_fork+0x3a/0x50
+[190958.175840] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.175842] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.175846] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.175848] Call Trace:
+[190958.175852]  dump_stack+0x78/0xb3
+[190958.175859]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.175868]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.175872]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.175877]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.175881]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.175885]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.175891]  process_one_work+0x200/0x580
+[190958.175894]  ? process_one_work+0x17a/0x580
+[190958.175900]  worker_thread+0x4c/0x3f0
+[190958.175905]  kthread+0x103/0x140
+[190958.175908]  ? process_one_work+0x580/0x580
+[190958.175911]  ? kthread_bind+0x10/0x10
+[190958.175916]  ret_from_fork+0x3a/0x50
+[190958.175959] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.175963] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.175967] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.175970] Call Trace:
+[190958.175975]  dump_stack+0x78/0xb3
+[190958.175982]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.175992]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.175997]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.176003]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.176009]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.176014]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.176019]  process_one_work+0x200/0x580
+[190958.176023]  ? process_one_work+0x17a/0x580
+[190958.176029]  worker_thread+0x4c/0x3f0
+[190958.176035]  kthread+0x103/0x140
+[190958.176039]  ? process_one_work+0x580/0x580
+[190958.176043]  ? kthread_bind+0x10/0x10
+[190958.176047]  ret_from_fork+0x3a/0x50
+[190958.176066] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.176069] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.176074] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.176077] Call Trace:
+[190958.176081]  dump_stack+0x78/0xb3
+[190958.176088]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.176097]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.176103]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.176109]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.176114]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.176119]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.176124]  process_one_work+0x200/0x580
+[190958.176128]  ? process_one_work+0x17a/0x580
+[190958.176134]  worker_thread+0x4c/0x3f0
+[190958.176140]  kthread+0x103/0x140
+[190958.176144]  ? process_one_work+0x580/0x580
+[190958.176148]  ? kthread_bind+0x10/0x10
+[190958.176152]  ret_from_fork+0x3a/0x50
+[190958.176171] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.176174] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.176178] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.176181] Call Trace:
+[190958.176186]  dump_stack+0x78/0xb3
+[190958.176193]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.176202]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.176208]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.176214]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.176219]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.176244]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.176249]  process_one_work+0x200/0x580
+[190958.176271]  ? process_one_work+0x17a/0x580
+[190958.176277]  worker_thread+0x4c/0x3f0
+[190958.176283]  kthread+0x103/0x140
+[190958.176286]  ? process_one_work+0x580/0x580
+[190958.176289]  ? kthread_bind+0x10/0x10
+[190958.176293]  ret_from_fork+0x3a/0x50
+[190958.176310] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.176313] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.176316] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.176319] Call Trace:
+[190958.176322]  dump_stack+0x78/0xb3
+[190958.176329]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.176337]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.176342]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.176347]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.176351]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.176355]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.176359]  process_one_work+0x200/0x580
+[190958.176363]  ? process_one_work+0x17a/0x580
+[190958.176368]  worker_thread+0x4c/0x3f0
+[190958.176373]  kthread+0x103/0x140
+[190958.176377]  ? process_one_work+0x580/0x580
+[190958.176380]  ? kthread_bind+0x10/0x10
+[190958.176384]  ret_from_fork+0x3a/0x50
+[190958.176400] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.176403] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.176407] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.176409] Call Trace:
+[190958.176414]  dump_stack+0x78/0xb3
+[190958.176420]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.176428]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.176433]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.176437]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.176442]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.176447]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.176451]  process_one_work+0x200/0x580
+[190958.176454]  ? process_one_work+0x17a/0x580
+[190958.176460]  worker_thread+0x4c/0x3f0
+[190958.176464]  kthread+0x103/0x140
+[190958.176468]  ? process_one_work+0x580/0x580
+[190958.176471]  ? kthread_bind+0x10/0x10
+[190958.176474]  ret_from_fork+0x3a/0x50
+[190958.176491] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.176494] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.176497] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.176500] Call Trace:
+[190958.176504]  dump_stack+0x78/0xb3
+[190958.176510]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.176519]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.176524]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.176528]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.176532]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.176537]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.176542]  process_one_work+0x200/0x580
+[190958.176546]  ? process_one_work+0x17a/0x580
+[190958.176551]  worker_thread+0x4c/0x3f0
+[190958.176556]  kthread+0x103/0x140
+[190958.176559]  ? process_one_work+0x580/0x580
+[190958.176562]  ? kthread_bind+0x10/0x10
+[190958.176566]  ret_from_fork+0x3a/0x50
+[190958.176583] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.176585] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.176589] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.176591] Call Trace:
+[190958.176595]  dump_stack+0x78/0xb3
+[190958.176602]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.176610]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.176616]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.176620]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.176625]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.176629]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.176633]  process_one_work+0x200/0x580
+[190958.176637]  ? process_one_work+0x17a/0x580
+[190958.176642]  worker_thread+0x4c/0x3f0
+[190958.176647]  kthread+0x103/0x140
+[190958.176651]  ? process_one_work+0x580/0x580
+[190958.176655]  ? kthread_bind+0x10/0x10
+[190958.176658]  ret_from_fork+0x3a/0x50
+[190958.176674] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.176677] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.176680] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.176683] Call Trace:
+[190958.176687]  dump_stack+0x78/0xb3
+[190958.176694]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.176702]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.176706]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.176711]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.176716]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.176720]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.176724]  process_one_work+0x200/0x580
+[190958.176728]  ? process_one_work+0x17a/0x580
+[190958.176733]  worker_thread+0x4c/0x3f0
+[190958.176738]  kthread+0x103/0x140
+[190958.176742]  ? process_one_work+0x580/0x580
+[190958.176746]  ? kthread_bind+0x10/0x10
+[190958.176750]  ret_from_fork+0x3a/0x50
+[190958.176766] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.176768] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.176773] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.176775] Call Trace:
+[190958.176779]  dump_stack+0x78/0xb3
+[190958.176785]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.176793]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.176798]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.176804]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.176808]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.176812]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.176816]  process_one_work+0x200/0x580
+[190958.176820]  ? process_one_work+0x17a/0x580
+[190958.176825]  worker_thread+0x4c/0x3f0
+[190958.176830]  kthread+0x103/0x140
+[190958.176834]  ? process_one_work+0x580/0x580
+[190958.176838]  ? kthread_bind+0x10/0x10
+[190958.176842]  ret_from_fork+0x3a/0x50
+[190958.176858] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.176861] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.176865] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.176868] Call Trace:
+[190958.176872]  dump_stack+0x78/0xb3
+[190958.176878]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.176886]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.176892]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.176896]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.176900]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.176905]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.176909]  process_one_work+0x200/0x580
+[190958.176912]  ? process_one_work+0x17a/0x580
+[190958.176920]  worker_thread+0x4c/0x3f0
+[190958.176946]  kthread+0x103/0x140
+[190958.176951]  ? process_one_work+0x580/0x580
+[190958.176956]  ? kthread_bind+0x10/0x10
+[190958.176960]  ret_from_fork+0x3a/0x50
+[190958.176991] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.176994] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.176999] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.177002] Call Trace:
+[190958.177007]  dump_stack+0x78/0xb3
+[190958.177014]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.177023]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.177029]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.177035]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.177040]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.177045]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.177049]  process_one_work+0x200/0x580
+[190958.177054]  ? process_one_work+0x17a/0x580
+[190958.177061]  worker_thread+0x4c/0x3f0
+[190958.177066]  kthread+0x103/0x140
+[190958.177070]  ? process_one_work+0x580/0x580
+[190958.177074]  ? kthread_bind+0x10/0x10
+[190958.177078]  ret_from_fork+0x3a/0x50
+[190958.177097] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.177100] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.177104] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.177107] Call Trace:
+[190958.177111]  dump_stack+0x78/0xb3
+[190958.177118]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.177128]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.177133]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.177139]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.177143]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.177148]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.177153]  process_one_work+0x200/0x580
+[190958.177157]  ? process_one_work+0x17a/0x580
+[190958.177163]  worker_thread+0x4c/0x3f0
+[190958.177170]  kthread+0x103/0x140
+[190958.177174]  ? process_one_work+0x580/0x580
+[190958.177177]  ? kthread_bind+0x10/0x10
+[190958.177182]  ret_from_fork+0x3a/0x50
+[190958.177201] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.177204] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.177208] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.177210] Call Trace:
+[190958.177215]  dump_stack+0x78/0xb3
+[190958.177240]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.177268]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.177273]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.177278]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.177282]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.177287]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.177291]  process_one_work+0x200/0x580
+[190958.177294]  ? process_one_work+0x17a/0x580
+[190958.177300]  worker_thread+0x4c/0x3f0
+[190958.177305]  kthread+0x103/0x140
+[190958.177308]  ? process_one_work+0x580/0x580
+[190958.177311]  ? kthread_bind+0x10/0x10
+[190958.177314]  ret_from_fork+0x3a/0x50
+[190958.177332] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.177335] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.177338] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.177341] Call Trace:
+[190958.177345]  dump_stack+0x78/0xb3
+[190958.177351]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.177360]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.177364]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.177369]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.177373]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.177378]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.177382]  process_one_work+0x200/0x580
+[190958.177385]  ? process_one_work+0x17a/0x580
+[190958.177391]  worker_thread+0x4c/0x3f0
+[190958.177395]  kthread+0x103/0x140
+[190958.177399]  ? process_one_work+0x580/0x580
+[190958.177402]  ? kthread_bind+0x10/0x10
+[190958.177406]  ret_from_fork+0x3a/0x50
+[190958.177422] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.177425] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.177429] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.177431] Call Trace:
+[190958.177435]  dump_stack+0x78/0xb3
+[190958.177442]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.177451]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.177455]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.177460]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.177464]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.177469]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.177473]  process_one_work+0x200/0x580
+[190958.177478]  ? process_one_work+0x17a/0x580
+[190958.177483]  worker_thread+0x4c/0x3f0
+[190958.177488]  kthread+0x103/0x140
+[190958.177492]  ? process_one_work+0x580/0x580
+[190958.177495]  ? kthread_bind+0x10/0x10
+[190958.177498]  ret_from_fork+0x3a/0x50
+[190958.177515] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.177517] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.177521] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.177523] Call Trace:
+[190958.177527]  dump_stack+0x78/0xb3
+[190958.177533]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.177542]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.177547]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.177551]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.177555]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.177559]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.177564]  process_one_work+0x200/0x580
+[190958.177568]  ? process_one_work+0x17a/0x580
+[190958.177574]  worker_thread+0x4c/0x3f0
+[190958.177579]  kthread+0x103/0x140
+[190958.177582]  ? process_one_work+0x580/0x580
+[190958.177585]  ? kthread_bind+0x10/0x10
+[190958.177589]  ret_from_fork+0x3a/0x50
+[190958.177606] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.177609] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.177613] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.177615] Call Trace:
+[190958.177619]  dump_stack+0x78/0xb3
+[190958.177626]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.177635]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.177640]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.177644]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.177648]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.177653]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.177657]  process_one_work+0x200/0x580
+[190958.177660]  ? process_one_work+0x17a/0x580
+[190958.177666]  worker_thread+0x4c/0x3f0
+[190958.177671]  kthread+0x103/0x140
+[190958.177674]  ? process_one_work+0x580/0x580
+[190958.177677]  ? kthread_bind+0x10/0x10
+[190958.177681]  ret_from_fork+0x3a/0x50
+[190958.177698] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.177701] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.177705] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.177707] Call Trace:
+[190958.177711]  dump_stack+0x78/0xb3
+[190958.177717]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.177726]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.177731]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.177735]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.177740]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.177745]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.177749]  process_one_work+0x200/0x580
+[190958.177752]  ? process_one_work+0x17a/0x580
+[190958.177758]  worker_thread+0x4c/0x3f0
+[190958.177762]  kthread+0x103/0x140
+[190958.177766]  ? process_one_work+0x580/0x580
+[190958.177770]  ? kthread_bind+0x10/0x10
+[190958.177773]  ret_from_fork+0x3a/0x50
+[190958.177790] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.177792] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.177797] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.177799] Call Trace:
+[190958.177803]  dump_stack+0x78/0xb3
+[190958.177809]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.177818]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.177823]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.177828]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.177832]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.177836]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.177841]  process_one_work+0x200/0x580
+[190958.177844]  ? process_one_work+0x17a/0x580
+[190958.177849]  worker_thread+0x4c/0x3f0
+[190958.177854]  kthread+0x103/0x140
+[190958.177858]  ? process_one_work+0x580/0x580
+[190958.177860]  ? kthread_bind+0x10/0x10
+[190958.177864]  ret_from_fork+0x3a/0x50
+[190958.177881] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.177883] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.177887] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.177889] Call Trace:
+[190958.177893]  dump_stack+0x78/0xb3
+[190958.177900]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.177909]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.177914]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.177922]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.177944]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.177949]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.177954]  process_one_work+0x200/0x580
+[190958.177958]  ? process_one_work+0x17a/0x580
+[190958.177964]  worker_thread+0x4c/0x3f0
+[190958.177971]  kthread+0x103/0x140
+[190958.177976]  ? process_one_work+0x580/0x580
+[190958.177979]  ? kthread_bind+0x10/0x10
+[190958.177983]  ret_from_fork+0x3a/0x50
+[190958.178010] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.178013] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.178017] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.178022] Call Trace:
+[190958.178026]  dump_stack+0x78/0xb3
+[190958.178034]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.178043]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.178049]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.178054]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.178059]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.178064]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.178069]  process_one_work+0x200/0x580
+[190958.178073]  ? process_one_work+0x17a/0x580
+[190958.178080]  worker_thread+0x4c/0x3f0
+[190958.178086]  kthread+0x103/0x140
+[190958.178090]  ? process_one_work+0x580/0x580
+[190958.178093]  ? kthread_bind+0x10/0x10
+[190958.178098]  ret_from_fork+0x3a/0x50
+[190958.178116] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.178120] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.178124] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.178127] Call Trace:
+[190958.178131]  dump_stack+0x78/0xb3
+[190958.178138]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.178148]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.178154]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.178159]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.178164]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.178169]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.178174]  process_one_work+0x200/0x580
+[190958.178178]  ? process_one_work+0x17a/0x580
+[190958.178184]  worker_thread+0x4c/0x3f0
+[190958.178207]  kthread+0x103/0x140
+[190958.178212]  ? process_one_work+0x580/0x580
+[190958.178216]  ? kthread_bind+0x10/0x10
+[190958.178220]  ret_from_fork+0x3a/0x50
+[190958.178274] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.178278] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.178282] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.178301] Call Trace:
+[190958.178305]  dump_stack+0x78/0xb3
+[190958.178311]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.178320]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.178324]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.178329]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.178333]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.178337]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.178341]  process_one_work+0x200/0x580
+[190958.178345]  ? process_one_work+0x17a/0x580
+[190958.178350]  worker_thread+0x4c/0x3f0
+[190958.178355]  kthread+0x103/0x140
+[190958.178360]  ? process_one_work+0x580/0x580
+[190958.178363]  ? kthread_bind+0x10/0x10
+[190958.178366]  ret_from_fork+0x3a/0x50
+[190958.178383] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.178386] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.178390] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.178392] Call Trace:
+[190958.178396]  dump_stack+0x78/0xb3
+[190958.178402]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.178410]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.178415]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.178420]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.178424]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.178428]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.178432]  process_one_work+0x200/0x580
+[190958.178435]  ? process_one_work+0x17a/0x580
+[190958.178441]  worker_thread+0x4c/0x3f0
+[190958.178446]  kthread+0x103/0x140
+[190958.178449]  ? process_one_work+0x580/0x580
+[190958.178454]  ? kthread_bind+0x10/0x10
+[190958.178458]  ret_from_fork+0x3a/0x50
+[190958.178473] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.178476] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.178480] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.178483] Call Trace:
+[190958.178487]  dump_stack+0x78/0xb3
+[190958.178493]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.178501]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.178506]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.178511]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.178516]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.178520]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.178524]  process_one_work+0x200/0x580
+[190958.178528]  ? process_one_work+0x17a/0x580
+[190958.178534]  worker_thread+0x4c/0x3f0
+[190958.178539]  kthread+0x103/0x140
+[190958.178543]  ? process_one_work+0x580/0x580
+[190958.178545]  ? kthread_bind+0x10/0x10
+[190958.178549]  ret_from_fork+0x3a/0x50
+[190958.178565] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.178567] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.178571] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.178573] Call Trace:
+[190958.178578]  dump_stack+0x78/0xb3
+[190958.178583]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.178592]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.178597]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.178601]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.178606]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.178610]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.178614]  process_one_work+0x200/0x580
+[190958.178617]  ? process_one_work+0x17a/0x580
+[190958.178623]  worker_thread+0x4c/0x3f0
+[190958.178627]  kthread+0x103/0x140
+[190958.178631]  ? process_one_work+0x580/0x580
+[190958.178635]  ? kthread_bind+0x10/0x10
+[190958.178638]  ret_from_fork+0x3a/0x50
+[190958.178654] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.178658] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.178661] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.178664] Call Trace:
+[190958.178668]  dump_stack+0x78/0xb3
+[190958.178674]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.178682]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.178687]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.178692]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.178696]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.178700]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.178704]  process_one_work+0x200/0x580
+[190958.178708]  ? process_one_work+0x17a/0x580
+[190958.178714]  worker_thread+0x4c/0x3f0
+[190958.178719]  kthread+0x103/0x140
+[190958.178722]  ? process_one_work+0x580/0x580
+[190958.178725]  ? kthread_bind+0x10/0x10
+[190958.178729]  ret_from_fork+0x3a/0x50
+[190958.178745] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.178748] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.178752] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.178754] Call Trace:
+[190958.178758]  dump_stack+0x78/0xb3
+[190958.178764]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.178772]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.178777]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.178781]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.178785]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.178790]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.178794]  process_one_work+0x200/0x580
+[190958.178798]  ? process_one_work+0x17a/0x580
+[190958.178803]  worker_thread+0x4c/0x3f0
+[190958.178808]  kthread+0x103/0x140
+[190958.178812]  ? process_one_work+0x580/0x580
+[190958.178815]  ? kthread_bind+0x10/0x10
+[190958.178818]  ret_from_fork+0x3a/0x50
+[190958.178834] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.178837] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.178840] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.178843] Call Trace:
+[190958.178847]  dump_stack+0x78/0xb3
+[190958.178853]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.178861]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.178866]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.178870]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.178875]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.178879]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.178883]  process_one_work+0x200/0x580
+[190958.178887]  ? process_one_work+0x17a/0x580
+[190958.178892]  worker_thread+0x4c/0x3f0
+[190958.178898]  kthread+0x103/0x140
+[190958.178901]  ? process_one_work+0x580/0x580
+[190958.178905]  ? kthread_bind+0x10/0x10
+[190958.178908]  ret_from_fork+0x3a/0x50
+[190958.178952] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.178956] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.178961] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.178964] Call Trace:
+[190958.178968]  dump_stack+0x78/0xb3
+[190958.178975]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.178986]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.178991]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.178997]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.179002]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.179007]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.179011]  process_one_work+0x200/0x580
+[190958.179015]  ? process_one_work+0x17a/0x580
+[190958.179022]  worker_thread+0x4c/0x3f0
+[190958.179027]  kthread+0x103/0x140
+[190958.179031]  ? process_one_work+0x580/0x580
+[190958.179035]  ? kthread_bind+0x10/0x10
+[190958.179039]  ret_from_fork+0x3a/0x50
+[190958.179058] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.179061] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.179065] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.179068] Call Trace:
+[190958.179072]  dump_stack+0x78/0xb3
+[190958.179079]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.179089]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.179095]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.179100]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.179105]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.179110]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.179115]  process_one_work+0x200/0x580
+[190958.179119]  ? process_one_work+0x17a/0x580
+[190958.179126]  worker_thread+0x4c/0x3f0
+[190958.179131]  kthread+0x103/0x140
+[190958.179135]  ? process_one_work+0x580/0x580
+[190958.179139]  ? kthread_bind+0x10/0x10
+[190958.179144]  ret_from_fork+0x3a/0x50
+[190958.179162] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.179164] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.179168] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.179171] Call Trace:
+[190958.179176]  dump_stack+0x78/0xb3
+[190958.179183]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.179193]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.179199]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.179204]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.179209]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.179214]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.179237]  process_one_work+0x200/0x580
+[190958.179242]  ? process_one_work+0x17a/0x580
+[190958.179265]  worker_thread+0x4c/0x3f0
+[190958.179270]  kthread+0x103/0x140
+[190958.179273]  ? process_one_work+0x580/0x580
+[190958.179276]  ? kthread_bind+0x10/0x10
+[190958.179280]  ret_from_fork+0x3a/0x50
+[190958.179296] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.179299] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.179303] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.179305] Call Trace:
+[190958.179309]  dump_stack+0x78/0xb3
+[190958.179316]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.179324]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.179328]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.179333]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.179338]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.179342]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.179347]  process_one_work+0x200/0x580
+[190958.179350]  ? process_one_work+0x17a/0x580
+[190958.179356]  worker_thread+0x4c/0x3f0
+[190958.179361]  kthread+0x103/0x140
+[190958.179364]  ? process_one_work+0x580/0x580
+[190958.179367]  ? kthread_bind+0x10/0x10
+[190958.179371]  ret_from_fork+0x3a/0x50
+[190958.179387] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.179390] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.179393] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.179396] Call Trace:
+[190958.179400]  dump_stack+0x78/0xb3
+[190958.179406]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.179414]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.179419]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.179423]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.179427]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.179431]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.179436]  process_one_work+0x200/0x580
+[190958.179439]  ? process_one_work+0x17a/0x580
+[190958.179445]  worker_thread+0x4c/0x3f0
+[190958.179450]  kthread+0x103/0x140
+[190958.179454]  ? process_one_work+0x580/0x580
+[190958.179457]  ? kthread_bind+0x10/0x10
+[190958.179460]  ret_from_fork+0x3a/0x50
+[190958.179476] CPU: 11 PID: 16915 Comm: kworker/11:2 Kdump: loaded Tainted: G        W  O      5.4.0-rc6+ #12
+[190958.179479] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190958.179483] Workqueue: release workqueue iser_release_work [ib_iser]
+[190958.179485] Call Trace:
+[190958.179489]  dump_stack+0x78/0xb3
+[190958.179496]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190958.179504]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190958.179509]  iser_free_fastreg_pool+0x90/0x130 [ib_iser]
+[190958.179514]  iser_free_rx_descriptors+0x27/0xe0 [ib_iser]
+[190958.179518]  iser_free_ib_conn_res+0x77/0x1a0 [ib_iser]
+[190958.179522]  iser_conn_release+0xac/0xf0 [ib_iser]
+[190958.179526]  process_one_work+0x200/0x580
+[190958.179530]  ? process_one_work+0x17a/0x580
+[190958.179537]  worker_thread+0x4c/0x3f0
+[190958.179542]  kthread+0x103/0x140
+[190958.179545]  ? process_one_work+0x580/0x580
+[190958.179548]  ? kthread_bind+0x10/0x10
+[190958.179551]  ret_from_fork+0x3a/0x50

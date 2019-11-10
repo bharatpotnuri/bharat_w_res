@@ -1,0 +1,2304 @@
+[190594.168691] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.168694] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.168695] Call Trace:
+[190594.168705]  dump_stack+0x78/0xb3
+[190594.168719]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.168739]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.168743]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.168753]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.168762]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.168769]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.168783]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.168794]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.168801]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.168806]  ? remove_wait_queue+0x60/0x60
+[190594.168813]  kthread+0x103/0x140
+[190594.168820]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.168822]  ? kthread_bind+0x10/0x10
+[190594.168829]  ret_from_fork+0x3a/0x50
+[190594.168921] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.168922] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.168923] Call Trace:
+[190594.168926]  dump_stack+0x78/0xb3
+[190594.168932]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.168940]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.168943]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.168951]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.168958]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.168963]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.168971]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.168980]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.168986]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.168989]  ? remove_wait_queue+0x60/0x60
+[190594.168994]  kthread+0x103/0x140
+[190594.168999]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.169001]  ? kthread_bind+0x10/0x10
+[190594.169005]  ret_from_fork+0x3a/0x50
+[190594.169032] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.169034] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.169035] Call Trace:
+[190594.169037]  dump_stack+0x78/0xb3
+[190594.169043]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.169051]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.169054]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.169061]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.169068]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.169074]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.169081]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.169090]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.169095]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.169098]  ? remove_wait_queue+0x60/0x60
+[190594.169103]  kthread+0x103/0x140
+[190594.169108]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.169110]  ? kthread_bind+0x10/0x10
+[190594.169114]  ret_from_fork+0x3a/0x50
+[190594.169158] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.169160] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.169161] Call Trace:
+[190594.169164]  dump_stack+0x78/0xb3
+[190594.169170]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.169179]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.169181]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.169189]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.169197]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.169202]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.169210]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.169219]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.169225]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.169228]  ? remove_wait_queue+0x60/0x60
+[190594.169233]  kthread+0x103/0x140
+[190594.169238]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.169240]  ? kthread_bind+0x10/0x10
+[190594.169245]  ret_from_fork+0x3a/0x50
+[190594.169272] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.169274] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.169275] Call Trace:
+[190594.169277]  dump_stack+0x78/0xb3
+[190594.169283]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.169292]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.169294]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.169302]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.169309]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.169315]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.169322]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.169332]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.169338]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.169341]  ? remove_wait_queue+0x60/0x60
+[190594.169346]  kthread+0x103/0x140
+[190594.169351]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.169353]  ? kthread_bind+0x10/0x10
+[190594.169357]  ret_from_fork+0x3a/0x50
+[190594.169384] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.169385] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.169386] Call Trace:
+[190594.169389]  dump_stack+0x78/0xb3
+[190594.169395]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.169403]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.169406]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.169414]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.169421]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.169427]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.169434]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.169459]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.169465]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.169467]  ? remove_wait_queue+0x60/0x60
+[190594.169472]  kthread+0x103/0x140
+[190594.169476]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.169478]  ? kthread_bind+0x10/0x10
+[190594.169482]  ret_from_fork+0x3a/0x50
+[190594.169508] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.169509] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.169510] Call Trace:
+[190594.169513]  dump_stack+0x78/0xb3
+[190594.169518]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.169526]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.169528]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.169554]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.169561]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.169567]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.169574]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.169583]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.169589]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.169592]  ? remove_wait_queue+0x60/0x60
+[190594.169597]  kthread+0x103/0x140
+[190594.169602]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.169604]  ? kthread_bind+0x10/0x10
+[190594.169608]  ret_from_fork+0x3a/0x50
+[190594.169675] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.169676] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.169677] Call Trace:
+[190594.169680]  dump_stack+0x78/0xb3
+[190594.169686]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.169695]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.169698]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.169706]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.169714]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.169719]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.169727]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.169737]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.169743]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.169746]  ? remove_wait_queue+0x60/0x60
+[190594.169751]  kthread+0x103/0x140
+[190594.169756]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.169759]  ? kthread_bind+0x10/0x10
+[190594.169763]  ret_from_fork+0x3a/0x50
+[190594.169793] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.169794] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.169795] Call Trace:
+[190594.169798]  dump_stack+0x78/0xb3
+[190594.169804]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.169813]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.169815]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.169823]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.169847]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.169853]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.169861]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.169870]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.169876]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.169879]  ? remove_wait_queue+0x60/0x60
+[190594.169884]  kthread+0x103/0x140
+[190594.169889]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.169891]  ? kthread_bind+0x10/0x10
+[190594.169895]  ret_from_fork+0x3a/0x50
+[190594.169939] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.169941] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.169942] Call Trace:
+[190594.169945]  dump_stack+0x78/0xb3
+[190594.169951]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.169961]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.169963]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.169971]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.169979]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.169985]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.169992]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.170001]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.170007]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.170010]  ? remove_wait_queue+0x60/0x60
+[190594.170015]  kthread+0x103/0x140
+[190594.170021]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.170023]  ? kthread_bind+0x10/0x10
+[190594.170027]  ret_from_fork+0x3a/0x50
+[190594.170054] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.170056] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.170057] Call Trace:
+[190594.170060]  dump_stack+0x78/0xb3
+[190594.170066]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.170074]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.170077]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.170084]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.170092]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.170098]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.170106]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.170117]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.170123]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.170126]  ? remove_wait_queue+0x60/0x60
+[190594.170131]  kthread+0x103/0x140
+[190594.170136]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.170139]  ? kthread_bind+0x10/0x10
+[190594.170142]  ret_from_fork+0x3a/0x50
+[190594.170207] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.170208] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.170209] Call Trace:
+[190594.170212]  dump_stack+0x78/0xb3
+[190594.170219]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.170228]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.170230]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.170239]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.170247]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.170253]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.170261]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.170271]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.170278]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.170281]  ? remove_wait_queue+0x60/0x60
+[190594.170287]  kthread+0x103/0x140
+[190594.170292]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.170295]  ? kthread_bind+0x10/0x10
+[190594.170300]  ret_from_fork+0x3a/0x50
+[190594.170328] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.170329] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.170330] Call Trace:
+[190594.170333]  dump_stack+0x78/0xb3
+[190594.170340]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.170349]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.170351]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.170360]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.170368]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.170374]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.170382]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.170392]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.170398]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.170402]  ? remove_wait_queue+0x60/0x60
+[190594.170407]  kthread+0x103/0x140
+[190594.170412]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.170415]  ? kthread_bind+0x10/0x10
+[190594.170419]  ret_from_fork+0x3a/0x50
+[190594.170447] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.170449] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.170450] Call Trace:
+[190594.170453]  dump_stack+0x78/0xb3
+[190594.170459]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.170468]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.170471]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.170479]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.170487]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.170493]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.170501]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.170528]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.170550]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.170553]  ? remove_wait_queue+0x60/0x60
+[190594.170576]  kthread+0x103/0x140
+[190594.170582]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.170584]  ? kthread_bind+0x10/0x10
+[190594.170588]  ret_from_fork+0x3a/0x50
+[190594.170625] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.170626] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.170628] Call Trace:
+[190594.170631]  dump_stack+0x78/0xb3
+[190594.170637]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.170646]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.170648]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.170656]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.170664]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.170670]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.170678]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.170688]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.170694]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.170697]  ? remove_wait_queue+0x60/0x60
+[190594.170703]  kthread+0x103/0x140
+[190594.170708]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.170710]  ? kthread_bind+0x10/0x10
+[190594.170714]  ret_from_fork+0x3a/0x50
+[190594.170743] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.170745] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.170746] Call Trace:
+[190594.170749]  dump_stack+0x78/0xb3
+[190594.170755]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.170764]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.170766]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.170774]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.170782]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.170788]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.170795]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.170806]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.170812]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.170815]  ? remove_wait_queue+0x60/0x60
+[190594.170821]  kthread+0x103/0x140
+[190594.170826]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.170828]  ? kthread_bind+0x10/0x10
+[190594.170832]  ret_from_fork+0x3a/0x50
+[190594.170895] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.170896] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.170897] Call Trace:
+[190594.170900]  dump_stack+0x78/0xb3
+[190594.170907]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.170915]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.170918]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.170926]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.170933]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.170939]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.170947]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.170958]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.170964]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.170968]  ? remove_wait_queue+0x60/0x60
+[190594.170973]  kthread+0x103/0x140
+[190594.170978]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.170981]  ? kthread_bind+0x10/0x10
+[190594.170985]  ret_from_fork+0x3a/0x50
+[190594.171012] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.171013] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.171014] Call Trace:
+[190594.171017]  dump_stack+0x78/0xb3
+[190594.171023]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.171032]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.171034]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.171042]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.171050]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.171058]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.171065]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.171075]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.171081]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.171084]  ? remove_wait_queue+0x60/0x60
+[190594.171090]  kthread+0x103/0x140
+[190594.171095]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.171097]  ? kthread_bind+0x10/0x10
+[190594.171101]  ret_from_fork+0x3a/0x50
+[190594.171129] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.171130] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.171131] Call Trace:
+[190594.171135]  dump_stack+0x78/0xb3
+[190594.171140]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.171149]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.171152]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.171159]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.171168]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.171175]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.171182]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.171209]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.171215]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.171218]  ? remove_wait_queue+0x60/0x60
+[190594.171223]  kthread+0x103/0x140
+[190594.171228]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.171231]  ? kthread_bind+0x10/0x10
+[190594.171235]  ret_from_fork+0x3a/0x50
+[190594.171261] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.171263] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.171264] Call Trace:
+[190594.171267]  dump_stack+0x78/0xb3
+[190594.171272]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.171281]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.171283]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.171293]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.171300]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.171306]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.171313]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.171323]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.171329]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.171332]  ? remove_wait_queue+0x60/0x60
+[190594.171337]  kthread+0x103/0x140
+[190594.171342]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.171345]  ? kthread_bind+0x10/0x10
+[190594.171349]  ret_from_fork+0x3a/0x50
+[190594.171375] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.171376] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.171377] Call Trace:
+[190594.171380]  dump_stack+0x78/0xb3
+[190594.171386]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.171394]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.171397]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.171404]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.171412]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.171418]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.171425]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.171435]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.171441]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.171444]  ? remove_wait_queue+0x60/0x60
+[190594.171449]  kthread+0x103/0x140
+[190594.171454]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.171456]  ? kthread_bind+0x10/0x10
+[190594.171460]  ret_from_fork+0x3a/0x50
+[190594.171486] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.171487] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.171488] Call Trace:
+[190594.171491]  dump_stack+0x78/0xb3
+[190594.171497]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.171506]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.171508]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.171517]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.171525]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.171530]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.171555]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.171565]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.171572]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.171575]  ? remove_wait_queue+0x60/0x60
+[190594.171580]  kthread+0x103/0x140
+[190594.171586]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.171588]  ? kthread_bind+0x10/0x10
+[190594.171592]  ret_from_fork+0x3a/0x50
+[190594.171650] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.171652] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.171653] Call Trace:
+[190594.171656]  dump_stack+0x78/0xb3
+[190594.171662]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.171671]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.171674]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.171682]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.171689]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.171695]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.171703]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.171712]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.171718]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.171721]  ? remove_wait_queue+0x60/0x60
+[190594.171727]  kthread+0x103/0x140
+[190594.171732]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.171734]  ? kthread_bind+0x10/0x10
+[190594.171738]  ret_from_fork+0x3a/0x50
+[190594.171765] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.171766] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.171768] Call Trace:
+[190594.171771]  dump_stack+0x78/0xb3
+[190594.171778]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.171786]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.171788]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.171796]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.171804]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.171809]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.171817]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.171826]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.171832]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.171852]  ? remove_wait_queue+0x60/0x60
+[190594.171857]  kthread+0x103/0x140
+[190594.171862]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.171864]  ? kthread_bind+0x10/0x10
+[190594.171868]  ret_from_fork+0x3a/0x50
+[190594.171912] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.171913] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.171916] Call Trace:
+[190594.171919]  dump_stack+0x78/0xb3
+[190594.171925]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.171933]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.171936]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.171943]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.171951]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.171956]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.171964]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.171973]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.171979]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.171982]  ? remove_wait_queue+0x60/0x60
+[190594.171987]  kthread+0x103/0x140
+[190594.171992]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.171994]  ? kthread_bind+0x10/0x10
+[190594.171998]  ret_from_fork+0x3a/0x50
+[190594.172025] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.172026] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.172027] Call Trace:
+[190594.172030]  dump_stack+0x78/0xb3
+[190594.172036]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.172044]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.172047]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.172055]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.172063]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.172069]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.172076]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.172086]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.172092]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.172095]  ? remove_wait_queue+0x60/0x60
+[190594.172100]  kthread+0x103/0x140
+[190594.172105]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.172107]  ? kthread_bind+0x10/0x10
+[190594.172112]  ret_from_fork+0x3a/0x50
+[190594.172138] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.172140] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.172141] Call Trace:
+[190594.172144]  dump_stack+0x78/0xb3
+[190594.172150]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.172158]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.172160]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.172170]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.172177]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.172183]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.172207]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.172216]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.172222]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.172225]  ? remove_wait_queue+0x60/0x60
+[190594.172230]  kthread+0x103/0x140
+[190594.172235]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.172237]  ? kthread_bind+0x10/0x10
+[190594.172241]  ret_from_fork+0x3a/0x50
+[190594.172267] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.172268] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.172269] Call Trace:
+[190594.172272]  dump_stack+0x78/0xb3
+[190594.172277]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.172285]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.172289]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.172296]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.172304]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.172309]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.172316]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.172325]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.172331]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.172334]  ? remove_wait_queue+0x60/0x60
+[190594.172339]  kthread+0x103/0x140
+[190594.172344]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.172346]  ? kthread_bind+0x10/0x10
+[190594.172349]  ret_from_fork+0x3a/0x50
+[190594.172375] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.172376] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.172378] Call Trace:
+[190594.172381]  dump_stack+0x78/0xb3
+[190594.172388]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.172396]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.172398]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.172406]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.172413]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.172418]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.172426]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.172435]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.172441]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.172443]  ? remove_wait_queue+0x60/0x60
+[190594.172448]  kthread+0x103/0x140
+[190594.172453]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.172455]  ? kthread_bind+0x10/0x10
+[190594.172459]  ret_from_fork+0x3a/0x50
+[190594.172487] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.172488] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.172489] Call Trace:
+[190594.172492]  dump_stack+0x78/0xb3
+[190594.172499]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.172507]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.172510]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.172517]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.172524]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.172530]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.172554]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.172564]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.172570]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.172573]  ? remove_wait_queue+0x60/0x60
+[190594.172578]  kthread+0x103/0x140
+[190594.172583]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.172586]  ? kthread_bind+0x10/0x10
+[190594.172589]  ret_from_fork+0x3a/0x50
+[190594.172630] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.172632] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.172633] Call Trace:
+[190594.172636]  dump_stack+0x78/0xb3
+[190594.172642]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.172650]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.172653]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.172660]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.172668]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.172674]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.172681]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.172691]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.172697]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.172700]  ? remove_wait_queue+0x60/0x60
+[190594.172705]  kthread+0x103/0x140
+[190594.172711]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.172713]  ? kthread_bind+0x10/0x10
+[190594.172717]  ret_from_fork+0x3a/0x50
+[190594.172760] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.172761] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.172762] Call Trace:
+[190594.172765]  dump_stack+0x78/0xb3
+[190594.172771]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.172779]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.172782]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.172789]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.172797]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.172802]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.172809]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.172819]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.172842]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.172845]  ? remove_wait_queue+0x60/0x60
+[190594.172850]  kthread+0x103/0x140
+[190594.172855]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.172857]  ? kthread_bind+0x10/0x10
+[190594.172861]  ret_from_fork+0x3a/0x50
+[190594.172886] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.172887] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.172888] Call Trace:
+[190594.172891]  dump_stack+0x78/0xb3
+[190594.172897]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.172905]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.172908]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.172915]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.172922]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.172928]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.172935]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.172944]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.172950]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.172953]  ? remove_wait_queue+0x60/0x60
+[190594.172958]  kthread+0x103/0x140
+[190594.172963]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.172965]  ? kthread_bind+0x10/0x10
+[190594.172969]  ret_from_fork+0x3a/0x50
+[190594.172995] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.172996] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.172997] Call Trace:
+[190594.173000]  dump_stack+0x78/0xb3
+[190594.173005]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.173013]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.173033]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.173041]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.173049]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.173054]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.173061]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.173071]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.173077]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.173080]  ? remove_wait_queue+0x60/0x60
+[190594.173085]  kthread+0x103/0x140
+[190594.173090]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.173092]  ? kthread_bind+0x10/0x10
+[190594.173096]  ret_from_fork+0x3a/0x50
+[190594.173123] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.173124] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.173125] Call Trace:
+[190594.173128]  dump_stack+0x78/0xb3
+[190594.173134]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.173142]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.173144]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.173152]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.173159]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.173165]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.173172]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.173182]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.173188]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.173191]  ? remove_wait_queue+0x60/0x60
+[190594.173196]  kthread+0x103/0x140
+[190594.173201]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.173203]  ? kthread_bind+0x10/0x10
+[190594.173207]  ret_from_fork+0x3a/0x50
+[190594.173233] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.173234] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.173235] Call Trace:
+[190594.173238]  dump_stack+0x78/0xb3
+[190594.173244]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.173252]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.173254]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.173262]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.173269]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.173275]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.173282]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.173292]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.173298]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.173300]  ? remove_wait_queue+0x60/0x60
+[190594.173305]  kthread+0x103/0x140
+[190594.173311]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.173314]  ? kthread_bind+0x10/0x10
+[190594.173318]  ret_from_fork+0x3a/0x50
+[190594.173362] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.173363] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.173364] Call Trace:
+[190594.173367]  dump_stack+0x78/0xb3
+[190594.173372]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.173381]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.173383]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.173390]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.173397]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.173403]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.173410]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.173419]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.173425]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.173428]  ? remove_wait_queue+0x60/0x60
+[190594.173434]  kthread+0x103/0x140
+[190594.173439]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.173441]  ? kthread_bind+0x10/0x10
+[190594.173445]  ret_from_fork+0x3a/0x50
+[190594.173470] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.173472] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.173473] Call Trace:
+[190594.173475]  dump_stack+0x78/0xb3
+[190594.173481]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.173489]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.173491]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.173499]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.173506]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.173512]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.173519]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.173529]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.173553]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.173555]  ? remove_wait_queue+0x60/0x60
+[190594.173560]  kthread+0x103/0x140
+[190594.173565]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.173568]  ? kthread_bind+0x10/0x10
+[190594.173571]  ret_from_fork+0x3a/0x50
+[190594.173609] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.173610] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.173611] Call Trace:
+[190594.173615]  dump_stack+0x78/0xb3
+[190594.173620]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.173628]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.173631]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.173638]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.173646]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.173652]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.173659]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.173669]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.173675]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.173678]  ? remove_wait_queue+0x60/0x60
+[190594.173683]  kthread+0x103/0x140
+[190594.173688]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.173690]  ? kthread_bind+0x10/0x10
+[190594.173695]  ret_from_fork+0x3a/0x50
+[190594.173721] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.173722] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.173723] Call Trace:
+[190594.173726]  dump_stack+0x78/0xb3
+[190594.173731]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.173740]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.173742]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.173750]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.173758]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.173764]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.173771]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.173781]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.173787]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.173790]  ? remove_wait_queue+0x60/0x60
+[190594.173795]  kthread+0x103/0x140
+[190594.173800]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.173802]  ? kthread_bind+0x10/0x10
+[190594.173806]  ret_from_fork+0x3a/0x50
+[190594.173848] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.173849] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.173850] Call Trace:
+[190594.173853]  dump_stack+0x78/0xb3
+[190594.173858]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.173866]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.173868]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.173876]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.173883]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.173889]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.173896]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.173906]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.173912]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.173914]  ? remove_wait_queue+0x60/0x60
+[190594.173919]  kthread+0x103/0x140
+[190594.173924]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.173926]  ? kthread_bind+0x10/0x10
+[190594.173930]  ret_from_fork+0x3a/0x50
+[190594.173955] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.173956] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.173957] Call Trace:
+[190594.173960]  dump_stack+0x78/0xb3
+[190594.173966]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.173975]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.173977]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.173984]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.173992]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.174015]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.174022]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.174032]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.174038]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.174041]  ? remove_wait_queue+0x60/0x60
+[190594.174046]  kthread+0x103/0x140
+[190594.174051]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.174053]  ? kthread_bind+0x10/0x10
+[190594.174057]  ret_from_fork+0x3a/0x50
+[190594.174084] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.174085] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.174086] Call Trace:
+[190594.174089]  dump_stack+0x78/0xb3
+[190594.174094]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.174103]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.174105]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.174114]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.174121]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.174127]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.174134]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.174144]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.174150]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.174153]  ? remove_wait_queue+0x60/0x60
+[190594.174158]  kthread+0x103/0x140
+[190594.174163]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.174165]  ? kthread_bind+0x10/0x10
+[190594.174169]  ret_from_fork+0x3a/0x50
+[190594.174197] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.174198] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.174199] Call Trace:
+[190594.174202]  dump_stack+0x78/0xb3
+[190594.174208]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.174216]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.174219]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.174226]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.174234]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.174241]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.174248]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.174257]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.174263]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.174266]  ? remove_wait_queue+0x60/0x60
+[190594.174272]  kthread+0x103/0x140
+[190594.174277]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.174279]  ? kthread_bind+0x10/0x10
+[190594.174283]  ret_from_fork+0x3a/0x50
+[190594.174325] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.174326] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.174327] Call Trace:
+[190594.174330]  dump_stack+0x78/0xb3
+[190594.174335]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.174343]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.174345]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.174353]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.174360]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.174366]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.174373]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.174382]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.174387]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.174390]  ? remove_wait_queue+0x60/0x60
+[190594.174395]  kthread+0x103/0x140
+[190594.174400]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.174402]  ? kthread_bind+0x10/0x10
+[190594.174406]  ret_from_fork+0x3a/0x50
+[190594.174433] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.174434] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.174435] Call Trace:
+[190594.174438]  dump_stack+0x78/0xb3
+[190594.174443]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.174451]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.174454]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.174462]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.174470]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.174475]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.174482]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.174492]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.174498]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.174501]  ? remove_wait_queue+0x60/0x60
+[190594.174506]  kthread+0x103/0x140
+[190594.174510]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.174512]  ? kthread_bind+0x10/0x10
+[190594.174516]  ret_from_fork+0x3a/0x50
+[190594.174572] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.174574] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.174575] Call Trace:
+[190594.174578]  dump_stack+0x78/0xb3
+[190594.174584]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.174592]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.174594]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.174602]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.174610]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.174615]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.174622]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.174632]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.174638]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.174641]  ? remove_wait_queue+0x60/0x60
+[190594.174646]  kthread+0x103/0x140
+[190594.174651]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.174653]  ? kthread_bind+0x10/0x10
+[190594.174658]  ret_from_fork+0x3a/0x50
+[190594.174685] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.174686] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.174687] Call Trace:
+[190594.174690]  dump_stack+0x78/0xb3
+[190594.174696]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.174704]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.174706]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.174715]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.174723]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.174729]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.174736]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.174745]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.174751]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.174754]  ? remove_wait_queue+0x60/0x60
+[190594.174759]  kthread+0x103/0x140
+[190594.174764]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.174767]  ? kthread_bind+0x10/0x10
+[190594.174771]  ret_from_fork+0x3a/0x50
+[190594.174797] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.174798] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.174799] Call Trace:
+[190594.174802]  dump_stack+0x78/0xb3
+[190594.174809]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.174817]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.174820]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.174844]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.174851]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.174857]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.174863]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.174873]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.174878]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.174881]  ? remove_wait_queue+0x60/0x60
+[190594.174886]  kthread+0x103/0x140
+[190594.174891]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.174893]  ? kthread_bind+0x10/0x10
+[190594.174898]  ret_from_fork+0x3a/0x50
+[190594.174924] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.174925] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.174926] Call Trace:
+[190594.174929]  dump_stack+0x78/0xb3
+[190594.174934]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.174942]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.174944]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.174951]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.174959]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.174964]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.174971]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.174980]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.174986]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.174989]  ? remove_wait_queue+0x60/0x60
+[190594.174994]  kthread+0x103/0x140
+[190594.174999]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.175001]  ? kthread_bind+0x10/0x10
+[190594.175005]  ret_from_fork+0x3a/0x50
+[190594.175032] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.175034] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.175035] Call Trace:
+[190594.175037]  dump_stack+0x78/0xb3
+[190594.175043]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.175051]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.175071]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.175079]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.175086]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.175092]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.175099]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.175108]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.175114]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.175118]  ? remove_wait_queue+0x60/0x60
+[190594.175123]  kthread+0x103/0x140
+[190594.175128]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.175130]  ? kthread_bind+0x10/0x10
+[190594.175134]  ret_from_fork+0x3a/0x50
+[190594.175161] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.175162] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.175163] Call Trace:
+[190594.175166]  dump_stack+0x78/0xb3
+[190594.175171]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.175180]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.175182]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.175190]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.175197]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.175203]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.175210]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.175219]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.175226]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.175230]  ? remove_wait_queue+0x60/0x60
+[190594.175235]  kthread+0x103/0x140
+[190594.175240]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.175242]  ? kthread_bind+0x10/0x10
+[190594.175246]  ret_from_fork+0x3a/0x50
+[190594.175272] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.175274] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.175275] Call Trace:
+[190594.175277]  dump_stack+0x78/0xb3
+[190594.175283]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.175291]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.175294]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.175301]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.175309]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.175315]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.175322]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.175331]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.175337]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.175340]  ? remove_wait_queue+0x60/0x60
+[190594.175346]  kthread+0x103/0x140
+[190594.175351]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.175353]  ? kthread_bind+0x10/0x10
+[190594.175357]  ret_from_fork+0x3a/0x50
+[190594.175399] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.175400] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.175401] Call Trace:
+[190594.175404]  dump_stack+0x78/0xb3
+[190594.175409]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.175417]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.175420]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.175428]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.175436]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.175441]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.175448]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.175457]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.175463]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.175466]  ? remove_wait_queue+0x60/0x60
+[190594.175471]  kthread+0x103/0x140
+[190594.175476]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.175478]  ? kthread_bind+0x10/0x10
+[190594.175482]  ret_from_fork+0x3a/0x50
+[190594.175508] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.175510] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.175511] Call Trace:
+[190594.175514]  dump_stack+0x78/0xb3
+[190594.175519]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.175527]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.175530]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.175555]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.175563]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.175568]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.175575]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.175585]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.175591]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.175594]  ? remove_wait_queue+0x60/0x60
+[190594.175599]  kthread+0x103/0x140
+[190594.175604]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.175606]  ? kthread_bind+0x10/0x10
+[190594.175610]  ret_from_fork+0x3a/0x50
+[190594.175647] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.175649] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.175650] Call Trace:
+[190594.175653]  dump_stack+0x78/0xb3
+[190594.175658]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.175666]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.175669]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.175677]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.175684]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.175690]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.175697]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.175707]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.175713]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.175716]  ? remove_wait_queue+0x60/0x60
+[190594.175722]  kthread+0x103/0x140
+[190594.175727]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.175729]  ? kthread_bind+0x10/0x10
+[190594.175734]  ret_from_fork+0x3a/0x50
+[190594.175760] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.175761] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.175762] Call Trace:
+[190594.175765]  dump_stack+0x78/0xb3
+[190594.175771]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.175779]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.175781]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.175789]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.175797]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.175803]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.175810]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.175820]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.175826]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.175845]  ? remove_wait_queue+0x60/0x60
+[190594.175851]  kthread+0x103/0x140
+[190594.175855]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.175858]  ? kthread_bind+0x10/0x10
+[190594.175862]  ret_from_fork+0x3a/0x50
+[190594.175889] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.175890] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.175891] Call Trace:
+[190594.175894]  dump_stack+0x78/0xb3
+[190594.175899]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.175907]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.175909]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.175917]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.175924]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.175929]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.175936]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.175945]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.175951]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.175955]  ? remove_wait_queue+0x60/0x60
+[190594.175960]  kthread+0x103/0x140
+[190594.175965]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.175967]  ? kthread_bind+0x10/0x10
+[190594.175971]  ret_from_fork+0x3a/0x50
+[190594.176014] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.176015] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.176016] Call Trace:
+[190594.176019]  dump_stack+0x78/0xb3
+[190594.176025]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.176033]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.176035]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.176043]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.176050]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.176056]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.176063]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.176073]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.176079]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.176082]  ? remove_wait_queue+0x60/0x60
+[190594.176087]  kthread+0x103/0x140
+[190594.176092]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.176096]  ? kthread_bind+0x10/0x10
+[190594.176100]  ret_from_fork+0x3a/0x50
+[190594.176126] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.176127] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.176128] Call Trace:
+[190594.176131]  dump_stack+0x78/0xb3
+[190594.176137]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.176145]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.176147]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.176155]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.176162]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.176168]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.176175]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.176185]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.176191]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.176194]  ? remove_wait_queue+0x60/0x60
+[190594.176199]  kthread+0x103/0x140
+[190594.176204]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.176206]  ? kthread_bind+0x10/0x10
+[190594.176211]  ret_from_fork+0x3a/0x50
+[190594.176244] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.176246] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.176247] Call Trace:
+[190594.176250]  dump_stack+0x78/0xb3
+[190594.176256]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.176264]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.176266]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.176275]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.176283]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.176288]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.176296]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.176305]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.176311]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.176314]  ? remove_wait_queue+0x60/0x60
+[190594.176319]  kthread+0x103/0x140
+[190594.176324]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.176326]  ? kthread_bind+0x10/0x10
+[190594.176331]  ret_from_fork+0x3a/0x50
+[190594.176357] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.176359] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.176360] Call Trace:
+[190594.176363]  dump_stack+0x78/0xb3
+[190594.176369]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.176377]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.176379]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.176387]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.176394]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.176400]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.176407]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.176417]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.176423]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.176426]  ? remove_wait_queue+0x60/0x60
+[190594.176431]  kthread+0x103/0x140
+[190594.176436]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.176438]  ? kthread_bind+0x10/0x10
+[190594.176442]  ret_from_fork+0x3a/0x50
+[190594.176468] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.176469] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.176470] Call Trace:
+[190594.176473]  dump_stack+0x78/0xb3
+[190594.176479]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.176487]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.176490]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.176497]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.176505]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.176527]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.176551]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.176561]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.176567]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.176570]  ? remove_wait_queue+0x60/0x60
+[190594.176575]  kthread+0x103/0x140
+[190594.176580]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.176582]  ? kthread_bind+0x10/0x10
+[190594.176587]  ret_from_fork+0x3a/0x50
+[190594.176628] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.176629] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.176630] Call Trace:
+[190594.176633]  dump_stack+0x78/0xb3
+[190594.176639]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.176647]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.176649]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.176657]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.176664]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.176670]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.176677]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.176687]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.176693]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.176696]  ? remove_wait_queue+0x60/0x60
+[190594.176701]  kthread+0x103/0x140
+[190594.176706]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.176709]  ? kthread_bind+0x10/0x10
+[190594.176713]  ret_from_fork+0x3a/0x50
+[190594.176742] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.176744] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.176745] Call Trace:
+[190594.176747]  dump_stack+0x78/0xb3
+[190594.176753]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.176761]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.176764]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.176771]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.176779]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.176785]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.176792]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.176802]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.176808]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.176811]  ? remove_wait_queue+0x60/0x60
+[190594.176816]  kthread+0x103/0x140
+[190594.176821]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.176823]  ? kthread_bind+0x10/0x10
+[190594.176827]  ret_from_fork+0x3a/0x50
+[190594.176869] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.176870] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.176871] Call Trace:
+[190594.176874]  dump_stack+0x78/0xb3
+[190594.176879]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.176887]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.176889]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.176897]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.176904]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.176909]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.176916]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.176926]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.176932]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.176935]  ? remove_wait_queue+0x60/0x60
+[190594.176940]  kthread+0x103/0x140
+[190594.176945]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.176947]  ? kthread_bind+0x10/0x10
+[190594.176951]  ret_from_fork+0x3a/0x50
+[190594.176995] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.176996] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.176997] Call Trace:
+[190594.177000]  dump_stack+0x78/0xb3
+[190594.177006]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.177014]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.177016]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.177024]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.177032]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.177039]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.177045]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.177055]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.177061]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.177064]  ? remove_wait_queue+0x60/0x60
+[190594.177069]  kthread+0x103/0x140
+[190594.177074]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.177076]  ? kthread_bind+0x10/0x10
+[190594.177080]  ret_from_fork+0x3a/0x50
+[190594.177106] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.177107] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.177108] Call Trace:
+[190594.177111]  dump_stack+0x78/0xb3
+[190594.177117]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.177125]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.177128]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.177137]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.177144]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.177150]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.177157]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.177166]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.177172]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.177175]  ? remove_wait_queue+0x60/0x60
+[190594.177181]  kthread+0x103/0x140
+[190594.177186]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.177188]  ? kthread_bind+0x10/0x10
+[190594.177192]  ret_from_fork+0x3a/0x50
+[190594.177218] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.177219] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.177220] Call Trace:
+[190594.177223]  dump_stack+0x78/0xb3
+[190594.177229]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.177237]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.177239]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.177247]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.177254]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.177260]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.177283]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.177292]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.177298]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.177301]  ? remove_wait_queue+0x60/0x60
+[190594.177305]  kthread+0x103/0x140
+[190594.177310]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.177312]  ? kthread_bind+0x10/0x10
+[190594.177316]  ret_from_fork+0x3a/0x50
+[190594.177341] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.177343] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.177344] Call Trace:
+[190594.177346]  dump_stack+0x78/0xb3
+[190594.177352]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.177360]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.177362]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.177370]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.177377]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.177382]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.177389]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.177398]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.177404]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.177407]  ? remove_wait_queue+0x60/0x60
+[190594.177413]  kthread+0x103/0x140
+[190594.177418]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.177420]  ? kthread_bind+0x10/0x10
+[190594.177424]  ret_from_fork+0x3a/0x50
+[190594.177449] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.177451] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.177452] Call Trace:
+[190594.177454]  dump_stack+0x78/0xb3
+[190594.177460]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.177468]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.177470]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.177478]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.177485]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.177490]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.177498]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.177508]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.177514]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.177516]  ? remove_wait_queue+0x60/0x60
+[190594.177521]  kthread+0x103/0x140
+[190594.177526]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.177528]  ? kthread_bind+0x10/0x10
+[190594.177550]  ret_from_fork+0x3a/0x50
+[190594.177590] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.177591] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.177592] Call Trace:
+[190594.177595]  dump_stack+0x78/0xb3
+[190594.177601]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.177609]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.177612]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.177620]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.177629]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.177634]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.177642]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.177651]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.177657]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.177660]  ? remove_wait_queue+0x60/0x60
+[190594.177665]  kthread+0x103/0x140
+[190594.177670]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.177673]  ? kthread_bind+0x10/0x10
+[190594.177677]  ret_from_fork+0x3a/0x50
+[190594.177703] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.177704] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.177705] Call Trace:
+[190594.177708]  dump_stack+0x78/0xb3
+[190594.177714]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.177722]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.177724]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.177732]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.177740]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.177745]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.177753]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.177762]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.177768]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.177771]  ? remove_wait_queue+0x60/0x60
+[190594.177776]  kthread+0x103/0x140
+[190594.177781]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.177783]  ? kthread_bind+0x10/0x10
+[190594.177787]  ret_from_fork+0x3a/0x50
+[190594.177813] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.177814] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.177815] Call Trace:
+[190594.177818]  dump_stack+0x78/0xb3
+[190594.177841]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.177849]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.177851]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.177877]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.177884]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.177890]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.177897]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.177906]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.177912]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.177915]  ? remove_wait_queue+0x60/0x60
+[190594.177921]  kthread+0x103/0x140
+[190594.177926]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.177928]  ? kthread_bind+0x10/0x10
+[190594.177932]  ret_from_fork+0x3a/0x50
+[190594.177960] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.177961] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.177962] Call Trace:
+[190594.177965]  dump_stack+0x78/0xb3
+[190594.177970]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.177978]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.177981]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.177989]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.177996]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.178002]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.178009]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.178018]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.178024]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.178027]  ? remove_wait_queue+0x60/0x60
+[190594.178032]  kthread+0x103/0x140
+[190594.178037]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.178041]  ? kthread_bind+0x10/0x10
+[190594.178044]  ret_from_fork+0x3a/0x50
+[190594.178070] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.178072] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.178073] Call Trace:
+[190594.178076]  dump_stack+0x78/0xb3
+[190594.178081]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.178090]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.178092]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.178100]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.178107]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.178113]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.178120]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.178130]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.178136]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.178139]  ? remove_wait_queue+0x60/0x60
+[190594.178145]  kthread+0x103/0x140
+[190594.178150]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.178152]  ? kthread_bind+0x10/0x10
+[190594.178156]  ret_from_fork+0x3a/0x50
+[190594.178199] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.178200] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.178201] Call Trace:
+[190594.178204]  dump_stack+0x78/0xb3
+[190594.178209]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.178217]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.178219]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.178227]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.178234]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.178240]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.178247]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.178256]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.178263]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.178266]  ? remove_wait_queue+0x60/0x60
+[190594.178271]  kthread+0x103/0x140
+[190594.178276]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.178278]  ? kthread_bind+0x10/0x10
+[190594.178282]  ret_from_fork+0x3a/0x50
+[190594.178308] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.178309] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.178310] Call Trace:
+[190594.178313]  dump_stack+0x78/0xb3
+[190594.178319]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.178326]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.178329]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.178336]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.178343]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.178350]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.178356]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.178366]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.178371]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.178374]  ? remove_wait_queue+0x60/0x60
+[190594.178379]  kthread+0x103/0x140
+[190594.178384]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.178386]  ? kthread_bind+0x10/0x10
+[190594.178390]  ret_from_fork+0x3a/0x50
+[190594.178417] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.178418] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.178419] Call Trace:
+[190594.178422]  dump_stack+0x78/0xb3
+[190594.178428]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.178436]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.178439]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.178447]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.178454]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.178459]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.178466]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.178475]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.178481]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.178484]  ? remove_wait_queue+0x60/0x60
+[190594.178489]  kthread+0x103/0x140
+[190594.178494]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.178496]  ? kthread_bind+0x10/0x10
+[190594.178500]  ret_from_fork+0x3a/0x50
+[190594.178553] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.178555] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.178556] Call Trace:
+[190594.178559]  dump_stack+0x78/0xb3
+[190594.178565]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.178573]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.178576]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.178583]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.178591]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.178596]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.178603]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.178613]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.178619]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.178622]  ? remove_wait_queue+0x60/0x60
+[190594.178628]  kthread+0x103/0x140
+[190594.178633]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.178635]  ? kthread_bind+0x10/0x10
+[190594.178640]  ret_from_fork+0x3a/0x50
+[190594.178666] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.178668] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.178669] Call Trace:
+[190594.178672]  dump_stack+0x78/0xb3
+[190594.178677]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.178685]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.178688]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.178696]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.178704]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.178709]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.178716]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.178726]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.178732]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.178735]  ? remove_wait_queue+0x60/0x60
+[190594.178740]  kthread+0x103/0x140
+[190594.178745]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.178747]  ? kthread_bind+0x10/0x10
+[190594.178752]  ret_from_fork+0x3a/0x50
+[190594.178778] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.178779] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.178780] Call Trace:
+[190594.178783]  dump_stack+0x78/0xb3
+[190594.178789]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.178797]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.178799]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.178825]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.178833]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.178839]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.178862]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.178872]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.178878]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.178881]  ? remove_wait_queue+0x60/0x60
+[190594.178887]  kthread+0x103/0x140
+[190594.178892]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.178894]  ? kthread_bind+0x10/0x10
+[190594.178898]  ret_from_fork+0x3a/0x50
+[190594.178923] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.178925] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.178926] Call Trace:
+[190594.178929]  dump_stack+0x78/0xb3
+[190594.178934]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.178942]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.178945]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.178952]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.178960]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.178966]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.178973]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.178982]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.178989]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.178992]  ? remove_wait_queue+0x60/0x60
+[190594.178998]  kthread+0x103/0x140
+[190594.179003]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.179005]  ? kthread_bind+0x10/0x10
+[190594.179009]  ret_from_fork+0x3a/0x50
+[190594.179035] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.179036] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.179037] Call Trace:
+[190594.179040]  dump_stack+0x78/0xb3
+[190594.179046]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.179054]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.179056]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.179064]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.179071]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.179077]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.179084]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.179094]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.179100]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.179104]  ? remove_wait_queue+0x60/0x60
+[190594.179109]  kthread+0x103/0x140
+[190594.179114]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.179117]  ? kthread_bind+0x10/0x10
+[190594.179121]  ret_from_fork+0x3a/0x50
+[190594.179163] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.179164] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.179165] Call Trace:
+[190594.179168]  dump_stack+0x78/0xb3
+[190594.179173]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.179181]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.179184]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.179191]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.179198]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.179204]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.179211]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.179221]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.179226]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.179229]  ? remove_wait_queue+0x60/0x60
+[190594.179234]  kthread+0x103/0x140
+[190594.179239]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.179241]  ? kthread_bind+0x10/0x10
+[190594.179245]  ret_from_fork+0x3a/0x50
+[190594.179271] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.179272] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.179273] Call Trace:
+[190594.179276]  dump_stack+0x78/0xb3
+[190594.179282]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.179290]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.179292]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.179299]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.179306]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.179312]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.179319]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.179328]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.179334]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.179337]  ? remove_wait_queue+0x60/0x60
+[190594.179342]  kthread+0x103/0x140
+[190594.179347]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.179349]  ? kthread_bind+0x10/0x10
+[190594.179353]  ret_from_fork+0x3a/0x50
+[190594.179378] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.179379] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.179380] Call Trace:
+[190594.179383]  dump_stack+0x78/0xb3
+[190594.179388]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.179396]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.179399]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.179406]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.179413]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.179420]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.179427]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.179436]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.179442]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.179445]  ? remove_wait_queue+0x60/0x60
+[190594.179450]  kthread+0x103/0x140
+[190594.179455]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.179457]  ? kthread_bind+0x10/0x10
+[190594.179461]  ret_from_fork+0x3a/0x50
+[190594.179486] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.179487] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.179488] Call Trace:
+[190594.179491]  dump_stack+0x78/0xb3
+[190594.179496]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.179504]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.179508]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.179515]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.179522]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.179528]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.179553]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.179563]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.179569]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.179572]  ? remove_wait_queue+0x60/0x60
+[190594.179577]  kthread+0x103/0x140
+[190594.179582]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.179584]  ? kthread_bind+0x10/0x10
+[190594.179588]  ret_from_fork+0x3a/0x50
+[190594.179627] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.179628] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.179629] Call Trace:
+[190594.179633]  dump_stack+0x78/0xb3
+[190594.179638]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.179647]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.179649]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.179657]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.179664]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.179670]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.179677]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.179687]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.179693]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.179696]  ? remove_wait_queue+0x60/0x60
+[190594.179701]  kthread+0x103/0x140
+[190594.179706]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.179708]  ? kthread_bind+0x10/0x10
+[190594.179712]  ret_from_fork+0x3a/0x50
+[190594.179738] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.179739] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.179740] Call Trace:
+[190594.179743]  dump_stack+0x78/0xb3
+[190594.179749]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.179757]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.179760]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.179767]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.179775]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.179781]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.179788]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.179797]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.179803]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.179806]  ? remove_wait_queue+0x60/0x60
+[190594.179812]  kthread+0x103/0x140
+[190594.179817]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.179819]  ? kthread_bind+0x10/0x10
+[190594.179823]  ret_from_fork+0x3a/0x50
+[190594.179865] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.179866] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.179867] Call Trace:
+[190594.179870]  dump_stack+0x78/0xb3
+[190594.179876]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.179884]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.179886]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.179893]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.179900]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.179906]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.179913]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.179922]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.179928]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.179931]  ? remove_wait_queue+0x60/0x60
+[190594.179936]  kthread+0x103/0x140
+[190594.179941]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.179943]  ? kthread_bind+0x10/0x10
+[190594.179946]  ret_from_fork+0x3a/0x50
+[190594.179972] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.179973] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.179974] Call Trace:
+[190594.179977]  dump_stack+0x78/0xb3
+[190594.179982]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.179990]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.179992]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.180000]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.180007]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.180012]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.180019]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.180028]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.180034]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.180037]  ? remove_wait_queue+0x60/0x60
+[190594.180042]  kthread+0x103/0x140
+[190594.180046]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.180049]  ? kthread_bind+0x10/0x10
+[190594.180052]  ret_from_fork+0x3a/0x50
+[190594.180079] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.180081] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.180082] Call Trace:
+[190594.180084]  dump_stack+0x78/0xb3
+[190594.180090]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.180098]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.180100]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.180108]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.180115]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.180120]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.180127]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.180136]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.180142]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.180145]  ? remove_wait_queue+0x60/0x60
+[190594.180152]  kthread+0x103/0x140
+[190594.180157]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.180159]  ? kthread_bind+0x10/0x10
+[190594.180163]  ret_from_fork+0x3a/0x50
+[190594.180188] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.180189] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.180190] Call Trace:
+[190594.180193]  dump_stack+0x78/0xb3
+[190594.180199]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.180207]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.180227]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.180235]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.180242]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.180248]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.180255]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.180265]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.180272]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.180275]  ? remove_wait_queue+0x60/0x60
+[190594.180280]  kthread+0x103/0x140
+[190594.180285]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.180287]  ? kthread_bind+0x10/0x10
+[190594.180291]  ret_from_fork+0x3a/0x50
+[190594.180317] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.180318] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.180319] Call Trace:
+[190594.180322]  dump_stack+0x78/0xb3
+[190594.180328]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.180336]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.180338]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.180346]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.180353]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.180359]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.180366]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.180376]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.180382]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.180384]  ? remove_wait_queue+0x60/0x60
+[190594.180389]  kthread+0x103/0x140
+[190594.180394]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.180397]  ? kthread_bind+0x10/0x10
+[190594.180400]  ret_from_fork+0x3a/0x50
+[190594.180426] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.180428] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.180429] Call Trace:
+[190594.180432]  dump_stack+0x78/0xb3
+[190594.180437]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.180446]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.180448]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.180456]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.180463]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.180470]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.180477]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.180486]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.180492]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.180495]  ? remove_wait_queue+0x60/0x60
+[190594.180501]  kthread+0x103/0x140
+[190594.180505]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.180508]  ? kthread_bind+0x10/0x10
+[190594.180512]  ret_from_fork+0x3a/0x50
+[190594.180585] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.180586] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.180587] Call Trace:
+[190594.180590]  dump_stack+0x78/0xb3
+[190594.180596]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.180604]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.180607]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.180616]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.180623]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.180629]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.180636]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.180646]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.180652]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.180655]  ? remove_wait_queue+0x60/0x60
+[190594.180660]  kthread+0x103/0x140
+[190594.180665]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.180668]  ? kthread_bind+0x10/0x10
+[190594.180672]  ret_from_fork+0x3a/0x50
+[190594.180698] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.180699] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.180700] Call Trace:
+[190594.180703]  dump_stack+0x78/0xb3
+[190594.180709]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.180717]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.180719]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.180727]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.180734]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.180740]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.180747]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.180757]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.180763]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.180766]  ? remove_wait_queue+0x60/0x60
+[190594.180771]  kthread+0x103/0x140
+[190594.180776]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.180778]  ? kthread_bind+0x10/0x10
+[190594.180782]  ret_from_fork+0x3a/0x50
+[190594.180826] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.180828] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.180829] Call Trace:
+[190594.180832]  dump_stack+0x78/0xb3
+[190594.180854]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.180862]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.180865]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.180872]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.180880]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.180885]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.180893]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.180902]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.180909]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.180912]  ? remove_wait_queue+0x60/0x60
+[190594.180917]  kthread+0x103/0x140
+[190594.180922]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.180925]  ? kthread_bind+0x10/0x10
+[190594.180928]  ret_from_fork+0x3a/0x50
+[190594.180956] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.180957] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.180958] Call Trace:
+[190594.180961]  dump_stack+0x78/0xb3
+[190594.180967]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.180975]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.180977]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.180985]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.180992]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.180998]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.181005]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.181015]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.181021]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.181024]  ? remove_wait_queue+0x60/0x60
+[190594.181029]  kthread+0x103/0x140
+[190594.181034]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.181036]  ? kthread_bind+0x10/0x10
+[190594.181040]  ret_from_fork+0x3a/0x50
+[190594.181066] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.181067] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.181068] Call Trace:
+[190594.181071]  dump_stack+0x78/0xb3
+[190594.181076]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.181085]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.181087]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.181096]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.181103]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.181109]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.181116]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.181142]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.181148]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.181150]  ? remove_wait_queue+0x60/0x60
+[190594.181155]  kthread+0x103/0x140
+[190594.181160]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.181162]  ? kthread_bind+0x10/0x10
+[190594.181166]  ret_from_fork+0x3a/0x50
+[190594.181192] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.181193] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.181194] Call Trace:
+[190594.181197]  dump_stack+0x78/0xb3
+[190594.181203]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.181211]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.181214]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.181221]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.181229]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.181234]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.181241]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.181250]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.181256]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.181259]  ? remove_wait_queue+0x60/0x60
+[190594.181264]  kthread+0x103/0x140
+[190594.181269]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.181271]  ? kthread_bind+0x10/0x10
+[190594.181275]  ret_from_fork+0x3a/0x50
+[190594.181301] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.181302] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.181303] Call Trace:
+[190594.181306]  dump_stack+0x78/0xb3
+[190594.181311]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.181320]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.181322]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.181329]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.181336]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.181342]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.181349]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.181358]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.181364]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.181367]  ? remove_wait_queue+0x60/0x60
+[190594.181372]  kthread+0x103/0x140
+[190594.181376]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.181379]  ? kthread_bind+0x10/0x10
+[190594.181382]  ret_from_fork+0x3a/0x50
+[190594.181408] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.181409] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.181410] Call Trace:
+[190594.181413]  dump_stack+0x78/0xb3
+[190594.181418]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.181426]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.181428]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.181436]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.181443]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.181448]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.181455]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.181465]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.181471]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.181474]  ? remove_wait_queue+0x60/0x60
+[190594.181479]  kthread+0x103/0x140
+[190594.181484]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.181486]  ? kthread_bind+0x10/0x10
+[190594.181490]  ret_from_fork+0x3a/0x50
+[190594.181515] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.181516] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.181517] Call Trace:
+[190594.181520]  dump_stack+0x78/0xb3
+[190594.181526]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.181552]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.181554]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.181562]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.181569]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.181575]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.181582]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.181592]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.181598]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.181601]  ? remove_wait_queue+0x60/0x60
+[190594.181606]  kthread+0x103/0x140
+[190594.181611]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.181613]  ? kthread_bind+0x10/0x10
+[190594.181617]  ret_from_fork+0x3a/0x50
+[190594.181654] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.181656] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.181657] Call Trace:
+[190594.181660]  dump_stack+0x78/0xb3
+[190594.181666]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.181674]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.181676]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.181684]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.181691]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.181697]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.181704]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.181714]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.181720]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.181724]  ? remove_wait_queue+0x60/0x60
+[190594.181729]  kthread+0x103/0x140
+[190594.181734]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.181736]  ? kthread_bind+0x10/0x10
+[190594.181740]  ret_from_fork+0x3a/0x50
+[190594.181785] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.181787] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.181788] Call Trace:
+[190594.181791]  dump_stack+0x78/0xb3
+[190594.181797]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.181805]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.181808]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.181815]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.181823]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.181845]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.181852]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.181862]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.181869]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.181872]  ? remove_wait_queue+0x60/0x60
+[190594.181878]  kthread+0x103/0x140
+[190594.181883]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.181885]  ? kthread_bind+0x10/0x10
+[190594.181889]  ret_from_fork+0x3a/0x50
+[190594.181915] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.181916] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.181917] Call Trace:
+[190594.181920]  dump_stack+0x78/0xb3
+[190594.181926]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.181934]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.181936]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.181944]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.181951]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.181957]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.181964]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.181974]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.181980]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.181983]  ? remove_wait_queue+0x60/0x60
+[190594.181988]  kthread+0x103/0x140
+[190594.181993]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.181995]  ? kthread_bind+0x10/0x10
+[190594.181999]  ret_from_fork+0x3a/0x50
+[190594.182025] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.182027] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.182028] Call Trace:
+[190594.182030]  dump_stack+0x78/0xb3
+[190594.182036]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.182044]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.182047]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.182054]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.182062]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.182068]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.182092]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.182101]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.182107]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.182110]  ? remove_wait_queue+0x60/0x60
+[190594.182115]  kthread+0x103/0x140
+[190594.182120]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.182122]  ? kthread_bind+0x10/0x10
+[190594.182126]  ret_from_fork+0x3a/0x50
+[190594.182151] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.182152] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.182153] Call Trace:
+[190594.182156]  dump_stack+0x78/0xb3
+[190594.182162]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.182170]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.182172]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.182180]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.182188]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.182194]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.182200]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.182209]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.182215]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.182218]  ? remove_wait_queue+0x60/0x60
+[190594.182223]  kthread+0x103/0x140
+[190594.182228]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.182230]  ? kthread_bind+0x10/0x10
+[190594.182234]  ret_from_fork+0x3a/0x50
+[190594.182259] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.182261] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.182262] Call Trace:
+[190594.182265]  dump_stack+0x78/0xb3
+[190594.182270]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.182279]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.182282]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.182289]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.182296]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.182302]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.182308]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.182317]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.182323]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.182326]  ? remove_wait_queue+0x60/0x60
+[190594.182331]  kthread+0x103/0x140
+[190594.182336]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.182338]  ? kthread_bind+0x10/0x10
+[190594.182342]  ret_from_fork+0x3a/0x50
+[190594.182368] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.182369] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.182370] Call Trace:
+[190594.182373]  dump_stack+0x78/0xb3
+[190594.182378]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.182386]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.182389]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.182396]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.182403]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.182409]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.182416]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.182425]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.182430]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.182433]  ? remove_wait_queue+0x60/0x60
+[190594.182439]  kthread+0x103/0x140
+[190594.182443]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.182445]  ? kthread_bind+0x10/0x10
+[190594.182449]  ret_from_fork+0x3a/0x50
+[190594.182475] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.182476] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.182477] Call Trace:
+[190594.182480]  dump_stack+0x78/0xb3
+[190594.182485]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.182493]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.182495]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.182503]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.182510]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.182516]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.182522]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.182532]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.182556]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.182559]  ? remove_wait_queue+0x60/0x60
+[190594.182564]  kthread+0x103/0x140
+[190594.182569]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.182571]  ? kthread_bind+0x10/0x10
+[190594.182576]  ret_from_fork+0x3a/0x50
+[190594.182615] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.182616] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.182617] Call Trace:
+[190594.182620]  dump_stack+0x78/0xb3
+[190594.182626]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.182634]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.182637]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.182645]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.182653]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.182658]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.182665]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.182675]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.182681]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.182684]  ? remove_wait_queue+0x60/0x60
+[190594.182689]  kthread+0x103/0x140
+[190594.182694]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.182696]  ? kthread_bind+0x10/0x10
+[190594.182701]  ret_from_fork+0x3a/0x50
+[190594.182727] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.182728] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.182729] Call Trace:
+[190594.182732]  dump_stack+0x78/0xb3
+[190594.182738]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.182764]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.182767]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.182774]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.182782]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.182788]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.182796]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.182807]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.182813]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.182816]  ? remove_wait_queue+0x60/0x60
+[190594.182822]  kthread+0x103/0x140
+[190594.182844]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.182846]  ? kthread_bind+0x10/0x10
+[190594.182850]  ret_from_fork+0x3a/0x50
+[190594.182876] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.182878] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.182879] Call Trace:
+[190594.182882]  dump_stack+0x78/0xb3
+[190594.182887]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.182895]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.182898]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.182905]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.182913]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.182920]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.182927]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.182936]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.182942]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.182945]  ? remove_wait_queue+0x60/0x60
+[190594.182950]  kthread+0x103/0x140
+[190594.182955]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.182957]  ? kthread_bind+0x10/0x10
+[190594.182961]  ret_from_fork+0x3a/0x50
+[190594.182987] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.182989] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.182990] Call Trace:
+[190594.182992]  dump_stack+0x78/0xb3
+[190594.182998]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.183007]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.183010]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.183035]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.183043]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.183048]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.183071]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.183080]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.183086]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.183089]  ? remove_wait_queue+0x60/0x60
+[190594.183094]  kthread+0x103/0x140
+[190594.183098]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.183100]  ? kthread_bind+0x10/0x10
+[190594.183105]  ret_from_fork+0x3a/0x50
+[190594.183129] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.183130] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.183131] Call Trace:
+[190594.183134]  dump_stack+0x78/0xb3
+[190594.183140]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.183148]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.183151]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.183158]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.183165]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.183171]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.183178]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.183187]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.183193]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.183195]  ? remove_wait_queue+0x60/0x60
+[190594.183201]  kthread+0x103/0x140
+[190594.183205]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.183207]  ? kthread_bind+0x10/0x10
+[190594.183211]  ret_from_fork+0x3a/0x50
+[190594.183236] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.183237] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.183238] Call Trace:
+[190594.183241]  dump_stack+0x78/0xb3
+[190594.183247]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.183255]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.183257]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.183265]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.183272]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.183277]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.183284]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.183293]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.183299]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.183302]  ? remove_wait_queue+0x60/0x60
+[190594.183307]  kthread+0x103/0x140
+[190594.183312]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.183314]  ? kthread_bind+0x10/0x10
+[190594.183318]  ret_from_fork+0x3a/0x50
+[190594.183343] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.183344] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.183345] Call Trace:
+[190594.183348]  dump_stack+0x78/0xb3
+[190594.183353]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.183361]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.183363]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.183370]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.183378]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.183383]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.183390]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.183399]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.183404]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.183407]  ? remove_wait_queue+0x60/0x60
+[190594.183412]  kthread+0x103/0x140
+[190594.183417]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.183420]  ? kthread_bind+0x10/0x10
+[190594.183424]  ret_from_fork+0x3a/0x50
+[190594.183450] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.183451] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.183452] Call Trace:
+[190594.183455]  dump_stack+0x78/0xb3
+[190594.183461]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.183469]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.183471]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.183478]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.183485]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.183491]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.183497]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.183507]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.183513]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.183515]  ? remove_wait_queue+0x60/0x60
+[190594.183521]  kthread+0x103/0x140
+[190594.183525]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.183527]  ? kthread_bind+0x10/0x10
+[190594.183549]  ret_from_fork+0x3a/0x50
+[190594.183584] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.183585] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.183586] Call Trace:
+[190594.183589]  dump_stack+0x78/0xb3
+[190594.183595]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.183603]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.183605]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.183613]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.183622]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.183627]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.183634]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.183644]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.183650]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.183653]  ? remove_wait_queue+0x60/0x60
+[190594.183658]  kthread+0x103/0x140
+[190594.183663]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.183666]  ? kthread_bind+0x10/0x10
+[190594.183670]  ret_from_fork+0x3a/0x50
+[190594.183695] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.183696] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.183697] Call Trace:
+[190594.183700]  dump_stack+0x78/0xb3
+[190594.183706]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.183714]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.183716]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.183724]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.183731]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.183737]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.183744]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.183754]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.183760]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.183762]  ? remove_wait_queue+0x60/0x60
+[190594.183767]  kthread+0x103/0x140
+[190594.183772]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.183775]  ? kthread_bind+0x10/0x10
+[190594.183779]  ret_from_fork+0x3a/0x50
+[190594.183804] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.183805] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.183806] Call Trace:
+[190594.183830]  dump_stack+0x78/0xb3
+[190594.183836]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.183844]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.183863]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.183870]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.183878]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.183885]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.183891]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.183901]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.183907]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.183910]  ? remove_wait_queue+0x60/0x60
+[190594.183915]  kthread+0x103/0x140
+[190594.183920]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.183922]  ? kthread_bind+0x10/0x10
+[190594.183926]  ret_from_fork+0x3a/0x50
+[190594.183959] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.183960] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.183961] Call Trace:
+[190594.183964]  dump_stack+0x78/0xb3
+[190594.183970]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.183978]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.183981]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.183988]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.183996]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.184003]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.184009]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.184019]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.184025]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.184028]  ? remove_wait_queue+0x60/0x60
+[190594.184033]  kthread+0x103/0x140
+[190594.184038]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.184040]  ? kthread_bind+0x10/0x10
+[190594.184044]  ret_from_fork+0x3a/0x50
+[190594.184069] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.184071] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.184072] Call Trace:
+[190594.184074]  dump_stack+0x78/0xb3
+[190594.184080]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.184088]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.184092]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.184099]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.184107]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.184112]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.184119]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.184129]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.184135]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.184138]  ? remove_wait_queue+0x60/0x60
+[190594.184143]  kthread+0x103/0x140
+[190594.184148]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.184150]  ? kthread_bind+0x10/0x10
+[190594.184154]  ret_from_fork+0x3a/0x50
+[190594.184180] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.184181] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.184182] Call Trace:
+[190594.184185]  dump_stack+0x78/0xb3
+[190594.184190]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.184198]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.184201]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.184208]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.184216]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.184221]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.184244]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.184253]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.184259]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.184262]  ? remove_wait_queue+0x60/0x60
+[190594.184267]  kthread+0x103/0x140
+[190594.184272]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.184274]  ? kthread_bind+0x10/0x10
+[190594.184277]  ret_from_fork+0x3a/0x50
+[190594.184304] CPU: 0 PID: 661 Comm: iscsi_ttx Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[190594.184305] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[190594.184306] Call Trace:
+[190594.184309]  dump_stack+0x78/0xb3
+[190594.184314]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[190594.184322]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[190594.184324]  ? lockdep_hardirqs_on+0x122/0x1b0
+[190594.184331]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[190594.184339]  ib_destroy_qp_user+0x254/0x270 [ib_core]
+[190594.184344]  isert_connect_release+0xf5/0x1b0 [ib_isert]
+[190594.184351]  iscsit_close_connection+0x2bc/0x8f0 [iscsi_target_mod]
+[190594.184360]  iscsit_take_action_for_connection_exit+0xf4/0x100 [iscsi_target_mod]
+[190594.184366]  iscsi_target_tx_thread+0x170/0x210 [iscsi_target_mod]
+[190594.184369]  ? remove_wait_queue+0x60/0x60
+[190594.184374]  kthread+0x103/0x140
+[190594.184380]  ? iscsit_thread_get_cpumask+0xa0/0xa0 [iscsi_target_mod]
+[190594.184382]  ? kthread_bind+0x10/0x10
+[190594.184386]  ret_from_fork+0x3a/0x50
