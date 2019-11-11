@@ -1,0 +1,428 @@
+[ 4935.523318] pcieport 0000:00:02.0: AER: Corrected error received: 0000:00:02.0
+[ 4935.523326] pcieport 0000:00:02.0: AER: PCIe Bus Error: severity=Corrected, type=Data Link Layer, (Receiver ID)
+[ 4935.523340] pcieport 0000:00:02.0: AER:   device [8086:6f04] error status/mask=00000080/00002000
+[ 4935.523346] pcieport 0000:00:02.0: AER:    [ 7] BadDLLP               
+[ 5767.883386] CPU: 1 PID: 31372 Comm: rping Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 5767.883402] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 5767.883404] Call Trace:
+[ 5767.883412]  dump_stack+0x78/0xb3
+[ 5767.883425]  c4iw_mmap+0x37/0x210 [iw_cxgb4]
+[ 5767.883437]  ib_uverbs_mmap+0x75/0xd0 [ib_uverbs]
+[ 5767.883441]  ? ib_uverbs_mmap+0x5/0xd0 [ib_uverbs]
+[ 5767.883447]  mmap_region+0x3d4/0x5d0
+[ 5767.883456]  do_mmap+0x47b/0x620
+[ 5767.883467]  vm_mmap_pgoff+0xdf/0x130
+[ 5767.883476]  ksys_mmap_pgoff+0x19e/0x240
+[ 5767.883480]  ? trace_hardirqs_off_thunk+0x1a/0x20
+[ 5767.883485]  do_syscall_64+0x60/0x250
+[ 5767.883489]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 5767.883491] RIP: 0033:0x1545da23936a
+[ 5767.883494] Code: cc 55 48 89 f5 53 48 89 fb 74 35 4d 63 f0 4c 63 fa 4d 89 e9 4d 89 f0 4d 63 d4 4c 89 fa 48 89 ee 48 89 df b8 09 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 52 5b 5d 41 5c 41 5d 41 5e 41 5f c3 0f 1f 00
+[ 5767.883496] RSP: 002b:00001545d78fe7d8 EFLAGS: 00000246 ORIG_RAX: 0000000000000009
+[ 5767.883498] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001545da23936a
+[ 5767.883500] RDX: 0000000000000001 RSI: 0000000000001000 RDI: 0000000000000000
+[ 5767.883501] RBP: 0000000000001000 R08: 0000000000000004 R09: 0000000000000000
+[ 5767.883502] R10: 0000000000000001 R11: 0000000000000246 R12: 0000000000000001
+[ 5767.883504] R13: 0000000000000000 R14: 0000000000000004 R15: 0000000000000001
+[ 5767.890936] CPU: 8 PID: 31369 Comm: rping Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 5767.890939] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 5767.890941] Call Trace:
+[ 5767.890949]  dump_stack+0x78/0xb3
+[ 5767.890963]  c4iw_mmap+0x37/0x210 [iw_cxgb4]
+[ 5767.890976]  ib_uverbs_mmap+0x75/0xd0 [ib_uverbs]
+[ 5767.890981]  ? ib_uverbs_mmap+0x5/0xd0 [ib_uverbs]
+[ 5767.890987]  mmap_region+0x3d4/0x5d0
+[ 5767.890998]  do_mmap+0x47b/0x620
+[ 5767.891009]  vm_mmap_pgoff+0xdf/0x130
+[ 5767.891020]  ksys_mmap_pgoff+0x19e/0x240
+[ 5767.891025]  ? trace_hardirqs_off_thunk+0x1a/0x20
+[ 5767.891031]  do_syscall_64+0x60/0x250
+[ 5767.891055]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 5767.891057] RIP: 0033:0x1545da23936a
+[ 5767.891060] Code: cc 55 48 89 f5 53 48 89 fb 74 35 4d 63 f0 4c 63 fa 4d 89 e9 4d 89 f0 4d 63 d4 4c 89 fa 48 89 ee 48 89 df b8 09 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 52 5b 5d 41 5c 41 5d 41 5e 41 5f c3 0f 1f 00
+[ 5767.891062] RSP: 002b:00007ffe59041408 EFLAGS: 00000246 ORIG_RAX: 0000000000000009
+[ 5767.891065] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001545da23936a
+[ 5767.891086] RDX: 0000000000000003 RSI: 0000000000002000 RDI: 0000000000000000
+[ 5767.891087] RBP: 0000000000002000 R08: 0000000000000004 R09: 0000000000001000
+[ 5767.891089] R10: 0000000000000001 R11: 0000000000000246 R12: 0000000000000001
+[ 5767.891090] R13: 0000000000001000 R14: 0000000000000004 R15: 0000000000000003
+[ 5767.891112] CPU: 8 PID: 31369 Comm: rping Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 5767.891113] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 5767.891115] Call Trace:
+[ 5767.891118]  dump_stack+0x78/0xb3
+[ 5767.891124]  c4iw_mmap+0x37/0x210 [iw_cxgb4]
+[ 5767.891132]  ib_uverbs_mmap+0x75/0xd0 [ib_uverbs]
+[ 5767.891135]  ? ib_uverbs_mmap+0x5/0xd0 [ib_uverbs]
+[ 5767.891140]  mmap_region+0x3d4/0x5d0
+[ 5767.891149]  do_mmap+0x47b/0x620
+[ 5767.891157]  vm_mmap_pgoff+0xdf/0x130
+[ 5767.891166]  ksys_mmap_pgoff+0x19e/0x240
+[ 5767.891169]  ? trace_hardirqs_off_thunk+0x1a/0x20
+[ 5767.891174]  do_syscall_64+0x60/0x250
+[ 5767.891177]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 5767.891179] RIP: 0033:0x1545da23936a
+[ 5767.891181] Code: cc 55 48 89 f5 53 48 89 fb 74 35 4d 63 f0 4c 63 fa 4d 89 e9 4d 89 f0 4d 63 d4 4c 89 fa 48 89 ee 48 89 df b8 09 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 52 5b 5d 41 5c 41 5d 41 5e 41 5f c3 0f 1f 00
+[ 5767.891182] RSP: 002b:00007ffe59041408 EFLAGS: 00000246 ORIG_RAX: 0000000000000009
+[ 5767.891184] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001545da23936a
+[ 5767.891186] RDX: 0000000000000002 RSI: 0000000000001000 RDI: 0000000000000000
+[ 5767.891187] RBP: 0000000000001000 R08: 0000000000000004 R09: 0000000000002000
+[ 5767.891189] R10: 0000000000000001 R11: 0000000000000246 R12: 0000000000000001
+[ 5767.891190] R13: 0000000000002000 R14: 0000000000000004 R15: 0000000000000002
+[ 5767.891380] CPU: 8 PID: 31369 Comm: rping Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 5767.891382] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 5767.891384] Call Trace:
+[ 5767.891388]  dump_stack+0x78/0xb3
+[ 5767.891396]  c4iw_mmap+0x37/0x210 [iw_cxgb4]
+[ 5767.891405]  ib_uverbs_mmap+0x75/0xd0 [ib_uverbs]
+[ 5767.891409]  ? ib_uverbs_mmap+0x5/0xd0 [ib_uverbs]
+[ 5767.891414]  mmap_region+0x3d4/0x5d0
+[ 5767.891423]  do_mmap+0x47b/0x620
+[ 5767.891432]  vm_mmap_pgoff+0xdf/0x130
+[ 5767.891442]  ksys_mmap_pgoff+0x19e/0x240
+[ 5767.891445]  ? trace_hardirqs_off_thunk+0x1a/0x20
+[ 5767.891451]  do_syscall_64+0x60/0x250
+[ 5767.891454]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 5767.891456] RIP: 0033:0x1545da23936a
+[ 5767.891458] Code: cc 55 48 89 f5 53 48 89 fb 74 35 4d 63 f0 4c 63 fa 4d 89 e9 4d 89 f0 4d 63 d4 4c 89 fa 48 89 ee 48 89 df b8 09 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 52 5b 5d 41 5c 41 5d 41 5e 41 5f c3 0f 1f 00
+[ 5767.891460] RSP: 002b:00007ffe59041328 EFLAGS: 00000246 ORIG_RAX: 0000000000000009
+[ 5767.891462] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001545da23936a
+[ 5767.891464] RDX: 0000000000000002 RSI: 0000000000001000 RDI: 0000000000000000
+[ 5767.891465] RBP: 0000000000001000 R08: 0000000000000004 R09: 0000000000005000
+[ 5767.891467] R10: 0000000000000001 R11: 0000000000000246 R12: 0000000000000001
+[ 5767.891468] R13: 0000000000005000 R14: 0000000000000004 R15: 0000000000000002
+[ 5767.891497] CPU: 8 PID: 31369 Comm: rping Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 5767.891498] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 5767.891500] Call Trace:
+[ 5767.891503]  dump_stack+0x78/0xb3
+[ 5767.891510]  c4iw_mmap+0x37/0x210 [iw_cxgb4]
+[ 5767.891518]  ib_uverbs_mmap+0x75/0xd0 [ib_uverbs]
+[ 5767.891522]  ? ib_uverbs_mmap+0x5/0xd0 [ib_uverbs]
+[ 5767.891526]  mmap_region+0x3d4/0x5d0
+[ 5767.891536]  do_mmap+0x47b/0x620
+[ 5767.891545]  vm_mmap_pgoff+0xdf/0x130
+[ 5767.891572]  ksys_mmap_pgoff+0x19e/0x240
+[ 5767.891576]  ? trace_hardirqs_off_thunk+0x1a/0x20
+[ 5767.891582]  do_syscall_64+0x60/0x250
+[ 5767.891585]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 5767.891587] RIP: 0033:0x1545da23936a
+[ 5767.891589] Code: cc 55 48 89 f5 53 48 89 fb 74 35 4d 63 f0 4c 63 fa 4d 89 e9 4d 89 f0 4d 63 d4 4c 89 fa 48 89 ee 48 89 df b8 09 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 52 5b 5d 41 5c 41 5d 41 5e 41 5f c3 0f 1f 00
+[ 5767.891591] RSP: 002b:00007ffe59041328 EFLAGS: 00000246 ORIG_RAX: 0000000000000009
+[ 5767.891593] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001545da23936a
+[ 5767.891595] RDX: 0000000000000002 RSI: 0000000000002000 RDI: 0000000000000000
+[ 5767.891596] RBP: 0000000000002000 R08: 0000000000000004 R09: 0000000000003000
+[ 5767.891598] R10: 0000000000000001 R11: 0000000000000246 R12: 0000000000000001
+[ 5767.891599] R13: 0000000000003000 R14: 0000000000000004 R15: 0000000000000002
+[ 5767.891634] CPU: 8 PID: 31369 Comm: rping Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 5767.891636] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 5767.891637] Call Trace:
+[ 5767.891640]  dump_stack+0x78/0xb3
+[ 5767.891647]  c4iw_mmap+0x37/0x210 [iw_cxgb4]
+[ 5767.891655]  ib_uverbs_mmap+0x75/0xd0 [ib_uverbs]
+[ 5767.891658]  ? ib_uverbs_mmap+0x5/0xd0 [ib_uverbs]
+[ 5767.891679]  mmap_region+0x3d4/0x5d0
+[ 5767.891688]  do_mmap+0x47b/0x620
+[ 5767.891696]  vm_mmap_pgoff+0xdf/0x130
+[ 5767.891705]  ksys_mmap_pgoff+0x19e/0x240
+[ 5767.891708]  ? trace_hardirqs_off_thunk+0x1a/0x20
+[ 5767.891713]  do_syscall_64+0x60/0x250
+[ 5767.891716]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 5767.891717] RIP: 0033:0x1545da23936a
+[ 5767.891719] Code: cc 55 48 89 f5 53 48 89 fb 74 35 4d 63 f0 4c 63 fa 4d 89 e9 4d 89 f0 4d 63 d4 4c 89 fa 48 89 ee 48 89 df b8 09 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 52 5b 5d 41 5c 41 5d 41 5e 41 5f c3 0f 1f 00
+[ 5767.891721] RSP: 002b:00007ffe59041328 EFLAGS: 00000246 ORIG_RAX: 0000000000000009
+[ 5767.891723] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001545da23936a
+[ 5767.891724] RDX: 0000000000000002 RSI: 0000000000001000 RDI: 0000000000000000
+[ 5767.891726] RBP: 0000000000001000 R08: 0000000000000004 R09: 0000000000006000
+[ 5767.891727] R10: 0000000000000001 R11: 0000000000000246 R12: 0000000000000001
+[ 5767.891728] R13: 0000000000006000 R14: 0000000000000004 R15: 0000000000000002
+[ 5767.891796] CPU: 8 PID: 31369 Comm: rping Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 5767.891799] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 5767.891802] Call Trace:
+[ 5767.891810]  dump_stack+0x78/0xb3
+[ 5767.891822]  c4iw_mmap+0x37/0x210 [iw_cxgb4]
+[ 5767.891830]  ib_uverbs_mmap+0x75/0xd0 [ib_uverbs]
+[ 5767.891834]  ? ib_uverbs_mmap+0x5/0xd0 [ib_uverbs]
+[ 5767.891839]  mmap_region+0x3d4/0x5d0
+[ 5767.891849]  do_mmap+0x47b/0x620
+[ 5767.891859]  vm_mmap_pgoff+0xdf/0x130
+[ 5767.891869]  ksys_mmap_pgoff+0x19e/0x240
+[ 5767.891872]  ? trace_hardirqs_off_thunk+0x1a/0x20
+[ 5767.891878]  do_syscall_64+0x60/0x250
+[ 5767.891882]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 5767.891884] RIP: 0033:0x1545da23936a
+[ 5767.891888] Code: cc 55 48 89 f5 53 48 89 fb 74 35 4d 63 f0 4c 63 fa 4d 89 e9 4d 89 f0 4d 63 d4 4c 89 fa 48 89 ee 48 89 df b8 09 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 52 5b 5d 41 5c 41 5d 41 5e 41 5f c3 0f 1f 00
+[ 5767.891889] RSP: 002b:00007ffe59041328 EFLAGS: 00000246 ORIG_RAX: 0000000000000009
+[ 5767.891891] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001545da23936a
+[ 5767.891893] RDX: 0000000000000002 RSI: 0000000000001000 RDI: 0000000000000000
+[ 5767.891895] RBP: 0000000000001000 R08: 0000000000000004 R09: 0000000000004000
+[ 5767.891896] R10: 0000000000000001 R11: 0000000000000246 R12: 0000000000000001
+[ 5767.891898] R13: 0000000000004000 R14: 0000000000000004 R15: 0000000000000002
+[ 5767.892046] CPU: 8 PID: 31369 Comm: rping Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 5767.892090] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 5767.892092] Call Trace:
+[ 5767.892096]  dump_stack+0x78/0xb3
+[ 5767.892103]  c4iw_reg_user_mr+0x47/0x570 [iw_cxgb4]
+[ 5767.892110]  ? lookup_get_idr_uobject.part.7+0xb3/0x170 [ib_uverbs]
+[ 5767.892124]  ib_uverbs_reg_mr+0x13e/0x2a0 [ib_uverbs]
+[ 5767.892135]  ib_uverbs_handler_UVERBS_METHOD_INVOKE_WRITE+0xb7/0xf0 [ib_uverbs]
+[ 5767.892142]  ib_uverbs_run_method+0x6fe/0x790 [ib_uverbs]
+[ 5767.892147]  ? rcu_read_lock_sched_held+0x52/0x90
+[ 5767.892151]  ? __update_load_avg_se+0x277/0x2a0
+[ 5767.892156]  ? uverbs_disassociate_api+0xe0/0xe0 [ib_uverbs]
+[ 5767.892164]  ib_uverbs_cmd_verbs.isra.8+0x1c1/0x3d0 [ib_uverbs]
+[ 5767.892167]  ? update_curr+0xf8/0x3e0
+[ 5767.892172]  ? enqueue_entity+0x176/0x6f0
+[ 5767.892195]  ? __lock_acquire+0x44a/0x10c0
+[ 5767.892199]  ? find_held_lock+0x2d/0x90
+[ 5767.892206]  ? ib_uverbs_ioctl+0x96/0x170 [ib_uverbs]
+[ 5767.892215]  ib_uverbs_ioctl+0xec/0x170 [ib_uverbs]
+[ 5767.892219]  ? ib_uverbs_ioctl+0x96/0x170 [ib_uverbs]
+[ 5767.892226]  do_vfs_ioctl+0xa9/0x700
+[ 5767.892231]  ? __fget+0x117/0x210
+[ 5767.892233]  ? __fget+0x5/0x210
+[ 5767.892240]  ksys_ioctl+0x60/0x90
+[ 5767.892245]  __x64_sys_ioctl+0x16/0x20
+[ 5767.892248]  do_syscall_64+0x60/0x250
+[ 5767.892251]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 5767.892253] RIP: 0033:0x1545da2358d7
+[ 5767.892256] Code: 44 00 00 48 8b 05 b9 15 2d 00 64 c7 00 26 00 00 00 48 c7 c0 ff ff ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 b8 10 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 89 15 2d 00 f7 d8 64 89 01 48
+[ 5767.892257] RSP: 002b:00007ffe590412b8 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+[ 5767.892260] RAX: ffffffffffffffda RBX: 00007ffe59041338 RCX: 00001545da2358d7
+[ 5767.892261] RDX: 00007ffe59041320 RSI: 00000000c0181b01 RDI: 0000000000000004
+[ 5767.892263] RBP: 00007ffe59041300 R08: 0000000000000003 R09: 0000000000000000
+[ 5767.892265] R10: 0000000000000001 R11: 0000000000000246 R12: 00001545d0000c30
+[ 5767.892266] R13: 00001545d0000af0 R14: 00001545d0000c30 R15: 00007ffe590414f8
+[ 5767.892425] CPU: 8 PID: 31369 Comm: rping Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 5767.892427] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 5767.892429] Call Trace:
+[ 5767.892433]  dump_stack+0x78/0xb3
+[ 5767.892440]  c4iw_reg_user_mr+0x47/0x570 [iw_cxgb4]
+[ 5767.892447]  ? lookup_get_idr_uobject.part.7+0xb3/0x170 [ib_uverbs]
+[ 5767.892461]  ib_uverbs_reg_mr+0x13e/0x2a0 [ib_uverbs]
+[ 5767.892471]  ib_uverbs_handler_UVERBS_METHOD_INVOKE_WRITE+0xb7/0xf0 [ib_uverbs]
+[ 5767.892477]  ib_uverbs_run_method+0x6fe/0x790 [ib_uverbs]
+[ 5767.892481]  ? rcu_read_lock_sched_held+0x52/0x90
+[ 5767.892501]  ? __update_load_avg_se+0x277/0x2a0
+[ 5767.892505]  ? uverbs_disassociate_api+0xe0/0xe0 [ib_uverbs]
+[ 5767.892512]  ib_uverbs_cmd_verbs.isra.8+0x1c1/0x3d0 [ib_uverbs]
+[ 5767.892518]  ? enqueue_entity+0x176/0x6f0
+[ 5767.892538]  ? __lock_acquire+0x44a/0x10c0
+[ 5767.892541]  ? find_held_lock+0x2d/0x90
+[ 5767.892548]  ? ib_uverbs_ioctl+0x96/0x170 [ib_uverbs]
+[ 5767.892556]  ib_uverbs_ioctl+0xec/0x170 [ib_uverbs]
+[ 5767.892559]  ? ib_uverbs_ioctl+0x96/0x170 [ib_uverbs]
+[ 5767.892565]  do_vfs_ioctl+0xa9/0x700
+[ 5767.892570]  ? __fget+0x117/0x210
+[ 5767.892572]  ? __fget+0x5/0x210
+[ 5767.892577]  ksys_ioctl+0x60/0x90
+[ 5767.892582]  __x64_sys_ioctl+0x16/0x20
+[ 5767.892585]  do_syscall_64+0x60/0x250
+[ 5767.892588]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 5767.892590] RIP: 0033:0x1545da2358d7
+[ 5767.892592] Code: 44 00 00 48 8b 05 b9 15 2d 00 64 c7 00 26 00 00 00 48 c7 c0 ff ff ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 b8 10 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 89 15 2d 00 f7 d8 64 89 01 48
+[ 5767.892594] RSP: 002b:00007ffe590412b8 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+[ 5767.892596] RAX: ffffffffffffffda RBX: 00007ffe59041338 RCX: 00001545da2358d7
+[ 5767.892597] RDX: 00007ffe59041320 RSI: 00000000c0181b01 RDI: 0000000000000004
+[ 5767.892599] RBP: 00007ffe59041300 R08: 0000000000000003 R09: 0000000000000000
+[ 5767.892600] R10: 0000000000000001 R11: 0000000000000246 R12: 00001545d0000c30
+[ 5767.892602] R13: 00001545d0000af0 R14: 00001545d0000c30 R15: 00007ffe590414f8
+[ 5767.892817] CPU: 8 PID: 31369 Comm: rping Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 5767.892819] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 5767.892821] Call Trace:
+[ 5767.892826]  dump_stack+0x78/0xb3
+[ 5767.892834]  c4iw_reg_user_mr+0x47/0x570 [iw_cxgb4]
+[ 5767.892841]  ? lookup_get_idr_uobject.part.7+0xb3/0x170 [ib_uverbs]
+[ 5767.892856]  ib_uverbs_reg_mr+0x13e/0x2a0 [ib_uverbs]
+[ 5767.892867]  ib_uverbs_handler_UVERBS_METHOD_INVOKE_WRITE+0xb7/0xf0 [ib_uverbs]
+[ 5767.892873]  ib_uverbs_run_method+0x6fe/0x790 [ib_uverbs]
+[ 5767.892879]  ? rcu_read_lock_sched_held+0x52/0x90
+[ 5767.892882]  ? __update_load_avg_se+0x277/0x2a0
+[ 5767.892886]  ? uverbs_disassociate_api+0xe0/0xe0 [ib_uverbs]
+[ 5767.892894]  ib_uverbs_cmd_verbs.isra.8+0x1c1/0x3d0 [ib_uverbs]
+[ 5767.892901]  ? enqueue_entity+0x176/0x6f0
+[ 5767.892924]  ? __lock_acquire+0x44a/0x10c0
+[ 5767.892928]  ? find_held_lock+0x2d/0x90
+[ 5767.892936]  ? ib_uverbs_ioctl+0x96/0x170 [ib_uverbs]
+[ 5767.892944]  ib_uverbs_ioctl+0xec/0x170 [ib_uverbs]
+[ 5767.892948]  ? ib_uverbs_ioctl+0x96/0x170 [ib_uverbs]
+[ 5767.892955]  do_vfs_ioctl+0xa9/0x700
+[ 5767.892961]  ? __fget+0x117/0x210
+[ 5767.892963]  ? __fget+0x5/0x210
+[ 5767.892970]  ksys_ioctl+0x60/0x90
+[ 5767.892976]  __x64_sys_ioctl+0x16/0x20
+[ 5767.892978]  do_syscall_64+0x60/0x250
+[ 5767.892982]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 5767.892985] RIP: 0033:0x1545da2358d7
+[ 5767.892987] Code: 44 00 00 48 8b 05 b9 15 2d 00 64 c7 00 26 00 00 00 48 c7 c0 ff ff ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 b8 10 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 89 15 2d 00 f7 d8 64 89 01 48
+[ 5767.892989] RSP: 002b:00007ffe590412b8 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+[ 5767.892991] RAX: ffffffffffffffda RBX: 00007ffe59041338 RCX: 00001545da2358d7
+[ 5767.892993] RDX: 00007ffe59041320 RSI: 00000000c0181b01 RDI: 0000000000000004
+[ 5767.892995] RBP: 00007ffe59041300 R08: 0000000000000003 R09: 0000000000000000
+[ 5767.892996] R10: 0000000000000001 R11: 0000000000000246 R12: 00001545d0000c30
+[ 5767.892998] R13: 00001545d0000af0 R14: 00001545d0000c30 R15: 00007ffe590414f8
+[ 5767.893070] CPU: 8 PID: 31369 Comm: rping Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 5767.893071] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 5767.893073] Call Trace:
+[ 5767.893093]  dump_stack+0x78/0xb3
+[ 5767.893100]  c4iw_reg_user_mr+0x47/0x570 [iw_cxgb4]
+[ 5767.893106]  ? lookup_get_idr_uobject.part.7+0xb3/0x170 [ib_uverbs]
+[ 5767.893118]  ib_uverbs_reg_mr+0x13e/0x2a0 [ib_uverbs]
+[ 5767.893128]  ib_uverbs_handler_UVERBS_METHOD_INVOKE_WRITE+0xb7/0xf0 [ib_uverbs]
+[ 5767.893133]  ib_uverbs_run_method+0x6fe/0x790 [ib_uverbs]
+[ 5767.893138]  ? rcu_read_lock_sched_held+0x52/0x90
+[ 5767.893141]  ? __update_load_avg_se+0x277/0x2a0
+[ 5767.893144]  ? uverbs_disassociate_api+0xe0/0xe0 [ib_uverbs]
+[ 5767.893151]  ib_uverbs_cmd_verbs.isra.8+0x1c1/0x3d0 [ib_uverbs]
+[ 5767.893157]  ? enqueue_entity+0x176/0x6f0
+[ 5767.893176]  ? __lock_acquire+0x44a/0x10c0
+[ 5767.893180]  ? find_held_lock+0x2d/0x90
+[ 5767.893187]  ? ib_uverbs_ioctl+0x96/0x170 [ib_uverbs]
+[ 5767.893194]  ib_uverbs_ioctl+0xec/0x170 [ib_uverbs]
+[ 5767.893197]  ? ib_uverbs_ioctl+0x96/0x170 [ib_uverbs]
+[ 5767.893203]  do_vfs_ioctl+0xa9/0x700
+[ 5767.893208]  ? __fget+0x117/0x210
+[ 5767.893210]  ? __fget+0x5/0x210
+[ 5767.893215]  ksys_ioctl+0x60/0x90
+[ 5767.893221]  __x64_sys_ioctl+0x16/0x20
+[ 5767.893223]  do_syscall_64+0x60/0x250
+[ 5767.893226]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 5767.893228] RIP: 0033:0x1545da2358d7
+[ 5767.893230] Code: 44 00 00 48 8b 05 b9 15 2d 00 64 c7 00 26 00 00 00 48 c7 c0 ff ff ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 b8 10 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 89 15 2d 00 f7 d8 64 89 01 48
+[ 5767.893232] RSP: 002b:00007ffe590412b8 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+[ 5767.893234] RAX: ffffffffffffffda RBX: 00007ffe59041338 RCX: 00001545da2358d7
+[ 5767.893235] RDX: 00007ffe59041320 RSI: 00000000c0181b01 RDI: 0000000000000004
+[ 5767.893236] RBP: 00007ffe59041300 R08: 0000000000000003 R09: 0000000000000000
+[ 5767.893238] R10: 0000000000000001 R11: 0000000000000246 R12: 00001545d0000c30
+[ 5767.893239] R13: 00001545d0000af0 R14: 00001545d0000c30 R15: 00007ffe590414f8
+[ 5767.893746] iwpm_register_pid: Unable to send a nlmsg (client = 2)
+[ 5774.030880] CPU: 14 PID: 31369 Comm: rping Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 5774.030886] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 5774.030888] Call Trace:
+[ 5774.030893]  dump_stack+0x78/0xb3
+[ 5774.030902]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 5774.030916]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 5774.030925]  destroy_hw_idr_uobject+0x1c/0x50 [ib_uverbs]
+[ 5774.030931]  uverbs_destroy_uobject+0x54/0x1c0 [ib_uverbs]
+[ 5774.030937]  __uverbs_cleanup_ufile+0xa3/0xe0 [ib_uverbs]
+[ 5774.030951]  uverbs_destroy_ufile_hw+0x6c/0x130 [ib_uverbs]
+[ 5774.030958]  ib_uverbs_close+0x22/0x90 [ib_uverbs]
+[ 5774.030963]  __fput+0xd1/0x260
+[ 5774.030970]  task_work_run+0x86/0xb0
+[ 5774.030976]  do_exit+0x31c/0xd10
+[ 5774.030981]  ? get_signal+0x152/0xc40
+[ 5774.030987]  do_group_exit+0x46/0xc0
+[ 5774.030991]  get_signal+0x1bd/0xc40
+[ 5774.031002]  do_signal+0x36/0x630
+[ 5774.031005]  ? syscall_trace_enter+0x1f8/0x350
+[ 5774.031012]  ? __audit_syscall_exit+0x1d9/0x290
+[ 5774.031017]  ? rcu_read_lock_sched_held+0x52/0x90
+[ 5774.031022]  ? kfree+0x225/0x2e0
+[ 5774.031048]  exit_to_usermode_loop+0x61/0xd0
+[ 5774.031054]  do_syscall_64+0x1ed/0x250
+[ 5774.031072]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 5774.031075] RIP: 0033:0x1545da736adb
+[ 5774.031080] Code: Bad RIP value.
+[ 5774.031096] RSP: 002b:00007ffe59041540 EFLAGS: 00000282 ORIG_RAX: 00000000000000ca
+[ 5774.031098] RAX: fffffffffffffe00 RBX: 00000000000000ca RCX: 00001545da736adb
+[ 5774.031100] RDX: 0000000000000000 RSI: 0000000000000080 RDI: 0000000001b7e978
+[ 5774.031102] RBP: 0000000001b7e978 R08: 0000000000000000 R09: 00007ffe5904143c
+[ 5774.031103] R10: 0000000000000000 R11: 0000000000000282 R12: fffffffeffffffff
+[ 5774.031105] R13: 0000000000000000 R14: 0000000001b7e978 R15: 0000000000001bd5
+[ 5774.031160] CPU: 14 PID: 31369 Comm: rping Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 5774.031161] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 5774.031163] Call Trace:
+[ 5774.031166]  dump_stack+0x78/0xb3
+[ 5774.031172]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 5774.031181]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 5774.031187]  destroy_hw_idr_uobject+0x1c/0x50 [ib_uverbs]
+[ 5774.031192]  uverbs_destroy_uobject+0x54/0x1c0 [ib_uverbs]
+[ 5774.031198]  __uverbs_cleanup_ufile+0xa3/0xe0 [ib_uverbs]
+[ 5774.031209]  uverbs_destroy_ufile_hw+0x6c/0x130 [ib_uverbs]
+[ 5774.031215]  ib_uverbs_close+0x22/0x90 [ib_uverbs]
+[ 5774.031219]  __fput+0xd1/0x260
+[ 5774.031225]  task_work_run+0x86/0xb0
+[ 5774.031230]  do_exit+0x31c/0xd10
+[ 5774.031233]  ? get_signal+0x152/0xc40
+[ 5774.031239]  do_group_exit+0x46/0xc0
+[ 5774.031242]  get_signal+0x1bd/0xc40
+[ 5774.031251]  do_signal+0x36/0x630
+[ 5774.031254]  ? syscall_trace_enter+0x1f8/0x350
+[ 5774.031259]  ? __audit_syscall_exit+0x1d9/0x290
+[ 5774.031263]  ? rcu_read_lock_sched_held+0x52/0x90
+[ 5774.031266]  ? kfree+0x225/0x2e0
+[ 5774.031272]  exit_to_usermode_loop+0x61/0xd0
+[ 5774.031277]  do_syscall_64+0x1ed/0x250
+[ 5774.031280]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 5774.031282] RIP: 0033:0x1545da736adb
+[ 5774.031285] Code: Bad RIP value.
+[ 5774.031287] RSP: 002b:00007ffe59041540 EFLAGS: 00000282 ORIG_RAX: 00000000000000ca
+[ 5774.031289] RAX: fffffffffffffe00 RBX: 00000000000000ca RCX: 00001545da736adb
+[ 5774.031290] RDX: 0000000000000000 RSI: 0000000000000080 RDI: 0000000001b7e978
+[ 5774.031292] RBP: 0000000001b7e978 R08: 0000000000000000 R09: 00007ffe5904143c
+[ 5774.031293] R10: 0000000000000000 R11: 0000000000000282 R12: fffffffeffffffff
+[ 5774.031295] R13: 0000000000000000 R14: 0000000001b7e978 R15: 0000000000001bd5
+[ 5774.031330] CPU: 14 PID: 31369 Comm: rping Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 5774.031331] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 5774.031332] Call Trace:
+[ 5774.031335]  dump_stack+0x78/0xb3
+[ 5774.031341]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 5774.031349]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 5774.031356]  destroy_hw_idr_uobject+0x1c/0x50 [ib_uverbs]
+[ 5774.031360]  uverbs_destroy_uobject+0x54/0x1c0 [ib_uverbs]
+[ 5774.031366]  __uverbs_cleanup_ufile+0xa3/0xe0 [ib_uverbs]
+[ 5774.031377]  uverbs_destroy_ufile_hw+0x6c/0x130 [ib_uverbs]
+[ 5774.031383]  ib_uverbs_close+0x22/0x90 [ib_uverbs]
+[ 5774.031387]  __fput+0xd1/0x260
+[ 5774.031393]  task_work_run+0x86/0xb0
+[ 5774.031398]  do_exit+0x31c/0xd10
+[ 5774.031401]  ? get_signal+0x152/0xc40
+[ 5774.031407]  do_group_exit+0x46/0xc0
+[ 5774.031410]  get_signal+0x1bd/0xc40
+[ 5774.031419]  do_signal+0x36/0x630
+[ 5774.031422]  ? syscall_trace_enter+0x1f8/0x350
+[ 5774.031427]  ? __audit_syscall_exit+0x1d9/0x290
+[ 5774.031431]  ? rcu_read_lock_sched_held+0x52/0x90
+[ 5774.031434]  ? kfree+0x225/0x2e0
+[ 5774.031440]  exit_to_usermode_loop+0x61/0xd0
+[ 5774.031444]  do_syscall_64+0x1ed/0x250
+[ 5774.031447]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 5774.031449] RIP: 0033:0x1545da736adb
+[ 5774.031452] Code: Bad RIP value.
+[ 5774.031454] RSP: 002b:00007ffe59041540 EFLAGS: 00000282 ORIG_RAX: 00000000000000ca
+[ 5774.031456] RAX: fffffffffffffe00 RBX: 00000000000000ca RCX: 00001545da736adb
+[ 5774.031457] RDX: 0000000000000000 RSI: 0000000000000080 RDI: 0000000001b7e978
+[ 5774.031459] RBP: 0000000001b7e978 R08: 0000000000000000 R09: 00007ffe5904143c
+[ 5774.031460] R10: 0000000000000000 R11: 0000000000000282 R12: fffffffeffffffff
+[ 5774.031462] R13: 0000000000000000 R14: 0000000001b7e978 R15: 0000000000001bd5
+[ 5774.031487] CPU: 14 PID: 31369 Comm: rping Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 5774.031489] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 5774.031490] Call Trace:
+[ 5774.031493]  dump_stack+0x78/0xb3
+[ 5774.031499]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 5774.031507]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 5774.031514]  destroy_hw_idr_uobject+0x1c/0x50 [ib_uverbs]
+[ 5774.031518]  uverbs_destroy_uobject+0x54/0x1c0 [ib_uverbs]
+[ 5774.031524]  __uverbs_cleanup_ufile+0xa3/0xe0 [ib_uverbs]
+[ 5774.031535]  uverbs_destroy_ufile_hw+0x6c/0x130 [ib_uverbs]
+[ 5774.031541]  ib_uverbs_close+0x22/0x90 [ib_uverbs]
+[ 5774.031545]  __fput+0xd1/0x260
+[ 5774.031550]  task_work_run+0x86/0xb0
+[ 5774.031555]  do_exit+0x31c/0xd10
+[ 5774.031559]  ? get_signal+0x152/0xc40
+[ 5774.031564]  do_group_exit+0x46/0xc0
+[ 5774.031568]  get_signal+0x1bd/0xc40
+[ 5774.031577]  do_signal+0x36/0x630
+[ 5774.031580]  ? syscall_trace_enter+0x1f8/0x350
+[ 5774.031584]  ? __audit_syscall_exit+0x1d9/0x290
+[ 5774.031588]  ? rcu_read_lock_sched_held+0x52/0x90
+[ 5774.031591]  ? kfree+0x225/0x2e0
+[ 5774.031597]  exit_to_usermode_loop+0x61/0xd0
+[ 5774.031602]  do_syscall_64+0x1ed/0x250
+[ 5774.031605]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 5774.031607] RIP: 0033:0x1545da736adb
+[ 5774.031609] Code: Bad RIP value.
+[ 5774.031611] RSP: 002b:00007ffe59041540 EFLAGS: 00000282 ORIG_RAX: 00000000000000ca
+[ 5774.031613] RAX: fffffffffffffe00 RBX: 00000000000000ca RCX: 00001545da736adb
+[ 5774.031614] RDX: 0000000000000000 RSI: 0000000000000080 RDI: 0000000001b7e978
+[ 5774.031616] RBP: 0000000001b7e978 R08: 0000000000000000 R09: 00007ffe5904143c
+[ 5774.031617] R10: 0000000000000000 R11: 0000000000000282 R12: fffffffeffffffff
+[ 5774.031619] R13: 0000000000000000 R14: 0000000001b7e978 R15: 0000000000001bd5
