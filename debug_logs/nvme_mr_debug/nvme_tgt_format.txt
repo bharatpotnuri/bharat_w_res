@@ -1,0 +1,2844 @@
+[12215.740753] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.741323] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.741950] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.742507] Call Trace:
+[12215.743062]  dump_stack+0x78/0xb3
+[12215.743622]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12215.744183]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12215.744741]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12215.745296]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12215.745856]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.746413]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.746959]  process_one_work+0x200/0x580
+[12215.747499]  ? process_one_work+0x17a/0x580
+[12215.748039]  worker_thread+0x4c/0x3f0
+[12215.748633]  kthread+0x103/0x140
+[12215.749165]  ? process_one_work+0x580/0x580
+[12215.749699]  ? kthread_bind+0x10/0x10
+[12215.750233]  ret_from_fork+0x3a/0x50
+[12215.750785] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.751485] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.752184] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.752775] Call Trace:
+[12215.753377]  dump_stack+0x78/0xb3
+[12215.753922]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12215.754520]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12215.755058]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12215.755688]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12215.756268]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.756840]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.757429]  process_one_work+0x200/0x580
+[12215.757965]  ? process_one_work+0x17a/0x580
+[12215.758553]  worker_thread+0x4c/0x3f0
+[12215.759106]  kthread+0x103/0x140
+[12215.759696]  ? process_one_work+0x580/0x580
+[12215.760250]  ? kthread_bind+0x10/0x10
+[12215.760792]  ret_from_fork+0x3a/0x50
+[12215.761411] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.762025] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.762668] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.763239] Call Trace:
+[12215.763821]  dump_stack+0x78/0xb3
+[12215.764408]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12215.764953]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12215.765551]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12215.766120]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12215.766708]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.767305]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.767899]  process_one_work+0x200/0x580
+[12215.768486]  ? process_one_work+0x17a/0x580
+[12215.769015]  worker_thread+0x4c/0x3f0
+[12215.769584]  kthread+0x103/0x140
+[12215.770114]  ? process_one_work+0x580/0x580
+[12215.770661]  ? kthread_bind+0x10/0x10
+[12215.771203]  ret_from_fork+0x3a/0x50
+[12215.771774] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.772419] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.773031] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.773634] Call Trace:
+[12215.774191]  dump_stack+0x78/0xb3
+[12215.774753]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12215.775425]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12215.775965]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12215.776566]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12215.777141]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.777725]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.778304]  process_one_work+0x200/0x580
+[12215.778859]  ? process_one_work+0x17a/0x580
+[12215.779460]  worker_thread+0x4c/0x3f0
+[12215.779977]  kthread+0x103/0x140
+[12215.780535]  ? process_one_work+0x580/0x580
+[12215.781049]  ? kthread_bind+0x10/0x10
+[12215.781610]  ret_from_fork+0x3a/0x50
+[12215.799335] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.799906] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.800498] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.801032] Call Trace:
+[12215.801621]  dump_stack+0x78/0xb3
+[12215.802180]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12215.802766]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12215.803382]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12215.803931]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12215.804536]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.805112]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.805694]  process_one_work+0x200/0x580
+[12215.806261]  ? process_one_work+0x17a/0x580
+[12215.806812]  worker_thread+0x4c/0x3f0
+[12215.807404]  kthread+0x103/0x140
+[12215.807915]  ? process_one_work+0x580/0x580
+[12215.808480]  ? kthread_bind+0x10/0x10
+[12215.808993]  ret_from_fork+0x3a/0x50
+[12215.809565] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.810237] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.810846] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.811433] Call Trace:
+[12215.811965]  dump_stack+0x78/0xb3
+[12215.812567]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12215.813136]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12215.813731]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12215.814313]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12215.814882]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.815487]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.816035]  process_one_work+0x200/0x580
+[12215.816627]  ? process_one_work+0x17a/0x580
+[12215.817181]  worker_thread+0x4c/0x3f0
+[12215.817748]  kthread+0x103/0x140
+[12215.818287]  ? process_one_work+0x580/0x580
+[12215.818821]  ? kthread_bind+0x10/0x10
+[12215.819381]  ret_from_fork+0x3a/0x50
+[12215.819913] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.820559] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.821188] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.821771] Call Trace:
+[12215.822367]  dump_stack+0x78/0xb3
+[12215.822902]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12215.823500]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12215.824042]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12215.824645]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12215.825232]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.825834]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.826433]  process_one_work+0x200/0x580
+[12215.826970]  ? process_one_work+0x17a/0x580
+[12215.827550]  worker_thread+0x4c/0x3f0
+[12215.828085]  kthread+0x103/0x140
+[12215.828632]  ? process_one_work+0x580/0x580
+[12215.829227]  ? kthread_bind+0x10/0x10
+[12215.829785]  ret_from_fork+0x3a/0x50
+[12215.830393] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.831020] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.831642] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.832200] Call Trace:
+[12215.832772]  dump_stack+0x78/0xb3
+[12215.833380]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12215.833927]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12215.834515]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12215.835081]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12215.835670]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.836252]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.836821]  process_one_work+0x200/0x580
+[12215.837429]  ? process_one_work+0x17a/0x580
+[12215.837955]  worker_thread+0x4c/0x3f0
+[12215.838522]  kthread+0x103/0x140
+[12215.839029]  ? process_one_work+0x580/0x580
+[12215.839597]  ? kthread_bind+0x10/0x10
+[12215.840127]  ret_from_fork+0x3a/0x50
+[12215.840720] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.841351] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.841944] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.842616] Call Trace:
+[12215.843187]  dump_stack+0x78/0xb3
+[12215.843748]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12215.844332]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12215.844941]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12215.845563]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12215.846138]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.846723]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.847303]  process_one_work+0x200/0x580
+[12215.847859]  ? process_one_work+0x17a/0x580
+[12215.848439]  worker_thread+0x4c/0x3f0
+[12215.848957]  kthread+0x103/0x140
+[12215.849543]  ? process_one_work+0x580/0x580
+[12215.850057]  ? kthread_bind+0x10/0x10
+[12215.850622]  ret_from_fork+0x3a/0x50
+[12215.851165] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.851818] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.852447] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.853060] Call Trace:
+[12215.853640]  dump_stack+0x78/0xb3
+[12215.854251]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12215.854817]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12215.855430]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12215.855977]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12215.856579]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.857153]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.857728]  process_one_work+0x200/0x580
+[12215.858292]  ? process_one_work+0x17a/0x580
+[12215.858836]  worker_thread+0x4c/0x3f0
+[12215.859425]  kthread+0x103/0x140
+[12215.859930]  ? process_one_work+0x580/0x580
+[12215.860494]  ? kthread_bind+0x10/0x10
+[12215.861003]  ret_from_fork+0x3a/0x50
+[12215.861606] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.862211] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.862849] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.863484] Call Trace:
+[12215.864081]  dump_stack+0x78/0xb3
+[12215.864645]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12215.865210]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12215.865776]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12215.866419]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12215.866972]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.867604]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.868176]  process_one_work+0x200/0x580
+[12215.868739]  ? process_one_work+0x17a/0x580
+[12215.869297]  worker_thread+0x4c/0x3f0
+[12215.869833]  kthread+0x103/0x140
+[12215.870391]  ? process_one_work+0x580/0x580
+[12215.870905]  ? kthread_bind+0x10/0x10
+[12215.871489]  ret_from_fork+0x3a/0x50
+[12215.872009] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.872683] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.873302] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.873851] Call Trace:
+[12215.874429]  dump_stack+0x78/0xb3
+[12215.874961]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12215.875579]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12215.876139]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12215.876716]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12215.877299]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.877870]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.878464]  process_one_work+0x200/0x580
+[12215.878997]  ? process_one_work+0x17a/0x580
+[12215.879597]  worker_thread+0x4c/0x3f0
+[12215.880131]  kthread+0x103/0x140
+[12215.880666]  ? process_one_work+0x580/0x580
+[12215.881203]  ? kthread_bind+0x10/0x10
+[12215.881737]  ret_from_fork+0x3a/0x50
+[12215.882322] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.882977] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.883617] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.884174] Call Trace:
+[12215.884756]  dump_stack+0x78/0xb3
+[12215.885335]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12215.885875]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12215.886463]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12215.887010]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12215.887635]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.888214]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.888786]  process_one_work+0x200/0x580
+[12215.889373]  ? process_one_work+0x17a/0x580
+[12215.889899]  worker_thread+0x4c/0x3f0
+[12215.890463]  kthread+0x103/0x140
+[12215.890971]  ? process_one_work+0x580/0x580
+[12215.891561]  ? kthread_bind+0x10/0x10
+[12215.892089]  ret_from_fork+0x3a/0x50
+[12215.892654] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.893306] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.893930] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.894507] Call Trace:
+[12215.895036]  dump_stack+0x78/0xb3
+[12215.895623]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12215.896241]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12215.896823]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12215.897417]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12215.897966]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.898607]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.899174]  process_one_work+0x200/0x580
+[12215.899733]  ? process_one_work+0x17a/0x580
+[12215.900302]  worker_thread+0x4c/0x3f0
+[12215.900886]  kthread+0x103/0x140
+[12215.901440]  ? process_one_work+0x580/0x580
+[12215.901951]  ? kthread_bind+0x10/0x10
+[12215.902509]  ret_from_fork+0x3a/0x50
+[12215.903123] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.903713] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.904325] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.904906] Call Trace:
+[12215.905492]  dump_stack+0x78/0xb3
+[12215.906024]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12215.906611]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12215.907201]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12215.907798]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12215.908424]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.908978]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.909701]  process_one_work+0x200/0x580
+[12215.910266]  ? process_one_work+0x17a/0x580
+[12215.910814]  worker_thread+0x4c/0x3f0
+[12215.911379]  kthread+0x103/0x140
+[12215.911887]  ? process_one_work+0x580/0x580
+[12215.912472]  ? kthread_bind+0x10/0x10
+[12215.912983]  ret_from_fork+0x3a/0x50
+[12215.913551] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.914203] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.914783] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.915402] Call Trace:
+[12215.916002]  dump_stack+0x78/0xb3
+[12215.916585]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12215.917153]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12215.917744]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12215.918338]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12215.918888]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.919492]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.920036]  process_one_work+0x200/0x580
+[12215.920625]  ? process_one_work+0x17a/0x580
+[12215.921175]  worker_thread+0x4c/0x3f0
+[12215.921741]  kthread+0x103/0x140
+[12215.922276]  ? process_one_work+0x580/0x580
+[12215.922807]  ? kthread_bind+0x10/0x10
+[12215.923364]  ret_from_fork+0x3a/0x50
+[12215.923926] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.924548] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.925167] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.925747] Call Trace:
+[12215.926308]  dump_stack+0x78/0xb3
+[12215.926888]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12215.927477]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12215.928016]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12215.928609]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12215.929188]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.929789]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.930395]  process_one_work+0x200/0x580
+[12215.930929]  ? process_one_work+0x17a/0x580
+[12215.931508]  worker_thread+0x4c/0x3f0
+[12215.932025]  kthread+0x103/0x140
+[12215.932581]  ? process_one_work+0x580/0x580
+[12215.933113]  ? kthread_bind+0x10/0x10
+[12215.933684]  ret_from_fork+0x3a/0x50
+[12215.934228] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.934879] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.935502] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.936033] Call Trace:
+[12215.936615]  dump_stack+0x78/0xb3
+[12215.937169]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12215.937741]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12215.938318]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12215.938899]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12215.939499]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.940117]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.940692]  process_one_work+0x200/0x580
+[12215.941253]  ? process_one_work+0x17a/0x580
+[12215.941798]  worker_thread+0x4c/0x3f0
+[12215.942388]  kthread+0x103/0x140
+[12215.942892]  ? process_one_work+0x580/0x580
+[12215.943452]  ? kthread_bind+0x10/0x10
+[12215.943960]  ret_from_fork+0x3a/0x50
+[12215.944557] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.945159] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.945764] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.946420] Call Trace:
+[12215.946999]  dump_stack+0x78/0xb3
+[12215.947582]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12215.948141]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12215.948710]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12215.949286]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12215.949859]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.950488]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.951036]  process_one_work+0x200/0x580
+[12215.951626]  ? process_one_work+0x17a/0x580
+[12215.952176]  worker_thread+0x4c/0x3f0
+[12215.952719]  kthread+0x103/0x140
+[12215.953254]  ? process_one_work+0x580/0x580
+[12215.953790]  ? kthread_bind+0x10/0x10
+[12215.954376]  ret_from_fork+0x3a/0x50
+[12215.954939] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.955589] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.956231] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.956782] Call Trace:
+[12215.957359]  dump_stack+0x78/0xb3
+[12215.957890]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12215.958506]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12215.959042]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12215.959643]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12215.960219]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.960794]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.961386]  process_one_work+0x200/0x580
+[12215.961919]  ? process_one_work+0x17a/0x580
+[12215.962519]  worker_thread+0x4c/0x3f0
+[12215.963032]  kthread+0x103/0x140
+[12215.963592]  ? process_one_work+0x580/0x580
+[12215.964122]  ? kthread_bind+0x10/0x10
+[12215.964659]  ret_from_fork+0x3a/0x50
+[12215.965237] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.965825] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.966490] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.967088] Call Trace:
+[12215.967649]  dump_stack+0x78/0xb3
+[12215.968258]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12215.968816]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12215.969402]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12215.969947]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12215.970576]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.971150]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.971725]  process_one_work+0x200/0x580
+[12215.972291]  ? process_one_work+0x17a/0x580
+[12215.972837]  worker_thread+0x4c/0x3f0
+[12215.973401]  kthread+0x103/0x140
+[12215.973908]  ? process_one_work+0x580/0x580
+[12215.974497]  ? kthread_bind+0x10/0x10
+[12215.975007]  ret_from_fork+0x3a/0x50
+[12215.975573] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.976239] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.976856] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.977435] Call Trace:
+[12215.977963]  dump_stack+0x78/0xb3
+[12215.978542]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12215.979105]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12215.979701]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12215.980278]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12215.980848]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.981451]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.981996]  process_one_work+0x200/0x580
+[12215.982577]  ? process_one_work+0x17a/0x580
+[12215.983122]  worker_thread+0x4c/0x3f0
+[12215.983696]  kthread+0x103/0x140
+[12215.984228]  ? process_one_work+0x580/0x580
+[12215.984762]  ? kthread_bind+0x10/0x10
+[12215.985302]  ret_from_fork+0x3a/0x50
+[12215.985872] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.986492] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.987243] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.987883] Call Trace:
+[12215.988488]  dump_stack+0x78/0xb3
+[12215.989019]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12215.989607]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12215.990168]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12215.990742]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12215.991341]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12215.991893]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12215.992514]  process_one_work+0x200/0x580
+[12215.993049]  ? process_one_work+0x17a/0x580
+[12215.993626]  worker_thread+0x4c/0x3f0
+[12215.994165]  kthread+0x103/0x140
+[12215.994700]  ? process_one_work+0x580/0x580
+[12215.995240]  ? kthread_bind+0x10/0x10
+[12215.995773]  ret_from_fork+0x3a/0x50
+[12215.996348] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12215.997010] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12215.997627] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12215.998181] Call Trace:
+[12215.998736]  dump_stack+0x78/0xb3
+[12215.999298]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12215.999859]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.000474]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.001020]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.001619]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.002194]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.002766]  process_one_work+0x200/0x580
+[12216.003348]  ? process_one_work+0x17a/0x580
+[12216.003873]  worker_thread+0x4c/0x3f0
+[12216.004464]  kthread+0x103/0x140
+[12216.004970]  ? process_one_work+0x580/0x580
+[12216.005530]  ? kthread_bind+0x10/0x10
+[12216.006037]  ret_from_fork+0x3a/0x50
+[12216.006645] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.007248] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.007865] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.008470] Call Trace:
+[12216.008999]  dump_stack+0x78/0xb3
+[12216.009578]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.010137]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.010707]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.011284]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.011856]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.012486]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.013033]  process_one_work+0x200/0x580
+[12216.013666]  ? process_one_work+0x17a/0x580
+[12216.014219]  worker_thread+0x4c/0x3f0
+[12216.014760]  kthread+0x103/0x140
+[12216.015300]  ? process_one_work+0x580/0x580
+[12216.015833]  ? kthread_bind+0x10/0x10
+[12216.016420]  ret_from_fork+0x3a/0x50
+[12216.016938] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.017575] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.018218] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.018784] Call Trace:
+[12216.019379]  dump_stack+0x78/0xb3
+[12216.019910]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.020528]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.021083]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.021664]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.022242]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.022816]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.023411]  process_one_work+0x200/0x580
+[12216.023945]  ? process_one_work+0x17a/0x580
+[12216.024545]  worker_thread+0x4c/0x3f0
+[12216.025060]  kthread+0x103/0x140
+[12216.025619]  ? process_one_work+0x580/0x580
+[12216.026152]  ? kthread_bind+0x10/0x10
+[12216.026689]  ret_from_fork+0x3a/0x50
+[12216.027265] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.027853] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.028460] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.028991] Call Trace:
+[12216.029568]  dump_stack+0x78/0xb3
+[12216.030118]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.030686]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.031254]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.031821]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.032449]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.033001]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.033598]  process_one_work+0x200/0x580
+[12216.034155]  ? process_one_work+0x17a/0x580
+[12216.034710]  worker_thread+0x4c/0x3f0
+[12216.035254]  kthread+0x103/0x140
+[12216.035783]  ? process_one_work+0x580/0x580
+[12216.036374]  ? kthread_bind+0x10/0x10
+[12216.036884]  ret_from_fork+0x3a/0x50
+[12216.037448] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.038099] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.038715] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.039275] Call Trace:
+[12216.039823]  dump_stack+0x78/0xb3
+[12216.040402]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.040945]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.041555]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.042121]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.042701]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.043280]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.043845]  process_one_work+0x200/0x580
+[12216.044427]  ? process_one_work+0x17a/0x580
+[12216.044950]  worker_thread+0x4c/0x3f0
+[12216.045541]  kthread+0x103/0x140
+[12216.046046]  ? process_one_work+0x580/0x580
+[12216.046606]  ? kthread_bind+0x10/0x10
+[12216.047134]  ret_from_fork+0x3a/0x50
+[12216.047717] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.048321] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.048936] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.049543] Call Trace:
+[12216.050140]  dump_stack+0x78/0xb3
+[12216.050699]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.051266]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.051826]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.052420]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.052971]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.053600]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.054169]  process_one_work+0x200/0x580
+[12216.054732]  ? process_one_work+0x17a/0x580
+[12216.055288]  worker_thread+0x4c/0x3f0
+[12216.055823]  kthread+0x103/0x140
+[12216.056379]  ? process_one_work+0x580/0x580
+[12216.056892]  ? kthread_bind+0x10/0x10
+[12216.057478]  ret_from_fork+0x3a/0x50
+[12216.057995] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.058632] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.059278] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.059842] Call Trace:
+[12216.060432]  dump_stack+0x78/0xb3
+[12216.061013]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.061646]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.062208]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.062779]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.063381]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.063931]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.064524]  process_one_work+0x200/0x580
+[12216.065056]  ? process_one_work+0x17a/0x580
+[12216.065659]  worker_thread+0x4c/0x3f0
+[12216.066198]  kthread+0x103/0x140
+[12216.066729]  ? process_one_work+0x580/0x580
+[12216.067268]  ? kthread_bind+0x10/0x10
+[12216.067797]  ret_from_fork+0x3a/0x50
+[12216.068395] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.068998] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.069656] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.070267] Call Trace:
+[12216.070831]  dump_stack+0x78/0xb3
+[12216.071425]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.071964]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.072552]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.073119]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.073728]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.074314]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.074877]  process_one_work+0x200/0x580
+[12216.075462]  ? process_one_work+0x17a/0x580
+[12216.075989]  worker_thread+0x4c/0x3f0
+[12216.076555]  kthread+0x103/0x140
+[12216.077063]  ? process_one_work+0x580/0x580
+[12216.077656]  ? kthread_bind+0x10/0x10
+[12216.078193]  ret_from_fork+0x3a/0x50
+[12216.078735] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.079405] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.080003] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.080584] Call Trace:
+[12216.081134]  dump_stack+0x78/0xb3
+[12216.081695]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.082275]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.082856]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.083451]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.084000]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.084604]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.085173]  process_one_work+0x200/0x580
+[12216.085733]  ? process_one_work+0x17a/0x580
+[12216.086296]  worker_thread+0x4c/0x3f0
+[12216.086912]  kthread+0x103/0x140
+[12216.087466]  ? process_one_work+0x580/0x580
+[12216.087976]  ? kthread_bind+0x10/0x10
+[12216.088533]  ret_from_fork+0x3a/0x50
+[12216.089091] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.089724] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.090364] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.090949] Call Trace:
+[12216.091597]  dump_stack+0x78/0xb3
+[12216.092149]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.092716]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.093294]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.093878]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.094478]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.095031]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.095630]  process_one_work+0x200/0x580
+[12216.096189]  ? process_one_work+0x17a/0x580
+[12216.096741]  worker_thread+0x4c/0x3f0
+[12216.097296]  kthread+0x103/0x140
+[12216.097841]  ? process_one_work+0x580/0x580
+[12216.098402]  ? kthread_bind+0x10/0x10
+[12216.098912]  ret_from_fork+0x3a/0x50
+[12216.099476] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.100098] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.100715] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.101339] Call Trace:
+[12216.101923]  dump_stack+0x78/0xb3
+[12216.102510]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.103123]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.103688]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.104263]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.104833]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.105460]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.106005]  process_one_work+0x200/0x580
+[12216.106591]  ? process_one_work+0x17a/0x580
+[12216.107135]  worker_thread+0x4c/0x3f0
+[12216.107679]  kthread+0x103/0x140
+[12216.108209]  ? process_one_work+0x580/0x580
+[12216.108744]  ? kthread_bind+0x10/0x10
+[12216.109288]  ret_from_fork+0x3a/0x50
+[12216.109885] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.110488] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.111126] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.111691] Call Trace:
+[12216.112302]  dump_stack+0x78/0xb3
+[12216.112849]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.113464]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.114004]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.114599]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.115173]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.115753]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.116349]  process_one_work+0x200/0x580
+[12216.116884]  ? process_one_work+0x17a/0x580
+[12216.117486]  worker_thread+0x4c/0x3f0
+[12216.118002]  kthread+0x103/0x140
+[12216.118558]  ? process_one_work+0x580/0x580
+[12216.119087]  ? kthread_bind+0x10/0x10
+[12216.119631]  ret_from_fork+0x3a/0x50
+[12216.120172] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.120823] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.121435] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.122017] Call Trace:
+[12216.122597]  dump_stack+0x78/0xb3
+[12216.123203]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.123813]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.124424]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.124970]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.125567]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.126139]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.126713]  process_one_work+0x200/0x580
+[12216.127275]  ? process_one_work+0x17a/0x580
+[12216.127819]  worker_thread+0x4c/0x3f0
+[12216.128410]  kthread+0x103/0x140
+[12216.128915]  ? process_one_work+0x580/0x580
+[12216.129474]  ? kthread_bind+0x10/0x10
+[12216.129981]  ret_from_fork+0x3a/0x50
+[12216.130583] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.131187] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.131808] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.132415] Call Trace:
+[12216.132944]  dump_stack+0x78/0xb3
+[12216.133523]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.134061]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.134651]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.135223]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.135799]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.136426]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.136973]  process_one_work+0x200/0x580
+[12216.137556]  ? process_one_work+0x17a/0x580
+[12216.138100]  worker_thread+0x4c/0x3f0
+[12216.138648]  kthread+0x103/0x140
+[12216.139179]  ? process_one_work+0x580/0x580
+[12216.139719]  ? kthread_bind+0x10/0x10
+[12216.140264]  ret_from_fork+0x3a/0x50
+[12216.140828] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.141510] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.142127] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.142689] Call Trace:
+[12216.143246]  dump_stack+0x78/0xb3
+[12216.143799]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.144420]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.144957]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.145554]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.146124]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.146705]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.147281]  process_one_work+0x200/0x580
+[12216.147834]  ? process_one_work+0x17a/0x580
+[12216.148432]  worker_thread+0x4c/0x3f0
+[12216.148946]  kthread+0x103/0x140
+[12216.149504]  ? process_one_work+0x580/0x580
+[12216.150014]  ? kthread_bind+0x10/0x10
+[12216.150571]  ret_from_fork+0x3a/0x50
+[12216.151140] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.151729] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.152415] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.152946] Call Trace:
+[12216.153524]  dump_stack+0x78/0xb3
+[12216.154055]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.154643]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.155208]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.155779]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.156408]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.156960]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.157560]  process_one_work+0x200/0x580
+[12216.158114]  ? process_one_work+0x17a/0x580
+[12216.158671]  worker_thread+0x4c/0x3f0
+[12216.159212]  kthread+0x103/0x140
+[12216.159744]  ? process_one_work+0x580/0x580
+[12216.160365]  ? kthread_bind+0x10/0x10
+[12216.160892]  ret_from_fork+0x3a/0x50
+[12216.161461] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.162125] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.162746] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.163346] Call Trace:
+[12216.163925]  dump_stack+0x78/0xb3
+[12216.164511]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.165054]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.165668]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.166241]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.166813]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.167411]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.167955]  process_one_work+0x200/0x580
+[12216.168536]  ? process_one_work+0x17a/0x580
+[12216.169059]  worker_thread+0x4c/0x3f0
+[12216.169648]  kthread+0x103/0x140
+[12216.170176]  ? process_one_work+0x580/0x580
+[12216.170713]  ? kthread_bind+0x10/0x10
+[12216.171249]  ret_from_fork+0x3a/0x50
+[12216.171803] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.172426] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.173046] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.173670] Call Trace:
+[12216.174279]  dump_stack+0x78/0xb3
+[12216.174828]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.175413]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.175953]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.176546]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.177118]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.177729]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.178308]  process_one_work+0x200/0x580
+[12216.178893]  ? process_one_work+0x17a/0x580
+[12216.179469]  worker_thread+0x4c/0x3f0
+[12216.179985]  kthread+0x103/0x140
+[12216.180540]  ? process_one_work+0x580/0x580
+[12216.181053]  ? kthread_bind+0x10/0x10
+[12216.181640]  ret_from_fork+0x3a/0x50
+[12216.182181] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.182831] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.183416] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.183986] Call Trace:
+[12216.184560]  dump_stack+0x78/0xb3
+[12216.185109]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.185683]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.186254]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.186846]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.187444]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.187993]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.188586]  process_one_work+0x200/0x580
+[12216.189139]  ? process_one_work+0x17a/0x580
+[12216.189692]  worker_thread+0x4c/0x3f0
+[12216.190238]  kthread+0x103/0x140
+[12216.190790]  ? process_one_work+0x580/0x580
+[12216.191350]  ? kthread_bind+0x10/0x10
+[12216.191858]  ret_from_fork+0x3a/0x50
+[12216.192460] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.193063] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.193680] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.194245] Call Trace:
+[12216.194816]  dump_stack+0x78/0xb3
+[12216.195395]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.195933]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.196521]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.197136]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.197717]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.198309]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.198897]  process_one_work+0x200/0x580
+[12216.199480]  ? process_one_work+0x17a/0x580
+[12216.200006]  worker_thread+0x4c/0x3f0
+[12216.200572]  kthread+0x103/0x140
+[12216.201098]  ? process_one_work+0x580/0x580
+[12216.201644]  ? kthread_bind+0x10/0x10
+[12216.202182]  ret_from_fork+0x3a/0x50
+[12216.202752] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.203404] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.204021] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.204603] Call Trace:
+[12216.205208]  dump_stack+0x78/0xb3
+[12216.205774]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.206425]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.206962]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.207563]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.208133]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.208714]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.209290]  process_one_work+0x200/0x580
+[12216.209842]  ? process_one_work+0x17a/0x580
+[12216.210442]  worker_thread+0x4c/0x3f0
+[12216.210957]  kthread+0x103/0x140
+[12216.211512]  ? process_one_work+0x580/0x580
+[12216.212024]  ? kthread_bind+0x10/0x10
+[12216.212585]  ret_from_fork+0x3a/0x50
+[12216.213154] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.213743] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.214374] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.215013] Call Trace:
+[12216.215594]  dump_stack+0x78/0xb3
+[12216.216146]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.216714]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.217285]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.217851]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.218479]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.219032]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.219632]  process_one_work+0x200/0x580
+[12216.220191]  ? process_one_work+0x17a/0x580
+[12216.220743]  worker_thread+0x4c/0x3f0
+[12216.221290]  kthread+0x103/0x140
+[12216.221818]  ? process_one_work+0x580/0x580
+[12216.222407]  ? kthread_bind+0x10/0x10
+[12216.222918]  ret_from_fork+0x3a/0x50
+[12216.223483] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.224136] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.224759] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.225359] Call Trace:
+[12216.225937]  dump_stack+0x78/0xb3
+[12216.226523]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.227066]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.227666]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.228238]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.228809]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.229406]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.229950]  process_one_work+0x200/0x580
+[12216.230530]  ? process_one_work+0x17a/0x580
+[12216.231053]  worker_thread+0x4c/0x3f0
+[12216.231630]  kthread+0x103/0x140
+[12216.232156]  ? process_one_work+0x580/0x580
+[12216.232694]  ? kthread_bind+0x10/0x10
+[12216.233228]  ret_from_fork+0x3a/0x50
+[12216.233846] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.234449] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.235021] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.235624] Call Trace:
+[12216.236175]  dump_stack+0x78/0xb3
+[12216.236733]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.237303]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.237860]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.238454]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.239005]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.239632]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.240204]  process_one_work+0x200/0x580
+[12216.240764]  ? process_one_work+0x17a/0x580
+[12216.241337]  worker_thread+0x4c/0x3f0
+[12216.241853]  kthread+0x103/0x140
+[12216.242407]  ? process_one_work+0x580/0x580
+[12216.242919]  ? kthread_bind+0x10/0x10
+[12216.243507]  ret_from_fork+0x3a/0x50
+[12216.244022] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.244693] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.245334] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.245865] Call Trace:
+[12216.246441]  dump_stack+0x78/0xb3
+[12216.246971]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.247563]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.248120]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.248725]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.249367]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.249916]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.250509]  process_one_work+0x200/0x580
+[12216.251041]  ? process_one_work+0x17a/0x580
+[12216.251621]  worker_thread+0x4c/0x3f0
+[12216.252159]  kthread+0x103/0x140
+[12216.252718]  ? process_one_work+0x580/0x580
+[12216.253257]  ? kthread_bind+0x10/0x10
+[12216.253787]  ret_from_fork+0x3a/0x50
+[12216.254391] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.254994] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.255610] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.256166] Call Trace:
+[12216.256746]  dump_stack+0x78/0xb3
+[12216.257309]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.257897]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.258485]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.259032]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.259633]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.260216]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.260814]  process_one_work+0x200/0x580
+[12216.261398]  ? process_one_work+0x17a/0x580
+[12216.261925]  worker_thread+0x4c/0x3f0
+[12216.262490]  kthread+0x103/0x140
+[12216.262997]  ? process_one_work+0x580/0x580
+[12216.263559]  ? kthread_bind+0x10/0x10
+[12216.264087]  ret_from_fork+0x3a/0x50
+[12216.264666] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.265318] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.265939] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.266527] Call Trace:
+[12216.267127]  dump_stack+0x78/0xb3
+[12216.267687]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.268265]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.268847]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.269443]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.269992]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.270662]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.271233]  process_one_work+0x200/0x580
+[12216.271789]  ? process_one_work+0x17a/0x580
+[12216.272392]  worker_thread+0x4c/0x3f0
+[12216.272906]  kthread+0x103/0x140
+[12216.273462]  ? process_one_work+0x580/0x580
+[12216.273972]  ? kthread_bind+0x10/0x10
+[12216.274528]  ret_from_fork+0x3a/0x50
+[12216.275254] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.275862] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.276487] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.277085] Call Trace:
+[12216.277646]  dump_stack+0x78/0xb3
+[12216.278201]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.278765]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.279378]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.279923]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.280523]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.281125]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.281738]  process_one_work+0x200/0x580
+[12216.282306]  ? process_one_work+0x17a/0x580
+[12216.282882]  worker_thread+0x4c/0x3f0
+[12216.283476]  kthread+0x103/0x140
+[12216.283983]  ? process_one_work+0x580/0x580
+[12216.284544]  ? kthread_bind+0x10/0x10
+[12216.285055]  ret_from_fork+0x3a/0x50
+[12216.285622] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.286247] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.286823] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.287429] Call Trace:
+[12216.287957]  dump_stack+0x78/0xb3
+[12216.288536]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.289096]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.289665]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.290238]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.290810]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.291433]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.291977]  process_one_work+0x200/0x580
+[12216.292558]  ? process_one_work+0x17a/0x580
+[12216.293100]  worker_thread+0x4c/0x3f0
+[12216.293647]  kthread+0x103/0x140
+[12216.294174]  ? process_one_work+0x580/0x580
+[12216.294712]  ? kthread_bind+0x10/0x10
+[12216.295254]  ret_from_fork+0x3a/0x50
+[12216.295850] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.296472] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.297084] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.297650] Call Trace:
+[12216.298204]  dump_stack+0x78/0xb3
+[12216.298761]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.299372]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.299912]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.300507]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.301125]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.301709]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.302287]  process_one_work+0x200/0x580
+[12216.302843]  ? process_one_work+0x17a/0x580
+[12216.303447]  worker_thread+0x4c/0x3f0
+[12216.303964]  kthread+0x103/0x140
+[12216.304520]  ? process_one_work+0x580/0x580
+[12216.305033]  ? kthread_bind+0x10/0x10
+[12216.305600]  ret_from_fork+0x3a/0x50
+[12216.306139] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.306790] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.307421] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.308003] Call Trace:
+[12216.308584]  dump_stack+0x78/0xb3
+[12216.309191]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.309768]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.310419]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.310966]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.311563]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.312135]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.312711]  process_one_work+0x200/0x580
+[12216.313275]  ? process_one_work+0x17a/0x580
+[12216.313820]  worker_thread+0x4c/0x3f0
+[12216.314411]  kthread+0x103/0x140
+[12216.314918]  ? process_one_work+0x580/0x580
+[12216.315478]  ? kthread_bind+0x10/0x10
+[12216.315986]  ret_from_fork+0x3a/0x50
+[12216.316590] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.317195] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.317857] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.318493] Call Trace:
+[12216.319090]  dump_stack+0x78/0xb3
+[12216.319657]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.320277]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.320835]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.321431]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.321983]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.322612]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.323184]  process_one_work+0x200/0x580
+[12216.323747]  ? process_one_work+0x17a/0x580
+[12216.324306]  worker_thread+0x4c/0x3f0
+[12216.324873]  kthread+0x103/0x140
+[12216.325430]  ? process_one_work+0x580/0x580
+[12216.325945]  ? kthread_bind+0x10/0x10
+[12216.326536]  ret_from_fork+0x3a/0x50
+[12216.327054] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.327678] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.328324] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.328890] Call Trace:
+[12216.329478]  dump_stack+0x78/0xb3
+[12216.330010]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.330641]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.331209]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.331808]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.332406]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.332957]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.333551]  process_one_work+0x200/0x580
+[12216.334104]  ? process_one_work+0x17a/0x580
+[12216.334661]  worker_thread+0x4c/0x3f0
+[12216.335206]  kthread+0x103/0x140
+[12216.335762]  ? process_one_work+0x580/0x580
+[12216.336306]  ? kthread_bind+0x10/0x10
+[12216.336865]  ret_from_fork+0x3a/0x50
+[12216.337471] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.338076] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.338648] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.339210] Call Trace:
+[12216.339789]  dump_stack+0x78/0xb3
+[12216.340369]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.340908]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.341497]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.342043]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.342651]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.343237]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.343832]  process_one_work+0x200/0x580
+[12216.344462]  ? process_one_work+0x17a/0x580
+[12216.344989]  worker_thread+0x4c/0x3f0
+[12216.345554]  kthread+0x103/0x140
+[12216.346062]  ? process_one_work+0x580/0x580
+[12216.346630]  ? kthread_bind+0x10/0x10
+[12216.347167]  ret_from_fork+0x3a/0x50
+[12216.347738] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.348400] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.349018] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.349601] Call Trace:
+[12216.350153]  dump_stack+0x78/0xb3
+[12216.350714]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.351296]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.351877]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.352472]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.353023]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.353625]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.354195]  process_one_work+0x200/0x580
+[12216.354756]  ? process_one_work+0x17a/0x580
+[12216.355336]  worker_thread+0x4c/0x3f0
+[12216.355869]  kthread+0x103/0x140
+[12216.356427]  ? process_one_work+0x580/0x580
+[12216.356938]  ? kthread_bind+0x10/0x10
+[12216.357495]  ret_from_fork+0x3a/0x50
+[12216.358046] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.358653] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.359306] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.359872] Call Trace:
+[12216.360450]  dump_stack+0x78/0xb3
+[12216.360981]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.361568]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.362129]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.362706]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.363296]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.363891]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.364487]  process_one_work+0x200/0x580
+[12216.365023]  ? process_one_work+0x17a/0x580
+[12216.365599]  worker_thread+0x4c/0x3f0
+[12216.366137]  kthread+0x103/0x140
+[12216.366676]  ? process_one_work+0x580/0x580
+[12216.367220]  ? kthread_bind+0x10/0x10
+[12216.367781]  ret_from_fork+0x3a/0x50
+[12216.368347] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.368996] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.369614] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.370168] Call Trace:
+[12216.370725]  dump_stack+0x78/0xb3
+[12216.371288]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.371851]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.372462]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.373010]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.373608]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.374183]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.374755]  process_one_work+0x200/0x580
+[12216.375337]  ? process_one_work+0x17a/0x580
+[12216.375862]  worker_thread+0x4c/0x3f0
+[12216.376451]  kthread+0x103/0x140
+[12216.376957]  ? process_one_work+0x580/0x580
+[12216.377517]  ? kthread_bind+0x10/0x10
+[12216.378025]  ret_from_fork+0x3a/0x50
+[12216.378646] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.379250] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.379864] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.380469] Call Trace:
+[12216.381046]  dump_stack+0x78/0xb3
+[12216.381629]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.382192]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.382759]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.383354]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.383907]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.384540]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.385106]  process_one_work+0x200/0x580
+[12216.385674]  ? process_one_work+0x17a/0x580
+[12216.386229]  worker_thread+0x4c/0x3f0
+[12216.386769]  kthread+0x103/0x140
+[12216.387310]  ? process_one_work+0x580/0x580
+[12216.387840]  ? kthread_bind+0x10/0x10
+[12216.388431]  ret_from_fork+0x3a/0x50
+[12216.388949] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.389601] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.390201] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.390806] Call Trace:
+[12216.391381]  dump_stack+0x78/0xb3
+[12216.391912]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.392535]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.393090]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.393669]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.394247]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.394820]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.395414]  process_one_work+0x200/0x580
+[12216.395947]  ? process_one_work+0x17a/0x580
+[12216.396570]  worker_thread+0x4c/0x3f0
+[12216.397103]  kthread+0x103/0x140
+[12216.397640]  ? process_one_work+0x580/0x580
+[12216.398174]  ? kthread_bind+0x10/0x10
+[12216.398709]  ret_from_fork+0x3a/0x50
+[12216.399295] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.399903] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.400545] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.401095] Call Trace:
+[12216.401657]  dump_stack+0x78/0xb3
+[12216.402213]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.402777]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.403366]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.403913]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.404566]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.405140]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.405717]  process_one_work+0x200/0x580
+[12216.406283]  ? process_one_work+0x17a/0x580
+[12216.406830]  worker_thread+0x4c/0x3f0
+[12216.407395]  kthread+0x103/0x140
+[12216.407903]  ? process_one_work+0x580/0x580
+[12216.408489]  ? kthread_bind+0x10/0x10
+[12216.409000]  ret_from_fork+0x3a/0x50
+[12216.409569] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.410248] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.410866] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.411459] Call Trace:
+[12216.412038]  dump_stack+0x78/0xb3
+[12216.412620]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.413248]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.413825]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.414422]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.414972]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.415571]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.416138]  process_one_work+0x200/0x580
+[12216.416701]  ? process_one_work+0x17a/0x580
+[12216.417261]  worker_thread+0x4c/0x3f0
+[12216.417863]  kthread+0x103/0x140
+[12216.418418]  ? process_one_work+0x580/0x580
+[12216.418929]  ? kthread_bind+0x10/0x10
+[12216.419486]  ret_from_fork+0x3a/0x50
+[12216.420043] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.420648] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.421303] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.421886] Call Trace:
+[12216.422475]  dump_stack+0x78/0xb3
+[12216.423007]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.423596]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.424158]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.424735]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.425344]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.425918]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.426516]  process_one_work+0x200/0x580
+[12216.427052]  ? process_one_work+0x17a/0x580
+[12216.427630]  worker_thread+0x4c/0x3f0
+[12216.428169]  kthread+0x103/0x140
+[12216.428705]  ? process_one_work+0x580/0x580
+[12216.429253]  ? kthread_bind+0x10/0x10
+[12216.429810]  ret_from_fork+0x3a/0x50
+[12216.430377] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.431042] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.431666] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.432278] Call Trace:
+[12216.432842]  dump_stack+0x78/0xb3
+[12216.433436]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.433981]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.434597]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.435167]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.435745]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.436329]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.436893]  process_one_work+0x200/0x580
+[12216.437475]  ? process_one_work+0x17a/0x580
+[12216.437999]  worker_thread+0x4c/0x3f0
+[12216.438588]  kthread+0x103/0x140
+[12216.439112]  ? process_one_work+0x580/0x580
+[12216.439655]  ? kthread_bind+0x10/0x10
+[12216.440188]  ret_from_fork+0x3a/0x50
+[12216.440776] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.441399] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.441993] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.442603] Call Trace:
+[12216.443155]  dump_stack+0x78/0xb3
+[12216.443716]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.444286]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.444845]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.445440]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.445993]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.446622]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.447194]  process_one_work+0x200/0x580
+[12216.447756]  ? process_one_work+0x17a/0x580
+[12216.448315]  worker_thread+0x4c/0x3f0
+[12216.448847]  kthread+0x103/0x140
+[12216.449404]  ? process_one_work+0x580/0x580
+[12216.449917]  ? kthread_bind+0x10/0x10
+[12216.450507]  ret_from_fork+0x3a/0x50
+[12216.451026] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.451682] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.452300] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.452849] Call Trace:
+[12216.453426]  dump_stack+0x78/0xb3
+[12216.453957]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.454591]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.455155]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.455776]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.456374]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.456925]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.457518]  process_one_work+0x200/0x580
+[12216.458051]  ? process_one_work+0x17a/0x580
+[12216.458625]  worker_thread+0x4c/0x3f0
+[12216.459164]  kthread+0x103/0x140
+[12216.459725]  ? process_one_work+0x580/0x580
+[12216.460265]  ? kthread_bind+0x10/0x10
+[12216.460794]  ret_from_fork+0x3a/0x50
+[12216.461404] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.462007] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.462662] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.463224] Call Trace:
+[12216.463797]  dump_stack+0x78/0xb3
+[12216.464377]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.464915]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.465503]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.466048]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.466650]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.467235]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.467829]  process_one_work+0x200/0x580
+[12216.468412]  ? process_one_work+0x17a/0x580
+[12216.468939]  worker_thread+0x4c/0x3f0
+[12216.469503]  kthread+0x103/0x140
+[12216.470010]  ? process_one_work+0x580/0x580
+[12216.470571]  ? kthread_bind+0x10/0x10
+[12216.471101]  ret_from_fork+0x3a/0x50
+[12216.471678] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.472330] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.472950] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.473536] Call Trace:
+[12216.474135]  dump_stack+0x78/0xb3
+[12216.474694]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.475272]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.475854]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.476448]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.476997]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.477595]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.478163]  process_one_work+0x200/0x580
+[12216.478724]  ? process_one_work+0x17a/0x580
+[12216.479284]  worker_thread+0x4c/0x3f0
+[12216.479840]  kthread+0x103/0x140
+[12216.480396]  ? process_one_work+0x580/0x580
+[12216.480906]  ? kthread_bind+0x10/0x10
+[12216.481462]  ret_from_fork+0x3a/0x50
+[12216.482021] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.482624] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.483229] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.483858] Call Trace:
+[12216.484448]  dump_stack+0x78/0xb3
+[12216.484978]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.485563]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.486121]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.486697]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.487526]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.488135]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.488736]  process_one_work+0x200/0x580
+[12216.489304]  ? process_one_work+0x17a/0x580
+[12216.489880]  worker_thread+0x4c/0x3f0
+[12216.490444]  kthread+0x103/0x140
+[12216.490951]  ? process_one_work+0x580/0x580
+[12216.491579]  ? kthread_bind+0x10/0x10
+[12216.492113]  ret_from_fork+0x3a/0x50
+[12216.492691] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.493362] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.493959] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.494537] Call Trace:
+[12216.495083]  dump_stack+0x78/0xb3
+[12216.495652]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.496226]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.496812]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.497407]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.497956]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.498555]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.499118]  process_one_work+0x200/0x580
+[12216.499682]  ? process_one_work+0x17a/0x580
+[12216.500239]  worker_thread+0x4c/0x3f0
+[12216.500799]  kthread+0x103/0x140
+[12216.501354]  ? process_one_work+0x580/0x580
+[12216.501866]  ? kthread_bind+0x10/0x10
+[12216.502423]  ret_from_fork+0x3a/0x50
+[12216.502985] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.503606] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.504231] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.504805] Call Trace:
+[12216.505385]  dump_stack+0x78/0xb3
+[12216.505916]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.506504]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.507044]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.507646]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.508292]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.508887]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.509483]  process_one_work+0x200/0x580
+[12216.510019]  ? process_one_work+0x17a/0x580
+[12216.510595]  worker_thread+0x4c/0x3f0
+[12216.511132]  kthread+0x103/0x140
+[12216.511671]  ? process_one_work+0x580/0x580
+[12216.512215]  ? kthread_bind+0x10/0x10
+[12216.512777]  ret_from_fork+0x3a/0x50
+[12216.513345] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.513995] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.514613] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.515167] Call Trace:
+[12216.515724]  dump_stack+0x78/0xb3
+[12216.516286]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.516851]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.517461]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.518008]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.518607]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.519180]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.519753]  process_one_work+0x200/0x580
+[12216.520334]  ? process_one_work+0x17a/0x580
+[12216.520858]  worker_thread+0x4c/0x3f0
+[12216.521451]  kthread+0x103/0x140
+[12216.521957]  ? process_one_work+0x580/0x580
+[12216.522516]  ? kthread_bind+0x10/0x10
+[12216.523025]  ret_from_fork+0x3a/0x50
+[12216.523637] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.524241] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.524814] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.525488] Call Trace:
+[12216.526017]  dump_stack+0x78/0xb3
+[12216.526646]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.527211]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.527775]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.528418]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.528969]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.529599]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.530169]  process_one_work+0x200/0x580
+[12216.530732]  ? process_one_work+0x17a/0x580
+[12216.531290]  worker_thread+0x4c/0x3f0
+[12216.531826]  kthread+0x103/0x140
+[12216.532382]  ? process_one_work+0x580/0x580
+[12216.532895]  ? kthread_bind+0x10/0x10
+[12216.533482]  ret_from_fork+0x3a/0x50
+[12216.534000] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.534668] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.535314] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.535879] Call Trace:
+[12216.536468]  dump_stack+0x78/0xb3
+[12216.537000]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.537620]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.538180]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.538753]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.539350]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.539900]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.540493]  process_one_work+0x200/0x580
+[12216.541025]  ? process_one_work+0x17a/0x580
+[12216.541625]  worker_thread+0x4c/0x3f0
+[12216.542161]  kthread+0x103/0x140
+[12216.542694]  ? process_one_work+0x580/0x580
+[12216.543232]  ? kthread_bind+0x10/0x10
+[12216.543763]  ret_from_fork+0x3a/0x50
+[12216.544372] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.544993] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.545630] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.546184] Call Trace:
+[12216.546740]  dump_stack+0x78/0xb3
+[12216.547302]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.547892]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.548479]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.549023]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.549650]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.550229]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.550799]  process_one_work+0x200/0x580
+[12216.551382]  ? process_one_work+0x17a/0x580
+[12216.551907]  worker_thread+0x4c/0x3f0
+[12216.552471]  kthread+0x103/0x140
+[12216.552978]  ? process_one_work+0x580/0x580
+[12216.553563]  ? kthread_bind+0x10/0x10
+[12216.554091]  ret_from_fork+0x3a/0x50
+[12216.554641] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.555291] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.555914] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.556491] Call Trace:
+[12216.557051]  dump_stack+0x78/0xb3
+[12216.557634]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.558205]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.558788]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.559382]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.559930]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.560527]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.561088]  process_one_work+0x200/0x580
+[12216.561652]  ? process_one_work+0x17a/0x580
+[12216.562204]  worker_thread+0x4c/0x3f0
+[12216.562769]  kthread+0x103/0x140
+[12216.563305]  ? process_one_work+0x580/0x580
+[12216.563864]  ? kthread_bind+0x10/0x10
+[12216.564418]  ret_from_fork+0x3a/0x50
+[12216.565025] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.565628] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.566277] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.566845] Call Trace:
+[12216.567424]  dump_stack+0x78/0xb3
+[12216.567954]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.568540]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.569097]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.569676]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.570263]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.570857]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.571453]  process_one_work+0x200/0x580
+[12216.571988]  ? process_one_work+0x17a/0x580
+[12216.572563]  worker_thread+0x4c/0x3f0
+[12216.573098]  kthread+0x103/0x140
+[12216.573637]  ? process_one_work+0x580/0x580
+[12216.574176]  ? kthread_bind+0x10/0x10
+[12216.574742]  ret_from_fork+0x3a/0x50
+[12216.575292] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.575972] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.576589] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.577142] Call Trace:
+[12216.577699]  dump_stack+0x78/0xb3
+[12216.578260]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.578825]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.579436]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.579982]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.580580]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.581152]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.581726]  process_one_work+0x200/0x580
+[12216.582290]  ? process_one_work+0x17a/0x580
+[12216.582834]  worker_thread+0x4c/0x3f0
+[12216.583426]  kthread+0x103/0x140
+[12216.583932]  ? process_one_work+0x580/0x580
+[12216.584490]  ? kthread_bind+0x10/0x10
+[12216.584998]  ret_from_fork+0x3a/0x50
+[12216.585604] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.586209] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.586830] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.587467] Call Trace:
+[12216.588047]  dump_stack+0x78/0xb3
+[12216.588628]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.589192]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.589758]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.590352]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.590904]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.591533]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.592099]  process_one_work+0x200/0x580
+[12216.592667]  ? process_one_work+0x17a/0x580
+[12216.593219]  worker_thread+0x4c/0x3f0
+[12216.593760]  kthread+0x103/0x140
+[12216.594300]  ? process_one_work+0x580/0x580
+[12216.594863]  ? kthread_bind+0x10/0x10
+[12216.595451]  ret_from_fork+0x3a/0x50
+[12216.595969] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.596621] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.597219] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.597772] Call Trace:
+[12216.598350]  dump_stack+0x78/0xb3
+[12216.598880]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.599501]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.600038]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.600641]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.601216]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.601834]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.602428]  process_one_work+0x200/0x580
+[12216.602961]  ? process_one_work+0x17a/0x580
+[12216.603562]  worker_thread+0x4c/0x3f0
+[12216.604095]  kthread+0x103/0x140
+[12216.604636]  ? process_one_work+0x580/0x580
+[12216.605170]  ? kthread_bind+0x10/0x10
+[12216.605706]  ret_from_fork+0x3a/0x50
+[12216.606294] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.606901] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.607550] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.608100] Call Trace:
+[12216.608662]  dump_stack+0x78/0xb3
+[12216.609219]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.609782]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.610370]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.610916]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.611544]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.612117]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.612695]  process_one_work+0x200/0x580
+[12216.613258]  ? process_one_work+0x17a/0x580
+[12216.613807]  worker_thread+0x4c/0x3f0
+[12216.614373]  kthread+0x103/0x140
+[12216.614880]  ? process_one_work+0x580/0x580
+[12216.615472]  ? kthread_bind+0x10/0x10
+[12216.615983]  ret_from_fork+0x3a/0x50
+[12216.616550] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.617217] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.617837] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.618430] Call Trace:
+[12216.619009]  dump_stack+0x78/0xb3
+[12216.619591]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.620218]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.620799]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.621394]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.621944]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.622543]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.623106]  process_one_work+0x200/0x580
+[12216.623671]  ? process_one_work+0x17a/0x580
+[12216.624227]  worker_thread+0x4c/0x3f0
+[12216.624786]  kthread+0x103/0x140
+[12216.625339]  ? process_one_work+0x580/0x580
+[12216.625850]  ? kthread_bind+0x10/0x10
+[12216.626407]  ret_from_fork+0x3a/0x50
+[12216.626967] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.627571] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.628217] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.628791] Call Trace:
+[12216.629368]  dump_stack+0x78/0xb3
+[12216.629899]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.630486]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.631025]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.631623]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.632203]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.632808]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.633404]  process_one_work+0x200/0x580
+[12216.633939]  ? process_one_work+0x17a/0x580
+[12216.634514]  worker_thread+0x4c/0x3f0
+[12216.635030]  kthread+0x103/0x140
+[12216.635590]  ? process_one_work+0x580/0x580
+[12216.636124]  ? kthread_bind+0x10/0x10
+[12216.636694]  ret_from_fork+0x3a/0x50
+[12216.637242] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.637922] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.638548] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.639151] Call Trace:
+[12216.639713]  dump_stack+0x78/0xb3
+[12216.640328]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.640906]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.641543]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.642108]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.642689]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.643268]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.643833]  process_one_work+0x200/0x580
+[12216.644414]  ? process_one_work+0x17a/0x580
+[12216.644938]  worker_thread+0x4c/0x3f0
+[12216.645529]  kthread+0x103/0x140
+[12216.646034]  ? process_one_work+0x580/0x580
+[12216.646598]  ? kthread_bind+0x10/0x10
+[12216.647126]  ret_from_fork+0x3a/0x50
+[12216.647716] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.648319] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.648890] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.649497] Call Trace:
+[12216.650025]  dump_stack+0x78/0xb3
+[12216.650607]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.651168]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.651735]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.652313]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.652881]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.653511]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.654058]  process_one_work+0x200/0x580
+[12216.654649]  ? process_one_work+0x17a/0x580
+[12216.655200]  worker_thread+0x4c/0x3f0
+[12216.655745]  kthread+0x103/0x140
+[12216.656283]  ? process_one_work+0x580/0x580
+[12216.656816]  ? kthread_bind+0x10/0x10
+[12216.657403]  ret_from_fork+0x3a/0x50
+[12216.657921] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.658572] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.659213] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.659768] Call Trace:
+[12216.660345]  dump_stack+0x78/0xb3
+[12216.660876]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.661496]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.662033]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.662638]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.663213]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.663789]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.664382]  process_one_work+0x200/0x580
+[12216.664916]  ? process_one_work+0x17a/0x580
+[12216.665515]  worker_thread+0x4c/0x3f0
+[12216.666030]  kthread+0x103/0x140
+[12216.666592]  ? process_one_work+0x580/0x580
+[12216.667123]  ? kthread_bind+0x10/0x10
+[12216.667663]  ret_from_fork+0x3a/0x50
+[12216.668258] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.668846] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.669511] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.670043] Call Trace:
+[12216.670625]  dump_stack+0x78/0xb3
+[12216.671180]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.671745]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.672334]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.672880]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.673508]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.674061]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.674660]  process_one_work+0x200/0x580
+[12216.675274]  ? process_one_work+0x17a/0x580
+[12216.675822]  worker_thread+0x4c/0x3f0
+[12216.676387]  kthread+0x103/0x140
+[12216.676896]  ? process_one_work+0x580/0x580
+[12216.677485]  ? kthread_bind+0x10/0x10
+[12216.677996]  ret_from_fork+0x3a/0x50
+[12216.678581] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.679230] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.679849] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.680427] Call Trace:
+[12216.681007]  dump_stack+0x78/0xb3
+[12216.681589]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.682158]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.682747]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.683343]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.683893]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.684492]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.685037]  process_one_work+0x200/0x580
+[12216.685627]  ? process_one_work+0x17a/0x580
+[12216.686177]  worker_thread+0x4c/0x3f0
+[12216.686745]  kthread+0x103/0x140
+[12216.687280]  ? process_one_work+0x580/0x580
+[12216.687811]  ? kthread_bind+0x10/0x10
+[12216.688366]  ret_from_fork+0x3a/0x50
+[12216.688931] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.689534] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.690127] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.690758] Call Trace:
+[12216.691354]  dump_stack+0x78/0xb3
+[12216.691885]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.692471]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.693010]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.693605]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.694183]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.694786]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.695382]  process_one_work+0x200/0x580
+[12216.695917]  ? process_one_work+0x17a/0x580
+[12216.696492]  worker_thread+0x4c/0x3f0
+[12216.697009]  kthread+0x103/0x140
+[12216.697565]  ? process_one_work+0x580/0x580
+[12216.698097]  ? kthread_bind+0x10/0x10
+[12216.698665]  ret_from_fork+0x3a/0x50
+[12216.699209] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.699880] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.700484] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.701016] Call Trace:
+[12216.701594]  dump_stack+0x78/0xb3
+[12216.702147]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.702720]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.703296]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.703884]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.704481]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.705032]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.705630]  process_one_work+0x200/0x580
+[12216.706187]  ? process_one_work+0x17a/0x580
+[12216.706738]  worker_thread+0x4c/0x3f0
+[12216.707291]  kthread+0x103/0x140
+[12216.707838]  ? process_one_work+0x580/0x580
+[12216.708398]  ? kthread_bind+0x10/0x10
+[12216.708906]  ret_from_fork+0x3a/0x50
+[12216.709517] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.710121] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.710737] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.711362] Call Trace:
+[12216.711940]  dump_stack+0x78/0xb3
+[12216.712521]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.713060]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.713654]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.714228]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.714805]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.715434]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.715983]  process_one_work+0x200/0x580
+[12216.716569]  ? process_one_work+0x17a/0x580
+[12216.717116]  worker_thread+0x4c/0x3f0
+[12216.717665]  kthread+0x103/0x140
+[12216.718198]  ? process_one_work+0x580/0x580
+[12216.718738]  ? kthread_bind+0x10/0x10
+[12216.719287]  ret_from_fork+0x3a/0x50
+[12216.719849] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.720502] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.721137] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.721697] Call Trace:
+[12216.722255]  dump_stack+0x78/0xb3
+[12216.722809]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.723426]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.723964]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.724560]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.725130]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.725711]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.726287]  process_one_work+0x200/0x580
+[12216.726841]  ? process_one_work+0x17a/0x580
+[12216.727443]  worker_thread+0x4c/0x3f0
+[12216.727958]  kthread+0x103/0x140
+[12216.728512]  ? process_one_work+0x580/0x580
+[12216.729023]  ? kthread_bind+0x10/0x10
+[12216.729582]  ret_from_fork+0x3a/0x50
+[12216.730139] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.730728] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.731415] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.731997] Call Trace:
+[12216.732578]  dump_stack+0x78/0xb3
+[12216.733183]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.733746]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.734318]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.734882]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.735508]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.736061]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.736660]  process_one_work+0x200/0x580
+[12216.737222]  ? process_one_work+0x17a/0x580
+[12216.737773]  worker_thread+0x4c/0x3f0
+[12216.738338]  kthread+0x103/0x140
+[12216.738846]  ? process_one_work+0x580/0x580
+[12216.739431]  ? kthread_bind+0x10/0x10
+[12216.739942]  ret_from_fork+0x3a/0x50
+[12216.740510] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.741162] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.741785] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.742383] Call Trace:
+[12216.742963]  dump_stack+0x78/0xb3
+[12216.743549]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.744112]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.744710]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.745288]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.745858]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.746457]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.747002]  process_one_work+0x200/0x580
+[12216.747584]  ? process_one_work+0x17a/0x580
+[12216.748184]  worker_thread+0x4c/0x3f0
+[12216.748749]  kthread+0x103/0x140
+[12216.749306]  ? process_one_work+0x580/0x580
+[12216.749892]  ? kthread_bind+0x10/0x10
+[12216.750451]  ret_from_fork+0x3a/0x50
+[12216.750978] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.751621] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.752249] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.752820] Call Trace:
+[12216.753398]  dump_stack+0x78/0xb3
+[12216.753929]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.754522]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.755062]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.755663]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.756248]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.756846]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.757442]  process_one_work+0x200/0x580
+[12216.757977]  ? process_one_work+0x17a/0x580
+[12216.758555]  worker_thread+0x4c/0x3f0
+[12216.759089]  kthread+0x103/0x140
+[12216.759630]  ? process_one_work+0x580/0x580
+[12216.760169]  ? kthread_bind+0x10/0x10
+[12216.760735]  ret_from_fork+0x3a/0x50
+[12216.761284] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.761964] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.762573] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.763191] Call Trace:
+[12216.763746]  dump_stack+0x78/0xb3
+[12216.764309]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.764903]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.765516]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.766062]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.766666]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.767245]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.767813]  process_one_work+0x200/0x580
+[12216.768394]  ? process_one_work+0x17a/0x580
+[12216.768918]  worker_thread+0x4c/0x3f0
+[12216.769511]  kthread+0x103/0x140
+[12216.770016]  ? process_one_work+0x580/0x580
+[12216.770576]  ? kthread_bind+0x10/0x10
+[12216.771103]  ret_from_fork+0x3a/0x50
+[12216.771688] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.772292] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.772894] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.773543] Call Trace:
+[12216.774090]  dump_stack+0x78/0xb3
+[12216.774655]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.775221]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.775785]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.776381]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.776934]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.777565]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.778134]  process_one_work+0x200/0x580
+[12216.778700]  ? process_one_work+0x17a/0x580
+[12216.779255]  worker_thread+0x4c/0x3f0
+[12216.779794]  kthread+0x103/0x140
+[12216.780351]  ? process_one_work+0x580/0x580
+[12216.780865]  ? kthread_bind+0x10/0x10
+[12216.781454]  ret_from_fork+0x3a/0x50
+[12216.781972] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.782609] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.783209] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.783775] Call Trace:
+[12216.784370]  dump_stack+0x78/0xb3
+[12216.784950]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.785571]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.786129]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.786705]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.787285]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.787854]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.788446]  process_one_work+0x200/0x580
+[12216.788978]  ? process_one_work+0x17a/0x580
+[12216.789579]  worker_thread+0x4c/0x3f0
+[12216.790113]  kthread+0x103/0x140
+[12216.790715]  ? process_one_work+0x580/0x580
+[12216.791315]  ? kthread_bind+0x10/0x10
+[12216.791840]  ret_from_fork+0x3a/0x50
+[12216.792436] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.793039] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.793693] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.794307] Call Trace:
+[12216.794869]  dump_stack+0x78/0xb3
+[12216.795461]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.796049]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.796638]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.797214]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.797813]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.798415]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.798962]  process_one_work+0x200/0x580
+[12216.799546]  ? process_one_work+0x17a/0x580
+[12216.800089]  worker_thread+0x4c/0x3f0
+[12216.800640]  kthread+0x103/0x140
+[12216.801174]  ? process_one_work+0x580/0x580
+[12216.801741]  ? kthread_bind+0x10/0x10
+[12216.802282]  ret_from_fork+0x3a/0x50
+[12216.802819] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.803489] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.804104] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.804668] Call Trace:
+[12216.805223]  dump_stack+0x78/0xb3
+[12216.805778]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.806395]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.806932]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.807526]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.808093]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.808676]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.809248]  process_one_work+0x200/0x580
+[12216.809803]  ? process_one_work+0x17a/0x580
+[12216.810403]  worker_thread+0x4c/0x3f0
+[12216.810917]  kthread+0x103/0x140
+[12216.811471]  ? process_one_work+0x580/0x580
+[12216.811981]  ? kthread_bind+0x10/0x10
+[12216.812542]  ret_from_fork+0x3a/0x50
+[12216.813099] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.813688] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.814374] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.814945] Call Trace:
+[12216.815520]  dump_stack+0x78/0xb3
+[12216.816051]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.816640]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.817205]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.817776]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.818406]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.818959]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.819554]  process_one_work+0x200/0x580
+[12216.820108]  ? process_one_work+0x17a/0x580
+[12216.820667]  worker_thread+0x4c/0x3f0
+[12216.821209]  kthread+0x103/0x140
+[12216.821785]  ? process_one_work+0x580/0x580
+[12216.822374]  ? kthread_bind+0x10/0x10
+[12216.822885]  ret_from_fork+0x3a/0x50
+[12216.823451] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.824103] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.824722] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.825283] Call Trace:
+[12216.825833]  dump_stack+0x78/0xb3
+[12216.826412]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.826955]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.827566]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.828132]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.828711]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.829292]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.829856]  process_one_work+0x200/0x580
+[12216.830436]  ? process_one_work+0x17a/0x580
+[12216.830960]  worker_thread+0x4c/0x3f0
+[12216.831587]  kthread+0x103/0x140
+[12216.832111]  ? process_one_work+0x580/0x580
+[12216.832652]  ? kthread_bind+0x10/0x10
+[12216.833184]  ret_from_fork+0x3a/0x50
+[12216.833764] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.834367] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.834984] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.835608] Call Trace:
+[12216.836213]  dump_stack+0x78/0xb3
+[12216.836766]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.837356]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.837896]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.838489]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.839040]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.839687]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.840263]  process_one_work+0x200/0x580
+[12216.840819]  ? process_one_work+0x17a/0x580
+[12216.841393]  worker_thread+0x4c/0x3f0
+[12216.841910]  kthread+0x103/0x140
+[12216.842466]  ? process_one_work+0x580/0x580
+[12216.842979]  ? kthread_bind+0x10/0x10
+[12216.843566]  ret_from_fork+0x3a/0x50
+[12216.844102] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.844776] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.845404] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.845986] Call Trace:
+[12216.846569]  dump_stack+0x78/0xb3
+[12216.847120]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.847694]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.848266]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.848858]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.849500]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.850050]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.850646]  process_one_work+0x200/0x580
+[12216.851204]  ? process_one_work+0x17a/0x580
+[12216.851753]  worker_thread+0x4c/0x3f0
+[12216.852372]  kthread+0x103/0x140
+[12216.852918]  ? process_one_work+0x580/0x580
+[12216.853477]  ? kthread_bind+0x10/0x10
+[12216.853986]  ret_from_fork+0x3a/0x50
+[12216.854566] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.855190] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.855765] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.856369] Call Trace:
+[12216.856898]  dump_stack+0x78/0xb3
+[12216.857479]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.858018]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.858648]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.859220]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.859795]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.860424]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.860971]  process_one_work+0x200/0x580
+[12216.861557]  ? process_one_work+0x17a/0x580
+[12216.862101]  worker_thread+0x4c/0x3f0
+[12216.862650]  kthread+0x103/0x140
+[12216.863181]  ? process_one_work+0x580/0x580
+[12216.863722]  ? kthread_bind+0x10/0x10
+[12216.864269]  ret_from_fork+0x3a/0x50
+[12216.864829] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.865498] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.866124] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.866686] Call Trace:
+[12216.867243]  dump_stack+0x78/0xb3
+[12216.867797]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.868418]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.868956]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.869553]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.870122]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.870704]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.871279]  process_one_work+0x200/0x580
+[12216.871832]  ? process_one_work+0x17a/0x580
+[12216.872434]  worker_thread+0x4c/0x3f0
+[12216.872948]  kthread+0x103/0x140
+[12216.873503]  ? process_one_work+0x580/0x580
+[12216.874013]  ? kthread_bind+0x10/0x10
+[12216.874570]  ret_from_fork+0x3a/0x50
+[12216.875137] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.875726] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.876411] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.876942] Call Trace:
+[12216.877519]  dump_stack+0x78/0xb3
+[12216.878050]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.878639]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.879203]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.879774]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.880403]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.880955]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.881551]  process_one_work+0x200/0x580
+[12216.882105]  ? process_one_work+0x17a/0x580
+[12216.882664]  worker_thread+0x4c/0x3f0
+[12216.883207]  kthread+0x103/0x140
+[12216.883740]  ? process_one_work+0x580/0x580
+[12216.884291]  ? kthread_bind+0x10/0x10
+[12216.884844]  ret_from_fork+0x3a/0x50
+[12216.885411] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.886064] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.886689] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.887303] Call Trace:
+[12216.887848]  dump_stack+0x78/0xb3
+[12216.888427]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.888970]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.889584]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.890153]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.890731]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.891314]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.891876]  process_one_work+0x200/0x580
+[12216.892457]  ? process_one_work+0x17a/0x580
+[12216.892982]  worker_thread+0x4c/0x3f0
+[12216.893572]  kthread+0x103/0x140
+[12216.894096]  ? process_one_work+0x580/0x580
+[12216.894639]  ? kthread_bind+0x10/0x10
+[12216.895223]  ret_from_fork+0x3a/0x50
+[12216.895804] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.896409] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.897000] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.897645] Call Trace:
+[12216.898253]  dump_stack+0x78/0xb3
+[12216.898819]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.899421]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.899961]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.900556]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.901129]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.901740]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.902336]  process_one_work+0x200/0x580
+[12216.902872]  ? process_one_work+0x17a/0x580
+[12216.903448]  worker_thread+0x4c/0x3f0
+[12216.903965]  kthread+0x103/0x140
+[12216.904522]  ? process_one_work+0x580/0x580
+[12216.905036]  ? kthread_bind+0x10/0x10
+[12216.905626]  ret_from_fork+0x3a/0x50
+[12216.906169] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.906820] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.907408] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.907989] Call Trace:
+[12216.908591]  dump_stack+0x78/0xb3
+[12216.909144]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.909758]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.910406]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.910993]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.911591]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.912165]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.912739]  process_one_work+0x200/0x580
+[12216.913305]  ? process_one_work+0x17a/0x580
+[12216.913880]  worker_thread+0x4c/0x3f0
+[12216.914473]  kthread+0x103/0x140
+[12216.914980]  ? process_one_work+0x580/0x580
+[12216.915539]  ? kthread_bind+0x10/0x10
+[12216.916048]  ret_from_fork+0x3a/0x50
+[12216.916652] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.917274] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.917870] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.918476] Call Trace:
+[12216.919006]  dump_stack+0x78/0xb3
+[12216.919586]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.920145]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.920715]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.921293]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.921863]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.922491]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.923039]  process_one_work+0x200/0x580
+[12216.923630]  ? process_one_work+0x17a/0x580
+[12216.924180]  worker_thread+0x4c/0x3f0
+[12216.924723]  kthread+0x103/0x140
+[12216.925261]  ? process_one_work+0x580/0x580
+[12216.925795]  ? kthread_bind+0x10/0x10
+[12216.926383]  ret_from_fork+0x3a/0x50
+[12216.926900] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.927552] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.928189] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.928745] Call Trace:
+[12216.929305]  dump_stack+0x78/0xb3
+[12216.929886]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.930506]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.931043]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.931643]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.932268]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.932838]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.933431]  process_one_work+0x200/0x580
+[12216.933963]  ? process_one_work+0x17a/0x580
+[12216.934562]  worker_thread+0x4c/0x3f0
+[12216.935092]  kthread+0x103/0x140
+[12216.935629]  ? process_one_work+0x580/0x580
+[12216.936161]  ? kthread_bind+0x10/0x10
+[12216.936696]  ret_from_fork+0x3a/0x50
+[12216.937271] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.937858] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.938520] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.939120] Call Trace:
+[12216.939681]  dump_stack+0x78/0xb3
+[12216.940291]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.940845]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.941430]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.941974]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.942597]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.943171]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.943744]  process_one_work+0x200/0x580
+[12216.944308]  ? process_one_work+0x17a/0x580
+[12216.944849]  worker_thread+0x4c/0x3f0
+[12216.945411]  kthread+0x103/0x140
+[12216.945917]  ? process_one_work+0x580/0x580
+[12216.946505]  ? kthread_bind+0x10/0x10
+[12216.947014]  ret_from_fork+0x3a/0x50
+[12216.947581] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.948232] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.948854] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.949445] Call Trace:
+[12216.950023]  dump_stack+0x78/0xb3
+[12216.950607]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.951174]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.951762]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.952356]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.952905]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.953503]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.954046]  process_one_work+0x200/0x580
+[12216.954630]  ? process_one_work+0x17a/0x580
+[12216.955179]  worker_thread+0x4c/0x3f0
+[12216.955745]  kthread+0x103/0x140
+[12216.956335]  ? process_one_work+0x580/0x580
+[12216.956844]  ? kthread_bind+0x10/0x10
+[12216.957400]  ret_from_fork+0x3a/0x50
+[12216.957952] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.958555] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.959150] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.959736] Call Trace:
+[12216.960296]  dump_stack+0x78/0xb3
+[12216.960846]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.961433]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.961972]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.962565]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.963139]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.963748]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.964343]  process_one_work+0x200/0x580
+[12216.964878]  ? process_one_work+0x17a/0x580
+[12216.965453]  worker_thread+0x4c/0x3f0
+[12216.965969]  kthread+0x103/0x140
+[12216.966525]  ? process_one_work+0x580/0x580
+[12216.967038]  ? kthread_bind+0x10/0x10
+[12216.967630]  ret_from_fork+0x3a/0x50
+[12216.968171] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.968872] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.969480] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.970012] Call Trace:
+[12216.970592]  dump_stack+0x78/0xb3
+[12216.971145]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.971717]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.972293]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.972882]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.973480]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.974031]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.974626]  process_one_work+0x200/0x580
+[12216.975183]  ? process_one_work+0x17a/0x580
+[12216.975734]  worker_thread+0x4c/0x3f0
+[12216.976286]  kthread+0x103/0x140
+[12216.976833]  ? process_one_work+0x580/0x580
+[12216.977392]  ? kthread_bind+0x10/0x10
+[12216.977900]  ret_from_fork+0x3a/0x50
+[12216.978502] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.979106] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.979725] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.980294] Call Trace:
+[12216.980860]  dump_stack+0x78/0xb3
+[12216.981439]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12216.981978]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12216.982566]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12216.983132]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12216.983715]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.984307]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.984894]  process_one_work+0x200/0x580
+[12216.985479]  ? process_one_work+0x17a/0x580
+[12216.986005]  worker_thread+0x4c/0x3f0
+[12216.986570]  kthread+0x103/0x140
+[12216.987254]  ? process_one_work+0x580/0x580
+[12216.987858]  ? kthread_bind+0x10/0x10
+[12216.988446]  ret_from_fork+0x3a/0x50
+[12216.988967] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.989665] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12216.990287] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12216.990875] Call Trace:
+[12216.991465]  dump_stack+0x78/0xb3
+[12216.991997]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12216.992618]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12216.993180]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12216.993754]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12216.994357]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12216.994908]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12216.995502]  process_one_work+0x200/0x580
+[12216.996035]  ? process_one_work+0x17a/0x580
+[12216.996643]  worker_thread+0x4c/0x3f0
+[12216.997181]  kthread+0x103/0x140
+[12216.997713]  ? process_one_work+0x580/0x580
+[12216.998253]  ? kthread_bind+0x10/0x10
+[12216.998786]  ret_from_fork+0x3a/0x50
+[12216.999387] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12216.999990] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.000650] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.001262] Call Trace:
+[12217.001826]  dump_stack+0x78/0xb3
+[12217.002421]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.002961]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.003549]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.004117]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.004726]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.005313]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.005958]  process_one_work+0x200/0x580
+[12217.006548]  ? process_one_work+0x17a/0x580
+[12217.007093]  worker_thread+0x4c/0x3f0
+[12217.007643]  kthread+0x103/0x140
+[12217.008177]  ? process_one_work+0x580/0x580
+[12217.008742]  ? kthread_bind+0x10/0x10
+[12217.009284]  ret_from_fork+0x3a/0x50
+[12217.009821] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.010474] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.011048] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.011634] Call Trace:
+[12217.012188]  dump_stack+0x78/0xb3
+[12217.012746]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.013347]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.013934]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.014530]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.015098]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.015682]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.016255]  process_one_work+0x200/0x580
+[12217.016810]  ? process_one_work+0x17a/0x580
+[12217.017412]  worker_thread+0x4c/0x3f0
+[12217.017927]  kthread+0x103/0x140
+[12217.018480]  ? process_one_work+0x580/0x580
+[12217.018992]  ? kthread_bind+0x10/0x10
+[12217.019549]  ret_from_fork+0x3a/0x50
+[12217.020101] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.020734] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.021389] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.021921] Call Trace:
+[12217.022498]  dump_stack+0x78/0xb3
+[12217.023029]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.023617]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.024181]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.024754]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.025381]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.025935]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.026531]  process_one_work+0x200/0x580
+[12217.027084]  ? process_one_work+0x17a/0x580
+[12217.027644]  worker_thread+0x4c/0x3f0
+[12217.028184]  kthread+0x103/0x140
+[12217.028717]  ? process_one_work+0x580/0x580
+[12217.029265]  ? kthread_bind+0x10/0x10
+[12217.029846]  ret_from_fork+0x3a/0x50
+[12217.030442] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.031093] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.031671] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.032229] Call Trace:
+[12217.032782]  dump_stack+0x78/0xb3
+[12217.033361]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.033905]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.034515]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.035062]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.035665]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.036244]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.036812]  process_one_work+0x200/0x580
+[12217.037393]  ? process_one_work+0x17a/0x580
+[12217.037918]  worker_thread+0x4c/0x3f0
+[12217.038510]  kthread+0x103/0x140
+[12217.039016]  ? process_one_work+0x580/0x580
+[12217.039579]  ? kthread_bind+0x10/0x10
+[12217.040106]  ret_from_fork+0x3a/0x50
+[12217.040688] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.041314] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.041907] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.042559] Call Trace:
+[12217.043107]  dump_stack+0x78/0xb3
+[12217.043671]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.044236]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.044800]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.045395]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.045947]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.046579]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.047148]  process_one_work+0x200/0x580
+[12217.047712]  ? process_one_work+0x17a/0x580
+[12217.048268]  worker_thread+0x4c/0x3f0
+[12217.048806]  kthread+0x103/0x140
+[12217.049362]  ? process_one_work+0x580/0x580
+[12217.049875]  ? kthread_bind+0x10/0x10
+[12217.050465]  ret_from_fork+0x3a/0x50
+[12217.050982] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.051653] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.052279] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.052843] Call Trace:
+[12217.053435]  dump_stack+0x78/0xb3
+[12217.054016]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.054653]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.055216]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.055788]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.056387]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.056938]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.057533]  process_one_work+0x200/0x580
+[12217.058083]  ? process_one_work+0x17a/0x580
+[12217.058669]  worker_thread+0x4c/0x3f0
+[12217.059209]  kthread+0x103/0x140
+[12217.059739]  ? process_one_work+0x580/0x580
+[12217.060280]  ? kthread_bind+0x10/0x10
+[12217.060808]  ret_from_fork+0x3a/0x50
+[12217.061414] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.062061] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.062660] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.063217] Call Trace:
+[12217.063772]  dump_stack+0x78/0xb3
+[12217.064351]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.064890]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.065479]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.066025]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.066653]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.067234]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.067805]  process_one_work+0x200/0x580
+[12217.068388]  ? process_one_work+0x17a/0x580
+[12217.068915]  worker_thread+0x4c/0x3f0
+[12217.069479]  kthread+0x103/0x140
+[12217.069987]  ? process_one_work+0x580/0x580
+[12217.070578]  ? kthread_bind+0x10/0x10
+[12217.071108]  ret_from_fork+0x3a/0x50
+[12217.071657] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.072308] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.072926] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.073505] Call Trace:
+[12217.074034]  dump_stack+0x78/0xb3
+[12217.074624]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.075195]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.075781]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.076376]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.076925]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.077524]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.078087]  process_one_work+0x200/0x580
+[12217.078653]  ? process_one_work+0x17a/0x580
+[12217.079260]  worker_thread+0x4c/0x3f0
+[12217.079817]  kthread+0x103/0x140
+[12217.080370]  ? process_one_work+0x580/0x580
+[12217.080881]  ? kthread_bind+0x10/0x10
+[12217.081438]  ret_from_fork+0x3a/0x50
+[12217.081992] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.082596] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.083244] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.083815] Call Trace:
+[12217.084394]  dump_stack+0x78/0xb3
+[12217.084925]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.085512]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.086052]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.086649]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.087233]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.087833]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.088429]  process_one_work+0x200/0x580
+[12217.088964]  ? process_one_work+0x17a/0x580
+[12217.089538]  worker_thread+0x4c/0x3f0
+[12217.090055]  kthread+0x103/0x140
+[12217.090614]  ? process_one_work+0x580/0x580
+[12217.091292]  ? kthread_bind+0x10/0x10
+[12217.091838]  ret_from_fork+0x3a/0x50
+[12217.092432] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.093097] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.093702] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.094329] Call Trace:
+[12217.094875]  dump_stack+0x78/0xb3
+[12217.095454]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.095997]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.096611]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.097182]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.097758]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.098357]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.098902]  process_one_work+0x200/0x580
+[12217.099482]  ? process_one_work+0x17a/0x580
+[12217.100006]  worker_thread+0x4c/0x3f0
+[12217.100596]  kthread+0x103/0x140
+[12217.101121]  ? process_one_work+0x580/0x580
+[12217.101663]  ? kthread_bind+0x10/0x10
+[12217.102196]  ret_from_fork+0x3a/0x50
+[12217.102774] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.103378] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.103996] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.104621] Call Trace:
+[12217.105226]  dump_stack+0x78/0xb3
+[12217.105779]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.106366]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.106906]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.107501]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.108052]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.108683]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.109259]  process_one_work+0x200/0x580
+[12217.109816]  ? process_one_work+0x17a/0x580
+[12217.110390]  worker_thread+0x4c/0x3f0
+[12217.110907]  kthread+0x103/0x140
+[12217.111463]  ? process_one_work+0x580/0x580
+[12217.111977]  ? kthread_bind+0x10/0x10
+[12217.112560]  ret_from_fork+0x3a/0x50
+[12217.113097] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.113749] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.114344] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.114876] Call Trace:
+[12217.115454]  dump_stack+0x78/0xb3
+[12217.116033]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.116635]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.117202]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.117796]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.118394]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.118945]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.119539]  process_one_work+0x200/0x580
+[12217.120089]  ? process_one_work+0x17a/0x580
+[12217.120647]  worker_thread+0x4c/0x3f0
+[12217.121189]  kthread+0x103/0x140
+[12217.121747]  ? process_one_work+0x580/0x580
+[12217.122289]  ? kthread_bind+0x10/0x10
+[12217.122818]  ret_from_fork+0x3a/0x50
+[12217.123421] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.124024] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.124681] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.125246] Call Trace:
+[12217.125817]  dump_stack+0x78/0xb3
+[12217.126397]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.126936]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.127523]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.128087]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.128672]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.129260]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.129851]  process_one_work+0x200/0x580
+[12217.130436]  ? process_one_work+0x17a/0x580
+[12217.130963]  worker_thread+0x4c/0x3f0
+[12217.131528]  kthread+0x103/0x140
+[12217.132036]  ? process_one_work+0x580/0x580
+[12217.132605]  ? kthread_bind+0x10/0x10
+[12217.133139]  ret_from_fork+0x3a/0x50
+[12217.133714] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.134367] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.134985] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.135565] Call Trace:
+[12217.136113]  dump_stack+0x78/0xb3
+[12217.136676]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.137254]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.137838]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.138434]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.138983]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.139582]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.140149]  process_one_work+0x200/0x580
+[12217.140712]  ? process_one_work+0x17a/0x580
+[12217.141272]  worker_thread+0x4c/0x3f0
+[12217.141829]  kthread+0x103/0x140
+[12217.142385]  ? process_one_work+0x580/0x580
+[12217.142896]  ? kthread_bind+0x10/0x10
+[12217.143452]  ret_from_fork+0x3a/0x50
+[12217.143984] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.144607] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.145258] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.145828] Call Trace:
+[12217.146405]  dump_stack+0x78/0xb3
+[12217.146936]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.147522]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.148061]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.148660]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.149245]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.149843]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.150439]  process_one_work+0x200/0x580
+[12217.150974]  ? process_one_work+0x17a/0x580
+[12217.151549]  worker_thread+0x4c/0x3f0
+[12217.152083]  kthread+0x103/0x140
+[12217.152670]  ? process_one_work+0x580/0x580
+[12217.153213]  ? kthread_bind+0x10/0x10
+[12217.153773]  ret_from_fork+0x3a/0x50
+[12217.154340] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.154989] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.155613] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.156221] Call Trace:
+[12217.156785]  dump_stack+0x78/0xb3
+[12217.157382]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.157976]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.158608]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.159178]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.159755]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.160353]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.160898]  process_one_work+0x200/0x580
+[12217.161480]  ? process_one_work+0x17a/0x580
+[12217.162004]  worker_thread+0x4c/0x3f0
+[12217.162597]  kthread+0x103/0x140
+[12217.163123]  ? process_one_work+0x580/0x580
+[12217.163665]  ? kthread_bind+0x10/0x10
+[12217.164198]  ret_from_fork+0x3a/0x50
+[12217.164756] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.165380] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.165951] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.166558] Call Trace:
+[12217.167106]  dump_stack+0x78/0xb3
+[12217.167670]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.168235]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.168798]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.169394]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.169945]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.170572]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.171141]  process_one_work+0x200/0x580
+[12217.171707]  ? process_one_work+0x17a/0x580
+[12217.172263]  worker_thread+0x4c/0x3f0
+[12217.172801]  kthread+0x103/0x140
+[12217.173358]  ? process_one_work+0x580/0x580
+[12217.173872]  ? kthread_bind+0x10/0x10
+[12217.174457]  ret_from_fork+0x3a/0x50
+[12217.174974] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.175626] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.176245] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.176798] Call Trace:
+[12217.177375]  dump_stack+0x78/0xb3
+[12217.177907]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.178526]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.179081]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.179663]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.180241]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.180814]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.181409]  process_one_work+0x200/0x580
+[12217.181943]  ? process_one_work+0x17a/0x580
+[12217.182546]  worker_thread+0x4c/0x3f0
+[12217.183062]  kthread+0x103/0x140
+[12217.183623]  ? process_one_work+0x580/0x580
+[12217.184157]  ? kthread_bind+0x10/0x10
+[12217.184693]  ret_from_fork+0x3a/0x50
+[12217.185270] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.185860] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.186524] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.187126] Call Trace:
+[12217.187690]  dump_stack+0x78/0xb3
+[12217.188303]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.188876]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.189515]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.190061]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.190692]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.191275]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.191844]  process_one_work+0x200/0x580
+[12217.192428]  ? process_one_work+0x17a/0x580
+[12217.192955]  worker_thread+0x4c/0x3f0
+[12217.193521]  kthread+0x103/0x140
+[12217.194030]  ? process_one_work+0x580/0x580
+[12217.194619]  ? kthread_bind+0x10/0x10
+[12217.195153]  ret_from_fork+0x3a/0x50
+[12217.195699] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.196352] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.196931] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.197562] Call Trace:
+[12217.198147]  dump_stack+0x78/0xb3
+[12217.198707]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.199288]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.199869]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.200464]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.201015]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.201615]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.202184]  process_one_work+0x200/0x580
+[12217.202745]  ? process_one_work+0x17a/0x580
+[12217.203309]  worker_thread+0x4c/0x3f0
+[12217.203894]  kthread+0x103/0x140
+[12217.204451]  ? process_one_work+0x580/0x580
+[12217.204963]  ? kthread_bind+0x10/0x10
+[12217.205520]  ret_from_fork+0x3a/0x50
+[12217.206102] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.206735] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.207397] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.207979] Call Trace:
+[12217.208561]  dump_stack+0x78/0xb3
+[12217.209112]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.209682]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.210255]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.210844]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.211445]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.211998]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.212596]  process_one_work+0x200/0x580
+[12217.213153]  ? process_one_work+0x17a/0x580
+[12217.213709]  worker_thread+0x4c/0x3f0
+[12217.214260]  kthread+0x103/0x140
+[12217.214811]  ? process_one_work+0x580/0x580
+[12217.215373]  ? kthread_bind+0x10/0x10
+[12217.215884]  ret_from_fork+0x3a/0x50
+[12217.216453] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.217078] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.217654] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.218216] Call Trace:
+[12217.218795]  dump_stack+0x78/0xb3
+[12217.219375]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.219918]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.220509]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.221057]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.221657]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.222240]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.222833]  process_one_work+0x200/0x580
+[12217.223414]  ? process_one_work+0x17a/0x580
+[12217.223938]  worker_thread+0x4c/0x3f0
+[12217.224500]  kthread+0x103/0x140
+[12217.225006]  ? process_one_work+0x580/0x580
+[12217.225565]  ? kthread_bind+0x10/0x10
+[12217.226144]  ret_from_fork+0x3a/0x50
+[12217.226930] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.227537] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.228148] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.228707] Call Trace:
+[12217.229266]  dump_stack+0x78/0xb3
+[12217.229818]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.230429]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.230969]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.231563]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.232135]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.232718]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.233297]  process_one_work+0x200/0x580
+[12217.233851]  ? process_one_work+0x17a/0x580
+[12217.234452]  worker_thread+0x4c/0x3f0
+[12217.234968]  kthread+0x103/0x140
+[12217.235523]  ? process_one_work+0x580/0x580
+[12217.236036]  ? kthread_bind+0x10/0x10
+[12217.236602]  ret_from_fork+0x3a/0x50
+[12217.237141] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.237794] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.238422] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.239004] Call Trace:
+[12217.239584]  dump_stack+0x78/0xb3
+[12217.240189]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.240757]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.241336]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.241927]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.242525]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.243093]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.243671]  process_one_work+0x200/0x580
+[12217.244231]  ? process_one_work+0x17a/0x580
+[12217.244778]  worker_thread+0x4c/0x3f0
+[12217.245349]  kthread+0x103/0x140
+[12217.245873]  ? process_one_work+0x580/0x580
+[12217.246432]  ? kthread_bind+0x10/0x10
+[12217.246940]  ret_from_fork+0x3a/0x50
+[12217.247715] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.248316] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.248912] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.249519] Call Trace:
+[12217.250104]  dump_stack+0x78/0xb3
+[12217.250667]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.251233]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.251797]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.252391]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.252943]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.253572]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.254140]  process_one_work+0x200/0x580
+[12217.254705]  ? process_one_work+0x17a/0x580
+[12217.255261]  worker_thread+0x4c/0x3f0
+[12217.255799]  kthread+0x103/0x140
+[12217.256355]  ? process_one_work+0x580/0x580
+[12217.256869]  ? kthread_bind+0x10/0x10
+[12217.257455]  ret_from_fork+0x3a/0x50
+[12217.257972] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.258624] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.259270] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.259835] Call Trace:
+[12217.260427]  dump_stack+0x78/0xb3
+[12217.260958]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.261579]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.262137]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.262714]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.263362]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.263913]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.264507]  process_one_work+0x200/0x580
+[12217.265040]  ? process_one_work+0x17a/0x580
+[12217.265656]  worker_thread+0x4c/0x3f0
+[12217.266196]  kthread+0x103/0x140
+[12217.266727]  ? process_one_work+0x580/0x580
+[12217.267268]  ? kthread_bind+0x10/0x10
+[12217.267797]  ret_from_fork+0x3a/0x50
+[12217.285596] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.286147] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.286715] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.287277] Call Trace:
+[12217.287827]  dump_stack+0x78/0xb3
+[12217.288407]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.288946]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.289563]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.290130]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.290712]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.291297]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.291864]  process_one_work+0x200/0x580
+[12217.292449]  ? process_one_work+0x17a/0x580
+[12217.292976]  worker_thread+0x4c/0x3f0
+[12217.293567]  kthread+0x103/0x140
+[12217.294092]  ? process_one_work+0x580/0x580
+[12217.294638]  ? kthread_bind+0x10/0x10
+[12217.295173]  ret_from_fork+0x3a/0x50
+[12217.295719] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.296356] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.296977] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.297555] Call Trace:
+[12217.298103]  dump_stack+0x78/0xb3
+[12217.298667]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.299243]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.299828]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.300423]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.300973]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.301572]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.302139]  process_one_work+0x200/0x580
+[12217.302702]  ? process_one_work+0x17a/0x580
+[12217.303262]  worker_thread+0x4c/0x3f0
+[12217.303820]  kthread+0x103/0x140
+[12217.304373]  ? process_one_work+0x580/0x580
+[12217.304895]  ? kthread_bind+0x10/0x10
+[12217.305452]  ret_from_fork+0x3a/0x50
+[12217.306104] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.306709] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.307375] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.307907] Call Trace:
+[12217.308486]  dump_stack+0x78/0xb3
+[12217.309017]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.309604]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.310167]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.310741]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.311369]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.311924]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.312524]  process_one_work+0x200/0x580
+[12217.313059]  ? process_one_work+0x17a/0x580
+[12217.313639]  worker_thread+0x4c/0x3f0
+[12217.314178]  kthread+0x103/0x140
+[12217.314712]  ? process_one_work+0x580/0x580
+[12217.315260]  ? kthread_bind+0x10/0x10
+[12217.315815]  ret_from_fork+0x3a/0x50
+[12217.316381] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.317049] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.317668] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.318279] Call Trace:
+[12217.318842]  dump_stack+0x78/0xb3
+[12217.319475]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.320018]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.320606]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.321176]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.321752]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.322351]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.322895]  process_one_work+0x200/0x580
+[12217.323505]  ? process_one_work+0x17a/0x580
+[12217.324029]  worker_thread+0x4c/0x3f0
+[12217.324596]  kthread+0x103/0x140
+[12217.325121]  ? process_one_work+0x580/0x580
+[12217.325662]  ? kthread_bind+0x10/0x10
+[12217.326194]  ret_from_fork+0x3a/0x50
+[12217.326946] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.327572] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.328210] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.328775] Call Trace:
+[12217.329370]  dump_stack+0x78/0xb3
+[12217.329901]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.330488]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.331027]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.331685]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.332266]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.332840]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.333437]  process_one_work+0x200/0x580
+[12217.333972]  ? process_one_work+0x17a/0x580
+[12217.334547]  worker_thread+0x4c/0x3f0
+[12217.335063]  kthread+0x103/0x140
+[12217.335651]  ? process_one_work+0x580/0x580
+[12217.336187]  ? kthread_bind+0x10/0x10
+[12217.336724]  ret_from_fork+0x3a/0x50
+[12217.337272] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.337954] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.338531] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.339081] Call Trace:
+[12217.339647]  dump_stack+0x78/0xb3
+[12217.340203]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.340771]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.341388]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.341935]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.342533]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.343103]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.343680]  process_one_work+0x200/0x580
+[12217.344240]  ? process_one_work+0x17a/0x580
+[12217.344787]  worker_thread+0x4c/0x3f0
+[12217.345377]  kthread+0x103/0x140
+[12217.345882]  ? process_one_work+0x580/0x580
+[12217.346441]  ? kthread_bind+0x10/0x10
+[12217.346948]  ret_from_fork+0x3a/0x50
+[12217.347653] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.348260] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.348851] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.349458] Call Trace:
+[12217.349987]  dump_stack+0x78/0xb3
+[12217.350566]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.351124]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.351694]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.352269]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.352841]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.353471]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.354083]  process_one_work+0x200/0x580
+[12217.354651]  ? process_one_work+0x17a/0x580
+[12217.355202]  worker_thread+0x4c/0x3f0
+[12217.355744]  kthread+0x103/0x140
+[12217.356289]  ? process_one_work+0x580/0x580
+[12217.356839]  ? kthread_bind+0x10/0x10
+[12217.357422]  ret_from_fork+0x3a/0x50
+[12217.357939] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.358573] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.359169] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.359778] Call Trace:
+[12217.360352]  dump_stack+0x78/0xb3
+[12217.360883]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.361539]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.362094]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.362673]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.363250]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.363822]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.364415]  process_one_work+0x200/0x580
+[12217.364948]  ? process_one_work+0x17a/0x580
+[12217.365549]  worker_thread+0x4c/0x3f0
+[12217.366062]  kthread+0x103/0x140
+[12217.366621]  ? process_one_work+0x580/0x580
+[12217.367154]  ? kthread_bind+0x10/0x10
+[12217.367690]  ret_from_fork+0x3a/0x50
+[12217.368427] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.369028] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.369664] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.370275] Call Trace:
+[12217.370838]  dump_stack+0x78/0xb3
+[12217.371431]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.371969]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.372558]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.373126]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.373736]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.374337]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.374885]  process_one_work+0x200/0x580
+[12217.375469]  ? process_one_work+0x17a/0x580
+[12217.375995]  worker_thread+0x4c/0x3f0
+[12217.376559]  kthread+0x103/0x140
+[12217.377084]  ? process_one_work+0x580/0x580
+[12217.377659]  ? kthread_bind+0x10/0x10
+[12217.378194]  ret_from_fork+0x3a/0x50
+[12217.378737] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.379389] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.380014] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.380598] Call Trace:
+[12217.381203]  dump_stack+0x78/0xb3
+[12217.381757]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.382378]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.382915]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.383511]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.384061]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.384663]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.385236]  process_one_work+0x200/0x580
+[12217.385792]  ? process_one_work+0x17a/0x580
+[12217.386394]  worker_thread+0x4c/0x3f0
+[12217.386909]  kthread+0x103/0x140
+[12217.387464]  ? process_one_work+0x580/0x580
+[12217.387975]  ? kthread_bind+0x10/0x10
+[12217.388532]  ret_from_fork+0x3a/0x50
+[12217.389239] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.389844] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.390434] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.391015] Call Trace:
+[12217.391595]  dump_stack+0x78/0xb3
+[12217.392148]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[12217.392715]  rdma_rw_ctx_init+0x60c/0x900 [ib_core]
+[12217.393293]  nvmet_rdma_map_sgl_keyed+0xb0/0x100 [nvmet_rdma]
+[12217.393877]  nvmet_rdma_handle_command+0xf2/0x320 [nvmet_rdma]
+[12217.394477]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.395029]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.395627]  process_one_work+0x200/0x580
+[12217.396185]  ? process_one_work+0x17a/0x580
+[12217.396738]  worker_thread+0x4c/0x3f0
+[12217.397293]  kthread+0x103/0x140
+[12217.397845]  ? process_one_work+0x580/0x580
+[12217.398407]  ? kthread_bind+0x10/0x10
+[12217.398918]  ret_from_fork+0x3a/0x50
+[12217.399482] CPU: 9 PID: 992 Comm: kworker/9:1H Kdump: loaded Tainted: G           O      5.4.0-rc6+ #9
+[12217.400108] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[12217.400726] Workqueue: ib-comp-wq ib_cq_poll_work [ib_core]
+[12217.401296] Call Trace:
+[12217.401894]  dump_stack+0x78/0xb3
+[12217.402477]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[12217.403134]  rdma_rw_ctx_post+0x3a/0x60 [ib_core]
+[12217.403701]  nvmet_rdma_execute_command+0x93/0x110 [nvmet_rdma]
+[12217.404278]  nvmet_rdma_handle_command+0x103/0x320 [nvmet_rdma]
+[12217.404847]  __ib_process_cq+0x7a/0xc0 [ib_core]
+[12217.405476]  ib_cq_poll_work+0x26/0x80 [ib_core]
+[12217.406021]  process_one_work+0x200/0x580
+[12217.406603]  ? process_one_work+0x17a/0x580
+[12217.407149]  worker_thread+0x4c/0x3f0
+[12217.407692]  kthread+0x103/0x140
+[12217.408223]  ? process_one_work+0x580/0x580
+[12217.408758]  ? kthread_bind+0x10/0x10
+[12217.409305]  ret_from_fork+0x3a/0x50

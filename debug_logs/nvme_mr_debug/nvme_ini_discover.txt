@@ -1,0 +1,1840 @@
+[ 7812.696639] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.696650] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.696671] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.696674] Call Trace:
+[ 7812.696682]  dump_stack+0x78/0xb3
+[ 7812.696695]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.696702]  ? __raw_spin_lock_init+0x2d/0x50
+[ 7812.696708]  ? find_held_lock+0x2d/0x90
+[ 7812.696720]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.696730]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.696739]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.696747]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.696756]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.696766]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.696784]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.696789]  process_one_work+0x200/0x580
+[ 7812.696792]  ? process_one_work+0x17a/0x580
+[ 7812.696801]  worker_thread+0x4c/0x3f0
+[ 7812.696809]  kthread+0x103/0x140
+[ 7812.696812]  ? process_one_work+0x580/0x580
+[ 7812.696814]  ? kthread_bind+0x10/0x10
+[ 7812.696819]  ret_from_fork+0x3a/0x50
+[ 7812.696916] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.696918] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.696928] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.696930] Call Trace:
+[ 7812.696934]  dump_stack+0x78/0xb3
+[ 7812.696942]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.696946]  ? find_held_lock+0x2d/0x90
+[ 7812.696961]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.696971]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.696980]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.696987]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.696997]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.697007]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.697024]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.697029]  process_one_work+0x200/0x580
+[ 7812.697032]  ? process_one_work+0x17a/0x580
+[ 7812.697041]  worker_thread+0x4c/0x3f0
+[ 7812.697049]  kthread+0x103/0x140
+[ 7812.697052]  ? process_one_work+0x580/0x580
+[ 7812.697055]  ? kthread_bind+0x10/0x10
+[ 7812.697060]  ret_from_fork+0x3a/0x50
+[ 7812.697095] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.697097] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.697106] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.697109] Call Trace:
+[ 7812.697113]  dump_stack+0x78/0xb3
+[ 7812.697120]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.697125]  ? find_held_lock+0x2d/0x90
+[ 7812.697139]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.697150]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.697176]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.697184]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.697195]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.697206]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.697225]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.697230]  process_one_work+0x200/0x580
+[ 7812.697234]  ? process_one_work+0x17a/0x580
+[ 7812.697244]  worker_thread+0x4c/0x3f0
+[ 7812.697252]  kthread+0x103/0x140
+[ 7812.697255]  ? process_one_work+0x580/0x580
+[ 7812.697258]  ? kthread_bind+0x10/0x10
+[ 7812.697263]  ret_from_fork+0x3a/0x50
+[ 7812.697327] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.697329] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.697342] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.697344] Call Trace:
+[ 7812.697349]  dump_stack+0x78/0xb3
+[ 7812.697358]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.697363]  ? find_held_lock+0x2d/0x90
+[ 7812.697379]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.697390]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.697399]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.697406]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.697417]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.697428]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.697447]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.697452]  process_one_work+0x200/0x580
+[ 7812.697472]  ? process_one_work+0x17a/0x580
+[ 7812.697498]  worker_thread+0x4c/0x3f0
+[ 7812.697506]  kthread+0x103/0x140
+[ 7812.697509]  ? process_one_work+0x580/0x580
+[ 7812.697511]  ? kthread_bind+0x10/0x10
+[ 7812.697516]  ret_from_fork+0x3a/0x50
+[ 7812.697552] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.697554] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.697562] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.697564] Call Trace:
+[ 7812.697568]  dump_stack+0x78/0xb3
+[ 7812.697576]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.697580]  ? find_held_lock+0x2d/0x90
+[ 7812.697595]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.697604]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.697612]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.697618]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.697628]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.697638]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.697654]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.697659]  process_one_work+0x200/0x580
+[ 7812.697661]  ? process_one_work+0x17a/0x580
+[ 7812.697671]  worker_thread+0x4c/0x3f0
+[ 7812.697678]  kthread+0x103/0x140
+[ 7812.697681]  ? process_one_work+0x580/0x580
+[ 7812.697683]  ? kthread_bind+0x10/0x10
+[ 7812.697688]  ret_from_fork+0x3a/0x50
+[ 7812.697724] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.697726] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.697734] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.697736] Call Trace:
+[ 7812.697740]  dump_stack+0x78/0xb3
+[ 7812.697747]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.697752]  ? find_held_lock+0x2d/0x90
+[ 7812.697766]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.697775]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.697784]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.697790]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.697800]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.697809]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.697826]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.697830]  process_one_work+0x200/0x580
+[ 7812.697833]  ? process_one_work+0x17a/0x580
+[ 7812.697843]  worker_thread+0x4c/0x3f0
+[ 7812.697850]  kthread+0x103/0x140
+[ 7812.697853]  ? process_one_work+0x580/0x580
+[ 7812.697855]  ? kthread_bind+0x10/0x10
+[ 7812.697860]  ret_from_fork+0x3a/0x50
+[ 7812.697893] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.697895] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.697903] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.697905] Call Trace:
+[ 7812.697909]  dump_stack+0x78/0xb3
+[ 7812.697916]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.697921]  ? find_held_lock+0x2d/0x90
+[ 7812.697935]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.697944]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.697952]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.697958]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.697968]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.697978]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.697994]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.697999]  process_one_work+0x200/0x580
+[ 7812.698001]  ? process_one_work+0x17a/0x580
+[ 7812.698011]  worker_thread+0x4c/0x3f0
+[ 7812.698018]  kthread+0x103/0x140
+[ 7812.698021]  ? process_one_work+0x580/0x580
+[ 7812.698023]  ? kthread_bind+0x10/0x10
+[ 7812.698028]  ret_from_fork+0x3a/0x50
+[ 7812.698060] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.698062] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.698070] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.698072] Call Trace:
+[ 7812.698076]  dump_stack+0x78/0xb3
+[ 7812.698083]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.698087]  ? find_held_lock+0x2d/0x90
+[ 7812.698101]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.698110]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.698118]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.698125]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.698134]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.698144]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.698179]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.698185]  process_one_work+0x200/0x580
+[ 7812.698188]  ? process_one_work+0x17a/0x580
+[ 7812.698198]  worker_thread+0x4c/0x3f0
+[ 7812.698206]  kthread+0x103/0x140
+[ 7812.698209]  ? process_one_work+0x580/0x580
+[ 7812.698212]  ? kthread_bind+0x10/0x10
+[ 7812.698218]  ret_from_fork+0x3a/0x50
+[ 7812.698277] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.698279] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.698289] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.698291] Call Trace:
+[ 7812.698297]  dump_stack+0x78/0xb3
+[ 7812.698305]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.698310]  ? find_held_lock+0x2d/0x90
+[ 7812.698326]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.698336]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.698345]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.698352]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.698363]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.698374]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.698393]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.698398]  process_one_work+0x200/0x580
+[ 7812.698401]  ? process_one_work+0x17a/0x580
+[ 7812.698411]  worker_thread+0x4c/0x3f0
+[ 7812.698420]  kthread+0x103/0x140
+[ 7812.698423]  ? process_one_work+0x580/0x580
+[ 7812.698425]  ? kthread_bind+0x10/0x10
+[ 7812.698431]  ret_from_fork+0x3a/0x50
+[ 7812.698502] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.698503] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.698528] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.698530] Call Trace:
+[ 7812.698534]  dump_stack+0x78/0xb3
+[ 7812.698542]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.698546]  ? find_held_lock+0x2d/0x90
+[ 7812.698560]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.698569]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.698578]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.698584]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.698593]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.698603]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.698619]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.698624]  process_one_work+0x200/0x580
+[ 7812.698626]  ? process_one_work+0x17a/0x580
+[ 7812.698635]  worker_thread+0x4c/0x3f0
+[ 7812.698643]  kthread+0x103/0x140
+[ 7812.698646]  ? process_one_work+0x580/0x580
+[ 7812.698666]  ? kthread_bind+0x10/0x10
+[ 7812.698671]  ret_from_fork+0x3a/0x50
+[ 7812.698705] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.698707] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.698715] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.698717] Call Trace:
+[ 7812.698721]  dump_stack+0x78/0xb3
+[ 7812.698728]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.698733]  ? find_held_lock+0x2d/0x90
+[ 7812.698747]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.698757]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.698765]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.698772]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.698782]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.698792]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.698809]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.698813]  process_one_work+0x200/0x580
+[ 7812.698816]  ? process_one_work+0x17a/0x580
+[ 7812.698826]  worker_thread+0x4c/0x3f0
+[ 7812.698834]  kthread+0x103/0x140
+[ 7812.698836]  ? process_one_work+0x580/0x580
+[ 7812.698839]  ? kthread_bind+0x10/0x10
+[ 7812.698844]  ret_from_fork+0x3a/0x50
+[ 7812.698877] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.698880] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.698888] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.698890] Call Trace:
+[ 7812.698894]  dump_stack+0x78/0xb3
+[ 7812.698901]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.698906]  ? find_held_lock+0x2d/0x90
+[ 7812.698920]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.698929]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.698938]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.698944]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.698954]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.698964]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.698981]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.698986]  process_one_work+0x200/0x580
+[ 7812.698989]  ? process_one_work+0x17a/0x580
+[ 7812.699014]  worker_thread+0x4c/0x3f0
+[ 7812.699022]  kthread+0x103/0x140
+[ 7812.699025]  ? process_one_work+0x580/0x580
+[ 7812.699027]  ? kthread_bind+0x10/0x10
+[ 7812.699032]  ret_from_fork+0x3a/0x50
+[ 7812.699064] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.699067] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.699075] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.699077] Call Trace:
+[ 7812.699081]  dump_stack+0x78/0xb3
+[ 7812.699088]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.699092]  ? find_held_lock+0x2d/0x90
+[ 7812.699106]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.699116]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.699124]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.699130]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.699140]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.699150]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.699185]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.699191]  process_one_work+0x200/0x580
+[ 7812.699194]  ? process_one_work+0x17a/0x580
+[ 7812.699204]  worker_thread+0x4c/0x3f0
+[ 7812.699213]  kthread+0x103/0x140
+[ 7812.699216]  ? process_one_work+0x580/0x580
+[ 7812.699218]  ? kthread_bind+0x10/0x10
+[ 7812.699224]  ret_from_fork+0x3a/0x50
+[ 7812.699275] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.699277] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.699287] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.699289] Call Trace:
+[ 7812.699293]  dump_stack+0x78/0xb3
+[ 7812.699302]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.699307]  ? find_held_lock+0x2d/0x90
+[ 7812.699323]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.699333]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.699342]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.699349]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.699360]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.699371]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.699389]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.699394]  process_one_work+0x200/0x580
+[ 7812.699397]  ? process_one_work+0x17a/0x580
+[ 7812.699407]  worker_thread+0x4c/0x3f0
+[ 7812.699416]  kthread+0x103/0x140
+[ 7812.699419]  ? process_one_work+0x580/0x580
+[ 7812.699421]  ? kthread_bind+0x10/0x10
+[ 7812.699427]  ret_from_fork+0x3a/0x50
+[ 7812.699497] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.699499] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.699507] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.699509] Call Trace:
+[ 7812.699513]  dump_stack+0x78/0xb3
+[ 7812.699520]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.699525]  ? find_held_lock+0x2d/0x90
+[ 7812.699539]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.699547]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.699556]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.699562]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.699572]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.699582]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.699598]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.699603]  process_one_work+0x200/0x580
+[ 7812.699605]  ? process_one_work+0x17a/0x580
+[ 7812.699614]  worker_thread+0x4c/0x3f0
+[ 7812.699622]  kthread+0x103/0x140
+[ 7812.699625]  ? process_one_work+0x580/0x580
+[ 7812.699627]  ? kthread_bind+0x10/0x10
+[ 7812.699632]  ret_from_fork+0x3a/0x50
+[ 7812.699664] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.699665] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.699674] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.699676] Call Trace:
+[ 7812.699680]  dump_stack+0x78/0xb3
+[ 7812.699686]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.699691]  ? find_held_lock+0x2d/0x90
+[ 7812.699705]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.699714]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.699722]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.699728]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.699738]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.699747]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.699763]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.699768]  process_one_work+0x200/0x580
+[ 7812.699771]  ? process_one_work+0x17a/0x580
+[ 7812.699780]  worker_thread+0x4c/0x3f0
+[ 7812.699788]  kthread+0x103/0x140
+[ 7812.699790]  ? process_one_work+0x580/0x580
+[ 7812.699793]  ? kthread_bind+0x10/0x10
+[ 7812.699797]  ret_from_fork+0x3a/0x50
+[ 7812.699839] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.699840] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.699849] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.699851] Call Trace:
+[ 7812.699855]  dump_stack+0x78/0xb3
+[ 7812.699862]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.699866]  ? find_held_lock+0x2d/0x90
+[ 7812.699880]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.699889]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.699897]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.699903]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.699913]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.699923]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.699939]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.699944]  process_one_work+0x200/0x580
+[ 7812.699946]  ? process_one_work+0x17a/0x580
+[ 7812.699955]  worker_thread+0x4c/0x3f0
+[ 7812.699963]  kthread+0x103/0x140
+[ 7812.699965]  ? process_one_work+0x580/0x580
+[ 7812.699968]  ? kthread_bind+0x10/0x10
+[ 7812.699973]  ret_from_fork+0x3a/0x50
+[ 7812.700004] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.700006] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.700014] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.700016] Call Trace:
+[ 7812.700020]  dump_stack+0x78/0xb3
+[ 7812.700026]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.700031]  ? find_held_lock+0x2d/0x90
+[ 7812.700045]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.700054]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.700062]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.700068]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.700078]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.700087]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.700103]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.700107]  process_one_work+0x200/0x580
+[ 7812.700110]  ? process_one_work+0x17a/0x580
+[ 7812.700119]  worker_thread+0x4c/0x3f0
+[ 7812.700127]  kthread+0x103/0x140
+[ 7812.700130]  ? process_one_work+0x580/0x580
+[ 7812.700132]  ? kthread_bind+0x10/0x10
+[ 7812.700137]  ret_from_fork+0x3a/0x50
+[ 7812.700202] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.700204] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.700213] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.700215] Call Trace:
+[ 7812.700220]  dump_stack+0x78/0xb3
+[ 7812.700228]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.700233]  ? find_held_lock+0x2d/0x90
+[ 7812.700249]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.700258]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.700267]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.700274]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.700285]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.700296]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.700314]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.700319]  process_one_work+0x200/0x580
+[ 7812.700322]  ? process_one_work+0x17a/0x580
+[ 7812.700332]  worker_thread+0x4c/0x3f0
+[ 7812.700341]  kthread+0x103/0x140
+[ 7812.700344]  ? process_one_work+0x580/0x580
+[ 7812.700346]  ? kthread_bind+0x10/0x10
+[ 7812.700352]  ret_from_fork+0x3a/0x50
+[ 7812.700389] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.700391] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.700399] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.700402] Call Trace:
+[ 7812.700406]  dump_stack+0x78/0xb3
+[ 7812.700414]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.700418]  ? find_held_lock+0x2d/0x90
+[ 7812.700435]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.700445]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.700454]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.700477]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.700504]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.700513]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.700529]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.700534]  process_one_work+0x200/0x580
+[ 7812.700537]  ? process_one_work+0x17a/0x580
+[ 7812.700546]  worker_thread+0x4c/0x3f0
+[ 7812.700553]  kthread+0x103/0x140
+[ 7812.700556]  ? process_one_work+0x580/0x580
+[ 7812.700558]  ? kthread_bind+0x10/0x10
+[ 7812.700563]  ret_from_fork+0x3a/0x50
+[ 7812.700595] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.700597] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.700604] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.700607] Call Trace:
+[ 7812.700610]  dump_stack+0x78/0xb3
+[ 7812.700617]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.700622]  ? find_held_lock+0x2d/0x90
+[ 7812.700637]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.700647]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.700656]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.700662]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.700672]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.700682]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.700700]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.700705]  process_one_work+0x200/0x580
+[ 7812.700708]  ? process_one_work+0x17a/0x580
+[ 7812.700717]  worker_thread+0x4c/0x3f0
+[ 7812.700725]  kthread+0x103/0x140
+[ 7812.700728]  ? process_one_work+0x580/0x580
+[ 7812.700730]  ? kthread_bind+0x10/0x10
+[ 7812.700735]  ret_from_fork+0x3a/0x50
+[ 7812.700770] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.700772] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.700781] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.700783] Call Trace:
+[ 7812.700787]  dump_stack+0x78/0xb3
+[ 7812.700795]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.700800]  ? find_held_lock+0x2d/0x90
+[ 7812.700814]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.700824]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.700833]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.700840]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.700850]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.700860]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.700877]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.700883]  process_one_work+0x200/0x580
+[ 7812.700885]  ? process_one_work+0x17a/0x580
+[ 7812.700895]  worker_thread+0x4c/0x3f0
+[ 7812.700902]  kthread+0x103/0x140
+[ 7812.700905]  ? process_one_work+0x580/0x580
+[ 7812.700908]  ? kthread_bind+0x10/0x10
+[ 7812.700913]  ret_from_fork+0x3a/0x50
+[ 7812.700947] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.700949] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.700959] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.700961] Call Trace:
+[ 7812.700965]  dump_stack+0x78/0xb3
+[ 7812.700973]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.700977]  ? find_held_lock+0x2d/0x90
+[ 7812.700992]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.701002]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.701010]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.701017]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.701027]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.701037]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.701055]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.701059]  process_one_work+0x200/0x580
+[ 7812.701062]  ? process_one_work+0x17a/0x580
+[ 7812.701072]  worker_thread+0x4c/0x3f0
+[ 7812.701079]  kthread+0x103/0x140
+[ 7812.701082]  ? process_one_work+0x580/0x580
+[ 7812.701085]  ? kthread_bind+0x10/0x10
+[ 7812.701090]  ret_from_fork+0x3a/0x50
+[ 7812.701124] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.701125] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.701135] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.701138] Call Trace:
+[ 7812.701142]  dump_stack+0x78/0xb3
+[ 7812.701150]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.701154]  ? find_held_lock+0x2d/0x90
+[ 7812.701188]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.701200]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.701209]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.701217]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.701228]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.701239]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.701258]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.701264]  process_one_work+0x200/0x580
+[ 7812.701267]  ? process_one_work+0x17a/0x580
+[ 7812.701277]  worker_thread+0x4c/0x3f0
+[ 7812.701286]  kthread+0x103/0x140
+[ 7812.701289]  ? process_one_work+0x580/0x580
+[ 7812.701291]  ? kthread_bind+0x10/0x10
+[ 7812.701297]  ret_from_fork+0x3a/0x50
+[ 7812.701348] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.701350] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.701360] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.701363] Call Trace:
+[ 7812.701368]  dump_stack+0x78/0xb3
+[ 7812.701377]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.701381]  ? find_held_lock+0x2d/0x90
+[ 7812.701397]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.701408]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.701417]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.701424]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.701435]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.701446]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.701502]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.701507]  process_one_work+0x200/0x580
+[ 7812.701510]  ? process_one_work+0x17a/0x580
+[ 7812.701519]  worker_thread+0x4c/0x3f0
+[ 7812.701526]  kthread+0x103/0x140
+[ 7812.701529]  ? process_one_work+0x580/0x580
+[ 7812.701531]  ? kthread_bind+0x10/0x10
+[ 7812.701536]  ret_from_fork+0x3a/0x50
+[ 7812.701569] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.701570] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.701579] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.701581] Call Trace:
+[ 7812.701585]  dump_stack+0x78/0xb3
+[ 7812.701592]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.701597]  ? find_held_lock+0x2d/0x90
+[ 7812.701611]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.701620]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.701628]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.701634]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.701644]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.701654]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.701670]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.701675]  process_one_work+0x200/0x580
+[ 7812.701678]  ? process_one_work+0x17a/0x580
+[ 7812.701687]  worker_thread+0x4c/0x3f0
+[ 7812.701694]  kthread+0x103/0x140
+[ 7812.701697]  ? process_one_work+0x580/0x580
+[ 7812.701699]  ? kthread_bind+0x10/0x10
+[ 7812.701704]  ret_from_fork+0x3a/0x50
+[ 7812.701736] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.701738] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.701747] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.701749] Call Trace:
+[ 7812.701752]  dump_stack+0x78/0xb3
+[ 7812.701759]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.701764]  ? find_held_lock+0x2d/0x90
+[ 7812.701778]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.701787]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.701795]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.701801]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.701811]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.701821]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.701837]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.701842]  process_one_work+0x200/0x580
+[ 7812.701845]  ? process_one_work+0x17a/0x580
+[ 7812.701854]  worker_thread+0x4c/0x3f0
+[ 7812.701861]  kthread+0x103/0x140
+[ 7812.701864]  ? process_one_work+0x580/0x580
+[ 7812.701866]  ? kthread_bind+0x10/0x10
+[ 7812.701871]  ret_from_fork+0x3a/0x50
+[ 7812.701903] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.701904] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.701912] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.701914] Call Trace:
+[ 7812.701918]  dump_stack+0x78/0xb3
+[ 7812.701925]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.701930]  ? find_held_lock+0x2d/0x90
+[ 7812.701944]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.701953]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.701961]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.701967]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.701977]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.701986]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.702002]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.702007]  process_one_work+0x200/0x580
+[ 7812.702010]  ? process_one_work+0x17a/0x580
+[ 7812.702019]  worker_thread+0x4c/0x3f0
+[ 7812.702027]  kthread+0x103/0x140
+[ 7812.702029]  ? process_one_work+0x580/0x580
+[ 7812.702032]  ? kthread_bind+0x10/0x10
+[ 7812.702036]  ret_from_fork+0x3a/0x50
+[ 7812.702067] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.702069] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.702077] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.702079] Call Trace:
+[ 7812.702083]  dump_stack+0x78/0xb3
+[ 7812.702089]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.702094]  ? find_held_lock+0x2d/0x90
+[ 7812.702108]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.702116]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.702125]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.702131]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.702141]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.702151]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.702186]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.702191]  process_one_work+0x200/0x580
+[ 7812.702194]  ? process_one_work+0x17a/0x580
+[ 7812.702204]  worker_thread+0x4c/0x3f0
+[ 7812.702213]  kthread+0x103/0x140
+[ 7812.702216]  ? process_one_work+0x580/0x580
+[ 7812.702219]  ? kthread_bind+0x10/0x10
+[ 7812.702224]  ret_from_fork+0x3a/0x50
+[ 7812.702276] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.702278] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.702287] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.702289] Call Trace:
+[ 7812.702294]  dump_stack+0x78/0xb3
+[ 7812.702302]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.702307]  ? find_held_lock+0x2d/0x90
+[ 7812.702322]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.702333]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.702342]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.702349]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.702360]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.702371]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.702389]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.702394]  process_one_work+0x200/0x580
+[ 7812.702397]  ? process_one_work+0x17a/0x580
+[ 7812.702407]  worker_thread+0x4c/0x3f0
+[ 7812.702416]  kthread+0x103/0x140
+[ 7812.702419]  ? process_one_work+0x580/0x580
+[ 7812.702422]  ? kthread_bind+0x10/0x10
+[ 7812.702427]  ret_from_fork+0x3a/0x50
+[ 7812.702496] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.702498] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.702523] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.702525] Call Trace:
+[ 7812.702529]  dump_stack+0x78/0xb3
+[ 7812.702536]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.702540]  ? find_held_lock+0x2d/0x90
+[ 7812.702555]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.702564]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.702572]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.702578]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.702588]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.702597]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.702614]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.702618]  process_one_work+0x200/0x580
+[ 7812.702621]  ? process_one_work+0x17a/0x580
+[ 7812.702630]  worker_thread+0x4c/0x3f0
+[ 7812.702638]  kthread+0x103/0x140
+[ 7812.702641]  ? process_one_work+0x580/0x580
+[ 7812.702643]  ? kthread_bind+0x10/0x10
+[ 7812.702647]  ret_from_fork+0x3a/0x50
+[ 7812.702679] CPU: 2 PID: 916 Comm: kworker/u32:1 Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.702681] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.702689] Workqueue: ib_addr process_one_req [ib_core]
+[ 7812.702691] Call Trace:
+[ 7812.702695]  dump_stack+0x78/0xb3
+[ 7812.702702]  c4iw_alloc_mr+0x36/0x3b0 [iw_cxgb4]
+[ 7812.702706]  ? find_held_lock+0x2d/0x90
+[ 7812.702720]  ib_alloc_mr_user+0x30/0x90 [ib_core]
+[ 7812.702729]  ib_mr_pool_init+0x4e/0xf0 [ib_core]
+[ 7812.702737]  nvme_rdma_cm_handler+0x6a5/0x900 [nvme_rdma]
+[ 7812.702743]  ? cma_acquire_dev_by_src_ip+0x14b/0x1f0 [rdma_cm]
+[ 7812.702753]  addr_handler+0xc2/0x1f0 [rdma_cm]
+[ 7812.702762]  ? __lock_acquire+0x44a/0x10c0
+[ 7812.702778]  process_one_req+0x3a/0x140 [ib_core]
+[ 7812.702783]  process_one_work+0x200/0x580
+[ 7812.702786]  ? process_one_work+0x17a/0x580
+[ 7812.702795]  worker_thread+0x4c/0x3f0
+[ 7812.702803]  kthread+0x103/0x140
+[ 7812.702805]  ? process_one_work+0x580/0x580
+[ 7812.702808]  ? kthread_bind+0x10/0x10
+[ 7812.702812]  ret_from_fork+0x3a/0x50
+[ 7812.724094] CPU: 7 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.724100] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.724102] Call Trace:
+[ 7812.724106]  dump_stack+0x78/0xb3
+[ 7812.724115]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 7812.724120]  nvme_rdma_queue_rq+0x248/0x7e0 [nvme_rdma]
+[ 7812.724128]  blk_mq_dispatch_rq_list+0x241/0x590
+[ 7812.724131]  ? flush_busy_ctx+0x60/0xc0
+[ 7812.724135]  ? blk_mq_flush_busy_ctxs+0xca/0x120
+[ 7812.724143]  blk_mq_sched_dispatch_requests+0x145/0x170
+[ 7812.724148]  __blk_mq_run_hw_queue+0x96/0x120
+[ 7812.724153]  __blk_mq_delay_run_hw_queue+0x118/0x160
+[ 7812.724157]  blk_mq_run_hw_queue+0x85/0xe0
+[ 7812.724178]  blk_mq_sched_insert_request+0xe7/0x1b0
+[ 7812.724181]  ? lockdep_init_map+0x79/0x1f0
+[ 7812.724206]  blk_execute_rq+0x69/0xc0
+[ 7812.724220]  __nvme_submit_sync_cmd+0x159/0x1f0 [nvme_core]
+[ 7812.724226]  ? nvmf_connect_admin_queue+0x87/0x1a0 [nvme_fabrics]
+[ 7812.724233]  ? rcu_read_lock_sched_held+0x52/0x90
+[ 7812.724239]  ? kmem_cache_alloc_trace+0x255/0x2d0
+[ 7812.724246]  nvmf_connect_admin_queue+0x137/0x1a0 [nvme_fabrics]
+[ 7812.724258]  nvme_rdma_start_queue+0x81/0xc0 [nvme_rdma]
+[ 7812.724263]  nvme_rdma_setup_ctrl+0x1ae/0x770 [nvme_rdma]
+[ 7812.724272]  nvme_rdma_create_ctrl+0x2f3/0x433 [nvme_rdma]
+[ 7812.724278]  nvmf_dev_write+0xa2c/0xc6b [nvme_fabrics]
+[ 7812.724291]  ? ktime_get_coarse_real_ts64+0x6b/0xd0
+[ 7812.724301]  vfs_write+0xd0/0x1d0
+[ 7812.724305]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.724311]  ksys_write+0x5c/0xd0
+[ 7812.724317]  do_syscall_64+0x60/0x250
+[ 7812.724321]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.724324] RIP: 0033:0x1555073acfd0
+[ 7812.724327] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.724329] RSP: 002b:00007fff4a04b4d8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.724332] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00001555073acfd0
+[ 7812.724335] RDX: 00000000000000cd RSI: 00007fff4a04cb70 RDI: 0000000000000003
+[ 7812.724336] RBP: 00007fff4a04cb70 R08: 0000000000000001 R09: 000015550730b14d
+[ 7812.724338] R10: 00007fff4a04af60 R11: 0000000000000246 R12: 00000000000000cd
+[ 7812.724340] R13: 0000000000000000 R14: 0000000000000007 R15: 000000000065f6c0
+[ 7812.724386] CPU: 7 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.724397] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.724399] Call Trace:
+[ 7812.724403]  dump_stack+0x78/0xb3
+[ 7812.724412]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 7812.724431]  nvme_rdma_post_send+0x83/0xe0 [nvme_rdma]
+[ 7812.724439]  nvme_rdma_queue_rq+0x496/0x7e0 [nvme_rdma]
+[ 7812.724448]  blk_mq_dispatch_rq_list+0x241/0x590
+[ 7812.724451]  ? flush_busy_ctx+0x60/0xc0
+[ 7812.724457]  ? blk_mq_flush_busy_ctxs+0xca/0x120
+[ 7812.724466]  blk_mq_sched_dispatch_requests+0x145/0x170
+[ 7812.724489]  __blk_mq_run_hw_queue+0x96/0x120
+[ 7812.724494]  __blk_mq_delay_run_hw_queue+0x118/0x160
+[ 7812.724515]  blk_mq_run_hw_queue+0x85/0xe0
+[ 7812.724520]  blk_mq_sched_insert_request+0xe7/0x1b0
+[ 7812.724539]  ? lockdep_init_map+0x79/0x1f0
+[ 7812.724544]  blk_execute_rq+0x69/0xc0
+[ 7812.724556]  __nvme_submit_sync_cmd+0x159/0x1f0 [nvme_core]
+[ 7812.724561]  ? nvmf_connect_admin_queue+0x87/0x1a0 [nvme_fabrics]
+[ 7812.724564]  ? rcu_read_lock_sched_held+0x52/0x90
+[ 7812.724568]  ? kmem_cache_alloc_trace+0x255/0x2d0
+[ 7812.724574]  nvmf_connect_admin_queue+0x137/0x1a0 [nvme_fabrics]
+[ 7812.724585]  nvme_rdma_start_queue+0x81/0xc0 [nvme_rdma]
+[ 7812.724590]  nvme_rdma_setup_ctrl+0x1ae/0x770 [nvme_rdma]
+[ 7812.724597]  nvme_rdma_create_ctrl+0x2f3/0x433 [nvme_rdma]
+[ 7812.724603]  nvmf_dev_write+0xa2c/0xc6b [nvme_fabrics]
+[ 7812.724613]  ? ktime_get_coarse_real_ts64+0x6b/0xd0
+[ 7812.724621]  vfs_write+0xd0/0x1d0
+[ 7812.724623]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.724628]  ksys_write+0x5c/0xd0
+[ 7812.724634]  do_syscall_64+0x60/0x250
+[ 7812.724637]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.724639] RIP: 0033:0x1555073acfd0
+[ 7812.724641] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.724643] RSP: 002b:00007fff4a04b4d8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.724645] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00001555073acfd0
+[ 7812.724647] RDX: 00000000000000cd RSI: 00007fff4a04cb70 RDI: 0000000000000003
+[ 7812.724648] RBP: 00007fff4a04cb70 R08: 0000000000000001 R09: 000015550730b14d
+[ 7812.724650] R10: 00007fff4a04af60 R11: 0000000000000246 R12: 00000000000000cd
+[ 7812.724652] R13: 0000000000000000 R14: 0000000000000007 R15: 000000000065f6c0
+[ 7812.725827] CPU: 7 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.725829] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.725831] Call Trace:
+[ 7812.725836]  dump_stack+0x78/0xb3
+[ 7812.725845]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 7812.725851]  nvme_rdma_queue_rq+0x248/0x7e0 [nvme_rdma]
+[ 7812.725858]  blk_mq_dispatch_rq_list+0x241/0x590
+[ 7812.725860]  ? flush_busy_ctx+0x60/0xc0
+[ 7812.725865]  ? blk_mq_flush_busy_ctxs+0xca/0x120
+[ 7812.725872]  blk_mq_sched_dispatch_requests+0x145/0x170
+[ 7812.725878]  __blk_mq_run_hw_queue+0x96/0x120
+[ 7812.725882]  __blk_mq_delay_run_hw_queue+0x118/0x160
+[ 7812.725886]  blk_mq_run_hw_queue+0x85/0xe0
+[ 7812.725889]  blk_mq_sched_insert_request+0xe7/0x1b0
+[ 7812.725892]  ? lockdep_init_map+0x79/0x1f0
+[ 7812.725898]  blk_execute_rq+0x69/0xc0
+[ 7812.725910]  __nvme_submit_sync_cmd+0x159/0x1f0 [nvme_core]
+[ 7812.725918]  ? nvme_identify_ctrl.isra.45+0x4d/0xb0 [nvme_core]
+[ 7812.725924]  nvme_submit_sync_cmd+0x38/0x40 [nvme_core]
+[ 7812.725929]  nvme_identify_ctrl.isra.45+0x6a/0xb0 [nvme_core]
+[ 7812.725938]  nvme_init_identify+0xa5/0xf10 [nvme_core]
+[ 7812.725944]  ? blk_mq_run_hw_queue+0x48/0xe0
+[ 7812.725950]  nvme_rdma_setup_ctrl+0x55b/0x770 [nvme_rdma]
+[ 7812.725957]  nvme_rdma_create_ctrl+0x2f3/0x433 [nvme_rdma]
+[ 7812.725963]  nvmf_dev_write+0xa2c/0xc6b [nvme_fabrics]
+[ 7812.725973]  ? ktime_get_coarse_real_ts64+0x6b/0xd0
+[ 7812.725980]  vfs_write+0xd0/0x1d0
+[ 7812.725983]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.725987]  ksys_write+0x5c/0xd0
+[ 7812.725992]  do_syscall_64+0x60/0x250
+[ 7812.725995]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.725998] RIP: 0033:0x1555073acfd0
+[ 7812.726000] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.726002] RSP: 002b:00007fff4a04b4d8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.726004] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00001555073acfd0
+[ 7812.726006] RDX: 00000000000000cd RSI: 00007fff4a04cb70 RDI: 0000000000000003
+[ 7812.726007] RBP: 00007fff4a04cb70 R08: 0000000000000001 R09: 000015550730b14d
+[ 7812.726009] R10: 00007fff4a04af60 R11: 0000000000000246 R12: 00000000000000cd
+[ 7812.726011] R13: 0000000000000000 R14: 0000000000000007 R15: 000000000065f6c0
+[ 7812.726023] CPU: 7 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.726025] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.726026] Call Trace:
+[ 7812.726030]  dump_stack+0x78/0xb3
+[ 7812.726037]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 7812.726053]  nvme_rdma_post_send+0x83/0xe0 [nvme_rdma]
+[ 7812.726060]  nvme_rdma_queue_rq+0x496/0x7e0 [nvme_rdma]
+[ 7812.726067]  blk_mq_dispatch_rq_list+0x241/0x590
+[ 7812.726069]  ? flush_busy_ctx+0x60/0xc0
+[ 7812.726074]  ? blk_mq_flush_busy_ctxs+0xca/0x120
+[ 7812.726081]  blk_mq_sched_dispatch_requests+0x145/0x170
+[ 7812.726087]  __blk_mq_run_hw_queue+0x96/0x120
+[ 7812.726092]  __blk_mq_delay_run_hw_queue+0x118/0x160
+[ 7812.726096]  blk_mq_run_hw_queue+0x85/0xe0
+[ 7812.726100]  blk_mq_sched_insert_request+0xe7/0x1b0
+[ 7812.726102]  ? lockdep_init_map+0x79/0x1f0
+[ 7812.726108]  blk_execute_rq+0x69/0xc0
+[ 7812.726119]  __nvme_submit_sync_cmd+0x159/0x1f0 [nvme_core]
+[ 7812.726127]  ? nvme_identify_ctrl.isra.45+0x4d/0xb0 [nvme_core]
+[ 7812.726134]  nvme_submit_sync_cmd+0x38/0x40 [nvme_core]
+[ 7812.726139]  nvme_identify_ctrl.isra.45+0x6a/0xb0 [nvme_core]
+[ 7812.726148]  nvme_init_identify+0xa5/0xf10 [nvme_core]
+[ 7812.726155]  ? blk_mq_run_hw_queue+0x48/0xe0
+[ 7812.726180]  nvme_rdma_setup_ctrl+0x55b/0x770 [nvme_rdma]
+[ 7812.726189]  nvme_rdma_create_ctrl+0x2f3/0x433 [nvme_rdma]
+[ 7812.726196]  nvmf_dev_write+0xa2c/0xc6b [nvme_fabrics]
+[ 7812.726208]  ? ktime_get_coarse_real_ts64+0x6b/0xd0
+[ 7812.726216]  vfs_write+0xd0/0x1d0
+[ 7812.726219]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.726225]  ksys_write+0x5c/0xd0
+[ 7812.726232]  do_syscall_64+0x60/0x250
+[ 7812.726235]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.726238] RIP: 0033:0x1555073acfd0
+[ 7812.726240] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.726242] RSP: 002b:00007fff4a04b4d8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.726245] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00001555073acfd0
+[ 7812.726247] RDX: 00000000000000cd RSI: 00007fff4a04cb70 RDI: 0000000000000003
+[ 7812.726249] RBP: 00007fff4a04cb70 R08: 0000000000000001 R09: 000015550730b14d
+[ 7812.726251] R10: 00007fff4a04af60 R11: 0000000000000246 R12: 00000000000000cd
+[ 7812.726253] R13: 0000000000000000 R14: 0000000000000007 R15: 000000000065f6c0
+[ 7812.727257] nvme nvme0: new ctrl: NQN "nqn.2014-08.org.nvmexpress.discovery", addr 10.0.2.2:4420
+[ 7812.727595] CPU: 7 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.727601] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.727602] Call Trace:
+[ 7812.727607]  dump_stack+0x78/0xb3
+[ 7812.727616]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 7812.727622]  nvme_rdma_queue_rq+0x248/0x7e0 [nvme_rdma]
+[ 7812.727629]  blk_mq_dispatch_rq_list+0x241/0x590
+[ 7812.727632]  ? flush_busy_ctx+0x60/0xc0
+[ 7812.727637]  ? blk_mq_flush_busy_ctxs+0xca/0x120
+[ 7812.727644]  blk_mq_sched_dispatch_requests+0x145/0x170
+[ 7812.727650]  __blk_mq_run_hw_queue+0x96/0x120
+[ 7812.727654]  __blk_mq_delay_run_hw_queue+0x118/0x160
+[ 7812.727659]  blk_mq_run_hw_queue+0x85/0xe0
+[ 7812.727663]  blk_mq_sched_insert_request+0xe7/0x1b0
+[ 7812.727666]  ? lockdep_init_map+0x79/0x1f0
+[ 7812.727672]  blk_execute_rq+0x69/0xc0
+[ 7812.727684]  nvme_submit_user_cmd+0xb9/0x2e0 [nvme_core]
+[ 7812.727692]  nvme_user_cmd+0x14b/0x1d0 [nvme_core]
+[ 7812.727708]  nvme_dev_ioctl+0x127/0x210 [nvme_core]
+[ 7812.727715]  do_vfs_ioctl+0xa9/0x700
+[ 7812.727720]  ? syscall_trace_enter+0x1f8/0x350
+[ 7812.727724]  ? syscall_trace_enter+0x1f8/0x350
+[ 7812.727729]  ksys_ioctl+0x60/0x90
+[ 7812.727734]  __x64_sys_ioctl+0x16/0x20
+[ 7812.727737]  do_syscall_64+0x60/0x250
+[ 7812.727741]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.727743] RIP: 0033:0x1555073b28d7
+[ 7812.727746] Code: 44 00 00 48 8b 05 b9 15 2d 00 64 c7 00 26 00 00 00 48 c7 c0 ff ff ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 b8 10 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 89 15 2d 00 f7 d8 64 89 01 48
+[ 7812.727747] RSP: 002b:00007fff4a04c448 EFLAGS: 00000206 ORIG_RAX: 0000000000000010
+[ 7812.727750] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073b28d7
+[ 7812.727751] RDX: 00007fff4a04c450 RSI: 00000000c0484e41 RDI: 0000000000000003
+[ 7812.727753] RBP: 0000000000000010 R08: 0000000000000000 R09: 0000000000000000
+[ 7812.727755] R10: 00007fff4a04bea0 R11: 0000000000000206 R12: 0000000000000003
+[ 7812.727756] R13: 0000000000000000 R14: 0000000000030000 R15: 0000000000000010
+[ 7812.727772] CPU: 7 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.727778] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.727780] Call Trace:
+[ 7812.727783]  dump_stack+0x78/0xb3
+[ 7812.727791]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 7812.727807]  nvme_rdma_post_send+0x83/0xe0 [nvme_rdma]
+[ 7812.727815]  nvme_rdma_queue_rq+0x496/0x7e0 [nvme_rdma]
+[ 7812.727823]  blk_mq_dispatch_rq_list+0x241/0x590
+[ 7812.727825]  ? flush_busy_ctx+0x60/0xc0
+[ 7812.727830]  ? blk_mq_flush_busy_ctxs+0xca/0x120
+[ 7812.727838]  blk_mq_sched_dispatch_requests+0x145/0x170
+[ 7812.727845]  __blk_mq_run_hw_queue+0x96/0x120
+[ 7812.727849]  __blk_mq_delay_run_hw_queue+0x118/0x160
+[ 7812.727854]  blk_mq_run_hw_queue+0x85/0xe0
+[ 7812.727858]  blk_mq_sched_insert_request+0xe7/0x1b0
+[ 7812.727861]  ? lockdep_init_map+0x79/0x1f0
+[ 7812.727867]  blk_execute_rq+0x69/0xc0
+[ 7812.727879]  nvme_submit_user_cmd+0xb9/0x2e0 [nvme_core]
+[ 7812.727888]  nvme_user_cmd+0x14b/0x1d0 [nvme_core]
+[ 7812.727906]  nvme_dev_ioctl+0x127/0x210 [nvme_core]
+[ 7812.727911]  do_vfs_ioctl+0xa9/0x700
+[ 7812.727916]  ? syscall_trace_enter+0x1f8/0x350
+[ 7812.727920]  ? syscall_trace_enter+0x1f8/0x350
+[ 7812.727925]  ksys_ioctl+0x60/0x90
+[ 7812.727931]  __x64_sys_ioctl+0x16/0x20
+[ 7812.727933]  do_syscall_64+0x60/0x250
+[ 7812.727937]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.727939] RIP: 0033:0x1555073b28d7
+[ 7812.727941] Code: 44 00 00 48 8b 05 b9 15 2d 00 64 c7 00 26 00 00 00 48 c7 c0 ff ff ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 b8 10 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 89 15 2d 00 f7 d8 64 89 01 48
+[ 7812.727943] RSP: 002b:00007fff4a04c448 EFLAGS: 00000206 ORIG_RAX: 0000000000000010
+[ 7812.727946] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073b28d7
+[ 7812.727947] RDX: 00007fff4a04c450 RSI: 00000000c0484e41 RDI: 0000000000000003
+[ 7812.727949] RBP: 0000000000000010 R08: 0000000000000000 R09: 0000000000000000
+[ 7812.727951] R10: 00007fff4a04bea0 R11: 0000000000000206 R12: 0000000000000003
+[ 7812.727952] R13: 0000000000000000 R14: 0000000000030000 R15: 0000000000000010
+[ 7812.728025] CPU: 7 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.728027] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.728028] Call Trace:
+[ 7812.728032]  dump_stack+0x78/0xb3
+[ 7812.728040]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 7812.728045]  nvme_rdma_queue_rq+0x248/0x7e0 [nvme_rdma]
+[ 7812.728053]  blk_mq_dispatch_rq_list+0x241/0x590
+[ 7812.728055]  ? flush_busy_ctx+0x60/0xc0
+[ 7812.728060]  ? blk_mq_flush_busy_ctxs+0xca/0x120
+[ 7812.728067]  blk_mq_sched_dispatch_requests+0x145/0x170
+[ 7812.728073]  __blk_mq_run_hw_queue+0x96/0x120
+[ 7812.728078]  __blk_mq_delay_run_hw_queue+0x118/0x160
+[ 7812.728082]  blk_mq_run_hw_queue+0x85/0xe0
+[ 7812.728086]  blk_mq_sched_insert_request+0xe7/0x1b0
+[ 7812.728089]  ? lockdep_init_map+0x79/0x1f0
+[ 7812.728095]  blk_execute_rq+0x69/0xc0
+[ 7812.728121]  nvme_submit_user_cmd+0xb9/0x2e0 [nvme_core]
+[ 7812.728128]  nvme_user_cmd+0x14b/0x1d0 [nvme_core]
+[ 7812.728143]  nvme_dev_ioctl+0x127/0x210 [nvme_core]
+[ 7812.728147]  do_vfs_ioctl+0xa9/0x700
+[ 7812.728152]  ? syscall_trace_enter+0x1f8/0x350
+[ 7812.728155]  ? syscall_trace_enter+0x1f8/0x350
+[ 7812.728178]  ksys_ioctl+0x60/0x90
+[ 7812.728184]  __x64_sys_ioctl+0x16/0x20
+[ 7812.728187]  do_syscall_64+0x60/0x250
+[ 7812.728190]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.728193] RIP: 0033:0x1555073b28d7
+[ 7812.728195] Code: 44 00 00 48 8b 05 b9 15 2d 00 64 c7 00 26 00 00 00 48 c7 c0 ff ff ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 b8 10 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 89 15 2d 00 f7 d8 64 89 01 48
+[ 7812.728197] RSP: 002b:00007fff4a04c448 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+[ 7812.728199] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073b28d7
+[ 7812.728201] RDX: 00007fff4a04c450 RSI: 00000000c0484e41 RDI: 0000000000000003
+[ 7812.728203] RBP: 0000000000000800 R08: 0000000000000000 R09: 0000000000000000
+[ 7812.728205] R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000003
+[ 7812.728206] R13: 0000000000000000 R14: 0000000001ff0000 R15: 0000000000000800
+[ 7812.728235] CPU: 7 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.728237] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.728238] Call Trace:
+[ 7812.728242]  dump_stack+0x78/0xb3
+[ 7812.728251]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 7812.728269]  nvme_rdma_post_send+0x83/0xe0 [nvme_rdma]
+[ 7812.728277]  nvme_rdma_queue_rq+0x496/0x7e0 [nvme_rdma]
+[ 7812.728286]  blk_mq_dispatch_rq_list+0x241/0x590
+[ 7812.728288]  ? flush_busy_ctx+0x60/0xc0
+[ 7812.728294]  ? blk_mq_flush_busy_ctxs+0xca/0x120
+[ 7812.728302]  blk_mq_sched_dispatch_requests+0x145/0x170
+[ 7812.728309]  __blk_mq_run_hw_queue+0x96/0x120
+[ 7812.728314]  __blk_mq_delay_run_hw_queue+0x118/0x160
+[ 7812.728320]  blk_mq_run_hw_queue+0x85/0xe0
+[ 7812.728325]  blk_mq_sched_insert_request+0xe7/0x1b0
+[ 7812.728328]  ? lockdep_init_map+0x79/0x1f0
+[ 7812.728334]  blk_execute_rq+0x69/0xc0
+[ 7812.728347]  nvme_submit_user_cmd+0xb9/0x2e0 [nvme_core]
+[ 7812.728356]  nvme_user_cmd+0x14b/0x1d0 [nvme_core]
+[ 7812.728375]  nvme_dev_ioctl+0x127/0x210 [nvme_core]
+[ 7812.728381]  do_vfs_ioctl+0xa9/0x700
+[ 7812.728386]  ? syscall_trace_enter+0x1f8/0x350
+[ 7812.728390]  ? syscall_trace_enter+0x1f8/0x350
+[ 7812.728396]  ksys_ioctl+0x60/0x90
+[ 7812.728402]  __x64_sys_ioctl+0x16/0x20
+[ 7812.728405]  do_syscall_64+0x60/0x250
+[ 7812.728408]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.728411] RIP: 0033:0x1555073b28d7
+[ 7812.728414] Code: 44 00 00 48 8b 05 b9 15 2d 00 64 c7 00 26 00 00 00 48 c7 c0 ff ff ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 b8 10 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 89 15 2d 00 f7 d8 64 89 01 48
+[ 7812.728416] RSP: 002b:00007fff4a04c448 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+[ 7812.728418] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073b28d7
+[ 7812.728420] RDX: 00007fff4a04c450 RSI: 00000000c0484e41 RDI: 0000000000000003
+[ 7812.728422] RBP: 0000000000000800 R08: 0000000000000000 R09: 0000000000000000
+[ 7812.728424] R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000003
+[ 7812.728425] R13: 0000000000000000 R14: 0000000001ff0000 R15: 0000000000000800
+[ 7812.731249] CPU: 7 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.731251] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.731253] Call Trace:
+[ 7812.731258]  dump_stack+0x78/0xb3
+[ 7812.731266]  c4iw_map_mr_sg+0x26/0x50 [iw_cxgb4]
+[ 7812.731271]  nvme_rdma_queue_rq+0x248/0x7e0 [nvme_rdma]
+[ 7812.731279]  blk_mq_dispatch_rq_list+0x241/0x590
+[ 7812.731282]  ? flush_busy_ctx+0x60/0xc0
+[ 7812.731287]  ? blk_mq_flush_busy_ctxs+0xca/0x120
+[ 7812.731295]  blk_mq_sched_dispatch_requests+0x145/0x170
+[ 7812.731301]  __blk_mq_run_hw_queue+0x96/0x120
+[ 7812.731306]  __blk_mq_delay_run_hw_queue+0x118/0x160
+[ 7812.731311]  blk_mq_run_hw_queue+0x85/0xe0
+[ 7812.731315]  blk_mq_sched_insert_request+0xe7/0x1b0
+[ 7812.731318]  ? lockdep_init_map+0x79/0x1f0
+[ 7812.731324]  blk_execute_rq+0x69/0xc0
+[ 7812.731336]  nvme_submit_user_cmd+0xb9/0x2e0 [nvme_core]
+[ 7812.731344]  nvme_user_cmd+0x14b/0x1d0 [nvme_core]
+[ 7812.731361]  nvme_dev_ioctl+0x127/0x210 [nvme_core]
+[ 7812.731367]  do_vfs_ioctl+0xa9/0x700
+[ 7812.731372]  ? syscall_trace_enter+0x1f8/0x350
+[ 7812.731376]  ? syscall_trace_enter+0x1f8/0x350
+[ 7812.731381]  ksys_ioctl+0x60/0x90
+[ 7812.731386]  __x64_sys_ioctl+0x16/0x20
+[ 7812.731389]  do_syscall_64+0x60/0x250
+[ 7812.731393]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.731395] RIP: 0033:0x1555073b28d7
+[ 7812.731398] Code: 44 00 00 48 8b 05 b9 15 2d 00 64 c7 00 26 00 00 00 48 c7 c0 ff ff ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 b8 10 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 89 15 2d 00 f7 d8 64 89 01 48
+[ 7812.731399] RSP: 002b:00007fff4a04c448 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+[ 7812.731403] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073b28d7
+[ 7812.731405] RDX: 00007fff4a04c450 RSI: 00000000c0484e41 RDI: 0000000000000003
+[ 7812.731406] RBP: 0000000000000010 R08: 0000000000000000 R09: 0000000000000000
+[ 7812.731408] R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000003
+[ 7812.731410] R13: 0000000000000000 R14: 0000000000030000 R15: 0000000000000010
+[ 7812.731423] CPU: 7 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.731425] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.731427] Call Trace:
+[ 7812.731430]  dump_stack+0x78/0xb3
+[ 7812.731438]  c4iw_post_send+0x187/0x1350 [iw_cxgb4]
+[ 7812.731474]  nvme_rdma_post_send+0x83/0xe0 [nvme_rdma]
+[ 7812.731498]  nvme_rdma_queue_rq+0x496/0x7e0 [nvme_rdma]
+[ 7812.731505]  blk_mq_dispatch_rq_list+0x241/0x590
+[ 7812.731507]  ? flush_busy_ctx+0x60/0xc0
+[ 7812.731529]  ? blk_mq_flush_busy_ctxs+0xca/0x120
+[ 7812.731536]  blk_mq_sched_dispatch_requests+0x145/0x170
+[ 7812.731542]  __blk_mq_run_hw_queue+0x96/0x120
+[ 7812.731546]  __blk_mq_delay_run_hw_queue+0x118/0x160
+[ 7812.731550]  blk_mq_run_hw_queue+0x85/0xe0
+[ 7812.731554]  blk_mq_sched_insert_request+0xe7/0x1b0
+[ 7812.731556]  ? lockdep_init_map+0x79/0x1f0
+[ 7812.731562]  blk_execute_rq+0x69/0xc0
+[ 7812.731573]  nvme_submit_user_cmd+0xb9/0x2e0 [nvme_core]
+[ 7812.731580]  nvme_user_cmd+0x14b/0x1d0 [nvme_core]
+[ 7812.731597]  nvme_dev_ioctl+0x127/0x210 [nvme_core]
+[ 7812.731601]  do_vfs_ioctl+0xa9/0x700
+[ 7812.731606]  ? syscall_trace_enter+0x1f8/0x350
+[ 7812.731609]  ? syscall_trace_enter+0x1f8/0x350
+[ 7812.731632]  ksys_ioctl+0x60/0x90
+[ 7812.731638]  __x64_sys_ioctl+0x16/0x20
+[ 7812.731640]  do_syscall_64+0x60/0x250
+[ 7812.731644]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.731646] RIP: 0033:0x1555073b28d7
+[ 7812.731648] Code: 44 00 00 48 8b 05 b9 15 2d 00 64 c7 00 26 00 00 00 48 c7 c0 ff ff ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 b8 10 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 89 15 2d 00 f7 d8 64 89 01 48
+[ 7812.731649] RSP: 002b:00007fff4a04c448 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+[ 7812.731652] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073b28d7
+[ 7812.731653] RDX: 00007fff4a04c450 RSI: 00000000c0484e41 RDI: 0000000000000003
+[ 7812.731655] RBP: 0000000000000010 R08: 0000000000000000 R09: 0000000000000000
+[ 7812.731656] R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000003
+[ 7812.731658] R13: 0000000000000000 R14: 0000000000030000 R15: 0000000000000010
+[ 7812.731948] nvme nvme0: Removing ctrl: NQN "nqn.2014-08.org.nvmexpress.discovery"
+[ 7812.754746] CPU: 7 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.754748] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.754750] Call Trace:
+[ 7812.754754]  dump_stack+0x78/0xb3
+[ 7812.754763]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.754773]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.754784]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.754790]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.754794]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.754799]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.754803]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.754807]  kernfs_fop_write+0x116/0x1a0
+[ 7812.754813]  vfs_write+0xd0/0x1d0
+[ 7812.754816]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.754821]  ksys_write+0x5c/0xd0
+[ 7812.754826]  do_syscall_64+0x60/0x250
+[ 7812.754829]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.754832] RIP: 0033:0x1555073acfd0
+[ 7812.754834] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.754836] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.754839] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.754840] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.754842] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.754843] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.754845] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.755144] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.755147] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.755149] Call Trace:
+[ 7812.755154]  dump_stack+0x78/0xb3
+[ 7812.755182]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.755197]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.755210]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.755217]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.755222]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.755231]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.755235]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.755240]  kernfs_fop_write+0x116/0x1a0
+[ 7812.755247]  vfs_write+0xd0/0x1d0
+[ 7812.755251]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.755257]  ksys_write+0x5c/0xd0
+[ 7812.755263]  do_syscall_64+0x60/0x250
+[ 7812.755268]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.755271] RIP: 0033:0x1555073acfd0
+[ 7812.755274] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.755276] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.755279] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.755281] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.755283] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.755285] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.755287] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.755340] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.755343] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.755344] Call Trace:
+[ 7812.755349]  dump_stack+0x78/0xb3
+[ 7812.755358]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.755369]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.755382]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.755389]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.755394]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.755399]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.755404]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.755409]  kernfs_fop_write+0x116/0x1a0
+[ 7812.755415]  vfs_write+0xd0/0x1d0
+[ 7812.755419]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.755424]  ksys_write+0x5c/0xd0
+[ 7812.755431]  do_syscall_64+0x60/0x250
+[ 7812.755436]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.755438] RIP: 0033:0x1555073acfd0
+[ 7812.755441] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.755443] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.755445] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.755463] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.755465] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.755467] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.755468] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.755514] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.755516] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.755518] Call Trace:
+[ 7812.755521]  dump_stack+0x78/0xb3
+[ 7812.755529]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.755540]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.755551]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.755557]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.755561]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.755565]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.755570]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.755573]  kernfs_fop_write+0x116/0x1a0
+[ 7812.755579]  vfs_write+0xd0/0x1d0
+[ 7812.755582]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.755587]  ksys_write+0x5c/0xd0
+[ 7812.755593]  do_syscall_64+0x60/0x250
+[ 7812.755597]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.755599] RIP: 0033:0x1555073acfd0
+[ 7812.755601] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.755603] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.755605] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.755607] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.755608] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.755610] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.755612] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.755640] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.755642] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.755644] Call Trace:
+[ 7812.755664]  dump_stack+0x78/0xb3
+[ 7812.755671]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.755680]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.755691]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.755696]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.755700]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.755704]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.755708]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.755712]  kernfs_fop_write+0x116/0x1a0
+[ 7812.755718]  vfs_write+0xd0/0x1d0
+[ 7812.755721]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.755725]  ksys_write+0x5c/0xd0
+[ 7812.755731]  do_syscall_64+0x60/0x250
+[ 7812.755734]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.755736] RIP: 0033:0x1555073acfd0
+[ 7812.755738] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.755740] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.755742] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.755743] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.755745] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.755746] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.755748] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.755774] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.755776] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.755777] Call Trace:
+[ 7812.755781]  dump_stack+0x78/0xb3
+[ 7812.755788]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.755798]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.755808]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.755813]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.755817]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.755821]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.755825]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.755829]  kernfs_fop_write+0x116/0x1a0
+[ 7812.755835]  vfs_write+0xd0/0x1d0
+[ 7812.755837]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.755842]  ksys_write+0x5c/0xd0
+[ 7812.755847]  do_syscall_64+0x60/0x250
+[ 7812.755851]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.755853] RIP: 0033:0x1555073acfd0
+[ 7812.755855] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.755856] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.755858] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.755860] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.755862] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.755863] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.755865] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.755891] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.755893] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.755894] Call Trace:
+[ 7812.755898]  dump_stack+0x78/0xb3
+[ 7812.755905]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.755914]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.755924]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.755930]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.755934]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.755938]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.755942]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.755946]  kernfs_fop_write+0x116/0x1a0
+[ 7812.755951]  vfs_write+0xd0/0x1d0
+[ 7812.755954]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.755959]  ksys_write+0x5c/0xd0
+[ 7812.755964]  do_syscall_64+0x60/0x250
+[ 7812.755967]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.755969] RIP: 0033:0x1555073acfd0
+[ 7812.755971] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.755973] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.755975] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.755976] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.755978] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.755980] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.755981] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.756009] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.756011] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.756012] Call Trace:
+[ 7812.756015]  dump_stack+0x78/0xb3
+[ 7812.756022]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.756032]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.756042]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.756047]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.756051]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.756056]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.756059]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.756063]  kernfs_fop_write+0x116/0x1a0
+[ 7812.756068]  vfs_write+0xd0/0x1d0
+[ 7812.756071]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.756076]  ksys_write+0x5c/0xd0
+[ 7812.756081]  do_syscall_64+0x60/0x250
+[ 7812.756084]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.756086] RIP: 0033:0x1555073acfd0
+[ 7812.756088] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.756090] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.756092] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.756094] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.756095] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.756097] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.756098] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.756124] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.756126] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.756127] Call Trace:
+[ 7812.756131]  dump_stack+0x78/0xb3
+[ 7812.756138]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.756147]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.756157]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.756181]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.756186]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.756191]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.756196]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.756200]  kernfs_fop_write+0x116/0x1a0
+[ 7812.756207]  vfs_write+0xd0/0x1d0
+[ 7812.756210]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.756215]  ksys_write+0x5c/0xd0
+[ 7812.756222]  do_syscall_64+0x60/0x250
+[ 7812.756225]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.756228] RIP: 0033:0x1555073acfd0
+[ 7812.756230] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.756232] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.756235] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.756237] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.756239] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.756241] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.756243] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.756287] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.756289] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.756291] Call Trace:
+[ 7812.756295]  dump_stack+0x78/0xb3
+[ 7812.756303]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.756314]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.756326]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.756333]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.756337]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.756342]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.756347]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.756351]  kernfs_fop_write+0x116/0x1a0
+[ 7812.756358]  vfs_write+0xd0/0x1d0
+[ 7812.756361]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.756367]  ksys_write+0x5c/0xd0
+[ 7812.756373]  do_syscall_64+0x60/0x250
+[ 7812.756377]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.756380] RIP: 0033:0x1555073acfd0
+[ 7812.756382] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.756384] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.756386] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.756388] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.756390] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.756392] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.756394] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.756425] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.756427] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.756428] Call Trace:
+[ 7812.756432]  dump_stack+0x78/0xb3
+[ 7812.756440]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.756468]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.756496]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.756501]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.756505]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.756509]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.756513]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.756516]  kernfs_fop_write+0x116/0x1a0
+[ 7812.756522]  vfs_write+0xd0/0x1d0
+[ 7812.756525]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.756530]  ksys_write+0x5c/0xd0
+[ 7812.756535]  do_syscall_64+0x60/0x250
+[ 7812.756538]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.756540] RIP: 0033:0x1555073acfd0
+[ 7812.756542] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.756543] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.756545] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.756547] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.756549] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.756550] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.756552] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.756578] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.756580] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.756581] Call Trace:
+[ 7812.756584]  dump_stack+0x78/0xb3
+[ 7812.756591]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.756601]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.756611]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.756616]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.756620]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.756624]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.756628]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.756632]  kernfs_fop_write+0x116/0x1a0
+[ 7812.756637]  vfs_write+0xd0/0x1d0
+[ 7812.756640]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.756645]  ksys_write+0x5c/0xd0
+[ 7812.756650]  do_syscall_64+0x60/0x250
+[ 7812.756653]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.756655] RIP: 0033:0x1555073acfd0
+[ 7812.756657] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.756659] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.756661] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.756662] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.756664] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.756665] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.756667] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.756694] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.756695] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.756697] Call Trace:
+[ 7812.756700]  dump_stack+0x78/0xb3
+[ 7812.756707]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.756717]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.756726]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.756731]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.756735]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.756739]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.756743]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.756747]  kernfs_fop_write+0x116/0x1a0
+[ 7812.756753]  vfs_write+0xd0/0x1d0
+[ 7812.756755]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.756760]  ksys_write+0x5c/0xd0
+[ 7812.756765]  do_syscall_64+0x60/0x250
+[ 7812.756768]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.756771] RIP: 0033:0x1555073acfd0
+[ 7812.756773] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.756774] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.756776] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.756778] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.756780] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.756781] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.756783] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.756809] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.756811] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.756812] Call Trace:
+[ 7812.756816]  dump_stack+0x78/0xb3
+[ 7812.756823]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.756832]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.756842]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.756847]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.756851]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.756855]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.756859]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.756863]  kernfs_fop_write+0x116/0x1a0
+[ 7812.756868]  vfs_write+0xd0/0x1d0
+[ 7812.756871]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.756876]  ksys_write+0x5c/0xd0
+[ 7812.756881]  do_syscall_64+0x60/0x250
+[ 7812.756884]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.756886] RIP: 0033:0x1555073acfd0
+[ 7812.756888] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.756890] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.756892] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.756894] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.756895] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.756897] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.756898] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.756926] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.756927] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.756929] Call Trace:
+[ 7812.756932]  dump_stack+0x78/0xb3
+[ 7812.756939]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.756948]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.756958]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.756963]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.756967]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.756971]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.756975]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.756979]  kernfs_fop_write+0x116/0x1a0
+[ 7812.756984]  vfs_write+0xd0/0x1d0
+[ 7812.756987]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.756991]  ksys_write+0x5c/0xd0
+[ 7812.756997]  do_syscall_64+0x60/0x250
+[ 7812.757000]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.757002] RIP: 0033:0x1555073acfd0
+[ 7812.757004] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.757006] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.757008] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.757009] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.757011] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.757012] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.757014] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.757040] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.757042] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.757043] Call Trace:
+[ 7812.757046]  dump_stack+0x78/0xb3
+[ 7812.757053]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.757063]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.757072]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.757077]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.757081]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.757086]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.757089]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.757093]  kernfs_fop_write+0x116/0x1a0
+[ 7812.757098]  vfs_write+0xd0/0x1d0
+[ 7812.757101]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.757106]  ksys_write+0x5c/0xd0
+[ 7812.757111]  do_syscall_64+0x60/0x250
+[ 7812.757114]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.757117] RIP: 0033:0x1555073acfd0
+[ 7812.757118] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.757120] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.757122] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.757124] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.757125] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.757127] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.757128] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.757184] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.757187] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.757188] Call Trace:
+[ 7812.757193]  dump_stack+0x78/0xb3
+[ 7812.757201]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.757213]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.757225]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.757232]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.757237]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.757242]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.757247]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.757252]  kernfs_fop_write+0x116/0x1a0
+[ 7812.757259]  vfs_write+0xd0/0x1d0
+[ 7812.757262]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.757268]  ksys_write+0x5c/0xd0
+[ 7812.757275]  do_syscall_64+0x60/0x250
+[ 7812.757279]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.757281] RIP: 0033:0x1555073acfd0
+[ 7812.757284] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.757286] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.757288] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.757290] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.757292] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.757294] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.757296] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.757329] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.757331] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.757333] Call Trace:
+[ 7812.757337]  dump_stack+0x78/0xb3
+[ 7812.757345]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.757357]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.757369]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.757375]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.757380]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.757385]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.757390]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.757394]  kernfs_fop_write+0x116/0x1a0
+[ 7812.757401]  vfs_write+0xd0/0x1d0
+[ 7812.757405]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.757411]  ksys_write+0x5c/0xd0
+[ 7812.757417]  do_syscall_64+0x60/0x250
+[ 7812.757421]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.757424] RIP: 0033:0x1555073acfd0
+[ 7812.757426] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.757428] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.757431] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.757433] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.757435] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.757437] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.757439] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.757505] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.757523] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.757524] Call Trace:
+[ 7812.757528]  dump_stack+0x78/0xb3
+[ 7812.757534]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.757545]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.757554]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.757559]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.757563]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.757567]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.757571]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.757575]  kernfs_fop_write+0x116/0x1a0
+[ 7812.757581]  vfs_write+0xd0/0x1d0
+[ 7812.757583]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.757588]  ksys_write+0x5c/0xd0
+[ 7812.757593]  do_syscall_64+0x60/0x250
+[ 7812.757596]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.757598] RIP: 0033:0x1555073acfd0
+[ 7812.757600] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.757602] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.757604] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.757605] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.757607] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.757609] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.757611] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.757637] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.757638] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.757640] Call Trace:
+[ 7812.757644]  dump_stack+0x78/0xb3
+[ 7812.757650]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.757660]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.757669]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.757675]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.757679]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.757683]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.757687]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.757690]  kernfs_fop_write+0x116/0x1a0
+[ 7812.757696]  vfs_write+0xd0/0x1d0
+[ 7812.757698]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.757703]  ksys_write+0x5c/0xd0
+[ 7812.757708]  do_syscall_64+0x60/0x250
+[ 7812.757712]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.757714] RIP: 0033:0x1555073acfd0
+[ 7812.757716] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.757717] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.757719] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.757721] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.757722] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.757724] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.757726] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.757752] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.757753] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.757755] Call Trace:
+[ 7812.757758]  dump_stack+0x78/0xb3
+[ 7812.757765]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.757774]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.757784]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.757789]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.757793]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.757797]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.757801]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.757804]  kernfs_fop_write+0x116/0x1a0
+[ 7812.757810]  vfs_write+0xd0/0x1d0
+[ 7812.757813]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.757818]  ksys_write+0x5c/0xd0
+[ 7812.757823]  do_syscall_64+0x60/0x250
+[ 7812.757826]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.757828] RIP: 0033:0x1555073acfd0
+[ 7812.757830] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.757832] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.757834] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.757835] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.757837] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.757838] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.757840] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.757868] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.757869] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.757871] Call Trace:
+[ 7812.757874]  dump_stack+0x78/0xb3
+[ 7812.757881]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.757891]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.757900]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.757906]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.757910]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.757914]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.757917]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.757921]  kernfs_fop_write+0x116/0x1a0
+[ 7812.757927]  vfs_write+0xd0/0x1d0
+[ 7812.757929]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.757934]  ksys_write+0x5c/0xd0
+[ 7812.757939]  do_syscall_64+0x60/0x250
+[ 7812.757942]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.757944] RIP: 0033:0x1555073acfd0
+[ 7812.757946] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.757948] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.757950] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.757951] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.757953] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.757955] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.757956] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.757982] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.757984] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.757985] Call Trace:
+[ 7812.757989]  dump_stack+0x78/0xb3
+[ 7812.757995]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.758005]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.758015]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.758020]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.758024]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.758028]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.758032]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.758035]  kernfs_fop_write+0x116/0x1a0
+[ 7812.758041]  vfs_write+0xd0/0x1d0
+[ 7812.758043]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.758048]  ksys_write+0x5c/0xd0
+[ 7812.758053]  do_syscall_64+0x60/0x250
+[ 7812.758057]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.758059] RIP: 0033:0x1555073acfd0
+[ 7812.758061] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.758062] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.758064] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.758066] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.758067] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.758069] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.758071] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.758097] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.758099] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.758100] Call Trace:
+[ 7812.758104]  dump_stack+0x78/0xb3
+[ 7812.758111]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.758120]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.758130]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.758135]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.758139]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.758143]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.758147]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.758151]  kernfs_fop_write+0x116/0x1a0
+[ 7812.758156]  vfs_write+0xd0/0x1d0
+[ 7812.758176]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.758182]  ksys_write+0x5c/0xd0
+[ 7812.758188]  do_syscall_64+0x60/0x250
+[ 7812.758192]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.758195] RIP: 0033:0x1555073acfd0
+[ 7812.758197] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.758199] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.758201] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.758203] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.758205] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.758207] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.758209] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.758324] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.758326] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.758327] Call Trace:
+[ 7812.758332]  dump_stack+0x78/0xb3
+[ 7812.758340]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.758350]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.758361]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.758367]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.758372]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.758377]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.758382]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.758387]  kernfs_fop_write+0x116/0x1a0
+[ 7812.758393]  vfs_write+0xd0/0x1d0
+[ 7812.758397]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.758402]  ksys_write+0x5c/0xd0
+[ 7812.758409]  do_syscall_64+0x60/0x250
+[ 7812.758412]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.758415] RIP: 0033:0x1555073acfd0
+[ 7812.758417] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.758419] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.758422] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.758424] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.758425] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.758427] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.758430] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.758495] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.758497] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.758498] Call Trace:
+[ 7812.758502]  dump_stack+0x78/0xb3
+[ 7812.758525]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.758533]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.758543]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.758548]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.758552]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.758556]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.758560]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.758564]  kernfs_fop_write+0x116/0x1a0
+[ 7812.758570]  vfs_write+0xd0/0x1d0
+[ 7812.758572]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.758577]  ksys_write+0x5c/0xd0
+[ 7812.758582]  do_syscall_64+0x60/0x250
+[ 7812.758586]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.758588] RIP: 0033:0x1555073acfd0
+[ 7812.758590] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.758591] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.758594] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.758596] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.758597] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.758599] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.758600] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.758627] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.758629] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.758630] Call Trace:
+[ 7812.758634]  dump_stack+0x78/0xb3
+[ 7812.758640]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.758648]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.758658]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.758663]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.758667]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.758671]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.758675]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.758678]  kernfs_fop_write+0x116/0x1a0
+[ 7812.758684]  vfs_write+0xd0/0x1d0
+[ 7812.758686]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.758691]  ksys_write+0x5c/0xd0
+[ 7812.758696]  do_syscall_64+0x60/0x250
+[ 7812.758699]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.758701] RIP: 0033:0x1555073acfd0
+[ 7812.758704] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.758705] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.758707] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.758709] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.758710] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.758712] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.758713] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.758740] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.758741] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.758743] Call Trace:
+[ 7812.758746]  dump_stack+0x78/0xb3
+[ 7812.758752]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.758761]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.758770]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.758776]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.758779]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.758783]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.758787]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.758791]  kernfs_fop_write+0x116/0x1a0
+[ 7812.758797]  vfs_write+0xd0/0x1d0
+[ 7812.758799]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.758804]  ksys_write+0x5c/0xd0
+[ 7812.758809]  do_syscall_64+0x60/0x250
+[ 7812.758813]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.758815] RIP: 0033:0x1555073acfd0
+[ 7812.758817] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.758818] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.758820] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.758822] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.758823] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.758825] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.758826] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.758854] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.758856] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.758857] Call Trace:
+[ 7812.758861]  dump_stack+0x78/0xb3
+[ 7812.758867]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.758875]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.758885]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.758890]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.758894]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.758898]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.758901]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.758905]  kernfs_fop_write+0x116/0x1a0
+[ 7812.758911]  vfs_write+0xd0/0x1d0
+[ 7812.758913]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.758918]  ksys_write+0x5c/0xd0
+[ 7812.758923]  do_syscall_64+0x60/0x250
+[ 7812.758926]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.758928] RIP: 0033:0x1555073acfd0
+[ 7812.758930] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.758932] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.758934] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.758935] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.758937] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.758938] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.758940] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.758966] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.758968] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.758969] Call Trace:
+[ 7812.758973]  dump_stack+0x78/0xb3
+[ 7812.758979]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.758987]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.758997]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.759002]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.759006]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.759010]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.759013]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.759017]  kernfs_fop_write+0x116/0x1a0
+[ 7812.759023]  vfs_write+0xd0/0x1d0
+[ 7812.759025]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.759030]  ksys_write+0x5c/0xd0
+[ 7812.759035]  do_syscall_64+0x60/0x250
+[ 7812.759038]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.759040] RIP: 0033:0x1555073acfd0
+[ 7812.759042] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.759044] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.759046] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.759047] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.759049] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.759051] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.759052] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.759079] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.759081] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.759082] Call Trace:
+[ 7812.759086]  dump_stack+0x78/0xb3
+[ 7812.759092]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.759100]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.759109]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.759114]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.759118]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.759122]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.759126]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.759130]  kernfs_fop_write+0x116/0x1a0
+[ 7812.759135]  vfs_write+0xd0/0x1d0
+[ 7812.759138]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.759142]  ksys_write+0x5c/0xd0
+[ 7812.759148]  do_syscall_64+0x60/0x250
+[ 7812.759151]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.759153] RIP: 0033:0x1555073acfd0
+[ 7812.759155] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.759174] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.759176] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.759178] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.759180] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.759182] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.759184] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
+[ 7812.759230] CPU: 8 PID: 1490 Comm: nvme Kdump: loaded Tainted: G           O      5.4.0-rc6+ #12
+[ 7812.759232] Hardware name: Supermicro X10SRA-F/X10SRA-F, BIOS 2.0a 06/23/2016
+[ 7812.759234] Call Trace:
+[ 7812.759238]  dump_stack+0x78/0xb3
+[ 7812.759246]  c4iw_dereg_mr+0x18/0x1c0 [iw_cxgb4]
+[ 7812.759256]  ib_dereg_mr_user+0x41/0x80 [ib_core]
+[ 7812.759267]  ib_mr_pool_destroy+0x60/0x90 [ib_core]
+[ 7812.759273]  nvme_rdma_destroy_queue_ib+0x2f/0x80 [nvme_rdma]
+[ 7812.759278]  nvme_rdma_free_queue+0x19/0x30 [nvme_rdma]
+[ 7812.759283]  nvme_do_delete_ctrl+0x58/0x70 [nvme_core]
+[ 7812.759287]  nvme_sysfs_delete+0x42/0x60 [nvme_core]
+[ 7812.759292]  kernfs_fop_write+0x116/0x1a0
+[ 7812.759298]  vfs_write+0xd0/0x1d0
+[ 7812.759301]  ? trace_hardirqs_on_thunk+0x1a/0x20
+[ 7812.759307]  ksys_write+0x5c/0xd0
+[ 7812.759313]  do_syscall_64+0x60/0x250
+[ 7812.759317]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
+[ 7812.759319] RIP: 0033:0x1555073acfd0
+[ 7812.759322] Code: 73 01 c3 48 8b 0d c0 6e 2d 00 f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 83 3d cd cf 2d 00 00 75 10 b8 01 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 31 c3 48 83 ec 08 e8 ee cb 01 00 48 89 04 24
+[ 7812.759323] RSP: 002b:00007fff4a04c4f8 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[ 7812.759327] RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00001555073acfd0
+[ 7812.759329] RDX: 0000000000000001 RSI: 000000000044006b RDI: 0000000000000003
+[ 7812.759331] RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000953fe0
+[ 7812.759333] R10: 6e6f635f6574656c R11: 0000000000000246 R12: 0000000000954050
+[ 7812.759334] R13: 0000000000000001 R14: 0000000000000002 R15: 0000000000954300
