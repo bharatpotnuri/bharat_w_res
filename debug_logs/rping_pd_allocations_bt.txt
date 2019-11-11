@@ -1,0 +1,35 @@
+created cm_id 0x611910
+[New Thread 0x1555520d3700 (LWP 4379)]
+rdma_bind_addr successful
+rdma_listen
+[Switching to Thread 0x1555520d3700 (LWP 4379)]
+
+Breakpoint 1, c4iw_alloc_pd (context=0x15554c000e80) at /usr/src/debug/rdma-core-27.0/providers/cxgb4/verbs.c:82
+82      {
+(gdb) bt
+#0  c4iw_alloc_pd (context=0x15554c000e80) at /usr/src/debug/rdma-core-27.0/providers/cxgb4/verbs.c:82
+#1  0x0000155554cf544b in __ibv_alloc_pd_1_1 (context=0x15554c000e80) at /usr/src/debug/rdma-core-27.0/libibverbs/verbs.c:285
+#2  0x000015555511eb63 in ucma_get_device (id_priv=id_priv@entry=0x15554c000a30, guid=<optimized out>) at /usr/src/debug/rdma-core-27.0/librdmacm/cma.c:473
+#3  0x000015555511ecf6 in ucma_query_addr (id=id@entry=0x15554c000a30) at /usr/src/debug/rdma-core-27.0/librdmacm/cma.c:714
+#4  0x000015555512176c in ucma_query_req_info (id=0x15554c000a30) at /usr/src/debug/rdma-core-27.0/librdmacm/cma.c:2009
+#5  ucma_process_conn_req (handle=<optimized out>, evt=0x15554c0008c0) at /usr/src/debug/rdma-core-27.0/librdmacm/cma.c:2052
+#6  rdma_get_cm_event (channel=0x607da0, event=event@entry=0x1555520d2ed0) at /usr/src/debug/rdma-core-27.0/librdmacm/cma.c:2229
+#7  0x0000155555121b5b in rdma_get_cm_event (channel=<optimized out>, event=event@entry=0x1555520d2ed0) at /usr/src/debug/rdma-core-27.0/librdmacm/cma.c:2300
+#8  0x0000000000402f11 in cm_thread (arg=0x607780) at /usr/src/debug/rdma-core-27.0/librdmacm/examples/rping.c:655
+#9  0x0000155554f04dd5 in start_thread () from /lib64/libpthread.so.0
+#10 0x0000155554a12ead in clone () from /lib64/libc.so.6
+(gdb) continue
+Continuing.
+cma_event type RDMA_CM_EVENT_CONNECT_REQUEST cma_id 0x15554c000a30 (child)
+child cma 0x15554c000a30
+[Switching to Thread 0x155555525740 (LWP 4376)]
+
+Breakpoint 1, c4iw_alloc_pd (context=0x15554c000e80) at /usr/src/debug/rdma-core-27.0/providers/cxgb4/verbs.c:82
+82      {
+(gdb) bt
+#0  c4iw_alloc_pd (context=0x15554c000e80) at /usr/src/debug/rdma-core-27.0/providers/cxgb4/verbs.c:82
+#1  0x0000155554cf544b in __ibv_alloc_pd_1_1 (context=0x15554c000e80) at /usr/src/debug/rdma-core-27.0/libibverbs/verbs.c:285
+#2  0x0000000000403618 in rping_setup_qp (cb=cb@entry=0x607780, cm_id=<optimized out>) at /usr/src/debug/rdma-core-27.0/librdmacm/examples/rping.c:601
+#3  0x0000000000401e4c in rping_run_server (cb=0x607780) at /usr/src/debug/rdma-core-27.0/librdmacm/examples/rping.c:972
+#4  main (argc=6, argv=0x7fffffffe248) at /usr/src/debug/rdma-core-27.0/librdmacm/examples/rping.c:1372
+
