@@ -1,0 +1,167 @@
+diff --git a/drivers/infiniband/core/verbs.c b/drivers/infiniband/core/verbs.c
+index 35c2841a569e..3e649201d134 100644
+--- a/drivers/infiniband/core/verbs.c
++++ b/drivers/infiniband/core/verbs.c
+@@ -2568,6 +2568,7 @@ int ib_sg_to_pages(struct ib_mr *mr, struct scatterlist *sgl, int sg_nents,
+ 
+ 	mr->iova = sg_dma_address(&sgl[0]) + sg_offset;
+ 	mr->length = 0;
++	pr_err("sg_offset %d\n", sg_offset);
+ 
+ 	for_each_sg(sgl, sg, sg_nents, i) {
+ 		u64 dma_addr = sg_dma_address(sg) + sg_offset;
+@@ -2581,6 +2582,7 @@ int ib_sg_to_pages(struct ib_mr *mr, struct scatterlist *sgl, int sg_nents,
+ 		 * end of element i-1 or the start of element i is not aligned
+ 		 * on a page boundary.
+ 		 */
++		pr_err("page_addr %llx dma_addr %llx i %d\n", page_addr, dma_addr, i);
+ 		if (i && (last_page_off != 0 || page_addr != dma_addr)) {
+ 			/* Stop mapping if there is a gap. */
+ 			if (last_end_dma_addr != dma_addr)
+@@ -2596,6 +2598,7 @@ int ib_sg_to_pages(struct ib_mr *mr, struct scatterlist *sgl, int sg_nents,
+ 
+ 		do {
+ 			ret = set_page(mr, page_addr);
++			pr_err("ret %d\n", ret);
+ 			if (unlikely(ret < 0)) {
+ 				sg_offset = prev_addr - sg_dma_address(sg);
+ 				mr->length += prev_addr - dma_addr;
+diff --git a/drivers/infiniband/hw/cxgb4/mem.c b/drivers/infiniband/hw/cxgb4/mem.c
+index 35c284af574d..ab674074050e 100644
+--- a/drivers/infiniband/hw/cxgb4/mem.c
++++ b/drivers/infiniband/hw/cxgb4/mem.c
+@@ -451,6 +451,7 @@ struct ib_mr *c4iw_get_dma_mr(struct ib_pd *pd, int acc)
+ 	struct c4iw_mr *mhp;
+ 	int ret;
+ 	u32 stag = T4_STAG_UNSET;
++	dump_stack();
+ 
+ 	pr_debug("ib_pd %p\n", pd);
+ 	php = to_c4iw_pd(pd);
+@@ -517,6 +518,7 @@ struct ib_mr *c4iw_reg_user_mr(struct ib_pd *pd, u64 start, u64 length,
+ 	struct c4iw_mr *mhp;
+ 
+ 	pr_debug("ib_pd %p\n", pd);
++	dump_stack();
+ 
+ 	if (length == ~0ULL)
+ 		return ERR_PTR(-EINVAL);
+@@ -700,6 +702,7 @@ struct ib_mr *c4iw_alloc_mr(struct ib_pd *pd, enum ib_mr_type mr_type,
+ 	u32 stag = 0;
+ 	int ret = 0;
+ 	int length = roundup(max_num_sg * sizeof(u64), 32);
++	dump_stack();
+ 
+ 	php = to_c4iw_pd(pd);
+ 	rhp = php->rhp;
+@@ -778,6 +781,7 @@ static int c4iw_set_page(struct ib_mr *ibmr, u64 addr)
+ 		return -ENOMEM;
+ 
+ 	mhp->mpl[mhp->mpl_len++] = addr;
++	pr_err("mpl addr = 0x%llX\n", addr);
+ 
+ 	return 0;
+ }
+@@ -788,6 +792,7 @@ int c4iw_map_mr_sg(struct ib_mr *ibmr, struct scatterlist *sg, int sg_nents,
+ 	struct c4iw_mr *mhp = to_c4iw_mr(ibmr);
+ 
+ 	mhp->mpl_len = 0;
++	dump_stack();
+ 
+ 	return ib_sg_to_pages(ibmr, sg, sg_nents, sg_offset, c4iw_set_page);
+ }
+@@ -799,6 +804,7 @@ int c4iw_dereg_mr(struct ib_mr *ib_mr, struct ib_udata *udata)
+ 	u32 mmid;
+ 
+ 	pr_debug("ib_mr %p\n", ib_mr);
++	dump_stack();
+ 
+ 	mhp = to_c4iw_mr(ib_mr);
+ 	rhp = mhp->rhp;
+diff --git a/drivers/infiniband/hw/cxgb4/provider.c b/drivers/infiniband/hw/cxgb4/provider.c
+index d373ac0fe2cb..93deae91cccb 100644
+--- a/drivers/infiniband/hw/cxgb4/provider.c
++++ b/drivers/infiniband/hw/cxgb4/provider.c
+@@ -133,6 +133,7 @@ static int c4iw_mmap(struct ib_ucontext *context, struct vm_area_struct *vma)
+ 
+ 	pr_debug("pgoff 0x%lx key 0x%x len %d\n", vma->vm_pgoff,
+ 		 key, len);
++	dump_stack();
+ 
+ 	if (vma->vm_start & (PAGE_SIZE-1))
+ 		return -EINVAL;
+diff --git a/drivers/infiniband/hw/cxgb4/qp.c b/drivers/infiniband/hw/cxgb4/qp.c
+index bbcac539777a..586886b4e6ac 100644
+--- a/drivers/infiniband/hw/cxgb4/qp.c
++++ b/drivers/infiniband/hw/cxgb4/qp.c
+@@ -805,8 +805,8 @@ static void build_tpte_memreg(struct fw_ri_fr_nsmr_tpte_wr *fr,
+ 	fr->tpte.nosnoop_pbladdr = cpu_to_be32(FW_RI_TPTE_PBLADDR_V(
+ 		PBL_OFF(&mhp->rhp->rdev, mhp->attr.pbl_addr)>>3));
+ 	fr->tpte.dca_mwbcnt_pstag = cpu_to_be32(0);
+-	fr->tpte.len_hi = cpu_to_be32(0);
+-	fr->tpte.len_lo = cpu_to_be32(mhp->ibmr.length);
++	fr->tpte.len_hi = cpu_to_be32(mhp->ibmr.length >> 32);
++	fr->tpte.len_lo = cpu_to_be32(mhp->ibmr.length & 0xffffffff);
+ 	fr->tpte.va_hi = cpu_to_be32(mhp->ibmr.iova >> 32);
+ 	fr->tpte.va_lo_fbo = cpu_to_be32(mhp->ibmr.iova & 0xffffffff);
+ 
+@@ -833,12 +833,11 @@ static int build_memreg(struct t4_sq *sq, union t4_wr *wqe,
+ 	wqe->fr.pgsz_shift = ilog2(wr->mr->page_size) - 12;
+ 	wqe->fr.addr_type = FW_RI_VA_BASED_TO;
+ 	wqe->fr.mem_perms = c4iw_ib_to_tpt_access(wr->access);
+-	wqe->fr.len_hi = 0;
+-	wqe->fr.len_lo = cpu_to_be32(mhp->ibmr.length);
++	wqe->fr.len_hi = cpu_to_be32(mhp->ibmr.length >> 32);
++	wqe->fr.len_lo = cpu_to_be32(mhp->ibmr.length & 0xffffffff);
+ 	wqe->fr.stag = cpu_to_be32(wr->key);
+ 	wqe->fr.va_hi = cpu_to_be32(mhp->ibmr.iova >> 32);
+-	wqe->fr.va_lo_fbo = cpu_to_be32(mhp->ibmr.iova &
+-					0xffffffff);
++	wqe->fr.va_lo_fbo = cpu_to_be32(mhp->ibmr.iova & 0xffffffff);
+ 
+ 	if (dsgl_supported && use_dsgl && (pbllen > max_fr_immd)) {
+ 		struct fw_ri_dsgl *sglp;
+@@ -1190,6 +1189,7 @@ int c4iw_post_send(struct ib_qp *ibqp, const struct ib_send_wr *wr,
+ 			break;
+ 		case IB_WR_REG_MR: {
+ 			struct c4iw_mr *mhp = to_c4iw_mr(reg_wr(wr)->mr);
++			dump_stack();
+ 
+ 			swsqe->opcode = FW_RI_FAST_REGISTER;
+ 			if (rhp->rdev.lldi.fr_nsmr_tpte_wr_support &&
+@@ -1197,11 +1197,13 @@ int c4iw_post_send(struct ib_qp *ibqp, const struct ib_send_wr *wr,
+ 				fw_opcode = FW_RI_FR_NSMR_TPTE_WR;
+ 				build_tpte_memreg(&wqe->fr_tpte, reg_wr(wr),
+ 						  mhp, &len16);
++				pr_err("FW_RI_FR_NSMR_TPTE_WR\n");
+ 			} else {
+ 				fw_opcode = FW_RI_FR_NSMR_WR;
+ 				err = build_memreg(&qhp->wq.sq, wqe, reg_wr(wr),
+ 				       mhp, &len16,
+ 				       rhp->rdev.lldi.ulptx_memwrite_dsgl);
++				pr_err("FW_RI_FR_NSMR_WR\n");
+ 				if (err)
+ 					break;
+ 			}
+@@ -1239,7 +1241,7 @@ int c4iw_post_send(struct ib_qp *ibqp, const struct ib_send_wr *wr,
+ 
+ 		init_wr_hdr(wqe, qhp->wq.sq.pidx, fw_opcode, fw_flags, len16);
+ 
+-		pr_debug("cookie 0x%llx pidx 0x%x opcode 0x%x read_len %u\n",
++		pr_err("cookie 0x%llx pidx 0x%x opcode 0x%x read_len %u\n",
+ 			 (unsigned long long)wr->wr_id, qhp->wq.sq.pidx,
+ 			 swsqe->opcode, swsqe->read_len);
+ 		wr = wr->next;
+@@ -1948,10 +1950,10 @@ int c4iw_modify_qp(struct c4iw_dev *rhp, struct c4iw_qp *qhp,
+ 			qhp->attr.layer_etype = attrs->layer_etype;
+ 			qhp->attr.ecode = attrs->ecode;
+ 			ep = qhp->ep;
+-			c4iw_get_ep(&ep->com);
+-			disconnect = 1;
+ 			if (!internal) {
++				c4iw_get_ep(&qhp->ep->com);
+ 				terminate = 1;
++				disconnect = 1;
+ 			} else {
+ 				terminate = qhp->attr.send_term;
+ 				ret = rdma_fini(rhp, qhp, ep);
