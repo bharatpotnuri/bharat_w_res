@@ -1,0 +1,23 @@
+diff --git a/drivers/infiniband/hw/cxgb4/cm.c b/drivers/infiniband/hw/cxgb4/cm.c
+index 347dc242fb88..8c4e17f43309 100644
+--- a/drivers/infiniband/hw/cxgb4/cm.c
++++ b/drivers/infiniband/hw/cxgb4/cm.c
+@@ -1848,13 +1848,17 @@ static int rx_data(struct c4iw_dev *dev, struct sk_buff *skb)
+ 	unsigned int dlen = ntohs(hdr->len);
+ 	unsigned int tid = GET_TID(hdr);
+ 	__u8 status = hdr->status;
+-	int disconnect = 0;
++	int disconnect = 0, i = 0;
++	uint8_t data[1500] = {0};
+ 
+ 	ep = get_ep_from_tid(dev, tid);
+ 	if (!ep)
+ 		return 0;
+ 	pr_debug("ep %p tid %u dlen %u\n", ep, ep->hwtid, dlen);
+ 	skb_pull(skb, sizeof(*hdr));
++	skb_copy_from_linear_data(skb, data, skb->len);
++	for (i=0; i < skb->len; i++)
++		printk(KERN_CONT "%02X ", data[i]);
+ 	skb_trim(skb, dlen);
+ 	mutex_lock(&ep->com.mutex);
+ 
