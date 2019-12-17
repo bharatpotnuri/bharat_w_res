@@ -1,0 +1,130 @@
+diff --git a/drivers/infiniband/hw/cxgb4/device.c b/drivers/infiniband/hw/cxgb4/device.c
+index 599340c1f0b8..431aaa23eb43 100644
+--- a/drivers/infiniband/hw/cxgb4/device.c
++++ b/drivers/infiniband/hw/cxgb4/device.c
+@@ -831,7 +831,7 @@ static int c4iw_rdev_open(struct c4iw_rdev *rdev)
+ 		 rdev->lldi.vr->cq.start,
+ 		 rdev->lldi.vr->cq.size,
+ 		 rdev->lldi.vr->srq.size);
+-	pr_debug("udb %pR db_reg %p gts_reg %p qpmask 0x%x cqmask 0x%x\n",
++	pr_err("udb %pR db_reg %p gts_reg %p qpmask 0x%x cqmask 0x%x\n",
+ 		 &rdev->lldi.pdev->resource[2],
+ 		 rdev->lldi.db_reg, rdev->lldi.gts_reg,
+ 		 rdev->qpmask, rdev->cqmask);
+diff --git a/drivers/infiniband/hw/cxgb4/id_table.c b/drivers/infiniband/hw/cxgb4/id_table.c
+index 724d23297b35..4220908889ba 100644
+--- a/drivers/infiniband/hw/cxgb4/id_table.c
++++ b/drivers/infiniband/hw/cxgb4/id_table.c
+@@ -49,21 +49,31 @@ u32 c4iw_id_alloc(struct c4iw_id_table *alloc)
+ 	spin_lock_irqsave(&alloc->lock, flags);
+ 
+ 	obj = find_next_zero_bit(alloc->table, alloc->max, alloc->last);
+-	if (obj >= alloc->max)
++	pr_err("Bhar: %d obj %d\n", __LINE__, obj);
++	if (obj >= alloc->max) {
+ 		obj = find_first_zero_bit(alloc->table, alloc->max);
++		pr_err("Bhar: %d obj %d\n", __LINE__, obj);
++	}
+ 
+ 	if (obj < alloc->max) {
+-		if (alloc->flags & C4IW_ID_TABLE_F_RANDOM)
++		pr_err("Bhar: %d obj %d\n", __LINE__, obj);
++		if (alloc->flags & C4IW_ID_TABLE_F_RANDOM) {
+ 			alloc->last += prandom_u32() % RANDOM_SKIP;
+-		else
++			pr_err("Bhar: %d obj %d\n", __LINE__, obj);
++		} else {
+ 			alloc->last = obj + 1;
+-		if (alloc->last >= alloc->max)
++			pr_err("Bhar: %d obj %d\n", __LINE__, obj);
++		}
++		if (alloc->last >= alloc->max) {
+ 			alloc->last = 0;
++			pr_err("Bhar: %d obj %d\n", __LINE__, obj);
++		}
+ 		set_bit(obj, alloc->table);
+ 		obj += alloc->start;
+ 	} else
+ 		obj = -1;
+ 
++	pr_err("Bhar: %d obj %d last %d max %d\n", __LINE__, obj, alloc->last, alloc->max);
+ 	spin_unlock_irqrestore(&alloc->lock, flags);
+ 	return obj;
+ }
+diff --git a/drivers/infiniband/hw/cxgb4/resource.c b/drivers/infiniband/hw/cxgb4/resource.c
+index 5c95c789f302..654cfd3bed75 100644
+--- a/drivers/infiniband/hw/cxgb4/resource.c
++++ b/drivers/infiniband/hw/cxgb4/resource.c
+@@ -117,11 +117,13 @@ u32 c4iw_get_cqid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx)
+ 				   entry);
+ 		list_del(&entry->entry);
+ 		qid = entry->qid;
++		pr_err("Bhar: list not empty %d\n", qid);
+ 		kfree(entry);
+ 	} else {
+ 		qid = c4iw_get_resource(&rdev->resource.qid_table);
+ 		if (!qid)
+ 			goto out;
++		pr_err("Bhar: list empty %d\n", qid);
+ 		mutex_lock(&rdev->stats.lock);
+ 		rdev->stats.qid.cur += rdev->qpmask + 1;
+ 		mutex_unlock(&rdev->stats.lock);
+@@ -130,6 +132,7 @@ u32 c4iw_get_cqid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx)
+ 			if (!entry)
+ 				goto out;
+ 			entry->qid = i;
++			pr_err("Bhar: add cq entry %d\n", i);
+ 			list_add_tail(&entry->entry, &uctx->cqids);
+ 		}
+ 
+@@ -146,13 +149,14 @@ u32 c4iw_get_cqid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx)
+ 			entry = kmalloc(sizeof(*entry), GFP_KERNEL);
+ 			if (!entry)
+ 				goto out;
++			pr_err("Bhar: add qp entry %d\n", i);
+ 			entry->qid = i;
+ 			list_add_tail(&entry->entry, &uctx->qpids);
+ 		}
+ 	}
+ out:
+ 	mutex_unlock(&uctx->lock);
+-	pr_debug("qid 0x%x\n", qid);
++	pr_err("cqid 0x%d\n", qid);
+ 	mutex_lock(&rdev->stats.lock);
+ 	if (rdev->stats.qid.cur > rdev->stats.qid.max)
+ 		rdev->stats.qid.max = rdev->stats.qid.cur;
+@@ -187,9 +191,11 @@ u32 c4iw_get_qpid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx)
+ 				   entry);
+ 		list_del(&entry->entry);
+ 		qid = entry->qid;
++		pr_err("Bhar: list not empty %d\n", qid);
+ 		kfree(entry);
+ 	} else {
+ 		qid = c4iw_get_resource(&rdev->resource.qid_table);
++		pr_err("Bhar: list empty %d\n", qid);
+ 		if (!qid) {
+ 			mutex_lock(&rdev->stats.lock);
+ 			rdev->stats.qid.fail++;
+@@ -204,6 +210,7 @@ u32 c4iw_get_qpid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx)
+ 			if (!entry)
+ 				goto out;
+ 			entry->qid = i;
++			pr_err("Bhar: add qp entry %d\n", i);
+ 			list_add_tail(&entry->entry, &uctx->qpids);
+ 		}
+ 
+@@ -221,12 +228,13 @@ u32 c4iw_get_qpid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx)
+ 			if (!entry)
+ 				goto out;
+ 			entry->qid = i;
++			pr_err("Bhar: add cq entry %d\n", i);
+ 			list_add_tail(&entry->entry, &uctx->cqids);
+ 		}
+ 	}
+ out:
+ 	mutex_unlock(&uctx->lock);
+-	pr_debug("qid 0x%x\n", qid);
++	pr_err("qpid 0x%d\n", qid);
+ 	mutex_lock(&rdev->stats.lock);
+ 	if (rdev->stats.qid.cur > rdev->stats.qid.max)
+ 		rdev->stats.qid.max = rdev->stats.qid.cur;

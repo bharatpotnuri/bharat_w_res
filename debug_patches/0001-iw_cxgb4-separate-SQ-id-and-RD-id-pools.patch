@@ -1,0 +1,399 @@
+From 8d79734fc933bf236ffc7c260f8b7fb3f3d9736f Mon Sep 17 00:00:00 2001
+From: Potnuri Bharat Teja <bharat@chelsio.com>
+Date: Thu, 14 Nov 2019 18:00:59 +0530
+Subject: [PATCH] iw_cxgb4: separate SQ id and RD id pools
+
+Current logic of allocating sq/rq id is to allocate them sequentially.
+THis patch moves splits the qid pool to half and alloctes the first pool half
+for SQ and the othe for RQ.
+CQ pooling is ambiguous still so for now use SQ id pool for CQ also and SRQ uses RQ
+id pool.
+Splitting these will allow fw to read more number of SQ ids instead of over
+flowing the tcb 16 bit qpid field. RQ id is not a concern so it can be allocated
+at higher offset.
+
+Signed-off-by: Potnuri Bharat Teja <bharat@chelsio.com>
+---
+ drivers/infiniband/hw/cxgb4/device.c   |  20 ++++-
+ drivers/infiniband/hw/cxgb4/iw_cxgb4.h |  13 +--
+ drivers/infiniband/hw/cxgb4/qp.c       |  18 ++--
+ drivers/infiniband/hw/cxgb4/resource.c | 116 +++++++++++++++++++++----
+ 4 files changed, 130 insertions(+), 37 deletions(-)
+
+diff --git a/drivers/infiniband/hw/cxgb4/device.c b/drivers/infiniband/hw/cxgb4/device.c
+index 599340c1f0b8..31d36f42a287 100644
+--- a/drivers/infiniband/hw/cxgb4/device.c
++++ b/drivers/infiniband/hw/cxgb4/device.c
+@@ -751,11 +751,24 @@ void c4iw_release_dev_ucontext(struct c4iw_rdev *rdev,
+ 	struct c4iw_qid_list *entry;
+ 
+ 	mutex_lock(&uctx->lock);
+-	list_for_each_safe(pos, nxt, &uctx->qpids) {
++	list_for_each_safe(pos, nxt, &uctx->sqids) {
+ 		entry = list_entry(pos, struct c4iw_qid_list, entry);
+ 		list_del_init(&entry->entry);
+ 		if (!(entry->qid & rdev->qpmask)) {
+-			c4iw_put_resource(&rdev->resource.qid_table,
++			c4iw_put_resource(&rdev->resource.sqid_table,
++					  entry->qid);
++			mutex_lock(&rdev->stats.lock);
++			rdev->stats.qid.cur -= rdev->qpmask + 1;
++			mutex_unlock(&rdev->stats.lock);
++		}
++		kfree(entry);
++	}
++
++	list_for_each_safe(pos, nxt, &uctx->rqids) {
++		entry = list_entry(pos, struct c4iw_qid_list, entry);
++		list_del_init(&entry->entry);
++		if (!(entry->qid & rdev->qpmask)) {
++			c4iw_put_resource(&rdev->resource.rqid_table,
+ 					  entry->qid);
+ 			mutex_lock(&rdev->stats.lock);
+ 			rdev->stats.qid.cur -= rdev->qpmask + 1;
+@@ -775,7 +788,8 @@ void c4iw_release_dev_ucontext(struct c4iw_rdev *rdev,
+ void c4iw_init_dev_ucontext(struct c4iw_rdev *rdev,
+ 			    struct c4iw_dev_ucontext *uctx)
+ {
+-	INIT_LIST_HEAD(&uctx->qpids);
++	INIT_LIST_HEAD(&uctx->sqids);
++	INIT_LIST_HEAD(&uctx->rqids);
+ 	INIT_LIST_HEAD(&uctx->cqids);
+ 	mutex_init(&uctx->lock);
+ }
+diff --git a/drivers/infiniband/hw/cxgb4/iw_cxgb4.h b/drivers/infiniband/hw/cxgb4/iw_cxgb4.h
+index 7d06b0f8d49a..8c29c3ce5b43 100644
+--- a/drivers/infiniband/hw/cxgb4/iw_cxgb4.h
++++ b/drivers/infiniband/hw/cxgb4/iw_cxgb4.h
+@@ -95,7 +95,8 @@ struct c4iw_id_table {
+ 
+ struct c4iw_resource {
+ 	struct c4iw_id_table tpt_table;
+-	struct c4iw_id_table qid_table;
++	struct c4iw_id_table sqid_table;
++	struct c4iw_id_table rqid_table;
+ 	struct c4iw_id_table pdid_table;
+ 	struct c4iw_id_table srq_table;
+ };
+@@ -106,7 +107,8 @@ struct c4iw_qid_list {
+ };
+ 
+ struct c4iw_dev_ucontext {
+-	struct list_head qpids;
++	struct list_head sqids;
++	struct list_head rqids;
+ 	struct list_head cqids;
+ 	struct mutex lock;
+ 	struct kref kref;
+@@ -944,8 +946,6 @@ typedef int (*c4iw_handler_func)(struct c4iw_dev *dev, struct sk_buff *skb);
+ 
+ int c4iw_ep_redirect(void *ctx, struct dst_entry *old, struct dst_entry *new,
+ 		     struct l2t_entry *l2t);
+-void c4iw_put_qpid(struct c4iw_rdev *rdev, u32 qpid,
+-		   struct c4iw_dev_ucontext *uctx);
+ u32 c4iw_get_resource(struct c4iw_id_table *id_table);
+ void c4iw_put_resource(struct c4iw_id_table *id_table, u32 entry);
+ int c4iw_init_resource(struct c4iw_rdev *rdev, u32 nr_tpt,
+@@ -1028,9 +1028,10 @@ int c4iw_post_terminate(struct c4iw_qp *qhp, struct t4_cqe *err_cqe);
+ u32 c4iw_get_cqid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx);
+ void c4iw_put_cqid(struct c4iw_rdev *rdev, u32 qid,
+ 		struct c4iw_dev_ucontext *uctx);
+-u32 c4iw_get_qpid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx);
++u32 c4iw_get_rqid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx);
++u32 c4iw_get_sqid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx);
+ void c4iw_put_qpid(struct c4iw_rdev *rdev, u32 qid,
+-		struct c4iw_dev_ucontext *uctx);
++		struct c4iw_dev_ucontext *uctx, u8 sq);
+ void c4iw_ev_dispatch(struct c4iw_dev *dev, struct t4_cqe *err_cqe);
+ 
+ extern struct cxgb4_client t4c_client;
+diff --git a/drivers/infiniband/hw/cxgb4/qp.c b/drivers/infiniband/hw/cxgb4/qp.c
+index bbcac539777a..0b3661bf4113 100644
+--- a/drivers/infiniband/hw/cxgb4/qp.c
++++ b/drivers/infiniband/hw/cxgb4/qp.c
+@@ -156,7 +156,7 @@ static int destroy_qp(struct c4iw_rdev *rdev, struct t4_wq *wq,
+ 	 */
+ 	dealloc_sq(rdev, &wq->sq);
+ 	kfree(wq->sq.sw_sq);
+-	c4iw_put_qpid(rdev, wq->sq.qid, uctx);
++	c4iw_put_qpid(rdev, wq->sq.qid, uctx, 1);
+ 
+ 	if (has_rq) {
+ 		dma_free_coherent(&rdev->lldi.pdev->dev,
+@@ -164,7 +164,7 @@ static int destroy_qp(struct c4iw_rdev *rdev, struct t4_wq *wq,
+ 				  dma_unmap_addr(&wq->rq, mapping));
+ 		c4iw_rqtpool_free(rdev, wq->rq.rqt_hwaddr, wq->rq.rqt_size);
+ 		kfree(wq->rq.sw_rq);
+-		c4iw_put_qpid(rdev, wq->rq.qid, uctx);
++		c4iw_put_qpid(rdev, wq->rq.qid, uctx, 0);
+ 	}
+ 	return 0;
+ }
+@@ -210,12 +210,12 @@ static int create_qp(struct c4iw_rdev *rdev, struct t4_wq *wq,
+ 	int ret = 0;
+ 	int eqsize;
+ 
+-	wq->sq.qid = c4iw_get_qpid(rdev, uctx);
++	wq->sq.qid = c4iw_get_sqid(rdev, uctx);
+ 	if (!wq->sq.qid)
+ 		return -ENOMEM;
+ 
+ 	if (need_rq) {
+-		wq->rq.qid = c4iw_get_qpid(rdev, uctx);
++		wq->rq.qid = c4iw_get_rqid(rdev, uctx);
+ 		if (!wq->rq.qid) {
+ 			ret = -ENOMEM;
+ 			goto free_sq_qid;
+@@ -404,9 +404,9 @@ static int create_qp(struct c4iw_rdev *rdev, struct t4_wq *wq,
+ 	kfree(wq->sq.sw_sq);
+ free_rq_qid:
+ 	if (need_rq)
+-		c4iw_put_qpid(rdev, wq->rq.qid, uctx);
++		c4iw_put_qpid(rdev, wq->rq.qid, uctx, 0);
+ free_sq_qid:
+-	c4iw_put_qpid(rdev, wq->sq.qid, uctx);
++	c4iw_put_qpid(rdev, wq->sq.qid, uctx, 1);
+ 	return ret;
+ }
+ 
+@@ -2511,7 +2511,7 @@ static void free_srq_queue(struct c4iw_srq *srq, struct c4iw_dev_ucontext *uctx,
+ 			dma_unmap_addr(wq, mapping));
+ 	c4iw_rqtpool_free(rdev, wq->rqt_hwaddr, wq->rqt_size);
+ 	kfree(wq->sw_rq);
+-	c4iw_put_qpid(rdev, wq->qid, uctx);
++	c4iw_put_qpid(rdev, wq->qid, uctx, 0);
+ }
+ 
+ static int alloc_srq_queue(struct c4iw_srq *srq, struct c4iw_dev_ucontext *uctx,
+@@ -2527,7 +2527,7 @@ static int alloc_srq_queue(struct c4iw_srq *srq, struct c4iw_dev_ucontext *uctx,
+ 	int eqsize;
+ 	int ret = -ENOMEM;
+ 
+-	wq->qid = c4iw_get_qpid(rdev, uctx);
++	wq->qid = c4iw_get_rqid(rdev, uctx);
+ 	if (!wq->qid)
+ 		goto err;
+ 
+@@ -2644,7 +2644,7 @@ static int alloc_srq_queue(struct c4iw_srq *srq, struct c4iw_dev_ucontext *uctx,
+ 	if (!user)
+ 		kfree(wq->sw_rq);
+ err_put_qpid:
+-	c4iw_put_qpid(rdev, wq->qid, uctx);
++	c4iw_put_qpid(rdev, wq->qid, uctx, 0);
+ err:
+ 	return ret;
+ }
+diff --git a/drivers/infiniband/hw/cxgb4/resource.c b/drivers/infiniband/hw/cxgb4/resource.c
+index 5c95c789f302..5449b18908c8 100644
+--- a/drivers/infiniband/hw/cxgb4/resource.c
++++ b/drivers/infiniband/hw/cxgb4/resource.c
+@@ -38,17 +38,29 @@
+ static int c4iw_init_qid_table(struct c4iw_rdev *rdev)
+ {
+ 	u32 i;
++	u32 qp_size = rdev->lldi.vr->qp.size;
++	u32 qp_start = rdev->lldi.vr->qp.start;
++	u32 sq_size = qp_size / 2;
++	u32 rq_size = qp_size / 2;
++	u32 sq_start = qp_start;
++	u32 rq_start = qp_start + sq_size;
++
++	if (c4iw_id_table_alloc(&rdev->resource.sqid_table,
++				sq_start, sq_size, sq_size, 0))
++		return -ENOMEM;
+ 
+-	if (c4iw_id_table_alloc(&rdev->resource.qid_table,
+-				rdev->lldi.vr->qp.start,
+-				rdev->lldi.vr->qp.size,
+-				rdev->lldi.vr->qp.size, 0))
++	if (c4iw_id_table_alloc(&rdev->resource.rqid_table,
++				rq_start, rq_size, rq_size, 0))
+ 		return -ENOMEM;
+ 
+-	for (i = rdev->lldi.vr->qp.start;
+-		i < rdev->lldi.vr->qp.start + rdev->lldi.vr->qp.size; i++)
++	for (i = sq_start; i < rq_start; i++)
++		if (!(i & rdev->qpmask))
++			c4iw_id_free(&rdev->resource.sqid_table, i);
++	for (i = rq_start; i < qp_size + sq_start; i++)
+ 		if (!(i & rdev->qpmask))
+-			c4iw_id_free(&rdev->resource.qid_table, i);
++			c4iw_id_free(&rdev->resource.rqid_table, i);
++	pr_debug("qp start %d, qp size %d, sq size %d, sq start %d, rq start %d\n",
++		qp_start, qp_size, sq_size, sq_start, rq_start);
+ 	return 0;
+ }
+ 
+@@ -80,7 +92,8 @@ int c4iw_init_resource(struct c4iw_rdev *rdev, u32 nr_tpt,
+  srq_err:
+ 	c4iw_id_table_free(&rdev->resource.pdid_table);
+  pdid_err:
+-	c4iw_id_table_free(&rdev->resource.qid_table);
++	c4iw_id_table_free(&rdev->resource.sqid_table);
++	c4iw_id_table_free(&rdev->resource.rqid_table);
+  qid_err:
+ 	c4iw_id_table_free(&rdev->resource.tpt_table);
+  tpt_err:
+@@ -119,7 +132,7 @@ u32 c4iw_get_cqid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx)
+ 		qid = entry->qid;
+ 		kfree(entry);
+ 	} else {
+-		qid = c4iw_get_resource(&rdev->resource.qid_table);
++		qid = c4iw_get_resource(&rdev->resource.sqid_table);
+ 		if (!qid)
+ 			goto out;
+ 		mutex_lock(&rdev->stats.lock);
+@@ -141,13 +154,13 @@ u32 c4iw_get_cqid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx)
+ 		if (!entry)
+ 			goto out;
+ 		entry->qid = qid;
+-		list_add_tail(&entry->entry, &uctx->qpids);
++		list_add_tail(&entry->entry, &uctx->sqids);
+ 		for (i = qid+1; i & rdev->qpmask; i++) {
+ 			entry = kmalloc(sizeof(*entry), GFP_KERNEL);
+ 			if (!entry)
+ 				goto out;
+ 			entry->qid = i;
+-			list_add_tail(&entry->entry, &uctx->qpids);
++			list_add_tail(&entry->entry, &uctx->sqids);
+ 		}
+ 	}
+ out:
+@@ -175,21 +188,80 @@ void c4iw_put_cqid(struct c4iw_rdev *rdev, u32 qid,
+ 	mutex_unlock(&uctx->lock);
+ }
+ 
+-u32 c4iw_get_qpid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx)
++u32 c4iw_get_sqid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx)
++{
++	struct c4iw_qid_list *entry;
++	u32 qid;
++	int i;
++
++	mutex_lock(&uctx->lock);
++	if (!list_empty(&uctx->sqids)) {
++		entry = list_entry(uctx->sqids.next, struct c4iw_qid_list,
++				   entry);
++		list_del(&entry->entry);
++		qid = entry->qid;
++		kfree(entry);
++	} else {
++		qid = c4iw_get_resource(&rdev->resource.sqid_table);
++		if (!qid) {
++			mutex_lock(&rdev->stats.lock);
++			rdev->stats.qid.fail++;
++			mutex_unlock(&rdev->stats.lock);
++			goto out;
++		}
++		mutex_lock(&rdev->stats.lock);
++		rdev->stats.qid.cur += rdev->qpmask + 1;
++		mutex_unlock(&rdev->stats.lock);
++		for (i = qid+1; i & rdev->qpmask; i++) {
++			entry = kmalloc(sizeof(*entry), GFP_KERNEL);
++			if (!entry)
++				goto out;
++			entry->qid = i;
++			list_add_tail(&entry->entry, &uctx->sqids);
++		}
++
++		/*
++		 * now put the same ids on the cq list since they all
++		 * map to the same db/gts page.
++		 */
++		entry = kmalloc(sizeof(*entry), GFP_KERNEL);
++		if (!entry)
++			goto out;
++		entry->qid = qid;
++		list_add_tail(&entry->entry, &uctx->cqids);
++		for (i = qid; i & rdev->qpmask; i++) {
++			entry = kmalloc(sizeof(*entry), GFP_KERNEL);
++			if (!entry)
++				goto out;
++			entry->qid = i;
++			list_add_tail(&entry->entry, &uctx->cqids);
++		}
++	}
++out:
++	mutex_unlock(&uctx->lock);
++	pr_debug("qid 0x%x\n", qid);
++	mutex_lock(&rdev->stats.lock);
++	if (rdev->stats.qid.cur > rdev->stats.qid.max)
++		rdev->stats.qid.max = rdev->stats.qid.cur;
++	mutex_unlock(&rdev->stats.lock);
++	return qid;
++}
++
++u32 c4iw_get_rqid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx)
+ {
+ 	struct c4iw_qid_list *entry;
+ 	u32 qid;
+ 	int i;
+ 
+ 	mutex_lock(&uctx->lock);
+-	if (!list_empty(&uctx->qpids)) {
+-		entry = list_entry(uctx->qpids.next, struct c4iw_qid_list,
++	if (!list_empty(&uctx->rqids)) {
++		entry = list_entry(uctx->rqids.next, struct c4iw_qid_list,
+ 				   entry);
+ 		list_del(&entry->entry);
+ 		qid = entry->qid;
+ 		kfree(entry);
+ 	} else {
+-		qid = c4iw_get_resource(&rdev->resource.qid_table);
++		qid = c4iw_get_resource(&rdev->resource.rqid_table);
+ 		if (!qid) {
+ 			mutex_lock(&rdev->stats.lock);
+ 			rdev->stats.qid.fail++;
+@@ -204,9 +276,10 @@ u32 c4iw_get_qpid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx)
+ 			if (!entry)
+ 				goto out;
+ 			entry->qid = i;
+-			list_add_tail(&entry->entry, &uctx->qpids);
++			list_add_tail(&entry->entry, &uctx->rqids);
+ 		}
+ 
++#if 0
+ 		/*
+ 		 * now put the same ids on the cq list since they all
+ 		 * map to the same db/gts page.
+@@ -223,6 +296,7 @@ u32 c4iw_get_qpid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx)
+ 			entry->qid = i;
+ 			list_add_tail(&entry->entry, &uctx->cqids);
+ 		}
++#endif
+ 	}
+ out:
+ 	mutex_unlock(&uctx->lock);
+@@ -235,7 +309,7 @@ u32 c4iw_get_qpid(struct c4iw_rdev *rdev, struct c4iw_dev_ucontext *uctx)
+ }
+ 
+ void c4iw_put_qpid(struct c4iw_rdev *rdev, u32 qid,
+-		   struct c4iw_dev_ucontext *uctx)
++		   struct c4iw_dev_ucontext *uctx, u8 sq)
+ {
+ 	struct c4iw_qid_list *entry;
+ 
+@@ -245,14 +319,18 @@ void c4iw_put_qpid(struct c4iw_rdev *rdev, u32 qid,
+ 	pr_debug("qid 0x%x\n", qid);
+ 	entry->qid = qid;
+ 	mutex_lock(&uctx->lock);
+-	list_add_tail(&entry->entry, &uctx->qpids);
++	if (sq)
++		list_add_tail(&entry->entry, &uctx->sqids);
++	else
++		list_add_tail(&entry->entry, &uctx->rqids);
+ 	mutex_unlock(&uctx->lock);
+ }
+ 
+ void c4iw_destroy_resource(struct c4iw_resource *rscp)
+ {
+ 	c4iw_id_table_free(&rscp->tpt_table);
+-	c4iw_id_table_free(&rscp->qid_table);
++	c4iw_id_table_free(&rscp->sqid_table);
++	c4iw_id_table_free(&rscp->rqid_table);
+ 	c4iw_id_table_free(&rscp->pdid_table);
+ }
+ 
+-- 
+2.24.0
+
