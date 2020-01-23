@@ -44,5 +44,6 @@ do
 	echo " " >> ./bisect_log.txt
 done
 
+git bisect log >> ./bisect_log.txt
 git bisect reset
 
