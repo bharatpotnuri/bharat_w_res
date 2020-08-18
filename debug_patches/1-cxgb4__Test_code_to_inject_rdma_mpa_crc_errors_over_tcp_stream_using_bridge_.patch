@@ -1,0 +1,144 @@
+# HG changeset patch
+# User Potnuri Bharat Teja <bharat@chelsio.com>
+# Date 1537893454 -19800
+#      Tue Sep 25 22:07:34 2018 +0530
+# Node ID f9a18ab9989a115bb343f491995c2ba06425825d
+# Parent  699258b596631e2b80bf80a53184b407afa3ce2a
+cxgb4: Test code to inject rdma mpa crc errors over tcp stream using bridge.
+
+Signed-off-by: Potnuri Bharat Teja <bharat@chelsio.com>
+
+diff -r 699258b59663 -r f9a18ab9989a dev/T4/linux/drv/cxgb4_main.c
+--- a/dev/T4/linux/drv/cxgb4_main.c	Fri Sep 21 16:26:22 2018 -0700
++++ b/dev/T4/linux/drv/cxgb4_main.c	Tue Sep 25 22:07:34 2018 +0530
+@@ -285,6 +285,18 @@ module_param(allow_nonroot_filters, int,
+ MODULE_PARM_DESC(allow_nonroot_filters,
+ 		 "Allow nonroot access to filters (default = 0)");
+ 
++int global_pck_cnt = 0;
++
++int random_pck_cnt = 0;
++module_param(random_pck_cnt, int, 0644);
++MODULE_PARM_DESC(random_pck_cnt,
++		 "Inject MPA CRC error for every 'random_pck_cnt' rdma packets (default = 0)");
++
++int random_pck_atck = 0;
++module_param(random_pck_atck, int, 0644);
++MODULE_PARM_DESC(random_pck_atck,
++		 "Inject MPA CRC errors continously once 'random_pck_atck' is set (default = 0)");
++
+ int attempt_err_recovery = 0;
+ module_param(attempt_err_recovery, int, 0644);
+ MODULE_PARM_DESC(attempt_err_recovery,
+diff -r 699258b59663 -r f9a18ab9989a dev/T4/linux/drv/sge.c
+--- a/dev/T4/linux/drv/sge.c	Fri Sep 21 16:26:22 2018 -0700
++++ b/dev/T4/linux/drv/sge.c	Tue Sep 25 22:07:34 2018 +0530
+@@ -41,6 +41,10 @@
+ 
+ extern int attempt_err_recovery;
+ extern unsigned int enable_traceq;
++
++extern int global_pck_cnt;
++extern int random_pck_cnt;
++extern int random_pck_atck;
+ /*
+  * Rx buffer size for "packed" pages Free List buffers (multiple ingress
+  * packets packed per page buffer).  We use largish buffers if possible but
+@@ -2190,6 +2194,13 @@ netdev_tx_t cxgb4_eth_xmit(struct sk_buf
+ 	bool immediate = false;
+ 	int len, max_pkt_len;
+ 	unsigned int chip_ver;
++	struct iphdr *iph;
++	struct tcphdr *tcph;
++#if 0
++	u16 sport, dport;
++	u32 saddr, daddr;
++#endif
++
+ #if IS_ENABLED(CONFIG_PTP_1588_CLOCK)
+ 	bool ptp_enabled = is_ptp_enabled(skb, dev);
+ #else
+@@ -2215,6 +2226,83 @@ out_free:	dev_kfree_skb_any(skb);
+ 	if (!skb_shinfo(skb)->gso_size && (unlikely(skb->len > max_pkt_len)))
+ 		goto out_free;
+ 
++	iph = ip_hdr(skb);
++
++	if (skb->data_len == 0 && skb->len > 70) {
++		if (iph->protocol == IPPROTO_TCP) {
++#if 0
++			saddr = ntohl(iph->saddr);
++			daddr = ntohl(iph->daddr);
++			tcph = (struct tcphdr *)(&skb->data[34]);
++			sport = ntohs(tcph->source);
++			dport = ntohs(tcph->dest);
++			u8 *tail = skb_tail_pointer(skb);
++			u8 *data = skb->data;
++			u8 *i;
++			u64 cnt = 0;
++			u16 check = ntohs(tcph->check);
++#endif
++			unsigned int tcplen = ntohs(iph->tot_len) - iph->ihl*4;;
++
++#if 0
++			pr_debug("print_tcp: %pI4h:%x -> %pI4h:%x\n", &saddr, sport, &daddr, dport);
++			pr_debug("len %d data_len %d\n", skb->len, skb->data_len);
++			pr_debug("data %p tail %p\n", data, tail);
++			pr_debug("print_tcp: data len - %d, data:\n", skb->len);
++			pr_debug("linear %d\n", skb_is_nonlinear(skb));
++			tcph->check = 0;
++			pr_debug("CRC %d sum %llx tcph->check %04llx recalc %04llx csum_partial %llx\n", skb->ip_summed,
++				 skb->csum, check,
++				 htons(tcp_v4_check(tcplen, iph->saddr, iph->daddr, csum_partial((char *)tcph, tcplen, 0))),
++				 csum_partial((char *)tcph, tcplen, 0));
++			tcph->check = htons(check);
++
++			for (i = data; i != tail; ++i) {
++				u8 c = *(u8 *)i;
++
++				printk(KERN_CONT "%02x", c);
++				cnt++;
++				if (cnt%8 == 0)
++					printk(KERN_CONT " ");
++				if (cnt%32 == 0)
++					printk(KERN_CONT "\n");
++			}
++#endif
++			global_pck_cnt++;
++			if (random_pck_cnt && (global_pck_cnt == random_pck_cnt || random_pck_atck == 1)) {
++#if 0
++				tail = skb_tail_pointer(skb);
++				data = skb->data;
++#endif
++				/* Corrupting the last but one byte of rdma payload */
++				skb->data[skb->len - 6] = 0xaa;
++
++				global_pck_cnt = 0;
++				//random_pck_atck = 1;
++
++				tcph = (struct tcphdr *)(&skb->data[34]);
++				tcph->check = 0;
++				tcph->check = tcp_v4_check(tcplen, iph->saddr, iph->daddr, csum_partial((char *)tcph, tcplen, 0));
++				//pr_debug("Corrupting rdma flow random_pkt_cnt %d: \n", random_pck_cnt);
++				//pr_debug("summed %d tcph->check %04llx\n", skb->ip_summed, htons(tcph->check));
++#if 0
++				cnt = 0;
++				for (i = data; i != tail; ++i) {
++					u8 c = *(u8 *)i;
++
++					printk(KERN_CONT "%02x", c);
++					cnt++;
++					if (cnt%8 == 0)
++						printk(KERN_CONT " ");
++					if (cnt%32 == 0)
++						printk(KERN_CONT "\n");
++				}
++				pr_debug("\n\n");
++#endif
++			}
++		}
++	}
++
+ 	pi = netdev_priv(dev);
+ 	if (ma_fail_check_rx_pkt((struct port_info *)pi, skb))
+ 		loopback = 1;
