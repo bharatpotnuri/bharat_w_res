@@ -2,7 +2,7 @@
 j=5
 for ((i=1; i<=4; i++, j++)); do
 {
-	cat mbw_cli_$i.txt |grep BHar| awk {'print $9'} > f_cli_$i.txt
+	cat mbw_cli_$i.txt |grep Bhar | awk {'print $6'} > f_cli_$i.txt
 		awk -F',' '{print $0}' f_cli_$i.txt | sort | uniq > f$j.txt
 		echo -------------
 		echo mbw_cli_$i.txt                   
