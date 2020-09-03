@@ -5,9 +5,11 @@
 int main ()
 {
 	unsigned int a = 10;
+	long int d = 40;
 	long long int b = 20;
 	u_int64_t c = 30;
 	printf("size of unsigned int %d\n", sizeof(a));
+	printf("size of long int %d\n", sizeof(d));
 	printf("size of long long int %d\n", sizeof(b));
 	printf("size of uint64 %d\n", sizeof(c));
 

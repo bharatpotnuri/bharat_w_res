@@ -7,8 +7,9 @@ if [[ $# != 2 ]]; then
 	exit
 fi
 
+echo "" > ./compare_output.txt
 while IFS='' read -r line || [[ -n "$line" ]]; do
-#		echo $line
+		echo $line > /tmp/commit
 		echo $line | awk '{$1=""; $2=""; print $0}' > /tmp/line
 		sed -i 's/^ *//' /tmp/line
 		line=`cat /tmp/line | awk '{print $0}'`
@@ -20,7 +21,8 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 		else
 			search="No"
 		fi
-    echo -e "Commit:: $line \t\t\t\t-> $search"
+#    echo -e "Commit:: $line \t\t\t\t-> $search"
+     echo -e "`cat /tmp/commit` \t\t-> $search" >> ./compare_output.txt
 done < "$1"
 
 
