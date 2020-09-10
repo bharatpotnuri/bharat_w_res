@@ -1,0 +1,49 @@
+diff -r fed39da7248b dev/T4/linux/iw_cxgb4/qp.c
+--- a/dev/T4/linux/iw_cxgb4/qp.c	Mon Aug 31 09:43:28 2020 +0530
++++ b/dev/T4/linux/iw_cxgb4/qp.c	Thu Sep 10 21:28:33 2020 +0530
+@@ -1733,7 +1733,9 @@ static int complete_sq_drain_wr(struct c
+ 	struct c4iw_cq *schp;
+ 	unsigned long flag;
+ 	struct t4_cq *cq;
+-	int opcode;
++//	char *cqeb;
++	uint32_t *cqedw, headerle;
++	int opcode, i;
+ 
+ 	schp = to_c4iw_cq(qhp->ibqp.send_cq);
+ 	cq = &schp->cq;
+@@ -1744,17 +1746,32 @@ static int complete_sq_drain_wr(struct c
+ 
+ 	pr_debug("drain sq id %u\n", qhp->wq.sq.qid);
+ 	cqe.u.drain_cookie = wr->wr_id;
+-	cqe.header = cpu_to_be32(V_CQE_STATUS(T4_ERR_SWFLUSH) |
++	headerle = V_CQE_STATUS(T4_ERR_SWFLUSH) |
+ 				 V_CQE_OPCODE(opcode) |
+ 				 V_CQE_TYPE(1) |
+ 				 V_CQE_SWCQE(1) |
+ 				 V_CQE_DRAIN(1) |
+-				 V_CQE_QPID(qhp->wq.sq.qid));
++				 V_CQE_QPID(qhp->wq.sq.qid);
++	cqe.header = cpu_to_be32(headerle);
+ 
+ 	spin_lock_irqsave(&schp->lock, flag);
+ 	cqe.bits_type_ts = cpu_to_be64(V_CQE_GENBIT((u64)cq->gen));
+ 	cq->sw_queue[cq->sw_pidx] = cqe;
+ 	t4_swcq_produce(cq);
++
++	pr_err("Bhar: CQE entry size %lu headerle 0x%08X header 0x%08X opcode %X qid %X\n", sizeof(struct t4_cqe), headerle, cqe.header, opcode, qhp->wq.sq.qid);
++	pr_err("st 0x%x op 0x%x ty 0x%x swcqe 0x%x drain  0x%x qpid 0x%x\n", V_CQE_STATUS(T4_ERR_SWFLUSH),
++		V_CQE_OPCODE(opcode), V_CQE_TYPE(1), V_CQE_SWCQE(1), V_CQE_DRAIN(1), V_CQE_QPID(qhp->wq.sq.qid));
++//	cqeb = (void *)&cqe;
++	cqedw = (void *)&cqe;
++	pr_err("\n %08x %08x %08x %08x\n %08x %08x %08x %08x\n"
++		" %08x %08x %08x %08x\n %08x %08x %08x %08x\n",
++		cqedw[0], cqedw[1], cqedw[2], cqedw[3], cqedw[4], cqedw[5], cqedw[6], cqedw[7],
++		cqedw[8], cqedw[9], cqedw[10], cqedw[11], cqedw[12], cqedw[13], cqedw[14], cqedw[15]);
++
++//	for (i=0; i < sizeof(struct t4_cqe); i++)
++//		pr_err("0x%X", cqeb[i] & 0xFF);
++
+ 	spin_unlock_irqrestore(&schp->lock, flag);
+ 
+ 	if (t4_clear_cq_armed(&schp->cq, qhp->ibqp.uobject)) {
